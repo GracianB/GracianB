@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>No encontrado — Gracián Baena</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://gracianb.github.io/GracianB/">
+  <style>
+    :root { --bg:#06070a; --ink:#f4f3ee; --muted:#9a9991; --yellow:#f3d437; --sage:#7dcaa5; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
+      padding: 24px;
+    }
+    .card { max-width: 28rem; text-align: left; }
+    .mark {
+      display: grid; place-items: center;
+      width: 42px; height: 42px;
+      border: 1px solid var(--ink);
+      font: 800 12px ui-monospace, monospace;
+      margin-bottom: 28px;
+    }
+    p.kicker {
+      margin: 0 0 10px;
+      color: var(--yellow);
+      font: 800 11px ui-monospace, monospace;
+      letter-spacing: .18em;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font: 600 clamp(32px, 6vw, 44px)/1.05 Georgia, serif;
+      letter-spacing: -.03em;
+    }
+    p.lead { margin: 0 0 28px; color: var(--muted); line-height: 1.5; }
+    a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 0 16px;
+      background: var(--yellow);
+      color: var(--bg);
+      font: 800 11px ui-monospace, monospace;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    a.ghost {
+      margin-left: 8px;
+      background: transparent;
+      color: var(--sage);
+      border: 1px solid color-mix(in srgb, var(--sage) 50%, transparent);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark">GB</div>
+    <p class="kicker">404</p>
+    <h1>Esta ruta no existe.</h1>
+    <p class="lead">El hub está en la raíz. CVs y cartas canónicos también viven aquí.</p>
+    <a href="./index.html">Volver al hub →</a>
+    <a class="ghost" href="./index.html#docs">Documentos</a>
+  </div>
+</body>
+</html>

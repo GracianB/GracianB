@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="split" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3d437" stop-opacity=".16"/>
+      <stop offset=".48" stop-color="#06070a" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7dcaa5" stop-opacity=".18"/>
+    </linearGradient>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M72 0H0V72" fill="none" stroke="#fffef8" stroke-opacity=".045"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#06070a"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#split)"/>
+  <rect width="1200" height="6" fill="#f3d437"/>
+  <rect y="624" width="1200" height="6" fill="#7dcaa5"/>
+
+  <g transform="translate(72 52)">
+    <rect width="48" height="48" fill="none" stroke="#fffef8" stroke-width="1.5"/>
+    <text x="24" y="31" fill="#fffef8" font-family="Arial Narrow, Arial, sans-serif" font-size="14" font-weight="800" text-anchor="middle">GB</text>
+    <text x="68" y="20" fill="#fffef8" font-family="Arial Narrow, Arial, sans-serif" font-size="16" font-weight="800" letter-spacing="2">GRACIÁN BAENA</text>
+    <text x="68" y="40" fill="#9c9b93" font-family="Consolas, monospace" font-size="11" letter-spacing="2">HUB · DUAL TRACK · 2026</text>
+  </g>
+
+  <text x="72" y="210" fill="#fffef8" font-family="Georgia, serif" font-size="64" font-weight="700">Personas × Datos × Sistemas</text>
+  <text x="72" y="278" fill="#7dcaa5" font-family="Georgia, serif" font-size="42" font-style="italic">Yoga × Presencia</text>
+  <text x="72" y="340" fill="#9c9b93" font-family="Arial, sans-serif" font-size="20">Customer Success Systems · Data Strategy · AI Operations</text>
+
+  <g font-family="Consolas, monospace" font-size="13" font-weight="700" letter-spacing="2">
+    <text x="72" y="420" fill="#f3d437">01 ESCUCHAR</text>
+    <text x="250" y="420" fill="#fffef8">02 DECIDIR</text>
+    <text x="428" y="420" fill="#fffef8">03 CONSTRUIR</text>
+    <text x="628" y="420" fill="#7dcaa5">04 ACTIVAR</text>
+  </g>
+
+  <text x="72" y="500" fill="#aaa99f" font-family="Arial, sans-serif" font-size="18">España · abierto a roles senior · ES / EN</text>
+  <text x="72" y="548" fill="#f3d437" font-family="Consolas, monospace" font-size="13" letter-spacing="2">gracianb.github.io/GracianB</text>
+</svg>
