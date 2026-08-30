@@ -417,7 +417,15 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
   background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
-.modes-wrap, .play-strip { margin-bottom: clamp(36px, 6vh, 56px); }
+.play-strip .mode { min-height: 0; }
+.play-more {
+  margin: 18px 0 0;
+  font: 800 12px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.play-more a { color: var(--ice); }
+.play-more a:hover { color: var(--ink); }
 .play-strip .modes { grid-template-columns: 1fr 1fr; }
 
 .cmd-hint {
@@ -592,7 +600,7 @@ body.menu-on { overflow: hidden; }
 
 .modes {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 .mode {
