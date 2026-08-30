@@ -97,9 +97,10 @@ Customer Success, data and AI as one system. Certified yoga instructor (Madrid 2
 | Feature | Detail |
 |:--------|:-------|
 | Dual-track | Corporate (yellow) + Yoga (sage) |
-| PLAY | Ohana (canvas) + Vórtice (WebGL) |
+| PLAY | Ohana (canvas) + Vórtice (WebGL live) |
 | i18n | ES / EN · `?lang=en` |
 | Theme | Dark / light · `?theme=light` |
+| Jump | `Ctrl/Cmd K` command palette |
 | Static | No backend · GitHub Pages |
 | Fonts | Fraunces · Inter · JetBrains Mono |
 
