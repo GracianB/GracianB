@@ -25,9 +25,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=hub3">
-  <script src="./i18n.js?v=hub3"></script>
-  <script src="./main.js?v=hub3" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=hub4">
+  <script src="./i18n.js?v=hub4"></script>
+  <script src="./main.js?v=hub4" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,7 +42,9 @@
       "https://github.com/GracianB",
       "https://gracianb.github.io/professional-deck/",
       "https://gracianb.github.io/systems-lab/",
-      "https://gracianb.github.io/yoga-instructor/"
+      "https://gracianb.github.io/yoga-instructor/",
+      "https://gracianb.github.io/project-ohana/",
+      "https://github.com/GracianB/vortex"
     ]
   }
   </script>
@@ -96,7 +98,7 @@
         <div class="hero-actions">
           <a class="btn btn-pro" href="https://gracianb.github.io/professional-deck/" rel="noopener" data-i18n="ctaPro">Portfolio Corporate →</a>
           <a class="btn btn-yoga" href="https://gracianb.github.io/yoga-instructor/" rel="noopener" data-i18n="ctaYoga">Portfolio Yoga →</a>
-          <a class="btn btn-play" href="https://gracianb.github.io/systems-lab/" rel="noopener" data-i18n="ctaPlay">PLAY →</a>
+          <a class="btn btn-play" href="#play" data-i18n="ctaPlay">PLAY →</a>
           <a class="btn btn-ghost" href="#docs" data-i18n="ctaCvs">Ver documentos ↓</a>
         </div>
       </div>
@@ -177,6 +179,49 @@
           </ul>
           <span class="mode-cta" data-i18n="labCta">Abrir PLAY →</span>
           <span class="mode-url">gracianb.github.io/systems-lab</span>
+        </a>
+      </div>
+    </section>
+
+
+    <section class="play-strip" id="play" aria-labelledby="play-title">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="playEyebrow">PLAY</p>
+        <h2 id="play-title" data-i18n="playTitle">Dos prototipos para pulsar</h2>
+      </div>
+      <div class="modes">
+        <a class="mode mode-play" href="https://gracianb.github.io/project-ohana/" rel="noopener">
+          <span class="mode-bar" aria-hidden="true"></span>
+          <header>
+            <span class="mode-code">P1</span>
+            <span class="mode-badge" data-i18n="ohanaBadge">CANVAS</span>
+          </header>
+          <h3 data-i18n="ohanaTitle">Project Ohana</h3>
+          <p data-i18n="ohanaDesc">Juego canvas: mundos, evoluciones y habilidades. Pulsa y juega.</p>
+          <ul>
+            <li data-i18n="ohanaL1">5 mundos</li>
+            <li data-i18n="ohanaL2">Personajes únicos</li>
+            <li data-i18n="ohanaL3">GitHub Pages</li>
+          </ul>
+          <span class="mode-cta" data-i18n="ohanaCta">Jugar Ohana →</span>
+          <span class="mode-url">gracianb.github.io/project-ohana</span>
+        </a>
+
+        <a class="mode mode-play" href="https://github.com/GracianB/vortex" rel="noopener">
+          <span class="mode-bar" aria-hidden="true"></span>
+          <header>
+            <span class="mode-code">P2</span>
+            <span class="mode-badge" data-i18n="vortexBadge">WEBGL</span>
+          </header>
+          <h3 data-i18n="vortexTitle">Vórtice</h3>
+          <p data-i18n="vortexDesc">Campo de datos WebGL hacia el cursor. Estelas, paletas, captura.</p>
+          <ul>
+            <li data-i18n="vortexL1">GPU · 20k muestras</li>
+            <li data-i18n="vortexL2">Vórtice / flujo / órbita / onda</li>
+            <li data-i18n="vortexL3">Repo + Vercel Hobby</li>
+          </ul>
+          <span class="mode-cta" data-i18n="vortexCta">Abrir Vórtice →</span>
+          <span class="mode-url">github.com/GracianB/vortex</span>
         </a>
       </div>
     </section>

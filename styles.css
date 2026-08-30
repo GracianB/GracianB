@@ -407,7 +407,7 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
   background: color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
-.modes-wrap { margin-bottom: clamp(36px, 6vh, 56px); }
+.modes-wrap, .play-strip { margin-bottom: clamp(36px, 6vh, 56px); }
 .modes {
   display: grid;
   grid-template-columns: 1fr 1fr;

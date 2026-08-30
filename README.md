@@ -17,6 +17,9 @@
 [![Hub](https://img.shields.io/badge/HUB-GracianB-f3d437?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/)
 [![Corporate](https://img.shields.io/badge/01-professional--deck-f4f3ee?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/professional-deck/)
 [![Yoga](https://img.shields.io/badge/02-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/yoga-instructor/)
+[![Play](https://img.shields.io/badge/03-PLAY-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/#play)
+[![Ohana](https://img.shields.io/badge/Ohana-canvas-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/project-ohana/)
+[![Vortex](https://img.shields.io/badge/Vortex-WebGL-7af3ff?style=for-the-badge&labelColor=06070a)](https://github.com/GracianB/vortex)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-gracianbaena-0A66C2?style=for-the-badge&labelColor=06070a&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gracianbaena)
 [![Agenda](https://img.shields.io/badge/Agenda-30_min-f4f3ee?style=for-the-badge&labelColor=06070a)](https://calendar.app.google/n99psBFktwYyoAWi9)
 
@@ -41,20 +44,28 @@
                     │  8 canonical PDFs    │
                     └──────────┬──────────┘
                                │
-              ┌────────────────┼────────────────┐
-              ▼                                 ▼
-  ┌───────────────────────┐         ┌───────────────────────┐
-  │   professional-deck   │         │   yoga-instructor     │
-  │   Corporate · CS ×    │         │   Yoga · Wellness ·   │
-  │   Data × AI           │         │   Presence            │
-  └───────────────────────┘         └───────────────────────┘
+         ┌─────────────────────┼─────────────────────┐
+         ▼                     ▼                     ▼
+┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
+│ professional-   │   │ yoga-instructor │   │ PLAY            │
+│ deck            │   │ Yoga · Presence │   │ systems-lab     │
+│ CS × Data × AI  │   │                 │   │ Ohana + Vórtice │
+└─────────────────┘   └─────────────────┘   └────────┬────────┘
+                                                     │
+                                          ┌──────────┴──────────┐
+                                          ▼                     ▼
+                                   Project Ohana           Vórtice
+                                   canvas game             WebGL field
 ```
 
 | System | Live | What it is |
 |:-------|:-----|:-----------|
 | **Hub** | [gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/) | Dual-track launcher · light/dark · ES/EN · CVs |
-| **01 Corporate** | [gracianb.github.io/professional-deck](https://gracianb.github.io/professional-deck/) | Interactive deck · CS × Data × AI |
-| **02 Yoga** | [gracianb.github.io/yoga-instructor](https://gracianb.github.io/yoga-instructor/) | Instructor portfolio · ES/EN |
+| **01 Corporate** | [professional-deck](https://gracianb.github.io/professional-deck/) | Interactive deck · CS × Data × AI |
+| **02 Yoga** | [yoga-instructor](https://gracianb.github.io/yoga-instructor/) | Instructor portfolio · ES/EN |
+| **03 PLAY** | [systems-lab](https://gracianb.github.io/systems-lab/) · [hub #play](https://gracianb.github.io/GracianB/#play) | Lab + prototypes |
+| **Ohana** | [project-ohana](https://gracianb.github.io/project-ohana/) | Canvas game |
+| **Vórtice** | [github.com/GracianB/vortex](https://github.com/GracianB/vortex) | WebGL data field · deploy on [Vercel Hobby](https://vercel.com/new) (free) |
 
 Public proof: [Bodytone Support OS (Zendesk)](https://bodytonehelp.zendesk.com/hc/es)
 
@@ -86,6 +97,7 @@ Customer Success, data and AI as one system. Certified yoga instructor (Madrid 2
 | Feature | Detail |
 |:--------|:-------|
 | Dual-track | Corporate (yellow) + Yoga (sage) |
+| PLAY | Ohana (canvas) + Vórtice (WebGL) |
 | i18n | ES / EN · `?lang=en` |
 | Theme | Dark / light · `?theme=light` |
 | Static | No backend · GitHub Pages |
