@@ -418,6 +418,7 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
 }
 
 .play-strip .mode { min-height: 0; }
+.modes-wrap, .play-strip { margin-bottom: clamp(36px, 6vh, 56px); }
 .play-more {
   margin: 18px 0 0;
   font: 800 12px var(--mono);
