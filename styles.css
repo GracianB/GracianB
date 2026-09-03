@@ -501,6 +501,7 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+.modes-worlds { grid-template-columns: 1fr 1fr 1fr; }
 .play-strip .modes { grid-template-columns: 1fr 1fr; }
 .mode {
   position: relative;
@@ -885,9 +886,10 @@ button { font: inherit; border: 0; background: none; color: inherit; cursor: poi
 }
 .drawer-panel a:nth-child(5) { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 20px; }
 .drawer-panel a:nth-child(5):hover { color: var(--yellow); }
-.drawer-panel a:nth-child(6):hover { color: var(--sage); }
-.drawer-panel a:nth-child(7):hover,
-.drawer-panel a:nth-child(8):hover { color: var(--ice); }
+.drawer-panel a:nth-child(6):hover { color: var(--ice); }
+.drawer-panel a:nth-child(7):hover { color: var(--sage); }
+.drawer-panel a:nth-child(8):hover,
+.drawer-panel a:nth-child(9):hover { color: var(--ice); }
 body.menu-on { overflow: hidden; }
 
 /* —— command palette —— */
@@ -964,6 +966,7 @@ body.menu-on { overflow: hidden; }
 /* —— responsive —— */
 @media (max-width: 1100px) {
   .modes,
+  .modes-worlds,
   .play-strip .modes { grid-template-columns: 1fr; }
 }
 
