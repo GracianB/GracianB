@@ -7,8 +7,11 @@
   <title>No encontrado — Gracián Baena</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://gracianb.github.io/GracianB/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&family=JetBrains+Mono:wght@800&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#06070a; --ink:#f4f3ee; --muted:#9a9991; --yellow:#f3d437; --sage:#7dcaa5; }
+    :root { --bg:#06070a; --ink:#f4f3ee; --muted:#9a9991; --yellow:#f3d437; --sage:#7dcaa5; --line:rgba(244,243,238,.11); --r:4px; --display:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace; }
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
     body {
@@ -17,7 +20,7 @@
       place-items: center;
       background: var(--bg);
       color: var(--ink);
-      font-family: Inter, system-ui, sans-serif;
+      font-family: var(--sans);
       padding: 24px;
     }
     .card { max-width: 28rem; text-align: left; }
@@ -25,18 +28,19 @@
       display: grid; place-items: center;
       width: 42px; height: 42px;
       border: 1px solid var(--ink);
-      font: 800 12px ui-monospace, monospace;
+      border-radius: var(--r);
+      font: 800 12px var(--mono);
       margin-bottom: 28px;
     }
     p.kicker {
       margin: 0 0 10px;
       color: var(--yellow);
-      font: 800 11px ui-monospace, monospace;
+      font: 800 11px var(--mono);
       letter-spacing: .18em;
     }
     h1 {
       margin: 0 0 12px;
-      font: 600 clamp(32px, 6vw, 44px)/1.05 Georgia, serif;
+      font: 600 clamp(32px, 6vw, 44px)/1.05 var(--display);
       letter-spacing: -.03em;
     }
     p.lead { margin: 0 0 28px; color: var(--muted); line-height: 1.5; }
@@ -47,10 +51,11 @@
       padding: 0 16px;
       background: var(--yellow);
       color: var(--bg);
-      font: 800 11px ui-monospace, monospace;
+      font: 800 11px var(--mono);
       letter-spacing: .1em;
       text-transform: uppercase;
       text-decoration: none;
+      border-radius: var(--r);
     }
     a.ghost {
       margin-left: 8px;
@@ -58,6 +63,7 @@
       color: var(--sage);
       border: 1px solid color-mix(in srgb, var(--sage) 50%, transparent);
     }
+    :focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   </style>
 </head>
 <body>
