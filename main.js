@@ -125,6 +125,12 @@
     menuBtn.classList.toggle("is-open", open);
     menuBtn.setAttribute("aria-expanded", String(open));
     document.body.classList.toggle("menu-on", open);
+    if (open) {
+      const first = drawer.querySelector("a");
+      requestAnimationFrame(() => first?.focus());
+    } else {
+      menuBtn.focus();
+    }
   }
   menuBtn?.addEventListener("click", () => setMenu(drawer.hidden));
   drawer?.addEventListener("click", (e) => {
@@ -136,6 +142,7 @@
   const cmdInput = document.getElementById("cmd-input");
   const cmdList = document.getElementById("cmd-list");
   let cmdIndex = 0;
+  let lastFocus = null;
 
   function visibleCmds() {
     return [...(cmdList?.querySelectorAll("li") || [])].filter((li) => !li.hidden);
@@ -143,6 +150,7 @@
   function paintCmd() {
     const items = visibleCmds();
     items.forEach((li, i) => li.classList.toggle("is-active", i === cmdIndex));
+    items[cmdIndex]?.scrollIntoView({ block: "nearest" });
   }
   function filterCmd(q) {
     const needle = q.trim().toLowerCase();
@@ -156,6 +164,7 @@
   function openCmd() {
     if (!cmd) return;
     setMenu(false);
+    lastFocus = document.activeElement;
     cmd.hidden = false;
     cmdIndex = 0;
     if (cmdInput) cmdInput.value = "";
@@ -164,8 +173,9 @@
     requestAnimationFrame(() => cmdInput?.focus());
   }
   function closeCmd() {
-    if (!cmd) return;
+    if (!cmd || cmd.hidden) return;
     cmd.hidden = true;
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
   }
   function goCmd() {
     const items = visibleCmds();

@@ -30,9 +30,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=hub7">
-  <script src="./i18n.js?v=hub7"></script>
-  <script src="./main.js?v=hub7" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=hub9">
+  <script src="./i18n.js?v=hub9"></script>
+  <script src="./main.js?v=hub9" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -91,7 +91,7 @@
         <button type="button" class="seg-btn" data-set-theme="light" aria-pressed="false" title="Light">☀</button>
       </div>
       <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span>
+        <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
         <b data-i18n="menu">Menú</b>
       </button>
     </div>
@@ -102,7 +102,7 @@
       <div class="hero-left">
         <p class="eyebrow" data-i18n="eyebrow">HUB · DUAL TRACK</p>
         <p class="hero-tag" data-i18n-html="tagline">Personas × Datos × Sistemas<br><em>Yoga × Presencia</em></p>
-        <p class="lead" data-i18n="lead">Dos ecosistemas. Uno corporate. Otro yoga. Elige. Abajo, si quieres, se juega.</p>
+        <p class="lead" data-i18n="lead">Tres mundos. Experiencia profesional, habilidad técnica, pasión yoga. Elige.</p>
         <div class="hero-meta">
           <span class="pill live"><i></i> <span data-i18n="status">España · abierto a roles senior · Murcia · remote OK</span></span>
         </div>
@@ -137,29 +137,40 @@
 
     <section class="modes-wrap" id="portfolios" aria-labelledby="modes-title">
       <div class="section-head">
-        <p class="eyebrow" data-i18n="modesEyebrow">ECOSISTEMAS</p>
-        <h2 id="modes-title" data-i18n="modesTitle">Dos. Elige uno.</h2>
+        <p class="eyebrow" data-i18n="modesEyebrow">TRES MUNDOS</p>
+        <h2 id="modes-title" data-i18n="modesTitle">Tres mundos.</h2>
       </div>
-      <div class="modes">
+      <div class="modes modes-worlds">
         <a class="mode mode-pro" href="https://gracianb.github.io/professional-deck/" rel="noopener">
           <span class="mode-bar" aria-hidden="true"></span>
           <header>
             <span class="mode-code">01</span>
-            <span class="mode-badge" data-i18n="proBadge">CORPORATE</span>
+            <span class="mode-badge" data-i18n="proBadge">EXPERIENCIA</span>
           </header>
           <h3 data-i18n="proTitle">CS × Data × AI</h3>
-          <p data-i18n="proDesc">Deck, método y prueba en Zendesk.</p>
+          <p data-i18n="proDesc">Experiencia profesional. Deck, método y prueba en Zendesk.</p>
           <span class="mode-cta" data-i18n="proCta">Entrar →</span>
+        </a>
+
+        <a class="mode mode-play" href="https://gracianb.github.io/systems-lab/" rel="noopener">
+          <span class="mode-bar" aria-hidden="true"></span>
+          <header>
+            <span class="mode-code">02</span>
+            <span class="mode-badge" data-i18n="labBadge">TÉCNICA</span>
+          </header>
+          <h3 data-i18n="labTitle">Habilidad técnica</h3>
+          <p data-i18n="labDesc">Ohana, Vórtice y el Help Center. Sistemas que se pulsan.</p>
+          <span class="mode-cta" data-i18n="labCta">Entrar →</span>
         </a>
 
         <a class="mode mode-yoga" href="https://gracianb.github.io/yoga-instructor/" rel="noopener">
           <span class="mode-bar" aria-hidden="true"></span>
           <header>
-            <span class="mode-code">02</span>
-            <span class="mode-badge" data-i18n="yogaBadge">YOGA</span>
+            <span class="mode-code">03</span>
+            <span class="mode-badge" data-i18n="yogaBadge">PASIÓN</span>
           </header>
           <h3 data-i18n="yogaTitle">Presencia × Práctica</h3>
-          <p data-i18n="yogaDesc">Instructor · Murcia · 2019–2026.</p>
+          <p data-i18n="yogaDesc">Pasión yoga. Instructor · Murcia · 2019–2026.</p>
           <span class="mode-cta" data-i18n="yogaCta">Entrar →</span>
         </a>
       </div>
@@ -167,9 +178,9 @@
 
     <section class="play-strip" id="play" aria-labelledby="play-title">
       <div class="section-head">
-        <p class="eyebrow" data-i18n="playEyebrow">LA WEB TAMBIÉN JUEGA</p>
+        <p class="eyebrow" data-i18n="playEyebrow">HABILIDAD TÉCNICA</p>
         <h2 id="play-title" data-i18n="playTitle">Relájate. O juega.</h2>
-        <p class="section-sub" data-i18n="playSub">No es un tercer ecosistema. Es la parte de la web donde no hay que vender nada.</p>
+        <p class="section-sub" data-i18n="playSub">El mundo PLAY: Ohana, Vórtice y el Help Center.</p>
       </div>
       <div class="modes">
         <a class="mode mode-play" href="https://gracianb.github.io/project-ohana/" rel="noopener">
@@ -194,7 +205,7 @@
           <span class="mode-cta" data-i18n="vortexCta">Abrir →</span>
         </a>
       </div>
-      <p class="play-more"><a href="https://gracianb.github.io/systems-lab/" data-i18n="playMore">Apps y el CS live →</a></p>
+      <p class="play-more"><a href="https://gracianb.github.io/systems-lab/" data-i18n="playMore">Abrir el mundo PLAY →</a></p>
     </section>
 
     <section class="stats" aria-label="Snapshot">
@@ -335,6 +346,7 @@
       <a href="#docs" data-i18n="navDocs">Documentos</a>
       <a href="#contacto" data-i18n="navContact">Contacto</a>
       <a href="https://gracianb.github.io/professional-deck/">Corporate</a>
+      <a href="https://gracianb.github.io/systems-lab/">PLAY</a>
       <a href="https://gracianb.github.io/yoga-instructor/">Yoga</a>
       <a href="https://gracianb.github.io/project-ohana/">Ohana</a>
       <a href="https://vortex-gilt-xi.vercel.app/">Vórtice</a>
