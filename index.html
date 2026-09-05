@@ -30,9 +30,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=hub10">
-  <script src="./i18n.js?v=hub10"></script>
-  <script src="./main.js?v=hub10" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=hub-v2">
+  <script src="./i18n.js?v=hub-v2"></script>
+  <script src="./main.js?v=hub-v2" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,10 +56,13 @@
 </head>
 <body>
   <div class="fx" aria-hidden="true">
+    <div class="fx-noise"></div>
     <div class="fx-grid"></div>
+    <div class="fx-beam"></div>
     <div class="fx-orb fx-orb-a"></div>
     <div class="fx-orb fx-orb-b"></div>
     <div class="fx-orb fx-orb-c"></div>
+    <div class="fx-stars"></div>
   </div>
 
   <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
@@ -100,7 +103,10 @@
   <main id="main" class="shell">
     <section class="hero" aria-labelledby="hero-name">
       <div class="hero-left">
-        <p class="eyebrow" data-i18n="eyebrow">HUB · DUAL TRACK</p>
+        <div class="hero-kicker">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <p class="eyebrow" data-i18n="eyebrow">HUB · DUAL TRACK</p>
+        </div>
         <p class="hero-tag" data-i18n-html="tagline">Personas × Datos × Sistemas<br><em>Yoga × Presencia</em></p>
         <p class="lead" data-i18n="lead">Tres mundos. Experiencia profesional, habilidad técnica, pasión yoga. Elige.</p>
         <div class="hero-meta">
@@ -116,6 +122,7 @@
 
       <div class="hero-right">
         <div class="name-panel">
+          <div class="name-glow" aria-hidden="true"></div>
           <span class="name-index">01 / 02</span>
           <h1 id="hero-name" class="hero-name">
             <span class="name-line first">Gracián</span>
@@ -142,6 +149,7 @@
       </div>
       <div class="modes modes-worlds">
         <a class="mode mode-pro" href="https://gracianb.github.io/professional-deck/" rel="noopener">
+          <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
           <header>
             <span class="mode-code">01</span>
@@ -149,10 +157,16 @@
           </header>
           <h3 data-i18n="proTitle">CS × Data × AI</h3>
           <p data-i18n="proDesc">Experiencia profesional. Deck, método y prueba en Zendesk.</p>
+          <ul class="mode-list" aria-hidden="true">
+            <li data-i18n="proL1">13 slides · ES/EN</li>
+            <li data-i18n="proL2">Bodytone live + demos</li>
+            <li data-i18n="proL3">Capability map · experiencia</li>
+          </ul>
           <span class="mode-cta" data-i18n="proCta">Entrar →</span>
         </a>
 
         <a class="mode mode-play" href="https://gracianb.github.io/systems-lab/" rel="noopener">
+          <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
           <header>
             <span class="mode-code">02</span>
@@ -160,10 +174,16 @@
           </header>
           <h3 data-i18n="labTitle">Habilidad técnica</h3>
           <p data-i18n="labDesc">Ohana, Vórtice y el Help Center. Sistemas que se pulsan.</p>
+          <ul class="mode-list" aria-hidden="true">
+            <li data-i18n="labL1">Ohana · canvas</li>
+            <li data-i18n="labL2">Vórtice · WebGL</li>
+            <li data-i18n="labL3">Zendesk + lab</li>
+          </ul>
           <span class="mode-cta" data-i18n="labCta">Entrar →</span>
         </a>
 
         <a class="mode mode-yoga" href="https://gracianb.github.io/yoga-instructor/" rel="noopener">
+          <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
           <header>
             <span class="mode-code">03</span>
@@ -171,6 +191,11 @@
           </header>
           <h3 data-i18n="yogaTitle">Presencia × Práctica</h3>
           <p data-i18n="yogaDesc">Pasión yoga. Instructor · Murcia · 2019–2026.</p>
+          <ul class="mode-list" aria-hidden="true">
+            <li data-i18n="yogaL1">Web zen · ES/EN</li>
+            <li data-i18n="yogaL2">Claro / oscuro</li>
+            <li data-i18n="yogaL3">CV y carta · 1 página</li>
+          </ul>
           <span class="mode-cta" data-i18n="yogaCta">Entrar →</span>
         </a>
       </div>
@@ -238,32 +263,32 @@
         <div class="cv-lane lane-pro">
           <div class="lane-head">
             <span class="lane-dot"></span>
-            <span class="lane-title" data-i18n="lanePro">Corporate</span>
+            <span class="lane-title" data-i18n="lanePro">EXPERIENCIA</span>
             <span class="lane-meta">CS × Data × AI</span>
           </div>
           <div class="cv-grid">
             <a class="cv-card pro" href="./Gracian_Baena_CV_2026_ES.pdf" target="_blank" rel="noreferrer">
               <div class="cv-top"><span class="cv-tag">PRO · ES</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="cvProEs">CV Corporate ES</strong>
+              <strong data-i18n="cvProEs">CV Experiencia ES</strong>
               <small data-i18n="cvProEsSub">Customer Success · Data · AI</small>
               <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
             </a>
             <a class="cv-card pro" href="./Gracian_Baena_CV_2026_EN.pdf" target="_blank" rel="noreferrer">
               <div class="cv-top"><span class="cv-tag">PRO · EN</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="cvProEn">CV Corporate EN</strong>
+              <strong data-i18n="cvProEn">Experience CV EN</strong>
               <small data-i18n="cvProEnSub">Customer Success · Data · AI</small>
               <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
             </a>
             <a class="cv-card pro" href="./Gracian_Baena_Carta_Presentacion_ES.pdf" target="_blank" rel="noreferrer">
               <div class="cv-top"><span class="cv-tag">LETTER · ES</span><span class="cv-fmt">PDF</span></div>
               <strong data-i18n="letterProEs">Carta ES</strong>
-              <small data-i18n="letterProEsSub">Presentación corporate</small>
+              <small data-i18n="letterProEsSub">Presentación experiencia</small>
               <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
             </a>
             <a class="cv-card pro" href="./Gracian_Baena_Cover_Letter_EN.pdf" target="_blank" rel="noreferrer">
               <div class="cv-top"><span class="cv-tag">LETTER · EN</span><span class="cv-fmt">PDF</span></div>
               <strong data-i18n="letterProEn">Cover letter EN</strong>
-              <small data-i18n="letterProEnSub">Corporate cover letter</small>
+              <small data-i18n="letterProEnSub">Experience cover letter</small>
               <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
             </a>
           </div>
@@ -307,6 +332,7 @@
 
     <section class="contact" id="contacto">
       <div class="contact-panel">
+        <div class="contact-glow" aria-hidden="true"></div>
         <div class="section-head">
           <p class="eyebrow" data-i18n="contactEyebrow">CONTACTO</p>
           <h2 data-i18n="contactTitle">Hablemos</h2>
