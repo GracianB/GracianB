@@ -1,5 +1,6 @@
 (() => {
   "use strict";
+  /* hub portada extrema · champagne editorial */
   const I18N = window.GB_I18N || {};
   const LANG_KEY = "gb-hub-lang";
   const THEME_KEY = "gb-hub-theme";
@@ -229,7 +230,7 @@
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    document.querySelectorAll(".mode, .stat, .cv-lane, .contact-panel, .hero-copy, .constellation").forEach((el) => {
+    document.querySelectorAll(".mode, .stat, .cv-lane, .contact-panel, .hero-copy, .hero-card, .constellation").forEach((el) => {
       el.classList.add("reveal");
       io.observe(el);
     });
