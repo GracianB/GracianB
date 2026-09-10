@@ -30,9 +30,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=hub-final-20260910">
-  <script src="./i18n.js?v=hub-final-20260910"></script>
-  <script src="./main.js?v=hub-final-20260910" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=hub-portada-20260910">
+  <script src="./i18n.js?v=hub-portada-20260910"></script>
+  <script src="./main.js?v=hub-portada-20260910" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -92,8 +92,12 @@
         <button type="button" class="seg-btn" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
       <div class="seg" role="group" aria-label="Theme">
-        <button type="button" class="seg-btn" data-set-theme="dark" aria-pressed="true" title="Dark">☾</button>
-        <button type="button" class="seg-btn" data-set-theme="light" aria-pressed="false" title="Light">☀</button>
+        <button type="button" class="seg-btn seg-icon" data-set-theme="dark" aria-pressed="true" title="Dark">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M6.1 1.2a6.8 6.8 0 0 0 8.7 8.7A7 7 0 1 1 6.1 1.2z"/></svg>
+        </button>
+        <button type="button" class="seg-btn seg-icon" data-set-theme="light" aria-pressed="false" title="Light">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M8 1.2v1.5M8 13.3v1.5M1.2 8h1.5M13.3 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></g></svg>
+        </button>
       </div>
       <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="drawer">
         <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -105,38 +109,6 @@
   <main id="main" class="shell">
     <!-- CINEMATIC PORTADA -->
     <section class="hero hero-cinema" aria-labelledby="hero-name">
-      <div class="hero-stage" aria-hidden="true">
-        <div class="constellation">
-          <div class="const-ring const-ring-a"></div>
-          <div class="const-ring const-ring-b"></div>
-          <div class="const-ring const-ring-c"></div>
-          <div class="const-core">
-            <span class="const-mark">GB</span>
-          </div>
-          <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" aria-label="01 Experiencia · professional-deck">
-            <i></i><span>01</span>
-            <em class="const-label" data-i18n="nodePro">Experiencia</em>
-          </a>
-          <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" aria-label="02 PLAY · systems-lab">
-            <i></i><span>02</span>
-            <em class="const-label" data-i18n="nodeLab">PLAY</em>
-          </a>
-          <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" aria-label="03 Pasión · yoga-instructor">
-            <i></i><span>03</span>
-            <em class="const-label" data-i18n="nodeYoga">Pasión</em>
-          </a>
-          <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
-            <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="52"/>
-            <line class="cl cl-ice" x1="200" y1="200" x2="328" y2="278"/>
-            <line class="cl cl-sage" x1="200" y1="200" x2="72" y2="278"/>
-          </svg>
-        </div>
-        <div class="hero-film">
-          <span class="film-tick">FRAME 01</span>
-          <span class="film-tick">HUB · 2026</span>
-        </div>
-      </div>
-
       <div class="hero-copy">
         <div class="hero-kicker">
           <span class="pulse-dot" aria-hidden="true"></span>
@@ -166,6 +138,38 @@
           <li><span>03</span><b data-i18n="method3">Construir</b></li>
           <li><span>04</span><b data-i18n="method4">Activar</b></li>
         </ol>
+      </div>
+
+      <div class="hero-stage">
+        <div class="constellation">
+          <div class="const-ring const-ring-a"></div>
+          <div class="const-ring const-ring-b"></div>
+          <div class="const-ring const-ring-c"></div>
+          <div class="const-core">
+            <span class="const-mark">GB</span>
+          </div>
+          <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" aria-label="01 Experiencia · professional-deck">
+            <i></i><span>01</span>
+            <em class="const-label" data-i18n="nodePro">Experiencia</em>
+          </a>
+          <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" aria-label="02 PLAY · systems-lab">
+            <i></i><span>02</span>
+            <em class="const-label" data-i18n="nodeLab">PLAY</em>
+          </a>
+          <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" aria-label="03 Pasión · yoga-instructor">
+            <i></i><span>03</span>
+            <em class="const-label" data-i18n="nodeYoga">Pasión</em>
+          </a>
+          <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="52"/>
+            <line class="cl cl-ice" x1="200" y1="200" x2="328" y2="278"/>
+            <line class="cl cl-sage" x1="200" y1="200" x2="72" y2="278"/>
+          </svg>
+        </div>
+        <div class="hero-film" aria-hidden="true">
+          <span class="film-tick">FRAME 01</span>
+          <span class="film-tick">HUB · 2026</span>
+        </div>
       </div>
     </section>
 
