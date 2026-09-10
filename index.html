@@ -30,9 +30,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=hub-champagne-delta-20260910">
-  <script src="./i18n.js?v=hub-champagne-delta-20260910"></script>
-  <script src="./main.js?v=hub-champagne-delta-20260910" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=hub-final-20260910">
+  <script src="./i18n.js?v=hub-final-20260910"></script>
+  <script src="./main.js?v=hub-final-20260910" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -113,14 +113,17 @@
           <div class="const-core">
             <span class="const-mark">GB</span>
           </div>
-          <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" title="professional-deck">
+          <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" aria-label="01 Experiencia · professional-deck">
             <i></i><span>01</span>
+            <em class="const-label" data-i18n="nodePro">Experiencia</em>
           </a>
-          <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" title="systems-lab">
+          <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" aria-label="02 PLAY · systems-lab">
             <i></i><span>02</span>
+            <em class="const-label" data-i18n="nodeLab">PLAY</em>
           </a>
-          <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" title="yoga-instructor">
+          <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" aria-label="03 Pasión · yoga-instructor">
             <i></i><span>03</span>
+            <em class="const-label" data-i18n="nodeYoga">Pasión</em>
           </a>
           <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
             <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="52"/>
@@ -173,7 +176,7 @@
         <p class="section-sub" data-i18n="modesSub">Cada mundo tiene su cromática, su ritmo y su prueba. El hub es el centro que los conecta.</p>
       </div>
       <div class="modes modes-worlds">
-        <a class="mode mode-pro" href="https://gracianb.github.io/professional-deck/" rel="noopener">
+        <article class="mode mode-pro" tabindex="0" data-world="pro">
           <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
           <div class="mode-glow-line" aria-hidden="true"></div>
@@ -181,17 +184,26 @@
             <span class="mode-code">01</span>
             <span class="mode-badge" data-i18n="proBadge">EXPERIENCIA</span>
           </header>
+          <p class="mode-chroma" data-i18n="proChroma">Cromática · oro / nude / blanco</p>
           <h3 data-i18n="proTitle">CS × Data × AI</h3>
           <p data-i18n="proDesc">Deck profesional oro / nude. Método, capability map y prueba en Zendesk.</p>
           <ul class="mode-list">
-            <li data-i18n="proL1">13 slides · ES/EN</li>
+            <li data-i18n="proL1">14 slides · ES/EN</li>
             <li data-i18n="proL2">Bodytone live + demos</li>
             <li data-i18n="proL3">Capability map · experiencia</li>
+            <li data-i18n="proL4">Método Escuchar → Activar</li>
           </ul>
-          <span class="mode-cta" data-i18n="proCta">Entrar al deck →</span>
-        </a>
+          <div class="mode-hover">
+            <p class="mode-more" data-i18n="proMore">El caso que se puede verificar: Support OS en producción. Deck interactivo, no un PDF.</p>
+            <div class="mode-sats">
+              <a href="https://gracianb.github.io/professional-deck/" rel="noopener" data-i18n="proCta">Entrar al deck →</a>
+              <a href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer" data-i18n="proLive">Help Center live ↗</a>
+            </div>
+            <span class="mode-url">gracianb.github.io/professional-deck</span>
+          </div>
+        </article>
 
-        <a class="mode mode-play" href="https://gracianb.github.io/systems-lab/" rel="noopener">
+        <article class="mode mode-play" tabindex="0" data-world="play">
           <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
           <div class="mode-glow-line" aria-hidden="true"></div>
@@ -199,17 +211,27 @@
             <span class="mode-code">02</span>
             <span class="mode-badge" data-i18n="labBadge">PLAY</span>
           </header>
+          <p class="mode-chroma" data-i18n="labChroma">Cromática · hielo neón</p>
           <h3 data-i18n="labTitle">Systems Lab</h3>
           <p data-i18n="labDesc">Hielo neón. Ohana, Vórtice y el Help Center. Sistemas que se pulsan.</p>
           <ul class="mode-list">
             <li data-i18n="labL1">Ohana · canvas</li>
             <li data-i18n="labL2">Vórtice · WebGL</li>
             <li data-i18n="labL3">Zendesk + lab</li>
+            <li data-i18n="labL4">Chatbot demo + Aigoritmo</li>
           </ul>
-          <span class="mode-cta" data-i18n="labCta">Entrar al lab →</span>
-        </a>
+          <div class="mode-hover">
+            <p class="mode-more" data-i18n="labMore">Si no se abre en el navegador, no está. Juegos, CS público y un agente de ejemplo.</p>
+            <div class="mode-sats">
+              <a href="https://gracianb.github.io/systems-lab/" rel="noopener" data-i18n="labCta">Entrar al lab →</a>
+              <a href="https://gracianb.github.io/project-ohana/" rel="noopener" data-i18n="ohanaCta">Jugar Ohana →</a>
+              <a href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener" data-i18n="vortexCta">Abrir Vórtice →</a>
+            </div>
+            <span class="mode-url">gracianb.github.io/systems-lab</span>
+          </div>
+        </article>
 
-        <a class="mode mode-yoga" href="https://gracianb.github.io/yoga-instructor/" rel="noopener">
+        <article class="mode mode-yoga" tabindex="0" data-world="yoga">
           <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
           <div class="mode-glow-line" aria-hidden="true"></div>
@@ -217,15 +239,24 @@
             <span class="mode-code">03</span>
             <span class="mode-badge" data-i18n="yogaBadge">PASIÓN</span>
           </header>
+          <p class="mode-chroma" data-i18n="yogaChroma">Cromática · sage / presencia</p>
           <h3 data-i18n="yogaTitle">Presencia × Práctica</h3>
           <p data-i18n="yogaDesc">Sage / presencia. Instructor de yoga · Murcia · 2019–2026.</p>
           <ul class="mode-list">
             <li data-i18n="yogaL1">Web zen · ES/EN</li>
             <li data-i18n="yogaL2">Claro / oscuro</li>
             <li data-i18n="yogaL3">CV y carta · 1 página</li>
+            <li data-i18n="yogaL4">Sala · 1:1 · equipos</li>
           </ul>
-          <span class="mode-cta" data-i18n="yogaCta">Entrar a yoga →</span>
-        </a>
+          <div class="mode-hover">
+            <p class="mode-more" data-i18n="yogaMore">Certificado Madrid 2019. Corporativo en Google/YouTube. Sala en Murcia hasta junio 2026.</p>
+            <div class="mode-sats">
+              <a href="https://gracianb.github.io/yoga-instructor/" rel="noopener" data-i18n="yogaCta">Entrar a yoga →</a>
+              <a href="./Gracian_Baena_CV_Yoga_ES.pdf" target="_blank" rel="noreferrer" data-i18n="yogaLive">CV yoga ES ↗</a>
+            </div>
+            <span class="mode-url">gracianb.github.io/yoga-instructor</span>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -352,6 +383,40 @@
               <strong data-i18n="letterYogaEn">Cover Yoga EN</strong>
               <small data-i18n="letterYogaEnSub">Instructor cover letter</small>
               <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="cv-lane lane-play">
+          <div class="lane-head">
+            <span class="lane-dot"></span>
+            <span class="lane-title" data-i18n="lanePlay">PLAY</span>
+            <span class="lane-meta">Systems · live</span>
+          </div>
+          <div class="cv-grid">
+            <a class="cv-card play" href="https://gracianb.github.io/systems-lab/" rel="noopener">
+              <div class="cv-top"><span class="cv-tag">LAB</span><span class="cv-fmt">LIVE</span></div>
+              <strong data-i18n="playLab">Systems Lab</strong>
+              <small data-i18n="playLabSub">Hub técnico · hielo neón</small>
+              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
+            </a>
+            <a class="cv-card play" href="https://gracianb.github.io/project-ohana/" rel="noopener">
+              <div class="cv-top"><span class="cv-tag">OHANA</span><span class="cv-fmt">LIVE</span></div>
+              <strong data-i18n="ohanaTitle">Ohana</strong>
+              <small data-i18n="ohanaDesc">Un juego. Entra.</small>
+              <span class="cv-action" data-i18n="ohanaCta">Jugar →</span>
+            </a>
+            <a class="cv-card play" href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener">
+              <div class="cv-top"><span class="cv-tag">VÓRTICE</span><span class="cv-fmt">LIVE</span></div>
+              <strong data-i18n="vortexTitle">Vórtice</strong>
+              <small data-i18n="vortexDesc">Mueve el cursor. Eso es todo.</small>
+              <span class="cv-action" data-i18n="vortexCta">Abrir →</span>
+            </a>
+            <a class="cv-card play" href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer">
+              <div class="cv-top"><span class="cv-tag">CS</span><span class="cv-fmt">LIVE</span></div>
+              <strong data-i18n="playZendesk">Bodytone Support OS</strong>
+              <small data-i18n="playZendeskSub">Help Center en producción</small>
+              <span class="cv-action" data-i18n="proLive">Help Center live ↗</span>
             </a>
           </div>
         </div>

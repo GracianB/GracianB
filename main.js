@@ -246,4 +246,26 @@
       fx.style.setProperty("--my", y.toFixed(1) + "px");
     }, { passive: true });
   }
+
+  /* —— world cards: keyboard + hover tilt —— */
+  const worlds = document.querySelectorAll(".modes-worlds .mode");
+  const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  worlds.forEach((card) => {
+    card.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      if (e.target !== card) return;
+      e.preventDefault();
+      card.querySelector(".mode-sats a")?.click();
+    });
+    if (reduce || !fineHover) return;
+    card.addEventListener("pointermove", (e) => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `translateY(-8px) rotateX(${(-py * 6).toFixed(2)}deg) rotateY(${(px * 7).toFixed(2)}deg)`;
+    });
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+  });
 })();

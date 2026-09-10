@@ -843,6 +843,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .lane-pro { box-shadow: inset 3px 0 0 var(--yellow); }
 .lane-yoga { box-shadow: inset 3px 0 0 var(--sage); }
+.lane-play { box-shadow: inset 3px 0 0 var(--ice); }
 .lane-head {
   display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
   margin-bottom: 16px;
@@ -852,6 +853,7 @@ img, svg { display: block; max-width: 100%; }
 }
 .lane-pro .lane-dot { background: var(--yellow); box-shadow: 0 0 12px var(--yellow-glow); }
 .lane-yoga .lane-dot { background: var(--sage); box-shadow: 0 0 12px var(--sage-glow); }
+.lane-play .lane-dot { background: var(--ice); box-shadow: 0 0 12px var(--ice-glow); }
 .lane-title {
   font: 800 12px var(--mono); letter-spacing: .16em; text-transform: uppercase;
 }
@@ -1117,6 +1119,164 @@ img, svg { display: block; max-width: 100%; }
   gap: 10px 12px !important;
   max-width: 100% !important;
   margin-bottom: clamp(18px, 2.5vh, 28px) !important;
+}
+
+/* —— constellation hover labels —— */
+.const-label {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  font: 800 9px var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+}
+.node-gold .const-label { color: var(--yellow); border-color: color-mix(in srgb, var(--yellow) 40%, transparent); }
+.node-ice .const-label { color: var(--ice); border-color: color-mix(in srgb, var(--ice) 40%, transparent); }
+.node-sage .const-label { color: var(--sage); border-color: color-mix(in srgb, var(--sage) 40%, transparent); }
+.const-node:hover .const-label,
+.const-node:focus-visible .const-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* —— world cards: hover + extra info —— */
+@media (min-width: 1100px) {
+  .modes-worlds { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.modes-worlds .mode {
+  min-height: 420px;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+.mode-chroma {
+  margin: 0;
+  font: 700 10px/1.3 var(--mono) !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted) !important;
+  flex: none !important;
+}
+.mode-pro .mode-chroma { color: color-mix(in srgb, var(--yellow) 75%, var(--muted)) !important; }
+.mode-play .mode-chroma { color: color-mix(in srgb, var(--ice) 75%, var(--muted)) !important; }
+.mode-yoga .mode-chroma { color: color-mix(in srgb, var(--sage) 75%, var(--muted)) !important; }
+
+.mode-hover {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.mode-more {
+  margin: 0 !important;
+  font: 500 13px/1.45 var(--sans) !important;
+  color: var(--ink) !important;
+  flex: none !important;
+}
+.mode-sats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.mode-sats a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font: 800 10px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: background .2s, color .2s, border-color .2s, transform .2s var(--ease);
+}
+.mode-sats a:first-child {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+.mode-pro .mode-sats a:first-child { background: var(--yellow); color: #06070a; border-color: var(--yellow); }
+.mode-play .mode-sats a:first-child { background: var(--ice); color: #031016; border-color: var(--ice); }
+.mode-yoga .mode-sats a:first-child { background: var(--sage); color: #04140e; border-color: var(--sage); }
+.mode-sats a:hover { transform: translateY(-1px); }
+.mode-url {
+  font: 700 10px var(--mono);
+  letter-spacing: .04em;
+  color: color-mix(in srgb, var(--muted) 85%, transparent);
+  word-break: break-all;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .modes-worlds .mode {
+    transition: transform .28s var(--ease), border-color .25s, box-shadow .3s;
+  }
+  .modes-worlds .mode:hover,
+  .modes-worlds .mode:focus-within {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+  }
+  .modes-worlds .mode-pro:hover,
+  .modes-worlds .mode-pro:focus-within {
+    border-color: color-mix(in srgb, var(--yellow) 70%, var(--line));
+  }
+  .modes-worlds .mode-play:hover,
+  .modes-worlds .mode-play:focus-within {
+    border-color: color-mix(in srgb, var(--ice) 70%, var(--line));
+  }
+  .modes-worlds .mode-yoga:hover,
+  .modes-worlds .mode-yoga:focus-within {
+    border-color: color-mix(in srgb, var(--sage) 70%, var(--line));
+  }
+  .modes-worlds .mode:hover .mode-aura,
+  .modes-worlds .mode:focus-within .mode-aura { opacity: .85; }
+  .modes-worlds .mode-hover {
+    opacity: .55;
+    transform: translateY(6px);
+    transition: opacity .28s var(--ease), transform .28s var(--ease);
+  }
+  .modes-worlds .mode:hover .mode-hover,
+  .modes-worlds .mode:focus-within .mode-hover {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.lane-play {
+  border-color: color-mix(in srgb, var(--ice) 30%, var(--line));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ice) 16%, transparent);
+}
+.lane-play .lane-dot { background: var(--ice); box-shadow: 0 0 0 4px var(--ice-dim); }
+.lane-play .lane-title { color: var(--ice); }
+.cv-card.play { border-color: color-mix(in srgb, var(--ice) 24%, var(--line)); }
+.cv-card.play:hover {
+  border-color: color-mix(in srgb, var(--ice) 70%, var(--line));
+  background: color-mix(in srgb, var(--ice) 7%, var(--bg2));
+}
+.cv-card.play .cv-tag,
+.cv-card.play .cv-action { color: var(--ice); }
+.cv-card.play .cv-fmt {
+  color: var(--ice);
+  border-color: color-mix(in srgb, var(--ice) 35%, transparent);
+  background: var(--ice-dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modes-worlds .mode,
+  .modes-worlds .mode-hover { transition: none !important; transform: none !important; }
+}
   padding-bottom: 6px !important;
   position: relative;
   z-index: 4;
