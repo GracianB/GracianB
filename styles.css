@@ -462,7 +462,7 @@ img, svg { display: block; max-width: 100%; }
   --node: var(--yellow);
   position: absolute;
   z-index: 4;
-  width: 62px; height: 62px;
+  width: 68px; height: 68px;
   display: grid; place-items: center;
   border-radius: 50%;
   border: 1.5px solid color-mix(in srgb, var(--node) 75%, var(--line-strong));
@@ -491,11 +491,11 @@ img, svg { display: block; max-width: 100%; }
 }
 .node-halo {
   position: absolute;
-  inset: -22px;
+  inset: -28px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--node), transparent 70%);
-  opacity: .45;
-  filter: blur(10px);
+  background: radial-gradient(circle, var(--node), transparent 68%);
+  opacity: .7;
+  filter: blur(8px);
   animation: node-breathe 3.4s ease-in-out infinite;
   pointer-events: none;
 }
@@ -508,7 +508,7 @@ img, svg { display: block; max-width: 100%; }
   pointer-events: none;
   opacity: .7;
 }
-.node-gold { --node: var(--yellow); left: 50%; top: 11%; margin-left: -31px; }
+.node-gold { --node: var(--yellow); left: 50%; top: 11%; margin-left: -34px; }
 .node-gold .node-halo { animation-delay: 0s; }
 .node-ice { --node: var(--ice); right: 7%; bottom: 12%; }
 .node-ice .node-halo { animation-delay: .9s; }
@@ -1184,8 +1184,8 @@ img, svg { display: block; max-width: 100%; }
     align-items: center;
   }
   .hero-copy { max-width: none; }
-  .hero-stage { padding: 72px 0 20px; transform: translateY(36px); }
-  .constellation { width: min(100%, 460px); }
+  .hero-stage { padding: 88px 0 12px; transform: translateY(52px); }
+  .constellation { width: min(100%, 500px); }
   .stats { grid-template-columns: repeat(4, 1fr); }
   .method-inline { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 100%; }
 }
