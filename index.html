@@ -30,9 +30,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=hub-final-extreme">
-  <script src="./i18n.js?v=hub-final-extreme"></script>
-  <script src="./main.js?v=hub-final-extreme" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=portada-extrema-2026">
+  <script src="./i18n.js?v=portada-extrema-2026"></script>
+  <script src="./main.js?v=portada-extrema-2026" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,14 +57,18 @@
 <body>
   <div class="fx" aria-hidden="true">
     <div class="fx-vignette"></div>
+    <div class="fx-wash"></div>
     <div class="fx-noise"></div>
+    <div class="fx-grain"></div>
     <div class="fx-grid"></div>
     <div class="fx-beam"></div>
     <div class="fx-horizon"></div>
     <div class="fx-orb fx-orb-a"></div>
     <div class="fx-orb fx-orb-b"></div>
     <div class="fx-orb fx-orb-c"></div>
+    <div class="fx-orb fx-orb-d"></div>
     <div class="fx-stars"></div>
+    <div class="fx-scan"></div>
   </div>
 
   <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
@@ -103,37 +107,8 @@
   </header>
 
   <main id="main" class="shell">
-    <!-- CINEMATIC PORTADA -->
+    <!-- CINEMATIC PORTADA · EXTREMA -->
     <section class="hero hero-cinema" aria-labelledby="hero-name">
-      <div class="hero-stage" aria-hidden="true">
-        <div class="constellation">
-          <div class="const-ring const-ring-a"></div>
-          <div class="const-ring const-ring-b"></div>
-          <div class="const-ring const-ring-c"></div>
-          <div class="const-core">
-            <span class="const-mark">GB</span>
-          </div>
-          <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" title="professional-deck">
-            <i></i><span>01</span>
-          </a>
-          <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" title="systems-lab">
-            <i></i><span>02</span>
-          </a>
-          <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" title="yoga-instructor">
-            <i></i><span>03</span>
-          </a>
-          <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
-            <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="52"/>
-            <line class="cl cl-ice" x1="200" y1="200" x2="328" y2="278"/>
-            <line class="cl cl-sage" x1="200" y1="200" x2="72" y2="278"/>
-          </svg>
-        </div>
-        <div class="hero-film">
-          <span class="film-tick">FRAME 01</span>
-          <span class="film-tick">HUB · 2026</span>
-        </div>
-      </div>
-
       <div class="hero-copy">
         <div class="hero-kicker">
           <span class="pulse-dot" aria-hidden="true"></span>
@@ -164,6 +139,59 @@
           <li><span>04</span><b data-i18n="method4">Activar</b></li>
         </ol>
       </div>
+
+      <aside class="hero-card" aria-label="Brand">
+        <div class="hero-card-glow" aria-hidden="true"></div>
+        <div class="hero-card-grain" aria-hidden="true"></div>
+        <div class="hero-card-top">
+          <span class="card-frame">FRAME 01</span>
+          <span class="card-hub">HUB · 2026</span>
+        </div>
+        <div class="hero-card-stage" aria-hidden="true">
+          <div class="constellation constellation-card">
+            <div class="const-ring const-ring-a"></div>
+            <div class="const-ring const-ring-b"></div>
+            <div class="const-ring const-ring-c"></div>
+            <div class="const-core">
+              <span class="const-mark">GB</span>
+            </div>
+            <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" title="professional-deck">
+              <i></i><span>01</span>
+            </a>
+            <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" title="systems-lab">
+              <i></i><span>02</span>
+            </a>
+            <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" title="yoga-instructor">
+              <i></i><span>03</span>
+            </a>
+            <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+              <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="52"/>
+              <line class="cl cl-ice" x1="200" y1="200" x2="328" y2="278"/>
+              <line class="cl cl-sage" x1="200" y1="200" x2="72" y2="278"/>
+            </svg>
+          </div>
+        </div>
+        <div class="hero-card-brand">
+          <p class="card-index">01 / 03</p>
+          <p class="card-name">
+            <span>Gracián</span>
+            <span>Baena</span>
+          </p>
+          <div class="card-rule" aria-hidden="true"></div>
+          <p class="card-keywords">CS · DATA · AI · YOGA</p>
+        </div>
+        <div class="hero-card-worlds">
+          <a class="world-chip world-gold" href="https://gracianb.github.io/professional-deck/" rel="noopener">
+            <b>01</b><span data-i18n="proBadge">EXPERIENCIA</span>
+          </a>
+          <a class="world-chip world-ice" href="https://gracianb.github.io/systems-lab/" rel="noopener">
+            <b>02</b><span data-i18n="labBadge">PLAY</span>
+          </a>
+          <a class="world-chip world-sage" href="https://gracianb.github.io/yoga-instructor/" rel="noopener">
+            <b>03</b><span data-i18n="yogaBadge">PASIÓN</span>
+          </a>
+        </div>
+      </aside>
     </section>
 
     <section class="modes-wrap" id="portfolios" aria-labelledby="modes-title">
