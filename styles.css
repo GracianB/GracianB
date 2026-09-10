@@ -1090,3 +1090,54 @@ img, svg { display: block; max-width: 100%; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .mode:hover, .cv-card:hover, .btn:hover, .links a:hover, .const-node:hover { transform: none; }
 }
+
+
+/* —— CTA collision / overflow safe —— */
+.hero-cinema {
+  padding-bottom: clamp(56px, 9vw, 110px) !important;
+  overflow: visible;
+}
+.hero-copy {
+  min-width: 0;
+  max-width: 100%;
+  padding-bottom: clamp(12px, 2vh, 24px);
+  position: relative;
+  z-index: 3;
+}
+.hero-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 10px 12px !important;
+  max-width: 100% !important;
+  margin-bottom: clamp(18px, 2.5vh, 28px) !important;
+  padding-bottom: 6px !important;
+  position: relative;
+  z-index: 4;
+  overflow: visible !important;
+}
+.hero-actions .btn {
+  flex: 0 1 auto !important;
+  max-width: 100% !important;
+  white-space: nowrap;
+}
+.hero-stage {
+  align-self: start;
+  margin-bottom: clamp(8px, 1.5vh, 16px);
+}
+.method-inline {
+  margin-top: 4px;
+  max-width: 100%;
+}
+@media (max-width: 959px) {
+  .hero-actions .btn {
+    flex: 1 1 calc(50% - 8px);
+    white-space: normal;
+    text-align: center;
+  }
+}
+@media (max-width: 420px) {
+  .hero-actions .btn {
+    flex: 1 1 100%;
+  }
+}
