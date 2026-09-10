@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Typing](https://readme-typing-svg.demolab.com?font=Fraunces&weight=600&size=26&duration=2800&pause=800&color=C4A574&center=true&vCenter=true&width=920&height=55&lines=Personas+x+Datos+x+Sistemas;Yoga+x+Presencia;Un+centro.+Tres+puertas.;Graci%C3%A1n+Baena+-+Hub+2026)](https://gracianb.github.io/GracianB/?v=hub-orbs-20260910)
+[![Typing](https://readme-typing-svg.demolab.com?font=Fraunces&weight=600&size=26&duration=2800&pause=800&color=C4A574&center=true&vCenter=true&width=920&height=55&lines=Personas+x+Datos+x+Sistemas;Yoga+x+Presencia;Un+centro.+Tres+puertas.;Graci%C3%A1n+Baena+-+Hub+2026)](https://gracianb.github.io/GracianB/?v=final-5)
 
 # **GRACIÁN BAENA**
 
@@ -12,7 +12,7 @@ Este repositorio es la puerta de entrada a la marca GracianB: experiencia profes
 **One center. Three worlds.**  
 This repo is the front door of the GracianB brand: professional experience, technical skill, and yoga passion — plus the canonical PDFs ready to send.
 
-### 👉 [**Abrir hub →**](https://gracianb.github.io/GracianB/?v=hub-orbs-20260910)
+### 👉 [**Abrir hub →**](https://gracianb.github.io/GracianB/?v=final-5)
 
 </div>
 
@@ -20,7 +20,7 @@ This repo is the front door of the GracianB brand: professional experience, tech
 
 <div align="center">
 
-[![Hub](https://img.shields.io/badge/HUB-GracianB-C4A574?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/?v=hub-orbs-20260910)
+[![Hub](https://img.shields.io/badge/HUB-GracianB-C4A574?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/?v=final-5)
 [![01 Deck](https://img.shields.io/badge/01-professional--deck-f4f3ee?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/professional-deck/)
 [![02 Lab](https://img.shields.io/badge/02-systems--lab_PLAY-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/systems-lab/)
 [![03 Yoga](https://img.shields.io/badge/03-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/yoga-instructor/)
@@ -63,7 +63,7 @@ Prueba pública: [Bodytone Support OS (Zendesk)](https://bodytonehelp.zendesk.co
 
 | # | Site | URL |
 |:-:|:-----|:----|
-| **HUB** | GracianB (esta portada) | https://gracianb.github.io/GracianB/?v=hub-orbs-20260910 |
+| **HUB** | GracianB (esta portada) | https://gracianb.github.io/GracianB/?v=final-5 |
 | **01** | professional-deck | https://gracianb.github.io/professional-deck/ |
 | **02** | systems-lab (PLAY) | https://gracianb.github.io/systems-lab/ |
 | **03** | yoga-instructor | https://gracianb.github.io/yoga-instructor/ |
@@ -141,7 +141,7 @@ GracianB/
 | Theme | Dark / light · `?theme=light` |
 | Nav | `Ctrl/Cmd K` command palette |
 | Motion | CSS atmosphere + pointer orbs · `prefers-reduced-motion` |
-| Cache-bust | `?v=hub-orbs-20260910` on CSS/JS |
+| Cache-bust | `?v=final-5` on CSS/JS |
 
 ---
 
@@ -160,7 +160,7 @@ GracianB/
 ## Screenshots / preview
 
 Live cinematic hub (cache-bust):  
-**https://gracianb.github.io/GracianB/?v=hub-orbs-20260910**
+**https://gracianb.github.io/GracianB/?v=final-5**
 
 OG cover: [og-cover.png](https://gracianb.github.io/GracianB/og-cover.png)
 
