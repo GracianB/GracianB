@@ -247,6 +247,23 @@
     }, { passive: true });
   }
 
+  /* —— constellation parallax —— */
+  const stage = document.querySelector(".hero-stage");
+  const field = document.querySelector(".constellation");
+  if (!reduce && stage && field && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    stage.addEventListener("pointermove", (e) => {
+      const r = stage.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      field.style.setProperty("--cx", (px * 14).toFixed(1) + "px");
+      field.style.setProperty("--cy", (py * 10).toFixed(1) + "px");
+    });
+    stage.addEventListener("pointerleave", () => {
+      field.style.setProperty("--cx", "0px");
+      field.style.setProperty("--cy", "0px");
+    });
+  }
+
   /* —— world cards: keyboard + hover tilt —— */
   const worlds = document.querySelectorAll(".modes-worlds .mode");
   const fineHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
