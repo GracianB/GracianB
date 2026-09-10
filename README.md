@@ -20,7 +20,7 @@ This repo is the front door of the GracianB brand: professional experience, tech
 
 <div align="center">
 
-[![Hub](https://img.shields.io/badge/HUB-GracianB-f3d437?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910)
+[![Hub](https://img.shields.io/badge/HUB-GracianB-C4A574?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910)
 [![01 Deck](https://img.shields.io/badge/01-professional--deck-f4f3ee?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/professional-deck/)
 [![02 Lab](https://img.shields.io/badge/02-systems--lab_PLAY-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/systems-lab/)
 [![03 Yoga](https://img.shields.io/badge/03-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/yoga-instructor/)
@@ -31,8 +31,8 @@ This repo is the front door of the GracianB brand: professional experience, tech
 
 <br/>
 
-![16+](https://img.shields.io/badge/16%2B-years-f3d437?style=for-the-badge&labelColor=06070a)
-![200+](https://img.shields.io/badge/200%2B-rules-f3d437?style=for-the-badge&labelColor=06070a)
+![16+](https://img.shields.io/badge/16%2B-years-C4A574?style=for-the-badge&labelColor=06070a)
+![200+](https://img.shields.io/badge/200%2B-rules-C4A574?style=for-the-badge&labelColor=06070a)
 ![4](https://img.shields.io/badge/4-countries-f4f3ee?style=for-the-badge&labelColor=06070a)
 ![live](https://img.shields.io/badge/1-live_system-7dcaa5?style=for-the-badge&labelColor=06070a)
 ![i18n](https://img.shields.io/badge/i18n-ES%20%2F%20EN-0A66C2?style=for-the-badge&labelColor=06070a)
