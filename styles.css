@@ -321,8 +321,8 @@ img, svg { display: block; max-width: 100%; }
   place-items: center;
   width: 100%;
   min-height: 0;
-  padding: 52px 8px 28px;
-  transform: translateY(22px);
+  padding: 28px 8px 28px;
+  transform: translateY(-8px);
 }
 .const-bloom {
   position: absolute;
@@ -1185,7 +1185,7 @@ img, svg { display: block; max-width: 100%; }
     align-items: center;
   }
   .hero-copy { max-width: none; padding-top: 12px; }
-  .hero-stage { padding: 48px 0 8px; transform: translateY(28px); align-self: center; }
+  .hero-stage { padding: 24px 0 8px; transform: translateY(-10px); align-self: center; }
   .constellation { width: min(100%, 500px); }
   .stats { grid-template-columns: repeat(4, 1fr); }
   .method-inline { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 100%; }
@@ -1204,7 +1204,7 @@ img, svg { display: block; max-width: 100%; }
   .brand-text { display: flex !important; }
   .hero-cinema { min-height: 100svh; padding: 24px 0 48px; }
   .constellation { width: min(92%, 300px); }
-  .hero-stage { padding: 40px 0 24px; transform: translateY(8px); }
+  .hero-stage { padding: 24px 0 24px; transform: translateY(-4px); }
   .const-core { width: 64px; height: 64px; margin: -32px 0 0 -32px; }
   .const-node { width: 48px; height: 48px; }
   .node-gold { margin-left: -24px; }
@@ -1240,7 +1240,7 @@ img, svg { display: block; max-width: 100%; }
   .name-line { font-size: clamp(36px, 4.2vw, 56px); }
   .hero-tag { font-size: 22px; margin-bottom: 8px; }
   .lead { margin-bottom: 10px; }
-  .hero-stage { padding: 32px 0 8px; transform: translateY(16px); }
+  .hero-stage { padding: 20px 0 8px; transform: translateY(-6px); }
   .constellation { width: min(100%, 320px); }
 }
 
