@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Typing](https://readme-typing-svg.demolab.com?font=Georgia&weight=600&size=26&duration=2800&pause=800&color=F3D437&center=true&vCenter=true&width=920&height=55&lines=People+x+Data+x+Systems;Yoga+x+Presence;One+center.+Three+doors.;Gracian+Baena+-+Brand+Hub+2026)](https://gracianb.github.io/GracianB/?v=hub-final-extreme)
+[![Typing](https://readme-typing-svg.demolab.com?font=Georgia&weight=600&size=26&duration=2800&pause=800&color=F3D437&center=true&vCenter=true&width=920&height=55&lines=People+x+Data+x+Systems;Yoga+x+Presence;One+center.+Three+doors.;Gracian+Baena+-+Brand+Hub+2026)](https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910)
 
 # **GRACIÁN BAENA**
 
@@ -18,7 +18,7 @@ This repo is the front door of the GracianB brand: professional experience, tech
 
 <div align="center">
 
-[![Hub](https://img.shields.io/badge/HUB-GracianB-f3d437?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/?v=hub-final-extreme)
+[![Hub](https://img.shields.io/badge/HUB-GracianB-f3d437?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910)
 [![01 Deck](https://img.shields.io/badge/01-professional--deck-f4f3ee?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/professional-deck/)
 [![02 Lab](https://img.shields.io/badge/02-systems--lab_PLAY-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/systems-lab/)
 [![03 Yoga](https://img.shields.io/badge/03-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/yoga-instructor/)
@@ -61,7 +61,7 @@ Prueba pública: [Bodytone Support OS (Zendesk)](https://bodytonehelp.zendesk.co
 
 | # | Site | URL |
 |:-:|:-----|:----|
-| **HUB** | GracianB (esta portada) | https://gracianb.github.io/GracianB/?v=hub-final-extreme |
+| **HUB** | GracianB (esta portada) | https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910 |
 | **01** | professional-deck | https://gracianb.github.io/professional-deck/ |
 | **02** | systems-lab (PLAY) | https://gracianb.github.io/systems-lab/ |
 | **03** | yoga-instructor | https://gracianb.github.io/yoga-instructor/ |
@@ -139,7 +139,7 @@ GracianB/
 | Theme | Dark / light · `?theme=light` |
 | Nav | `Ctrl/Cmd K` command palette |
 | Motion | CSS atmosphere + pointer orbs · `prefers-reduced-motion` |
-| Cache-bust | `?v=hub-final-extreme` on CSS/JS |
+| Cache-bust | `?v=hub-cta-fix-20260910` on CSS/JS |
 
 ---
 
@@ -158,7 +158,7 @@ GracianB/
 ## Screenshots / preview
 
 Live cinematic hub (cache-bust):  
-**https://gracianb.github.io/GracianB/?v=hub-final-extreme**
+**https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910**
 
 OG cover: [og-cover.png](https://gracianb.github.io/GracianB/og-cover.png)
 
