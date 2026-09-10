@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Typing](https://readme-typing-svg.demolab.com?font=Georgia&weight=600&size=26&duration=2800&pause=800&color=F3D437&center=true&vCenter=true&width=920&height=55&lines=People+x+Data+x+Systems;Yoga+x+Presence;One+center.+Three+doors.;Gracian+Baena+-+Brand+Hub+2026)](https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910)
+[![Typing](https://readme-typing-svg.demolab.com?font=Fraunces&weight=600&size=26&duration=2800&pause=800&color=C4A574&center=true&vCenter=true&width=920&height=55&lines=Personas+x+Datos+x+Sistemas;Yoga+x+Presencia;Un+centro.+Tres+puertas.;Graci%C3%A1n+Baena+-+Hub+2026)](https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910)
 
 # **GRACIÁN BAENA**
 
@@ -11,6 +11,8 @@ Este repositorio es la puerta de entrada a la marca GracianB: experiencia profes
 
 **One center. Three worlds.**  
 This repo is the front door of the GracianB brand: professional experience, technical skill, and yoga passion — plus the canonical PDFs ready to send.
+
+### 👉 [**Abrir hub →**](https://gracianb.github.io/GracianB/?v=hub-cta-fix-20260910)
 
 </div>
 
@@ -50,7 +52,7 @@ GracianB no es un portfolio suelto: es un **ecosistema**. El hub es el centro �
 | **02 PLAY** | [systems-lab](https://gracianb.github.io/systems-lab/) | Hielo neón | Lab técnico + prototipos |
 | **03 Pasión** | [yoga-instructor](https://gracianb.github.io/yoga-instructor/) | Sage / presencia | Instructor yoga · Murcia |
 
-Fondo compartido: **warm black `#06070a`**. Acentos: soft gold · ice-neon · sage.  
+Fondo compartido: **warm black `#06070a`**. Acentos: champagne `#C4A574` · ice-neon · sage.  
 Método: `Escuchar → Decidir → Construir → Activar` / `Listen → Decide → Build → Activate`.
 
 Prueba pública: [Bodytone Support OS (Zendesk)](https://bodytonehelp.zendesk.com/hc/es).
