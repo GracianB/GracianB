@@ -229,7 +229,7 @@
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    document.querySelectorAll(".mode, .stat, .cv-lane, .contact-panel, .name-panel").forEach((el) => {
+    document.querySelectorAll(".mode, .stat, .cv-lane, .contact-panel, .hero-copy, .constellation").forEach((el) => {
       el.classList.add("reveal");
       io.observe(el);
     });

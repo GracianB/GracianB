@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#06070a">
   <meta name="author" content="Gracián Baena">
-  <meta name="description" content="Gracián Baena — Customer Success Systems × Data × AI · Yoga. Portfolios, CVs y cartas ES/EN.">
+  <meta name="description" content="Gracián Baena — Customer Success Systems × Data × AI · Yoga. Hub personal: tres mundos, CVs y cartas ES/EN.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <title>Gracián Baena — Personas × Datos × Sistemas</title>
   <link rel="canonical" href="https://gracianb.github.io/GracianB/">
@@ -20,7 +20,7 @@
   <meta property="og:locale" content="es_ES">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:title" content="Gracián Baena — Personas × Datos × Sistemas">
-  <meta property="og:description" content="Customer Success Systems · Data Strategy · AI Ops · Yoga. Hub ES/EN.">
+  <meta property="og:description" content="Hub personal · professional-deck · systems-lab · yoga-instructor. ES/EN.">
   <meta property="og:url" content="https://gracianb.github.io/GracianB/">
   <meta property="og:image" content="https://gracianb.github.io/GracianB/og-cover.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -30,9 +30,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=hub-v2">
-  <script src="./i18n.js?v=hub-v2"></script>
-  <script src="./main.js?v=hub-v2" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=hub-final-extreme">
+  <script src="./i18n.js?v=hub-final-extreme"></script>
+  <script src="./main.js?v=hub-final-extreme" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,9 +56,11 @@
 </head>
 <body>
   <div class="fx" aria-hidden="true">
+    <div class="fx-vignette"></div>
     <div class="fx-noise"></div>
     <div class="fx-grid"></div>
     <div class="fx-beam"></div>
+    <div class="fx-horizon"></div>
     <div class="fx-orb fx-orb-a"></div>
     <div class="fx-orb fx-orb-b"></div>
     <div class="fx-orb fx-orb-c"></div>
@@ -76,7 +78,7 @@
       </div>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#portfolios" data-i18n="navModes">Portfolios</a>
+      <a href="#portfolios" data-i18n="navModes">Mundos</a>
       <a href="#play" data-i18n="navPlay">PLAY</a>
       <a href="#docs" data-i18n="navDocs">Documentos</a>
       <a href="#contacto" data-i18n="navContact">Contacto</a>
@@ -101,109 +103,135 @@
   </header>
 
   <main id="main" class="shell">
-    <section class="hero" aria-labelledby="hero-name">
-      <div class="hero-left">
+    <!-- CINEMATIC PORTADA -->
+    <section class="hero hero-cinema" aria-labelledby="hero-name">
+      <div class="hero-stage" aria-hidden="true">
+        <div class="constellation">
+          <div class="const-ring const-ring-a"></div>
+          <div class="const-ring const-ring-b"></div>
+          <div class="const-ring const-ring-c"></div>
+          <div class="const-core">
+            <span class="const-mark">GB</span>
+          </div>
+          <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" title="professional-deck">
+            <i></i><span>01</span>
+          </a>
+          <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" title="systems-lab">
+            <i></i><span>02</span>
+          </a>
+          <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" title="yoga-instructor">
+            <i></i><span>03</span>
+          </a>
+          <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+            <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="52"/>
+            <line class="cl cl-ice" x1="200" y1="200" x2="328" y2="278"/>
+            <line class="cl cl-sage" x1="200" y1="200" x2="72" y2="278"/>
+          </svg>
+        </div>
+        <div class="hero-film">
+          <span class="film-tick">FRAME 01</span>
+          <span class="film-tick">HUB · 2026</span>
+        </div>
+      </div>
+
+      <div class="hero-copy">
         <div class="hero-kicker">
           <span class="pulse-dot" aria-hidden="true"></span>
-          <p class="eyebrow" data-i18n="eyebrow">HUB · DUAL TRACK</p>
+          <p class="eyebrow" data-i18n="eyebrow">CENTRO DE MARCA · TRES MUNDOS</p>
         </div>
+        <p class="hero-over" data-i18n="heroOver">El hub personal de</p>
+        <h1 id="hero-name" class="hero-name">
+          <span class="name-line first">Gracián</span>
+          <span class="name-line last">Baena</span>
+        </h1>
         <p class="hero-tag" data-i18n-html="tagline">Personas × Datos × Sistemas<br><em>Yoga × Presencia</em></p>
-        <p class="lead" data-i18n="lead">Tres mundos. Experiencia profesional, habilidad técnica, pasión yoga. Elige.</p>
+        <p class="lead" data-i18n="lead">Un solo centro. Tres puertas. Experiencia profesional, habilidad técnica, pasión yoga. Elige tu mundo.</p>
         <div class="hero-meta">
           <span class="pill live"><i></i> <span data-i18n="status">España · abierto a roles senior · Murcia · remote OK</span></span>
+          <span class="pill pill-meta" data-i18n="metaPill">ES / EN · 8 PDFs</span>
         </div>
         <a class="proof" href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer" data-i18n="proof">1 sistema live · Bodytone Zendesk ↗</a>
         <div class="hero-actions">
           <a class="btn btn-pro" href="https://gracianb.github.io/professional-deck/" rel="noopener" data-i18n="ctaPro">Experiencia →</a>
+          <a class="btn btn-play" href="https://gracianb.github.io/systems-lab/" rel="noopener" data-i18n="ctaLab">PLAY lab →</a>
           <a class="btn btn-yoga" href="https://gracianb.github.io/yoga-instructor/" rel="noopener" data-i18n="ctaYoga">Yoga →</a>
-          <a class="btn btn-ghost" href="#play" data-i18n="ctaPlay">Relájate o juega ↓</a>
+          <a class="btn btn-ghost" href="#docs" data-i18n="ctaCvs">Documentos ↓</a>
         </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="name-panel">
-          <div class="name-glow" aria-hidden="true"></div>
-          <span class="name-index">01 / 02</span>
-          <h1 id="hero-name" class="hero-name">
-            <span class="name-line first">Gracián</span>
-            <span class="name-line last">Baena</span>
-          </h1>
-          <div class="name-foot">
-            <span class="name-rule" aria-hidden="true"></span>
-            <span class="name-role" data-i18n="nameRole">CS · DATA · AI · YOGA</span>
-          </div>
-          <ol class="method" aria-label="Method">
-            <li><span>01</span><b data-i18n="method1">Escuchar</b></li>
-            <li><span>02</span><b data-i18n="method2">Decidir</b></li>
-            <li><span>03</span><b data-i18n="method3">Construir</b></li>
-            <li><span>04</span><b data-i18n="method4">Activar</b></li>
-          </ol>
-        </div>
+        <ol class="method method-inline" aria-label="Method">
+          <li><span>01</span><b data-i18n="method1">Escuchar</b></li>
+          <li><span>02</span><b data-i18n="method2">Decidir</b></li>
+          <li><span>03</span><b data-i18n="method3">Construir</b></li>
+          <li><span>04</span><b data-i18n="method4">Activar</b></li>
+        </ol>
       </div>
     </section>
 
     <section class="modes-wrap" id="portfolios" aria-labelledby="modes-title">
       <div class="section-head">
         <p class="eyebrow" data-i18n="modesEyebrow">TRES MUNDOS</p>
-        <h2 id="modes-title" data-i18n="modesTitle">Tres mundos.</h2>
+        <h2 id="modes-title" data-i18n="modesTitle">Tres puertas. Un operador.</h2>
+        <p class="section-sub" data-i18n="modesSub">Cada mundo tiene su cromática, su ritmo y su prueba. El hub es el centro que los conecta.</p>
       </div>
       <div class="modes modes-worlds">
         <a class="mode mode-pro" href="https://gracianb.github.io/professional-deck/" rel="noopener">
           <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
+          <div class="mode-glow-line" aria-hidden="true"></div>
           <header>
             <span class="mode-code">01</span>
             <span class="mode-badge" data-i18n="proBadge">EXPERIENCIA</span>
           </header>
           <h3 data-i18n="proTitle">CS × Data × AI</h3>
-          <p data-i18n="proDesc">Experiencia profesional. Deck, método y prueba en Zendesk.</p>
-          <ul class="mode-list" aria-hidden="true">
+          <p data-i18n="proDesc">Deck profesional oro / nude. Método, capability map y prueba en Zendesk.</p>
+          <ul class="mode-list">
             <li data-i18n="proL1">13 slides · ES/EN</li>
             <li data-i18n="proL2">Bodytone live + demos</li>
             <li data-i18n="proL3">Capability map · experiencia</li>
           </ul>
-          <span class="mode-cta" data-i18n="proCta">Entrar →</span>
+          <span class="mode-cta" data-i18n="proCta">Entrar al deck →</span>
         </a>
 
         <a class="mode mode-play" href="https://gracianb.github.io/systems-lab/" rel="noopener">
           <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
+          <div class="mode-glow-line" aria-hidden="true"></div>
           <header>
             <span class="mode-code">02</span>
-            <span class="mode-badge" data-i18n="labBadge">TÉCNICA</span>
+            <span class="mode-badge" data-i18n="labBadge">PLAY</span>
           </header>
-          <h3 data-i18n="labTitle">Habilidad técnica</h3>
-          <p data-i18n="labDesc">Ohana, Vórtice y el Help Center. Sistemas que se pulsan.</p>
-          <ul class="mode-list" aria-hidden="true">
+          <h3 data-i18n="labTitle">Systems Lab</h3>
+          <p data-i18n="labDesc">Hielo neón. Ohana, Vórtice y el Help Center. Sistemas que se pulsan.</p>
+          <ul class="mode-list">
             <li data-i18n="labL1">Ohana · canvas</li>
             <li data-i18n="labL2">Vórtice · WebGL</li>
             <li data-i18n="labL3">Zendesk + lab</li>
           </ul>
-          <span class="mode-cta" data-i18n="labCta">Entrar →</span>
+          <span class="mode-cta" data-i18n="labCta">Entrar al lab →</span>
         </a>
 
         <a class="mode mode-yoga" href="https://gracianb.github.io/yoga-instructor/" rel="noopener">
           <span class="mode-aura" aria-hidden="true"></span>
           <span class="mode-bar" aria-hidden="true"></span>
+          <div class="mode-glow-line" aria-hidden="true"></div>
           <header>
             <span class="mode-code">03</span>
             <span class="mode-badge" data-i18n="yogaBadge">PASIÓN</span>
           </header>
           <h3 data-i18n="yogaTitle">Presencia × Práctica</h3>
-          <p data-i18n="yogaDesc">Pasión yoga. Instructor · Murcia · 2019–2026.</p>
-          <ul class="mode-list" aria-hidden="true">
+          <p data-i18n="yogaDesc">Sage / presencia. Instructor de yoga · Murcia · 2019–2026.</p>
+          <ul class="mode-list">
             <li data-i18n="yogaL1">Web zen · ES/EN</li>
             <li data-i18n="yogaL2">Claro / oscuro</li>
             <li data-i18n="yogaL3">CV y carta · 1 página</li>
           </ul>
-          <span class="mode-cta" data-i18n="yogaCta">Entrar →</span>
+          <span class="mode-cta" data-i18n="yogaCta">Entrar a yoga →</span>
         </a>
       </div>
     </section>
 
     <section class="play-strip" id="play" aria-labelledby="play-title">
       <div class="section-head">
-        <p class="eyebrow" data-i18n="playEyebrow">HABILIDAD TÉCNICA</p>
+        <p class="eyebrow" data-i18n="playEyebrow">HABILIDAD TÉCNICA · PLAY</p>
         <h2 id="play-title" data-i18n="playTitle">Relájate. O juega.</h2>
         <p class="section-sub" data-i18n="playSub">El mundo PLAY: Ohana, Vórtice y el Help Center.</p>
       </div>
@@ -367,7 +395,7 @@
 
   <div class="drawer" id="drawer" hidden>
     <div class="drawer-panel">
-      <a href="#portfolios" data-i18n="navModes">Portfolios</a>
+      <a href="#portfolios" data-i18n="navModes">Mundos</a>
       <a href="#play" data-i18n="navPlay">PLAY</a>
       <a href="#docs" data-i18n="navDocs">Documentos</a>
       <a href="#contacto" data-i18n="navContact">Contacto</a>
@@ -386,8 +414,8 @@
       <input id="cmd-input" type="search" autocomplete="off" spellcheck="false" data-i18n-placeholder="cmdPlaceholder" placeholder="Buscar…">
       <ul class="cmd-list" id="cmd-list">
         <li><a href="https://gracianb.github.io/professional-deck/" data-cmd="cmdPro">01 Experiencia</a></li>
-        <li><a href="https://gracianb.github.io/yoga-instructor/" data-cmd="cmdYoga">02 Yoga</a></li>
-        <li><a href="https://gracianb.github.io/systems-lab/" data-cmd="cmdLab">03 PLAY lab</a></li>
+        <li><a href="https://gracianb.github.io/systems-lab/" data-cmd="cmdLab">02 PLAY lab</a></li>
+        <li><a href="https://gracianb.github.io/yoga-instructor/" data-cmd="cmdYoga">03 Yoga</a></li>
         <li><a href="https://gracianb.github.io/project-ohana/" data-cmd="cmdOhana">Ohana</a></li>
         <li><a href="https://vortex-gilt-xi.vercel.app/" data-cmd="cmdVortex">Vórtice</a></li>
         <li><a href="#docs" data-cmd="cmdDocs">Documentos</a></li>
