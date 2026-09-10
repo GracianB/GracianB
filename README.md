@@ -1,12 +1,16 @@
 <div align="center">
 
-[![Typing](https://readme-typing-svg.demolab.com?font=Georgia&weight=600&size=26&duration=2800&pause=800&color=F3D437&center=true&vCenter=true&width=900&height=55&lines=People+x+Data+x+Systems;Yoga+x+Presence;Customer+Success+-+Data+-+AI;Gracian+Baena+-+2026)](https://gracianb.github.io/GracianB/)
+[![Typing](https://readme-typing-svg.demolab.com?font=Georgia&weight=600&size=26&duration=2800&pause=800&color=F3D437&center=true&vCenter=true&width=920&height=55&lines=People+x+Data+x+Systems;Yoga+x+Presence;One+center.+Three+doors.;Gracian+Baena+-+Brand+Hub+2026)](https://gracianb.github.io/GracianB/?v=hub-final-extreme)
 
 # **GRACIÁN BAENA**
 
-### Hub · Customer Success Systems × Data × AI × Yoga
+### Hub personal · Centro de marca · 2026
 
-**Two systems. One operator.** This repo is the front door — it opens the portfolios and hosts the canonical PDFs.
+**Un solo centro. Tres mundos.**  
+Este repositorio es la puerta de entrada a la marca GracianB: experiencia profesional, habilidad técnica y pasión yoga — con los PDFs canónicos listos para enviar.
+
+**One center. Three worlds.**  
+This repo is the front door of the GracianB brand: professional experience, technical skill, and yoga passion — plus the canonical PDFs ready to send.
 
 </div>
 
@@ -14,10 +18,10 @@
 
 <div align="center">
 
-[![Hub](https://img.shields.io/badge/HUB-GracianB-f3d437?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/)
-[![Corporate](https://img.shields.io/badge/01-professional--deck-f4f3ee?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/professional-deck/)
-[![Yoga](https://img.shields.io/badge/02-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/yoga-instructor/)
-[![Play](https://img.shields.io/badge/03-PLAY-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/#play)
+[![Hub](https://img.shields.io/badge/HUB-GracianB-f3d437?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/GracianB/?v=hub-final-extreme)
+[![01 Deck](https://img.shields.io/badge/01-professional--deck-f4f3ee?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/professional-deck/)
+[![02 Lab](https://img.shields.io/badge/02-systems--lab_PLAY-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/systems-lab/)
+[![03 Yoga](https://img.shields.io/badge/03-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/yoga-instructor/)
 [![Ohana](https://img.shields.io/badge/Ohana-canvas-7af3ff?style=for-the-badge&labelColor=06070a)](https://gracianb.github.io/project-ohana/)
 [![Vortex](https://img.shields.io/badge/Vortex-WebGL-7af3ff?style=for-the-badge&labelColor=06070a)](https://vortex-gilt-xi.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-gracianbaena-0A66C2?style=for-the-badge&labelColor=06070a&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gracianbaena)
@@ -30,50 +34,76 @@
 ![4](https://img.shields.io/badge/4-countries-f4f3ee?style=for-the-badge&labelColor=06070a)
 ![live](https://img.shields.io/badge/1-live_system-7dcaa5?style=for-the-badge&labelColor=06070a)
 ![i18n](https://img.shields.io/badge/i18n-ES%20%2F%20EN-0A66C2?style=for-the-badge&labelColor=06070a)
+![theme](https://img.shields.io/badge/theme-dark%20%2F%20light-f4f3ee?style=for-the-badge&labelColor=06070a)
 
 </div>
 
 ---
 
-## Ecosystem
+## Brand story · Historia de marca
 
-```
-                    ┌─────────────────────┐
-                    │    GRACIANB (HUB)    │
-                    │  launcher · ES / EN  │
-                    │  8 canonical PDFs    │
-                    └──────────┬──────────┘
-                               │
-         ┌─────────────────────┼─────────────────────┐
-         ▼                     ▼                     ▼
-┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
-│ professional-   │   │ yoga-instructor │   │ PLAY            │
-│ deck            │   │ Yoga · Presence │   │ systems-lab     │
-│ CS × Data × AI  │   │                 │   │ Ohana + Vórtice │
-└─────────────────┘   └─────────────────┘   └────────┬────────┘
-                                                     │
-                                          ┌──────────┴──────────┐
-                                          ▼                     ▼
-                                   Project Ohana           Vórtice
-                                   canvas game             WebGL field
-```
+GracianB no es un portfolio suelto: es un **ecosistema**. El hub es el centro — tipografía compartida (Fraunces · Inter · JetBrains), marca **GB**, ES/EN, temas claro/oscuro — y desde ahí salen tres mundos con cromática propia:
 
-| System | Live | What it is |
-|:-------|:-----|:-----------|
-| **Hub** | [gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/) | Dual-track launcher · light/dark · ES/EN · CVs |
-| **01 Corporate** | [professional-deck](https://gracianb.github.io/professional-deck/) | Interactive deck · CS × Data × AI |
-| **02 Yoga** | [yoga-instructor](https://gracianb.github.io/yoga-instructor/) | Instructor portfolio · ES/EN |
-| **03 PLAY** | [systems-lab](https://gracianb.github.io/systems-lab/) · [hub #play](https://gracianb.github.io/GracianB/#play) | Lab + prototypes |
-| **Ohana** | [project-ohana](https://gracianb.github.io/project-ohana/) | Canvas game |
-| **Vórtice** | [vortex-gilt-xi.vercel.app](https://vortex-gilt-xi.vercel.app/) · [repo](https://github.com/GracianB/vortex) | WebGL data field |
+| Mundo | Repo / live | Cromática | Qué es |
+|:------|:------------|:----------|:-------|
+| **01 Experiencia** | [professional-deck](https://gracianb.github.io/professional-deck/) | Oro / nude / blanco | Deck CS × Data × AI |
+| **02 PLAY** | [systems-lab](https://gracianb.github.io/systems-lab/) | Hielo neón | Lab técnico + prototipos |
+| **03 Pasión** | [yoga-instructor](https://gracianb.github.io/yoga-instructor/) | Sage / presencia | Instructor yoga · Murcia |
 
-Public proof: [Bodytone Support OS (Zendesk)](https://bodytonehelp.zendesk.com/hc/es)
+Fondo compartido: **warm black `#06070a`**. Acentos: soft gold · ice-neon · sage.  
+Método: `Escuchar → Decidir → Construir → Activar` / `Listen → Decide → Build → Activate`.
+
+Prueba pública: [Bodytone Support OS (Zendesk)](https://bodytonehelp.zendesk.com/hc/es).
 
 ---
 
-## Documents on this hub
+## Live sites · Los cuatro sitios
 
-PDFs live in this repo so the hub does not depend on other sites.
+| # | Site | URL |
+|:-:|:-----|:----|
+| **HUB** | GracianB (esta portada) | https://gracianb.github.io/GracianB/?v=hub-final-extreme |
+| **01** | professional-deck | https://gracianb.github.io/professional-deck/ |
+| **02** | systems-lab (PLAY) | https://gracianb.github.io/systems-lab/ |
+| **03** | yoga-instructor | https://gracianb.github.io/yoga-instructor/ |
+
+### PLAY satellites
+
+| Piece | Live |
+|:------|:-----|
+| **Ohana** (canvas) | https://gracianb.github.io/project-ohana/ |
+| **Vórtice** (WebGL) | https://vortex-gilt-xi.vercel.app/ · [repo](https://github.com/GracianB/vortex) |
+
+---
+
+## Ecosystem map
+
+```
+                         ┌──────────────────────────┐
+                         │     GRACIANB  ·  HUB      │
+                         │  brand center · ES / EN   │
+                         │  cinematic portada · PDFs │
+                         └────────────┬─────────────┘
+                                      │
+            ┌─────────────────────────┼─────────────────────────┐
+            ▼                         ▼                         ▼
+   ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
+   │ professional-   │      │ systems-lab     │      │ yoga-instructor │
+   │ deck            │      │ PLAY · ice neon │      │ sage · presence │
+   │ gold / nude     │      │                 │      │                 │
+   │ CS × Data × AI  │      │ Ohana + Vórtice │      │ Instructor      │
+   └─────────────────┘      └────────┬────────┘      └─────────────────┘
+                                     │
+                          ┌──────────┴──────────┐
+                          ▼                     ▼
+                   Project Ohana           Vórtice
+                   canvas game             WebGL field
+```
+
+---
+
+## Documents · Documentos canónicos
+
+Los PDFs viven **en este repo** para que el hub no dependa de otros sitios.
 
 | Track | ES | EN |
 |:------|:---|:---|
@@ -84,11 +114,32 @@ PDFs live in this repo so the hub does not depend on other sites.
 
 ---
 
-## Method
+## Structure · Estructura del repo
 
-`Listen → Decide → Build → Activate`
+```
+GracianB/
+├── index.html          # cinematic hub portada
+├── styles.css          # brand chrome + light/dark
+├── main.js             # theme · i18n · cmd palette · reveal
+├── i18n.js             # ES / EN strings
+├── favicon.svg · og-cover.*
+├── 404.html · robots.txt · sitemap.xml · .nojekyll
+└── Gracian_Baena_*.pdf # 8 canonical PDFs (pro + yoga)
+```
 
-Customer Success, data and AI as one system. Certified yoga instructor (Madrid 2019) as a separate track — Murcia, corporate wellness 2019–2026.
+---
+
+## Tech · Stack
+
+| Layer | Choice |
+|:------|:-------|
+| Host | GitHub Pages (static, no backend) |
+| Fonts | Fraunces · Inter · JetBrains Mono |
+| i18n | ES / EN · `?lang=en` |
+| Theme | Dark / light · `?theme=light` |
+| Nav | `Ctrl/Cmd K` command palette |
+| Motion | CSS atmosphere + pointer orbs · `prefers-reduced-motion` |
+| Cache-bust | `?v=hub-final-extreme` on CSS/JS |
 
 ---
 
@@ -96,13 +147,20 @@ Customer Success, data and AI as one system. Certified yoga instructor (Madrid 2
 
 | Feature | Detail |
 |:--------|:-------|
-| Dual-track | Corporate (yellow) + Yoga (sage) |
-| PLAY | Ohana (canvas) + Vórtice (WebGL live) |
-| i18n | ES / EN · `?lang=en` |
-| Theme | Dark / light · `?theme=light` |
-| Jump | `Ctrl/Cmd K` command palette |
-| Static | No backend · GitHub Pages |
-| Fonts | Fraunces · Inter · JetBrains Mono |
+| Cinematic portada | Constellation of three worlds around the **GB** mark |
+| World cards | Gold deck · ice PLAY · sage yoga — clear CTAs |
+| Dual documents | Corporate + Yoga PDF lanes |
+| Shared chrome | Brand mark, ES/EN, themes, typography |
+| Accessibility | Skip link · focus rings · reduced motion |
+
+---
+
+## Screenshots / preview
+
+Live cinematic hub (cache-bust):  
+**https://gracianb.github.io/GracianB/?v=hub-final-extreme**
+
+OG cover: [og-cover.png](https://gracianb.github.io/GracianB/og-cover.png)
 
 ---
 
@@ -117,8 +175,9 @@ Customer Success, data and AI as one system. Certified yoga instructor (Madrid 2
 
 <br/>
 
+**Personas × Datos × Sistemas · Yoga × Presencia**  
 **People × Data × Systems · Yoga × Presence**
 
-<sub>Gracián Baena · 2026 · Spain · Murcia</sub>
+<sub>Gracián Baena · 2026 · Spain · Murcia · remote OK</sub>
 
 </div>
