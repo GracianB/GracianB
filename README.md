@@ -1,32 +1,65 @@
 <div align="center">
 
-# GRACIÁN BAENA
-
-### Customer Success × Data × AI × Automation × Systems
-
-**Professional Portfolio · Systems Lab · 2026**
-
-I turn customer and operational problems into **measurable, automated and intelligent systems**, combining customer understanding, data, automation and AI.
+<img src="https://raw.githubusercontent.com/GracianB/GracianB/main/og-cover.png" width="100%" alt="Gracián Baena — Customer Success × Data × AI × Automation × Systems"/>
 
 <br>
 
-[**🌐 OPEN THE LIVE HUB →**](https://gracianb.github.io/GracianB/)
+# GRACIÁN BAENA
 
-[**💼 PROFESSIONAL DECK**](https://gracianb.github.io/professional-deck/) · [**🧪 SYSTEMS LAB**](https://gracianb.github.io/systems-lab/) · [**🔗 LINKEDIN**](https://www.linkedin.com/in/gracianbaena)
+<img src="https://readme-typing-svg.demolab.com/?font=Fraunces&size=22&pause=1200&color=DAA428&center=true&vCenter=true&width=600&lines=Customer+Success+%C3%97+Data;Automation+%C3%97+AI;Systems+that+scale" alt="typing banner" />
+
+**Professional Portfolio · Systems Lab · 2026**
+
+I turn customer and operational problems into **measurable, automated and intelligent systems** — combining customer understanding, data, automation and AI.
+
+<br>
+
+[![Live Hub](https://img.shields.io/badge/🌐_OPEN_THE_LIVE_HUB-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)](https://gracianb.github.io/GracianB/)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-1a1a1a?style=flat-square&logo=linkedin&logoColor=DAA428)](https://www.linkedin.com/in/gracianbaena)
+[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=DAA428)](https://github.com/GracianB)
+[![Professional Deck](https://img.shields.io/badge/Professional_Deck-1a1a1a?style=flat-square&logo=vercel&logoColor=DAA428)](https://gracianb.github.io/professional-deck/)
+[![Systems Lab](https://img.shields.io/badge/Systems_Lab-1a1a1a?style=flat-square&logo=vercel&logoColor=DAA428)](https://gracianb.github.io/systems-lab/)
+[![Book a call](https://img.shields.io/badge/Book_a_30--min_call-1a1a1a?style=flat-square&logo=googlecalendar&logoColor=DAA428)](https://calendar.app.google/n99psBFktwYyoAWi9)
+[![Email](https://img.shields.io/badge/Email-1a1a1a?style=flat-square&logo=gmail&logoColor=DAA428)](mailto:gracianbaenagonzalez@gmail.com)
+
+![Profile views](https://komarev.com/ghpvc/?username=GracianB&color=DAA428&style=flat-square&label=Profile+Views)
 
 </div>
 
----
+<br>
+
+## 🧭 Table of Contents
+
+- [The professional signal](#the-professional-signal)
+- [What I build](#what-i-build)
+- [Selected ecosystem](#selected-ecosystem)
+- [Technical satellites](#technical-satellites)
+- [Professional evidence](#professional-evidence)
+- [A real-world example](#a-real-world-example)
+- [My operating model](#my-operating-model)
+- [Why this combination matters](#why-this-combination-matters)
+- [Portfolio metrics](#portfolio-metrics)
+- [Documents](#documents)
+- [Design & engineering](#design--engineering)
+- [Repository](#repository)
+- [Philosophy](#philosophy)
+- [Current direction](#current-direction)
+- [Connect](#connect)
+
+<br>
 
 ## The professional signal
 
 My career follows a consistent direction:
 
+<div align="center">
+
 **Customer-facing → Data → Automation → AI → Systems**
 
-These are not five separate identities.
+</div>
 
-They are different layers of the same capability:
+These are not five separate identities. They are different layers of the same capability:
 
 > **Understand the problem → structure the data → automate the work → apply AI where it creates value → build systems that scale.**
 
@@ -34,311 +67,272 @@ My background combines customer success, pricing and e-commerce environments, da
 
 This repository is the public hub connecting those layers.
 
----
+<br>
 
-# What I build
+## What I build
 
-I am particularly interested in the space where **business problems meet technical execution**.
+I am particularly interested in the space where **business problems meet technical execution**. The objective is not technology for technology's sake — **the system has to solve something.**
 
-| Capability           | What it means in practice                                        |
-| :------------------- | :--------------------------------------------------------------- |
-| **Customer Success** | Understand customers, processes, friction and business needs     |
-| **Data & Analytics** | Turn operational data into useful information and decisions      |
-| **Automation**       | Remove repetitive work and make processes more reliable          |
-| **AI**               | Apply AI to analysis, workflows, interfaces and decision support |
-| **Systems**          | Connect people, data and technology into sustainable workflows   |
-| **Product thinking** | Turn problems into usable, measurable solutions                  |
+| Capability | What it means in practice |
+| :--- | :--- |
+| 🎧 **Customer Success** | Understand customers, processes, friction and business needs |
+| 📊 **Data & Analytics** | Turn operational data into useful information and decisions |
+| ⚙️ **Automation** | Remove repetitive work and make processes more reliable |
+| 🤖 **AI** | Apply AI to analysis, workflows, interfaces and decision support |
+| 🧩 **Systems** | Connect people, data and technology into sustainable workflows |
+| 🎯 **Product thinking** | Turn problems into usable, measurable solutions |
 
-The objective is not technology for technology's sake.
+<br>
 
-**The system has to solve something.**
-
----
-
-# Selected ecosystem
+## Selected ecosystem
 
 The portfolio is organized around three complementary worlds.
 
+<table>
+<tr>
+<td width="33%" valign="top">
+
 ### 01 · EXPERIENCE
+**[Professional Deck →](https://gracianb.github.io/professional-deck/)**
 
-### [Professional Deck →](https://gracianb.github.io/professional-deck/)
+*Customer Success × Data × AI*
 
-**Customer Success × Data × AI**
+The professional layer — a visual presentation of my career, capabilities and approach to customer-facing, data-driven work.
 
-The professional layer.
+`Customer Success` `Pricing` `E-commerce` `Data` `Analytics` `AI`
 
-A visual presentation of my career, capabilities, experience and approach to customer-facing and data-driven work.
-
-**Focus**
-
-`Customer Success` · `Pricing` · `E-commerce` · `Data` · `Analytics` · `AI`
-
----
+</td>
+<td width="33%" valign="top">
 
 ### 02 · SYSTEMS
+**[Systems Lab →](https://gracianb.github.io/systems-lab/)**
 
-### [Systems Lab →](https://gracianb.github.io/systems-lab/)
+*Experiments · Automation · AI · Dev*
 
-**Experiments · Automation · AI · Development**
+The technical layer — a laboratory for turning ideas into working prototypes, interfaces, automations and systems.
 
-The technical layer.
+`AI` `Automation` `JavaScript` `Python` `Web` `Systems`
 
-A laboratory for turning ideas into working prototypes, interfaces, automations and systems.
-
-**Focus**
-
-`AI` · `Automation` · `JavaScript` · `Python` · `Web` · `Data` · `Systems`
-
----
+</td>
+<td width="33%" valign="top">
 
 ### 03 · PERSONAL
+**[Yoga Instructor →](https://gracianb.github.io/yoga-instructor/)**
 
-### [Yoga Instructor →](https://gracianb.github.io/yoga-instructor/)
+*Yoga · Teaching · Presence*
 
-**Yoga · Teaching · Presence**
+A different dimension of the same person — discipline, teaching, presence and a long-term personal practice.
 
-A different dimension of the same person.
+`Yoga` `Teaching` `Presence`
 
-Yoga is not presented as a second professional identity competing with technology. It represents discipline, teaching, presence and a long-term personal practice.
+</td>
+</tr>
+</table>
 
----
+<br>
 
-# Technical satellites
+## Technical satellites
 
 Beyond the main portfolio, several projects explore different technical directions.
 
-| Project               | Type                          | Explore                                                    |
-| :-------------------- | :---------------------------- | :--------------------------------------------------------- |
-| **Project Ohana**     | Interactive game / Canvas     | [Open project](https://gracianb.github.io/project-ohana/)  |
-| **Vórtice**           | WebGL experiment              | [Open experiment](https://vortex-gilt-xi.vercel.app/)      |
-| **Systems Lab**       | Technical portfolio           | [Open lab](https://gracianb.github.io/systems-lab/)        |
-| **Professional Deck** | Career / capability portfolio | [Open deck](https://gracianb.github.io/professional-deck/) |
-| **GitHub**            | Code & experiments            | [View profile](https://github.com/GracianB)                |
+| Project | Type | Explore |
+| :--- | :--- | :--- |
+| **Project Ohana** | 🎮 Interactive game / Canvas | [Open project](https://gracianb.github.io/project-ohana/) |
+| **Vórtice** | 🌌 WebGL experiment | [Open experiment](https://vortex-gilt-xi.vercel.app/) |
+| **Systems Lab** | 🧪 Technical portfolio | [Open lab](https://gracianb.github.io/systems-lab/) |
+| **Professional Deck** | 💼 Career / capability portfolio | [Open deck](https://gracianb.github.io/professional-deck/) |
+| **GitHub** | 💻 Code & experiments | [View profile](https://github.com/GracianB) |
 
----
+<br>
 
-# Professional evidence
+## Professional evidence
 
 The portfolio is intentionally built around **evidence rather than generic claims**.
 
-### Customer & business
+<details>
+<summary><b>🎧 Customer & business</b></summary>
+<br>
 
-* Customer Success experience
-* Customer-facing operations
-* Pricing and e-commerce environments
-* International customer portfolio
-* Strategic customer support
+- Customer Success experience
+- Customer-facing operations
+- Pricing and e-commerce environments
+- International customer portfolio
+- Strategic customer support
 
-### Data
+</details>
 
-* Data analysis
-* Operational reporting
-* Dashboards
-* Pricing intelligence
-* Structured decision-making
-* Large-scale spreadsheet workflows
+<details>
+<summary><b>📊 Data</b></summary>
+<br>
 
-### Automation
+- Data analysis
+- Operational reporting
+- Dashboards
+- Pricing intelligence
+- Structured decision-making
+- Large-scale spreadsheet workflows
 
-* Process automation
-* Data transformation
-* Operational tooling
-* Workflow optimization
-* Custom scripts and utilities
+</details>
 
-### AI
+<details>
+<summary><b>⚙️ Automation</b></summary>
+<br>
 
-* AI-assisted workflows
-* Applied AI experimentation
-* AI interfaces
-* Prompt engineering
-* AI-powered systems
-* Generative AI exploration
+- Process automation
+- Data transformation
+- Operational tooling
+- Workflow optimization
+- Custom scripts and utilities
 
-### Development
+</details>
 
-* HTML
-* CSS
-* JavaScript
-* Python
-* APIs
-* GitHub Pages
-* Web applications
-* Interactive interfaces
+<details>
+<summary><b>🤖 AI</b></summary>
+<br>
 
----
+- AI-assisted workflows
+- Applied AI experimentation
+- AI interfaces
+- Prompt engineering
+- AI-powered systems
+- Generative AI exploration
 
-# A real-world example
+</details>
 
-One of the portfolio's strongest signals is the **Bodytone Support OS**.
+<details>
+<summary><b>💻 Development</b></summary>
+<br>
 
-It provides public evidence of work around customer support, operational information and structured workflows.
+- HTML · CSS · JavaScript · Python
+- APIs
+- GitHub Pages
+- Web applications
+- Interactive interfaces
 
-**Public support environment:**
+</details>
 
-[Bodytone Support OS →](https://bodytonehelp.zendesk.com/hc/es)
+<br>
 
-The purpose of including public evidence is simple:
+## A real-world example
+
+One of the portfolio's strongest signals is the **Bodytone Support OS** — public evidence of work around customer support, operational information and structured workflows.
+
+**Public support environment:** [Bodytone Support OS →](https://bodytonehelp.zendesk.com/hc/es)
 
 > **Show what exists instead of asking people to believe what is claimed.**
 
----
+<br>
 
-# My operating model
+## My operating model
 
-Every project tends to move through four stages:
+Every project moves through four stages:
 
-```text
-┌─────────────┐
-│   LISTEN    │
-│ Understand  │
-│ the problem │
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│   DECIDE    │
-│ Structure   │
-│ the solution│
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│    BUILD    │
-│ Data · AI   │
-│ Automation  │
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│   ACTIVATE  │
-│ Deploy ·    │
-│ measure     │
-└─────────────┘
+```mermaid
+flowchart LR
+    A["👂 LISTEN<br/>Understand the problem"] --> B["🎯 DECIDE<br/>Structure the solution"]
+    B --> C["⚙️ BUILD<br/>Data · AI · Automation"]
+    C --> D["🚀 ACTIVATE<br/>Deploy · measure"]
+    D -. feedback .-> A
+
+    style A fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style B fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style C fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style D fill:#1a1a1a,stroke:#DAA428,color:#DAA428
 ```
 
-### Listen
+<br>
 
-Understand the customer, user, process or business problem.
+## Why this combination matters
 
-### Decide
+Many professionals understand customers. Some understand data. Some build software. Some work with AI.
 
-Separate the signal from the noise and determine what actually needs to change.
+The interesting part is what happens **between those disciplines**:
 
-### Build
+```mermaid
+flowchart TD
+    C[CUSTOMER] --> D[DATA] --> A[AUTOMATION] --> AI[AI] --> S[SYSTEMS] --> V["BUSINESS VALUE"]
 
-Use data, automation, AI and software where they provide leverage.
-
-### Activate
-
-Put the solution into practice, measure it and improve it.
-
----
-
-# Why this combination matters
-
-Many professionals understand customers.
-
-Some understand data.
-
-Some build software.
-
-Some work with AI.
-
-The interesting part is what happens **between those disciplines**.
-
-My focus is the intersection:
-
-```text
-                 CUSTOMER
-                    │
-                    ▼
-                  DATA
-                    │
-                    ▼
-               AUTOMATION
-                    │
-                    ▼
-                    AI
-                    │
-                    ▼
-                 SYSTEMS
-                    │
-                    ▼
-              BUSINESS VALUE
+    style C fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style D fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style A fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style AI fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style S fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style V fill:#DAA428,stroke:#1a1a1a,color:#1a1a1a
 ```
 
 That is the professional direction behind this repository.
 
----
+<br>
 
-# Portfolio metrics
+## Portfolio metrics
 
 The following figures describe the portfolio context and experience represented across the ecosystem.
 
 <div align="center">
 
-|    16+    |          200+         |       4       |        1        |
-| :-------: | :-------------------: | :-----------: | :-------------: |
-| **years** | **rules / workflows** | **countries** | **live system** |
+![Years](https://img.shields.io/badge/16%2B-years-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)
+![Workflows](https://img.shields.io/badge/200%2B-rules_%2F_workflows-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)
+![Countries](https://img.shields.io/badge/4-countries-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)
+![Live systems](https://img.shields.io/badge/1-live_system-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)
 
 **ES / EN · Dark / Light · Responsive · Accessible**
 
-</div>
-
 > These figures are portfolio context, not performance guarantees.
 
----
+<br>
 
-# Documents
+<img src="https://github-readme-stats.vercel.app/api?username=GracianB&show_icons=true&hide_border=true&theme=graywhite&title_color=DAA428&icon_color=DAA428&text_color=1a1a1a&bg_color=00000000" width="49%" alt="GitHub stats"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GracianB&layout=compact&hide_border=true&theme=graywhite&title_color=DAA428&text_color=1a1a1a&bg_color=00000000" width="38%" alt="Top languages"/>
+
+</div>
+
+<br>
+
+## Documents
 
 The repository includes a complete professional document set.
 
-| Document                      |  ES |  EN |
-| :---------------------------- | :-: | :-: |
-| **Professional CV · 2026**    |  ✓  |  ✓  |
-| **Professional Cover Letter** |  ✓  |  ✓  |
-| **Yoga CV**                   |  ✓  |  ✓  |
-| **Yoga Cover Letter**         |  ✓  |  ✓  |
+| Document | ES | EN |
+| :--- | :---: | :---: |
+| **Professional CV · 2026** | ✅ | ✅ |
+| **Professional Cover Letter** | ✅ | ✅ |
+| **Yoga CV** | ✅ | ✅ |
+| **Yoga Cover Letter** | ✅ | ✅ |
 
 The live hub provides access to the complete document collection.
 
----
+<br>
 
-# Design & engineering
+## Design & engineering
 
-The hub deliberately avoids unnecessary framework complexity.
+The hub deliberately avoids unnecessary framework complexity — a lightweight static experience built with intent.
 
-It is built as a lightweight static experience using:
+<div align="center">
 
-### Frontend
+![HTML5](https://img.shields.io/badge/HTML5-1a1a1a?style=flat-square&logo=html5&logoColor=DAA428)
+![CSS3](https://img.shields.io/badge/CSS3-1a1a1a?style=flat-square&logo=css3&logoColor=DAA428)
+![JavaScript](https://img.shields.io/badge/JavaScript-1a1a1a?style=flat-square&logo=javascript&logoColor=DAA428)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-1a1a1a?style=flat-square&logo=githubpages&logoColor=DAA428)
 
-`HTML` · `CSS` · `JavaScript`
+</div>
 
-### Platform
+| Layer | Details |
+| :--- | :--- |
+| **Frontend** | HTML · CSS · JavaScript |
+| **Platform** | GitHub Pages |
+| **UX** | Responsive · Dark/Light · ES/EN · Keyboard navigation · Reduced motion |
+| **Discovery** | SEO · Open Graph · Twitter Cards · Schema.org · Sitemap · Robots |
+| **Interface** | Command palette · Accessible focus states · Progressive enhancement |
+| **Visual system** | Fraunces · Inter · JetBrains Mono |
 
-`GitHub Pages`
+The visual language uses a restrained palette built around **warm black, champagne, ice and sage** — closer to a **digital professional studio** than a conventional résumé website.
 
-### UX
+<br>
 
-`Responsive` · `Dark/Light` · `ES/EN` · `Keyboard navigation` · `Reduced motion`
+## Repository
 
-### Discovery
-
-`SEO` · `Open Graph` · `Twitter Cards` · `Schema.org` · `Sitemap` · `Robots`
-
-### Interface
-
-`Command palette` · `Accessible focus states` · `Progressive enhancement`
-
-### Visual system
-
-**Fraunces · Inter · JetBrains Mono**
-
-The visual language uses a restrained palette built around warm black, champagne, ice and sage.
-
-The design is intended to feel closer to a **digital professional studio** than a conventional résumé website.
-
----
-
-# Repository
+<details>
+<summary><b>📁 View file structure</b></summary>
 
 ```text
 GracianB/
@@ -375,78 +369,66 @@ GracianB/
 └── Gracian_Baena_Cover_Letter_Yoga_EN.pdf
 ```
 
----
+</details>
 
-# Philosophy
+<br>
 
-### Fewer claims. More evidence.
+## Philosophy
 
-### Fewer disconnected projects. More systems.
+> **Fewer claims. More evidence.**
+> **Fewer disconnected projects. More systems.**
+> **Less decoration for decoration's sake. More useful design.**
+> **Less automation theater. More measurable outcomes.**
 
-### Less decoration for decoration's sake. More useful design.
-
-### Less automation theater. More measurable outcomes.
-
-Technology is a means.
-
-The interesting question is always:
+Technology is a means. The interesting question is always:
 
 > **What problem does it solve?**
 
----
+<br>
 
-# Current direction
+## Current direction
 
 The next stage of the portfolio is focused on the convergence of:
 
-```text
-Customer Success
-       ×
-Data
-       ×
-Automation
-       ×
-Artificial Intelligence
-       ×
-Systems
+```mermaid
+flowchart LR
+    CS[Customer Success] --- D[Data] --- A[Automation] --- AI[Artificial Intelligence] --- S[Systems]
+
+    style CS fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style D fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style A fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style AI fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style S fill:#1a1a1a,stroke:#DAA428,color:#DAA428
 ```
 
 The goal is to build increasingly capable systems that make information easier to understand, work easier to execute and decisions easier to make.
 
----
+<br>
 
-# Connect
+## Connect
+
+<div align="center">
 
 **Gracián Baena**
 Murcia, Spain · Remote
 
 **Customer Success × Data × AI × Automation × Systems**
 
-| Channel              | Link                                                                     |
-| :------------------- | :----------------------------------------------------------------------- |
-| 💼 LinkedIn          | [linkedin.com/in/gracianbaena](https://www.linkedin.com/in/gracianbaena) |
-| 💻 GitHub            | [github.com/GracianB](https://github.com/GracianB)                       |
-| 🌐 Portfolio         | [gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/)      |
-| 📊 Professional Deck | [professional-deck](https://gracianb.github.io/professional-deck/)       |
-| 🧪 Systems Lab       | [systems-lab](https://gracianb.github.io/systems-lab/)                   |
-| 📅 30-min meeting    | [Book a meeting](https://calendar.app.google/n99psBFktwYyoAWi9)          |
-| ✉️ Email             | [gracianbaenagonzalez@gmail.com](mailto:gracianbaenagonzalez@gmail.com)  |
-
----
-
-<div align="center">
-
-## ONE HUB.
-
-### THREE WORLDS.
-
-## ONE PROFESSIONAL NARRATIVE.
+| Channel | Link |
+| :--- | :--- |
+| 💼 LinkedIn | [linkedin.com/in/gracianbaena](https://www.linkedin.com/in/gracianbaena) |
+| 💻 GitHub | [github.com/GracianB](https://github.com/GracianB) |
+| 🌐 Portfolio | [gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/) |
+| 📊 Professional Deck | [professional-deck](https://gracianb.github.io/professional-deck/) |
+| 🧪 Systems Lab | [systems-lab](https://gracianb.github.io/systems-lab/) |
+| 📅 30-min meeting | [Book a meeting](https://calendar.app.google/n99psBFktwYyoAWi9) |
+| ✉️ Email | [gracianbaenagonzalez@gmail.com](mailto:gracianbaenagonzalez@gmail.com) |
 
 <br>
+
+## ONE HUB. THREE WORLDS. ONE PROFESSIONAL NARRATIVE.
 
 **[🌐 GRACIANB.GITHUB.IO/GRACIANB →](https://gracianb.github.io/GracianB/)**
-
-<br>
 
 *Listen → Decide → Build → Activate*
 
