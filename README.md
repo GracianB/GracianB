@@ -1,290 +1,242 @@
 <div align="center">
 
-<pre style="font-family: monospace; line-height: 1.15; font-size: 10px;">
- ██████╗ ██████╗  █████╗  ██████╗██╗ █████╗ ███╗   ██╗
-██╔════╝ ██╔══██╗██╔══██╗██╔════╝██║██╔══██╗████╗  ██║
-██║  ███╗██████╔╝███████║██║     ██║███████║██╔██╗ ██║
-██║   ██║██╔══██╗██╔══██║██║     ██║██╔══██║██║╚██╗██║
-╚██████╔╝██║  ██║██║  ██║╚██████╗██║██║  ██║██║ ╚████║
- ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═══╝
-</pre>
+[![Typing](https://readme-typing-svg.demolab.com?font=Fraunces&weight=500&size=32&duration=2800&pause=700&color=DAA428&center=true&vCenter=true&width=940&height=60&lines=Personas.+Datos.+Sistemas.;HUB+%C2%B7+TRES+MUNDOS;Customer+Success+%C3%97+Data+%C3%97+AI;16%2B+a%C3%B1os+%C2%B7+4+pa%C3%ADses;Graci%C3%A1n+Baena+%C2%B7+2026)](https://gracianb.github.io/GracianB/)
 
-![Status](https://img.shields.io/badge/Status-Building%20Things%20🛠️-1a1a2e?style=flat-square\&labelColor=1a1a2e\&color=00D26A)
-![Location](https://img.shields.io/badge/🇪🇸_Murcia-Spain-1a1a2e?style=flat-square\&labelColor=1a1a2e\&color=FF6B6B)
-![Age](https://img.shields.io/badge/37-orbits%20around%20the%20sun-1a1a2e?style=flat-square\&labelColor=1a1a2e\&color=FFD93D)
+# **GRACIÁN BAENA**
 
-<br>
+### Customer Success Systems · Data Strategy · AI Operations
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D26A&center=true&vCenter=true&width=650&lines=Customer+Success+%C3%97+Data+%C3%97+AI+%C3%97+Automation;I+build+things+that+work.+Mostly.;Currently+overthinking+a+dashboard;Yoga+instructor+by+weekend+%F0%9F%A7%98" alt="typing" />
+**Personas. Datos. Sistemas.** — hub personal y centro de marca, punto de entrada a los tres mundos
+(warm black `#06070a` · brand gold `#DAA428` · forest / champagne / ice / sage · Fraunces / Inter / JetBrains Mono)
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=80&section=header" width="100%">
+---
 
 <div align="center">
 
-### The TL;DR
-
-> *"I didn't plan it this way. It just kept happening."*
-
-I'm the guy in Customer Success who learned to code because waiting for the data team took too long. Now I build AI agents at 2 AM and act surprised I'm tired on Monday.
+[![Live](https://img.shields.io/badge/%F0%9F%9A%80_LIVE-GracianB-DAA428?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/GracianB/)
+[![Deck](https://img.shields.io/badge/EXPERIENCIA-professional--deck-C4A574?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/professional-deck/)
+[![Systems](https://img.shields.io/badge/PLAY-systems--lab-7af3ff?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/systems-lab/)
+[![Yoga](https://img.shields.io/badge/PASI%C3%93N-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/yoga-instructor/)
+[![GitHub](https://img.shields.io/badge/GitHub-GracianB-1a1a1a?style=for-the-badge&labelColor=1a1a1a&logo=github&logoColor=DAA428)](https://github.com/GracianB)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-gracianbaena-0A66C2?style=for-the-badge&labelColor=1a1a1a&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gracianbaena)
+[![Agenda](https://img.shields.io/badge/Agenda-30_min-1a1a1a?style=for-the-badge&labelColor=1a1a1a&logo=googlecalendar&logoColor=DAA428)](https://calendar.app.google/n99psBFktwYyoAWi9)
+[![ES/EN](https://img.shields.io/badge/i18n-ES_%2F_EN-DAA428?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/GracianB/)
 
 </div>
 
-<br>
-
-## 🇪🇸 Murcia, Spain · 37 · Customer Success · Data · AI · Automation
-
-* 💼 Customer Success — professionally opinionated about broken processes
-* 🧠 AI, data & automation
-* 💻 I build things, some of them on purpose
-* 🥋 Martial arts
-* 🧘 Yoga instructor
-* 🥾 Hiking & outdoors
-* 🌍 International experience
-* 🇬🇧 English · 🇮🇹 Italian
-
-<br>
-
-## I like different things — mostly at odds with each other
-
-|                      |                            |
-| :------------------- | :------------------------- |
-| **Customer Success** | Talking to people          |
-| **Data**             | Talking to numbers         |
-| **AI**               | Talking to machines        |
-| **Yoga**             | Trying to shut up entirely |
-
-Still working out what that combination says about me. Probably nothing good.
-
-<br>
-
-## Currently curious about
-
-AI agents · autonomous workflows · intelligent systems · data architecture · building things that solve actual problems · the perfect dashboard that doesn't exist yet
-
-*Updates more often than my sleep schedule.*
-
-<br>
-
-## What I actually do
-
-| Professional identity                         | Reality check                                                                  |
-| :-------------------------------------------- | :----------------------------------------------------------------------------- |
-| **Customer Success × Data × AI × Automation** | I work where business meets technology and try not to break anything important |
-| **"Building systems"**                        | Break it first, fix it after, call it iteration                                |
-| **"Data-driven decisions"**                   | Analysing data that probably didn't need analysing                             |
-| **AI experiments**                            | Prompt engineering at 2 AM, questioning my life choices                        |
-
-<br>
-
-## Things I do instead of sleeping 🌙
-
-| Time      | What I tell myself         | What actually happens                     | Sanity |
-| :-------- | :------------------------- | :---------------------------------------- | :----: |
-| **22:00** | “Just one more function.”  | Opens the laptop.                         |   🟢   |
-| **23:30** | “This should be easy.”     | Automates a 5-minute task.                |   🟡   |
-| **01:00** | “Since I'm already here…”  | Builds an entirely unnecessary dashboard. |   🔴   |
-| **02:00** | “I should probably sleep.” | Starts experimenting with an AI agent.    |   💀   |
-| **03:00** | “Okay, last thing.”        | Asks AI about consciousness.              |   🌀   |
-| **03:47** | “Tomorrow I'll fix it.”    | Ships it anyway.                          |   🚀   |
-
-> **Some people watch Netflix. I build another dashboard.**
->
-> I have automated tasks that would have taken five minutes manually.
->
-> The automation took three hours.
->
-> **Was it efficient? No. Was it worth it? Absolutely.**
-
-<br>
-
-## The Lab
-
-| Project                                                                | What it is                                                         |     Status     |
-| :--------------------------------------------------------------------- | :----------------------------------------------------------------- | :------------: |
-| **[Professional Deck](https://gracianb.github.io/professional-deck/)** | The corporate version of me — capabilities, case studies, evidence |     `LIVE`     |
-| **[Systems Lab](https://gracianb.github.io/systems-lab/)**             | AI, automation, experiments — where things break in public         | `EXPERIMENTAL` |
-| **[Project Ohana](https://gracianb.github.io/project-ohana/)**         | Interactive thing. Click it.                                       |   `PLAYABLE`   |
-| **[Vórtice](https://vortex-gilt-xi.vercel.app/)**                      | Web experiment. Might hypnotize you.                               |     `WEIRD`    |
-| **[Yoga Space](https://gracianb.github.io/yoga-instructor/)**          | The zen me. Balance is important, allegedly                        |      `ZEN`     |
-
-**Need something specific?** [CV](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_EN.pdf) for HR · [LinkedIn](https://www.linkedin.com/in/gracianbaena) for networking · [Email](mailto:gracianbaenagonzalez@gmail.com) for jobs (or money) · [Calendar](https://calendar.app.google/n99psBFktwYyoAWi9) to book time
-
-<br>
-
-## Weapons of choice
-
-**AI / Automation**
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge\&logo=openai\&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge\&logo=n8n\&logoColor=white)
-![Make](https://img.shields.io/badge/Make-6522FF?style=for-the-badge\&logo=make\&logoColor=white)
-![Zapier](https://img.shields.io/badge/Zapier-FF4A00?style=for-the-badge\&logo=zapier\&logoColor=white)
-
-**Data**
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge\&logo=pandas\&logoColor=white)
-![Google Sheets](https://img.shields.io/badge/Sheets-34A853?style=for-the-badge\&logo=google-sheets\&logoColor=white)
-
-**Web**
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge\&logo=html5\&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge\&logo=flask\&logoColor=white)
-
-<br>
-
-## How I learn
-
-💡 Idea → 🔨 Build → 💥 Break → 🔧 Fix → 🧠 Learn → 🚀 Ship → 😅 Regret → 🔁 Repeat
-
-*Works well for software. Works less well for furniture assembly.*
-
-<br>
-
-<hr>
-
-<br>
+<br/>
 
 <div align="center">
 
-# 🇪🇸 Versión en español
-
-### El resumen
-
-> *"No lo planeé así. Simplemente siguió pasando."*
-
-Soy ese tipo de Customer Success que aprendió a programar porque esperar al equipo de datos llevaba demasiado tiempo. Ahora construyo agentes de IA a las 2 de la mañana y los lunes me sorprendo de estar cansado.
+![16+](https://img.shields.io/badge/16%2B-a%C3%B1os-DAA428?style=for-the-badge&labelColor=1a1a1a)
+![10+](https://img.shields.io/badge/10%2B-a%C3%B1os_cliente-DAA428?style=for-the-badge&labelColor=1a1a1a)
+![200+](https://img.shields.io/badge/200%2B-reglas_pricing-DAA428?style=for-the-badge&labelColor=1a1a1a)
+![5+](https://img.shields.io/badge/5%2B-centros_ECI-1a1a1a?style=for-the-badge&labelColor=1a1a1a)
+![1](https://img.shields.io/badge/1-sistema_live-1a1a1a?style=for-the-badge&labelColor=1a1a1a)
+![Theme](https://img.shields.io/badge/theme-dark_%2B_light-1a1a1a?style=for-the-badge&labelColor=1a1a1a)
 
 </div>
 
-<br>
+---
 
-## 🇪🇸 Murcia, España · 37 · Customer Success · Datos · IA · Automatización
+## Qué es este hub
 
-* 💼 Customer Success, profesionalmente opinando sobre procesos rotos
-* 🧠 IA, datos y automatización
-* 💻 Construyo cosas, algunas incluso a propósito
-* 🥋 Artes marciales
-* 🧘 Instructor de yoga
-* 🥾 Senderismo y naturaleza
-* 🌍 Experiencia internacional
-* 🇬🇧 Inglés · 🇮🇹 Italiano
+**GracianB/GracianB** es el centro de marca personal de Gracián Baena: el punto de entrada estático (GitHub Pages) que conecta sus tres mundos — Experiencia, PLAY y Yoga — bajo una sola narrativa: **Personas × Datos × Sistemas**.
 
-<br>
+| | |
+|:--|:--|
+| **Live** | https://gracianb.github.io/GracianB/ |
+| **Repo** | https://github.com/GracianB/GracianB |
+| **Idiomas** | **ES / EN** (toggle en header · `i18n.js`) |
+| **Temas** | Dark (warm black `#06070a`) + light |
+| **Navegación** | Paleta de comandos `Ctrl`/`Cmd`+`K` · anclas `#portfolios` `#play` `#docs` `#contacto` |
+| **Marca** | Hub → GB · brand gold `#DAA428` sobre grafito, cromática propia por mundo |
+| **Tipografía** | Fraunces (display) · Inter (UI) · JetBrains Mono (chrome) |
 
-## Me gustan cosas diferentes. Normalmente incompatibles entre sí.
+### Ecosistema
 
-|                      |                              |
-| :------------------- | :--------------------------- |
-| **Customer Success** | Hablar con personas          |
-| **Datos**            | Hablar con números           |
-| **IA**               | Hablar con máquinas          |
-| **Yoga**             | Intentar no hablar con nadie |
+| Pieza | URL |
+|:------|:----|
+| **Professional Deck** | https://gracianb.github.io/professional-deck/ |
+| **Systems Lab / PLAY** | https://gracianb.github.io/systems-lab/ |
+| **Yoga instructor** | https://gracianb.github.io/yoga-instructor/ |
+| **Ohana** | https://gracianb.github.io/project-ohana/ |
+| **Vórtice** | https://vortex-gilt-xi.vercel.app/ |
+| **Bodytone Help Center** | https://bodytonehelp.zendesk.com/hc/es |
 
-Todavía estoy intentando averiguar qué dice esa combinación sobre mí. Probablemente nada bueno.
+> Los 8 PDFs canónicos (CV + carta, corporativo y yoga, ES/EN) viven en este repo, no en professional-deck. Ese repo referencia estos mismos archivos.
 
-<br>
+---
 
-## En lo que tengo la curiosidad puesta ahora
+## Tres puertas
 
-Agentes de IA · workflows autónomos · sistemas inteligentes · arquitectura de datos · construir cosas que resuelvan problemas reales · el dashboard perfecto que todavía no existe
+| # | Puerta | Cromática | Contenido | Key feature |
+|:-:|:-------|:----------|:----------|:------------|
+| 01 | **Experiencia** | oro / nude / blanco · `#C4A574` | CS × Data × AI | Deck interactivo · caso Bodytone verificable |
+| 02 | **PLAY** | hielo neón · `#7af3ff` | Systems Lab · Ohana · Vórtice | Todo se abre ahora, en el navegador |
+| 03 | **Pasión** | sage / presencia · `#7dcaa5` | Yoga · enseñanza | Sala Murcia · certificado Madrid 2019 |
 
-*Se actualiza más veces que mi horario de sueño.*
+<br/>
 
-<br>
+<table>
+<tr>
+<td width="33%" valign="top">
 
-## Lo que realmente hago
+**01 · EXPERIENCIA**
+### [CS × Data × AI →](https://gracianb.github.io/professional-deck/)
+Deck profesional interactivo — método, capability map y prueba en Zendesk.
 
-| Identidad profesional                              | La realidad                                                                      |
-| :------------------------------------------------- | :------------------------------------------------------------------------------- |
-| **Customer Success × Datos × IA × Automatización** | Trabajo donde se cruzan negocio y tecnología e intento no romper nada importante |
-| **"Construir sistemas"**                           | Romperlo primero, arreglarlo después y llamarlo iteración                        |
-| **"Decisiones basadas en datos"**                  | Analizar datos que probablemente no necesitaban tanto análisis                   |
-| **Experimentos con IA**                            | Prompt engineering a las 2 de la mañana y cuestionándome mis decisiones vitales  |
+`Customer Success` `Pricing` `E-commerce` `Data` `AI`
 
-<br>
+[Help Center live ↗](https://bodytonehelp.zendesk.com/hc/es)
 
-## Cosas que hago en lugar de dormir 🌙
+</td>
+<td width="33%" valign="top">
 
-| Hora      | Lo que me digo            | Lo que realmente ocurre                           | Cordura |
-| :-------- | :------------------------ | :------------------------------------------------ | :-----: |
-| **22:00** | “Una función más.”        | Abro el portátil.                                 |    🟢   |
-| **23:30** | “Esto debería ser fácil.” | Automatizo una tarea de 5 minutos.                |    🟡   |
-| **01:00** | “Ya que estoy aquí…”      | Construyo un dashboard completamente innecesario. |    🔴   |
-| **02:00** | “Debería dormir.”         | Empiezo a experimentar con un agente de IA.       |    💀   |
-| **03:00** | “Ahora sí, lo último.”    | Le pregunto a una IA sobre la consciencia.        |    🌀   |
-| **03:47** | “Mañana lo arreglo.”      | Lo publico igualmente.                            |    🚀   |
+**02 · PLAY**
+### [Systems Lab →](https://gracianb.github.io/systems-lab/)
+Sistemas que se pulsan: Ohana, Vórtice y el Help Center.
 
-> **Algunas personas ven Netflix. Yo construyo otro dashboard.**
->
-> He automatizado tareas que manualmente habrían tardado cinco minutos.
->
-> La automatización tardó tres horas.
->
-> **¿Fue eficiente? No. ¿Mereció la pena? Absolutamente.**
+`AI` `Automation` `JavaScript` `Python` `Systems`
 
-<br>
+[Jugar Ohana →](https://gracianb.github.io/project-ohana/) · [Abrir Vórtice →](https://vortex-gilt-xi.vercel.app/)
 
-## El laboratorio
+</td>
+<td width="33%" valign="top">
 
-| Proyecto                                                               | Qué es                                                                       |     Estado     |
-| :--------------------------------------------------------------------- | :--------------------------------------------------------------------------- | :------------: |
-| **[Professional Deck](https://gracianb.github.io/professional-deck/)** | La versión corporativa de mí: capacidades, casos y evidencia                 |     `LIVE`     |
-| **[Systems Lab](https://gracianb.github.io/systems-lab/)**             | IA, automatización y experimentos donde las cosas pueden romperse en público | `EXPERIMENTAL` |
-| **[Project Ohana](https://gracianb.github.io/project-ohana/)**         | Una cosa interactiva. Haz clic.                                              |   `PLAYABLE`   |
-| **[Vórtice](https://vortex-gilt-xi.vercel.app/)**                      | Experimento web. Puede que te hipnotice.                                     |     `WEIRD`    |
-| **[Yoga Space](https://gracianb.github.io/yoga-instructor/)**          | Mi versión zen. El equilibrio es importante, supuestamente                   |      `ZEN`     |
+**03 · PASIÓN**
+### [Presencia × Práctica →](https://gracianb.github.io/yoga-instructor/)
+Instructor de yoga · Murcia · 2019–2026.
 
-**¿Buscas algo concreto?** [CV](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_ES.pdf) para RR. HH. · [LinkedIn](https://www.linkedin.com/in/gracianbaena) para networking · [Email](mailto:gracianbaenagonzalez@gmail.com) para trabajo (o dinero) · [Calendario](https://calendar.app.google/n99psBFktwYyoAWi9) para reservar tiempo
+`Yoga` `Teaching` `Presence`
 
-<br>
+[CV yoga ES ↗](./Gracian_Baena_CV_Yoga_ES.pdf)
 
-## Mis armas de confianza
+</td>
+</tr>
+</table>
 
-**IA / Automatización**
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge\&logo=openai\&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge\&logo=n8n\&logoColor=white)
-![Make](https://img.shields.io/badge/Make-6522FF?style=for-the-badge\&logo=make\&logoColor=white)
-![Zapier](https://img.shields.io/badge/Zapier-FF4A00?style=for-the-badge\&logo=zapier\&logoColor=white)
+---
 
-**Datos**
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge\&logo=postgresql\&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge\&logo=pandas\&logoColor=white)
-![Google Sheets](https://img.shields.io/badge/Sheets-34A853?style=for-the-badge\&logo=google-sheets\&logoColor=white)
+## Inventario PDF
 
-**Web**
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge\&logo=html5\&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge\&logo=flask\&logoColor=white)
+### Corporativo (ES/EN)
 
-<br>
+| Archivo | Uso |
+|:--------|:----|
+| [`Gracian_Baena_CV_2026_ES.pdf`](./Gracian_Baena_CV_2026_ES.pdf) | CV ES |
+| [`Gracian_Baena_CV_2026_EN.pdf`](./Gracian_Baena_CV_2026_EN.pdf) | CV EN |
+| [`Gracian_Baena_Carta_Presentacion_ES.pdf`](./Gracian_Baena_Carta_Presentacion_ES.pdf) | Carta ES |
+| [`Gracian_Baena_Cover_Letter_EN.pdf`](./Gracian_Baena_Cover_Letter_EN.pdf) | Cover letter EN |
 
-## Cómo aprendo
+### Yoga (ES/EN)
 
-💡 Idea → 🔨 Construir → 💥 Romper → 🔧 Arreglar → 🧠 Aprender → 🚀 Publicar → 😅 Arrepentirme → 🔁 Repetir
-
-*Funciona bastante bien con software. Con muebles, bastante menos.*
-
-<br>
+| Archivo | Uso |
+|:--------|:----|
+| [`Gracian_Baena_CV_Yoga_ES.pdf`](./Gracian_Baena_CV_Yoga_ES.pdf) | CV Yoga ES |
+| [`Gracian_Baena_CV_Yoga_EN.pdf`](./Gracian_Baena_CV_Yoga_EN.pdf) | CV Yoga EN |
+| [`Gracian_Baena_Carta_Yoga_ES.pdf`](./Gracian_Baena_Carta_Yoga_ES.pdf) | Carta Yoga ES |
+| [`Gracian_Baena_Cover_Letter_Yoga_EN.pdf`](./Gracian_Baena_Cover_Letter_Yoga_EN.pdf) | Cover Yoga EN |
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=90&section=footer&text=Thanks%20for%20stopping%20by&fontSize=20&fontAlignY=75&animation=twinkling" width="100%">
-
-**Not everything here is finished. Not everything here works. But everything here started with "I wonder if I can build this."**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/gracianbaena)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:gracianbaenagonzalez@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge\&logo=github\&logoColor=white)](https://gracianb.github.io/GracianB/)
+[![CV ES](https://img.shields.io/badge/CV-ES-DAA428?style=for-the-badge&labelColor=1a1a1a)](./Gracian_Baena_CV_2026_ES.pdf)
+[![CV EN](https://img.shields.io/badge/CV-EN-DAA428?style=for-the-badge&labelColor=1a1a1a)](./Gracian_Baena_CV_2026_EN.pdf)
+[![Carta](https://img.shields.io/badge/Carta-ES-1a1a1a?style=for-the-badge&labelColor=1a1a1a)](./Gracian_Baena_Carta_Presentacion_ES.pdf)
+[![Cover](https://img.shields.io/badge/Cover-EN-1a1a1a?style=for-the-badge&labelColor=1a1a1a)](./Gracian_Baena_Cover_Letter_EN.pdf)
+[![Yoga ES](https://img.shields.io/badge/Yoga_CV-ES-7dcaa5?style=for-the-badge&labelColor=1a1a1a)](./Gracian_Baena_CV_Yoga_ES.pdf)
+[![Yoga EN](https://img.shields.io/badge/Yoga_CV-EN-7dcaa5?style=for-the-badge&labelColor=1a1a1a)](./Gracian_Baena_CV_Yoga_EN.pdf)
 
 </div>
 
-<!--
-If you're reading this, you're as nosy as I am.
-I once spent 6 hours automating a task that takes 2 minutes.
-It was worth it. For the principle.
--->
+---
+
+## Sistemas verificables
+
+| # | Sistema | Estado | Acción |
+|:-:|:--------|:------:|:------:|
+| 01 | [**Bodytone Support OS**](https://bodytonehelp.zendesk.com/hc/es) | **LIVE** | Ver live ↗ |
+| 02 | Calculadora · 200+ reglas pricing | Demo | Ver en el deck |
+| 03 | Profile Finder · LinkedIn | Demo | Ver en el deck |
+| 04 | Outreach · GenAI + HITL | Demo | Ver en el deck |
+
+*Detalle completo de cada sistema en [professional-deck](https://gracianb.github.io/professional-deck/).*
+
+---
+
+## Método
+
+```
+01 ESCUCHAR  →  02 DECIDIR  →  03 CONSTRUIR  →  04 ACTIVAR
+   SEÑAL    →    CRITERIO   →     SISTEMA    →   ADOPCIÓN ↗
+```
+
+```
+CUSTOMER  →  DATA  →  AUTOMATION  →  AI  →  SYSTEMS  →  BUSINESS VALUE
+```
+
+---
+
+## Stack del repo (web)
+
+```
+GracianB/
+│
+├── index.html            # Hub + tres puertas
+├── styles.css            # Base tokens / layout
+├── main.js
+├── i18n.js
+│
+├── favicon.svg
+├── og-cover.png · og-cover.svg
+├── site.webmanifest
+│
+├── robots.txt · sitemap.xml · 404.html · SECURITY.md
+│
+├── .github/workflows/site-check.yml
+│
+└── *.pdf                 # Inventario corporativo + yoga (arriba)
+```
+
+---
+
+## Ecosistema cruzado
+
+<div align="center">
+
+[![Deck Live](https://img.shields.io/badge/%F0%9F%9A%80_LIVE-professional--deck-C4A574?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/professional-deck/)
+[![Lab Live](https://img.shields.io/badge/%E2%9A%A1_LIVE-systems--lab-7af3ff?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/systems-lab/)
+[![Yoga Live](https://img.shields.io/badge/%F0%9F%A7%98_LIVE-yoga--instructor-7dcaa5?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/yoga-instructor/)
+
+**→ [Experiencia](https://gracianb.github.io/professional-deck/) · [PLAY](https://gracianb.github.io/systems-lab/) · [Yoga](https://gracianb.github.io/yoga-instructor/)**
+
+</div>
+
+---
+
+## Contacto
+
+<div align="center">
+
+[![Hub](https://img.shields.io/badge/01-Hub-DAA428?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/GracianB/)
+[![Deck](https://img.shields.io/badge/02-Professional_Deck-C4A574?style=for-the-badge&labelColor=1a1a1a)](https://gracianb.github.io/professional-deck/)
+[![Agenda](https://img.shields.io/badge/03-Agenda-1a1a1a?style=for-the-badge&labelColor=1a1a1a)](https://calendar.app.google/n99psBFktwYyoAWi9)
+[![LinkedIn](https://img.shields.io/badge/04-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1a1a1a)](https://www.linkedin.com/in/gracianbaena)
+[![Email](https://img.shields.io/badge/05-Email-ea4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1a1a1a)](mailto:gracianbaenagonzalez@gmail.com)
+[![CV](https://img.shields.io/badge/06-CV_ES%2FEN-DAA428?style=for-the-badge&labelColor=1a1a1a)](./Gracian_Baena_CV_2026_ES.pdf)
+
+</div>
+
+---
+
+<div align="center">
+
+**Personas × Datos × Sistemas** · HUB · 2026
+
+<sub>Gracián Baena · España · remoto OK · light + dark</sub>
+
+<sub>Un hub. Tres mundos. Una narrativa profesional.</sub>
+
+</div>
