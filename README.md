@@ -2,27 +2,24 @@
 
 <a href="https://gracianb.github.io/GracianB/">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:06070A,35:2A2622,65:DAA428,100:FAF7F2&height=240&section=header&text=GRACI%C3%81N%20BAENA&fontSize=52&fontColor=FFFFFF&fontAlignY=38&desc=PERSONAS%20%C2%B7%20DATOS%20%C2%B7%20SISTEMAS&descSize=20&descAlignY=58&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050609,30:111318,58:2A2622,78:DAA428,100:FAF7F2&height=280&section=header&text=GRACI%C3%81N%20BAENA&fontSize=58&fontColor=FFFFFF&fontAlignY=36&desc=PEOPLE%20%C2%B7%20DATA%20%C2%B7%20SYSTEMS&descSize=22&descAlignY=59&animation=fadeIn" width="100%" alt="Gracián Baena · People · Data · Systems"/>
 
 </a>
 
 <br>
 
-<a href="https://gracianb.github.io/GracianB/">
-
-<img src="https://readme-typing-svg.demolab.com?font=Fraunces&weight=500&size=31&duration=2800&pause=850&color=DAA428&center=true&vCenter=true&width=1000&height=65&lines=Personas.+Datos.+Sistemas.;Customer+Success+%C3%97+Data+%C3%97+AI;From+people+to+systems.;16%2B+a%C3%B1os+%C2%B7+4+pa%C3%ADses;Experience+%C2%B7+Play+%C2%B7+Yoga;One+hub.+Three+worlds.;Graci%C3%A1n+Baena+%C2%B7+2026" alt="Animated Gracián Baena header"/>
-
-</a>
+<img src="https://readme-typing-svg.demolab.com?font=Fraunces&weight=500&size=29&duration=3000&pause=900&color=DAA428&center=true&vCenter=true&width=1000&height=70&lines=People.+Data.+Systems.;Customer+Success+%C3%97+Data+%C3%97+AI;From+people+to+systems.;Experience+%C2%B7+Play+%C2%B7+Yoga;One+hub.+Three+worlds.;Build+useful+things.+Stay+curious.+Keep+moving." alt="Animated introduction"/>
 
 <br>
 
-[![LIVE](https://img.shields.io/badge/%F0%9F%9A%80_LIVE-GRACIANB-DAA428?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/GracianB/)
-[![EXPERIENCE](https://img.shields.io/badge/01-EXPERIENCE-C4A574?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/professional-deck/)
-[![PLAY](https://img.shields.io/badge/02-PLAY-7AF3FF?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/systems-lab/)
-[![YOGA](https://img.shields.io/badge/03-YOGA-7DCAA5?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/yoga-instructor/)
-[![ES/EN](https://img.shields.io/badge/%F0%9F%8C%90_ES_%2F_EN-DAA428?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/GracianB/)
+[![LIVE](https://img.shields.io/badge/%F0%9F%9A%80_LIVE-GRACIANB-DAA428?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/GracianB/)
+[![EXPERIENCE](https://img.shields.io/badge/01-EXPERIENCE-C4A574?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/professional-deck/)
+[![PLAY](https://img.shields.io/badge/02-PLAY-7AF3FF?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/systems-lab/)
+[![YOGA](https://img.shields.io/badge/03-YOGA-7DCAA5?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/yoga-instructor/)
+[![ES](https://img.shields.io/badge/🇪🇸-ES-DAA428?style=for-the-badge\&labelColor=050609)](#-español)
+[![EN](https://img.shields.io/badge/🇬🇧-EN-DAA428?style=for-the-badge\&labelColor=050609)](#-english)
 
-<br>
+<br><br>
 
 ### **Customer Success · Data · AI · Automation · Systems**
 
@@ -31,6 +28,82 @@
 <br>
 
 `MURCIA · SPAIN · REMOTE · 2026`
+
+</div>
+
+---
+
+<div align="center">
+
+### `ONE HUB · THREE WORLDS · ONE NARRATIVE`
+
+</div>
+
+<br>
+
+<table>
+<tr>
+<td width="33%" align="center">
+
+### 01
+
+## EXPERIENCE
+
+**People × Data**
+
+Customer Success
+Pricing
+E-commerce
+AI
+
+</td>
+
+<td width="33%" align="center">
+
+### 02
+
+## PLAY
+
+**AI × Systems**
+
+Automation
+Development
+Experiments
+Prototypes
+
+</td>
+
+<td width="33%" align="center">
+
+### 03
+
+## YOGA
+
+**Presence × Practice**
+
+Breath
+Movement
+Teaching
+Wellness
+
+</td>
+</tr>
+</table>
+
+---
+
+# 🧭 NAVIGATION
+
+<div align="center">
+
+[🇪🇸 Español](#-español) ·
+[🇬🇧 English](#-english) ·
+[🧠 Method](#-mi-forma-de-trabajar) ·
+[⚡ Differentiator](#-mi-diferencial) ·
+[📊 Capabilities](#-capability-map) ·
+[⭐ Proof](#-sistemas-verificables) ·
+[🌐 Ecosystem](#-el-ecosistema) ·
+[📡 Contact](#-contacto)
 
 </div>
 
@@ -52,36 +125,47 @@ Mi recorrido no ha seguido una línea perfectamente recta.
 
 Ha seguido algo más parecido a esto:
 
-```text id="2x8c8h"
-PERSONAS
-   ↓
+```text
+PEOPLE
+  │
+  ▼
 CUSTOMER SUCCESS
-   ↓
-OPERACIONES
-   ↓
+  │
+  ▼
+OPERATIONS
+  │
+  ▼
 DATA
-   ↓
+  │
+  ▼
 PRICING
-   ↓
+  │
+  ▼
 AUTOMATION
-   ↓
+  │
+  ▼
 AI
-   ↓
+  │
+  ▼
 SYSTEMS
 ```
 
 Y en paralelo existe otro camino:
 
-```text id="8h0r7v"
-MOVIMIENTO
-   ↓
+```text
+MOVEMENT
+  │
+  ▼
 YOGA
-   ↓
-PRESENCIA
-   ↓
-ENSEÑANZA
-   ↓
-PERSONAS
+  │
+  ▼
+PRESENCE
+  │
+  ▼
+TEACHING
+  │
+  ▼
+PEOPLE
 ```
 
 Los dos caminos terminan encontrándose en el mismo sitio:
@@ -90,41 +174,43 @@ Los dos caminos terminan encontrándose en el mismo sitio:
 
 ---
 
-# ✦ Qué es GracianB
+# ✦ QUÉ ES GRACIANB
 
 No es únicamente una web.
 
 No es únicamente un CV.
 
-Y tampoco es un repositorio con una colección de proyectos abandonados a las 3 de la mañana.
+Y tampoco es un repositorio lleno de proyectos abandonados a las 3 de la mañana.
 
 Es el **centro de mi ecosistema personal y profesional**.
 
-Desde aquí puedes entrar en tres mundos diferentes:
-
 ```text
-                         GRACIANB
-                            HUB
-                             │
-            ┌────────────────┼────────────────┐
-            │                │                │
-            ▼                ▼                ▼
-       01 EXPERIENCE      02 PLAY          03 YOGA
-            │                │                │
-       PEOPLE + DATA       AI + SYSTEMS     PRESENCE
-       CUSTOMER SUCCESS    AUTOMATION       BREATH
-       PRICING             DEVELOPMENT      PRACTICE
+                           GRACIANB
+                              HUB
+                               │
+             ┌─────────────────┼─────────────────┐
+             │                 │                 │
+             ▼                 ▼                 ▼
+       01 EXPERIENCE       02 PLAY           03 YOGA
+             │                 │                 │
+        PEOPLE + DATA      AI + SYSTEMS      PRESENCE
+        CUSTOMER SUCCESS   AUTOMATION        BREATH
+        PRICING            DEVELOPMENT       PRACTICE
+             │                 │                 │
+             └─────────────────┼─────────────────┘
+                               ▼
+                            ONE STORY
 ```
 
-### Tres mundos.
+### Three worlds.
 
-### Una persona.
+### One person.
 
-### Una narrativa.
+### One narrative.
 
 ---
 
-# 🚪 Las tres puertas
+# 🚪 LAS TRES PUERTAS
 
 ## 01 · EXPERIENCE
 
@@ -134,17 +220,17 @@ Mi lado profesional.
 
 Aquí están mi trayectoria, capacidades, metodología, casos y evidencia.
 
-[**→ Abrir Professional Deck**](https://gracianb.github.io/professional-deck/)
+**[→ Abrir Professional Deck](https://gracianb.github.io/professional-deck/)**
 
 `Customer Success` `Pricing` `E-commerce` `Data` `AI`
 
-### Caso real
+### ◉ Caso real
 
 **Bodytone Support OS**
 
 Un sistema de soporte y conocimiento disponible públicamente y funcionando en producción.
 
-[**→ Ver Help Center LIVE**](https://bodytonehelp.zendesk.com/hc/es)
+**[→ Ver Help Center LIVE](https://bodytonehelp.zendesk.com/hc/es)**
 
 ---
 
@@ -162,18 +248,19 @@ Algunas cosas simplemente necesitan existir para responder a una pregunta:
 
 > **¿Y si lo construyo?**
 
-[**→ Entrar en Systems Lab**](https://gracianb.github.io/systems-lab/)
+**[→ Entrar en Systems Lab](https://gracianb.github.io/systems-lab/)**
 
-```text id="o0wqkm"
+```text
 AI
-+
+ +
 AUTOMATION
-+
+ +
 CODE
-+
+ +
 EXPERIMENTATION
-        ↓
-     SYSTEMS
+       │
+       ▼
+    SYSTEMS
 ```
 
 ### Dentro del laboratorio
@@ -182,7 +269,7 @@ EXPERIMENTATION
 
 Un experimento jugable.
 
-[→ Abrir Ohana](https://gracianb.github.io/project-ohana/)
+**[→ Abrir Ohana](https://gracianb.github.io/project-ohana/)**
 
 **Vórtice**
 
@@ -190,7 +277,7 @@ Un proyecto experimental que probablemente no necesitaba existir.
 
 Naturalmente, existe.
 
-[→ Abrir Vórtice](https://vortex-gilt-xi.vercel.app/)
+**[→ Abrir Vórtice](https://vortex-gilt-xi.vercel.app/)**
 
 ---
 
@@ -202,7 +289,7 @@ Mi lado humano.
 
 Instructor de yoga formado en Madrid en 2019, con experiencia de enseñanza en sala y wellness corporativo.
 
-[**→ Entrar en Yoga Instructor**](https://gracianb.github.io/yoga-instructor/)
+**[→ Entrar en Yoga Instructor](https://gracianb.github.io/yoga-instructor/)**
 
 `Yoga` `Teaching` `Presence` `Wellness`
 
@@ -211,26 +298,32 @@ Instructor de yoga formado en Madrid en 2019, con experiencia de enseñanza en s
 
 ---
 
-# 🧠 Mi forma de trabajar
+# 🧠 MI FORMA DE TRABAJAR
 
 No empiezo por la herramienta.
 
-Empiezo por el problema.
+## Empiezo por el problema.
 
-```text id="7i9q2x"
-PROBLEMA
-    ↓
-CONTEXTO
-    ↓
-SEÑAL
-    ↓
-CRITERIO
-    ↓
-SISTEMA
-    ↓
-ADOPCIÓN
-    ↓
-RESULTADO
+```text
+PROBLEM
+   │
+   ▼
+CONTEXT
+   │
+   ▼
+SIGNAL
+   │
+   ▼
+CRITERIA
+   │
+   ▼
+SYSTEM
+   │
+   ▼
+ADOPTION
+   │
+   ▼
+OUTCOME
 ```
 
 Mi método puede resumirse en cuatro movimientos:
@@ -255,35 +348,41 @@ Conseguir que aquello que se ha construido sea realmente utilizado.
 
 ---
 
-# ⚡ Mi diferencial
+# ⚡ MI DIFERENCIAL
 
 Mi perfil se encuentra en la intersección entre dos capas.
 
-```text id="zv5z9c"
-┌───────────────────────────────┐
-│         HUMAN LAYER            │
-│                               │
-│ Customer Success              │
-│ Communication                 │
-│ Context                       │
-│ Training                      │
-│ Adoption                      │
-│ Yoga / Presence               │
-└───────────────┬───────────────┘
+```text
+┌─────────────────────────────────┐
+│          HUMAN LAYER            │
+│                                 │
+│  Customer Success              │
+│  Communication                 │
+│  Context                       │
+│  Training                      │
+│  Adoption                      │
+│  Yoga / Presence               │
+│                                 │
+└───────────────┬─────────────────┘
+                │
                 ×
-┌───────────────▼───────────────┐
-│         SYSTEM LAYER           │
-│                               │
-│ Data                          │
-│ Pricing                       │
-│ Automation                    │
-│ AI                            │
-│ Development                   │
-│ Architecture                 │
-└───────────────┬───────────────┘
+                │
+┌───────────────▼─────────────────┐
+│         SYSTEM LAYER            │
+│                                 │
+│  Data                          │
+│  Pricing                       │
+│  Automation                    │
+│  AI                            │
+│  Development                   │
+│  Architecture                  │
+│                                 │
+└───────────────┬─────────────────┘
                 │
                 ▼
-           REAL VALUE
+          ┌───────────┐
+          │ REAL VALUE│
+          └───────────┘
 ```
 
 No me interesa elegir entre:
@@ -294,72 +393,100 @@ Me interesa entender cómo hacer que ambas funcionen juntas.
 
 ---
 
-# 📊 Algunas cifras
+# 📊 ALGUNAS CIFRAS
 
 <div align="center">
+
+<table>
+<tr>
+<td align="center">
 
 ### `16+`
 
 **años de experiencia profesional**
 
+</td>
+<td align="center">
+
 ### `10+`
 
 **años trabajando directamente con clientes**
+
+</td>
+<td align="center">
 
 ### `200+`
 
 **reglas de pricing**
 
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
 ### `5+`
 
 **centros ECI**
+
+</td>
+<td align="center">
 
 ### `1`
 
 **sistema live verificable**
 
+</td>
+<td align="center">
+
 ### `4`
 
 **países / entornos internacionales**
+
+</td>
+</tr>
+</table>
 
 </div>
 
 ---
 
-# 🧩 Capability Map
+# 🧩 CAPABILITY MAP
 
-| Área                 | Lo que hago                                    |
-| :------------------- | :--------------------------------------------- |
-| **Customer Success** | Clientes · Adopción · Retención · Relationship |
-| **Data**             | Análisis · Pricing · KPIs · Research           |
-| **AI**               | GenAI · Agents · Workflows                     |
-| **Automation**       | n8n · Make · Zapier · procesos                 |
-| **Systems**          | Diseño · Desarrollo · Integración              |
-| **Business**         | E-commerce · Pricing · Operations              |
-| **Human**            | Comunicación · Formación · Yoga                |
+| Área                 | Capacidades                                  |
+| :------------------- | :------------------------------------------- |
+| **Customer Success** | Clientes · Adopción · Retención · Relaciones |
+| **Data**             | Análisis · Pricing · KPIs · Research         |
+| **AI**               | GenAI · Agents · Workflows                   |
+| **Automation**       | n8n · Make · Zapier · Procesos               |
+| **Systems**          | Diseño · Desarrollo · Integración            |
+| **Business**         | E-commerce · Pricing · Operations            |
+| **Human**            | Comunicación · Formación · Yoga              |
 
 ---
 
-# 🛠️ Herramientas
+# 🛠️ STACK
 
-```text id="4hfr8w"
-AI
-OpenAI · GenAI · AI Agents
-
-AUTOMATION
-n8n · Make · Zapier
-
-DATA
-Python · Pandas · PostgreSQL · Google Sheets
-
-WEB
-HTML · CSS · JavaScript
-
-BACKEND
-Python · Flask
-
-BUSINESS
-Customer Success · Pricing · E-commerce · Operations
+```text
+┌──────────────────────────────────────────┐
+│ AI                                       │
+│ OpenAI · GenAI · AI Agents               │
+├──────────────────────────────────────────┤
+│ AUTOMATION                               │
+│ n8n · Make · Zapier                       │
+├──────────────────────────────────────────┤
+│ DATA                                     │
+│ Python · Pandas · PostgreSQL · Sheets    │
+├──────────────────────────────────────────┤
+│ WEB                                      │
+│ HTML · CSS · JavaScript                  │
+├──────────────────────────────────────────┤
+│ BACKEND                                  │
+│ Python · Flask                           │
+├──────────────────────────────────────────┤
+│ BUSINESS                                 │
+│ CS · Pricing · E-commerce · Operations   │
+└──────────────────────────────────────────┘
 ```
 
 Pero las herramientas son secundarias.
@@ -370,7 +497,7 @@ La pregunta importante siempre es:
 
 ---
 
-# ⭐ Sistemas verificables
+# ⭐ SISTEMAS VERIFICABLES
 
 No todos los proyectos son iguales.
 
@@ -383,31 +510,39 @@ Y algunos pueden comprobarse ahora mismo.
 |    #   | Sistema                 |    Estado   | Enfoque                   |
 | :----: | :---------------------- | :---------: | :------------------------ |
 | **01** | **Bodytone Support OS** | 🔴 **LIVE** | Knowledge · Support · CX  |
-| **02** | **Pricing Calculator**  |   🟡 DEMO   | Data · Pricing · Rules    |
-| **03** | **Profile Finder**      |   🟡 DEMO   | Search · Data · LinkedIn  |
-| **04** | **Outreach System**     |   🟡 DEMO   | GenAI · Automation · HITL |
+| **02** | **Pricing Calculator**  | 🟡 **DEMO** | Data · Pricing · Rules    |
+| **03** | **Profile Finder**      | 🟡 **DEMO** | Search · Data · LinkedIn  |
+| **04** | **Outreach System**     | 🟡 **DEMO** | GenAI · Automation · HITL |
 
 ### La diferencia entre una idea y un sistema:
 
-```text id="8f3q2s"
+```text
 IDEA
- ↓
+ │
+ ▼
 BUILD
- ↓
+ │
+ ▼
 DEPLOY
- ↓
+ │
+ ▼
 USE
- ↓
+ │
+ ▼
 VERIFY
 ```
 
+**Build → Deploy → Use → Verify.**
+
+Ese es el punto.
+
 ---
 
-# 🌍 Experiencia internacional
+# 🌍 EXPERIENCIA INTERNACIONAL
 
 Mi trayectoria profesional combina diferentes sectores, funciones y contextos internacionales.
 
-```text id="qf0j52"
+```text
 SPAIN
  │
  ├── Customer Success
@@ -417,7 +552,9 @@ SPAIN
  ├── Operations
  └── Yoga
        │
-       └── International / Multicultural
+       ▼
+ INTERNATIONAL
+ / MULTICULTURAL
 ```
 
 ### Idiomas
@@ -426,7 +563,7 @@ SPAIN
 
 ---
 
-# 📄 Documentos
+# 📄 DOCUMENTOS
 
 Los documentos canónicos viven en este repositorio.
 
@@ -450,21 +587,21 @@ Los documentos canónicos viven en este repositorio.
 
 ---
 
-# 🎨 El Hub
+# 🎨 EL HUB
 
-El sitio está diseñado como una experiencia editorial interactiva.
+El sitio está diseñado como una **experiencia editorial interactiva**, no como un CV tradicional.
 
-### Visual
+### VISUAL SYSTEM
 
 `WARM BLACK` · `BRAND GOLD` · `FOREST` · `CHAMPAGNE` · `ICE` · `SAGE`
 
-### Tipografía
+### TYPOGRAPHY
 
-**Fraunces** · identidad editorial
-**Inter** · interfaz
-**JetBrains Mono** · sistema / metadata
+**Fraunces** · editorial identity
+**Inter** · interface
+**JetBrains Mono** · system / metadata
 
-### Interacción
+### INTERACTION
 
 * Cinematic hero
 * Animated typing
@@ -480,81 +617,41 @@ El sitio está diseñado como una experiencia editorial interactiva.
 * Vignette
 * Micro-interactions
 
-La intención es sencilla:
+### DESIGN PRINCIPLE
 
-## que el portfolio se sienta como una experiencia, no como un listado.
+> **The portfolio should feel like an experience, not a list.**
 
 ---
 
-# 🧭 El ecosistema completo
+# 🧭 EL ECOSISTEMA
 
-```text id="9x2v6h"
-                         ┌───────────────┐
-                         │   GRACIANB    │
-                         │      HUB      │
-                         └───────┬───────┘
-                                 │
-              ┌──────────────────┼──────────────────┐
-              │                  │                  │
-              ▼                  ▼                  ▼
-       ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-       │ 01          │    │ 02          │    │ 03          │
-       │ EXPERIENCE  │    │ PLAY        │    │ YOGA        │
-       │             │    │             │    │             │
-       │ PEOPLE      │    │ AI          │    │ PRESENCE    │
-       │ DATA        │    │ AUTOMATION   │    │ BREATH      │
-       │ BUSINESS    │    │ SYSTEMS     │    │ PRACTICE    │
-       └─────────────┘    └─────────────┘    └─────────────┘
+```text
+                         ┌─────────────────┐
+                         │    GRACIANB     │
+                         │       HUB       │
+                         └────────┬────────┘
+                                  │
+                ┌─────────────────┼─────────────────┐
+                │                 │                 │
+                ▼                 ▼                 ▼
+        ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+        │      01      │  │      02      │  │      03      │
+        │  EXPERIENCE  │  │     PLAY     │  │     YOGA     │
+        │              │  │              │  │              │
+        │ PEOPLE       │  │ AI           │  │ PRESENCE     │
+        │ DATA         │  │ AUTOMATION   │  │ BREATH       │
+        │ BUSINESS     │  │ SYSTEMS      │  │ PRACTICE     │
+        └──────────────┘  └──────────────┘  └──────────────┘
 ```
 
-|  WORLD | PROJECT                                                            | PURPOSE                   |
+|  World | Project                                                            | Purpose                   |
 | :----: | :----------------------------------------------------------------- | :------------------------ |
 | **01** | [Professional Deck](https://gracianb.github.io/professional-deck/) | **Professional evidence** |
 | **02** | [Systems Lab](https://gracianb.github.io/systems-lab/)             | **Experiments & systems** |
 | **03** | [Yoga Instructor](https://gracianb.github.io/yoga-instructor/)     | **Practice & teaching**   |
-|  **◉** | **GracianB Hub**                                                   | **Everything together**   |
+|  **◉** | [GracianB Hub](https://gracianb.github.io/GracianB/)               | **Everything together**   |
 
 ---
-
-# 🔗 Navegación rápida
-
-<div align="center">
-
-[![EXPERIENCE](https://img.shields.io/badge/01_EXPERIENCE-C4A574?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/professional-deck/)
-
-[![PLAY](https://img.shields.io/badge/02_PLAY-7AF3FF?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/systems-lab/)
-
-[![YOGA](https://img.shields.io/badge/03_YOGA-7DCAA5?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/yoga-instructor/)
-
-[![OHANA](https://img.shields.io/badge/PLAY-OHANA-7AF3FF?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/project-ohana/)
-
-[![VÓRTICE](https://img.shields.io/badge/PLAY-V%C3%93RTICE-DAA428?style=for-the-badge\&labelColor=06070A)](https://vortex-gilt-xi.vercel.app/)
-
-</div>
-
----
-
-# 📡 Contacto
-
-<div align="center">
-
-### **Construyamos algo útil.**
-
-<br>
-
-[![LINKEDIN](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white\&labelColor=06070A)](https://www.linkedin.com/in/gracianbaena)
-
-[![EMAIL](https://img.shields.io/badge/%E2%9C%89%EF%B8%8F_EMAIL-eA4335?style=for-the-badge\&logo=gmail\&logoColor=white\&labelColor=06070A)](mailto:gracianbaenagonzalez@gmail.com)
-
-[![CALENDAR](https://img.shields.io/badge/%F0%9F%93%85_BOOK_30_MIN-DAA428?style=for-the-badge\&labelColor=06070A)](https://calendar.app.google/n99psBFktwYyoAWi9)
-
-[![GITHUB](https://img.shields.io/badge/GITHUB-GracianB-DAA428?style=for-the-badge\&logo=github\&logoColor=DAA428\&labelColor=06070A)](https://github.com/GracianB)
-
-</div>
-
----
-
-<br>
 
 # 🇬🇧 ENGLISH
 
@@ -572,35 +669,46 @@ My career has not followed a perfectly straight line.
 
 It has looked more like this:
 
-```text id="x2z6pd"
+```text
 PEOPLE
-   ↓
+  │
+  ▼
 CUSTOMER SUCCESS
-   ↓
+  │
+  ▼
 OPERATIONS
-   ↓
+  │
+  ▼
 DATA
-   ↓
+  │
+  ▼
 PRICING
-   ↓
+  │
+  ▼
 AUTOMATION
-   ↓
+  │
+  ▼
 AI
-   ↓
+  │
+  ▼
 SYSTEMS
 ```
 
 And alongside that, another path:
 
-```text id="7r8h2a"
+```text
 MOVEMENT
-   ↓
+  │
+  ▼
 YOGA
-   ↓
+  │
+  ▼
 PRESENCE
-   ↓
+  │
+  ▼
 TEACHING
-   ↓
+  │
+  ▼
 PEOPLE
 ```
 
@@ -610,7 +718,7 @@ Both paths eventually lead to the same place:
 
 ---
 
-# ✦ What is GracianB?
+# ✦ WHAT IS GRACIANB?
 
 It is not just a website.
 
@@ -620,20 +728,22 @@ And it is definitely not just a repository full of projects abandoned at 3 AM.
 
 It is the **centre of my personal and professional ecosystem**.
 
-From here, you can enter three different worlds:
-
-```text id="k9z2sp"
-                         GRACIANB
-                            HUB
-                             │
-            ┌────────────────┼────────────────┐
-            │                │                │
-            ▼                ▼                ▼
-       01 EXPERIENCE      02 PLAY          03 YOGA
-            │                │                │
-       PEOPLE + DATA       AI + SYSTEMS     PRESENCE
-       CUSTOMER SUCCESS    AUTOMATION       BREATH
-       PRICING             DEVELOPMENT      PRACTICE
+```text
+                           GRACIANB
+                              HUB
+                               │
+             ┌─────────────────┼─────────────────┐
+             │                 │                 │
+             ▼                 ▼                 ▼
+       01 EXPERIENCE       02 PLAY           03 YOGA
+             │                 │                 │
+        PEOPLE + DATA      AI + SYSTEMS      PRESENCE
+        CUSTOMER SUCCESS   AUTOMATION        BREATH
+        PRICING            DEVELOPMENT       PRACTICE
+             │                 │                 │
+             └─────────────────┼─────────────────┘
+                               ▼
+                            ONE STORY
 ```
 
 ### Three worlds.
@@ -644,7 +754,7 @@ From here, you can enter three different worlds:
 
 ---
 
-# 🚪 The three doors
+# 🚪 THE THREE DOORS
 
 ## 01 · EXPERIENCE
 
@@ -654,17 +764,17 @@ My professional side.
 
 This is where you will find my career, capabilities, methodology, case studies and evidence.
 
-[**→ Open Professional Deck**](https://gracianb.github.io/professional-deck/)
+**[→ Open Professional Deck](https://gracianb.github.io/professional-deck/)**
 
 `Customer Success` `Pricing` `E-commerce` `Data` `AI`
 
-### Real case
+### ◉ Real case
 
 **Bodytone Support OS**
 
 A support and knowledge system publicly available and running in production.
 
-[**→ View LIVE Help Center**](https://bodytonehelp.zendesk.com/hc/es)
+**[→ View LIVE Help Center](https://bodytonehelp.zendesk.com/hc/es)**
 
 ---
 
@@ -682,18 +792,19 @@ Some things simply need to exist to answer one question:
 
 > **What if I build it?**
 
-[**→ Enter Systems Lab**](https://gracianb.github.io/systems-lab/)
+**[→ Enter Systems Lab](https://gracianb.github.io/systems-lab/)**
 
-```text id="x0s2gc"
+```text
 AI
-+
+ +
 AUTOMATION
-+
+ +
 CODE
-+
+ +
 EXPERIMENTATION
-        ↓
-     SYSTEMS
+       │
+       ▼
+    SYSTEMS
 ```
 
 ### Inside the lab
@@ -702,7 +813,7 @@ EXPERIMENTATION
 
 A playable experiment.
 
-[→ Open Ohana](https://gracianb.github.io/project-ohana/)
+**[→ Open Ohana](https://gracianb.github.io/project-ohana/)**
 
 **Vórtice**
 
@@ -710,7 +821,7 @@ An experimental project that probably did not need to exist.
 
 Naturally, it exists.
 
-[→ Open Vórtice](https://vortex-gilt-xi.vercel.app/)
+**[→ Open Vórtice](https://vortex-gilt-xi.vercel.app/)**
 
 ---
 
@@ -722,7 +833,7 @@ My human side.
 
 Yoga instructor trained in Madrid in 2019, with studio teaching and corporate wellness experience.
 
-[**→ Enter Yoga Instructor**](https://gracianb.github.io/yoga-instructor/)
+**[→ Enter Yoga Instructor](https://gracianb.github.io/yoga-instructor/)**
 
 `Yoga` `Teaching` `Presence` `Wellness`
 
@@ -731,25 +842,31 @@ Yoga instructor trained in Madrid in 2019, with studio teaching and corporate we
 
 ---
 
-# 🧠 How I work
+# 🧠 HOW I WORK
 
 I do not start with the tool.
 
-I start with the problem.
+## I start with the problem.
 
-```text id="j7w5q4"
+```text
 PROBLEM
-    ↓
+   │
+   ▼
 CONTEXT
-    ↓
+   │
+   ▼
 SIGNAL
-    ↓
+   │
+   ▼
 CRITERIA
-    ↓
+   │
+   ▼
 SYSTEM
-    ↓
+   │
+   ▼
 ADOPTION
-    ↓
+   │
+   ▼
 OUTCOME
 ```
 
@@ -775,35 +892,41 @@ Make sure what was built is actually used.
 
 ---
 
-# ⚡ My differentiator
+# ⚡ MY DIFFERENTIATOR
 
-My profile sits at the intersection of two layers.
+My profile sits at the intersection of two layers:
 
-```text id="m3h4v6"
-┌───────────────────────────────┐
-│         HUMAN LAYER            │
-│                               │
-│ Customer Success              │
-│ Communication                 │
-│ Context                       │
-│ Training                      │
-│ Adoption                      │
-│ Yoga / Presence               │
-└───────────────┬───────────────┘
+```text
+┌─────────────────────────────────┐
+│          HUMAN LAYER            │
+│                                 │
+│  Customer Success              │
+│  Communication                 │
+│  Context                       │
+│  Training                      │
+│  Adoption                      │
+│  Yoga / Presence               │
+│                                 │
+└───────────────┬─────────────────┘
+                │
                 ×
-┌───────────────▼───────────────┐
-│         SYSTEM LAYER           │
-│                               │
-│ Data                          │
-│ Pricing                       │
-│ Automation                    │
-│ AI                            │
-│ Development                   │
-│ Architecture                 │
-└───────────────┬───────────────┘
+                │
+┌───────────────▼─────────────────┐
+│         SYSTEM LAYER            │
+│                                 │
+│  Data                          │
+│  Pricing                       │
+│  Automation                    │
+│  AI                            │
+│  Development                   │
+│  Architecture                  │
+│                                 │
+└───────────────┬─────────────────┘
                 │
                 ▼
-           REAL VALUE
+          ┌───────────┐
+          │ REAL VALUE│
+          └───────────┘
 ```
 
 I am not interested in choosing between:
@@ -814,39 +937,65 @@ I am interested in understanding how to make both work together.
 
 ---
 
-# 📊 A few numbers
+# 📊 A FEW NUMBERS
 
 <div align="center">
+
+<table>
+<tr>
+<td align="center">
 
 ### `16+`
 
 **years professional experience**
 
+</td>
+<td align="center">
+
 ### `10+`
 
 **years customer-facing**
+
+</td>
+<td align="center">
 
 ### `200+`
 
 **pricing rules**
 
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
 ### `5+`
 
 **ECI centres**
+
+</td>
+<td align="center">
 
 ### `1`
 
 **verifiable live system**
 
+</td>
+<td align="center">
+
 ### `4`
 
 **countries / international environments**
+
+</td>
+</tr>
+</table>
 
 </div>
 
 ---
 
-# 🧩 Capability Map
+# 🧩 CAPABILITY MAP
 
 | Area                 | What I do                                        |
 | :------------------- | :----------------------------------------------- |
@@ -860,26 +1009,28 @@ I am interested in understanding how to make both work together.
 
 ---
 
-# 🛠️ Tools
+# 🛠️ STACK
 
-```text id="u8q5fz"
-AI
-OpenAI · GenAI · AI Agents
-
-AUTOMATION
-n8n · Make · Zapier
-
-DATA
-Python · Pandas · PostgreSQL · Google Sheets
-
-WEB
-HTML · CSS · JavaScript
-
-BACKEND
-Python · Flask
-
-BUSINESS
-Customer Success · Pricing · E-commerce · Operations
+```text
+┌──────────────────────────────────────────┐
+│ AI                                       │
+│ OpenAI · GenAI · AI Agents               │
+├──────────────────────────────────────────┤
+│ AUTOMATION                               │
+│ n8n · Make · Zapier                       │
+├──────────────────────────────────────────┤
+│ DATA                                     │
+│ Python · Pandas · PostgreSQL · Sheets    │
+├──────────────────────────────────────────┤
+│ WEB                                      │
+│ HTML · CSS · JavaScript                  │
+├──────────────────────────────────────────┤
+│ BACKEND                                  │
+│ Python · Flask                           │
+├──────────────────────────────────────────┤
+│ BUSINESS                                 │
+│ CS · Pricing · E-commerce · Operations   │
+└──────────────────────────────────────────┘
 ```
 
 The tools are secondary.
@@ -890,7 +1041,7 @@ The important question is always:
 
 ---
 
-# ⭐ Verifiable Systems
+# ⭐ VERIFIABLE SYSTEMS
 
 Not every project is the same.
 
@@ -903,29 +1054,48 @@ And some can be checked right now.
 |    #   | System                  |    Status   | Focus                     |
 | :----: | :---------------------- | :---------: | :------------------------ |
 | **01** | **Bodytone Support OS** | 🔴 **LIVE** | Knowledge · Support · CX  |
-| **02** | **Pricing Calculator**  |   🟡 DEMO   | Data · Pricing · Rules    |
-| **03** | **Profile Finder**      |   🟡 DEMO   | Search · Data · LinkedIn  |
-| **04** | **Outreach System**     |   🟡 DEMO   | GenAI · Automation · HITL |
+| **02** | **Pricing Calculator**  | 🟡 **DEMO** | Data · Pricing · Rules    |
+| **03** | **Profile Finder**      | 🟡 **DEMO** | Search · Data · LinkedIn  |
+| **04** | **Outreach System**     | 🟡 **DEMO** | GenAI · Automation · HITL |
 
 ### The difference between an idea and a system:
 
-```text id="v7c2nz"
+```text
 IDEA
- ↓
+ │
+ ▼
 BUILD
- ↓
+ │
+ ▼
 DEPLOY
- ↓
+ │
+ ▼
 USE
- ↓
+ │
+ ▼
 VERIFY
 ```
 
 ---
 
-# 🌍 International Experience
+# 🌍 INTERNATIONAL EXPERIENCE
 
 My professional background combines different sectors, functions and international environments.
+
+```text
+SPAIN
+ │
+ ├── Customer Success
+ ├── Pricing
+ ├── E-commerce
+ ├── Retail
+ ├── Operations
+ └── Yoga
+       │
+       ▼
+ INTERNATIONAL
+ / MULTICULTURAL
+```
 
 ### Languages
 
@@ -933,7 +1103,7 @@ My professional background combines different sectors, functions and internation
 
 ---
 
-# 📄 Documents
+# 📄 DOCUMENTS
 
 The canonical documents live in this repository.
 
@@ -957,21 +1127,21 @@ The canonical documents live in this repository.
 
 ---
 
-# 🎨 The Hub
+# 🎨 THE HUB
 
-The website is designed as an interactive editorial experience.
+The website is designed as an **interactive editorial experience**, not a conventional CV.
 
-### Visual
+### VISUAL SYSTEM
 
 `WARM BLACK` · `BRAND GOLD` · `FOREST` · `CHAMPAGNE` · `ICE` · `SAGE`
 
-### Typography
+### TYPOGRAPHY
 
 **Fraunces** · editorial identity
 **Inter** · interface
 **JetBrains Mono** · system / metadata
 
-### Interaction
+### INTERACTION
 
 * Cinematic hero
 * Animated typing
@@ -987,75 +1157,77 @@ The website is designed as an interactive editorial experience.
 * Vignette
 * Micro-interactions
 
-The goal is simple:
-
-## to make the portfolio feel like an experience, not a list.
+> **The goal is simple: make the portfolio feel like an experience, not a list.**
 
 ---
 
-# 🧭 The complete ecosystem
+# 🧭 THE COMPLETE ECOSYSTEM
 
-```text id="b5n8s2"
-                         ┌───────────────┐
-                         │   GRACIANB    │
-                         │      HUB      │
-                         └───────┬───────┘
-                                 │
-              ┌──────────────────┼──────────────────┐
-              │                  │                  │
-              ▼                  ▼                  ▼
-       ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-       │ 01          │    │ 02          │    │ 03          │
-       │ EXPERIENCE  │    │ PLAY        │    │ YOGA        │
-       │             │    │             │    │             │
-       │ PEOPLE      │    │ AI          │    │ PRESENCE    │
-       │ DATA        │    │ AUTOMATION   │    │ BREATH      │
-       │ BUSINESS    │    │ SYSTEMS     │    │ PRACTICE    │
-       └─────────────┘    └─────────────┘    └─────────────┘
+```text
+                         ┌─────────────────┐
+                         │    GRACIANB     │
+                         │       HUB       │
+                         └────────┬────────┘
+                                  │
+                ┌─────────────────┼─────────────────┐
+                │                 │                 │
+                ▼                 ▼                 ▼
+        ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+        │      01      │  │      02      │  │      03      │
+        │  EXPERIENCE  │  │     PLAY     │  │     YOGA     │
+        │              │  │              │  │              │
+        │ PEOPLE       │  │ AI           │  │ PRESENCE     │
+        │ DATA         │  │ AUTOMATION   │  │ BREATH       │
+        │ BUSINESS     │  │ SYSTEMS      │  │ PRACTICE     │
+        └──────────────┘  └──────────────┘  └──────────────┘
 ```
 
-|  WORLD | PROJECT                                                            | PURPOSE                   |
+|  World | Project                                                            | Purpose                   |
 | :----: | :----------------------------------------------------------------- | :------------------------ |
 | **01** | [Professional Deck](https://gracianb.github.io/professional-deck/) | **Professional evidence** |
 | **02** | [Systems Lab](https://gracianb.github.io/systems-lab/)             | **Experiments & systems** |
 | **03** | [Yoga Instructor](https://gracianb.github.io/yoga-instructor/)     | **Practice & teaching**   |
-|  **◉** | **GracianB Hub**                                                   | **Everything together**   |
+|  **◉** | [GracianB Hub](https://gracianb.github.io/GracianB/)               | **Everything together**   |
 
 ---
 
-# 🔗 Quick Navigation
+# 🔗 QUICK NAVIGATION
 
 <div align="center">
 
-[![EXPERIENCE](https://img.shields.io/badge/01_EXPERIENCE-C4A574?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/professional-deck/)
+[![EXPERIENCE](https://img.shields.io/badge/01_EXPERIENCE-C4A574?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/professional-deck/)
 
-[![PLAY](https://img.shields.io/badge/02_PLAY-7AF3FF?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/systems-lab/)
+[![PLAY](https://img.shields.io/badge/02_PLAY-7AF3FF?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/systems-lab/)
 
-[![YOGA](https://img.shields.io/badge/03_YOGA-7DCAA5?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/yoga-instructor/)
+[![YOGA](https://img.shields.io/badge/03_YOGA-7DCAA5?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/yoga-instructor/)
 
-[![OHANA](https://img.shields.io/badge/PLAY-OHANA-7AF3FF?style=for-the-badge\&labelColor=06070A)](https://gracianb.github.io/project-ohana/)
+[![OHANA](https://img.shields.io/badge/PLAY-OHANA-7AF3FF?style=for-the-badge\&labelColor=050609)](https://gracianb.github.io/project-ohana/)
 
-[![VÓRTICE](https://img.shields.io/badge/PLAY-V%C3%93RTICE-DAA428?style=for-the-badge\&labelColor=06070A)](https://vortex-gilt-xi.vercel.app/)
+[![VÓRTICE](https://img.shields.io/badge/PLAY-V%C3%93RTICE-DAA428?style=for-the-badge\&labelColor=050609)](https://vortex-gilt-xi.vercel.app/)
 
 </div>
 
 ---
 
-# 📡 Contact
+# 📡 CONTACTO
 
 <div align="center">
 
-### **Let's build something useful.**
+## **Construyamos algo útil.**
 
 <br>
 
-[![LINKEDIN](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white\&labelColor=06070A)](https://www.linkedin.com/in/gracianbaena)
+[![LINKEDIN](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white\&labelColor=050609)](https://www.linkedin.com/in/gracianbaena)
 
-[![EMAIL](https://img.shields.io/badge/%E2%9C%89%EF%B8%8F_EMAIL-eA4335?style=for-the-badge\&logo=gmail\&logoColor=white\&labelColor=06070A)](mailto:gracianbaenagonzalez@gmail.com)
+[![EMAIL](https://img.shields.io/badge/%E2%9C%89%EF%B8%8F_EMAIL-eA4335?style=for-the-badge\&logo=gmail\&logoColor=white\&labelColor=050609)](mailto:gracianbaenagonzalez@gmail.com)
 
-[![CALENDAR](https://img.shields.io/badge/%F0%9F%93%85_BOOK_30_MIN-DAA428?style=for-the-badge\&labelColor=06070A)](https://calendar.app.google/n99psBFktwYyoAWi9)
+[![CALENDAR](https://img.shields.io/badge/%F0%9F%93%85_BOOK_30_MIN-DAA428?style=for-the-badge\&labelColor=050609)](https://calendar.app.google/n99psBFktwYyoAWi9)
 
-[![GITHUB](https://img.shields.io/badge/GITHUB-GracianB-DAA428?style=for-the-badge\&logo=github\&logoColor=DAA428\&labelColor=06070A)](https://github.com/GracianB)
+[![GITHUB](https://img.shields.io/badge/GITHUB-GracianB-DAA428?style=for-the-badge\&logo=github\&logoColor=DAA428\&labelColor=050609)](https://github.com/GracianB)
+
+<br><br>
+
+`PEOPLE × DATA × AI × AUTOMATION × SYSTEMS`
 
 </div>
 
@@ -1063,19 +1235,23 @@ The goal is simple:
 
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FAF7F2,32:DAA428,62:2A2622,100:050609&height=210&section=footer&animation=fadeIn" width="100%" alt="Gracián Baena footer"/>
+
 <br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FAF7F2,35:DAA428,70:2A2622,100:06070A&height=170&section=footer&animation=fadeIn" width="100%"/>
+## **GRACIÁN BAENA**
 
-### **PERSONAS × DATOS × SISTEMAS**
+### `PEOPLE × DATA × SYSTEMS`
 
 `ONE HUB · THREE WORLDS`
 
-**Gracián Baena · Murcia · Spain · 2026**
+<br>
+
+**Build useful things. Stay curious. Keep moving.**
 
 <br>
 
-> *Build useful things. Stay curious. Keep moving.*
+`MURCIA · SPAIN · 2026`
 
 <br>
 
@@ -1084,11 +1260,23 @@ The goal is simple:
 [03 · Yoga](https://gracianb.github.io/yoga-instructor/) ·
 [◉ Hub](https://gracianb.github.io/GracianB/)
 
+<br><br>
+
+<sub>
+
+**Gracián Baena · Personal & Professional Ecosystem**
+
+</sub>
+
 </div>
 
 <!--
-GRACIANB HUB
-People × Data × Systems
-Experience · Play · Yoga
-Gracián Baena · Spain · 2026
+╔══════════════════════════════════════════════════════════════╗
+║                         GRACIANB                             ║
+║                  PEOPLE × DATA × SYSTEMS                     ║
+║                                                              ║
+║  01 EXPERIENCE  ·  02 PLAY  ·  03 YOGA                       ║
+║                                                              ║
+║  Customer Success · Data · AI · Automation · Systems         ║
+╚══════════════════════════════════════════════════════════════╝
 -->
