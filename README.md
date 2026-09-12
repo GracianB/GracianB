@@ -1,147 +1,155 @@
 <div align="center">
 
-# Hi, I'm Gracián 👋
+<pre style="font-family: monospace; line-height: 1.15; font-size: 10px;">
+ ██████╗ ██████╗  █████╗  ██████╗██╗ █████╗ ███╗   ██╗
+██╔════╝ ██╔══██╗██╔══██╗██╔════╝██║██╔══██╗████╗  ██║
+██║  ███╗██████╔╝███████║██║     ██║███████║██╔██╗ ██║
+██║   ██║██╔══██╗██╔══██║██║     ██║██╔══██║██║╚██╗██║
+╚██████╔╝██║  ██║██║  ██║╚██████╗██║██║  ██║██║ ╚████║
+ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+</pre>
 
-**37 · Spain 🇪🇸 · Customer Success · Data · AI · Automation**
+![Status](https://img.shields.io/badge/Status-Building%20Things%20🛠️-1a1a2e?style=flat-square&labelColor=1a1a2e&color=00D26A)
+![Location](https://img.shields.io/badge/🇪🇸_Murcia-Spain-1a1a2e?style=flat-square&labelColor=1a1a2e&color=FF6B6B)
+![Age](https://img.shields.io/badge/34-orbits%20around%20the%20sun-1a1a2e?style=flat-square&labelColor=1a1a2e&color=FFD93D)
+
+<br>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=00D26A&center=true&vCenter=true&width=650&lines=Customer+Success+%C3%97+Data+%C3%97+AI+%C3%97+Automation;I+build+things+that+work.+Mostly.;Currently+overthinking+a+dashboard;Yoga+instructor+by+weekend+%F0%9F%A7%98" alt="typing" />
 
 </div>
 
-I'm Gracián, a Customer Success professional who somehow ended up spending a suspicious amount of time building things with data, AI and code.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=80&section=header" width="100%">
 
-I didn't plan it this way. It just kept happening.
+<div align="center">
 
-<br>
+### The TL;DR
 
-## A few things about me
+> *"I didn't plan it this way. It just kept happening."*
 
-🇪🇸 Based in Spain, Murcia
-🎂 37 years old
-💼 Customer Success
-🧠 AI & data enthusiast
-💻 I build things
-🥋 Martial arts
-🧘 Yoga instructor
-🥾 Hiking & outdoors
-🌍 International experience
-🇬🇧 English · 🇮🇹 Italian
+I'm the guy in Customer Success who learned to code because waiting for the data team took too long. Now I build AI agents at 2 AM and act surprised I'm tired on Monday.
+
+</div>
 
 <br>
 
-## Apparently, I like different things
+## 🇪🇸 Murcia, Spain · 34 · Customer Success · Data · AI · Automation
+
+- 💼 Customer Success — professionally opinionated about broken processes
+- 🧠 AI, data & automation
+- 💻 I build things, some of them on purpose
+- 🥋 Martial arts
+- 🧘 Yoga instructor
+- 🥾 Hiking & outdoors
+- 🌍 International experience
+- 🇬🇧 English · 🇮🇹 Italian
+
+<br>
+
+## I like different things — mostly at odds with each other
 
 | | |
 | :--- | :--- |
-| **Customer Success** | → talking to people |
-| **Data** | → talking to numbers |
-| **AI** | → talking to machines |
-| **Yoga** | → trying to stop talking altogether |
+| **Customer Success** | Talking to people |
+| **Data** | Talking to numbers |
+| **AI** | Talking to machines |
+| **Yoga** | Trying to shut up entirely |
 
-Still working out what that says about me.
-
-<br>
-
-## What I do
-
-**Customer Success × Data × AI × Automation × Systems**
-
-I work at the intersection of customers, business, data and technology.
-
-`Customer Success` `Pricing` `E-commerce` `Data & Analytics` `Automation` `AI` `Systems`
-
-If you want the full professional version — capabilities, case studies, evidence — that lives in the [Professional Deck](https://gracianb.github.io/professional-deck/). This is just the short version.
+Still working out what that combination says about me. Probably nothing good.
 
 <br>
 
-## Things I apparently do in my free time
+## Currently curious about
 
-- Building web applications
-- Experimenting with AI
-- Automating things that probably could've been done manually in less time
-- Analysing data for no one in particular
-- Creating systems
-- Trying new technologies
-- Hiking
-- Martial arts
-- Yoga
+AI agents · autonomous workflows · intelligent systems · data architecture · building things that solve actual problems · the perfect dashboard that doesn't exist yet
 
-Some people watch Netflix. I build another dashboard.
+*Updates more often than my sleep schedule.*
 
 <br>
 
-## Come have a look around 👀
+## What I actually do
 
-| | | |
-| :--- | :--- | :--- |
-| 💼 **Professional Deck** | My profile, experience and capabilities | [Explore →](https://gracianb.github.io/professional-deck/) |
-| 🧪 **Systems Lab** | AI, automation, development, experiments and systems | [Enter the lab →](https://gracianb.github.io/systems-lab/) |
-| 🧩 **Project Ohana** | An interactive project — step in | [Play →](https://gracianb.github.io/project-ohana/) |
-| ⚡ **Vórtice** | A web experiment | [Open →](https://vortex-gilt-xi.vercel.app/) |
-| 🧘 **Yoga Instructor** | My yoga and teaching space | [Take a look →](https://gracianb.github.io/yoga-instructor/) |
+| Professional identity | Reality check |
+| :--- | :--- |
+| **Customer Success × Data × AI × Automation** | I work where business meets technology and try not to break anything important |
+| **"Building systems"** | Break it first, fix it after, call it iteration |
+| **"Data-driven decisions"** | Analysing data that probably didn't need analysing |
+| **AI experiments** | Prompt engineering at 2 AM, questioning my life choices |
 
 <br>
 
-## What's inside this GitHub?
+## Things I do instead of sleeping
 
-🧠 AI experiments · ⚙️ Automation · 📊 Data projects · 💻 Web applications · 🧪 Prototypes · 🔧 Tools · 🎨 Creative projects
+| Hour | Activity | Sanity level |
+| :--- | :--- | :---: |
+| 22:00 | "Just one more function" | ⚠️ Declining |
+| 23:30 | Automating a 5-minute task | 🔴 Critical |
+| 01:00 | Building another dashboard | 💀 Gone |
+| 03:00 | Talking to AI about consciousness | 🌀 Transcendent |
 
-Not everything here is a finished product. Some things are experiments, some become projects, and some exist because I wanted to know if I could build them.
+> *Some people watch Netflix. I build another dashboard.*
+> Yes, I know it's a problem. No, I'm not fixing it.
+
+<br>
+
+## The Lab
+
+| Project | What it is | Status |
+| :--- | :--- | :---: |
+| **[Professional Deck](https://gracianb.github.io/professional-deck/)** | The corporate version of me — capabilities, case studies, evidence | `LIVE` |
+| **[Systems Lab](https://gracianb.github.io/systems-lab/)** | AI, automation, experiments — where things break in public | `EXPERIMENTAL` |
+| **[Project Ohana](https://gracianb.github.io/project-ohana/)** | Interactive thing. Click it. | `PLAYABLE` |
+| **[Vórtice](https://vortex-gilt-xi.vercel.app/)** | Web experiment. Might hypnotize you. | `WEIRD` |
+| **[Yoga Space](https://gracianb.github.io/yoga-instructor/)** | The zen me. Balance is important, allegedly | `ZEN` |
+
+**Need something specific?** [CV](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_EN.pdf) for HR · [LinkedIn](https://www.linkedin.com/in/gracianbaena) for networking · [Email](mailto:gracianbaenagonzalez@gmail.com) for jobs (or money) · [Calendar](https://calendar.app.google/n99psBFktwYyoAWi9) to book time
+
+<br>
+
+## Weapons of choice
+
+**AI / Automation**
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white)
+![Make](https://img.shields.io/badge/Make-6522FF?style=for-the-badge&logo=make&logoColor=white)
+![Zapier](https://img.shields.io/badge/Zapier-FF4A00?style=for-the-badge&logo=zapier&logoColor=white)
+
+**Data**
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Google Sheets](https://img.shields.io/badge/Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)
+
+**Web**
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 
 <br>
 
 ## How I learn
 
-I usually learn by building.
+💡 Idea → 🔨 Build → 💥 Break → 🔧 Fix → 🧠 Learn → 🚀 Ship → 😅 Regret → 🔁 Repeat
 
-**Idea → Experiment → Break it → Fix it → Learn → Build again.**
-
-Works well for software. Works less well for furniture assembly.
+*Works well for software. Works less well for furniture assembly.*
 
 <br>
 
-## Things I work with
-
-| | |
-| :--- | :--- |
-| **AI / Automation** | APIs · AI workflows · prompt engineering |
-| **Data** | Python · SQL · Analytics · Google Sheets |
-| **Web** | HTML · CSS · JavaScript |
-| **Backend** | Python · Flask · APIs |
-| **Tools** | Git · GitHub · Cloud / deployment |
-
-<br>
-
-## Outside the screen
-
-🧘 Yoga · 🥾 Hiking · 🥋 Martial arts · 🌲 Outdoors · 🌍 Travel
-
-When I'm not building something, I'm usually trying to convince myself that going outside was a good idea.
-
-<br>
-
-## Where should you go?
-
-| | |
-| :--- | :--- |
-| Want to know me professionally? | → [Professional Deck](https://gracianb.github.io/professional-deck/) |
-| Want to see what I build? | → [Systems Lab](https://gracianb.github.io/systems-lab/) |
-| Want to explore a project? | → [Ohana](https://gracianb.github.io/project-ohana/) · [Vórtice](https://vortex-gilt-xi.vercel.app/) |
-| Want the résumé? | → [CV](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_EN.pdf) |
-| Want to connect professionally? | → [LinkedIn](https://www.linkedin.com/in/gracianbaena) |
-
-<br>
-
-## Say hello 👋
-
-**[LinkedIn](https://www.linkedin.com/in/gracianbaena)** · **[Email](mailto:gracianbaenagonzalez@gmail.com)** · **[Calendar](https://calendar.app.google/n99psBFktwYyoAWi9)** · **[Portfolio](https://gracianb.github.io/GracianB/)**
-
-<br>
-
----
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=90&section=footer&text=Thanks%20for%20stopping%20by&fontSize=20&fontAlignY=75&animation=twinkling" width="100%">
 
 <div align="center">
 
-Thanks for stopping by.
+**Not everything here is finished. Not everything here works. But everything here started with "I wonder if I can build this."**
 
-Have a look around. Some repositories are serious, some are experiments, and at least one probably started with *"I wonder if I can build this."*
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gracianbaena)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gracianbaenagonzalez@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=github&logoColor=white)](https://gracianb.github.io/GracianB/)
 
 </div>
+
+<!--
+If you're reading this, you're as nosy as I am.
+I once spent 6 hours automating a task that takes 2 minutes.
+It was worth it. For the principle.
+-->
