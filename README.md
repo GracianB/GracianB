@@ -1,234 +1,70 @@
 <div align="center">
 
-# GRACIÁN BAENA
+# GB · GRACIÁN BAENA
 
-### Customer Success × Data × AI × Automation × Systems
+### Personas × Datos × Sistemas · Yoga × Presencia
 
-*Professional Portfolio · Systems Lab · 2026*
+*Centro de marca · Tres mundos · España · 2026*
 
-I turn customer and operational problems into **measurable, automated and intelligent systems** — combining customer understanding, data, automation and AI.
+Un solo centro. Tres puertas. Experiencia profesional, habilidad técnica, pasión yoga. **Elige tu mundo.**
 
 <br>
 
-[![Live Hub](https://img.shields.io/badge/OPEN_THE_LIVE_HUB-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)](https://gracianb.github.io/GracianB/)
+![España](https://img.shields.io/badge/España-abierto_a_roles_senior-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Murcia](https://img.shields.io/badge/Murcia-remote_OK-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Idiomas](https://img.shields.io/badge/ES%20%2F%20EN-8_PDFs-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-1a1a1a?style=flat-square&logo=linkedin&logoColor=DAA428)](https://www.linkedin.com/in/gracianbaena)
-&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=DAA428)](https://github.com/GracianB)
-&nbsp;
-[![Professional Deck](https://img.shields.io/badge/Professional_Deck-1a1a1a?style=flat-square&logoColor=DAA428)](https://gracianb.github.io/professional-deck/)
-&nbsp;
-[![Systems Lab](https://img.shields.io/badge/Systems_Lab-1a1a1a?style=flat-square&logoColor=DAA428)](https://gracianb.github.io/systems-lab/)
-&nbsp;
-[![Book a call](https://img.shields.io/badge/Book_a_30--min_call-1a1a1a?style=flat-square&logo=googlecalendar&logoColor=DAA428)](https://calendar.app.google/n99psBFktwYyoAWi9)
-&nbsp;
-[![Email](https://img.shields.io/badge/Email-1a1a1a?style=flat-square&logo=gmail&logoColor=DAA428)](mailto:gracianbaenagonzalez@gmail.com)
+<br>
+
+[![Abrir el hub](https://img.shields.io/badge/ABRIR_EL_HUB-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)](https://gracianb.github.io/GracianB/)
+
+[![1 sistema live · Bodytone](https://img.shields.io/badge/1_sistema_live-Bodytone_Zendesk-1a1a1a?style=flat-square&logoColor=DAA428)](https://bodytonehelp.zendesk.com/hc/es)
 
 </div>
 
 <br>
 
-## Table of Contents
+## Índice
 
-- [The professional signal](#the-professional-signal)
-- [What I build](#what-i-build)
-- [Selected ecosystem](#selected-ecosystem)
-- [Technical satellites](#technical-satellites)
-- [Professional evidence](#professional-evidence)
-- [A real-world example](#a-real-world-example)
-- [My operating model](#my-operating-model)
-- [Why this combination matters](#why-this-combination-matters)
-- [Portfolio metrics](#portfolio-metrics)
-- [Documents](#documents)
-- [Design & engineering](#design--engineering)
-- [Repository](#repository)
-- [Philosophy](#philosophy)
-- [Current direction](#current-direction)
-- [Connect](#connect)
+- [Qué es esto](#qué-es-esto)
+- [Navegación del sitio](#navegación-del-sitio)
+- [Método](#método)
+- [Tres puertas](#tres-puertas)
+- [PLAY · relájate o juega](#play--relájate-o-juega)
+- [Cifras](#cifras)
+- [Documentos](#documentos)
+- [Contacto](#contacto)
 
 <br>
 
-## The professional signal
+## Qué es esto
 
-My career follows a consistent direction:
+**[gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/)** es el hub personal de Gracián Baena — el punto de entrada que conecta sus tres mundos: experiencia profesional (Customer Success × Data × AI), habilidad técnica (Systems Lab) y una identidad personal (yoga).
 
-<div align="center">
-
-**Customer-facing → Data → Automation → AI → Systems**
-
-</div>
-
-These are not five separate identities. They are different layers of the same capability:
-
-> Understand the problem → structure the data → automate the work → apply AI where it creates value → build systems that scale.
-
-My background combines customer success, pricing and e-commerce environments, data analysis, operational workflows, automation, AI experimentation and hands-on development.
-
-This repository is the public hub connecting those layers.
+Bilingüe (ES/EN), tema claro/oscuro, paleta de marca por mundo, y una paleta de comandos (`Ctrl` + `K`) para navegar sin ratón.
 
 <br>
 
-## What I build
+## Navegación del sitio
 
-I am particularly interested in the space where **business problems meet technical execution**. The objective is not technology for technology's sake — the system has to solve something.
-
-| Capability | What it means in practice |
+| Sección | Destino |
 | :--- | :--- |
-| **Customer Success** | Understand customers, processes, friction and business needs |
-| **Data & Analytics** | Turn operational data into useful information and decisions |
-| **Automation** | Remove repetitive work and make processes more reliable |
-| **AI** | Apply AI to analysis, workflows, interfaces and decision support |
-| **Systems** | Connect people, data and technology into sustainable workflows |
-| **Product thinking** | Turn problems into usable, measurable solutions |
+| **Mundos** | Los tres portales — Experiencia, PLAY, Yoga |
+| **PLAY** | Ohana, Vórtice y el Help Center público |
+| **Documentos** | 8 PDFs canónicos, ES/EN, un clic |
+| **Contacto** | Email, agenda, LinkedIn, GitHub |
 
 <br>
 
-## Selected ecosystem
+## Método
 
-The portfolio is organized around three complementary worlds.
-
-<table>
-<tr>
-<td width="33%" valign="top">
-
-**01 · EXPERIENCE**
-### [Professional Deck →](https://gracianb.github.io/professional-deck/)
-*Customer Success × Data × AI*
-
-The professional layer — a visual presentation of my career, capabilities and approach to customer-facing, data-driven work.
-
-`Customer Success` `Pricing` `E-commerce` `Data` `Analytics` `AI`
-
-</td>
-<td width="33%" valign="top">
-
-**02 · SYSTEMS**
-### [Systems Lab →](https://gracianb.github.io/systems-lab/)
-*Experiments · Automation · AI · Dev*
-
-The technical layer — a laboratory for turning ideas into working prototypes, interfaces, automations and systems.
-
-`AI` `Automation` `JavaScript` `Python` `Web` `Systems`
-
-</td>
-<td width="33%" valign="top">
-
-**03 · PERSONAL**
-### [Yoga Instructor →](https://gracianb.github.io/yoga-instructor/)
-*Yoga · Teaching · Presence*
-
-A different dimension of the same person — discipline, teaching, presence and a long-term personal practice.
-
-`Yoga` `Teaching` `Presence`
-
-</td>
-</tr>
-</table>
-
-<br>
-
-## Technical satellites
-
-Beyond the main portfolio, several projects explore different technical directions.
-
-| Project | Type | Explore |
-| :--- | :--- | :--- |
-| **Project Ohana** | Interactive game / Canvas | [Open project](https://gracianb.github.io/project-ohana/) |
-| **Vórtice** | WebGL experiment | [Open experiment](https://vortex-gilt-xi.vercel.app/) |
-| **Systems Lab** | Technical portfolio | [Open lab](https://gracianb.github.io/systems-lab/) |
-| **Professional Deck** | Career / capability portfolio | [Open deck](https://gracianb.github.io/professional-deck/) |
-| **GitHub** | Code & experiments | [View profile](https://github.com/GracianB) |
-
-<br>
-
-## Professional evidence
-
-The portfolio is intentionally built around **evidence rather than generic claims**.
-
-<details>
-<summary><b>Customer & business</b></summary>
-<br>
-
-- Customer Success experience
-- Customer-facing operations
-- Pricing and e-commerce environments
-- International customer portfolio
-- Strategic customer support
-
-</details>
-
-<details>
-<summary><b>Data</b></summary>
-<br>
-
-- Data analysis
-- Operational reporting
-- Dashboards
-- Pricing intelligence
-- Structured decision-making
-- Large-scale spreadsheet workflows
-
-</details>
-
-<details>
-<summary><b>Automation</b></summary>
-<br>
-
-- Process automation
-- Data transformation
-- Operational tooling
-- Workflow optimization
-- Custom scripts and utilities
-
-</details>
-
-<details>
-<summary><b>AI</b></summary>
-<br>
-
-- AI-assisted workflows
-- Applied AI experimentation
-- AI interfaces
-- Prompt engineering
-- AI-powered systems
-- Generative AI exploration
-
-</details>
-
-<details>
-<summary><b>Development</b></summary>
-<br>
-
-- HTML · CSS · JavaScript · Python
-- APIs
-- GitHub Pages
-- Web applications
-- Interactive interfaces
-
-</details>
-
-<br>
-
-## A real-world example
-
-One of the portfolio's strongest signals is the **Bodytone Support OS** — public evidence of work around customer support, operational information and structured workflows.
-
-**Public support environment:** [Bodytone Support OS →](https://bodytonehelp.zendesk.com/hc/es)
-
-> Show what exists instead of asking people to believe what is claimed.
-
-<br>
-
-## My operating model
-
-Every project moves through four stages:
+Cada mundo, y cada proyecto dentro de él, sigue el mismo recorrido:
 
 ```mermaid
 flowchart LR
-    A["LISTEN<br/>Understand the problem"] --> B["DECIDE<br/>Structure the solution"]
-    B --> C["BUILD<br/>Data · AI · Automation"]
-    C --> D["ACTIVATE<br/>Deploy · measure"]
-    D -. feedback .-> A
+    A["01 · ESCUCHAR"] --> B["02 · DECIDIR"]
+    B --> C["03 · CONSTRUIR"]
+    C --> D["04 · ACTIVAR"]
 
     style A fill:#1a1a1a,stroke:#DAA428,color:#DAA428
     style B fill:#1a1a1a,stroke:#DAA428,color:#DAA428
@@ -238,183 +74,163 @@ flowchart LR
 
 <br>
 
-## Why this combination matters
+## Tres puertas
 
-Many professionals understand customers. Some understand data. Some build software. Some work with AI.
+Cada mundo tiene su cromática, su ritmo y su prueba. El hub es el centro que los conecta.
 
-The interesting part is what happens **between those disciplines**:
+<table>
+<tr>
+<td width="33%" valign="top">
 
-```mermaid
-flowchart TD
-    C[CUSTOMER] --> D[DATA] --> A[AUTOMATION] --> AI[AI] --> S[SYSTEMS] --> V["BUSINESS VALUE"]
+**01 · EXPERIENCIA**
+*Cromática · oro / nude / blanco*
 
-    style C fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style D fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style A fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style AI fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style S fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style V fill:#DAA428,stroke:#1a1a1a,color:#1a1a1a
-```
+### [CS × Data × AI →](https://gracianb.github.io/professional-deck/)
 
-That is the professional direction behind this repository.
+Deck profesional interactivo — método, capability map y prueba en Zendesk.
+
+- 14 slides · ES/EN
+- Bodytone live + demos
+- Capability map · experiencia
+- Método Escuchar → Activar
+
+*El caso que se puede verificar: Support OS en producción. Un deck interactivo, no un PDF.*
+
+[Help Center live ↗](https://bodytonehelp.zendesk.com/hc/es)
+`gracianb.github.io/professional-deck`
+
+</td>
+<td width="33%" valign="top">
+
+**02 · PLAY**
+*Cromática · hielo neón*
+
+### [Systems Lab →](https://gracianb.github.io/systems-lab/)
+
+Sistemas que se pulsan: Ohana, Vórtice y el Help Center.
+
+- Ohana · canvas
+- Vórtice · WebGL
+- Zendesk + lab
+- Chatbot demo + Aigoritmo
+
+*Si no se abre en el navegador, no está. Juegos, CS público y un agente de ejemplo.*
+
+[Jugar Ohana →](https://gracianb.github.io/project-ohana/) · [Abrir Vórtice →](https://vortex-gilt-xi.vercel.app/)
+`gracianb.github.io/systems-lab`
+
+</td>
+<td width="33%" valign="top">
+
+**03 · PASIÓN**
+*Cromática · sage / presencia*
+
+### [Presencia × Práctica →](https://gracianb.github.io/yoga-instructor/)
+
+Instructor de yoga · Murcia · 2019–2026.
+
+- Web zen · ES/EN
+- Claro / oscuro
+- CV y carta · 1 página
+- Sala · 1:1 · equipos
+
+*Certificado en Madrid, 2019. Corporativo en Google/YouTube. Sala en Murcia hasta junio 2026.*
+
+[CV yoga ES ↗](https://gracianb.github.io/GracianB/Gracian_Baena_CV_Yoga_ES.pdf)
+`gracianb.github.io/yoga-instructor`
+
+</td>
+</tr>
+</table>
 
 <br>
 
-## Portfolio metrics
+## PLAY · relájate o juega
 
-The following figures describe the portfolio context and experience represented across the ecosystem.
+El mundo técnico en su forma más lúdica: dos experiencias en vivo.
+
+| Proyecto | Qué es | Abrir |
+| :--- | :--- | :--- |
+| **Ohana** | Un juego. Entra. | [Jugar →](https://gracianb.github.io/project-ohana/) |
+| **Vórtice** | Mueve el cursor. Eso es todo. | [Abrir →](https://vortex-gilt-xi.vercel.app/) |
+
+[Abrir el mundo PLAY completo →](https://gracianb.github.io/systems-lab/)
+
+<br>
+
+## Cifras
 
 <div align="center">
 
-![Years](https://img.shields.io/badge/16%2B-years-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
-![Workflows](https://img.shields.io/badge/200%2B-rules_%2F_workflows-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
-![Countries](https://img.shields.io/badge/4-countries-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
-![Live systems](https://img.shields.io/badge/1-live_system-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
-
-**ES / EN · Dark / Light · Responsive · Accessible**
+![Años](https://img.shields.io/badge/16%2B-años_experiencia-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Reglas](https://img.shields.io/badge/200%2B-reglas_pricing-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Países](https://img.shields.io/badge/4-países-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Sistemas live](https://img.shields.io/badge/1-sistema_live-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
 
 </div>
 
-> These figures are portfolio context, not performance guarantees.
-
 <br>
 
-## Documents
+## Documentos
 
-The repository includes a complete professional document set.
-
-| Document | ES | EN |
-| :--- | :---: | :---: |
-| **Professional CV · 2026** | ✓ | ✓ |
-| **Professional Cover Letter** | ✓ | ✓ |
-| **Yoga CV** | ✓ | ✓ |
-| **Yoga Cover Letter** | ✓ | ✓ |
-
-The live hub provides access to the complete document collection.
-
-<br>
-
-## Design & engineering
-
-The hub deliberately avoids unnecessary framework complexity — a lightweight static experience built with intent.
-
-| Layer | Details |
-| :--- | :--- |
-| **Frontend** | HTML · CSS · JavaScript |
-| **Platform** | GitHub Pages |
-| **UX** | Responsive · Dark/Light · ES/EN · Keyboard navigation · Reduced motion |
-| **Discovery** | SEO · Open Graph · Twitter Cards · Schema.org · Sitemap · Robots |
-| **Interface** | Command palette · Accessible focus states · Progressive enhancement |
-| **Visual system** | Fraunces · Inter · JetBrains Mono |
-
-The visual language uses a restrained palette built around warm black, champagne, ice and sage — closer to a **digital professional studio** than a conventional résumé website.
-
-<br>
-
-## Repository
+CVs y cartas listos para enviar — PDFs canónicos alojados en este hub, un clic, ES/EN.
 
 <details>
-<summary><b>View file structure</b></summary>
+<summary><b>Experiencia · CS × Data × AI</b></summary>
+<br>
 
-```text
-GracianB/
-│
-├── index.html
-├── styles.css
-├── main.js
-├── i18n.js
-│
-├── favicon.svg
-├── og-cover.png
-├── og-cover.svg
-├── site.webmanifest
-│
-├── robots.txt
-├── sitemap.xml
-├── 404.html
-├── SECURITY.md
-│
-├── .github/
-│   └── workflows/
-│       └── site-check.yml
-│
-├── Gracian_Baena_CV_2026_ES.pdf
-├── Gracian_Baena_CV_2026_EN.pdf
-│
-├── Gracian_Baena_CV_Yoga_ES.pdf
-├── Gracian_Baena_CV_Yoga_EN.pdf
-│
-├── Gracian_Baena_Carta_Presentacion_ES.pdf
-├── Gracian_Baena_Cover_Letter_EN.pdf
-│
-├── Gracian_Baena_Carta_Yoga_ES.pdf
-└── Gracian_Baena_Cover_Letter_Yoga_EN.pdf
-```
+| Documento | Idioma | Enlace |
+| :--- | :---: | :--- |
+| CV Experiencia | ES | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_ES.pdf) |
+| Experience CV | EN | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_EN.pdf) |
+| Carta de presentación | ES | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_Carta_Presentacion_ES.pdf) |
+| Cover letter | EN | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_Cover_Letter_EN.pdf) |
+
+</details>
+
+<details>
+<summary><b>Yoga · Presencia × Práctica</b></summary>
+<br>
+
+| Documento | Idioma | Enlace |
+| :--- | :---: | :--- |
+| CV Yoga | ES | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_Yoga_ES.pdf) |
+| CV Yoga | EN | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_Yoga_EN.pdf) |
+| Carta Yoga | ES | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_Carta_Yoga_ES.pdf) |
+| Cover Yoga | EN | [Abrir →](https://gracianb.github.io/GracianB/Gracian_Baena_Cover_Letter_Yoga_EN.pdf) |
+
+</details>
+
+<details>
+<summary><b>PLAY · Systems, live</b></summary>
+<br>
+
+| Proyecto | Qué es | Enlace |
+| :--- | :--- | :--- |
+| Systems Lab | Hub técnico · hielo neón | [Abrir →](https://gracianb.github.io/systems-lab/) |
+| Ohana | Un juego. Entra. | [Jugar →](https://gracianb.github.io/project-ohana/) |
+| Vórtice | Mueve el cursor. Eso es todo. | [Abrir →](https://vortex-gilt-xi.vercel.app/) |
+| Bodytone Support OS | Help Center en producción | [Abrir ↗](https://bodytonehelp.zendesk.com/hc/es) |
 
 </details>
 
 <br>
 
-## Philosophy
-
-> Fewer claims. More evidence.
->
-> Fewer disconnected projects. More systems.
->
-> Less decoration for decoration's sake. More useful design.
->
-> Less automation theater. More measurable outcomes.
-
-Technology is a means. The interesting question is always:
-
-> What problem does it solve?
-
-<br>
-
-## Current direction
-
-The next stage of the portfolio is focused on the convergence of:
-
-```mermaid
-flowchart LR
-    CS[Customer Success] --- D[Data] --- A[Automation] --- AI[Artificial Intelligence] --- S[Systems]
-
-    style CS fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style D fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style A fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style AI fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-    style S fill:#1a1a1a,stroke:#DAA428,color:#DAA428
-```
-
-The goal is to build increasingly capable systems that make information easier to understand, work easier to execute and decisions easier to make.
-
-<br>
-
-## Connect
+## Contacto
 
 <div align="center">
 
-**Gracián Baena**
-Murcia, Spain · Remote
+**Agenda 30 minutos, o escribe. Murcia · remoto.**
 
-**Customer Success × Data × AI × Automation × Systems**
-
-| Channel | Link |
-| :--- | :--- |
-| LinkedIn | [linkedin.com/in/gracianbaena](https://www.linkedin.com/in/gracianbaena) |
-| GitHub | [github.com/GracianB](https://github.com/GracianB) |
-| Portfolio | [gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/) |
-| Professional Deck | [professional-deck](https://gracianb.github.io/professional-deck/) |
-| Systems Lab | [systems-lab](https://gracianb.github.io/systems-lab/) |
-| 30-min meeting | [Book a meeting](https://calendar.app.google/n99psBFktwYyoAWi9) |
-| Email | [gracianbaenagonzalez@gmail.com](mailto:gracianbaenagonzalez@gmail.com) |
+[![Agenda 30 min](https://img.shields.io/badge/Agenda_30_min-1a1a1a?style=flat-square&logo=googlecalendar&logoColor=DAA428)](https://calendar.app.google/n99psBFktwYyoAWi9)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-1a1a1a?style=flat-square&logo=linkedin&logoColor=DAA428)](https://www.linkedin.com/in/gracianbaena)
+[![Email](https://img.shields.io/badge/Email-1a1a1a?style=flat-square&logo=gmail&logoColor=DAA428)](mailto:gracianbaenagonzalez@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=DAA428)](https://github.com/GracianB)
 
 <br>
 
-### ONE HUB. THREE WORLDS. ONE PROFESSIONAL NARRATIVE.
+© 2026 Gracián Baena · *Personas × Datos × Sistemas · Yoga × Presencia*
 
-**[GRACIANB.GITHUB.IO/GRACIANB →](https://gracianb.github.io/GracianB/)**
-
-*Listen → Decide → Build → Activate*
+[deck](https://gracianb.github.io/professional-deck/) · [yoga](https://gracianb.github.io/yoga-instructor/) · [lab](https://gracianb.github.io/systems-lab/) · [ohana](https://gracianb.github.io/project-ohana/) · [vórtice](https://vortex-gilt-xi.vercel.app/)
 
 </div>
