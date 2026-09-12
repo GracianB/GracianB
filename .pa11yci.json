@@ -1,0 +1,12 @@
+{
+  "url": [
+    "https://gracianb.github.io/GracianB/",
+    "https://gracianb.github.io/GracianB/?lang=en"
+  ],
+  "standard": "WCAG2AA",
+  "timeout": 10000,
+  "wait": 1000,
+  "chromeLaunchConfig": {
+    "args": ["--no-sandbox"]
+  }
+}

@@ -1,0 +1,58 @@
+/* Design tokens & CSS variables */
+:root,
+[data-theme="dark"] {
+  --bg: #06070a;
+  --bg2: #090a0e;
+  --surface: #0e1016;
+  --surface2: #14161e;
+  --surface3: #1a1d28;
+  --ink: #f6f4ee;
+  --muted: #9b9a92;
+  --line: rgba(246, 244, 238, 0.10);
+  --line-strong: rgba(246, 244, 238, 0.20);
+  --accent: #f6f4ee;
+  --accent-ink: #06070a;
+  --champagne: #C4A574;
+  --champagne-soft: #D4B896;
+  --champagne-deep: #8F6F3E;
+  --yellow: var(--champagne);
+  --yellow-dim: rgba(196, 165, 116, 0.18);
+  --yellow-glow: rgba(196, 165, 116, 0.30);
+  --nude: #e8d9c3;
+  --sage: #7dcaa5;
+  --sage-dim: rgba(125, 202, 165, 0.16);
+  --sage-glow: rgba(125, 202, 165, 0.28);
+  --ice: #7af3ff;
+  --ice-dim: rgba(122, 243, 255, 0.16);
+  --ice-glow: rgba(122, 243, 255, 0.34);
+  --pad: clamp(16px, 4.5vw, 80px);
+  --max: 1180px;
+  --header: 72px;
+  --r: 6px;
+  --r-lg: 18px;
+  --display: "Fraunces", "Times New Roman", Georgia, serif;
+  --sans: "Inter", system-ui, "Segoe UI", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --shadow: 0 36px 90px rgba(0, 0, 0, 0.55);
+  --shadow-sm: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --tap: 44px;
+  --glass: rgba(14, 16, 22, 0.72);
+}
+
+[data-theme="light"] {
+  --bg: #f3f0e7;
+  --bg2: #ebe6d8;
+  --surface: #fffef9;
+  --surface2: #f8f5ec;
+  --surface3: #efebe1;
+  --ink: #11120e;
+  --muted: #4a4944;
+  --line: rgba(17, 18, 14, 0.13);
+  --line-strong: rgba(17, 18, 14, 0.24);
+  --accent: #11120e;
+  --accent-ink: #f3f0e7;
+  --yellow: var(--champagne-deep);
+  --yellow-dim: rgba(143, 111, 62, 0.16);
+  --yellow-glow: rgba(143, 111, 62, 0.22);
+}

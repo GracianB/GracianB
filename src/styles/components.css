@@ -1,0 +1,30 @@
+/* Component styles - imported from modules */
+/* This will be expanded with actual component styles */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap);
+  padding: 0 20px;
+  border-radius: 999px;
+  font: 700 13px/1 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: transform 0.2s var(--ease), box-shadow 0.25s, background 0.2s, color 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--yellow);
+  color: var(--accent-ink);
+  box-shadow: 0 10px 30px var(--yellow-glow);
+}
+
+.button-primary:hover {
+  box-shadow: 0 16px 40px var(--yellow-glow);
+}
