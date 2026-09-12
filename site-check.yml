@@ -1,0 +1,58 @@
+name: Site checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          test -f styles.css
+          test -f main.js
+          test -f i18n.js
+          test -f robots.txt
+          test -f sitemap.xml
+          test -f site.webmanifest
+          test -f favicon.svg
+
+      - name: Validate HTML contract
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          html = Path("index.html").read_text(encoding="utf-8")
+
+          checks = {
+              "doctype": r"<!doctype html>",
+              "lang": r'<html[^>]+lang="(?:es|en)"',
+              "title": r"<title>[^<]+</title>",
+              "h1": r"<h1[^>]*>.*?</h1>",
+              "stylesheet": r'href="\.\/styles\.css',
+              "main_js": r'src="\.\/main\.js',
+              "i18n_js": r'src="\.\/i18n\.js',
+              "canonical": r'rel="canonical"',
+              "jsonld": r'application/ld\+json',
+          }
+
+          missing = [name for name, pattern in checks.items()
+                     if not re.search(pattern, html, re.I | re.S)]
+
+          if missing:
+              raise SystemExit("Missing HTML requirements: " + ", ".join(missing))
+
+          print("HTML contract: OK")

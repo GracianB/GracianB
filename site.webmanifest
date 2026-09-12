@@ -1,0 +1,17 @@
+{
+  "name": "Gracián Baena | Customer Success × Data × AI × Systems",
+  "short_name": "Gracián Baena",
+  "start_url": "/GracianB/",
+  "display": "standalone",
+  "background_color": "#06070a",
+  "theme_color": "#06070a",
+  "description": "Professional portfolio hub for Gracián Baena.",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
