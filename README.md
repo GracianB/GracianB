@@ -78,19 +78,27 @@ AI agents · autonomous workflows · intelligent systems · data architecture ·
 
 <br>
 
-## Things I do instead of sleeping
+## Things I do instead of sleeping 🌙
 
-| Hour | Activity | Sanity level |
-| :--- | :--- | :---: |
-| 22:00 | "Just one more function" | ⚠️ Declining |
-| 23:30 | Automating a 5-minute task | 🔴 Critical |
-| 01:00 | Building another dashboard | 💀 Gone |
-| 03:00 | Talking to AI about consciousness | 🌀 Transcendent |
+| Time      | What I tell myself         | What actually happens                     | Sanity |
+| :-------- | :------------------------- | :---------------------------------------- | :----: |
+| **22:00** | “Just one more function.”  | Opens the laptop.                         |   🟢   |
+| **23:30** | “This should be easy.”     | Automates a 5-minute task.                |   🟡   |
+| **01:00** | “Since I'm already here…”  | Builds an entirely unnecessary dashboard. |   🔴   |
+| **02:00** | “I should probably sleep.” | Starts experimenting with an AI agent.    |   💀   |
+| **03:00** | “Okay, last thing.”        | Asks AI about consciousness.              |   🌀   |
+| **03:47** | “Tomorrow I'll fix it.”    | Ships it anyway.                          |   🚀   |
 
-> *Some people watch Netflix. I build another dashboard.*
-> Yes, I know it's a problem. No, I'm not fixing it.
+> **Some people watch Netflix. I build another dashboard.**
+>
+> I have automated tasks that would have taken five minutes manually.
+>
+> The automation took three hours.
+>
+> **Was it efficient? No. Was it worth it? Absolutely.**
 
 <br>
+
 
 ## The Lab
 
