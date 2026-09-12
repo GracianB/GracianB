@@ -2,7 +2,7 @@
 
 # Hi, I'm Gracián 👋
 
-**34 · Spain 🇪🇸 · Customer Success · Data · AI · Automation**
+**37 · Spain 🇪🇸 · Customer Success · Data · AI · Automation**
 
 </div>
 
@@ -15,7 +15,7 @@ I didn't plan it this way. It just kept happening.
 ## A few things about me
 
 🇪🇸 Based in Spain, Murcia
-🎂 34 years old
+🎂 37 years old
 💼 Customer Success
 🧠 AI & data enthusiast
 💻 I build things
