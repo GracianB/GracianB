@@ -2,6 +2,261 @@
 
 # GB · GRACIÁN BAENA
 
+[🇬🇧 English](#-english) · [🇪🇸 Español](#-español)
+
+</div>
+
+<br>
+
+---
+
+## 🇬🇧 English
+
+<div align="center">
+
+### People × Data × Systems · Yoga × Presence
+
+*Brand hub · Three worlds · Spain · 2026*
+
+One hub. Three doors. Professional experience, technical skill, a yoga practice. **Pick your world.**
+
+<br>
+
+![Spain](https://img.shields.io/badge/Spain-open_to_senior_roles-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Murcia](https://img.shields.io/badge/Murcia-remote_OK-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Languages](https://img.shields.io/badge/EN%20%2F%20ES-8_PDFs-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+
+<br>
+
+[![Open the hub](https://img.shields.io/badge/OPEN_THE_HUB-1a1a1a?style=for-the-badge&labelColor=1a1a1a&color=DAA428)](https://gracianb.github.io/GracianB/)
+
+[![1 live system · Bodytone](https://img.shields.io/badge/1_live_system-Bodytone_Zendesk-1a1a1a?style=flat-square&logoColor=DAA428)](https://bodytonehelp.zendesk.com/hc/es)
+
+</div>
+
+<br>
+
+### Table of Contents
+
+- [What this is](#what-this-is)
+- [Site navigation](#site-navigation)
+- [Method](#method)
+- [Three doors](#three-doors)
+- [PLAY · relax or play](#play--relax-or-play)
+- [Numbers](#numbers)
+- [Documents](#documents)
+- [Contact](#contact)
+
+<br>
+
+### What this is
+
+**[gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/)** is Gracián Baena's personal hub — the entry point connecting his three worlds: professional experience (Customer Success × Data × AI), technical skill (Systems Lab), and a personal identity (yoga).
+
+Bilingual (EN/ES), light/dark theme, a distinct palette per world, and a command palette (`Ctrl` + `K`) for keyboard navigation.
+
+<br>
+
+### Site navigation
+
+| Section | Destination |
+| :--- | :--- |
+| **Worlds** | The three portals — Experience, PLAY, Yoga |
+| **PLAY** | Ohana, Vórtice and the public Help Center |
+| **Documents** | 8 canonical PDFs, EN/ES, one click |
+| **Contact** | Email, calendar, LinkedIn, GitHub |
+
+<br>
+
+### Method
+
+Every world, and every project inside it, follows the same loop:
+
+```mermaid
+flowchart LR
+    A["01 · LISTEN"] --> B["02 · DECIDE"]
+    B --> C["03 · BUILD"]
+    C --> D["04 · ACTIVATE"]
+
+    style A fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style B fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style C fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+    style D fill:#1a1a1a,stroke:#DAA428,color:#DAA428
+```
+
+<br>
+
+### Three doors
+
+Each world has its own palette, pace and proof. The hub is the center that connects them.
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**01 · EXPERIENCE**
+*Palette · gold / nude / white*
+
+#### [CS × Data × AI →](https://gracianb.github.io/professional-deck/)
+
+Interactive professional deck — method, capability map and proof on Zendesk.
+
+- 14 slides · EN/ES
+- Bodytone live + demos
+- Capability map · experience
+- Listen → Activate method
+
+*The case that can be verified: a Support OS in production. An interactive deck, not a PDF.*
+
+[Help Center live ↗](https://bodytonehelp.zendesk.com/hc/es)
+`gracianb.github.io/professional-deck`
+
+</td>
+<td width="33%" valign="top">
+
+**02 · PLAY**
+*Palette · neon ice*
+
+#### [Systems Lab →](https://gracianb.github.io/systems-lab/)
+
+Systems you can click through: Ohana, Vórtice and the Help Center.
+
+- Ohana · canvas
+- Vórtice · WebGL
+- Zendesk + lab
+- Chatbot demo + Aigoritmo
+
+*If it doesn't run in the browser, it isn't real. Games, public CS and a sample agent.*
+
+[Play Ohana →](https://gracianb.github.io/project-ohana/) · [Open Vórtice →](https://vortex-gilt-xi.vercel.app/)
+`gracianb.github.io/systems-lab`
+
+</td>
+<td width="33%" valign="top">
+
+**03 · PASSION**
+*Palette · sage / presence*
+
+#### [Presence × Practice →](https://gracianb.github.io/yoga-instructor/)
+
+Yoga instructor · Murcia · 2019–2026.
+
+- Zen website · EN/ES
+- Light / dark
+- CV and letter · 1 page
+- Studio · 1:1 · teams
+
+*Certified in Madrid, 2019. Corporate background at Google/YouTube. Studio in Murcia through June 2026.*
+
+[Yoga CV EN ↗](https://gracianb.github.io/GracianB/Gracian_Baena_CV_Yoga_EN.pdf)
+`gracianb.github.io/yoga-instructor`
+
+</td>
+</tr>
+</table>
+
+<br>
+
+### PLAY · relax or play
+
+The technical world at its most playful: two live experiences.
+
+| Project | What it is | Open |
+| :--- | :--- | :--- |
+| **Ohana** | A game. Step in. | [Play →](https://gracianb.github.io/project-ohana/) |
+| **Vórtice** | Move the cursor. That's it. | [Open →](https://vortex-gilt-xi.vercel.app/) |
+
+[Open the full PLAY world →](https://gracianb.github.io/systems-lab/)
+
+<br>
+
+### Numbers
+
+<div align="center">
+
+![Years](https://img.shields.io/badge/16%2B-years_experience-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Rules](https://img.shields.io/badge/200%2B-pricing_rules-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Countries](https://img.shields.io/badge/4-countries-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+![Live systems](https://img.shields.io/badge/1-live_system-1a1a1a?style=flat-square&labelColor=1a1a1a&color=DAA428)
+
+</div>
+
+<br>
+
+### Documents
+
+CVs and cover letters ready to send — canonical PDFs hosted on this hub, one click, EN/ES.
+
+<details>
+<summary><b>Experience · CS × Data × AI</b></summary>
+<br>
+
+| Document | Language | Link |
+| :--- | :---: | :--- |
+| Experience CV | EN | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_EN.pdf) |
+| CV Experiencia | ES | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_2026_ES.pdf) |
+| Cover letter | EN | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_Cover_Letter_EN.pdf) |
+| Carta de presentación | ES | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_Carta_Presentacion_ES.pdf) |
+
+</details>
+
+<details>
+<summary><b>Yoga · Presence × Practice</b></summary>
+<br>
+
+| Document | Language | Link |
+| :--- | :---: | :--- |
+| Yoga CV | EN | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_Yoga_EN.pdf) |
+| CV Yoga | ES | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_CV_Yoga_ES.pdf) |
+| Cover Yoga | EN | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_Cover_Letter_Yoga_EN.pdf) |
+| Carta Yoga | ES | [Open →](https://gracianb.github.io/GracianB/Gracian_Baena_Carta_Yoga_ES.pdf) |
+
+</details>
+
+<details>
+<summary><b>PLAY · Systems, live</b></summary>
+<br>
+
+| Project | What it is | Link |
+| :--- | :--- | :--- |
+| Systems Lab | Technical hub · neon ice | [Open →](https://gracianb.github.io/systems-lab/) |
+| Ohana | A game. Step in. | [Play →](https://gracianb.github.io/project-ohana/) |
+| Vórtice | Move the cursor. That's it. | [Open →](https://vortex-gilt-xi.vercel.app/) |
+| Bodytone Support OS | Help Center in production | [Open ↗](https://bodytonehelp.zendesk.com/hc/es) |
+
+</details>
+
+<br>
+
+### Contact
+
+<div align="center">
+
+**Book 30 minutes, or write in. Murcia · remote.**
+
+[![Book 30 min](https://img.shields.io/badge/Book_30_min-1a1a1a?style=flat-square&logo=googlecalendar&logoColor=DAA428)](https://calendar.app.google/n99psBFktwYyoAWi9)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-1a1a1a?style=flat-square&logo=linkedin&logoColor=DAA428)](https://www.linkedin.com/in/gracianbaena)
+[![Email](https://img.shields.io/badge/Email-1a1a1a?style=flat-square&logo=gmail&logoColor=DAA428)](mailto:gracianbaenagonzalez@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-1a1a1a?style=flat-square&logo=github&logoColor=DAA428)](https://github.com/GracianB)
+
+<br>
+
+© 2026 Gracián Baena · *People × Data × Systems · Yoga × Presence*
+
+[deck](https://gracianb.github.io/professional-deck/) · [yoga](https://gracianb.github.io/yoga-instructor/) · [lab](https://gracianb.github.io/systems-lab/) · [ohana](https://gracianb.github.io/project-ohana/) · [vórtice](https://vortex-gilt-xi.vercel.app/)
+
+</div>
+
+<br>
+
+---
+
+<br>
+
+## 🇪🇸 Español
+
+<div align="center">
+
 ### Personas × Datos × Sistemas · Yoga × Presencia
 
 *Centro de marca · Tres mundos · España · 2026*
@@ -24,7 +279,7 @@ Un solo centro. Tres puertas. Experiencia profesional, habilidad técnica, pasi�
 
 <br>
 
-## Índice
+### Índice
 
 - [Qué es esto](#qué-es-esto)
 - [Navegación del sitio](#navegación-del-sitio)
@@ -37,7 +292,7 @@ Un solo centro. Tres puertas. Experiencia profesional, habilidad técnica, pasi�
 
 <br>
 
-## Qué es esto
+### Qué es esto
 
 **[gracianb.github.io/GracianB](https://gracianb.github.io/GracianB/)** es el hub personal de Gracián Baena — el punto de entrada que conecta sus tres mundos: experiencia profesional (Customer Success × Data × AI), habilidad técnica (Systems Lab) y una identidad personal (yoga).
 
@@ -45,7 +300,7 @@ Bilingüe (ES/EN), tema claro/oscuro, paleta de marca por mundo, y una paleta de
 
 <br>
 
-## Navegación del sitio
+### Navegación del sitio
 
 | Sección | Destino |
 | :--- | :--- |
@@ -56,7 +311,7 @@ Bilingüe (ES/EN), tema claro/oscuro, paleta de marca por mundo, y una paleta de
 
 <br>
 
-## Método
+### Método
 
 Cada mundo, y cada proyecto dentro de él, sigue el mismo recorrido:
 
@@ -74,7 +329,7 @@ flowchart LR
 
 <br>
 
-## Tres puertas
+### Tres puertas
 
 Cada mundo tiene su cromática, su ritmo y su prueba. El hub es el centro que los conecta.
 
@@ -85,7 +340,7 @@ Cada mundo tiene su cromática, su ritmo y su prueba. El hub es el centro que lo
 **01 · EXPERIENCIA**
 *Cromática · oro / nude / blanco*
 
-### [CS × Data × AI →](https://gracianb.github.io/professional-deck/)
+#### [CS × Data × AI →](https://gracianb.github.io/professional-deck/)
 
 Deck profesional interactivo — método, capability map y prueba en Zendesk.
 
@@ -105,7 +360,7 @@ Deck profesional interactivo — método, capability map y prueba en Zendesk.
 **02 · PLAY**
 *Cromática · hielo neón*
 
-### [Systems Lab →](https://gracianb.github.io/systems-lab/)
+#### [Systems Lab →](https://gracianb.github.io/systems-lab/)
 
 Sistemas que se pulsan: Ohana, Vórtice y el Help Center.
 
@@ -125,7 +380,7 @@ Sistemas que se pulsan: Ohana, Vórtice y el Help Center.
 **03 · PASIÓN**
 *Cromática · sage / presencia*
 
-### [Presencia × Práctica →](https://gracianb.github.io/yoga-instructor/)
+#### [Presencia × Práctica →](https://gracianb.github.io/yoga-instructor/)
 
 Instructor de yoga · Murcia · 2019–2026.
 
@@ -145,7 +400,7 @@ Instructor de yoga · Murcia · 2019–2026.
 
 <br>
 
-## PLAY · relájate o juega
+### PLAY · relájate o juega
 
 El mundo técnico en su forma más lúdica: dos experiencias en vivo.
 
@@ -158,7 +413,7 @@ El mundo técnico en su forma más lúdica: dos experiencias en vivo.
 
 <br>
 
-## Cifras
+### Cifras
 
 <div align="center">
 
@@ -171,7 +426,7 @@ El mundo técnico en su forma más lúdica: dos experiencias en vivo.
 
 <br>
 
-## Documentos
+### Documentos
 
 CVs y cartas listos para enviar — PDFs canónicos alojados en este hub, un clic, ES/EN.
 
@@ -216,7 +471,7 @@ CVs y cartas listos para enviar — PDFs canónicos alojados en este hub, un cli
 
 <br>
 
-## Contacto
+### Contacto
 
 <div align="center">
 
