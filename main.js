@@ -286,3 +286,240 @@
     });
   });
 })();
+
+/* ══════════════════════════════════════════════════════════════
+   MAX PASS · v=max-1 — added behaviours (self-contained)
+   ══════════════════════════════════════════════════════════════ */
+(() => {
+  "use strict";
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const root = document.documentElement;
+  const rAF = window.requestAnimationFrame || ((f) => setTimeout(f, 16));
+
+  /* —— 1 · cinematic intro controller —— */
+  (function intro() {
+    if (!root.classList.contains("intro-on")) return;
+    try { sessionStorage.setItem("gb-intro-seen", "1"); } catch (_) {}
+    let done = false;
+    const finish = () => {
+      if (done) return; done = true;
+      root.classList.add("intro-done");
+      document.dispatchEvent(new CustomEvent("gb:intro-done"));
+    };
+    const timer = setTimeout(finish, 2100);
+    const skip = () => { clearTimeout(timer); finish(); };
+    ["pointerdown", "keydown", "wheel", "touchstart"].forEach((ev) =>
+      window.addEventListener(ev, skip, { once: true, passive: true })
+    );
+  })();
+
+  /* —— 2 · hero name letter reveal —— */
+  (function letters() {
+    const lines = document.querySelectorAll(".hero-name .name-line");
+    if (!lines.length) return;
+    let idx = 0;
+    const chars = [];
+    lines.forEach((line) => {
+      const text = line.textContent;
+      line.textContent = "";
+      [...text].forEach((ch) => {
+        const s = document.createElement("span");
+        s.className = "char" + (ch === " " ? " space" : "");
+        s.textContent = ch === " " ? " " : ch;
+        if (reduce) s.classList.add("lit");
+        line.appendChild(s);
+        if (ch !== " ") chars.push(s);
+      });
+    });
+    if (reduce) return;
+    const lightUp = () => {
+      chars.forEach((s, i) => setTimeout(() => s.classList.add("lit"), 40 * i));
+    };
+    if (root.classList.contains("intro-on")) {
+      document.addEventListener("gb:intro-done", () => setTimeout(lightUp, 120), { once: true });
+      setTimeout(lightUp, 3400); // failsafe
+    } else {
+      setTimeout(lightUp, 200);
+    }
+  })();
+
+  /* —— 3 · scroll progress rail + topbar state —— */
+  (function scrollRail() {
+    const topbar = document.querySelector(".topbar");
+    let ticking = false;
+    const update = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? (h.scrollTop || document.body.scrollTop) / max * 100 : 0;
+      root.style.setProperty("--sp", pct.toFixed(2) + "%");
+      if (topbar) topbar.classList.toggle("scrolled", (h.scrollTop || 0) > 8);
+      ticking = false;
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; rAF(update); }
+    }, { passive: true });
+    update();
+  })();
+
+  /* —— 4 · cursor spotlight —— */
+  (function spotlight() {
+    if (reduce || !fine) return;
+    let shown = false;
+    window.addEventListener("pointermove", (e) => {
+      root.style.setProperty("--sx", (e.clientX / window.innerWidth * 100).toFixed(1) + "%");
+      root.style.setProperty("--sy", (e.clientY / window.innerHeight * 100).toFixed(1) + "%");
+      if (!shown) { shown = true; document.body.classList.add("has-spot"); }
+    }, { passive: true });
+  })();
+
+  /* —— 5 · magnetic hero buttons —— */
+  (function magnetic() {
+    if (reduce || !fine) return;
+    document.querySelectorAll(".hero-actions .btn").forEach((btn) => {
+      const R = 60;
+      btn.addEventListener("pointermove", (e) => {
+        const r = btn.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height / 2);
+        btn.style.setProperty("--mfx", (dx * 0.28).toFixed(1) + "px");
+        btn.style.setProperty("--mfy", (dy * 0.34).toFixed(1) + "px");
+      });
+      btn.addEventListener("pointerleave", () => {
+        btn.style.setProperty("--mfx", "0px");
+        btn.style.setProperty("--mfy", "0px");
+      });
+    });
+  })();
+
+  /* —— 6 · count-up stats —— */
+  (function counters() {
+    const nums = document.querySelectorAll(".stat b[data-count]");
+    if (!nums.length) return;
+    const run = (el) => {
+      const target = parseInt(el.dataset.count, 10) || 0;
+      const suffix = el.dataset.suffix || "";
+      if (reduce) { el.textContent = target + suffix; return; }
+      const dur = 1100; const t0 = performance.now();
+      const step = (t) => {
+        const p = Math.min((t - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) rAF(step);
+        else el.closest(".stat")?.classList.add("counted");
+      };
+      rAF(step);
+    };
+    if (!("IntersectionObserver" in window)) { nums.forEach(run); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { run(en.target); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.5 });
+    nums.forEach((n) => io.observe(n));
+  })();
+
+  /* —— 7 · interactive particle network —— */
+  (function net() {
+    const canvas = document.querySelector(".fx-net");
+    if (!canvas || reduce) return;
+    const ctx = canvas.getContext("2d", { alpha: true });
+    if (!ctx) return;
+
+    const PALETTE = [
+      [196, 165, 116], // champagne
+      [122, 243, 255], // ice
+      [125, 202, 165], // sage
+      [232, 217, 195]  // nude
+    ];
+    let w = 0, h = 0, dpr = 1, parts = [];
+    const mouse = { x: -9999, y: -9999, active: false };
+
+    function resize() {
+      w = window.innerWidth; h = window.innerHeight;
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      canvas.style.width = w + "px"; canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.max(28, Math.min(92, Math.round(w * h / 22000)));
+      parts = [];
+      for (let i = 0; i < count; i++) {
+        parts.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.32,
+          vy: (Math.random() - 0.5) * 0.32,
+          r: Math.random() * 1.6 + 0.7,
+          c: PALETTE[(Math.random() * PALETTE.length) | 0]
+        });
+      }
+    }
+
+    const LINK = 128, MOUSE_LINK = 168;
+    function frame() {
+      if (document.hidden) { rAF(frame); return; }
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < parts.length; i++) {
+        const p = parts[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -20) p.x = w + 20; else if (p.x > w + 20) p.x = -20;
+        if (p.y < -20) p.y = h + 20; else if (p.y > h + 20) p.y = -20;
+        // gentle pull toward pointer
+        if (mouse.active) {
+          const mdx = mouse.x - p.x, mdy = mouse.y - p.y;
+          const md = Math.hypot(mdx, mdy);
+          if (md < MOUSE_LINK && md > 0.1) {
+            p.vx += (mdx / md) * 0.008;
+            p.vy += (mdy / md) * 0.008;
+          }
+        }
+        p.vx = Math.max(-0.7, Math.min(0.7, p.vx));
+        p.vy = Math.max(-0.7, Math.min(0.7, p.vy));
+        // node
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+        ctx.fillStyle = `rgba(${p.c[0]},${p.c[1]},${p.c[2]},0.9)`;
+        ctx.fill();
+        // mouse line
+        if (mouse.active) {
+          const dx = mouse.x - p.x, dy = mouse.y - p.y;
+          const d = Math.hypot(dx, dy);
+          if (d < MOUSE_LINK) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(${p.c[0]},${p.c[1]},${p.c[2]},${(1 - d / MOUSE_LINK) * 0.5})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+      // links between particles
+      for (let i = 0; i < parts.length; i++) {
+        for (let j = i + 1; j < parts.length; j++) {
+          const a = parts[i], b = parts[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const d = Math.hypot(dx, dy);
+          if (d < LINK) {
+            const al = (1 - d / LINK) * 0.28;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(${a.c[0]},${a.c[1]},${a.c[2]},${al})`;
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      }
+      rAF(frame);
+    }
+
+    window.addEventListener("pointermove", (e) => {
+      mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true;
+    }, { passive: true });
+    window.addEventListener("pointerleave", () => { mouse.active = false; });
+    window.addEventListener("blur", () => { mouse.active = false; });
+    let rt;
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(resize, 180); }, { passive: true });
+    resize();
+    rAF(frame);
+  })();
+})();

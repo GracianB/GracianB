@@ -1403,10 +1403,11 @@ img, svg { display: block; max-width: 100%; }
   .modes-worlds .mode,
   .modes-worlds .mode-hover { transition: none !important; transform: none !important; }
 }
-  padding-bottom: 6px !important;
+.hero-actions {
+  padding-bottom: 6px;
   position: relative;
   z-index: 4;
-  overflow: visible !important;
+  overflow: visible;
 }
 .hero-actions .btn {
   flex: 0 1 auto !important;
@@ -1433,3 +1434,214 @@ img, svg { display: block; max-width: 100%; }
     flex: 1 1 100%;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════
+   MAX PASS · v=max-1
+   Cinematic intro · particle net · scroll rail · spotlight ·
+   letter reveal · count-up · magnetic · richer constellation
+   ══════════════════════════════════════════════════════════════ */
+
+/* —— particle network canvas (behind atmosphere layers) —— */
+.fx-net {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: .9;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+[data-theme="light"] .fx-net { mix-blend-mode: multiply; opacity: .55; }
+
+/* —— scroll progress rail —— */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  height: 2px;
+  pointer-events: none;
+  background: transparent;
+}
+.scroll-progress i {
+  display: block; height: 100%;
+  width: var(--sp, 0%);
+  background: linear-gradient(90deg, var(--champagne), var(--ice) 55%, var(--sage));
+  box-shadow: 0 0 12px var(--yellow-glow), 0 0 20px var(--ice-dim);
+  transition: width .12s linear;
+}
+
+/* —— cursor spotlight —— */
+.spotlight {
+  position: fixed; inset: 0; z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+  background: radial-gradient(220px circle at var(--sx, 50%) var(--sy, 50%),
+    color-mix(in srgb, var(--champagne) 12%, transparent), transparent 60%);
+  mix-blend-mode: screen;
+}
+body.has-spot .spotlight { opacity: 1; }
+[data-theme="light"] .spotlight { mix-blend-mode: multiply; background: radial-gradient(220px circle at var(--sx,50%) var(--sy,50%), color-mix(in srgb, var(--champagne-deep) 10%, transparent), transparent 60%); }
+
+/* —— cinematic intro overlay —— */
+.intro { display: none; }
+html.intro-on .intro {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 26px;
+  position: fixed; inset: 0; z-index: 200;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 42%, #0c0e14, #050609 70%),
+    var(--bg);
+  animation: intro-in .5s var(--ease) both;
+}
+html.intro-on body { overflow: hidden; }
+html.intro-done .intro {
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .55s var(--ease), visibility 0s .55s;
+}
+html.intro-done body { overflow: auto; }
+@keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
+
+.intro-core {
+  position: relative;
+  width: 120px; height: 120px;
+  display: grid; place-items: center;
+}
+.intro-mark { position: absolute; inset: 0; overflow: visible; }
+.intro-ring-svg {
+  stroke: color-mix(in srgb, var(--champagne) 80%, transparent);
+  stroke-dasharray: 340;
+  stroke-dashoffset: 340;
+  transform-origin: 60px 60px;
+  filter: drop-shadow(0 0 6px var(--yellow-glow));
+  animation: ring-draw 1.1s var(--ease) forwards, ring-spin 9s linear .9s infinite;
+}
+.intro-ring-2 {
+  stroke: color-mix(in srgb, var(--ice) 75%, transparent);
+  stroke-dasharray: 260; stroke-dashoffset: 260;
+  animation: ring-draw2 1.1s var(--ease) .18s forwards, ring-spin 7s linear .9s infinite reverse;
+  filter: drop-shadow(0 0 5px var(--ice-glow));
+}
+@keyframes ring-draw { to { stroke-dashoffset: 0; } }
+@keyframes ring-draw2 { to { stroke-dashoffset: 0; } }
+.intro-gb {
+  font: 800 30px/1 var(--mono); letter-spacing: .06em;
+  color: var(--ink);
+  text-shadow: 0 0 24px var(--yellow-glow);
+  opacity: 0;
+  animation: gb-pop .7s var(--ease) .5s both;
+}
+@keyframes gb-pop {
+  0% { opacity: 0; transform: scale(.6); filter: blur(6px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+.intro-worlds {
+  display: flex; gap: 10px 18px; flex-wrap: wrap; justify-content: center;
+}
+.intro-worlds .iw {
+  font: 800 10px/1 var(--mono); letter-spacing: .22em;
+  opacity: 0;
+  animation: iw-in .6s var(--ease) both;
+}
+.iw-pro { color: var(--champagne); animation-delay: .8s; }
+.iw-play { color: var(--ice); animation-delay: .95s; }
+.iw-yoga { color: var(--sage); animation-delay: 1.1s; }
+@keyframes iw-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.intro-bar {
+  width: 180px; height: 2px; border-radius: 2px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  overflow: hidden;
+}
+.intro-bar i {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--champagne), var(--ice), var(--sage));
+  animation: intro-load 1.7s var(--ease) .3s forwards;
+}
+@keyframes intro-load { to { width: 100%; } }
+
+/* —— hero name letter reveal —— */
+.name-line .char {
+  display: inline-block;
+  transform: translateY(1.05em) rotate(6deg);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.name-line .char.lit {
+  transform: none; opacity: 1;
+  transition: transform .7s var(--ease), opacity .7s var(--ease);
+}
+.name-line .char.space { width: .28em; }
+/* the first line is gradient-clipped text; once split into per-letter spans,
+   the clip must live on each glyph span, not only the parent */
+.name-line.first .char {
+  background: linear-gradient(105deg,
+    var(--ink) 12%,
+    color-mix(in srgb, var(--ink) 55%, var(--yellow)) 52%,
+    var(--nude) 100%);
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-sheen 8s ease-in-out infinite;
+}
+@keyframes name-sheen {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* —— magnetic hero buttons —— */
+.hero-actions .btn {
+  transform: translate(var(--mfx, 0px), var(--mfy, 0px));
+  transition: transform .18s var(--ease), box-shadow .25s, background .2s, color .2s, border-color .2s;
+}
+.hero-actions .btn:hover { transform: translate(var(--mfx, 0px), calc(var(--mfy, 0px) - 2px)); }
+
+/* —— richer constellation: orbiting comet on neon ring —— */
+.const-comet {
+  position: absolute; left: 50%; top: 50%;
+  width: 6px; height: 6px; margin: -3px;
+  border-radius: 50%;
+  background: var(--ice);
+  box-shadow: 0 0 10px var(--ice), 0 0 20px var(--ice-glow);
+  offset-path: circle(48% at 50% 50%);
+  animation: comet-orbit 12s linear infinite;
+  z-index: 2;
+}
+.const-comet.comet-gold { background: var(--champagne); box-shadow: 0 0 10px var(--champagne), 0 0 20px var(--yellow-glow); offset-path: circle(44% at 50% 50%); animation-duration: 16s; animation-direction: reverse; }
+@keyframes comet-orbit { to { offset-distance: 100%; } }
+
+/* —— stat count-up: subtle underline shimmer on reveal —— */
+.stat.counted b { animation: stat-pop .5s var(--ease); }
+@keyframes stat-pop { 0% { transform: scale(.9); } 60% { transform: scale(1.04); } 100% { transform: scale(1); } }
+
+/* —— section head accent line —— */
+.section-head { position: relative; }
+.modes-wrap .section-head::before,
+.docs .section-head::before,
+.play-strip .section-head::before {
+  content: ""; display: block; width: 40px; height: 2px; margin-bottom: 14px;
+  background: linear-gradient(90deg, var(--champagne), transparent);
+  border-radius: 2px;
+}
+.play-strip .section-head::before { background: linear-gradient(90deg, var(--ice), transparent); }
+
+@media (max-width: 640px) {
+  .intro-core { width: 96px; height: 96px; }
+  .intro-gb { font-size: 24px; }
+  .spotlight { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-net { display: none; }
+  .name-line .char { transform: none !important; opacity: 1 !important; }
+  .name-line.first .char { animation: none !important; }
+  .const-comet { animation: none !important; display: none; }
+  .intro-ring-svg, .intro-ring-2, .intro-gb, .intro-worlds .iw, .intro-bar i { animation: none !important; }
+  .spotlight { display: none !important; }
+}
+
+/* —— topbar condensed state on scroll —— */
+.topbar { transition: box-shadow .3s var(--ease), background .3s; }
+.topbar.scrolled {
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+}
+[data-theme="light"] .topbar.scrolled { box-shadow: 0 10px 30px rgba(17,18,14,.08); }

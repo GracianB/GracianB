@@ -36,9 +36,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="./styles.css?v=final-6">
-  <script src="./i18n.js?v=final-6"></script>
-  <script src="./main.js?v=final-6" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=max-1">
+  <script>
+    /* intro boot — decide before first paint, with failsafe so content is never trapped */
+    (function () {
+      try {
+        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var seen = false;
+        try { seen = sessionStorage.getItem("gb-intro-seen") === "1"; } catch (e) {}
+        if (!reduce && !seen) {
+          document.documentElement.classList.add("intro-on");
+          // failsafe: never let the overlay trap the page if main.js fails to load
+          setTimeout(function () {
+            document.documentElement.classList.add("intro-done");
+          }, 3000);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="./i18n.js?v=max-1"></script>
+  <script src="./main.js?v=max-1" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,7 +107,11 @@
   </script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><i></i></div>
+  <div class="spotlight" aria-hidden="true"></div>
+
   <div class="fx" aria-hidden="true">
+    <canvas class="fx-net"></canvas>
     <div class="fx-vignette"></div>
     <div class="fx-noise"></div>
     <div class="fx-grid"></div>
@@ -100,6 +121,22 @@
     <div class="fx-orb fx-orb-b"></div>
     <div class="fx-orb fx-orb-c"></div>
     <div class="fx-stars"></div>
+  </div>
+
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-core">
+      <svg class="intro-mark" viewBox="0 0 120 120" width="120" height="120">
+        <circle class="intro-ring-svg" cx="60" cy="60" r="52" fill="none" stroke-width="1.5"/>
+        <circle class="intro-ring-svg intro-ring-2" cx="60" cy="60" r="40" fill="none" stroke-width="1"/>
+      </svg>
+      <span class="intro-gb">GB</span>
+    </div>
+    <div class="intro-worlds">
+      <span class="iw iw-pro">EXPERIENCIA</span>
+      <span class="iw iw-play">PLAY</span>
+      <span class="iw iw-yoga">PASIÓN</span>
+    </div>
+    <div class="intro-bar"><i></i></div>
   </div>
 
   <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
@@ -205,6 +242,8 @@
             <i></i><span>03</span>
             <em class="const-label" data-i18n="nodeYoga">Pasión</em>
           </a>
+          <span class="const-comet" aria-hidden="true"></span>
+          <span class="const-comet comet-gold" aria-hidden="true"></span>
           <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
             <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="70"/>
             <line class="cl cl-ice" x1="200" y1="200" x2="318" y2="286"/>
@@ -212,7 +251,7 @@
           </svg>
         </div>
         <div class="hero-film" aria-hidden="true">
-          <span class="film-tick">FINAL · 05</span>
+          <span class="film-tick">MAX · 06</span>
           <span class="film-tick">HUB · 2026</span>
         </div>
       </div>
@@ -343,19 +382,19 @@
 
     <section class="stats" aria-label="Snapshot">
       <div class="stat">
-        <b>16+</b>
+        <b data-count="16" data-suffix="+">16+</b>
         <span data-i18n="stat1">años experiencia</span>
       </div>
       <div class="stat">
-        <b>200+</b>
+        <b data-count="200" data-suffix="+">200+</b>
         <span data-i18n="stat2">reglas pricing</span>
       </div>
       <div class="stat">
-        <b>4</b>
+        <b data-count="4">4</b>
         <span data-i18n="stat3">países</span>
       </div>
       <div class="stat">
-        <b>1</b>
+        <b data-count="1">1</b>
         <span data-i18n="stat4">sistema live</span>
       </div>
     </section>
