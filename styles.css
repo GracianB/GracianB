@@ -876,20 +876,54 @@ img, svg { display: block; max-width: 100%; }
 }
 .stage-ohana {
   background:
-    radial-gradient(circle at 30% 60%, rgba(122,243,255,.25), transparent 40%),
-    radial-gradient(circle at 70% 40%, rgba(196,165,116,.18), transparent 35%),
-    linear-gradient(160deg, #0a0c12, #12161f);
+    radial-gradient(circle at 22% 40%, rgba(126, 231, 255, .22), transparent 36%),
+    linear-gradient(180deg, #071226 0%, #102a43 62%, #071226 62%);
 }
-.stage-ohana i {
-  position: absolute; width: 18px; height: 18px; border-radius: 50%;
-  background: var(--ice); opacity: .7;
-  animation: floaty 4s ease-in-out infinite;
-  box-shadow: 0 0 16px var(--ice-glow);
+.stage-ohana .oh-ground {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 38%;
+  background: linear-gradient(180deg, #1c4a38, #0e2a22 40%, #07140f);
+  border-top: 2px solid rgba(126, 231, 255, .35);
 }
-.stage-ohana i:nth-child(2) { left: 18%; top: 55%; animation-delay: 0s; }
-.stage-ohana i:nth-child(3) { left: 42%; top: 35%; width: 12px; height: 12px; animation-delay: .4s; background: var(--yellow); }
-.stage-ohana i:nth-child(4) { left: 64%; top: 58%; animation-delay: .8s; }
-.stage-ohana i:nth-child(5) { left: 78%; top: 30%; width: 10px; height: 10px; animation-delay: 1.2s; background: var(--sage); }
+.stage-ohana .oh-hero,
+.stage-ohana .oh-foe {
+  position: absolute; bottom: 34%;
+  animation: floaty 3.2s ease-in-out infinite;
+}
+.stage-ohana .oh-hero {
+  left: 16%; width: 26px; height: 42px;
+  border-radius: 40% 40% 10px 10px;
+  background: linear-gradient(180deg, #ffe9a8, #e23b3d);
+  box-shadow: 0 0 16px rgba(226, 59, 61, .45);
+}
+.stage-ohana .oh-hero::before {
+  content: ""; position: absolute; left: 6px; top: 8px;
+  width: 5px; height: 5px; border-radius: 50%; background: #071226;
+  box-shadow: 8px 0 0 #071226;
+}
+.stage-ohana .oh-foe {
+  right: 20%; width: 32px; height: 20px; bottom: 36%;
+  border-radius: 50%; background: #c45a18; animation-delay: .4s;
+}
+.stage-ohana .oh-foe::before,
+.stage-ohana .oh-foe::after {
+  content: ""; position: absolute; top: 4px; width: 4px; height: 4px; border-radius: 50%; background: #fff8ee;
+}
+.stage-ohana .oh-foe::before { left: 14px; }
+.stage-ohana .oh-foe::after { left: 22px; }
+.stage-ohana .oh-foe-2 {
+  right: 46%; width: 16px; height: 16px; bottom: 50%;
+  background: #ff6a4a; animation-delay: .8s;
+}
+.mode-facts {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin: 0; padding: 0; list-style: none;
+}
+.mode-facts li {
+  font: 700 10px var(--mono); letter-spacing: .06em; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 999px;
+  color: #7ee7ff; background: rgba(126, 231, 255, .1);
+  border: 1px solid rgba(126, 231, 255, .28);
+}
 .stage-vortex {
   background:
     radial-gradient(circle at 50% 50%, rgba(122,243,255,.2), transparent 45%),

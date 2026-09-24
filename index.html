@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="./styles.css?v=max-1">
+  <link rel="stylesheet" href="./styles.css?v=max-2">
   <script>
     /* intro boot — decide before first paint, with failsafe so content is never trapped */
     (function () {
@@ -54,8 +54,8 @@
       } catch (e) {}
     })();
   </script>
-  <script src="./i18n.js?v=max-1"></script>
-  <script src="./main.js?v=max-1" defer></script>
+  <script src="./i18n.js?v=max-2"></script>
+  <script src="./main.js?v=max-2" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -359,10 +359,19 @@
           <span class="mode-bar" aria-hidden="true"></span>
           <div class="mode-stage stage-ohana" aria-hidden="true">
             <span class="stage-live">LIVE</span>
-            <i></i><i></i><i></i><i></i>
+            <i class="oh-hero"></i>
+            <i class="oh-foe"></i>
+            <i class="oh-foe oh-foe-2"></i>
+            <span class="oh-ground"></span>
           </div>
           <h3 data-i18n="ohanaTitle">Ohana</h3>
-          <p data-i18n="ohanaDesc">Un juego. Entra.</p>
+          <p data-i18n="ohanaDesc">Isla Hoku. 10 salas, 10 personajes, de bebé a GOD.</p>
+          <ul class="mode-facts">
+            <li data-i18n="ohF1">10 salas</li>
+            <li data-i18n="ohF2">10 personajes</li>
+            <li data-i18n="ohF3">5 formas</li>
+            <li data-i18n="ohF4">1 Reina</li>
+          </ul>
           <span class="mode-cta" data-i18n="ohanaCta">Jugar →</span>
         </a>
 
