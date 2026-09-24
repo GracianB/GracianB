@@ -1,105 +1,93 @@
 <div align="center">
 
 <a href="https://gracianb.github.io/GracianB/">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:050609,30:111318,58:2A2622,78:DAA428,100:FAF7F2&height=280&section=header&text=GRACI%C3%81N%20BAENA&fontSize=58&fontColor=FFFFFF&fontAlign=50" width="100%" alt="Gracián Baena - Personal Hub Header" />
-
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=0:050609,32:111318,60:2A2622,82:DAA428,100:FAF7F2&text=GRACI%C3%81N%20BAENA&fontColor=FFFFFF&fontSize=54&fontAlignY=36&desc=PERSONAS%20%C2%B7%20DATOS%20%C2%B7%20SISTEMAS&descAlignY=58&descSize=16&animation=twinkling" width="100%" alt="Gracián Baena. Personas, datos, sistemas."/>
 </a>
 
-<br>
+<a href="https://gracianb.github.io/GracianB/">
+  <img src="https://readme-typing-svg.demolab.com?font=Fraunces&weight=500&size=26&duration=2800&pause=800&color=DAA428&center=true&vCenter=true&width=820&height=56&lines=People.+Data.+Systems.;Customer+Success+%C2%B7+Data+%C2%B7+AI;Ohana+%C2%B7+V%C3%B3rtice+%C2%B7+Bodytone;Murcia+%C2%B7+2026" alt="Personas, datos, sistemas. Customer Success. Ohana, Vórtice, Bodytone."/>
+</a>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fraunces&weight=500&size=29&duration=3000&pause=900&color=DAA428&center=true&vCenter=true&width=1000&height=70&lines=People.+Data.+Systems.;Customer+Success+%26+AI;Building+Useful+Things." alt="Gracián Baena Tagline" />
+<br/>
 
-<br>
+<a href="https://gracianb.github.io/GracianB/"><img src="https://img.shields.io/badge/HUB_LIVE-DAA428?style=for-the-badge&labelColor=050609" alt="Abrir el hub"/></a>
+<a href="https://gracianb.github.io/professional-deck/"><img src="https://img.shields.io/badge/01_EXPERIENCE-C4A574?style=for-the-badge&labelColor=050609" alt="Professional Deck"/></a>
+<a href="https://gracianb.github.io/systems-lab/"><img src="https://img.shields.io/badge/02_PLAY-7AF3FF?style=for-the-badge&labelColor=050609" alt="Systems Lab"/></a>
+<a href="https://gracianb.github.io/yoga-instructor/"><img src="https://img.shields.io/badge/03_YOGA-7DCAA5?style=for-the-badge&labelColor=050609" alt="Yoga"/></a>
 
-[![🚀 LIVE HUB](https://img.shields.io/badge/%F0%9F%9A%80_LIVE_HUB-GRACIANB-DAA428?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/GracianB/)
-[![📊 EXPERIENCE](https://img.shields.io/badge/01_EXPERIENCE-C4A574?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/professional-deck/)
-[![⚡ PLAY](https://img.shields.io/badge/02_PLAY-7AF3FF?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/systems-lab/)
-[![🧘 YOGA](https://img.shields.io/badge/03_YOGA-7DCAA5?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/yoga-instructor/)
+<br/><br/>
 
-<br>
+**Customer Success · Data · AI · Automation · Systems**
 
-[![🇪🇸 ESPAÑOL](#-español) · ![🇬🇧 ENGLISH](#-english)](https://img.shields.io/badge/Languages-ES_EN-DAA428?style=flat-square&labelColor=050609)
+Convierto problemas de personas y de operación en sistemas que se pueden abrir y medir.
 
-<br><br>
+Murcia · España · remoto · 2026
+· [LinkedIn](https://www.linkedin.com/in/gracianbaena)
+· [Email](mailto:gracianbaenagonzalez@gmail.com)
+· [30 min](https://calendar.app.google/n99psBFktwYyoAWi9)
 
-### **Customer Success · Data · AI · Automation · Systems**
+<br/>
 
-> **I turn people and operational problems into measurable, working systems that scale.**
-
-<br>
-
-🧭 `MURCIA · SPAIN · REMOTE · 2026` • 📱 [LinkedIn](https://www.linkedin.com/in/gracianbaena) • 📧 [Email](mailto:gracianbaenagonzalez@gmail.com) • 📅 [Book 30min](https://calendar.app.google/n99psBFktwYyoAWi9)
-
-</div>
-
----
-
-## ⚡ 30-SECOND OVERVIEW
-
-| Focus | Details |
-|-------|---------|
-| **Who I Am** | People-focused technologist bridging human needs & systems |
-| **What I Do** | Customer Success, Data Analytics, AI/Automation, Systems Design |
-| **Proof** | 16+ years experience · 10+ years customer-facing · 1 live system · 200+ pricing rules · 5+ international centers |
-| **Why It Matters** | I don't choose between people or tech—I make them work together |
-| **Where to Start** | [→ Professional Deck](#-experience) · [→ Systems Lab](#-play) · [→ Yoga](#-yoga) |
-
----
-
-## 📍 QUICK NAVIGATION
-
-<div align="center">
-
-**[🇪🇸 Español](#-español)** · **[🇬🇧 English](#-english)** · **[📊 Skills](#-capability-map)** · **[⭐ Live Systems](#-verified-systems)** · **[🌐 Ecosystem](#-complete-ecosystem)** · **[📞 Contact](#-contacto)**
+[Español](#español) · [English](#english)
 
 </div>
 
 ---
 
-## 🎯 THREE WORLDS, ONE NARRATIVE
+## En treinta segundos
+
+| | |
+| --- | --- |
+| **Quién** | Tecnólogo del lado de las personas. Uno el problema humano con el sistema. |
+| **Qué** | Customer Success, datos, pricing, IA y automatización. |
+| **Prueba** | 16+ años · 10+ de cara al cliente · 200+ reglas de precio · 5+ centros · Help Center en producción |
+| **Por dónde** | [Deck](https://gracianb.github.io/professional-deck/) · [Lab](https://gracianb.github.io/systems-lab/) · [Yoga](https://gracianb.github.io/yoga-instructor/) |
+
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart TB
+  hub[GracianB]
+  hub --> exp[01 Experience]
+  hub --> play[02 Play]
+  hub --> yoga[03 Yoga]
+  exp --> deck[Professional Deck]
+  exp --> zd[Bodytone Help Center]
+  play --> lab[Systems Lab]
+  lab --> ohana[Ohana · Canvas]
+  lab --> vortex[Vórtice · WebGL]
+  yoga --> sala[Instructor · Murcia]
+```
 
 <table>
 <tr>
 <td width="33%" align="center">
 
-### 01 📊 EXPERIENCE
-**People × Data**
+### 01 · Experience
+**Personas × datos**
 
-- Customer Success
-- Pricing & E-commerce
-- Data Analytics
-- AI Strategy
+Customer Success, pricing, e-commerce, analítica.
 
-**→ [Professional Deck](https://gracianb.github.io/professional-deck/)**
+[Abrir el deck](https://gracianb.github.io/professional-deck/)
 
 </td>
-
 <td width="33%" align="center">
 
-### 02 ⚡ PLAY
-**AI × Systems**
+### 02 · Play
+**Sistemas que se pulsan**
 
-- Automation
-- Development
-- Experiments
-- Live Demos
+Ohana, Vórtice y el laboratorio.
 
-**→ [Systems Lab](https://gracianb.github.io/systems-lab/)**
+[Entrar al lab](https://gracianb.github.io/systems-lab/)
 
 </td>
-
 <td width="33%" align="center">
 
-### 03 🧘 YOGA
-**Presence × Practice**
+### 03 · Yoga
+**Presencia × práctica**
 
-- Teaching
-- Wellness
-- Breath Work
-- Corporate Programs
+Sala y wellness corporativo desde 2019.
 
-**→ [Yoga Instructor](https://gracianb.github.io/yoga-instructor/)**
+[Entrar a yoga](https://gracianb.github.io/yoga-instructor/)
 
 </td>
 </tr>
@@ -107,653 +95,156 @@
 
 ---
 
-# 🇪🇸 ESPAÑOL
+<a id="español"></a>
 
-# GRACIÁN BAENA — PERSONAS · DATOS · SISTEMAS
+## Español
 
-Este es mi **hub personal**: el punto de encuentro de mi trayectoria profesional, mis sistemas, mis datos, las personas con las que trabajo y las cosas que construyo por curiosidad.
+Este repositorio es el hub. No es un CV suelto ni una lista de repos. Desde aquí salen las tres puertas.
 
-## ✦ ¿QUÉ ES GRACIANB?
+No empiezo por la herramienta. Empiezo por el problema.
 
-No es un CV tradicional.
-No es un repositorio abandonado.
-Es el **centro de mi ecosistema personal y profesional**.
-
-```text
-                           GRACIANB
-                              HUB
-                               │
-             ┌─────────────────┼─────────────────┐
-             │                 │                 │
-             ▼                 ▼                 ▼
-       01 EXPERIENCE       02 PLAY           03 YOGA
-        PEOPLE + DATA    AI + SYSTEMS      PRESENCE
-             │                 │                 │
-             └─────────────────┼─────────────────┘
-                               ▼
-                         PEOPLE FIRST
+```mermaid
+%%{init: {'theme':'dark'}}%%
+flowchart LR
+  A[Problema] --> B[Contexto]
+  B --> C[Señal]
+  C --> D[Criterio]
+  D --> E[Sistema]
+  E --> F[Adopción]
+  F --> G[Resultado]
 ```
 
-Mi carrera no fue una línea recta:
+Escuchar, decidir, construir, activar. Un sistema que nadie usa es ingeniería con autoestima.
 
-```
-PEOPLE → CUSTOMER SUCCESS → OPERATIONS → DATA → PRICING → AUTOMATION → AI → SYSTEMS
-```
+### Las tres puertas
 
-En paralelo:
-```
-MOVEMENT → YOGA → PRESENCE → TEACHING → PEOPLE
-```
+**Experience.** Trayectoria, método y la prueba pública: el [Help Center de Bodytone](https://bodytonehelp.zendesk.com/hc/es). El relato largo está en el [deck](https://gracianb.github.io/professional-deck/).
 
-**Ambos caminos terminan en el mismo lugar: las personas.**
+**Play.** El [Systems Lab](https://gracianb.github.io/systems-lab/) es el sitio donde las cosas se abren. Ohana no es un experimento de IA. Es un platformer de Canvas.
 
----
+| Proyecto | Qué es | Estado |
+| --- | --- | --- |
+| [Ohana](https://gracianb.github.io/project-ohana/) | Canvas 2D. Isla Hoku. 10 salas, 10 personajes, de bebé a GOD. | Live |
+| [Vórtice](https://vortex-gilt-xi.vercel.app/) | WebGL. Mueves el cursor y los puntos te siguen. | Live |
+| [Agente de ejemplo](https://gracianb.github.io/systems-lab/#agente) | Cómo se siente un canal con agente. Sin claves. No es producción. | Ejemplo |
 
-## 🚪 LAS TRES PUERTAS
+**Yoga.** Instructor desde 2019. La tecnología arma sistemas. El yoga recuerda que dentro hay personas. [Sitio](https://gracianb.github.io/yoga-instructor/).
 
-### 01 · EXPERIENCE — Customer Success × Data × AI
+### Números
 
-Mi lado profesional. Trayectoria, metodología, capacidades y evidencia verificable.
+| | |
+| --- | --- |
+| Experiencia | 16+ años |
+| Cara al cliente | 10+ años |
+| Reglas de pricing | 200+ |
+| Centros | 5+ |
+| Países | 4 |
+| En producción, verificable | Help Center de Bodytone |
+| Juegos que se abren ahora | Ohana y Vórtice |
 
-**[→ Abrir Professional Deck](https://gracianb.github.io/professional-deck/)**
+Idiomas: español, inglés, italiano, portugués, francés.
 
-#### ◉ Sistema Live · Producción
+### Qué hago
 
-**Bodytone Support OS** — Centro de conocimiento y soporte público
+| Área | |
+| --- | --- |
+| Customer Success | Adopción, retención, formación |
+| Datos | Análisis, pricing, KPIs |
+| IA | GenAI, agentes, flujos. Con una persona que cierra. |
+| Automatización | n8n, Make, Zapier |
+| Sistemas | HTML, CSS, JavaScript, Python. Canvas y WebGL cuando el caso es un juego. |
+| Personas | Comunicación, yoga, wellness |
 
-- 📊 Sistema de soporte escalable
-- 🎯 Experiencia de cliente optimizada
-- 🔴 **[Ver Help Center LIVE](https://bodytonehelp.zendesk.com/hc/es)**
+La herramienta es lo de menos. La pregunta es qué problema resuelve.
 
-`Customer Success` · `Pricing` · `E-commerce` · `Data` · `AI`
+### Lo que se puede abrir
 
----
+| Sistema | Estado | |
+| --- | --- | --- |
+| Bodytone Support OS | Producción | [Help Center](https://bodytonehelp.zendesk.com/hc/es) |
+| Ohana | Live | [Jugar](https://gracianb.github.io/project-ohana/) |
+| Vórtice | Live | [Abrir](https://vortex-gilt-xi.vercel.app/) |
+| Professional Deck | Live | [Deck](https://gracianb.github.io/professional-deck/) |
+| Yoga | Live | [Sitio](https://gracianb.github.io/yoga-instructor/) |
 
-### 02 · PLAY — AI × Automation × Systems
+<details>
+<summary><b>PDFs</b></summary>
 
-Mi laboratorio. Donde construyo, rompo y vuelvo a construir.
+<br/>
 
-**[→ Entrar en Systems Lab](https://gracianb.github.io/systems-lab/)**
+| Documento | |
+| --- | --- |
+| CV 2026 · ES | [PDF](./Gracian_Baena_CV_2026_ES.pdf) |
+| CV 2026 · EN | [PDF](./Gracian_Baena_CV_2026_EN.pdf) |
+| Carta · ES | [PDF](./Gracian_Baena_Carta_Presentacion_ES.pdf) |
+| Cover letter · EN | [PDF](./Gracian_Baena_Cover_Letter_EN.pdf) |
+| CV yoga · ES | [PDF](./Gracian_Baena_CV_Yoga_ES.pdf) |
+| CV yoga · EN | [PDF](./Gracian_Baena_CV_Yoga_EN.pdf) |
 
-**Filosofía:** No todo es producto. Algunas cosas necesitan existir para responder: *¿Y si lo construyo?*
-
-#### Proyectos Destacados
-
-| Proyecto | Estado | Tecnología | Link |
-|----------|--------|-----------|------|
-| **Project Ohana** | 🎮 Experimento | AI + UX | [Abrir](https://gracianb.github.io/project-ohana/) |
-| **Vórtice** | 🎨 Experimental | React + Python | [Abrir](https://vortex-gilt-xi.vercel.app/) |
-
----
-
-### 03 · YOGA — Presence × Breath × Real Practice
-
-Mi lado humano. Instructor desde 2019, experiencia en sala y wellness corporativo.
-
-**[→ Entrar en Yoga Instructor](https://gracianb.github.io/yoga-instructor/)**
-
-> **La tecnología construye sistemas. El yoga recuerda que hay personas dentro.**
-
-`Yoga` · `Teaching` · `Presence` · `Wellness` · `Corporate Programs`
-
----
-
-## 🧠 MI FORMA DE TRABAJAR
-
-No empiezo por la herramienta. **Empiezo por el problema.**
-
-```text
-PROBLEM → CONTEXT → SIGNAL → CRITERIA → SYSTEM → ADOPTION → OUTCOME
-```
-
-### Los Cuatro Movimientos
-
-| # | Movimiento | Qué Significa |
-|---|-----------|--------------|
-| 01 | 🎧 ESCUCHAR | Entender qué está pasando realmente |
-| 02 | 🎯 DECIDIR | Separar señal de ruido y convertir info en criterio |
-| 03 | 🔨 CONSTRUIR | Crear sistema, automatización o herramienta |
-| 04 | 🚀 ACTIVAR | Asegurar que se usa realmente |
-
-> **Un sistema que nadie usa es solo ingeniería con autoestima.**
+</details>
 
 ---
 
-## ⚡ MI DIFERENCIAL
+<a id="english"></a>
 
-Me encuentro en la intersección de dos capas:
+## English
 
-```
-┌─────────────────────────────────┐
-│      CAPA HUMANA                │
-│  Customer Success               │
-│  Comunicación · Context         │
-│  Training · Adopción            │
-│  Yoga / Presencia               │
-└────────────────┬────────────────┘
-                 ×
-┌────────────────▼────────────────┐
-│      CAPA DE SISTEMAS           │
-│  Data · Pricing                 │
-│  Automation · AI                │
-│  Development · Architecture     │
-└────────────────┬────────────────┘
-                 ▼
-            VALOR REAL
-```
+This repository is the hub. Not a loose CV, and not a list of repos. Three doors leave from here.
 
-**No me interesa elegir entre personas o tecnología.**
-**Me interesa hacer que ambas funcionen juntas.**
+I do not start with the tool. I start with the problem: context, signal, criteria, system, adoption, outcome. A system nobody uses is engineering with an ego.
 
----
+**Experience.** Track record, method, and the public proof: the [Bodytone Help Center](https://bodytonehelp.zendesk.com/hc/es). The long version is the [deck](https://gracianb.github.io/professional-deck/).
 
-## 📊 NÚMEROS QUE IMPORTAN
+**Play.** The [Systems Lab](https://gracianb.github.io/systems-lab/) is where things open. Ohana is not an AI experiment. It is a Canvas platformer.
 
-| Métrica | Valor | Contexto |
-|---------|-------|----------|
-| 🎓 Experiencia Profesional | **16+** años | Múltiples sectores |
-| 👥 Experiencia Customer-Facing | **10+** años | Directo con clientes |
-| 💰 Reglas de Pricing | **200+** | Sistemas complejos |
-| 🌍 Centros Internacionales | **5+** | España e internacional |
-| 🔴 Sistemas Live Verificables | **1** | Bodytone Support OS |
-| 🗺️ Entornos Internacionales | **4** países | España, EU, Remote |
+| Project | What it is | Status |
+| --- | --- | --- |
+| [Ohana](https://gracianb.github.io/project-ohana/) | Canvas 2D. Isla Hoku. 10 rooms, 10 characters, from baby to GOD. | Live |
+| [Vórtice](https://vortex-gilt-xi.vercel.app/) | WebGL. Move the cursor. The points follow. | Live |
+| [Sample agent](https://gracianb.github.io/systems-lab/#agente) | How a channel feels with an agent. No keys. Not production. | Example |
 
----
+**Yoga.** Instructor since 2019. Technology builds systems. Yoga remembers there are people inside them. [Site](https://gracianb.github.io/yoga-instructor/).
 
-## 🧩 CAPABILITY MAP
+| | |
+| --- | --- |
+| Experience | 16+ years |
+| Customer-facing | 10+ years |
+| Pricing rules | 200+ |
+| Centres | 5+ |
+| Countries | 4 |
+| In production | Bodytone Help Center |
+| Games you can open | Ohana and Vórtice |
 
-| Área | Qué Hago |
-|------|----------|
-| **Customer Success** | Adopción · Retención · Relaciones · Growth |
-| **Data** | Análisis · Pricing · KPIs · Insights |
-| **AI** | GenAI · Agents · Workflows · Prompt Eng. |
-| **Automation** | n8n · Make · Zapier · Procesos · Workflows |
-| **Systems** | Diseño · Desarrollo · Integración · Architecture |
-| **Business** | E-commerce · Pricing · Operations · Strategy |
-| **Human** | Comunicación · Formación · Yoga · Wellness |
+Languages: Spanish, English, Italian, Portuguese, French.
 
----
-
-## 🛠️ TECH STACK
-
-```
-┌────────────────────────────────────────┐
-│ AI & LLMs                              │
-│ OpenAI · GenAI · AI Agents             │
-├────────────────────────────────────────┤
-│ Automation & Workflows                 │
-│ n8n · Make · Zapier · Python Scripts   │
-├────────────────────────────────────────┤
-│ Data & Analytics                       │
-│ Python · Pandas · PostgreSQL · Sheets  │
-├────────────────────────────────────────┤
-│ Web & Frontend                         │
-│ HTML · CSS · JavaScript · React        │
-├────────────────────────────────────────┤
-│ Backend & APIs                         │
-│ Python · Flask · REST APIs             │
-├────────────────────────────────────────┤
-│ Business & Strategy                    │
-│ CS · Pricing · E-commerce · Ops        │
-└────────────────────────────────────────┘
-```
-
-**Las herramientas son secundarias. La pregunta importante siempre es:**
-> **¿Qué problema resuelven?**
-
----
-
-## ⭐ SISTEMAS VERIFICABLES
-
-No todos los proyectos son iguales. Algunos funcionan. Algunos se pueden verificar ahora.
-
-| # | Sistema | Estado | Enfoque | Verificación |
-|---|---------|--------|---------|--------------|
-| **01** | **Bodytone Support OS** | 🔴 **LIVE** | Knowledge · Support · CX | [→ Ver LIVE](https://bodytonehelp.zendesk.com/hc/es) |
-| **02** | **Pricing Calculator** | 🟡 **DEMO** | Data · Pricing · Rules | [→ Demo](https://gracianb.github.io/systems-lab/) |
-| **03** | **Profile Finder** | 🟡 **DEMO** | Search · Data · LinkedIn | [→ Demo](https://gracianb.github.io/systems-lab/) |
-| **04** | **Outreach System** | 🟡 **DEMO** | GenAI · Automation · HITL | [→ Demo](https://gracianb.github.io/systems-lab/) |
-
-**La diferencia entre idea y sistema:**
-```
-IDEA → BUILD → DEPLOY → USE → VERIFY
-```
-
----
-
-## 🌍 EXPERIENCIA INTERNACIONAL
-
-Trayectoria que combina diferentes sectores, funciones y contextos internacionales.
-
-**Idiomas:** Español · Inglés · Italiano · Portugués · Francés
-
-**Sectores:** E-commerce · Retail · SaaS · Customer Success · Data
-
-**Funciones:** CS Manager · Data Analyst · Pricing Specialist · Systems Designer · Yoga Instructor
-
----
-
-## 📄 DOCUMENTOS & RECURSOS
-
-### Corporate
-
-| Documento | Idioma | Formato |
-|-----------|--------|---------|
-| **CV 2026** | Español | [📄 PDF](./Gracian_Baena_CV_2026_ES.pdf) |
-| **CV 2026** | English | [📄 PDF](./Gracian_Baena_CV_2026_EN.pdf) |
-| **Carta de Presentación** | Español | [📄 PDF](./Gracian_Baena_Carta_Presentacion_ES.pdf) |
-| **Cover Letter** | English | [📄 PDF](./Gracian_Baena_Cover_Letter_EN.pdf) |
-
-### Yoga
-
-| Documento | Idioma | Formato |
-|-----------|--------|---------|
-| **CV Yoga** | Español | [📄 PDF](./Gracian_Baena_CV_Yoga_ES.pdf) |
-| **Yoga CV** | English | [📄 PDF](./Gracian_Baena_CV_Yoga_EN.pdf) |
-
----
-
-## 🎨 DISEÑO DEL HUB
-
-Experiencia editorial interactiva, no un CV tradicional.
-
-**Visual System:** `WARM BLACK` · `BRAND GOLD` · `FOREST` · `CHAMPAGNE` · `ICE` · `SAGE`
-
-**Typography:** Fraunces (identidad editorial) · Inter (interfaz) · JetBrains Mono (sistema)
-
-**Principio:** *El portfolio debe sentirse como una experiencia, no como un listado.*
-
----
-
-## 🧭 COMPLETE ECOSYSTEM
-
-```text
-                         GRACIANB HUB
-                             │
-           ┌─────────────────┼─────────────────┐
-           │                 │                 │
-           ▼                 ▼                 ▼
-     01 EXPERIENCE      02 PLAY            03 YOGA
-     PEOPLE + DATA    AI + SYSTEMS        PRESENCE
-           │                 │                 │
-           └─────────────────┼─────────────────┘
-                             ▼
-                        ONE NARRATIVE
-```
-
-| World | Proyecto | Propósito | Link |
-|-------|----------|-----------|------|
-| **01** | Professional Deck | Evidencia profesional | [→ Abrir](https://gracianb.github.io/professional-deck/) |
-| **02** | Systems Lab | Experimentos y sistemas | [→ Entrar](https://gracianb.github.io/systems-lab/) |
-| **03** | Yoga Instructor | Práctica y enseñanza | [→ Entrar](https://gracianb.github.io/yoga-instructor/) |
-| **◉** | GracianB Hub | Todo junto | [→ Hub](https://gracianb.github.io/GracianB/) |
-
----
-
-# 🇬🇧 ENGLISH
-
-# GRACIÁN BAENA — PEOPLE · DATA · SYSTEMS
-
-This is my **personal hub**: the place where my professional journey, systems, data, the people I work with, and the things I build out of curiosity converge.
-
-## ✦ WHAT IS GRACIANB?
-
-It is not a traditional CV.
-It is not an abandoned repository.
-It is the **centre of my personal and professional ecosystem**.
-
-```text
-                           GRACIANB
-                              HUB
-                               │
-             ┌─────────────────┼─────────────────┐
-             │                 │                 │
-             ▼                 ▼                 ▼
-       01 EXPERIENCE       02 PLAY           03 YOGA
-        PEOPLE + DATA    AI + SYSTEMS      PRESENCE
-             │                 │                 │
-             └─────────────────┼─────────────────┘
-                               ▼
-                         PEOPLE FIRST
-```
-
-My career was not a straight line:
-
-```
-PEOPLE → CUSTOMER SUCCESS → OPERATIONS → DATA → PRICING → AUTOMATION → AI → SYSTEMS
-```
-
-Alongside that:
-```
-MOVEMENT → YOGA → PRESENCE → TEACHING → PEOPLE
-```
-
-**Both paths lead to the same place: people.**
-
----
-
-## 🚪 THE THREE DOORS
-
-### 01 · EXPERIENCE — Customer Success × Data × AI
-
-My professional side. Track record, methodology, capabilities and verifiable evidence.
-
-**[→ Open Professional Deck](https://gracianb.github.io/professional-deck/)**
-
-#### ◉ Live System · Production
-
-**Bodytone Support OS** — Public knowledge and support system
-
-- 📊 Scalable support infrastructure
-- 🎯 Optimized customer experience
-- 🔴 **[View LIVE Help Center](https://bodytonehelp.zendesk.com/hc/es)**
-
-`Customer Success` · `Pricing` · `E-commerce` · `Data` · `AI`
-
----
-
-### 02 · PLAY — AI × Automation × Systems
-
-My laboratory. Where I build, break and rebuild.
-
-**[→ Enter Systems Lab](https://gracianb.github.io/systems-lab/)**
-
-**Philosophy:** Not everything is a product. Some things need to exist to answer: *What if I build it?*
-
-#### Featured Projects
-
-| Project | Status | Technology | Link |
-|---------|--------|-----------|------|
-| **Project Ohana** | 🎮 Playable | AI + UX | [Open](https://gracianb.github.io/project-ohana/) |
-| **Vórtice** | 🎨 Experimental | React + Python | [Open](https://vortex-gilt-xi.vercel.app/) |
-
----
-
-### 03 · YOGA — Presence × Breath × Real Practice
-
-My human side. Instructor since 2019, studio teaching and corporate wellness experience.
-
-**[→ Enter Yoga Instructor](https://gracianb.github.io/yoga-instructor/)**
-
-> **Technology builds systems. Yoga reminds us that there are people inside them.**
-
-`Yoga` · `Teaching` · `Presence` · `Wellness` · `Corporate Programs`
-
----
-
-## 🧠 HOW I WORK
-
-I do not start with the tool. **I start with the problem.**
-
-```text
-PROBLEM → CONTEXT → SIGNAL → CRITERIA → SYSTEM → ADOPTION → OUTCOME
-```
-
-### The Four Movements
-
-| # | Movement | What It Means |
-|---|----------|--------------|
-| 01 | 🎧 LISTEN | Understand what is actually happening |
-| 02 | 🎯 DECIDE | Separate signal from noise and turn info into criteria |
-| 03 | 🔨 BUILD | Create the system, automation or tool |
-| 04 | 🚀 ACTIVATE | Ensure what was built is actually used |
-
-> **A system nobody uses is just engineering with an inflated sense of self-importance.**
-
----
-
-## ⚡ MY DIFFERENTIATOR
-
-I sit at the intersection of two layers:
-
-```
-┌─────────────────────────────────┐
-│      HUMAN LAYER                │
-│  Customer Success               │
-│  Communication · Context        │
-│  Training · Adoption            │
-│  Yoga / Presence                │
-└────────────────┬────────────────┘
-                 ×
-┌────────────────▼────────────────┐
-│      SYSTEMS LAYER              │
-│  Data · Pricing                 │
-│  Automation · AI                │
-│  Development · Architecture     │
-└────────────────┬────────────────┘
-                 ▼
-            REAL VALUE
-```
-
-**I don't choose between people or technology.**
-**I make both work together.**
-
----
-
-## 📊 NUMBERS THAT MATTER
-
-| Metric | Value | Context |
-|--------|-------|---------|
-| 🎓 Professional Experience | **16+** years | Multiple sectors |
-| 👥 Customer-Facing Experience | **10+** years | Direct client interaction |
-| 💰 Pricing Rules | **200+** | Complex systems |
-| 🌍 International Centres | **5+** | Spain & international |
-| 🔴 Live Verifiable Systems | **1** | Bodytone Support OS |
-| 🗺️ International Environments | **4** countries | Spain, EU, Remote |
-
----
-
-## 🧩 CAPABILITY MAP
-
-| Area | What I Do |
-|------|-----------|
-| **Customer Success** | Adoption · Retention · Relationships · Growth |
-| **Data** | Analysis · Pricing · KPIs · Insights |
-| **AI** | GenAI · Agents · Workflows · Prompt Engineering |
-| **Automation** | n8n · Make · Zapier · Processes · Workflows |
-| **Systems** | Design · Development · Integration · Architecture |
-| **Business** | E-commerce · Pricing · Operations · Strategy |
-| **Human** | Communication · Training · Yoga · Wellness |
-
----
-
-## 🛠️ TECH STACK
-
-```
-┌────────────────────────────────────────┐
-│ AI & LLMs                              │
-│ OpenAI · GenAI · AI Agents             │
-├────────────────────────────────────────┤
-│ Automation & Workflows                 │
-│ n8n · Make · Zapier · Python Scripts   │
-├────────────────────────────────────────┤
-│ Data & Analytics                       │
-│ Python · Pandas · PostgreSQL · Sheets  │
-├────────────────────────────────────────┤
-│ Web & Frontend                         │
-│ HTML · CSS · JavaScript · React        │
-├────────────────────────────────────────┤
-│ Backend & APIs                         │
-│ Python · Flask · REST APIs             │
-├────────────────────────────────────────┤
-│ Business & Strategy                    │
-│ CS · Pricing · E-commerce · Ops        │
-└────────────────────────────────────────┘
-```
-
-**Tools are secondary. The important question is always:**
-> **What problems do they solve?**
-
----
-
-## ⭐ VERIFIED SYSTEMS
-
-Not every project is the same. Some work. Some can be verified right now.
-
-| # | System | Status | Focus | Verification |
-|---|--------|--------|-------|--------------|
-| **01** | **Bodytone Support OS** | 🔴 **LIVE** | Knowledge · Support · CX | [→ View LIVE](https://bodytonehelp.zendesk.com/hc/es) |
-| **02** | **Pricing Calculator** | 🟡 **DEMO** | Data · Pricing · Rules | [→ Demo](https://gracianb.github.io/systems-lab/) |
-| **03** | **Profile Finder** | 🟡 **DEMO** | Search · Data · LinkedIn | [→ Demo](https://gracianb.github.io/systems-lab/) |
-| **04** | **Outreach System** | 🟡 **DEMO** | GenAI · Automation · HITL | [→ Demo](https://gracianb.github.io/systems-lab/) |
-
-**The difference between an idea and a system:**
-```
-IDEA → BUILD → DEPLOY → USE → VERIFY
-```
-
----
-
-## 🌍 INTERNATIONAL EXPERIENCE
-
-Track record combining different sectors, functions and international environments.
-
-**Languages:** Spanish · English · Italian · Portuguese · French
-
-**Sectors:** E-commerce · Retail · SaaS · Customer Success · Data
-
-**Functions:** CS Manager · Data Analyst · Pricing Specialist · Systems Designer · Yoga Instructor
-
----
-
-## 📄 DOCUMENTS & RESOURCES
-
-### Corporate
-
-| Document | Language | Format |
-|----------|----------|--------|
-| **CV 2026** | Spanish | [📄 PDF](./Gracian_Baena_CV_2026_ES.pdf) |
-| **CV 2026** | English | [📄 PDF](./Gracian_Baena_CV_2026_EN.pdf) |
-| **Carta de Presentación** | Spanish | [📄 PDF](./Gracian_Baena_Carta_Presentacion_ES.pdf) |
-| **Cover Letter** | English | [📄 PDF](./Gracian_Baena_Cover_Letter_EN.pdf) |
-
-### Yoga
-
-| Document | Language | Format |
-|----------|----------|--------|
-| **CV Yoga** | Spanish | [📄 PDF](./Gracian_Baena_CV_Yoga_ES.pdf) |
-| **Yoga CV** | English | [📄 PDF](./Gracian_Baena_CV_Yoga_EN.pdf) |
-
----
-
-## 🎨 HUB DESIGN
-
-Interactive editorial experience, not a traditional CV.
-
-**Visual System:** `WARM BLACK` · `BRAND GOLD` · `FOREST` · `CHAMPAGNE` · `ICE` · `SAGE`
-
-**Typography:** Fraunces (editorial identity) · Inter (interface) · JetBrains Mono (system)
-
-**Principle:** *The portfolio should feel like an experience, not a list.*
-
----
-
-## 🧭 COMPLETE ECOSYSTEM
-
-```text
-                         GRACIANB HUB
-                             │
-           ┌─────────────────┼─────────────────┐
-           │                 │                 │
-           ▼                 ▼                 ▼
-     01 EXPERIENCE      02 PLAY            03 YOGA
-     PEOPLE + DATA    AI + SYSTEMS        PRESENCE
-           │                 │                 │
-           └─────────────────┼─────────────────┘
-                             ▼
-                        ONE NARRATIVE
-```
-
-| World | Project | Purpose | Link |
-|-------|---------|---------|------|
-| **01** | Professional Deck | Professional evidence | [→ Open](https://gracianb.github.io/professional-deck/) |
-| **02** | Systems Lab | Experiments & systems | [→ Enter](https://gracianb.github.io/systems-lab/) |
-| **03** | Yoga Instructor | Practice & teaching | [→ Enter](https://gracianb.github.io/yoga-instructor/) |
-| **◉** | GracianB Hub | Everything together | [→ Hub](https://gracianb.github.io/GracianB/) |
-
----
-
-## 📞 CONTACTO / CONTACT
-
-<div align="center">
-
-### **Construyamos algo útil · Let's build something useful**
-
-<br>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=050609)](https://www.linkedin.com/in/gracianbaena)
-[![Email](https://img.shields.io/badge/%E2%9C%89_Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=050609)](mailto:gracianbaenagonzalez@gmail.com)
-[![Calendar](https://img.shields.io/badge/%F0%9F%93%85_Book_30min-DAA428?style=for-the-badge&labelColor=050609)](https://calendar.app.google/n99psBFktwYyoAWi9)
-[![GitHub](https://img.shields.io/badge/GitHub-GracianB-DAA428?style=for-the-badge&logo=github&logoColor=white&labelColor=050609)](https://github.com/GracianB)
-
-<br>
-
-**Typical Response Time:** 48 hours
-
-**Available for:** Projects · Consulting · Partnerships · Teaching
-
-<br>
-
-`PEOPLE × DATA × AI × AUTOMATION × SYSTEMS`
-
-</div>
+Customer Success, data, pricing, GenAI and automation (n8n, Make, Zapier), and the web stack behind the public sites: HTML, CSS, JavaScript, Python. Canvas and WebGL when the case is a game.
 
 ---
 
 <div align="center">
 
-## GRACIÁN BAENA
+### Construyamos algo útil
 
-### **PEOPLE × DATA × SYSTEMS**
+<a href="https://www.linkedin.com/in/gracianbaena"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=050609" alt="LinkedIn"/></a>
+<a href="mailto:gracianbaenagonzalez@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=050609" alt="Email"/></a>
+<a href="https://calendar.app.google/n99psBFktwYyoAWi9"><img src="https://img.shields.io/badge/30_min-DAA428?style=for-the-badge&labelColor=050609" alt="Reservar 30 minutos"/></a>
+<a href="https://github.com/GracianB"><img src="https://img.shields.io/badge/GitHub-GracianB-DAA428?style=for-the-badge&logo=github&logoColor=white&labelColor=050609" alt="GitHub"/></a>
 
-#### ONE HUB · THREE WORLDS · ONE NARRATIVE
+<br/><br/>
 
-<br>
+Respuesta habitual en 48 horas.
+Proyectos, consultoría, colaboración, docencia.
 
-[📊 Professional Deck](https://gracianb.github.io/professional-deck/) · [⚡ Systems Lab](https://gracianb.github.io/systems-lab/) · [🧘 Yoga](https://gracianb.github.io/yoga-instructor/) · [◉ Main Hub](https://gracianb.github.io/GracianB/)
+<br/>
 
-<br>
+[Deck](https://gracianb.github.io/professional-deck/) · [Lab](https://gracianb.github.io/systems-lab/) · [Yoga](https://gracianb.github.io/yoga-instructor/) · [Hub](https://gracianb.github.io/GracianB/)
 
-**Build useful things. Stay curious. Keep moving.**
+<br/>
 
-<br>
+<a href="https://gracianb.github.io/GracianB/">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&reversal=true&color=0:DAA428,40:2A2622,100:050609&text=PEOPLE%20%C3%97%20DATA%20%C3%97%20SYSTEMS&fontColor=FFFFFF&fontSize=22&fontAlignY=68&animation=fadeIn" width="100%" alt="Personas por datos por sistemas."/>
+</a>
 
-`MURCIA · SPAIN · 2026` · Made with ❤️ + Coffee
-
-<br><br>
-
-<sub>
-
-**Gracián Baena · Personal & Professional Ecosystem**
-
-Optimized for humans, built with systems thinking.
-
-</sub>
+<sub>Murcia · 2026</sub>
 
 </div>
-
-<!--
-╔══════════════════════════════════════════════════════════════╗
-║                         GRACIANB                             ║
-║                  PEOPLE × DATA × SYSTEMS                     ║
-║                                                              ║
-║  01 EXPERIENCE  ·  02 PLAY  ·  03 YOGA                       ║
-║                                                              ║
-║  Customer Success · Data · AI · Automation · Systems         ║
-╚══════════════════════════════════════════════════════════════╝
-
-VERSIONS & UPDATES:
-- v2.1 (2026-09-12): Complete redesign
-  · Optimized 30-second overview
-  · Clear CTAs and navigation
-  · Better hierarchy & scanability
-  · Tables for comparison
-  · Verified systems showcase
-  · Response time transparency
-  · SEO-friendly structure
-
-META TAGS (for web implementation):
-title: Gracián Baena | Customer Success, Data & AI Systems
-description: People-focused technologist bridging human needs & systems. 16+ years CS, Pricing, AI, Automation.
-keywords: customer success, data analytics, ai automation, systems design, pricing strategy
--->
