@@ -257,3 +257,16 @@ I care about systems that are understandable, testable and useful.
 <sub>Gracián Baena · Murcia, Spain · 2026</sub>
 
 </div>
+
+## Website / brand hub
+
+The repository also contains the public personal hub:
+
+- **Live:** https://gracianb.github.io/GracianB/
+- **Visual system:** editorial typography, cinematic hero, three-world navigation, responsive product cards, light/dark themes and bilingual ES/EN content.
+- **Interaction layer:** command palette, keyboard navigation, pointer-driven constellation, progressive reveals, scroll progress and reduced-motion support.
+- **Proof layer:** professional deck, Bodytone Support OS, RevOps Studio, Systems Lab, OHANA, Vórtice and application-ready documents.
+- **Quality:** GitHub Actions validates the HTML contract, JavaScript syntax and CSS structure before changes are treated as healthy.
+
+The design goal is deliberate: **premium enough for a hiring manager, technical enough for an engineering lead, and fast enough not to become a museum exhibit for CSS.**
+\n
