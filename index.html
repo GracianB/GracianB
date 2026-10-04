@@ -27,7 +27,10 @@
   <meta property="og:description" content="Customer Success × Data × AI × Automation × Systems. Portfolio profesional de Gracián Baena · ES/EN.">
   <meta property="og:url" content="https://gracianb.github.io/GracianB/">
   <meta property="og:image" content="https://gracianb.github.io/GracianB/og-cover.svg">
-  <meta property="og:image:alt" content="Gracián Baena · Customer Success × Data × AI × Systems">
+  <meta property="og:image:alt" content="Gracián Baena · Customer Operations · Systems · People × Data × Systems">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gracián Baena — Personas × Datos × Sistemas">
   <meta name="twitter:description" content="Customer Success × Data × AI × Automation × Systems · Portfolio profesional · ES/EN.">
@@ -149,7 +152,7 @@
         <small data-i18n="brandSub">ESPAÑA · 2026</small>
       </div>
     </a>
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" aria-label="Primary navigation">
       <a href="#portfolios" data-i18n="navModes">Mundos</a>
       <a href="#play" data-i18n="navPlay">PLAY</a>
       <a href="#docs" data-i18n="navDocs">Documentos</a>
@@ -179,6 +182,7 @@
   </header>
 
   <main id="main" class="shell">
+    <noscript><div class="noscript-note">Este sitio funciona sin JavaScript. Para la experiencia completa, activa JavaScript.</div></noscript>
     <!-- CINEMATIC PORTADA -->
     <section class="hero hero-cinema" aria-labelledby="hero-name">
       <div class="hero-copy">
@@ -630,7 +634,7 @@
   </footer>
 
   <div class="drawer" id="drawer" hidden>
-    <div class="drawer-panel">
+    <nav class="drawer-panel" aria-label="Mobile navigation">
       <a href="#portfolios" data-i18n="navModes">Mundos</a>
       <a href="#play" data-i18n="navPlay">PLAY</a>
       <a href="#docs" data-i18n="navDocs">Documentos</a>
@@ -640,14 +644,14 @@
       <a href="https://gracianb.github.io/yoga-instructor/">Yoga</a>
       <a href="https://gracianb.github.io/project-ohana/">Ohana</a>
       <a href="https://vortex-gilt-xi.vercel.app/">Vórtice</a>
-    </div>
+    </nav>
   </div>
 
   <div class="cmd" id="cmd" hidden>
     <div class="cmd-backdrop" data-cmd-close></div>
     <div class="cmd-panel" role="dialog" aria-modal="true" aria-labelledby="cmd-label">
       <p id="cmd-label" class="cmd-label" data-i18n="cmdLabel">Ir a</p>
-      <input id="cmd-input" type="search" autocomplete="off" spellcheck="false" data-i18n-placeholder="cmdPlaceholder" placeholder="Buscar…">
+      <input id="cmd-input" type="search" role="combobox" aria-controls="cmd-list" aria-expanded="true" autocomplete="off" spellcheck="false" data-i18n-placeholder="cmdPlaceholder" placeholder="Buscar…">
       <ul class="cmd-list" id="cmd-list">
         <li><a href="https://gracianb.github.io/professional-deck/" data-cmd="cmdPro">01 Experiencia</a></li>
         <li><a href="https://gracianb.github.io/systems-lab/" data-cmd="cmdLab">02 PLAY lab</a></li>
