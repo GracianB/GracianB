@@ -268,5 +268,5 @@ The repository also contains the public personal hub:
 - **Proof layer:** professional deck, Bodytone Support OS, RevOps Studio, Systems Lab, OHANA, Vórtice and application-ready documents.
 - **Quality:** GitHub Actions validates the HTML contract, JavaScript syntax and CSS structure before changes are treated as healthy.
 
-The design goal is deliberate: **premium enough for a hiring manager, technical enough for an engineering lead, and fast enough not to become a museum exhibit for CSS.**
+The design goal is deliberate: **premium enough for a hiring manager, technical enough for an engineering lead, and fast enough for everyday use.**
 \n
