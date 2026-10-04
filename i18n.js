@@ -22,10 +22,10 @@ window.GB_I18N = {
     cmdDocs: "Documentos · CVs y cartas",
     cmdAgenda: "Agenda 30 min",
     eyebrow: "CENTRO DE MARCA · TRES MUNDOS",
-    heroOver: "El hub personal de",
+    heroOver: "El sistema personal de",
     kicker: "Customer Success · Data · AI · Automation · Systems",
     tagline: "Personas × Datos × Sistemas<br><em>Yoga × Presencia</em>",
-    lead: "Convierto problemas de clientes y operaciones en sistemas medibles, combinando experiencia de negocio, datos, automatización e IA.",
+    lead: "Convierto problemas de clientes y operaciones en sistemas medibles, combinando contexto de negocio, datos, automatización, IA y diseño de sistemas.",
     status: "España · Customer Success · Data · AI · Automation · Systems · remote OK",
     metaPill: "ES / EN · 8 PDFs",
     proof: "Prueba pública · Bodytone Support OS ↗",
@@ -70,7 +70,7 @@ window.GB_I18N = {
     playTitle: "Relájate. O juega.",
     playSub: "Ohana en Isla Hoku, Vórtice y el Help Center.",
     ohanaTitle: "Ohana",
-    ohanaDesc: "Isla Hoku. 10 salas, 10 personajes, de bebé a GOD.",
+    ohanaDesc: "Isla Hoku. 10 salas · 10 personajes · 5 formas · Reina del Nido.",
     ohF1: "10 salas",
     ohF2: "10 personajes",
     ohF3: "5 formas",
@@ -88,7 +88,7 @@ window.GB_I18N = {
     yogaL2: "Claro / oscuro",
     yogaL3: "CV y carta · 1 página",
     yogaL4: "Sala · 1:1 · equipos",
-    yogaMore: "Certificado Madrid 2019. Corporativo en Google/YouTube. Sala en Murcia hasta junio 2026.",
+    yogaMore: "Certificado Madrid 2019. Experiencia corporativa en Google/YouTube. Práctica profesional en Murcia.",
     yogaLive: "CV yoga ES ↗",
     yogaCta: "Entrar a yoga →",
     stat1: "años experiencia",
@@ -126,7 +126,7 @@ window.GB_I18N = {
     contactTitle: "Hablemos",
     contactLead: "Agenda 30 minutos, o escribe. Murcia · remoto.",
     agenda: "Agenda 30 min ↗",
-    footTag: "Personas × Datos × Sistemas · Yoga × Presencia"
+    footTag: "Personas × Datos × Sistemas · Customer Operations · Yoga × Presencia"
   },
   en: {
     htmlLang: "en",
@@ -151,10 +151,10 @@ window.GB_I18N = {
     cmdDocs: "Documents · CVs and letters",
     cmdAgenda: "Book 30 min",
     eyebrow: "BRAND CENTER · THREE WORLDS",
-    heroOver: "The personal hub of",
+    heroOver: "The personal system of",
     kicker: "Customer Success · Data · AI · Automation · Systems",
     tagline: "People × Data × Systems<br><em>Yoga × Presence</em>",
-    lead: "I turn customer and operational problems into measurable systems, combining business context, data, automation and AI.",
+    lead: "I turn customer and operational problems into measurable systems, combining business context, data, automation, AI and systems design.",
     status: "Spain · Customer Success · Data · AI · Automation · Systems · remote OK",
     metaPill: "ES / EN · 8 PDFs",
     proof: "Public proof · Bodytone Support OS ↗",
@@ -199,7 +199,7 @@ window.GB_I18N = {
     playTitle: "Relax. Or play.",
     playSub: "Ohana on Isla Hoku, Vortex and the Help Center.",
     ohanaTitle: "Ohana",
-    ohanaDesc: "Isla Hoku. 10 rooms, 10 characters, from baby to GOD.",
+    ohanaDesc: "Isla Hoku. 10 rooms · 10 characters · 5 forms · Queen of the Nest.",
     ohF1: "10 rooms",
     ohF2: "10 characters",
     ohF3: "5 forms",
@@ -217,7 +217,7 @@ window.GB_I18N = {
     yogaL2: "Light / dark",
     yogaL3: "CV and letter · 1 page",
     yogaL4: "Studio · 1:1 · teams",
-    yogaMore: "Certified Madrid 2019. Corporate at Google/YouTube. Studio in Murcia until June 2026.",
+    yogaMore: "Certified Madrid 2019. Corporate experience at Google/YouTube. Professional practice in Murcia.",
     yogaLive: "Yoga CV ES ↗",
     yogaCta: "Enter yoga →",
     stat1: "years experience",
@@ -255,6 +255,6 @@ window.GB_I18N = {
     contactTitle: "Let's talk",
     contactLead: "Book 30 minutes, or write. Murcia · remote.",
     agenda: "Book 30 min ↗",
-    footTag: "People × Data × Systems · Yoga × Presence"
+    footTag: "People × Data × Systems · Customer Operations · Yoga × Presence"
   }
 };
