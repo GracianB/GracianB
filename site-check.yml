@@ -55,4 +55,4 @@ jobs:
           if missing:
               raise SystemExit("Missing HTML requirements: " + ", ".join(missing))
 
-          print("HTML contract: OK")
+          print("HTML contract: OK")\n      - name: Validate JavaScript syntax\n        run: |\n          node --check main.js\n          node --check i18n.js\n\n      - name: Validate CSS structure\n        shell: python\n        run: |\n          from pathlib import Path\n\n          css = Path("styles.css").read_text(encoding="utf-8")\n\n          if css.count("{") != css.count("}"):\n              raise SystemExit(f"Unbalanced CSS braces: {{={css.count('{')} }}={css.count('}')}")\n\n          required = [\n              "--max:1240px",\n              ".hero-stage",\n              ".modes-worlds",\n              ".contact-panel",\n              "@media(prefers-reduced-motion:reduce)",\n          ]\n\n          missing = [item for item in required if item not in css]\n          if missing:\n              raise SystemExit("Missing design system hooks: " + ", ".join(missing))\n\n          print("CSS structure: OK")\n
