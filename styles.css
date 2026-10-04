@@ -2301,3 +2301,156 @@ a:focus-visible,button:focus-visible,.mode:focus-visible{outline:2px solid var(-
   }
 }
 
+
+
+/* ══════════════════════════════════════════════════════════════
+   FINAL HARDENING · accessibility · performance · resilience
+   ══════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-padding-top: calc(var(--header) + 18px);
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header) + 18px);
+}
+
+.noscript-note {
+  position: relative;
+  z-index: 90;
+  margin: 12px auto;
+  max-width: var(--max);
+  padding: 12px 16px;
+  border: 1px solid var(--yellow);
+  background: var(--surface);
+  color: var(--ink);
+  font: 700 12px/1.5 var(--mono);
+}
+
+.cmd[hidden],
+.drawer[hidden] {
+  display: none !important;
+}
+
+.cmd-panel {
+  overscroll-behavior: contain;
+}
+
+.cmd-panel:focus-visible,
+.drawer-panel:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+.cmd-list li[hidden] {
+  display: none !important;
+}
+
+.mode,
+.cv-card,
+.btn,
+.link-primary,
+.links a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mode:focus-visible,
+.cv-card:focus-visible,
+.btn:focus-visible,
+.links a:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+.hero-cinema,
+.system-map,
+.modes-wrap,
+.play-strip,
+.stats,
+.docs,
+.contact {
+  scroll-margin-top: calc(var(--header) + 18px);
+}
+
+@media (min-width: 900px) {
+  .modes-wrap,
+  .play-strip,
+  .stats,
+  .docs,
+  .contact {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 760px;
+  }
+}
+
+@media (max-width: 719px) {
+  .topbar {
+    min-height: 64px;
+  }
+
+  .nav,
+  .cmd-hint {
+    display: none;
+  }
+
+  .hero-actions .btn {
+    min-height: 46px;
+  }
+
+  .system-flow {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .system-flow > * {
+    flex: 0 0 min(78vw, 250px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fx-beam,
+  .fx-orb,
+  .fx-stars,
+  .spotlight,
+  .fx-net {
+    display: none !important;
+  }
+}
+
+@media print {
+  .fx,
+  .spotlight,
+  .scroll-progress,
+  .topbar,
+  .hero-stage,
+  .hero-hud,
+  .hero-metrics,
+  .intro,
+  .cmd,
+  .drawer,
+  .menu-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
