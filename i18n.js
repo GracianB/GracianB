@@ -42,6 +42,9 @@ window.GB_I18N = {
     proofOhanaSub: "Simulación · comportamientos IA · testing · CI",
     proofOpen: "Verificar ↗",
 
+    heroMetric1: "años",
+    heroMetric2: "operaciones",
+    heroMetric3: "sistemas",
     heroOver: "El sistema personal de",
     kicker: "Customer Success · Data · AI · Automation · Systems",
     tagline: "Personas × Datos × Sistemas<br><em>Yoga × Presencia</em>",
@@ -191,6 +194,9 @@ window.GB_I18N = {
     proofOhanaSub: "Simulation · AI behaviours · testing · CI",
     proofOpen: "Verify ↗",
 
+    heroMetric1: "years",
+    heroMetric2: "operations",
+    heroMetric3: "systems",
     heroOver: "The personal system of",
     kicker: "Customer Success · Data · AI · Automation · Systems",
     tagline: "People × Data × Systems<br><em>Yoga × Presence</em>",
