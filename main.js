@@ -72,6 +72,7 @@
   function setLang(next, persist = true) {
     lang = next === "en" ? "en" : "es";
     document.documentElement.setAttribute("data-lang", lang);
+    document.documentElement.dataset.locale = lang;
     if (persist) {
       try { localStorage.setItem(LANG_KEY, lang); } catch (_) {}
       const url = new URL(location.href);
@@ -128,7 +129,7 @@
     if (open) {
       const first = drawer.querySelector("a");
       requestAnimationFrame(() => first?.focus());
-    } else {
+    } else if (document.activeElement && drawer.contains(document.activeElement)) {
       menuBtn.focus();
     }
   }
@@ -166,6 +167,7 @@
     setMenu(false);
     lastFocus = document.activeElement;
     cmd.hidden = false;
+    cmd.setAttribute("aria-hidden", "false");
     cmdIndex = 0;
     if (cmdInput) cmdInput.value = "";
     filterCmd("");
@@ -175,6 +177,7 @@
   function closeCmd() {
     if (!cmd || cmd.hidden) return;
     cmd.hidden = true;
+    cmd.setAttribute("aria-hidden", "true");
     if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
   }
   function goCmd() {
@@ -192,6 +195,8 @@
   });
   document.querySelector("[data-cmd-close]")?.addEventListener("click", closeCmd);
   cmdInput?.addEventListener("input", () => filterCmd(cmdInput.value));
+  cmdInput?.setAttribute("aria-expanded", "true");
+  cmd?.setAttribute("aria-hidden", "true");
 
   document.addEventListener("keydown", (e) => {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
@@ -205,6 +210,17 @@
       return;
     }
     if (cmd && !cmd.hidden) {
+      // Keep keyboard focus inside the command dialog.
+      if (e.key === "Tab") {
+        const focusables = [...cmd.querySelectorAll('button, input, a[href], [tabindex]:not([tabindex="-1"])')]
+          .filter(el => !el.hasAttribute("disabled") && el.offsetParent !== null);
+        if (focusables.length) {
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      }
       const n = visibleCmds().length;
       if (e.key === "ArrowDown") { e.preventDefault(); cmdIndex = (cmdIndex + 1) % Math.max(n, 1); paintCmd(); }
       if (e.key === "ArrowUp") { e.preventDefault(); cmdIndex = (cmdIndex - 1 + n) % Math.max(n, 1); paintCmd(); }
@@ -422,7 +438,7 @@
   /* —— 7 · interactive particle network —— */
   (function net() {
     const canvas = document.querySelector(".fx-net");
-    if (!canvas || reduce) return;
+    if (!canvas || reduce || !fine || window.innerWidth < 720) return;
     const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
