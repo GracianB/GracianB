@@ -1,3 +1,9 @@
-
-# Local safety snapshots - never publish
+# Local safety snapshots
 _LOCAL_SNAPSHOTS/
+
+# Generated quality evidence
+artifacts/
+node_modules/
+test-results/
+playwright-report/
+.DS_Store
