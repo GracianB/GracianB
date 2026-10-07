@@ -64,9 +64,9 @@ async function desktop(browser) {
   await page.locator("[data-theme-toggle]").click();
   assert.equal(await page.locator("html").getAttribute("data-theme"), "light");
 
-  await page.keyboard.press("Control+KeyK");
+  await page.keyboard.press("Control+K");
   await page.locator("#command:not([hidden])").waitFor();
-  await page.locator("#command-input").fill("vortex");
+  await page.locator("#command-input").fill("ohana");
   assert.equal(await page.locator("#command-list li:not([hidden])").count(), 1);
   await page.keyboard.press("Escape");
   await page.locator("#command[hidden]").waitFor();
