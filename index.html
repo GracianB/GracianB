@@ -2,63 +2,44 @@
 <html lang="es" data-theme="dark" data-lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#06070a">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070809">
   <meta name="author" content="Gracián Baena">
-  <meta name="description" content="Gracián Baena — Customer Success × Data × AI × Automation × Systems. Portfolio profesional con experiencia, sistemas, proyectos y CVs ES/EN.">
+  <meta name="description" content="Gracián Baena transforma problemas de Customer Success y operaciones en sistemas medibles con datos, automatización, IA y software.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
-  <title>Gracián Baena | Customer Success × Data × AI × Systems</title>
+  <title>Gracián Baena | Customer Success · Operations · Data · AI</title>
+
   <link rel="canonical" href="https://gracianb.github.io/GracianB/">
   <link rel="alternate" hreflang="es" href="https://gracianb.github.io/GracianB/?lang=es">
   <link rel="alternate" hreflang="en" href="https://gracianb.github.io/GracianB/?lang=en">
   <link rel="alternate" hreflang="x-default" href="https://gracianb.github.io/GracianB/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="./favicon.svg">
   <link rel="manifest" href="./site.webmanifest">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Gracián Baena">
+  <link rel="preload" href="./styles.css?v=7" as="style">
+  <link rel="stylesheet" href="./styles.css?v=7">
+
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Gracián Baena">
   <meta property="og:locale" content="es_ES">
   <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:title" content="Gracián Baena — Personas × Datos × Sistemas">
-  <meta property="og:description" content="Customer Success × Data × AI × Automation × Systems. Portfolio profesional de Gracián Baena · ES/EN.">
+  <meta property="og:title" content="Gracián Baena · People → Operations → Data → Systems → AI">
+  <meta property="og:description" content="Customer Success, Operations, Data, Automation and AI connected through usable systems.">
   <meta property="og:url" content="https://gracianb.github.io/GracianB/">
-  <meta property="og:image" content="https://gracianb.github.io/GracianB/og-cover.svg">
-  <meta property="og:image:alt" content="Gracián Baena · Customer Operations · Systems · People × Data × Systems">
-  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image" content="https://gracianb.github.io/GracianB/og-cover.png">
+  <meta property="og:image:alt" content="Gracián Baena · Customer Success · Operations · Data · Systems · AI">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gracián Baena — Personas × Datos × Sistemas">
-  <meta name="twitter:description" content="Customer Success × Data × AI × Automation × Systems · Portfolio profesional · ES/EN.">
-  <meta name="twitter:image" content="https://gracianb.github.io/GracianB/og-cover.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <link rel="stylesheet" href="./styles.css?v=max-3">
-  <script>
-    /* intro boot — decide before first paint, with failsafe so content is never trapped */
-    (function () {
-      try {
-        var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        var seen = false;
-        try { seen = sessionStorage.getItem("gb-intro-seen") === "1"; } catch (e) {}
-        if (!reduce && !seen) {
-          document.documentElement.classList.add("intro-on");
-          // failsafe: never let the overlay trap the page if main.js fails to load
-          setTimeout(function () {
-            document.documentElement.classList.add("intro-done");
-          }, 3000);
-        }
-      } catch (e) {}
-    })();
-  </script>
-  <script src="./i18n.js?v=max-3"></script>
-  <script src="./main.js?v=max-3" defer></script>
+  <meta name="twitter:title" content="Gracián Baena · People → Operations → Data → Systems → AI">
+  <meta name="twitter:description" content="Customer Success, Operations, Data, Automation and AI connected through usable systems.">
+  <meta name="twitter:image" content="https://gracianb.github.io/GracianB/og-cover.png">
+
+  <script src="./i18n.js?v=7"></script>
+  <script src="./main.js?v=7" defer></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -75,594 +56,433 @@
           "addressLocality": "Murcia",
           "addressCountry": "ES"
         },
+        "knowsLanguage": ["Spanish", "English", "Italian"],
         "knowsAbout": [
           "Customer Success",
+          "Customer Operations",
+          "Revenue Operations",
           "Data Analytics",
-          "Artificial Intelligence",
           "Automation",
+          "Artificial Intelligence",
           "Systems Design",
-          "Pricing",
-          "E-commerce"
+          "Software Engineering"
         ],
         "sameAs": [
           "https://www.linkedin.com/in/gracianbaena",
           "https://github.com/GracianB",
           "https://gracianb.github.io/professional-deck/",
-          "https://gracianb.github.io/systems-lab/",
-          "https://gracianb.github.io/yoga-instructor/",
+          "https://gracianb.github.io/revops-studio/",
           "https://gracianb.github.io/project-ohana/",
-          "https://vortex-gilt-xi.vercel.app/"
+          "https://vortex-gilt-xi.vercel.app/",
+          "https://gracianb.github.io/yoga-instructor/"
         ]
       },
       {
         "@type": "WebSite",
         "@id": "https://gracianb.github.io/GracianB/#website",
         "url": "https://gracianb.github.io/GracianB/",
-        "name": "Gracián Baena",
-        "description": "Customer Success × Data × AI × Automation × Systems",
+        "name": "Gracián Baena · Professional System",
+        "description": "Customer Success, Operations, Data, Automation, AI and software systems.",
         "inLanguage": ["es", "en"],
-        "publisher": {
-          "@id": "https://gracianb.github.io/GracianB/#person"
-        }
+        "publisher": {"@id": "https://gracianb.github.io/GracianB/#person"}
       }
     ]
   }
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-grid"></div>
+    <div class="ambient-orb ambient-orb-a"></div>
+    <div class="ambient-orb ambient-orb-b"></div>
+    <div class="ambient-noise"></div>
+  </div>
   <div class="scroll-progress" aria-hidden="true"><i></i></div>
-  <div class="spotlight" aria-hidden="true"></div>
 
-  <div class="fx" aria-hidden="true">
-    <canvas class="fx-net"></canvas>
-    <div class="fx-vignette"></div>
-    <div class="fx-noise"></div>
-    <div class="fx-grid"></div>
-    <div class="fx-beam"></div>
-    <div class="fx-horizon"></div>
-    <div class="fx-orb fx-orb-a"></div>
-    <div class="fx-orb fx-orb-b"></div>
-    <div class="fx-orb fx-orb-c"></div>
-    <div class="fx-stars"></div>
-  </div>
-
-  <div class="intro" id="intro" aria-hidden="true">
-    <div class="intro-core">
-      <svg class="intro-mark" viewBox="0 0 120 120" width="120" height="120">
-        <circle class="intro-ring-svg" cx="60" cy="60" r="52" fill="none" stroke-width="1.5"/>
-        <circle class="intro-ring-svg intro-ring-2" cx="60" cy="60" r="40" fill="none" stroke-width="1"/>
-      </svg>
-      <span class="intro-gb">GB</span>
-    </div>
-    <div class="intro-worlds">
-      <span class="iw iw-pro">EXPERIENCIA</span>
-      <span class="iw iw-play">PLAY</span>
-      <span class="iw iw-yoga">PASIÓN</span>
-    </div>
-    <div class="intro-bar"><i></i></div>
-  </div>
-
-  <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
-
-  <header class="topbar">
+  <header class="topbar" data-topbar>
     <a class="brand" href="#main" aria-label="Gracián Baena">
       <span class="brand-mark">GB</span>
-      <div class="brand-text">
-        <b>GRACIÁN BAENA</b>
-        <small data-i18n="brandSub">ESPAÑA · 2026</small>
-      </div>
+      <span class="brand-copy">
+        <strong>GRACIÁN BAENA</strong>
+        <small data-i18n="brandSub">MURCIA · SPAIN · 2026</small>
+      </span>
     </a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#portfolios" data-i18n="navModes">Mundos</a>
-      <a href="#play" data-i18n="navPlay">PLAY</a>
-      <a href="#docs" data-i18n="navDocs">Documentos</a>
-      <a href="#contacto" data-i18n="navContact">Contacto</a>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#evidence" data-i18n="navEvidence">Evidencia</a>
+      <a href="#method" data-i18n="navMethod">Método</a>
+      <a href="#arc" data-i18n="navArc">Trayectoria</a>
+      <a href="#documents" data-i18n="navDocs">Documentos</a>
+      <a href="#contact" data-i18n="navContact">Contacto</a>
     </nav>
+
     <div class="topbar-actions">
-      <button type="button" class="cmd-hint" data-cmd-open title="Ctrl K">
-        <kbd>Ctrl</kbd><kbd>K</kbd>
+      <button class="command-open" type="button" data-command-open aria-label="Abrir navegación rápida">
+        <span>⌘</span><span>K</span>
       </button>
-      <div class="seg" role="group" aria-label="Language">
-        <button type="button" class="seg-btn" data-set-lang="es" aria-pressed="true">ES</button>
-        <button type="button" class="seg-btn" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="segment" role="group" aria-label="Language">
+        <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
-      <div class="seg" role="group" aria-label="Theme">
-        <button type="button" class="seg-btn seg-icon" data-set-theme="dark" aria-pressed="true" title="Dark">
-          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M6.1 1.2a6.8 6.8 0 0 0 8.7 8.7A7 7 0 1 1 6.1 1.2z"/></svg>
-        </button>
-        <button type="button" class="seg-btn seg-icon" data-set-theme="light" aria-pressed="false" title="Light">
-          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M8 1.2v1.5M8 13.3v1.5M1.2 8h1.5M13.3 8h1.5M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M3.2 12.8l1.1-1.1M11.7 4.3l1.1-1.1"/></g></svg>
-        </button>
-      </div>
-      <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="drawer">
-        <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema">
+        <span class="theme-sun" aria-hidden="true">☼</span>
+        <span class="theme-moon" aria-hidden="true">◐</span>
+      </button>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span>
         <b data-i18n="menu">Menú</b>
       </button>
     </div>
   </header>
 
-  <main id="main" class="shell">
-    <noscript><div class="noscript-note">Este sitio funciona sin JavaScript. Para la experiencia completa, activa JavaScript.</div></noscript>
-    <!-- CINEMATIC PORTADA -->
-    <section class="hero hero-cinema" aria-labelledby="hero-name">
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Navegación móvil">
+      <a href="#evidence" data-i18n="navEvidence">Evidencia</a>
+      <a href="#method" data-i18n="navMethod">Método</a>
+      <a href="#arc" data-i18n="navArc">Trayectoria</a>
+      <a href="#documents" data-i18n="navDocs">Documentos</a>
+      <a href="#contact" data-i18n="navContact">Contacto</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="hero-kicker">
-          <span class="pulse-dot" aria-hidden="true"></span>
-          <p class="eyebrow" data-i18n="eyebrow">CENTRO DE MARCA · TRES MUNDOS</p>
-        </div>
-        <p class="hero-over" data-i18n="heroOver">El sistema personal de</p>
-        <h1 id="hero-name" class="hero-name">
-          <span class="name-line first">Gracián</span>
-          <span class="name-line last">Baena</span>
+        <p class="eyebrow" data-i18n="heroEyebrow">CUSTOMER SUCCESS · OPERATIONS · DATA · AI</p>
+        <h1 id="hero-title">
+          <span data-i18n="heroLine1">Convierto operaciones complejas</span>
+          <em data-i18n="heroLine2">en sistemas que la gente puede usar.</em>
         </h1>
-        <p class="hero-tag" data-i18n-html="tagline">Personas × Datos × Sistemas<br><em>Yoga × Presencia</em></p>
-        <p class="lead" data-i18n="lead">Un centro. Tres puertas. Customer Operations, systems engineering y práctica. Entra por el problema, sigue por la prueba.</p>
-        <div class="hero-meta">
-          <span class="pill live"><i></i> <span data-i18n="status">España · abierto a roles senior · Murcia · remote OK</span></span>
-          <span class="pill pill-meta" data-i18n="metaPill">ES / EN · 8 PDFs</span>
-        </div>
-        <a class="proof" href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer" data-i18n="proof">1 sistema live · Bodytone Zendesk ↗</a>
+        <p class="hero-role" data-i18n="heroRole">Customer Success Systems & Data Strategist</p>
+        <p class="hero-lead" data-i18n="heroLead">Conecto contexto de negocio, experiencia de cliente, datos, automatización, IA y software para que el siguiente paso sea más claro, medible y repetible.</p>
+
         <div class="hero-actions">
-          <a class="btn btn-pro" href="https://gracianb.github.io/professional-deck/" rel="noopener" data-i18n="ctaPro">Experiencia →</a>
-          <a class="btn btn-play" href="https://gracianb.github.io/systems-lab/" rel="noopener" data-i18n="ctaLab">PLAY lab →</a>
-          <a class="btn btn-yoga" href="https://gracianb.github.io/yoga-instructor/" rel="noopener" data-i18n="ctaYoga">Yoga →</a>
-          <a class="btn btn-ghost" href="#docs" data-i18n="ctaCvs">Documentos ↓</a>
+          <a class="button button-primary" href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="heroCtaPrimary">Ver experiencia profesional</span><b>↗</b>
+          </a>
+          <a class="button button-secondary" href="#evidence">
+            <span data-i18n="heroCtaEvidence">Explorar evidencia</span><b>↓</b>
+          </a>
+          <a class="button button-ghost" href="./Gracian_Baena_CV_2026_ES.pdf" data-cv-link target="_blank" rel="noopener noreferrer">
+            <span data-i18n="heroCtaCv">CV</span><b>↗</b>
+          </a>
         </div>
-        <ol class="method method-inline" aria-label="Method">
-          <li><span>01</span><b data-i18n="method1">Escuchar</b></li>
-          <li><span>02</span><b data-i18n="method2">Decidir</b></li>
-          <li><span>03</span><b data-i18n="method3">Construir</b></li>
-          <li><span>04</span><b data-i18n="method4">Activar</b></li>
+
+        <div class="hero-proof">
+          <span class="live-dot" aria-hidden="true"></span>
+          <p><strong data-i18n="proofFirst">PRUEBA ANTES QUE PROMESA</strong> · <span data-i18n="proofFirstSub">sistemas públicos, demos ejecutables y casos verificables.</span></p>
+        </div>
+      </div>
+
+      <div class="hero-system" aria-label="Modelo profesional">
+        <div class="system-label">
+          <span>GB / OPERATING SYSTEM</span>
+          <small>2026</small>
+        </div>
+        <ol class="signal-chain">
+          <li class="signal active">
+            <span>01</span><strong data-i18n="chainPeople">Personas</strong>
+            <small data-i18n="chainPeopleSub">cliente · equipo · contexto</small>
+          </li>
+          <li class="signal">
+            <span>02</span><strong data-i18n="chainOps">Operaciones</strong>
+            <small data-i18n="chainOpsSub">proceso · fricción · decisión</small>
+          </li>
+          <li class="signal">
+            <span>03</span><strong data-i18n="chainData">Datos</strong>
+            <small data-i18n="chainDataSub">señales · calidad · medida</small>
+          </li>
+          <li class="signal">
+            <span>04</span><strong data-i18n="chainSystems">Sistemas</strong>
+            <small data-i18n="chainSystemsSub">reglas · tooling · automatización</small>
+          </li>
+          <li class="signal">
+            <span>05</span><strong data-i18n="chainAi">IA</strong>
+            <small data-i18n="chainAiSub">asistencia · escala · aprendizaje</small>
+          </li>
+        </ol>
+        <div class="system-footer">
+          <span data-i18n="systemFooter">PROBLEMA → SISTEMA → DECISIÓN → RESULTADO</span>
+          <i aria-hidden="true"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts-strip" aria-label="Resumen profesional">
+      <div><strong>16+</strong><span data-i18n="factYears">años de experiencia</span></div>
+      <div><strong>B2B</strong><span data-i18n="factSaas">SaaS · Customer Success</span></div>
+      <div><strong>ES · EN · IT</strong><span data-i18n="factLanguages">idiomas de trabajo</span></div>
+      <div><strong>Murcia</strong><span data-i18n="factRemote">España · remoto</span></div>
+    </section>
+
+    <section class="section-shell evidence-section" id="evidence" aria-labelledby="evidence-title">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="evidenceEyebrow">EVIDENCIA SELECCIONADA</p>
+          <h2 id="evidence-title" data-i18n="evidenceTitle">No una lista de tecnologías. Cinco sistemas, cinco tipos de prueba.</h2>
+        </div>
+        <p data-i18n="evidenceIntro">Cada proyecto responde a una pregunta distinta: ¿puedo mejorar una operación real, modelar decisiones, construir software complejo, trabajar en tiempo real y diseñar productos con IA?</p>
+      </header>
+
+      <div class="evidence-grid">
+        <article class="evidence-card evidence-gold">
+          <div class="card-top"><span>01 / OPERATIONS</span><b data-i18n="statusProduction">PRODUCCIÓN</b></div>
+          <h3>Bodytone Support OS</h3>
+          <p data-i18n="bodytoneDesc">Ecosistema de Customer Operations alrededor de Zendesk: conocimiento, routing, automatización, reporting y tooling interno.</p>
+          <dl>
+            <div><dt data-i18n="labelProblem">Problema</dt><dd data-i18n="bodytoneProblem">Convertir una operación dispersa en flujos utilizables y medibles.</dd></div>
+            <div><dt data-i18n="labelProof">Prueba</dt><dd data-i18n="bodytoneProof">Help Center público + caso profesional documentado.</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer"><span data-i18n="openLive">Ver live</span> ↗</a>
+            <a href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer"><span data-i18n="openCase">Ver caso</span> ↗</a>
+          </div>
+        </article>
+
+        <article class="evidence-card evidence-cyan">
+          <div class="card-top"><span>02 / DECISIONS</span><b data-i18n="statusLive">LIVE</b></div>
+          <h3>RevOps Studio</h3>
+          <p data-i18n="revopsDesc">Sistema de decisión Revenue Operations con calidad de datos, scoring determinista, forecast, segmentación, aprobación humana y trazabilidad.</p>
+          <dl>
+            <div><dt data-i18n="labelProblem">Problema</dt><dd data-i18n="revopsProblem">Hacer explícitas, inspeccionables y repetibles decisiones operativas.</dd></div>
+            <div><dt data-i18n="labelProof">Prueba</dt><dd data-i18n="revopsProof">Motor local-first, Decision Trace y controles de confianza.</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a href="https://gracianb.github.io/revops-studio/" target="_blank" rel="noopener noreferrer"><span data-i18n="openSystem">Abrir sistema</span> ↗</a>
+            <a href="https://github.com/GracianB/revops-studio" target="_blank" rel="noopener noreferrer"><span data-i18n="openSource">Código</span> ↗</a>
+          </div>
+        </article>
+
+        <article class="evidence-card evidence-coral">
+          <div class="card-top"><span>03 / ENGINEERING</span><b data-i18n="statusActive">ACTIVO</b></div>
+          <h3>Project OHANA</h3>
+          <p data-i18n="ohanaDesc">Juego de navegador convertido en laboratorio de sistemas: simulación fija, personajes, IA de comportamiento, estados, regresión y E2E.</p>
+          <dl>
+            <div><dt data-i18n="labelProblem">Problema</dt><dd data-i18n="ohanaProblem">Coordinar muchas reglas y estados sin perder consistencia ni jugabilidad.</dd></div>
+            <div><dt data-i18n="labelProof">Prueba</dt><dd data-i18n="ohanaProof">Juego ejecutable, suites de regresión y CI continua.</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a href="https://gracianb.github.io/project-ohana/" target="_blank" rel="noopener noreferrer"><span data-i18n="play">Jugar</span> ↗</a>
+            <a href="https://github.com/GracianB/project-ohana" target="_blank" rel="noopener noreferrer"><span data-i18n="openSource">Código</span> ↗</a>
+          </div>
+        </article>
+
+        <article class="evidence-card evidence-violet">
+          <div class="card-top"><span>04 / REAL-TIME</span><b>V6</b></div>
+          <h3>VØRTICE</h3>
+          <p data-i18n="vortexDesc">Experiencia audiovisual generativa WebGL: campo de partículas, cuatro movimientos, seis estados, audio-reactividad y rendimiento adaptativo.</p>
+          <dl>
+            <div><dt data-i18n="labelProblem">Problema</dt><dd data-i18n="vortexProblem">Construir interacción visual en tiempo real sin sacrificar rendimiento, accesibilidad ni claridad.</dd></div>
+            <div><dt data-i18n="labelProof">Prueba</dt><dd data-i18n="vortexProof">WebGL, Chromium E2E, budgets y release contract V6.</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="openExperience">Abrir experiencia</span> ↗</a>
+            <a href="https://github.com/GracianB/vortex" target="_blank" rel="noopener noreferrer"><span data-i18n="openSource">Código</span> ↗</a>
+          </div>
+        </article>
+
+        <article class="evidence-card evidence-sage">
+          <div class="card-top"><span>05 / AI SYSTEMS</span><b>LAB</b></div>
+          <h3>AiGoritmo</h3>
+          <p data-i18n="aigoritmoDesc">Arquitectura de aplicación IA con Python, FastAPI, modelos locales, voz y componentes modulares para experimentar sin depender de una sola interfaz.</p>
+          <dl>
+            <div><dt data-i18n="labelProblem">Problema</dt><dd data-i18n="aigoritmoProblem">Convertir capacidades de modelos en una aplicación utilizable y componible.</dd></div>
+            <div><dt data-i18n="labelProof">Prueba</dt><dd data-i18n="aigoritmoProof">Backend, launcher, UI web y experimentación local reproducible.</dd></div>
+          </dl>
+          <div class="card-actions">
+            <a href="https://github.com/GracianB/aigoritmo" target="_blank" rel="noopener noreferrer"><span data-i18n="openRepository">Abrir repositorio</span> ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="section-shell">
+        <header class="section-head method-head">
+          <div>
+            <p class="eyebrow" data-i18n="methodEyebrow">MÉTODO OPERATIVO</p>
+            <h2 id="method-title" data-i18n="methodTitle">La tecnología cambia. El método no.</h2>
+          </div>
+          <p data-i18n="methodIntro">Antes de automatizar, entiendo la operación. Antes de recomendar, valido los datos. Antes de escalar, compruebo que alguien puede usar el sistema sin mí.</p>
+        </header>
+
+        <ol class="method-flow">
+          <li><span>01</span><strong data-i18n="method1">Entender</strong><small data-i18n="method1Sub">cliente · objetivo · fricción</small></li>
+          <li><span>02</span><strong data-i18n="method2">Modelar</strong><small data-i18n="method2Sub">reglas · excepciones · señales</small></li>
+          <li><span>03</span><strong data-i18n="method3">Construir</strong><small data-i18n="method3Sub">flujo · sistema · interfaz</small></li>
+          <li><span>04</span><strong data-i18n="method4">Validar</strong><small data-i18n="method4Sub">usuarios · SME · casos reales</small></li>
+          <li><span>05</span><strong data-i18n="method5">Activar</strong><small data-i18n="method5Sub">adopción · formación · handoff</small></li>
+          <li><span>06</span><strong data-i18n="method6">Medir</strong><small data-i18n="method6Sub">calidad · uso · resultado</small></li>
+          <li><span>07</span><strong data-i18n="method7">Iterar</strong><small data-i18n="method7Sub">evidencia · mejora · escala</small></li>
         </ol>
       </div>
-
-      <div class="hero-hud" aria-hidden="true">
-        <span><i></i> GRACIAN BAENA / SYSTEM HUB</span>
-        <span>ES · EN</span>
-      </div>
-      <div class="hero-stage">
-        <div class="const-bloom" aria-hidden="true"></div>
-        <div class="constellation">
-          <div class="const-ring const-ring-a"></div>
-          <div class="const-ring const-ring-b"></div>
-          <div class="const-ring const-ring-c"></div>
-          <div class="const-ring const-ring-neon"></div>
-          <div class="const-core">
-            <span class="const-core-glow" aria-hidden="true"></span>
-            <span class="const-core-ring" aria-hidden="true"></span>
-            <span class="const-mark">GB</span>
-          </div>
-          <a class="const-node node-gold" href="https://gracianb.github.io/professional-deck/" aria-label="01 Experiencia · professional-deck">
-            <b class="node-halo" aria-hidden="true"></b>
-            <b class="node-ring" aria-hidden="true"></b>
-            <i></i><span>01</span>
-            <em class="const-label" data-i18n="nodePro">Experiencia</em>
-          </a>
-          <a class="const-node node-ice" href="https://gracianb.github.io/systems-lab/" aria-label="02 PLAY · systems-lab">
-            <b class="node-halo" aria-hidden="true"></b>
-            <b class="node-ring" aria-hidden="true"></b>
-            <i></i><span>02</span>
-            <em class="const-label" data-i18n="nodeLab">PLAY</em>
-          </a>
-          <a class="const-node node-sage" href="https://gracianb.github.io/yoga-instructor/" aria-label="03 Pasión · yoga-instructor">
-            <b class="node-halo" aria-hidden="true"></b>
-            <b class="node-ring" aria-hidden="true"></b>
-            <i></i><span>03</span>
-            <em class="const-label" data-i18n="nodeYoga">Pasión</em>
-          </a>
-          <span class="const-comet" aria-hidden="true"></span>
-          <span class="const-comet comet-gold" aria-hidden="true"></span>
-          <svg class="const-lines" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <line class="cl cl-gold" x1="200" y1="200" x2="200" y2="70"/>
-            <line class="cl cl-ice" x1="200" y1="200" x2="318" y2="286"/>
-            <line class="cl cl-sage" x1="200" y1="200" x2="82" y2="286"/>
-          </svg>
-        </div>
-        <div class="hero-metrics" aria-hidden="true">
-          <span><b>16+</b><small data-i18n="heroMetric1">years</small></span>
-          <span><b>CS</b><small data-i18n="heroMetric2">operations</small></span>
-          <span><b>AI</b><small data-i18n="heroMetric3">systems</small></span>
-        </div>
-        <div class="hero-film" aria-hidden="true">
-          <span class="film-tick">MAX · 06</span>
-          <span class="film-tick">HUB · 2026</span>
-        </div>
-      </div>
     </section>
 
-    <section class="system-map" aria-labelledby="system-map-title">
-      <div class="system-map-head">
+    <section class="section-shell arc-section" id="arc" aria-labelledby="arc-title">
+      <header class="section-head">
         <div>
-          <p class="eyebrow" data-i18n="systemEyebrow">OPERATING MODEL</p>
-          <h2 id="system-map-title" data-i18n="systemTitle">From messy operation to usable system.</h2>
-          <p class="section-sub" data-i18n="systemSub">The common thread across my work is not a tool. It is the ability to move from ambiguity to a system people can actually operate.</p>
+          <p class="eyebrow" data-i18n="arcEyebrow">TRAYECTORIA</p>
+          <h2 id="arc-title" data-i18n="arcTitle">La progresión explica el perfil.</h2>
         </div>
-        <span class="system-status"><i></i><span data-i18n="systemStatus">SYSTEM THINKING · ACTIVE</span></span>
-      </div>
+        <p data-i18n="arcIntro">No empecé por el código. Empecé por personas, operaciones y clientes. La capa técnica llegó para resolver mejor esos problemas.</p>
+      </header>
 
-      <div class="system-flow" aria-label="Operating model">
-        <div class="flow-node flow-problem">
-          <span class="flow-index">01</span>
-          <strong data-i18n="flow1">Problem</strong>
-          <small data-i18n="flow1s">What is actually happening?</small>
-        </div>
-        <span class="flow-arrow" aria-hidden="true">→</span>
-        <div class="flow-node">
-          <span class="flow-index">02</span>
-          <strong data-i18n="flow2">Context</strong>
-          <small data-i18n="flow2s">People · process · constraints</small>
-        </div>
-        <span class="flow-arrow" aria-hidden="true">→</span>
-        <div class="flow-node">
-          <span class="flow-index">03</span>
-          <strong data-i18n="flow3">Signals</strong>
-          <small data-i18n="flow3s">Data · quality · evidence</small>
-        </div>
-        <span class="flow-arrow" aria-hidden="true">→</span>
-        <div class="flow-node flow-system">
-          <span class="flow-index">04</span>
-          <strong data-i18n="flow4">System</strong>
-          <small data-i18n="flow4s">Workflow · tooling · automation</small>
-        </div>
-        <span class="flow-arrow" aria-hidden="true">→</span>
-        <div class="flow-node flow-outcome">
-          <span class="flow-index">05</span>
-          <strong data-i18n="flow5">Outcome</strong>
-          <small data-i18n="flow5s">Decision · action · measurement</small>
-        </div>
-      </div>
-
-      <div class="proof-grid">
-        <article class="proof-card proof-live">
-          <span class="proof-kicker">LIVE / 01</span>
-          <strong data-i18n="proofBodytone">Bodytone Support OS</strong>
-          <span data-i18n="proofBodytoneSub">Customer Operations · Zendesk · automation · data</span>
-          <a href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer" data-i18n="proofOpen">Verify live ↗</a>
+      <div class="arc-grid">
+        <article>
+          <span>01</span>
+          <p class="arc-years" data-i18n="arcFoundationYears">BASE</p>
+          <h3 data-i18n="arcFoundationTitle">Retail, servicio y operación</h3>
+          <p data-i18n="arcFoundationBody">Años trabajando cerca del cliente, el equipo y la ejecución diaria: donde los procesos dejan de ser diagramas y empiezan a fallar de verdad.</p>
         </article>
-        <article class="proof-card proof-revops">
-          <span class="proof-kicker">LIVE / 02</span>
-          <strong>RevOps Studio</strong>
-          <span data-i18n="proofRevopsSub">Decision systems · scoring · forecasting · audit</span>
-          <a href="https://gracianb.github.io/revops-studio/" target="_blank" rel="noopener noreferrer" data-i18n="proofOpen">Inspect system ↗</a>
+        <article>
+          <span>02</span>
+          <p class="arc-years">Solaris · Majorel</p>
+          <h3 data-i18n="arcEnablementTitle">Training y entornos de escala</h3>
+          <p data-i18n="arcEnablementBody">Formación para marcas y experiencia en una operación internacional ligada a Google/YouTube. Aprendizaje, calidad y consistencia a escala.</p>
         </article>
-        <article class="proof-card proof-engineering">
-          <span class="proof-kicker">BUILD / 03</span>
-          <strong>Project OHANA</strong>
-          <span data-i18n="proofOhanaSub">Simulation · AI behaviours · testing · CI</span>
-          <a href="https://gracianb.github.io/project-ohana/" target="_blank" rel="noopener noreferrer" data-i18n="proofOpen">Run the build ↗</a>
+        <article>
+          <span>03</span>
+          <p class="arc-years">Minderest</p>
+          <h3 data-i18n="arcSaasTitle">Customer Success B2B SaaS</h3>
+          <p data-i18n="arcSaasBody">Adopción, engagement, soporte, pricing intelligence y diagnóstico de señales antes de intervenir.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <p class="arc-years">Bodytone</p>
+          <h3 data-i18n="arcSystemsTitle">Customer Operations → Data → Systems</h3>
+          <p data-i18n="arcSystemsBody">Customer Success, análisis y operaciones conectados con automatización, conocimiento, reporting y herramientas internas.</p>
+        </article>
+        <article class="arc-future">
+          <span>05</span>
+          <p class="arc-years">2024 →</p>
+          <h3 data-i18n="arcAiTitle">AI, software y sistemas</h3>
+          <p data-i18n="arcAiBody">Especialización deliberada para poder construir directamente: Python, JavaScript, BI, automatización, LLMs, testing y CI.</p>
         </article>
       </div>
     </section>
 
-    <section class="modes-wrap" id="portfolios" aria-labelledby="modes-title">
-      <div class="section-head">
-        <p class="eyebrow" data-i18n="modesEyebrow">TRES MUNDOS</p>
-        <h2 id="modes-title" data-i18n="modesTitle">Tres puertas. Un operador.</h2>
-        <p class="section-sub" data-i18n="modesSub">Cada mundo tiene su cromática, su ritmo y su prueba. El hub es el centro que los conecta.</p>
-      </div>
-      <div class="modes modes-worlds">
-        <article class="mode mode-pro" tabindex="0" data-world="pro">
-          <span class="mode-aura" aria-hidden="true"></span>
-          <span class="mode-bar" aria-hidden="true"></span>
-          <div class="mode-glow-line" aria-hidden="true"></div>
-          <header>
-            <span class="mode-code">01</span>
-            <span class="mode-badge" data-i18n="proBadge">EXPERIENCIA</span>
-          </header>
-          <p class="mode-chroma" data-i18n="proChroma">Cromática · oro / nude / blanco</p>
-          <h3 data-i18n="proTitle">CS × Data × AI</h3>
-          <p data-i18n="proDesc">Deck profesional oro / nude. Método, capability map y prueba en Zendesk.</p>
-          <ul class="mode-list">
-            <li data-i18n="proL1">14 slides · ES/EN</li>
-            <li data-i18n="proL2">Bodytone live + demos</li>
-            <li data-i18n="proL3">Capability map · experiencia</li>
-            <li data-i18n="proL4">Método Escuchar → Activar</li>
-          </ul>
-          <div class="mode-hover">
-            <p class="mode-more" data-i18n="proMore">El caso que se puede verificar: Support OS en producción. Deck interactivo, no un PDF.</p>
-            <div class="mode-sats">
-              <a href="https://gracianb.github.io/professional-deck/" rel="noopener" data-i18n="proCta">Entrar al deck →</a>
-              <a href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer" data-i18n="proLive">Help Center live ↗</a>
-              <a href="https://github.com/GracianB/revops-studio" target="_blank" rel="noopener noreferrer">RevOps Studio ↗</a>
-            </div>
-            <span class="mode-url">gracianb.github.io/professional-deck</span>
-          </div>
-        </article>
+    <section class="section-shell doors-section" aria-labelledby="doors-title">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="doorsEyebrow">TRES PUERTAS</p>
+          <h2 id="doors-title" data-i18n="doorsTitle">Profundidad cuando la necesitas.</h2>
+        </div>
+        <p data-i18n="doorsIntro">Este hub orienta. Cada destino profundiza en una parte distinta sin obligarte a recorrer toda mi historia.</p>
+      </header>
 
-        <article class="mode mode-play" tabindex="0" data-world="play">
-          <span class="mode-aura" aria-hidden="true"></span>
-          <span class="mode-bar" aria-hidden="true"></span>
-          <div class="mode-glow-line" aria-hidden="true"></div>
-          <header>
-            <span class="mode-code">02</span>
-            <span class="mode-badge" data-i18n="labBadge">PLAY</span>
-          </header>
-          <p class="mode-chroma" data-i18n="labChroma">Cromática · hielo neón</p>
-          <h3 data-i18n="labTitle">Systems Lab</h3>
-          <p data-i18n="labDesc">Hielo neón. Ohana, Vórtice y el Help Center. Sistemas que se pulsan.</p>
-          <ul class="mode-list">
-            <li data-i18n="labL1">Ohana · Canvas</li>
-            <li data-i18n="labL2">Vórtice · WebGL</li>
-            <li data-i18n="labL3">Zendesk + lab</li>
-            <li data-i18n="labL4">Chatbot demo + Aigoritmo</li>
-          </ul>
-          <div class="mode-hover">
-            <p class="mode-more" data-i18n="labMore">Si no se abre en el navegador, no está. Juegos, CS público y un agente de ejemplo.</p>
-            <div class="mode-sats">
-              <a href="https://gracianb.github.io/systems-lab/" rel="noopener" data-i18n="labCta">Entrar al lab →</a>
-              <a href="https://gracianb.github.io/project-ohana/" rel="noopener" data-i18n="ohanaCta">Jugar Ohana →</a>
-              <a href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener" data-i18n="vortexCta">Abrir Vórtice →</a>
-            </div>
-            <span class="mode-url">gracianb.github.io/systems-lab</span>
-          </div>
-        </article>
-
-        <article class="mode mode-yoga" tabindex="0" data-world="yoga">
-          <span class="mode-aura" aria-hidden="true"></span>
-          <span class="mode-bar" aria-hidden="true"></span>
-          <div class="mode-glow-line" aria-hidden="true"></div>
-          <header>
-            <span class="mode-code">03</span>
-            <span class="mode-badge" data-i18n="yogaBadge">PASIÓN</span>
-          </header>
-          <p class="mode-chroma" data-i18n="yogaChroma">Cromática · sage / presencia</p>
-          <h3 data-i18n="yogaTitle">Presencia × Práctica</h3>
-          <p data-i18n="yogaDesc">Sage / presencia. Instructor de yoga · Murcia · 2019–2026.</p>
-          <ul class="mode-list">
-            <li data-i18n="yogaL1">Web zen · ES/EN</li>
-            <li data-i18n="yogaL2">Claro / oscuro</li>
-            <li data-i18n="yogaL3">CV y carta · 1 página</li>
-            <li data-i18n="yogaL4">Sala · 1:1 · equipos</li>
-          </ul>
-          <div class="mode-hover">
-            <p class="mode-more" data-i18n="yogaMore">Certificado Madrid 2019. Experiencia corporativa en Google/YouTube. Práctica profesional en Murcia.</p>
-            <div class="mode-sats">
-              <a href="https://gracianb.github.io/yoga-instructor/" rel="noopener" data-i18n="yogaCta">Entrar a yoga →</a>
-              <a href="./Gracian_Baena_CV_Yoga_ES.pdf" target="_blank" rel="noreferrer" data-i18n="yogaLive">CV yoga ES ↗</a>
-            </div>
-            <span class="mode-url">gracianb.github.io/yoga-instructor</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="play-strip" id="play" aria-labelledby="play-title">
-      <div class="section-head">
-        <p class="eyebrow" data-i18n="playEyebrow">HABILIDAD TÉCNICA · PLAY</p>
-        <h2 id="play-title" data-i18n="playTitle">Relájate. O juega.</h2>
-        <p class="section-sub" data-i18n="playSub">El mundo PLAY: Ohana, Vórtice y el Help Center.</p>
-      </div>
-      <div class="modes">
-        <a class="mode mode-play" href="https://gracianb.github.io/project-ohana/" rel="noopener">
-          <span class="mode-bar" aria-hidden="true"></span>
-          <div class="mode-stage stage-ohana" aria-hidden="true">
-            <span class="stage-live">LIVE</span>
-            <i class="oh-hero"></i>
-            <i class="oh-foe"></i>
-            <i class="oh-foe oh-foe-2"></i>
-            <span class="oh-ground"></span>
-          </div>
-          <h3 data-i18n="ohanaTitle">Ohana</h3>
-          <p data-i18n="ohanaDesc">Isla Hoku. 10 salas · 10 personajes · 5 formas · Reina del Nido.</p>
-          <ul class="mode-facts">
-            <li data-i18n="ohF1">10 salas</li>
-            <li data-i18n="ohF2">10 personajes</li>
-            <li data-i18n="ohF3">5 formas</li>
-            <li data-i18n="ohF4">1 Reina</li>
-          </ul>
-          <span class="mode-cta" data-i18n="ohanaCta">Jugar →</span>
+      <div class="doors-grid">
+        <a class="door door-gold" href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer">
+          <span>01 / CAREER</span>
+          <h3 data-i18n="doorExperienceTitle">Experiencia profesional</h3>
+          <p data-i18n="doorExperienceBody">Customer Success, Operations, Data y casos de negocio en un deck interactivo ES/EN.</p>
+          <b data-i18n="enter">Entrar ↗</b>
         </a>
-
-        <a class="mode mode-play" href="https://vortex-gilt-xi.vercel.app/" rel="noopener">
-          <span class="mode-bar" aria-hidden="true"></span>
-          <div class="mode-stage stage-vortex" aria-hidden="true">
-            <span class="stage-live">LIVE</span>
-            <b></b><b></b><b></b><b></b><b></b><b></b>
-          </div>
-          <h3 data-i18n="vortexTitle">Vórtice</h3>
-          <p data-i18n="vortexDesc">Mueve el cursor. Eso es todo.</p>
-          <span class="mode-cta" data-i18n="vortexCta">Abrir →</span>
+        <a class="door door-cyan" href="https://github.com/GracianB?tab=repositories" target="_blank" rel="noopener noreferrer">
+          <span>02 / BUILD</span>
+          <h3 data-i18n="doorBuildTitle">Sistemas construidos</h3>
+          <p data-i18n="doorBuildBody">Código, decisiones de arquitectura, tests, CI y evolución real de los proyectos públicos.</p>
+          <b data-i18n="enter">Entrar ↗</b>
+        </a>
+        <a class="door door-sage" href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer">
+          <span>03 / HUMAN</span>
+          <h3 data-i18n="doorHumanTitle">La capa humana</h3>
+          <p data-i18n="doorHumanBody">Yoga y práctica profesional como complemento, no como disfraz corporativo. Sistemas utilizados por personas reales.</p>
+          <b data-i18n="enter">Entrar ↗</b>
         </a>
       </div>
-      <p class="play-more"><a href="https://gracianb.github.io/systems-lab/" data-i18n="playMore">Abrir el mundo PLAY →</a></p>
     </section>
 
-    <section class="stats" aria-label="Snapshot">
-      <div class="stat">
-        <b data-count="16" data-suffix="+">16+</b>
-        <span data-i18n="stat1">años experiencia</span>
-      </div>
-      <div class="stat">
-        <b data-count="200" data-suffix="+">200+</b>
-        <span data-i18n="stat2">reglas pricing</span>
-      </div>
-      <div class="stat">
-        <b data-count="4">4</b>
-        <span data-i18n="stat3">países</span>
-      </div>
-      <div class="stat">
-        <b data-count="1">1</b>
-        <span data-i18n="stat4">sistema live</span>
-      </div>
-    </section>
+    <section class="documents-section" id="documents" aria-labelledby="documents-title">
+      <div class="section-shell">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow" data-i18n="docsEyebrow">DOCUMENTOS</p>
+            <h2 id="documents-title" data-i18n="docsTitle">Listos para revisar o enviar.</h2>
+          </div>
+          <p data-i18n="docsIntro">Versiones canónicas alojadas en este repositorio. Profesional y yoga separados para que cada contexto tenga la narrativa correcta.</p>
+        </header>
 
-    <section class="docs" id="docs">
-      <div class="section-head">
-        <p class="eyebrow" data-i18n="cvEyebrow">DOCUMENTOS</p>
-        <h2 data-i18n="cvTitle">CVs y cartas listos para enviar</h2>
-        <p class="section-sub" data-i18n="cvSub">PDFs canónicos en este hub · un clic · ES / EN</p>
-      </div>
-
-      <div class="cv-lanes">
-        <div class="cv-lane lane-pro">
-          <div class="lane-head">
-            <span class="lane-dot"></span>
-            <span class="lane-title" data-i18n="lanePro">EXPERIENCIA</span>
-            <span class="lane-meta">CS × Data × AI</span>
-          </div>
-          <div class="cv-grid">
-            <a class="cv-card pro" href="./Gracian_Baena_CV_2026_ES.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">PRO · ES</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="cvProEs">CV Experiencia ES</strong>
-              <small data-i18n="cvProEsSub">Customer Success · Data · AI</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-            <a class="cv-card pro" href="./Gracian_Baena_CV_2026_EN.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">PRO · EN</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="cvProEn">Experience CV EN</strong>
-              <small data-i18n="cvProEnSub">Customer Success · Data · AI</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-            <a class="cv-card pro" href="./Gracian_Baena_Carta_Presentacion_ES.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">LETTER · ES</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="letterProEs">Carta ES</strong>
-              <small data-i18n="letterProEsSub">Presentación experiencia</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-            <a class="cv-card pro" href="./Gracian_Baena_Cover_Letter_EN.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">LETTER · EN</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="letterProEn">Cover letter EN</strong>
-              <small data-i18n="letterProEnSub">Experience cover letter</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="cv-lane lane-yoga">
-          <div class="lane-head">
-            <span class="lane-dot"></span>
-            <span class="lane-title" data-i18n="laneYoga">Yoga</span>
-            <span class="lane-meta">Presencia × Práctica</span>
-          </div>
-          <div class="cv-grid">
-            <a class="cv-card yoga" href="./Gracian_Baena_CV_Yoga_ES.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">YOGA · ES</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="cvYogaEs">CV Yoga ES</strong>
-              <small data-i18n="cvYogaEsSub">1 página · diseño zen</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-            <a class="cv-card yoga" href="./Gracian_Baena_CV_Yoga_EN.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">YOGA · EN</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="cvYogaEn">CV Yoga EN</strong>
-              <small data-i18n="cvYogaEnSub">1 page · zen layout</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-            <a class="cv-card yoga" href="./Gracian_Baena_Carta_Yoga_ES.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">LETTER · ES</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="letterYogaEs">Carta Yoga ES</strong>
-              <small data-i18n="letterYogaEsSub">Presentación instructor</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-            <a class="cv-card yoga" href="./Gracian_Baena_Cover_Letter_Yoga_EN.pdf" target="_blank" rel="noreferrer">
-              <div class="cv-top"><span class="cv-tag">LETTER · EN</span><span class="cv-fmt">PDF</span></div>
-              <strong data-i18n="letterYogaEn">Cover Yoga EN</strong>
-              <small data-i18n="letterYogaEnSub">Instructor cover letter</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="cv-lane lane-play">
-          <div class="lane-head">
-            <span class="lane-dot"></span>
-            <span class="lane-title" data-i18n="lanePlay">PLAY</span>
-            <span class="lane-meta">Systems · live</span>
-          </div>
-          <div class="cv-grid">
-            <a class="cv-card play" href="https://gracianb.github.io/systems-lab/" rel="noopener">
-              <div class="cv-top"><span class="cv-tag">LAB</span><span class="cv-fmt">LIVE</span></div>
-              <strong data-i18n="playLab">Systems Lab</strong>
-              <small data-i18n="playLabSub">Hub técnico · hielo neón</small>
-              <span class="cv-action" data-i18n="cvOpen">Abrir →</span>
-            </a>
-            <a class="cv-card play" href="https://gracianb.github.io/project-ohana/" rel="noopener">
-              <div class="cv-top"><span class="cv-tag">OHANA</span><span class="cv-fmt">LIVE</span></div>
-              <strong data-i18n="ohanaTitle">Ohana</strong>
-              <small data-i18n="ohanaDesc">Un juego. Entra.</small>
-              <span class="cv-action" data-i18n="ohanaCta">Jugar →</span>
-            </a>
-            <a class="cv-card play" href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener">
-              <div class="cv-top"><span class="cv-tag">VÓRTICE</span><span class="cv-fmt">LIVE</span></div>
-              <strong data-i18n="vortexTitle">Vórtice</strong>
-              <small data-i18n="vortexDesc">Mueve el cursor. Eso es todo.</small>
-              <span class="cv-action" data-i18n="vortexCta">Abrir →</span>
-            </a>
-            <a class="cv-card play" href="https://bodytonehelp.zendesk.com/hc/es" target="_blank" rel="noopener noreferrer">
-              <div class="cv-top"><span class="cv-tag">CS</span><span class="cv-fmt">LIVE</span></div>
-              <strong data-i18n="playZendesk">Bodytone Support OS</strong>
-              <small data-i18n="playZendeskSub">Help Center en producción</small>
-              <span class="cv-action" data-i18n="proLive">Help Center live ↗</span>
-            </a>
-          </div>
+        <div class="documents-grid">
+          <article class="document-group">
+            <div class="document-group-head">
+              <span>01</span>
+              <h3 data-i18n="docsProfessional">Profesional</h3>
+            </div>
+            <a href="./Gracian_Baena_CV_2026_ES.pdf" target="_blank" rel="noopener noreferrer"><span>CV · ES</span><b>PDF ↗</b></a>
+            <a href="./Gracian_Baena_CV_2026_EN.pdf" target="_blank" rel="noopener noreferrer"><span>CV · EN</span><b>PDF ↗</b></a>
+            <a href="./Gracian_Baena_Carta_Presentacion_ES.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="letterEs">Carta · ES</span><b>PDF ↗</b></a>
+            <a href="./Gracian_Baena_Cover_Letter_EN.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="letterEn">Cover · EN</span><b>PDF ↗</b></a>
+          </article>
+          <article class="document-group">
+            <div class="document-group-head">
+              <span>02</span>
+              <h3>Yoga</h3>
+            </div>
+            <a href="./Gracian_Baena_CV_Yoga_ES.pdf" target="_blank" rel="noopener noreferrer"><span>CV Yoga · ES</span><b>PDF ↗</b></a>
+            <a href="./Gracian_Baena_CV_Yoga_EN.pdf" target="_blank" rel="noopener noreferrer"><span>CV Yoga · EN</span><b>PDF ↗</b></a>
+            <a href="./Gracian_Baena_Carta_Yoga_ES.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="yogaLetterEs">Carta Yoga · ES</span><b>PDF ↗</b></a>
+            <a href="./Gracian_Baena_Cover_Letter_Yoga_EN.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="yogaLetterEn">Cover Yoga · EN</span><b>PDF ↗</b></a>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contacto">
+    <section class="section-shell contact-section" id="contact" aria-labelledby="contact-title">
       <div class="contact-panel">
-        <div class="contact-glow" aria-hidden="true"></div>
-        <div class="section-head">
+        <div>
           <p class="eyebrow" data-i18n="contactEyebrow">CONTACTO</p>
-          <h2 data-i18n="contactTitle">Hablemos</h2>
-          <p class="section-sub" data-i18n="contactLead">Agenda 30 minutos, o escribe. Murcia · remoto.</p>
+          <h2 id="contact-title" data-i18n="contactTitle">Si el problema mezcla clientes, operaciones, datos y sistemas, probablemente tengamos conversación.</h2>
+          <p data-i18n="contactBody">Murcia, España. Disponible para roles y proyectos donde el trabajo consista en entender una operación y mejorar cómo decide, sirve y escala.</p>
         </div>
-        <p class="contact-mail">
-          <a href="mailto:gracianbaenagonzalez@gmail.com">gracianbaenagonzalez@gmail.com</a>
-        </p>
-        <div class="links">
-          <a class="link-primary" href="https://calendar.app.google/n99psBFktwYyoAWi9" target="_blank" rel="noreferrer" data-i18n="agenda">Agenda 30 min ↗</a>
-          <a href="https://www.linkedin.com/in/gracianbaena" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a href="mailto:gracianbaenagonzalez@gmail.com">Email ↗</a>
-          <a href="https://github.com/GracianB" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <div class="contact-actions">
+          <a class="button button-primary" href="https://calendar.app.google/n99psBFktwYyoAWi9" target="_blank" rel="noopener noreferrer"><span data-i18n="book">Agenda 30 min</span><b>↗</b></a>
+          <a class="button button-secondary" href="mailto:gracianbaenagonzalez@gmail.com">Email ↗</a>
+          <a class="button button-ghost" href="https://www.linkedin.com/in/gracianbaena" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <div class="foot-inner">
-      <span class="foot-name">© <span id="year">2026</span> Gracián Baena</span>
-      <nav class="foot-links" aria-label="Ecosystem">
-        <a href="https://gracianb.github.io/professional-deck/">deck</a>
-        <a href="https://gracianb.github.io/yoga-instructor/">yoga</a>
-        <a href="https://gracianb.github.io/systems-lab/">lab</a>
-        <a href="https://gracianb.github.io/project-ohana/">ohana</a>
-        <a href="https://vortex-gilt-xi.vercel.app/">vórtice</a>
-      </nav>
-      <span data-i18n="footTag">Personas × Datos × Sistemas · Customer Operations · Yoga × Presencia</span>
+  <footer class="footer section-shell">
+    <div>
+      <strong>GRACIÁN BAENA</strong>
+      <span data-i18n="footerLine">People → Operations → Data → Systems → AI</span>
+    </div>
+    <div>
+      <a href="https://github.com/GracianB" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/gracianbaena" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span>© <span id="year">2026</span></span>
     </div>
   </footer>
 
-  <div class="drawer" id="drawer" hidden>
-    <nav class="drawer-panel" aria-label="Mobile navigation">
-      <a href="#portfolios" data-i18n="navModes">Mundos</a>
-      <a href="#play" data-i18n="navPlay">PLAY</a>
-      <a href="#docs" data-i18n="navDocs">Documentos</a>
-      <a href="#contacto" data-i18n="navContact">Contacto</a>
-      <a href="https://gracianb.github.io/professional-deck/" data-i18n="proBadge">EXPERIENCIA</a>
-      <a href="https://gracianb.github.io/systems-lab/">PLAY</a>
-      <a href="https://gracianb.github.io/yoga-instructor/">Yoga</a>
-      <a href="https://gracianb.github.io/project-ohana/">Ohana</a>
-      <a href="https://vortex-gilt-xi.vercel.app/">Vórtice</a>
-    </nav>
+  <div class="command" id="command" hidden aria-hidden="true">
+    <button class="command-backdrop" type="button" data-command-close aria-label="Cerrar"></button>
+    <section class="command-panel" role="dialog" aria-modal="true" aria-labelledby="command-title">
+      <div class="command-head">
+        <div>
+          <span>GB / QUICK NAV</span>
+          <h2 id="command-title" data-i18n="commandTitle">Ir a una prueba</h2>
+        </div>
+        <button type="button" data-command-close aria-label="Cerrar">ESC</button>
+      </div>
+      <input id="command-input" type="search" autocomplete="off" data-i18n-placeholder="commandPlaceholder" placeholder="Buscar proyecto o documento…">
+      <ul id="command-list">
+        <li><a href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer" data-command-label="commandExperience">Professional Deck</a></li>
+        <li><a href="https://gracianb.github.io/revops-studio/" target="_blank" rel="noopener noreferrer">RevOps Studio</a></li>
+        <li><a href="https://gracianb.github.io/project-ohana/" target="_blank" rel="noopener noreferrer">Project OHANA</a></li>
+        <li><a href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener noreferrer">VØRTICE</a></li>
+        <li><a href="https://github.com/GracianB/aigoritmo" target="_blank" rel="noopener noreferrer">AiGoritmo</a></li>
+        <li><a href="#documents" data-command-label="commandDocs">Documentos</a></li>
+        <li><a href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer">Yoga</a></li>
+        <li><a href="https://calendar.app.google/n99psBFktwYyoAWi9" target="_blank" rel="noopener noreferrer" data-command-label="commandBook">Agenda 30 min</a></li>
+      </ul>
+    </section>
   </div>
 
-  <div class="cmd" id="cmd" hidden>
-    <div class="cmd-backdrop" data-cmd-close></div>
-    <div class="cmd-panel" role="dialog" aria-modal="true" aria-labelledby="cmd-label">
-      <p id="cmd-label" class="cmd-label" data-i18n="cmdLabel">Ir a</p>
-      <input id="cmd-input" type="search" role="combobox" aria-controls="cmd-list" aria-expanded="true" autocomplete="off" spellcheck="false" data-i18n-placeholder="cmdPlaceholder" placeholder="Buscar…">
-      <ul class="cmd-list" id="cmd-list">
-        <li><a href="https://gracianb.github.io/professional-deck/" data-cmd="cmdPro">01 Experiencia</a></li>
-        <li><a href="https://gracianb.github.io/systems-lab/" data-cmd="cmdLab">02 PLAY lab</a></li>
-        <li><a href="https://gracianb.github.io/yoga-instructor/" data-cmd="cmdYoga">03 Yoga</a></li>
-        <li><a href="https://gracianb.github.io/project-ohana/" data-cmd="cmdOhana">Ohana</a></li>
-        <li><a href="https://vortex-gilt-xi.vercel.app/" data-cmd="cmdVortex">Vórtice</a></li>
-        <li><a href="#docs" data-cmd="cmdDocs">Documentos</a></li>
-        <li><a href="https://calendar.app.google/n99psBFktwYyoAWi9" data-cmd="cmdAgenda">Agenda 30 min</a></li>
-      </ul>
-      <p class="cmd-foot"><kbd>↑↓</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd></p>
-    </div>
-  </div>
+  <noscript>
+    <div class="noscript">Este sitio funciona sin JavaScript. La navegación, proyectos y documentos siguen disponibles.</div>
+  </noscript>
 </body>
 </html>
