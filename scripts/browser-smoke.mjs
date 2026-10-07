@@ -64,6 +64,21 @@ async function desktop(browser) {
   assert.equal(heroFits, true, "Hero must fit the desktop viewport");
   assert.equal(await page.locator(".evidence-card").count(), 5);
   assert.equal(await page.locator(".method-flow li").count(), 7);
+  assert.equal(await page.locator("[data-world-slide]").count(), 3);
+  assert.equal(await page.locator('[data-world="professional"]').getAttribute("aria-hidden"), "false");
+
+  await page.locator("[data-world-next]").click();
+  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
+  await page.locator("[data-world-next]").click();
+  assert.equal(await page.locator('[data-world="lab"]').getAttribute("aria-hidden"), "false");
+  assert.match(
+    await page.locator('[data-world="lab"] .world-card-link').getAttribute("href"),
+    /systems-lab\/$/,
+  );
+
+  await page.locator("[data-world-prev]").focus();
+  await page.keyboard.press("ArrowLeft");
+  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
 
   await page.getByRole("button", { name: "EN" }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
@@ -100,6 +115,14 @@ async function mobile(browser) {
     return rect.left < -1 || rect.right > innerWidth + 1;
   });
   assert.equal(nameClipped, false, "Hero name must not clip at 320px");
+
+  const worldClipped = await page.locator("[data-world-carousel]").evaluate((node) => {
+    const rect = node.getBoundingClientRect();
+    return rect.left < -1 || rect.right > innerWidth + 1;
+  });
+  assert.equal(worldClipped, false, "Three-world selector must fit at 320px");
+  await page.locator("[data-world-next]").click();
+  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
 
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
