@@ -64,8 +64,23 @@ async function desktop(browser) {
   assert.equal(heroFits, true, "Hero must fit the desktop viewport");
   assert.equal(await page.locator(".evidence-card").count(), 5);
   assert.equal(await page.locator(".method-flow li").count(), 7);
+  assert.equal(await page.locator("[data-world-slide]").count(), 3);
+  assert.equal(await page.locator('[data-world="professional"]').getAttribute("aria-hidden"), "false");
 
-  await page.getByRole("button", { name: "EN" }).click();
+  await page.locator("[data-world-next]").click();
+  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
+  await page.locator("[data-world-next]").click();
+  assert.equal(await page.locator('[data-world="lab"]').getAttribute("aria-hidden"), "false");
+  assert.match(
+    await page.locator('[data-world="lab"] .world-card-link').getAttribute("href"),
+    /systems-lab\/$/,
+  );
+
+  await page.locator("[data-world-prev]").focus();
+  await page.keyboard.press("ArrowLeft");
+  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
+
+  await page.getByRole("button", { name: "EN", exact: true }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
   assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /customer and operational problems/i);
   assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
@@ -101,6 +116,14 @@ async function mobile(browser) {
   });
   assert.equal(nameClipped, false, "Hero name must not clip at 320px");
 
+  const worldClipped = await page.locator("[data-world-carousel]").evaluate((node) => {
+    const rect = node.getBoundingClientRect();
+    return rect.left < -1 || rect.right > innerWidth + 1;
+  });
+  assert.equal(worldClipped, false, "Three-world selector must fit at 320px");
+  await page.locator("[data-world-next]").click();
+  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
+
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
   await page.locator('#mobile-menu a[href="#evidence"]').click();
@@ -108,11 +131,16 @@ async function mobile(browser) {
 
   const clipped = await page.evaluate(() =>
     [...document.querySelectorAll("a,button,input")].some((node) => {
+      if (node.closest('[aria-hidden="true"]')) return false;
+      const style = getComputedStyle(node);
+      if (style.visibility === "hidden" || style.display === "none" || Number(style.opacity) === 0) {
+        return false;
+      }
       const rect = node.getBoundingClientRect();
       return rect.left < -1 || rect.right > innerWidth + 1;
     }),
   );
-  assert.equal(clipped, false, "Interactive element clipped at 320px");
+  assert.equal(clipped, false, "Visible interactive element clipped at 320px");
   await page.screenshot({ path: `${artifacts}/mobile-320.png`, fullPage: true });
   await context.close();
 }

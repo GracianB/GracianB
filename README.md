@@ -24,6 +24,22 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ---
 
+## Three worlds
+
+The public hub opens with three explicit entry points instead of forcing every visitor through the same narrative.
+
+| World | What is inside | Enter |
+|---|---|---|
+| **Professional** | Customer Success, Operations, Data, business cases and career evidence | [Professional Deck](https://gracianb.github.io/professional-deck/) |
+| **Yoga** | Practice, breath, movement and teaching as a professional track in its own right | [Yoga Instructor](https://gracianb.github.io/yoga-instructor/) |
+| **Systems Lab** | Games, agents, interfaces, WebGL and technical experiments that can be opened and tested | [Systems Lab](https://gracianb.github.io/systems-lab/) |
+
+The three worlds are different surfaces of the same working pattern:
+
+**understand people → model complexity → build something usable → test what happens**
+
+---
+
 ## Operating model
 
 ```text
@@ -204,10 +220,10 @@ Customer Success, Operations, Data and business cases in an interactive ES/EN po
 
 **[Open Professional Deck](https://gracianb.github.io/professional-deck/)**
 
-### Public systems
-Repositories with code, tests, release history and architecture decisions.
+### Systems Lab
+Games, agents, interfaces, WebGL and technical experiments with working public surfaces.
 
-**[Browse repositories](https://github.com/GracianB?tab=repositories)**
+**[Open Systems Lab](https://gracianb.github.io/systems-lab/)**
 
 ### Human layer
 Yoga instruction and practice as a complementary professional track.
@@ -261,7 +277,7 @@ The goal is simple:
 
 **A hiring manager should understand the profile in 30 seconds.  
 A technical reviewer should find evidence in 60.  
-Anyone who wants depth should have a clear next door.**
+Anyone should be able to choose Professional, Yoga or Systems Lab without hunting for the entrance.**
 
 ---
 

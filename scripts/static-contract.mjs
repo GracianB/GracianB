@@ -36,6 +36,7 @@ const sitemap = readFileSync("sitemap.xml", "utf8");
 for (const token of [
   "<!doctype html>",
   'id="main"',
+  'id="worlds"',
   'id="evidence"',
   'id="method"',
   'id="arc"',
@@ -54,7 +55,7 @@ const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
 assert.deepEqual([...new Set(duplicates)], [], "Duplicate HTML ids detected");
 
 const htmlKeys = new Set(
-  [...html.matchAll(/data-i18n(?:-placeholder)?="([^"]+)"/g)].map((match) => match[1]),
+  [...html.matchAll(/data-i18n(?:-placeholder|-aria-label)?="([^"]+)"/g)].map((match) => match[1]),
 );
 const es = js.match(/es:\s*\{([\s\S]*?)\n\s*\},\n\s*en:\s*\{/);
 const en = js.match(/en:\s*\{([\s\S]*?)\n\s*\}\s*;?\s*$/);
@@ -74,7 +75,7 @@ for (const match of html.matchAll(/<a\b([^>]*target=["']_blank["'][^>]*)>/gi)) {
 }
 
 const publicText = [html, js, readme, sitemap].join("\n");
-assert.equal(/systems-lab|\bSystems Lab\b/.test(publicText), false, "Legacy Systems Lab reference must not return");
+assert.match(publicText, /https:\/\/gracianb\.github\.io\/systems-lab\//, "Systems Lab must be directly reachable");
 assert.equal(/Portuguese|French|Portugu[eê]s|Franc[eê]s/i.test(publicText), false, "Unsupported language claim found");
 
 let depth = 0;
@@ -87,6 +88,13 @@ assert.equal(depth, 0, "CSS braces are unbalanced");
 assert.ok((css.match(/!important/g) || []).length <= 10, "Too many !important declarations");
 
 assert.match(html, /People → Operations → Data → Systems → AI/);
+assert.equal((html.match(/data-world-slide/g) || []).length, 3, "Exactly three world slides are required");
+assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
+assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
+assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
+assert.match(html, /data-world-prev/);
+assert.match(html, /data-world-next/);
+assert.match(html, /world-noscript/);
 assert.match(html, /GRACIÁN[\s\S]*BAENA/);
 assert.doesNotMatch(html, /Listos para revisar o enviar|Ready to review or send/i);
 assert.match(readme, /Proof before promise|Proof before claims/i);
