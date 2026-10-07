@@ -1,272 +1,272 @@
-<div align="center">
+# Gracián Baena
 
-<a href="https://gracianb.github.io/GracianB/">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=0:050609,32:111318,60:2A2622,82:DAA428,100:FAF7F2&text=GRACI%C3%81N%20BAENA&fontColor=FFFFFF&fontSize=54&fontAlignY=36&desc=PEOPLE%20%C2%B7%20DATA%20%C2%B7%20SYSTEMS&descAlignY=58&descSize=16&animation=twinkling" width="100%" alt="Gracián Baena. People, data, systems."/>
-</a>
+**Customer Success Systems & Data Strategist**  
+Murcia, Spain · Remote · Spanish / English / Italian
 
-**Customer Success & RevOps Strategist · Data × AI × Automation · Systems**
-
-[![Hub](https://img.shields.io/badge/HUB-DAA428?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/GracianB/)
-[![Professional Deck](https://img.shields.io/badge/EXPERIENCE-C4A574?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/professional-deck/)
-[![RevOps Studio](https://img.shields.io/badge/REVOPS-7AF3FF?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/revops-studio/)
-[![Systems Lab](https://img.shields.io/badge/SYSTEMS_LAB-F4F3EE?style=for-the-badge&labelColor=050609)](https://gracianb.github.io/systems-lab/)
-
-Murcia · Spain · Remote  
-[LinkedIn](https://www.linkedin.com/in/gracianbaena) · [Portfolio](https://gracianb.github.io/professional-deck/) · [30 min](https://calendar.app.google/n99psBFktwYyoAWi9)
-
-</div>
+[Professional Hub](https://gracianb.github.io/GracianB/) · [Professional Deck](https://gracianb.github.io/professional-deck/) · [LinkedIn](https://www.linkedin.com/in/gracianbaena) · [Book 30 min](https://calendar.app.google/n99psBFktwYyoAWi9)
 
 ---
 
 ## The short version
 
-I work where **Customer Success, Operations, Data, Automation and AI** meet.
+I turn **customer and operational problems into systems people can use, measure and improve**.
 
-My focus is not adding another tool to an already complicated stack. It is turning a real operational problem into a system that people can use, measure and improve.
+My work sits across:
 
-**16+ years of professional experience** · **10+ years customer-facing** · B2B SaaS · pricing intelligence · support operations · analytics · automation · software systems.
+**Customer Success → Operations → Data → Systems → Automation / AI**
 
-### The operating model
+I did not start with code. I started with customers, teams and day-to-day operations. The technical layer came later because I wanted to solve those problems directly instead of stopping at recommendations.
 
-```text
-Customer problem
-      ↓
-Operational context
-      ↓
-Data + signals
-      ↓
-Process + system design
-      ↓
-Automation / AI where useful
-      ↓
-Human decision
-      ↓
-Measurable outcome
-```
+**16+ years of professional experience** · customer-facing operations · B2B SaaS · pricing intelligence · analytics · automation · software systems.
 
-A system nobody uses is not a successful system.
+> **Proof before claims.**  
+> This GitHub exists to show working systems, inspectable decisions, tests, releases and public evidence.
 
 ---
 
-## Flagship proof
+## Operating model
 
-| System | What it proves | Status |
+```text
+People
+  ↓
+Operational context
+  ↓
+Data + signals
+  ↓
+Rules + system design
+  ↓
+Automation / AI where useful
+  ↓
+Human decision
+  ↓
+Measurable outcome
+  ↓
+Iteration
+```
+
+A useful system should make the next action clearer.
+
+My default sequence is:
+
+**understand → model → build → validate → activate → measure → iterate**
+
+---
+
+## Selected evidence
+
+| System | What it demonstrates | Evidence |
 |---|---|---|
-| **Bodytone Support OS** | Customer Operations, Zendesk, workflows, automation, reporting and internal tooling | **Production** |
-| **RevOps Studio** | Deterministic scoring, data quality, forecasting, segmentation, decision trace and human approval | **Live** |
-| **Project OHANA** | JavaScript, Canvas 2D, game systems, deterministic simulation, AI behaviours, testing and CI | **Live** |
-| **Vórtice** | WebGL, rendering, interaction, particle simulation and performance-oriented browser engineering | **Live** |
-| **AiGoritmo** | Python, FastAPI, local LLMs, voice and AI application architecture | **Lab** |
+| **Bodytone Support OS** | Customer Operations, Zendesk, knowledge, routing, automation, reporting | [Public Help Center](https://bodytonehelp.zendesk.com/hc/es) · [Professional case](https://gracianb.github.io/professional-deck/) |
+| **RevOps Studio** | Data quality, deterministic scoring, forecasting, segmentation, human approval, audit | [Live](https://gracianb.github.io/revops-studio/) · [Source](https://github.com/GracianB/revops-studio) |
+| **Project OHANA** | Stateful software, fixed simulation, behavioural systems, regression, browser E2E, CI | [Play](https://gracianb.github.io/project-ohana/) · [Source](https://github.com/GracianB/project-ohana) |
+| **VØRTICE** | TypeScript, WebGL, real-time interaction, adaptive rendering, accessibility, performance contracts | [Experience](https://vortex-gilt-xi.vercel.app/) · [Source](https://github.com/GracianB/vortex) |
+| **AiGoritmo** | Python, FastAPI, local models, voice and modular AI application architecture | [Source](https://github.com/GracianB/aigoritmo) |
 
-### 01 · Bodytone Support OS
+### Bodytone Support OS
 
 A real Customer Operations ecosystem built around the support operation.
 
-**Customer → request → context → routing → workflow → data → decision**
+```text
+Customer
+  ↓
+Request + context
+  ↓
+Knowledge / routing
+  ↓
+Workflow / automation
+  ↓
+Data
+  ↓
+Decision / follow-up
+```
 
-The public Help Center is live:
+The point is not Zendesk itself. The point is the operating model around it: information, handoffs, rules, ownership and visibility.
 
-**[Open Bodytone Help Center](https://bodytonehelp.zendesk.com/hc/es)**
+### RevOps Studio
 
-The professional case study is in the **[Professional Deck](https://gracianb.github.io/professional-deck/)**.
-
-### 02 · RevOps Studio
-
-A deliberately inspectable Revenue Operations decision system.
+A deliberately inspectable decision system.
 
 ```text
 Synthetic records
-      ↓
+  ↓
 Data-quality validation
-      ↓
-Weighted scoring
-      ↓
+  ↓
+Deterministic scoring
+  ↓
 Classification
-      ↓
+  ↓
 Recommended action
-      ↓
-Human approval gate
-      ↓
-Audit / Decision Trace
+  ↓
+Human approval
+  ↓
+Decision Trace / audit
 ```
 
-The engine is deterministic and local-first. It does not pretend to be a live CRM integration.
+It is intentionally explicit about its limits. It does not pretend to be a live CRM integration when it is not.
 
-**[Open RevOps Studio](https://gracianb.github.io/revops-studio/)** · **[Source](https://github.com/GracianB/revops-studio)**
-
-### 03 · Project OHANA
+### Project OHANA
 
 A browser game used as a systems-engineering laboratory.
 
-10 characters · 5 forms · 10 rooms · boss encounters · fixed-rate simulation · deterministic/injectable RNG · AI behaviours · save system · regression suites · browser E2E · GitHub Actions.
+The interesting part is not only the game. It is the coordination of state, simulation, character behaviour, progression, save contracts, browser runtime and regression testing as the system grows.
 
-**[Play OHANA](https://gracianb.github.io/project-ohana/)** · **[Source](https://github.com/GracianB/project-ohana)**
+### VØRTICE
+
+A generative audiovisual WebGL experience.
+
+V6 moved the project from a visual experiment to a release-grade interactive instrument: four movements, curated states, audio-reactive behaviour, adaptive render quality, mobile contracts, reduced-motion support, performance budgets and real Chromium E2E.
+
+### AiGoritmo
+
+An AI application laboratory focused on architecture rather than a single chat screen.
+
+Python, FastAPI, local LLM experimentation, voice, launcher flows and modular components are used to explore how model capabilities become usable software.
 
 ---
 
-## What I actually build
+## Career progression
 
-### Customer Operations
-- Customer Success workflows
+The progression matters because it explains why the repositories look the way they do.
+
+| Stage | What I learned to see |
+|---|---|
+| **Retail / service / operations** | What actually happens when a process meets customers, teams and constraints |
+| **Training / enablement** | How to capture knowledge, structure it and make other people perform independently |
+| **Majorel · Google/YouTube environment** | Quality and consistency inside a large international operation |
+| **Minderest · B2B SaaS Customer Success** | Adoption, engagement, support signals, pricing intelligence and customer diagnosis |
+| **Bodytone · Customer Success / Data / Operations** | How customer work, analytics, process, knowledge and internal tools connect |
+| **AI / data / software specialization** | How to build the system directly, test it and ship it |
+
+That is the common thread behind the portfolio:
+
+**people → operations → data → systems → AI**
+
+---
+
+## What I build
+
+### Customer Success & Customer Operations
+- Customer workflows and operating models
 - Support architecture
-- Zendesk configuration and automation
-- Knowledge and routing systems
-- Operational tooling
+- Knowledge, routing and ownership
 - Adoption and process improvement
+- Operational reporting
+- Internal enablement and handoff
 
-### Revenue Operations
-- Revenue / customer process design
-- Pipeline and account signals
+### Revenue & Decision Systems
+- Account and pipeline signals
+- Data-quality rules
 - Scoring and classification
-- Operational queues
 - Forecasting and segmentation
-- Decision support systems
-- Human-in-the-loop workflows
+- Human-in-the-loop decisions
+- Traceability and audit
 
 ### Data & Automation
 - Power BI
 - SQL
 - Python
 - Google Apps Script
+- Data validation
 - Workflow automation
-- Data quality and validation
 - Reporting that leads to action
 
-### AI & Systems
+### AI & Software Systems
 - GenAI applied to operations
 - LLM workflows
 - Local AI experimentation
-- Internal tools
-- JavaScript / HTML / CSS
 - FastAPI
+- JavaScript / TypeScript
 - Canvas / WebGL
-- Testing, CI and deterministic systems
-
-The technology changes. The method does not:
-
-**understand → model → build → validate → ship → measure → iterate**
+- Testing and CI
+- Deterministic and inspectable rules
 
 ---
 
-## Selected project map
-
-| Repository | Domain | Evidence |
-|---|---|---|
-| [revops-studio](https://github.com/GracianB/revops-studio) | RevOps / Decision Systems | Data quality, scoring, forecasting, explainability, audit |
-| [professional-deck](https://github.com/GracianB/professional-deck) | Career / Product thinking | Interactive portfolio, ES/EN, validation |
-| [project-ohana](https://github.com/GracianB/project-ohana) | Software / Game Systems | Simulation, AI behaviour, testing, CI |
-| [aigoritmo](https://github.com/GracianB/aigoritmo) | AI Engineering | Python, FastAPI, Ollama, LLM, voice |
-| [vortex](https://github.com/GracianB/vortex) | Graphics / Interaction | TypeScript, WebGL, particle systems |
-| [systems-lab](https://github.com/GracianB/systems-lab) | Systems Lab | Public technical experiments |
-| [GracianB](https://github.com/GracianB/GracianB) | Personal Hub | Portfolio architecture and public proof |
-
----
-
-## How I think about technology
-
-I am less interested in collecting frameworks than in understanding the boundary between **people, process and software**.
-
-A useful system should make the next action clearer.
-
-That usually means:
+## Engineering principles
 
 1. **Understand the operation before automating it.**
 2. **Make data trustworthy before using it for decisions.**
-3. **Use AI where it improves the system, not because AI happens to be fashionable.**
-4. **Keep a human accountable for consequential decisions.**
-5. **Test the rules that matter.**
-6. **Make the result inspectable.**
-7. **Ship something people can actually use.**
+3. **Separate standard workflows from exceptions.**
+4. **Use AI where it improves the system, not because AI is fashionable.**
+5. **Keep humans accountable for consequential decisions.**
+6. **Test the contracts that matter.**
+7. **Make the result inspectable.**
+8. **Build for handoff, not dependency on the author.**
+9. **Measure independent performance, not presentation quality.**
+10. **Ship something people can actually use.**
 
 ---
 
-## Three doors
+## Where to go next
 
-### Experience
-Customer Success, Operations, pricing intelligence, SaaS and the Bodytone Support OS.
+### Professional experience
+Customer Success, Operations, Data and business cases in an interactive ES/EN portfolio.
 
-**[Professional Deck](https://gracianb.github.io/professional-deck/)**
+**[Open Professional Deck](https://gracianb.github.io/professional-deck/)**
 
-### Systems
-Public technical work: RevOps Studio, OHANA, Vórtice, AiGoritmo and Systems Lab.
+### Public systems
+Repositories with code, tests, release history and architecture decisions.
 
-**[Systems Lab](https://gracianb.github.io/systems-lab/)**
+**[Browse repositories](https://github.com/GracianB?tab=repositories)**
 
 ### Human layer
-Yoga instruction and wellness work, because systems still have to be used by actual humans. Humanity remains inconveniently relevant.
+Yoga instruction and practice as a complementary professional track.
 
-**[Yoga Instructor](https://gracianb.github.io/yoga-instructor/)**
-
----
-
-## Languages
-
-Spanish · English · Italian · Portuguese · French
+**[Open Yoga Instructor](https://gracianb.github.io/yoga-instructor/)**
 
 ---
 
 ## Documents
 
+### Professional
 - [CV 2026 · Español](./Gracian_Baena_CV_2026_ES.pdf)
 - [CV 2026 · English](./Gracian_Baena_CV_2026_EN.pdf)
 - [Carta de presentación · Español](./Gracian_Baena_Carta_Presentacion_ES.pdf)
 - [Cover Letter · English](./Gracian_Baena_Cover_Letter_EN.pdf)
+
+### Yoga
 - [CV Yoga · Español](./Gracian_Baena_CV_Yoga_ES.pdf)
 - [CV Yoga · English](./Gracian_Baena_CV_Yoga_EN.pdf)
+- [Carta Yoga · Español](./Gracian_Baena_Carta_Yoga_ES.pdf)
+- [Cover Yoga · English](./Gracian_Baena_Cover_Letter_Yoga_EN.pdf)
 
 ---
 
-## English
+## About this repository
 
-I work at the intersection of **Customer Success, Operations, Data, Automation and AI**.
+This repository is both my **GitHub profile README** and the source for the public professional hub at:
 
-My goal is not to add another tool to a fragmented stack. It is to turn a real operational problem into a system people can use, measure and improve.
+**https://gracianb.github.io/GracianB/**
 
-**16+ years of professional experience** · **10+ years customer-facing** · B2B SaaS · pricing intelligence · support operations · analytics · automation · software systems.
+The hub is intentionally lightweight: semantic HTML, CSS and plain JavaScript. No framework is required for the page itself.
 
-### Core evidence
+The final quality contract covers:
 
-- **Bodytone Support OS** — production Customer Operations ecosystem built around Zendesk, workflows, automation, reporting and internal tooling.
-- **RevOps Studio** — deterministic Revenue Operations decision system with data quality, scoring, forecasting, explainability, Decision Trace and human approval.
-- **Project OHANA** — Canvas 2D game and systems laboratory with deterministic simulation, AI behaviours, testing, CI and browser E2E.
-- **Vórtice** — WebGL particle simulation and interactive rendering experiment.
-- **AiGoritmo** — Python / FastAPI / local LLM / voice application lab.
+- ES / EN parity
+- dark / light themes
+- semantic structure
+- keyboard-accessible navigation
+- command palette
+- reduced motion
+- 320 px mobile layout
+- no horizontal overflow
+- JavaScript syntax
+- static content contracts
+- Chromium browser E2E
+- canonical professional documents
+- public evidence links
+- no unsupported role, language or project claims
 
-### My approach
+The goal is simple:
 
-```text
-Problem → Context → Data → System → Automation / AI
-       → Human decision → Measurement → Iteration
-```
-
-I care about systems that are understandable, testable and useful.
-
-**[Portfolio](https://gracianb.github.io/professional-deck/) · [RevOps Studio](https://gracianb.github.io/revops-studio/) · [Systems Lab](https://gracianb.github.io/systems-lab/) · [LinkedIn](https://www.linkedin.com/in/gracianbaena)**
+**A hiring manager should understand the profile in 30 seconds.  
+A technical reviewer should find evidence in 60.  
+Anyone who wants depth should have a clear next door.**
 
 ---
 
-<div align="center">
+## Contact
 
-<a href="https://www.linkedin.com/in/gracianbaena"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=050609" alt="LinkedIn"/></a>
-<a href="mailto:gracianbaenagonzalez@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=050609" alt="Email"/></a>
-<a href="https://calendar.app.google/n99psBFktwYyoAWi9"><img src="https://img.shields.io/badge/30_MIN-DAA428?style=for-the-badge&labelColor=050609" alt="Book 30 minutes"/></a>
-<a href="https://gracianb.github.io/GracianB/"><img src="https://img.shields.io/badge/HUB-F4F3EE?style=for-the-badge&labelColor=050609" alt="Personal hub"/></a>
+[LinkedIn](https://www.linkedin.com/in/gracianbaena) · [Email](mailto:gracianbaenagonzalez@gmail.com) · [Book 30 min](https://calendar.app.google/n99psBFktwYyoAWi9)
 
-<br/><br/>
-
-<sub>Gracián Baena · Murcia, Spain · 2026</sub>
-
-</div>
-
-## Website / brand hub
-
-The repository also contains the public personal hub:
-
-- **Live:** https://gracianb.github.io/GracianB/
-- **Visual system:** editorial typography, cinematic hero, three-world navigation, responsive product cards, light/dark themes and bilingual ES/EN content.
-- **Interaction layer:** command palette, keyboard navigation, pointer-driven constellation, progressive reveals, scroll progress and reduced-motion support.
-- **Proof layer:** professional deck, Bodytone Support OS, RevOps Studio, Systems Lab, OHANA, Vórtice and application-ready documents.
-- **Quality:** GitHub Actions validates the HTML contract, JavaScript syntax and CSS structure before changes are treated as healthy.
-
-The design goal is deliberate: **premium enough for a hiring manager, technical enough for an engineering lead, and fast enough for everyday use.**
-\n
+**Gracián Baena · Murcia, Spain · 2026**
