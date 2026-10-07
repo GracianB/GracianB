@@ -2227,3 +2227,26 @@ html[data-theme="light"] .world-card-copy{
   .spark{animation:none}
   .world-card{transition:none}
 }
+
+
+.world-noscript{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:.5rem;
+  padding:.8rem;
+  border-top:1px solid var(--line);
+}
+.world-noscript a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:2.8rem;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  font:700 .5rem var(--mono);
+  text-decoration:none;
+}
+.world-noscript a:hover{border-color:var(--cyan)}
+@media (max-width:760px){
+  .world-noscript{grid-template-columns:1fr}
+}
