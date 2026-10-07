@@ -72,7 +72,7 @@ async function desktop(browser) {
   await page.locator("#command-input").fill("ohana");
   assert.equal(await page.locator("#command-list li:not([hidden])").count(), 1);
   await page.keyboard.press("Escape");
-  await page.locator("#command[hidden]").waitFor();
+  await page.waitForFunction(() => document.getElementById("command")?.hidden === true);
 
   await page.screenshot({ path: `${artifacts}/desktop.png`, fullPage: true });
   await context.close();
@@ -92,7 +92,7 @@ async function mobile(browser) {
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
   await page.locator('#mobile-menu a[href="#evidence"]').click();
-  await page.locator("#mobile-menu[hidden]").waitFor();
+  await page.waitForFunction(() => document.getElementById("mobile-menu")?.hidden === true);
 
   const clipped = await page.evaluate(() =>
     [...document.querySelectorAll("a,button,input")].some((node) => {
