@@ -30,6 +30,7 @@ jobs:
           node --check i18n.js
           node --check scripts/static-contract.mjs
           node --check scripts/browser-smoke.mjs
+          node --check scripts/live-contract.mjs
       - name: Professional hub contract
         run: node scripts/static-contract.mjs
 
