@@ -1290,14 +1290,14 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
   background:linear-gradient(90deg,var(--cyan),transparent);
 }
 
-.hero-thesis{
-  margin:0!important;
-  max-width:30ch!important;
-  font-family:var(--serif)!important;
-  font-size:clamp(1.95rem,3.2vw,3.4rem)!important;
-  font-weight:500!important;
-  line-height:1.02!important;
-  letter-spacing:-.035em!important;
+.hero-wow .hero-thesis{
+  margin:0;
+  max-width:30ch;
+  font-family:var(--serif);
+  font-size:clamp(1.95rem,3.2vw,3.4rem);
+  font-weight:500;
+  line-height:1.02;
+  letter-spacing:-.035em;
 }
 
 .hero-thesis span,
@@ -1305,11 +1305,11 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
   display:block;
 }
 
-.hero-thesis em{
-  margin-top:.1em!important;
-  color:var(--muted)!important;
-  font-style:italic!important;
-  font-weight:400!important;
+.hero-wow .hero-thesis em{
+  margin-top:.1em;
+  color:var(--muted);
+  font-style:italic;
+  font-weight:400;
 }
 
 .hero-lead-wow{
@@ -1580,8 +1580,8 @@ html[data-theme="light"] .orbit-core{
     font-size:.53rem;
   }
 
-  .hero-thesis{
-    font-size:clamp(1.8rem,8.5vw,2.7rem)!important;
+  .hero-wow .hero-thesis{
+    font-size:clamp(1.8rem,8.5vw,2.7rem);
   }
 
   .hero-lead-wow{
@@ -1628,8 +1628,8 @@ html[data-theme="light"] .orbit-core{
     font-size:clamp(4.15rem,22vw,5.8rem);
   }
 
-  .hero-thesis{
-    font-size:clamp(1.65rem,8.2vw,2.25rem)!important;
+  .hero-wow .hero-thesis{
+    font-size:clamp(1.65rem,8.2vw,2.25rem);
   }
 
   .hero-actions{
