@@ -1,0 +1,37 @@
+name: GracianB Production Smoke
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    name: Live hub contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GB_LIVE_URL: https://gracianb.github.io/GracianB/
+      GB_E2E_URL: https://gracianb.github.io/GracianB/
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Live HTTP contract
+        run: node scripts/live-contract.mjs
+      - name: Install pinned browser runner
+        run: npm install --no-save playwright@1.56.1
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Live desktop + mobile + reduced motion
+        run: node scripts/browser-smoke.mjs
+      - name: Upload live evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gracianb-live-v7-${{ github.sha }}
+          path: artifacts/e2e
+          if-no-files-found: warn
+          retention-days: 14
