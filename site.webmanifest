@@ -1,11 +1,12 @@
 {
-  "name": "Gracián Baena | Customer Success × Data × AI × Systems",
+  "name": "Gracián Baena | Customer Success · Operations · Data · AI",
   "short_name": "Gracián Baena",
   "start_url": "/GracianB/",
+  "scope": "/GracianB/",
   "display": "standalone",
-  "background_color": "#06070a",
-  "theme_color": "#06070a",
-  "description": "Professional portfolio hub for Gracián Baena.",
+  "background_color": "#070809",
+  "theme_color": "#070809",
+  "description": "Professional evidence hub: Customer Success, Operations, Data, Systems and AI.",
   "lang": "es",
   "icons": [
     {
