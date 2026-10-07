@@ -80,7 +80,7 @@ async function desktop(browser) {
   await page.keyboard.press("ArrowLeft");
   assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
 
-  await page.getByRole("button", { name: "EN" }).click();
+  await page.getByRole("button", { name: "EN", exact: true }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
   assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /customer and operational problems/i);
   assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
