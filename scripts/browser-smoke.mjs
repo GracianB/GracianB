@@ -131,11 +131,16 @@ async function mobile(browser) {
 
   const clipped = await page.evaluate(() =>
     [...document.querySelectorAll("a,button,input")].some((node) => {
+      if (node.closest('[aria-hidden="true"]')) return false;
+      const style = getComputedStyle(node);
+      if (style.visibility === "hidden" || style.display === "none" || Number(style.opacity) === 0) {
+        return false;
+      }
       const rect = node.getBoundingClientRect();
       return rect.left < -1 || rect.right > innerWidth + 1;
     }),
   );
-  assert.equal(clipped, false, "Interactive element clipped at 320px");
+  assert.equal(clipped, false, "Visible interactive element clipped at 320px");
   await page.screenshot({ path: `${artifacts}/mobile-320.png`, fullPage: true });
   await context.close();
 }
