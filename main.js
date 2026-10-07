@@ -58,6 +58,10 @@
       const value = t[node.dataset.i18nPlaceholder];
       if (value != null) node.setAttribute("placeholder", value);
     });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((node) => {
+      const value = t[node.dataset.i18nAriaLabel];
+      if (value != null) node.setAttribute("aria-label", value);
+    });
     document.querySelectorAll("[data-command-label]").forEach((node) => {
       const value = t[node.dataset.commandLabel];
       if (value != null) node.textContent = value;
@@ -138,6 +142,78 @@
   mobileMenu?.addEventListener("click", (event) => {
     if (event.target.closest("a")) setMenu(false);
   });
+
+  const worldCarousel = document.querySelector("[data-world-carousel]");
+  const worldSlides = [...document.querySelectorAll("[data-world-slide]")];
+  const worldDots = [...document.querySelectorAll("[data-world-dot]")];
+  const worldCounter = document.querySelector("[data-world-counter]");
+  const worldPrev = document.querySelector("[data-world-prev]");
+  const worldNext = document.querySelector("[data-world-next]");
+  let worldIndex = 0;
+  let swipeStartX = null;
+
+  function setWorld(nextIndex, { focus = false } = {}) {
+    if (!worldSlides.length) return;
+    worldIndex = (nextIndex + worldSlides.length) % worldSlides.length;
+
+    worldSlides.forEach((slide, index) => {
+      const active = index === worldIndex;
+      slide.classList.toggle("is-active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+      const link = slide.querySelector("a");
+      if (link) link.tabIndex = active ? 0 : -1;
+    });
+
+    worldDots.forEach((dot, index) => {
+      const active = index === worldIndex;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-selected", String(active));
+      dot.tabIndex = active ? 0 : -1;
+    });
+
+    if (worldCounter) {
+      worldCounter.textContent = `0${worldIndex + 1} / 0${worldSlides.length}`;
+    }
+
+    if (focus) worldDots[worldIndex]?.focus();
+  }
+
+  worldPrev?.addEventListener("click", () => setWorld(worldIndex - 1));
+  worldNext?.addEventListener("click", () => setWorld(worldIndex + 1));
+  worldDots.forEach((dot, index) => {
+    dot.addEventListener("click", () => setWorld(index, { focus: true }));
+  });
+
+  worldCarousel?.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      setWorld(worldIndex - 1, { focus: true });
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      setWorld(worldIndex + 1, { focus: true });
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      setWorld(0, { focus: true });
+    } else if (event.key === "End") {
+      event.preventDefault();
+      setWorld(worldSlides.length - 1, { focus: true });
+    }
+  });
+
+  worldCarousel?.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "touch") return;
+    swipeStartX = event.clientX;
+  }, { passive: true });
+
+  worldCarousel?.addEventListener("pointerup", (event) => {
+    if (event.pointerType !== "touch" || swipeStartX == null) return;
+    const delta = event.clientX - swipeStartX;
+    swipeStartX = null;
+    if (Math.abs(delta) < 44) return;
+    setWorld(delta < 0 ? worldIndex + 1 : worldIndex - 1);
+  }, { passive: true });
+
+  setWorld(0);
 
   const command = document.getElementById("command");
   const commandInput = document.getElementById("command-input");
@@ -277,7 +353,7 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
 
     document.querySelectorAll(
-      ".evidence-card, .method-flow li, .arc-grid article, .door, .document-group, .contact-panel",
+      ".evidence-card, .method-flow li, .arc-grid article, .door, .document-group, .contact-panel, .world-selector",
     ).forEach((node) => {
       node.classList.add("reveal");
       observer.observe(node);
