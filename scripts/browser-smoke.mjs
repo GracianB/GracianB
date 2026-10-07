@@ -56,12 +56,18 @@ async function desktop(browser) {
   await assertClean(page, state);
 
   await page.getByRole("heading", { level: 1 }).waitFor();
+  assert.match(await page.locator(".hero-name").innerText(), /GRACIÁN\s+BAENA/);
+  const heroFits = await page.locator(".hero-wow").evaluate((node) => {
+    const rect = node.getBoundingClientRect();
+    return rect.left >= -1 && rect.right <= innerWidth + 1;
+  });
+  assert.equal(heroFits, true, "Hero must fit the desktop viewport");
   assert.equal(await page.locator(".evidence-card").count(), 5);
   assert.equal(await page.locator(".method-flow li").count(), 7);
 
   await page.getByRole("button", { name: "EN" }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
-  assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /complex operations/i);
+  assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /customer and operational problems/i);
   assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
 
   await page.locator("[data-theme-toggle]").click();
@@ -88,6 +94,12 @@ async function mobile(browser) {
   const state = watch(page);
   await page.goto(URL, { waitUntil: "domcontentloaded" });
   await assertClean(page, state);
+  assert.match(await page.locator(".hero-name").innerText(), /GRACIÁN\s+BAENA/);
+  const nameClipped = await page.locator(".hero-name").evaluate((node) => {
+    const rect = node.getBoundingClientRect();
+    return rect.left < -1 || rect.right > innerWidth + 1;
+  });
+  assert.equal(nameClipped, false, "Hero name must not clip at 320px");
 
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
