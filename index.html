@@ -17,7 +17,7 @@
   <link rel="alternate" hreflang="x-default" href="https://gracianb.github.io/GracianB/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="preload" href="./styles.css?v=7" as="style">
+  <link rel="preload" href="./styles.css?v=8" as="style">
   <link rel="stylesheet" href="./styles.css?v=7">
 
   <meta property="og:type" content="profile">
@@ -37,8 +37,8 @@
   <meta name="twitter:description" content="Customer Success, Operations, Data, Automation and AI connected through usable systems.">
   <meta name="twitter:image" content="https://gracianb.github.io/GracianB/og-cover.png">
 
-  <script src="./i18n.js?v=7"></script>
-  <script src="./main.js?v=7" defer></script>
+  <script src="./i18n.js?v=8"></script>
+  <script src="./main.js?v=8" defer></script>
 
   <script type="application/ld+json">
   {
@@ -224,7 +224,7 @@
           </article>
 
           <article class="world-card world-yoga" data-world-slide data-world="yoga" aria-hidden="true">
-            <a class="world-card-link" href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer">
+            <a class="world-card-link" href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer" tabindex="-1">
               <div class="world-art world-art-yoga" aria-hidden="true">
                 <div class="lotus">
                   <i class="lotus-petal p1"></i><i class="lotus-petal p2"></i><i class="lotus-petal p3"></i>
@@ -244,7 +244,7 @@
           </article>
 
           <article class="world-card world-lab" data-world-slide data-world="lab" aria-hidden="true">
-            <a class="world-card-link" href="https://gracianb.github.io/systems-lab/" target="_blank" rel="noopener noreferrer">
+            <a class="world-card-link" href="https://gracianb.github.io/systems-lab/" target="_blank" rel="noopener noreferrer" tabindex="-1">
               <div class="world-art world-art-lab" aria-hidden="true">
                 <span class="lab-orbit lab-orbit-a"></span>
                 <span class="lab-orbit lab-orbit-b"></span>
@@ -263,10 +263,18 @@
         </div>
 
         <div class="world-dots" role="tablist" aria-label="Seleccionar mundo">
-          <button type="button" class="is-active" data-world-dot="0" aria-label="Mundo profesional" aria-selected="true"><span></span><b>PRO</b></button>
-          <button type="button" data-world-dot="1" aria-label="Mundo Yoga" aria-selected="false"><span></span><b>YOGA</b></button>
-          <button type="button" data-world-dot="2" aria-label="Systems Lab" aria-selected="false"><span></span><b>LAB</b></button>
+          <button type="button" role="tab" class="is-active" data-world-dot="0" aria-label="Mundo profesional" aria-selected="true"><span></span><b>PRO</b></button>
+          <button type="button" role="tab" data-world-dot="1" aria-label="Mundo Yoga" aria-selected="false"><span></span><b>YOGA</b></button>
+          <button type="button" role="tab" data-world-dot="2" aria-label="Systems Lab" aria-selected="false"><span></span><b>LAB</b></button>
         </div>
+
+        <noscript>
+          <nav class="world-noscript" aria-label="Tres mundos">
+            <a href="https://gracianb.github.io/professional-deck/">Professional Deck ↗</a>
+            <a href="https://gracianb.github.io/yoga-instructor/">Yoga ↗</a>
+            <a href="https://gracianb.github.io/systems-lab/">Systems Lab ↗</a>
+          </nav>
+        </noscript>
       </div>
     </section>
 
