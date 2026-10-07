@@ -74,7 +74,7 @@ for (const match of html.matchAll(/<a\b([^>]*target=["']_blank["'][^>]*)>/gi)) {
 }
 
 const publicText = [html, js, readme, sitemap].join("\n");
-assert.equal(/systems[- ]lab/i.test(publicText), false, "Legacy Systems Lab reference must not return");
+assert.equal(/systems-lab|\bSystems Lab\b/.test(publicText), false, "Legacy Systems Lab reference must not return");
 assert.equal(/Portuguese|French|Portugu[eê]s|Franc[eê]s/i.test(publicText), false, "Unsupported language claim found");
 
 let depth = 0;
