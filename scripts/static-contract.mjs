@@ -87,6 +87,8 @@ assert.equal(depth, 0, "CSS braces are unbalanced");
 assert.ok((css.match(/!important/g) || []).length <= 10, "Too many !important declarations");
 
 assert.match(html, /People → Operations → Data → Systems → AI/);
+assert.match(html, /GRACIÁN[\s\S]*BAENA/);
+assert.doesNotMatch(html, /Listos para revisar o enviar|Ready to review or send/i);
 assert.match(readme, /Proof before promise|Proof before claims/i);
 assert.match(sitemap, /https:\/\/gracianb\.github\.io\/GracianB\//);
 

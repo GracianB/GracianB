@@ -53,6 +53,9 @@ The hub links to the Professional Deck for full career detail rather than duplic
 
 ## UX contract
 
+- Identity-first cover with the full name visible immediately
+- Cover typography must create hierarchy without clipping or overpowering the evidence below
+- Document section uses neutral professional language, not application-process language
 - ES / EN parity
 - dark / light theme
 - semantic HTML
