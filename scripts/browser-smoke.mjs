@@ -6,13 +6,16 @@ import { chromium } from "playwright";
 
 const HOST = "127.0.0.1";
 const PORT = 4173;
-const URL = `http://${HOST}:${PORT}/`;
+const externalUrl = process.env.GB_E2E_URL;
+const URL = externalUrl || `http://${HOST}:${PORT}/`;
 const artifacts = "artifacts/e2e";
 mkdirSync(artifacts, { recursive: true });
 
-const server = spawn("python3", ["-m", "http.server", String(PORT), "--bind", HOST], {
-  stdio: ["ignore", "pipe", "pipe"],
-});
+const server = externalUrl
+  ? null
+  : spawn("python3", ["-m", "http.server", String(PORT), "--bind", HOST], {
+      stdio: ["ignore", "pipe", "pipe"],
+    });
 
 async function waitForServer() {
   const deadline = Date.now() + 20_000;
@@ -118,7 +121,7 @@ async function reduced(browser) {
   await context.close();
 }
 
-await waitForServer();
+if (!externalUrl) await waitForServer();
 const browser = await chromium.launch({ headless: true, args: ["--no-sandbox"] });
 try {
   await desktop(browser);
@@ -127,5 +130,5 @@ try {
   console.log("GRACIANB BROWSER E2E PASS");
 } finally {
   await browser.close();
-  server.kill("SIGTERM");
+  server?.kill("SIGTERM");
 }
