@@ -1,6 +1,7 @@
 name: GracianB Production Smoke
 
 on:
+  page_build:
   workflow_dispatch:
 
 permissions:
