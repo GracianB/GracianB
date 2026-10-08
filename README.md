@@ -42,6 +42,16 @@ The three worlds are different surfaces of the same working pattern:
 
 ---
 
+## Complementary path: Cabin Crew / TCP
+
+The three core portfolio universes remain unchanged: Professional Deck, Systems Lab and Yoga Instructor. An additional personal career track is reachable from the hub's document area and quick navigation, not from a fourth hero carousel slide.
+
+- [Cabin Crew / TCP, Spanish and English](https://gracianb.github.io/GracianB/cabin-crew.html)
+- [Generic Spanish aviation cover letter (printable)](https://gracianb.github.io/GracianB/cabin-letter-es.html)
+- [Generic English cabin crew cover letter (printable)](https://gracianb.github.io/GracianB/cabin-letter-en.html)
+
+This application profile draws on verified personal experience: Tourism diploma (Murcia), Erasmus in Bergamo, international customer-facing roles in Spain/Italy/Portugal, native Spanish, advanced English and Italian, and previously completed TCP training at ESATUR with aircraft simulator practice. The page does not claim current crew employment, an active attestation or endorsement by an airline. The two documents are adaptable templates for applications. No airline logo or branding is used.
+
 ## Operating model
 
 ```text
