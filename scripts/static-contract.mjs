@@ -79,7 +79,9 @@ for (const match of html.matchAll(/<a\b([^>]*target=["']_blank["'][^>]*)>/gi)) {
   assert.match(attrs, /rel=["'][^"']*noopener[^"']*["']/i, "target=_blank link without noopener");
 }
 
-const publicText = [html, js, readme, sitemap].join("\n");
+// Keep the main hub limited to three primary working languages; the complementary TCP
+// path and README may truthfully disclose basic Portuguese/French without overclaiming.
+const publicText = [html, js, sitemap].join("\n");
 assert.match(publicText, /https:\/\/gracianb\.github\.io\/systems-lab\//, "Systems Lab must be directly reachable");
 assert.equal(/Portuguese|French|Portugu[eê]s|Franc[eê]s/i.test(publicText), false, "Unsupported language claim found");
 
