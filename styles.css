@@ -2418,3 +2418,6 @@ html[data-theme="light"] .world-professional .world-professional-sigil{color:#78
 html[data-theme="light"] .world-lab .world-lab-sigil{color:#176b92}
 @media(max-width:760px){.world-professional .world-professional-sigil{width:min(64%,220px)}.world-lab .world-lab-sigil{width:min(45%,180px)}}
 @media(prefers-reduced-motion:reduce){.world-professional-sigil,.world-lab-sigil{animation:none}}
+
+/* RevOps is a roadmap item, never a live entry point. */
+.revops-soon{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1rem;border:1px dashed var(--line-strong);border-radius:12px;color:var(--muted);font-size:var(--control-font);font-weight:700;cursor:not-allowed;text-align:center}
