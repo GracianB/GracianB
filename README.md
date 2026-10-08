@@ -26,13 +26,15 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ## Three worlds
 
-The public hub opens with three explicit entry points instead of forcing every visitor through the same narrative.
+The public hub opens with a choice of three universes. Each has its own color, emblem and purpose, while the journey behind them follows one common principle: understand people, build something useful and demonstrate the result.
 
 | World | What is inside | Enter |
 |---|---|---|
 | **Professional** | Customer Success, Operations, Data, business cases and career evidence | [Professional Deck](https://gracianb.github.io/professional-deck/) |
 | **Yoga** | Practice, breath, movement and teaching as a professional track in its own right | [Yoga Instructor](https://gracianb.github.io/yoga-instructor/) |
 | **Systems Lab** | Games, agents, interfaces, WebGL and technical experiments that can be opened and tested | [Systems Lab](https://gracianb.github.io/systems-lab/) |
+
+The site tells its story in a deliberate sequence: **who I am → what works → how I work → how I got here → where you can go next**. The later universe links are a closing choice after the evidence, not a second introductory screen.
 
 The three worlds are different surfaces of the same working pattern:
 
@@ -100,7 +102,7 @@ The point is not Zendesk itself. The point is the operating model around it: inf
 
 ### RevOps Studio
 
-A deliberately inspectable decision system.
+**Under construction. Not a public live product or accessible portfolio destination yet.** A deliberately inspectable decision system in development.
 
 ```text
 Synthetic records
@@ -130,7 +132,7 @@ The interesting part is not only the game. It is the coordination of state, simu
 
 A generative audiovisual WebGL experience.
 
-V6 moved the project from a visual experiment to a release-grade interactive instrument: four movements, curated states, audio-reactive behaviour, adaptive render quality, mobile contracts, reduced-motion support, performance budgets and real Chromium E2E.
+The project has evolved from a visual experiment into an interactive instrument with curated movements, audio-reactive behaviour, adaptive rendering, mobile contracts, reduced-motion support, performance budgets and real browser E2E.
 
 ### AiGoritmo
 
@@ -245,6 +247,17 @@ Yoga instruction and practice as a complementary professional track.
 - [CV Yoga · English](./Gracian_Baena_CV_Yoga_EN.pdf)
 - [Carta Yoga · Español](./Gracian_Baena_Carta_Yoga_ES.pdf)
 - [Cover Yoga · English](./Gracian_Baena_Cover_Letter_Yoga_EN.pdf)
+
+---
+
+## Release and presentation contract
+
+- The cover belongs to **GracianB**: deep black and restrained copper in dark mode, porcelain white and graphite in light mode.
+- **Professional Deck** carries silver, beige and its professional orbit symbol; **Yoga** carries botanical green and the lotus; **Systems Lab** carries cyan and the wand. World colors remain scoped to their own cards.
+- The opening screen is the actual hero and three-world carousel. There is **no extra gateway or cinematic introduction** on this hub.
+- RevOps Studio is **under construction**: no live or source-entry links are promoted as finished products.
+- Public projects are labeled by what they actually demonstrate; avoid hardcoding release-version badges that grow stale.
+- The ES/EN translations include project availability, carousel names and assistive labels. Both themes, mobile layouts, keyboard navigation and reduced-motion are release requirements.
 
 ---
 
