@@ -52,6 +52,19 @@ The three core portfolio universes remain unchanged: Professional Deck, Systems 
 
 This application profile draws on verified personal experience: Tourism diploma (Murcia), Erasmus in Bergamo, international customer-facing roles in Spain/Italy/Portugal, native Spanish, advanced English and Italian, and previously completed TCP training at ESATUR with aircraft simulator practice. The page does not claim current crew employment, an active attestation or endorsement by an airline. The two documents are adaptable templates for applications. No airline logo or branding is used.
 
+### Cabin Crew editorial V2 · Story, learning and atlas
+
+The TCP path is now a complete, bilingual, structured personal account rather than a list of duties or a duplicate of the professional deck. It includes:
+
+- **Four narrative chapters**: Tourism/Erasmus, retail and initial cabin training, international service and client operations, and the intentional return to aviation after building technical skills.
+- **Seven dated learning milestones** preserved from Professional Deck: Murcia Tourism diploma (2011), Bergamo Tourism Erasmus (2012, an academic exchange not a second degree), completed ESATUR Cabin Crew training (2015, simulator Mallorca, *not represented as an active attestation*), Madrid Yoga instructor certification (2019), Data Science/Coursera (2022), IT Automation/Google (2023), and AI Visualization/Columbia (2025). The latter three are described as complementary study, without claiming independently verified official certificates.
+- **Interactive six-stop editorial atlas** aligned to the original Professional Deck: Murcia, Gran Canaria, Madrid, Lisbon, Bergamo and Warsaw. The two last-named connection-only stops are clearly distinguished from verified workplaces or schools. Coordinates and lines are conceptual, **not actual flight routes**.
+- **Five-language board**: Spanish native, English and Italian C1 as previously stated in the CV, and basic Portuguese and French. The distinction between self-reported levels and official test certificates is explicit.
+- **Accessible ES/EN controls**: language switching, keyboard-reachable city stops, prev/next navigation, credential category filters, descriptive labels and reduced-motion styling.
+- The original **two generic print-ready application letters** remain unchanged and available.
+
+The technical quality gate extends browser acceptance tests at 320, 390 and 1280 pixels, including switching city context and language and filtering credentials. The public hub's **three primary worlds remain exactly three**.
+
 ## Operating model
 
 ```text

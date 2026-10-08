@@ -79,7 +79,9 @@ for (const match of html.matchAll(/<a\b([^>]*target=["']_blank["'][^>]*)>/gi)) {
   assert.match(attrs, /rel=["'][^"']*noopener[^"']*["']/i, "target=_blank link without noopener");
 }
 
-const publicText = [html, js, readme, sitemap].join("\n");
+// Keep the main hub limited to three primary working languages; the complementary TCP
+// path and README may truthfully disclose basic Portuguese/French without overclaiming.
+const publicText = [html, js, sitemap].join("\n");
 assert.match(publicText, /https:\/\/gracianb\.github\.io\/systems-lab\//, "Systems Lab must be directly reachable");
 assert.equal(/Portuguese|French|Portugu[eê]s|Franc[eê]s/i.test(publicText), false, "Unsupported language claim found");
 
@@ -104,6 +106,20 @@ assert.match(readFileSync("cabin-crew.html","utf8"), /data-language="en"/);
 assert.match(readFileSync("cabin-crew.html","utf8"), /ESATUR/);
 assert.doesNotMatch(readFileSync("cabin-crew.html","utf8"), /licencia vigente|valid cabin crew attestation/i);
 assert.match(readFileSync("cabin-letter-en.html","utf8"), /previously completed Cabin Crew/);
+const cabinPage=readFileSync("cabin-crew.html","utf8");
+const cabinScript=readFileSync("cabin-crew.js","utf8");
+assert.equal((cabinPage.match(/data-city="/g)||[]).length,6,"TCP atlas needs six city stops");
+assert.equal((cabinPage.match(/data-credential-kind=/g)||[]).length,7,"TCP page needs seven distinct learning milestones");
+assert.equal((cabinPage.match(/class="cabin-chapters"/g)||[]).length,1);
+assert.match(cabinPage,/2015.*?ESATUR/s);
+assert.match(cabinPage,/2019.*?Yoga/s);
+assert.match(cabinPage,/2023.*?Google/s);
+assert.match(cabinPage,/2025.*?Columbia/s);
+assert.match(cabinPage,/not a second degree/);
+assert.match(cabinPage,/no se presenta como una habilitación actualmente vigente/);
+assert.match(cabinScript,/const cities=/);
+assert.match(cabinScript,/data-training-filter/);
+
 assert.match(html, /data-world-prev/);
 assert.match(html, /data-world-next/);
 assert.match(html, /world-noscript/);
