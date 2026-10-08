@@ -2405,3 +2405,16 @@ html[data-theme="light"] .world-enter{color:#354248}
  .button,.card-actions a,.world-enter,.world-dots button,.world-carousel-controls button,.world-noscript a,.door,.segment button,.command-open,.menu-toggle,.theme-toggle{transition:none;animation:none}
  :where(.button,.card-actions a,.world-enter,.world-carousel-controls button,.world-dots button,.segment button,.theme-toggle,.command-open):hover{transform:none}
 }
+
+
+/* V12 shared design grammar: each world owns its visual language. */
+.world-professional .world-professional-sigil,.world-lab .world-lab-sigil{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:min(64%,285px);height:min(86%,320px);pointer-events:none;filter:drop-shadow(0 0 16px color-mix(in srgb,currentColor 22%,transparent))}
+.world-professional .world-professional-sigil{color:#d9cbb8;opacity:.84}
+.world-lab .world-lab-sigil{color:#7af3ff;opacity:.88;width:min(50%,210px)}
+.world-professional .customer-ring,.world-professional .customer-node,.world-professional .customer-core{opacity:.23}
+.world-lab .lab-orbit,.world-lab .magic-wand,.world-lab .spark{opacity:.18}
+.world-yoga .lotus{filter:drop-shadow(0 0 15px rgba(135,207,174,.16))}
+html[data-theme="light"] .world-professional .world-professional-sigil{color:#786a58}
+html[data-theme="light"] .world-lab .world-lab-sigil{color:#176b92}
+@media(max-width:760px){.world-professional .world-professional-sigil{width:min(64%,220px)}.world-lab .world-lab-sigil{width:min(45%,180px)}}
+@media(prefers-reduced-motion:reduce){.world-professional-sigil,.world-lab-sigil{animation:none}}
