@@ -161,12 +161,50 @@ async function reduced(browser) {
   await context.close();
 }
 
+async function cabinCrew(browser){
+  for (const width of [320,390,1280]){
+    const context=await browser.newContext({viewport:{width,height:900}});
+    const page=await context.newPage();
+    const events=watch(page);
+    await page.goto(URL+"cabin-crew.html",{waitUntil:"domcontentloaded"});
+    await assertClean(page,events);
+    assert.equal(await page.locator("[data-cabin-lang='es']").getAttribute("aria-pressed"),"true");
+    await page.locator("[data-cabin-lang='en']").click();
+    assert.equal(await page.locator("html").getAttribute("lang"),"en");
+    assert.equal(await page.locator("[data-cabin-lang='en']").getAttribute("aria-pressed"),"true");
+    assert.match(await page.locator("[data-language='en'] h1").innerText(),/Some journeys/);
+    await page.locator("[data-cabin-lang='es']").click();
+    assert.equal(await page.locator("html").getAttribute("lang"),"es");
+    assert.equal(await page.locator(".document-grid .document").count(),2);
+    assert.match(await page.locator(".tile").nth(1).innerText(),/ESATUR/);
+    for (const filename of ["cabin-letter-es.html","cabin-letter-en.html"]){
+      await page.goto(URL+filename,{waitUntil:"domcontentloaded"});
+      await assertClean(page,events);
+      assert.equal(await page.locator(".letter-body p").count(),8);
+      assert.equal(await page.locator(".print-action").count(),1);
+    }
+    await context.close();
+  }
+  const context=await browser.newContext({viewport:{width:1440,height:900}});
+  const page=await context.newPage();
+  await page.goto(URL,{waitUntil:"domcontentloaded"});
+  assert.equal(await page.locator("[data-world-slide]").count(),3,"fourth main universe must NOT be added");
+  assert.equal(await page.locator(".document-group").count(),3);
+  assert.equal(await page.locator("a[href='./cabin-crew.html']").count(),2,"document and quick navigation");
+  await page.locator("a[href='./cabin-letter-es.html']").first().click();
+  await page.waitForURL(/cabin-letter-es\.html$/);
+  assert.match(await page.locator("h1").innerText(),/El servicio empieza/);
+  await context.close();
+  console.log("CABIN CREW HUB + LETTERS E2E PASS (320/390/1280, bilingual, navigable, three worlds preserved)");
+}
+
 if (!externalUrl) await waitForServer();
 const browser = await chromium.launch({ headless: true, args: ["--no-sandbox"] });
 try {
   await desktop(browser);
   await mobile(browser);
   await reduced(browser);
+  await cabinCrew(browser);
   console.log("GRACIANB BROWSER E2E PASS");
 } finally {
   await browser.close();

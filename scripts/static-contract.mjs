@@ -21,6 +21,11 @@ const requiredFiles = [
   "Gracian_Baena_CV_Yoga_EN.pdf",
   "Gracian_Baena_Carta_Yoga_ES.pdf",
   "Gracian_Baena_Cover_Letter_Yoga_EN.pdf",
+  "cabin-crew.html",
+  "cabin-crew.css",
+  "cabin-crew.js",
+  "cabin-letter-es.html",
+  "cabin-letter-en.html",
 ];
 
 for (const file of requiredFiles) {
@@ -92,6 +97,13 @@ assert.equal((html.match(/data-world-slide/g) || []).length, 3, "Exactly three w
 assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
+assert.match(html, /href="\.\/cabin-crew\.html"/);
+assert.match(html, /href="\.\/cabin-letter-es\.html"/);
+assert.match(html, /href="\.\/cabin-letter-en\.html"/);
+assert.match(readFileSync("cabin-crew.html","utf8"), /data-language="en"/);
+assert.match(readFileSync("cabin-crew.html","utf8"), /ESATUR/);
+assert.doesNotMatch(readFileSync("cabin-crew.html","utf8"), /licencia vigente|valid cabin crew attestation/i);
+assert.match(readFileSync("cabin-letter-en.html","utf8"), /previously completed Cabin Crew/);
 assert.match(html, /data-world-prev/);
 assert.match(html, /data-world-next/);
 assert.match(html, /world-noscript/);

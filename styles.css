@@ -843,7 +843,7 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
 }
 .documents-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:1rem;
 }
 .document-group{
@@ -2500,3 +2500,9 @@ html[data-theme="light"] .world-selector:has(.world-professional.is-active){--ac
 .hero.hero-wow .world-stage{min-height:28rem}
 }
 @media(prefers-reduced-motion:reduce){.hero.hero-wow .world-card,.hero.hero-wow .world-card-link{transition:none}}
+
+/* Complementary TCP documents belong to the CV area, not the three-world hero. */
+@media (min-width:761px) and (max-width:1100px){
+  .documents-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .documents-grid>.document-group:last-child{grid-column:1/-1}
+}
