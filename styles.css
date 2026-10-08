@@ -2252,54 +2252,54 @@ html[data-theme="light"] .world-card-copy{
 }
 
 
-/* HUB V11 · Its own signature: obsidian plum, copper coral and soft orchid.
+/* HUB V11 · Independent premium black / oxidized copper identity.
    World colors are isolated to their cards. Professional = silver/ivory;
    Yoga = botanical green/lotus; Systems Lab = electric cyan/orbit. */
 :root{
- --bg:#15121b;--bg-soft:#201a28;--panel:rgba(37,30,46,.83);
- --panel-strong:#302538;--text:#f7f0f4;--muted:#cfc0ce;--subtle:#ac9aa9;
- --line:rgba(232,207,227,.15);--line-strong:rgba(232,207,227,.28);
- --gold:#ff9c81;--hub-orchid:#c8a6f0;--hub-copper:#ff9c81;
- --shadow:0 24px 80px rgba(12,6,18,.38);
+ --bg:#08090b;--bg-soft:#121416;--panel:rgba(22,24,26,.88);
+ --panel-strong:#1b1d20;--text:#f3f3f1;--muted:#bfc0bf;--subtle:#929696;
+ --line:rgba(221,224,224,.15);--line-strong:rgba(221,224,224,.29);
+ --gold:#bf7868;--hub-neutral:#ab9588;--hub-copper:#bf7868;
+ --shadow:0 24px 80px rgba(0,0,0,.44);
 }
 html[data-theme="light"]{
- --bg:#f7f0f4;--bg-soft:#efe3ec;--panel:rgba(255,250,253,.88);
- --panel-strong:#fffafd;--text:#34263e;--muted:#65546a;--subtle:#705e74;
- --line:rgba(83,54,86,.15);--line-strong:rgba(83,54,86,.28);
- --gold:#9d465c;--hub-orchid:#704b93;--hub-copper:#9d465c;
- --shadow:0 22px 66px rgba(70,42,72,.12);
+ --bg:#f3f3f1;--bg-soft:#f2f3f3;--panel:rgba(255,255,255,.91);
+ --panel-strong:#ffffff;--text:#1c2227;--muted:#4c5459;--subtle:#636b6f;
+ --line:rgba(38,48,54,.13);--line-strong:rgba(38,48,54,.26);
+ --gold:#883e36;--hub-orchid:#555c61;--hub-copper:#883e36;
+ --shadow:0 22px 66px rgba(24,29,32,.09);
 }
-body{background:radial-gradient(circle at 12% 10%,rgba(201,113,145,.09),transparent 29rem),radial-gradient(circle at 85% 28%,rgba(148,97,190,.07),transparent 32rem),var(--bg)}
-html[data-theme="light"] body{background:radial-gradient(circle at 12% 10%,rgba(232,186,207,.34),transparent 29rem),radial-gradient(circle at 86% 26%,rgba(211,189,228,.23),transparent 32rem),var(--bg)}
-::selection{background:rgba(213,140,168,.38);color:var(--text)}
+body{background:radial-gradient(circle at 12% 10%,rgba(136,70,59,.075),transparent 29rem),radial-gradient(circle at 85% 28%,rgba(126,130,130,.035),transparent 32rem),var(--bg)}
+html[data-theme="light"] body{background:radial-gradient(circle at 12% 10%,rgba(236,239,240,.5),transparent 29rem),radial-gradient(circle at 86% 26%,rgba(223,226,226,.36),transparent 32rem),var(--bg)}
+::selection{background:rgba(171,107,89,.27);color:var(--text)}
 :focus-visible{outline-color:var(--gold)}
-.ambient-orb-a{background:#ec8195}.ambient-orb-b{background:#a17bca}
-.scroll-progress i{background:linear-gradient(90deg,#f68b83,#a987d3);box-shadow:0 0 12px rgba(185,117,185,.15)}
-.topbar{background:linear-gradient(to bottom,rgba(25,19,31,.95),rgba(25,19,31,.8));border-bottom-color:var(--line)}
-html[data-theme="light"] .topbar{background:linear-gradient(to bottom,rgba(252,246,250,.97),rgba(247,239,245,.86))}
-.brand-mark{border-color:rgba(249,155,136,.5);border-radius:12px;color:var(--gold);box-shadow:inset 0 0 0 4px rgba(249,155,136,.035)}
+.ambient-orb-a{background:#a65d52}.ambient-orb-b{background:#454e54}
+.scroll-progress i{background:linear-gradient(90deg,#bf7868,#686f70);box-shadow:0 0 12px rgba(151,120,109,.14)}
+.topbar{background:linear-gradient(to bottom,rgba(8,9,11,.96),rgba(8,9,11,.86));border-bottom-color:var(--line)}
+html[data-theme="light"] .topbar{background:linear-gradient(to bottom,rgba(255,255,255,.97),rgba(250,251,251,.9))}
+.brand-mark{border-color:rgba(174,117,97,.43);border-radius:12px;color:var(--gold);box-shadow:inset 0 0 0 4px rgba(174,117,97,.045)}
 .desktop-nav a::after{background:var(--gold)}
 .topbar-actions{flex-shrink:0}
 .segment,.theme-toggle,.command-open,.menu-toggle{border-color:var(--line-strong);background:color-mix(in srgb,var(--panel-strong) 88%,transparent)}
 .segment button{color:var(--muted);min-width:2.15rem}
-.segment button.is-active{background:var(--gold);color:#211a28}
-html[data-theme="light"] .segment button.is-active{background:#633f71;color:#fffafd}
-html[data-theme="dark"] .theme-moon,html[data-theme="light"] .theme-sun{background:var(--gold);color:#211a28}
-html[data-theme="light"] .theme-sun{background:#633f71;color:#fffafd}
-.mobile-menu{background:#21192a}
-html[data-theme="light"] .mobile-menu{background:#faf4f8}
+.segment button.is-active{background:var(--gold);color:#101112}
+html[data-theme="light"] .segment button.is-active{background:#22282c;color:#ffffff}
+html[data-theme="dark"] .theme-moon,html[data-theme="light"] .theme-sun{background:var(--gold);color:#101112}
+html[data-theme="light"] .theme-sun{background:#22282c;color:#ffffff}
+.mobile-menu{background:#131619}
+html[data-theme="light"] .mobile-menu{background:#ffffff}
 .hero{padding-block:clamp(3.5rem,7vw,7rem)}
-.hero-name-last{color:#e9a1aa}
-html[data-theme="light"] .hero-name-last{color:#9d465c}
-.hero-thesis em{color:#cdaee4}
-html[data-theme="light"] .hero-thesis em{color:#765383}
-.button-primary{background:#ff9c81;border-color:#ff9c81;color:#251a25}
-.button-primary:hover{background:#ffc0a8}
-html[data-theme="light"] .button-primary{background:#8d3f57;border-color:#8d3f57;color:#fffafd}
-.button-secondary{border-color:rgba(214,164,206,.44);background:rgba(214,164,206,.09)}
+.hero-name-last{color:#d7aaa0}
+html[data-theme="light"] .hero-name-last{color:#883e36}
+.hero-thesis em{color:#a7abae}
+html[data-theme="light"] .hero-thesis em{color:#454c50}
+.button-primary{background:#bf7868;border-color:#bf7868;color:#121416}
+.button-primary:hover{background:#d7a091}
+html[data-theme="light"] .button-primary{background:#24292d;border-color:#24292d;color:#ffffff}
+.button-secondary{border-color:rgba(191,120,104,.32);background:rgba(191,120,104,.06)}
 .button-secondary:hover{border-color:var(--gold)}
-.live-dot{background:#ed9caf;box-shadow:0 0 0 5px rgba(237,156,175,.1)}
-.world-selector{border-color:var(--line-strong);box-shadow:var(--shadow);background:radial-gradient(circle at 80% 10%,rgba(169,125,197,.09),transparent 18rem),var(--panel)}
+.live-dot{background:#c98d81;box-shadow:0 0 0 5px rgba(201,141,129,.09)}
+.world-selector{border-color:var(--line-strong);box-shadow:var(--shadow);background:radial-gradient(circle at 80% 10%,rgba(114,122,125,.065),transparent 18rem),var(--panel)}
 .world-selector-head{border-bottom-color:var(--line-strong)}
 /* Local identity belongs to each world, not to the parent hub. */
 .world-professional{--world-accent:#d7cbb8}
@@ -2421,3 +2421,12 @@ html[data-theme="light"] .world-lab .world-lab-sigil{color:#176b92}
 
 /* RevOps is a roadmap item, never a live entry point. */
 .revops-soon{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1rem;border:1px dashed var(--line-strong);border-radius:12px;color:var(--muted);font-size:var(--control-font);font-weight:700;cursor:not-allowed;text-align:center}
+
+/* V13 · Porcelain-white light mode and black-first signature. World-specific colors remain scoped. */
+html[data-theme="light"] body{background:radial-gradient(circle at 70% 8%,rgba(222,228,231,.18),transparent 38rem),#fff;color:#1c2227}
+html[data-theme="light"] .topbar{background:rgba(255,255,255,.96)}
+html[data-theme="light"] .hero-actions .button-secondary{background:#fff;border-color:#8e9294;color:#242b2f}
+html[data-theme="light"] .hero-actions .button-ghost{background:#f7f8f8;border-color:#a5abad;color:#293035}
+html[data-theme="light"] .world-dots button{color:#465157}
+html[data-theme="light"] .world-dots button.is-active{background:color-mix(in srgb,var(--active-world-color,#bf7868) 13%,#fff)}
+html[data-theme="light"] .world-enter{color:var(--text)}
