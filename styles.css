@@ -2430,3 +2430,24 @@ html[data-theme="light"] .hero-actions .button-ghost{background:#f7f8f8;border-c
 html[data-theme="light"] .world-dots button{color:#465157}
 html[data-theme="light"] .world-dots button.is-active{background:color-mix(in srgb,var(--active-world-color,#bf7868) 13%,#fff)}
 html[data-theme="light"] .world-enter{color:var(--text)}
+
+
+/* V14 · Strict independent identity per world; silver and beige only in Professional. */
+.world-professional {--world-accent:#d6d5d0}
+.world-professional .world-art{background:radial-gradient(circle at 51% 47%,rgba(220,219,214,.21),transparent 45%),linear-gradient(135deg,#373a3d,#171a1d 80%)}
+.world-professional .world-professional-sigil{color:#e2ded4;opacity:1;filter:drop-shadow(0 0 12px rgba(235,232,225,.48)) drop-shadow(0 0 32px rgba(214,203,184,.3))}
+.world-professional .customer-node,.world-professional .customer-core{color:#ede2d2;border-color:rgba(219,216,209,.3)}
+.world-professional .world-card-copy{background:linear-gradient(180deg,rgba(30,32,34,.93),#1c1e20);color:#f4f0ea}
+.world-professional .world-code,.world-professional .world-enter b{color:#e5d4bc}
+.world-professional .world-enter{background:rgba(214,209,200,.1);border-color:#bfc0bc;color:#f4f0ea}
+html[data-theme="light"] .world-professional{--world-accent:#807565}
+html[data-theme="light"] .world-professional .world-art{background:radial-gradient(circle at center,rgba(211,201,182,.36),transparent 48%),linear-gradient(145deg,#fdfaf5,#e5ded3)}
+html[data-theme="light"] .world-professional .world-professional-sigil{color:#827362;filter:drop-shadow(0 0 10px rgba(173,156,132,.25))}
+html[data-theme="light"] .world-professional .world-card-copy{background:linear-gradient(180deg,#f8f4ed,#e9e2d7);color:#293136}
+html[data-theme="light"] .world-professional .world-code,html[data-theme="light"] .world-professional .world-enter b{color:#75624d}
+html[data-theme="light"] .world-professional .world-enter{color:#293136;border-color:#938674;background:rgba(139,121,99,.08)}
+.world-yoga .lotus{filter:drop-shadow(0 0 13px rgba(135,207,174,.37)) drop-shadow(0 0 34px rgba(82,155,117,.17))}
+.world-lab .world-lab-sigil{opacity:1;filter:drop-shadow(0 0 10px rgba(122,243,255,.6)) drop-shadow(0 0 34px rgba(32,169,229,.26))}
+.world-selector:has(.world-professional.is-active){--active-world-color:#d6d5d0}
+html[data-theme="light"] .world-selector:has(.world-professional.is-active){--active-world-color:#807565}
+@media(prefers-reduced-motion:reduce){.world-professional .world-professional-sigil,.world-yoga .lotus,.world-lab .world-lab-sigil{animation:none}}
