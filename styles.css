@@ -2317,3 +2317,79 @@ html[data-theme="light"] .world-professional .customer-node{color:#344249;backgr
  .hero{padding-block:clamp(2.5rem,7vw,4rem)}
 }
 @media(prefers-reduced-motion:reduce){.ambient-orb{filter:none;opacity:.025}}
+
+
+/* HUB V10 · Readable interactive controls and responsive motion contract */
+:root{--control-font:clamp(.82rem,.68rem + .22vw,.96rem);--control-small:clamp(.72rem,.67rem + .13vw,.82rem);--control-touch:44px;--control-ease:cubic-bezier(.22,1,.36,1)}
+.button,.card-actions a,.world-enter,.world-dots button,.world-carousel-controls button,.world-noscript a,.door,.segment button,.command-open,.menu-toggle,.theme-toggle{
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .24s var(--control-ease),background-color .2s ease,border-color .2s ease,box-shadow .24s ease,color .2s ease;
+}
+.button,.card-actions a,.world-enter,.world-noscript a{
+  font-size:var(--control-font)!important;line-height:1.35!important;letter-spacing:.015em!important;
+  min-height:48px!important;padding:.78rem 1.05rem!important;gap:.75rem;white-space:normal;overflow-wrap:break-word;
+}
+.hero-actions .button{font-weight:700!important;border-radius:12px!important;box-shadow:0 8px 24px rgba(7,12,15,.08)}
+.hero-actions .button-primary{box-shadow:0 10px 26px rgba(216,201,178,.12)}
+.card-actions a{justify-content:center;text-align:center;border-radius:10px!important}
+.door{border-radius:16px!important}
+.door b{font-size:var(--control-small)!important;line-height:1.35!important;letter-spacing:.035em!important}
+.world-enter{width:max-content;min-width:0;border-radius:12px!important;font-weight:750!important}
+.world-enter b{font-size:1.12rem!important;line-height:1}
+.world-selector-head>div:first-child strong{font-size:clamp(.84rem,.73rem + .2vw,1.05rem)!important;line-height:1.4!important}
+.world-selector-head>div:first-child>span{font-size:var(--control-small)!important;letter-spacing:.09em}
+.world-dots button{min-height:48px!important;gap:.48rem!important;padding:.65rem .35rem!important}
+.world-dots b{font-size:var(--control-small)!important;line-height:1.25!important;letter-spacing:.04em!important}
+.world-carousel-controls button{min-width:44px!important;width:44px!important;min-height:44px!important;height:44px!important;font-size:1.05rem!important;border-radius:10px!important}
+.world-carousel-controls>span{font-size:.75rem!important}
+.segment{border-radius:11px!important}
+.segment button{min-width:42px!important;min-height:42px!important;height:42px!important;font-size:.81rem!important;border-radius:9px!important;font-weight:700}
+.command-open,.theme-toggle,.menu-toggle{min-height:44px!important;height:44px!important;border-radius:11px!important}
+.command-open span,.menu-toggle b{font-size:var(--control-small)!important}
+.theme-toggle{width:76px!important}
+.theme-toggle span{min-width:33px;min-height:33px;font-size:1rem!important}
+html[data-theme="dark"] .theme-moon,html[data-theme="light"] .theme-sun{height:34px!important}
+.desktop-nav a{font-size:clamp(.7rem,.63rem + .12vw,.83rem)!important;letter-spacing:.05em}
+.mobile-menu a{min-height:48px}
+:where(.button,.card-actions a,.world-enter,.world-dots button,.world-carousel-controls button,.world-noscript a,.door,.segment button,.command-open,.menu-toggle,.theme-toggle):focus-visible{
+  outline:3px solid var(--gold)!important;outline-offset:3px!important;box-shadow:0 0 0 6px color-mix(in srgb,var(--gold) 15%,transparent)!important;
+}
+@media(hover:hover) and (pointer:fine){
+ .button:hover,.card-actions a:hover,.world-enter:hover,.world-noscript a:hover{transform:translateY(-2px);box-shadow:0 15px 34px rgba(8,12,15,.16)}
+ .world-carousel-controls button:hover,.world-dots button:hover,.segment button:hover,.theme-toggle:hover,.command-open:hover{border-color:var(--gold)!important;transform:translateY(-1px)}
+ .door:hover{transform:translateY(-3px)}
+}
+:where(.button,.card-actions a,.world-enter,.world-carousel-controls button,.world-dots button,.segment button,.theme-toggle,.command-open):active{transform:translateY(0) scale(.985)}
+html[data-theme="light"] .hero-actions .button-secondary{background:#fdf9f2;border-color:#aea08c;color:#344249}
+html[data-theme="light"] .hero-actions .button-ghost{background:#f7f0e5;border-color:#baaa95;color:#38454b}
+html[data-theme="light"] .world-dots button.is-active{background:#e8ddcd}
+html[data-theme="light"] .world-dots button{color:#48565b}
+html[data-theme="light"] .world-enter{color:#354248}
+@media(max-width:1080px){
+ .desktop-nav{gap:.75rem}
+ .topbar{padding-inline:max(.8rem,env(safe-area-inset-left))}
+}
+@media(max-width:760px){
+ .topbar{min-height:76px;gap:.4rem}
+ .topbar-actions{gap:.32rem}
+ .button,.card-actions a,.world-enter{font-size:.88rem!important}
+ .world-enter{width:100%}
+ .world-dots b{font-size:clamp(.68rem,2.6vw,.8rem)!important}
+ .world-selector-head>div:first-child strong{font-size:.88rem!important;max-width:none}
+ .world-carousel-controls button{width:44px!important;height:44px!important}
+ .brand-copy small{display:none}
+}
+@media(max-width:420px){
+ .topbar .brand-copy strong{font-size:.65rem!important}
+ .topbar .brand-mark{flex-shrink:0}
+ .topbar .command-open{display:none}
+ .world-dots button{padding:.6rem .15rem!important}
+ .world-dots b{font-size:.67rem!important}
+ .world-card-copy{padding:1rem!important}
+ .world-card p{font-size:.87rem!important;line-height:1.55}
+ .world-selector-head{gap:.55rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .button,.card-actions a,.world-enter,.world-dots button,.world-carousel-controls button,.world-noscript a,.door,.segment button,.command-open,.menu-toggle,.theme-toggle{transition:none!important;animation:none!important}
+ :where(.button,.card-actions a,.world-enter,.world-carousel-controls button,.world-dots button,.segment button,.theme-toggle,.command-open):hover{transform:none!important}
+}
