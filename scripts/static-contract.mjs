@@ -92,6 +92,10 @@ assert.equal((html.match(/data-world-slide/g) || []).length, 3, "Exactly three w
 assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
+assert.match(html, /https:\/\/gracianb\.github\.io\/revops-studio\/demo\.html/);
+assert.match(html, /<h3>RevOps Studio<\/h3>/);
+assert.match(html, /data-i18n="statusDemo"/);
+assert.doesNotMatch(html, /RevOps Studio · EN CONSTRUCCIÓN/);
 assert.match(html, /data-world-prev/);
 assert.match(html, /data-world-next/);
 assert.match(html, /world-noscript/);
