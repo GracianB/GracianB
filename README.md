@@ -73,7 +73,7 @@ My default sequence is:
 | System | What it demonstrates | Evidence |
 |---|---|---|
 | **Bodytone Support OS** | Customer Operations, Zendesk, knowledge, routing, automation, reporting | [Public Help Center](https://bodytonehelp.zendesk.com/hc/es) · [Professional case](https://gracianb.github.io/professional-deck/) |
-| **RevOps Studio** | Data quality, deterministic scoring, forecasting, segmentation, human approval, audit | [Live](https://gracianb.github.io/revops-studio/) · [Source](https://github.com/GracianB/revops-studio) |
+| **RevOps Studio** | Data quality, scoring, forecasting and human approval | **En construcción · acceso público pendiente** |
 | **Project OHANA** | Stateful software, fixed simulation, behavioural systems, regression, browser E2E, CI | [Play](https://gracianb.github.io/project-ohana/) · [Source](https://github.com/GracianB/project-ohana) |
 | **VØRTICE** | TypeScript, WebGL, real-time interaction, adaptive rendering, accessibility, performance contracts | [Experience](https://vortex-gilt-xi.vercel.app/) · [Source](https://github.com/GracianB/vortex) |
 | **AiGoritmo** | Python, FastAPI, local models, voice and modular AI application architecture | [Source](https://github.com/GracianB/aigoritmo) |
