@@ -94,6 +94,31 @@ for (const char of css) {
 assert.equal(depth, 0, "CSS braces are unbalanced");
 assert.ok((css.match(/!important/g) || []).length <= 10, "Too many !important declarations");
 
+const colorSignature = {
+  ink: "#14140f",
+  parchment: "#f7f5ef",
+  ochre: "#daa428",
+  forest: "#26332f",
+};
+for (const [name, hex] of Object.entries(colorSignature)) {
+  assert.ok(css.includes(`--cv-${name === "parchment" ? "paper" : name === "forest" ? "forest" : name === "ochre" ? "ochre" : "ink"}:${hex}`),
+    `GracianB CV palette is missing ${name}: ${hex}`);
+}
+assert.match(css, /--bg:var\(--cv-ink\)/, "Dark hub must match the CV header");
+assert.match(css, /--bg:var\(--cv-paper\)/, "Light hub must match the CV paper");
+assert.match(css, /\.world-professional\s*\{--world-accent:#d6d5d0;--gold:#d6d5d0\}/,
+  "Professional artwork must remain silver and not inherit the hub ochre");
+assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
+  "Yoga artwork must keep its botanical green");
+assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
+  "Systems Lab artwork must keep its electric cyan");
+assert.match(html, /styles\.css\?v=18/, "Palette CSS needs a cache-busted URL");
+const themeJs = readFileSync("main.js", "utf8");
+assert.match(themeJs, /"#f7f5ef" : "#14140f"/, "Browser theme color must reflect the CV");
+assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#14140f"/);
+assert.match(readFileSync("favicon.svg", "utf8"), /#daa428/);
+
+
 assert.match(html, /People → Operations → Data → Systems → AI/);
 assert.equal((html.match(/data-world-slide/g) || []).length, 3, "Exactly three world slides are required");
 assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
