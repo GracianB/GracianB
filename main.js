@@ -89,7 +89,7 @@
 
   function applyTheme({ persist = false } = {}) {
     root.dataset.theme = theme;
-    const color = theme === "light" ? "#f4f1e9" : "#070809";
+    const color = theme === "light" ? "#f7f5ef" : "#14140f";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
     document.querySelector("[data-theme-toggle]")?.setAttribute(
       "aria-label",

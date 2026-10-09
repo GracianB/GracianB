@@ -24,6 +24,12 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ---
 
+## Visual identity
+
+The **GracianB parent hub** follows the actual visual language of the 2026 Spanish/English CV: warm ink `#14140f`, parchment `#f7f5ef`, ochre `#daa428` and forest ink `#26332f`. Dark mode takes its cue from the CV header and light mode from the CV body. These are GracianB colors, not a borrowed palette from Yoga, Professional Deck or Systems Lab.
+
+The three linked universes deliberately keep their existing colors **only inside their own cards and sites**.
+
 ## Three worlds
 
 The public hub opens with a choice of three universes. Each has its own color, emblem and purpose, while the journey behind them follows one common principle: understand people, build something useful and demonstrate the result.
