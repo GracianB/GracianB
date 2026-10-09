@@ -112,10 +112,10 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=20/, "V20 CSS needs a cache-busted URL");
+assert.match(html, /styles\.css\?v=21/, "V20 CSS needs a cache-busted URL");
 assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=20/, "V20 JS cache version missing");
+assert.match(html, /main\.js\?v=21/, "V20 JS cache version missing");
 assert.match(html, /i18n\.js\?v=20/, "V20 translations must not be stale");
 assert.equal((html.match(/data-world-overview/g) || []).length >= 1, true,
   "Overview control must be available");
@@ -123,6 +123,11 @@ assert.match(html, /id="world-stage"/);
 assert.match(js, /worldOverviewOn: "Ver los 3"/);
 assert.match(js, /worldOverviewOn: "View all 3"/);
 assert.match(css, /\/\* V20 · Two ways to explore the same three worlds/, "V20 overview layout missing");
+assert.match(css, /\.world-carousel-controls \.world-overview-toggle\{/, "Final selector rules missing");
+assert.match(css, /width:auto;max-width:none/, "World switch must override fixed 44px arrow dimensions");
+assert.doesNotMatch(css, /world-overview-toggle\[aria-pressed="true"\]\{background:var\(--cv-ochre\)/, 
+  "The overview must not use a solid yellow active tile");
+assert.match(html, /class="world-view-icon"/, "Restrained CSS view icon missing");
 const behavior = readFileSync("main.js", "utf8");
 assert.match(behavior, /gb-world-overview/, "Overview preference must persist");
 assert.match(behavior, /slide\.setAttribute\("aria-hidden", String\(!overview && !active\)\)/,
