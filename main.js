@@ -93,7 +93,9 @@
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
     document.querySelector("[data-theme-toggle]")?.setAttribute(
       "aria-label",
-      theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro",
+      lang === "en"
+        ? (theme === "dark" ? "Switch to light theme" : "Switch to dark theme")
+        : (theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro"),
     );
 
     if (persist) {
@@ -112,6 +114,7 @@
     if (langButton) {
       lang = langButton.dataset.setLang === "en" ? "en" : "es";
       applyLanguage({ persist: true });
+      applyTheme();
       return;
     }
     const themeButton = event.target.closest("[data-theme-toggle]");
