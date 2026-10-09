@@ -81,6 +81,8 @@ async function desktop(browser) {
   assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
   await page.locator("[data-world-overview]").click();
   assert.equal(await page.locator("[data-world-overview]").getAttribute("aria-pressed"), "true");
+  const overviewLabelHeight = await page.locator("[data-world-overview-label]").evaluate((node) => node.getBoundingClientRect().height);
+  assert.ok(overviewLabelHeight < 25, "Desktop overview label must remain one line");
   assert.equal(await page.locator('[data-world-carousel]').getAttribute("class").then((v) => v.includes("is-overview")), true);
   assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
   assert.equal(await page.locator('[data-world-slide] .world-card-link[tabindex="0"]').count(), 3);
@@ -107,6 +109,7 @@ async function desktop(browser) {
   await page.keyboard.press("Escape");
   await page.waitForFunction(() => document.getElementById("command")?.hidden === true);
 
+  await page.evaluate(() => { document.activeElement?.blur?.(); scrollTo(0, 0); });
   await page.screenshot({ path: `${artifacts}/desktop.png`, fullPage: true });
   await context.close();
 }
@@ -135,6 +138,8 @@ async function mobile(browser) {
   assert.equal(worldClipped, false, "Three-world selector must fit at 320px");
   await page.locator("[data-world-overview]").click();
   assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
+  const mobileOverviewLabelHeight = await page.locator("[data-world-overview-label]").evaluate((node) => node.getBoundingClientRect().height);
+  assert.ok(mobileOverviewLabelHeight < 25, "320px overview label must remain one line");
   const overviewFits = await page.locator("[data-world-carousel]").evaluate((node) => {
     const rect = node.getBoundingClientRect();
     return rect.left >= -1 && rect.right <= innerWidth + 1;
@@ -168,6 +173,7 @@ async function mobile(browser) {
     }),
   );
   assert.equal(clipped, false, "Visible interactive element clipped at 320px");
+  await page.evaluate(() => { document.activeElement?.blur?.(); scrollTo(0, 0); });
   await page.screenshot({ path: `${artifacts}/mobile-320.png`, fullPage: true });
   await context.close();
 }
