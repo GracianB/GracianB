@@ -112,7 +112,10 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=18/, "Palette CSS needs a cache-busted URL");
+assert.match(html, /styles\.css\?v=19/, "V19 CSS needs a cache-busted URL");
+assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
+assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
+assert.match(html, /main\.js\?v=19/, "V19 JS cache version missing");
 const themeJs = readFileSync("main.js", "utf8");
 assert.match(themeJs, /"#f7f5ef" : "#14140f"/, "Browser theme color must reflect the CV");
 assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#14140f"/);
