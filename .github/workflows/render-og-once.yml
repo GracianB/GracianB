@@ -1,0 +1,36 @@
+name: Render final social card
+
+on:
+  push:
+    branches: [fix/gracianb-final-world-selector]
+    paths: [.github/workflows/render-og-once.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    name: Render CV-matched 1200x630 PNG
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rasterize existing SVG source
+        run: |
+          python3 -m pip install --disable-pip-version-check cairosvg==2.8.2
+          python3 - <<'PY'
+          from cairosvg import svg2png
+          svg2png(url="og-cover.svg", write_to="og-cover.png", output_width=1200, output_height=630)
+          from PIL import Image
+          with Image.open("og-cover.png") as image:
+              assert image.size == (1200, 630), "social preview size changed"
+          PY
+      - name: Save updated image on feature branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add og-cover.png
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: rebuild GracianB social PNG from final CV SVG"
+            git push origin HEAD:fix/gracianb-final-world-selector
+          fi
