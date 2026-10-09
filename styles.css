@@ -2531,3 +2531,63 @@ html[data-theme="light"] .world-dots button.is-active{background:color-mix(in sr
 html[data-theme="light"] .world-selector{background:radial-gradient(circle at 80% 10%,rgba(218,164,40,.045),transparent 18rem),var(--panel)}
 html[data-theme="light"] .hero-actions .button-primary{box-shadow:0 10px 26px rgba(38,51,47,.11)}
 html[data-theme="light"] .world-carousel-controls button:hover{background:rgba(218,164,40,.065)}
+
+
+/* V19 · CV-inspired editorial finish, legible at normal viewing distance.
+   Scoped to the GracianB hub. The world emblems/palettes remain untouched. */
+:where(#evidence,#method,#arc,#documents,#contact){scroll-margin-top:6.3rem}
+.hero-lead-wow,.section-head > p,.evidence-card > p,.contact-panel p:last-child{
+  text-wrap:pretty;
+}
+.section-head h2,.contact-panel h2{text-wrap:balance}
+.facts-strip span{font-size:clamp(.66rem,.61rem + .16vw,.76rem);letter-spacing:.045em}
+.card-top{font-size:clamp(.66rem,.61rem + .16vw,.76rem);letter-spacing:.055em;align-items:center}
+.card-top b{font-size:clamp(.62rem,.57rem + .16vw,.72rem);letter-spacing:.055em;text-align:right}
+.evidence-card{min-height:28rem;padding:clamp(1.2rem,1.9vw,1.65rem)}
+.evidence-card h3{margin:clamp(1.4rem,2.8vw,2rem) 0 .6rem;line-height:1.08;text-wrap:balance}
+.evidence-card dt{font-size:.7rem;letter-spacing:.06em}
+.evidence-card dd{font-size:clamp(.9rem,.84rem + .12vw,1rem);line-height:1.55}
+.card-actions a{font-size:var(--control-small);letter-spacing:.012em}
+.method-flow span,.method-flow small,.arc-grid article > span,.arc-years,.document-group-head span{
+  font-size:clamp(.66rem,.62rem + .12vw,.74rem);
+  letter-spacing:.04em;
+}
+.document-group > a{min-height:3.4rem;align-items:center;font-size:clamp(.85rem,.79rem + .14vw,.95rem);line-height:1.45}
+.document-group > a b{flex:0 0 auto;font-size:.82rem;color:var(--gold)}
+.footer{font-size:.74rem;letter-spacing:.03em}
+.evidence-card,.document-group,.arc-grid,.contact-panel{border-color:var(--line-strong)}
+.evidence-card{box-shadow:0 14px 34px rgba(0,0,0,.075)}
+html[data-theme="light"] .evidence-card{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 5%,transparent),transparent 40%),#fffefa}
+html[data-theme="light"] .document-group{background:#fffefa}
+html[data-theme="light"] .method-section,html[data-theme="light"] .documents-section{
+  background:linear-gradient(180deg,rgba(38,51,47,.03),rgba(38,51,47,.01));
+}
+.mobile-preferences{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  border-top:1px solid var(--line-strong);padding:1.2rem 1rem 1.5rem;
+  font:700 .75rem var(--mono);letter-spacing:.07em;color:var(--muted);
+}
+.mobile-lang-switch{display:flex;gap:.4rem}
+.mobile-lang-switch button{
+  border:1px solid var(--line-strong);background:var(--panel-strong);
+  color:var(--text);border-radius:10px;min-height:44px;
+  padding:.6rem .85rem;cursor:pointer;font:700 .8rem var(--sans);
+}
+.mobile-lang-switch button.is-active{background:var(--cv-ochre);color:var(--cv-ink);border-color:var(--cv-ochre)}
+html[data-theme="light"] .mobile-lang-switch button.is-active{background:var(--cv-forest);color:var(--cv-paper);border-color:var(--cv-forest)}
+.mobile-lang-switch button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media(max-width:760px){
+  .evidence-card{min-height:0}
+  .mobile-menu{overflow-y:auto;max-height:calc(100svh - 76px);overscroll-behavior:contain}
+  .mobile-preferences{flex-wrap:wrap}
+}
+@media(max-width:380px){
+  .mobile-preferences{align-items:start;flex-direction:column}
+  .mobile-lang-switch{width:100%}
+  .mobile-lang-switch button{flex:1}
+}
+@media(prefers-contrast:more){
+  .evidence-card,.document-group,.contact-panel,.world-selector{border-width:2px}
+  .evidence-card dd,.document-group > a,.hero-lead{color:var(--text)}
+  .card-top,.facts-strip span,.arc-years,.footer{color:var(--text)}
+}
