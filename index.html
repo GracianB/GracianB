@@ -17,8 +17,8 @@
   <link rel="alternate" hreflang="x-default" href="https://gracianb.github.io/GracianB/">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="preload" href="./styles.css?v=19" as="style">
-  <link rel="stylesheet" href="./styles.css?v=19">
+  <link rel="preload" href="./styles.css?v=20" as="style">
+  <link rel="stylesheet" href="./styles.css?v=20">
 
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Gracián Baena">
@@ -37,8 +37,8 @@
   <meta name="twitter:description" content="Customer Success, Operations, Data, Automation and AI connected through usable systems.">
   <meta name="twitter:image" content="https://gracianb.github.io/GracianB/og-cover.png">
 
-  <script src="./i18n.js?v=17"></script>
-  <script src="./main.js?v=19" defer></script>
+  <script src="./i18n.js?v=20"></script>
+  <script src="./main.js?v=20" defer></script>
 
   <script type="application/ld+json">
   {
@@ -203,13 +203,17 @@
             <strong data-i18n="worldSelectorTitle">Tres puertas. Una misma forma de pensar.</strong>
           </div>
           <div class="world-carousel-controls">
+            <button type="button" class="world-overview-toggle" data-world-overview aria-pressed="false" aria-controls="world-stage">
+              <span data-world-overview-label data-i18n="worldOverviewOn">Ver los 3</span>
+              <span aria-hidden="true" data-world-overview-icon>▦</span>
+            </button>
             <button type="button" data-world-prev data-i18n-aria-label="worldPrev" aria-label="Mundo anterior">←</button>
             <span data-world-counter>01 / 03</span>
             <button type="button" data-world-next data-i18n-aria-label="worldNext" aria-label="Mundo siguiente">→</button>
           </div>
         </div>
 
-        <div class="world-stage" role="region" aria-roledescription="carousel" aria-label="Tres universos" data-i18n-aria-label="worldStageLabel">
+        <div class="world-stage" id="world-stage" role="region" aria-roledescription="carousel" aria-label="Tres universos" data-i18n-aria-label="worldStageLabel">
           <article class="world-card world-professional is-active" data-world-slide data-world="professional" aria-hidden="false">
             <a class="world-card-link" href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer">
               <div class="world-art world-art-professional" aria-hidden="true"><svg class="world-professional-sigil" viewBox="0 0 320 320" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="160" cy="160" r="114"/><circle cx="160" cy="160" r="76" stroke-dasharray="3 7"/><ellipse cx="160" cy="160" rx="134" ry="48" transform="rotate(-30 160 160)"/><ellipse cx="160" cy="160" rx="134" ry="48" transform="rotate(30 160 160)"/></g><path d="M160 113Q171 146 207 160Q171 173 160 207Q149 173 113 160Q149 146 160 113Z" fill="currentColor" opacity=".9"/><g fill="#28333a" stroke="currentColor" stroke-width="2"><circle cx="160" cy="48" r="17"/><circle cx="49" cy="160" r="17"/><circle cx="271" cy="160" r="17"/><circle cx="160" cy="272" r="17"/></g></svg>
@@ -270,9 +274,9 @@
         </div>
 
         <div class="world-dots" role="tablist" aria-label="Seleccionar mundo" data-i18n-aria-label="worldTabsLabel">
-          <button type="button" role="tab" class="is-active" data-world-dot="0" aria-label="Mundo profesional" data-i18n-aria-label="worldProfessionalTab" aria-selected="true"><span></span><b>PRO</b></button>
-          <button type="button" role="tab" data-world-dot="1" aria-label="Mundo Yoga" data-i18n-aria-label="worldYogaTab" aria-selected="false"><span></span><b>YOGA</b></button>
-          <button type="button" role="tab" data-world-dot="2" aria-label="Systems Lab" data-i18n-aria-label="worldLabTab" aria-selected="false"><span></span><b>LAB</b></button>
+          <button type="button" role="tab" class="is-active" data-world-dot="0" aria-controls="world-stage" aria-label="Mundo profesional" data-i18n-aria-label="worldProfessionalTab" aria-selected="true"><span></span><b>PRO</b></button>
+          <button type="button" role="tab" data-world-dot="1" aria-controls="world-stage" aria-label="Mundo Yoga" data-i18n-aria-label="worldYogaTab" aria-selected="false"><span></span><b>YOGA</b></button>
+          <button type="button" role="tab" data-world-dot="2" aria-controls="world-stage" aria-label="Systems Lab" data-i18n-aria-label="worldLabTab" aria-selected="false"><span></span><b>LAB</b></button>
         </div>
 
         <noscript>
