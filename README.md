@@ -24,6 +24,10 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ---
 
+## V19 · Editorial legibility
+
+The CV-aligned visual identity has a second production pass: legible evidence labels and metadata, clearer document links and focus states, high-contrast preferences, and an explicit **ES / EN language control in the mobile navigation**. Both languages now update the theme button's accessible label. The three-world hero and the published CV assets remain intact.
+
 ## Visual identity
 
 The **GracianB parent hub** follows the actual visual language of the 2026 Spanish/English CV: warm ink `#14140f`, parchment `#f7f5ef`, ochre `#daa428` and forest ink `#26332f`. Dark mode takes its cue from the CV header and light mode from the CV body. These are GracianB colors, not a borrowed palette from Yoga, Professional Deck or Systems Lab.
