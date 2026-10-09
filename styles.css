@@ -2597,7 +2597,8 @@ html[data-theme="light"] .mobile-lang-switch button.is-active{background:var(--c
    Default: original carousel. Optional: all three at once, no autoplay. */
 .world-overview-toggle{
   display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-  min-height:44px;min-width:94px;padding:.5rem .7rem;
+  flex:0 0 auto;min-height:44px;min-width:7.65rem;white-space:nowrap;
+  padding:.5rem .7rem;
   border:1px solid var(--line-strong);border-radius:10px;
   background:var(--panel-strong);color:var(--text);
   font:700 .73rem var(--sans);cursor:pointer;
@@ -2650,7 +2651,7 @@ html[data-theme="light"] .world-overview-toggle[aria-pressed="true"]{background:
 .hero.hero-wow .world-selector.is-overview .world-card-link{height:100%;grid-template-rows:minmax(0,1fr)}
 .hero.hero-wow .world-selector.is-overview .world-art{min-height:11rem}
 @media(max-width:760px){
-  .world-overview-toggle{min-width:0;padding:.5rem .7rem;white-space:nowrap}
+  .world-overview-toggle{min-width:7.65rem;padding:.5rem .7rem;white-space:nowrap}
   .world-selector.is-overview .world-stage{gap:.65rem;padding:.65rem}
 }
 @media(max-width:540px){
