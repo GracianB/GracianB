@@ -2668,6 +2668,8 @@ html[data-theme="light"] .world-overview-toggle[aria-pressed="true"]{background:
 @media(max-width:365px){
   .world-selector-head{flex-wrap:wrap;align-items:start}
   .world-carousel-controls{width:100%;justify-content:space-between}
+  /* At 320px, drop the decorative counter rather than shrinking readable controls. */
+  .world-selector [data-world-counter]{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   .world-selector.is-overview .world-card,.world-overview-toggle{transition:none}
