@@ -83,6 +83,22 @@ async function desktop(browser) {
   assert.equal(await page.locator("[data-world-overview]").getAttribute("aria-pressed"), "true");
   const overviewLabelHeight = await page.locator("[data-world-overview-label]").evaluate((node) => node.getBoundingClientRect().height);
   assert.ok(overviewLabelHeight < 25, "Desktop overview label must remain one line");
+  const overviewAppearance = await page.locator("[data-world-overview]").evaluate((button) => {
+    const buttonRect = button.getBoundingClientRect();
+    const labelRect = button.querySelector("[data-world-overview-label]").getBoundingClientRect();
+    const background = getComputedStyle(button).backgroundColor;
+    return { buttonWidth: buttonRect.width, labelWidth: labelRect.width, background };
+  });
+  assert.ok(overviewAppearance.buttonWidth >= overviewAppearance.labelWidth + 38,
+    "Overview label and icon must have comfortable horizontal spacing");
+  assert.ok(!/rgb\(218,\s*164,\s*40\)/.test(overviewAppearance.background),
+    "Overview must never become a solid yellow tile");
+  const beforeHoverWidth = overviewAppearance.buttonWidth;
+  await page.locator("[data-world-overview]").hover();
+  const afterHoverWidth = await page.locator("[data-world-overview]").evaluate((button) => button.getBoundingClientRect().width);
+  assert.ok(Math.abs(afterHoverWidth - beforeHoverWidth) < 1, "Hover must not jump or resize the control");
+  await page.mouse.move(1, 1);
+  await page.screenshot({ path: `${artifacts}/world-overview-v21.png`, fullPage: false });
   assert.equal(await page.locator('[data-world-carousel]').getAttribute("class").then((v) => v.includes("is-overview")), true);
   assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
   assert.equal(await page.locator('[data-world-slide] .world-card-link[tabindex="0"]').count(), 3);
@@ -140,6 +156,12 @@ async function mobile(browser) {
   assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
   const mobileOverviewLabelHeight = await page.locator("[data-world-overview-label]").evaluate((node) => node.getBoundingClientRect().height);
   assert.ok(mobileOverviewLabelHeight < 25, "320px overview label must remain one line");
+  const mobileOverviewWidths = await page.locator("[data-world-overview]").evaluate((button) => ({
+    button: button.getBoundingClientRect().width,
+    label: button.querySelector("[data-world-overview-label]").getBoundingClientRect().width,
+  }));
+  assert.ok(mobileOverviewWidths.button >= mobileOverviewWidths.label + 38,
+    "320px view switch needs room for readable label and icon");
   const overviewFits = await page.locator("[data-world-carousel]").evaluate((node) => {
     const rect = node.getBoundingClientRect();
     return rect.left >= -1 && rect.right <= innerWidth + 1;
