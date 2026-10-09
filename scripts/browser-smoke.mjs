@@ -79,6 +79,17 @@ async function desktop(browser) {
   await page.locator("[data-world-prev]").focus();
   await page.keyboard.press("ArrowLeft");
   assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
+  await page.locator("[data-world-overview]").click();
+  assert.equal(await page.locator("[data-world-overview]").getAttribute("aria-pressed"), "true");
+  assert.equal(await page.locator('[data-world-carousel]').getAttribute("class").then((v) => v.includes("is-overview")), true);
+  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
+  assert.equal(await page.locator('[data-world-slide] .world-card-link[tabindex="0"]').count(), 3);
+  assert.equal(await page.locator("[data-world-prev]").isVisible(), false);
+  await page.reload({ waitUntil: "domcontentloaded" });
+  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3, "overview preference persists");
+  await page.locator("[data-world-overview]").click();
+  assert.equal(await page.locator("[data-world-overview]").getAttribute("aria-pressed"), "false");
+  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 1);
 
   await page.getByRole("button", { name: "EN", exact: true }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
@@ -122,6 +133,15 @@ async function mobile(browser) {
     return rect.left < -1 || rect.right > innerWidth + 1;
   });
   assert.equal(worldClipped, false, "Three-world selector must fit at 320px");
+  await page.locator("[data-world-overview]").click();
+  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
+  const overviewFits = await page.locator("[data-world-carousel]").evaluate((node) => {
+    const rect = node.getBoundingClientRect();
+    return rect.left >= -1 && rect.right <= innerWidth + 1;
+  });
+  assert.equal(overviewFits, true, "Overview must fit 320px");
+  await page.locator("[data-world-overview]").click();
+  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 1);
   await page.locator("[data-world-next]").click();
   assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
 
