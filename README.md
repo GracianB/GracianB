@@ -24,6 +24,10 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ---
 
+## V20 · Choose how to explore
+
+The home page has an **optional "Ver los 3 / View all 3" control** next to the universe selector. The original carousel remains the default for new visitors, and a reader can switch between one-world and three-world overview without loading another page. The last choice is saved locally (no server, analytics, or tracking), and every world is navigable by keyboard and touch. At mobile widths, overview cards stack vertically; no new fourth universe is introduced.
+
 ## V19 · Editorial legibility
 
 The CV-aligned visual identity has a second production pass: legible evidence labels and metadata, clearer document links and focus states, high-contrast preferences, and an explicit **ES / EN language control in the mobile navigation**. Both languages now update the theme button's accessible label. The three-world hero and the published CV assets remain intact.
