@@ -87,6 +87,7 @@ async function desktop(browser) {
 
   await page.locator("[data-theme-toggle]").click();
   assert.equal(await page.locator("html").getAttribute("data-theme"), "light");
+  assert.equal(await page.locator("[data-theme-toggle]").getAttribute("aria-label"), "Switch to dark theme");
 
   await page.keyboard.press("Control+K");
   await page.locator("#command:not([hidden])").waitFor();
@@ -126,6 +127,12 @@ async function mobile(browser) {
 
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
+  await page.locator('#mobile-menu [data-set-lang="en"]').click();
+  assert.equal(await page.locator("html").getAttribute("lang"), "en");
+  assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
+  assert.equal(await page.locator('#mobile-menu [data-set-lang="en"]').getAttribute("aria-pressed"), "true");
+  await page.locator('#mobile-menu [data-set-lang="es"]').click();
+  assert.equal(await page.locator("html").getAttribute("lang"), "es");
   await page.locator('#mobile-menu a[href="#evidence"]').click();
   await page.waitForFunction(() => document.getElementById("mobile-menu")?.hidden === true);
 
