@@ -2591,3 +2591,83 @@ html[data-theme="light"] .mobile-lang-switch button.is-active{background:var(--c
   .evidence-card dd,.document-group > a,.hero-lead{color:var(--text)}
   .card-top,.facts-strip span,.arc-years,.footer{color:var(--text)}
 }
+
+
+/* V20 · Two ways to explore the same three worlds.
+   Default: original carousel. Optional: all three at once, no autoplay. */
+.world-overview-toggle{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  min-height:44px;min-width:94px;padding:.5rem .7rem;
+  border:1px solid var(--line-strong);border-radius:10px;
+  background:var(--panel-strong);color:var(--text);
+  font:700 .73rem var(--sans);cursor:pointer;
+}
+.world-overview-toggle [data-world-overview-icon]{font-size:1rem;line-height:1}
+.world-overview-toggle:hover{border-color:var(--gold)}
+.world-overview-toggle[aria-pressed="true"]{background:var(--cv-ochre);border-color:var(--cv-ochre);color:var(--cv-ink)}
+html[data-theme="light"] .world-overview-toggle[aria-pressed="true"]{background:var(--cv-forest);border-color:var(--cv-forest);color:var(--cv-paper)}
+.world-overview-toggle:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.world-selector.is-overview .world-stage{
+  display:grid;grid-template-columns:minmax(0,1fr);align-content:start;gap:.72rem;
+  padding:.8rem;min-height:0;height:auto;overflow:visible;
+}
+.world-selector.is-overview .world-card{
+  position:relative;inset:auto;min-height:0;height:auto;
+  visibility:visible;opacity:1;transform:none;pointer-events:auto;
+  border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;
+  transition:none;
+}
+.world-selector.is-overview .world-card-link{
+  position:relative;grid-template-columns:minmax(110px,.34fr) minmax(0,.66fr);
+  grid-template-rows:minmax(0,1fr);min-height:0;height:100%;
+}
+.world-selector.is-overview .world-art{min-height:11rem}
+.world-selector.is-overview .world-professional-sigil{width:min(64%,135px);height:88%}
+.world-selector.is-overview .world-lab-sigil{width:min(48%,110px);height:88%}
+.world-selector.is-overview .world-card-copy{
+  display:flex;flex-direction:column;align-items:stretch;gap:.45rem;
+  padding:1rem;border-top:0;border-left:1px solid var(--line);
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+}
+.world-selector.is-overview .world-code{font-size:.68rem;letter-spacing:.065em}
+.world-selector.is-overview .world-card h2{
+  font-size:clamp(1.16rem,1.45vw,1.6rem);line-height:1.08;
+  max-width:100%;margin:0;text-wrap:balance;
+}
+.world-selector.is-overview .world-card p{font-size:.83rem;line-height:1.45;margin:0}
+.world-selector.is-overview .world-enter{
+  align-self:stretch;min-width:0;min-height:44px;margin-top:auto;
+  font-size:.72rem;line-height:1.25;letter-spacing:0;
+  padding:.55rem .7rem;border-radius:10px;
+}
+.world-selector.is-overview .world-dots,
+.world-selector.is-overview [data-world-prev],
+.world-selector.is-overview [data-world-next],
+.world-selector.is-overview [data-world-counter]{display:none}
+.hero.hero-wow .world-selector.is-overview{height:auto;align-self:start}
+.hero.hero-wow .world-selector.is-overview .world-stage{flex:none;height:auto;min-height:0}
+.hero.hero-wow .world-selector.is-overview .world-card{height:auto}
+.hero.hero-wow .world-selector.is-overview .world-card-link{height:100%;grid-template-rows:minmax(0,1fr)}
+.hero.hero-wow .world-selector.is-overview .world-art{min-height:11rem}
+@media(max-width:760px){
+  .world-overview-toggle{min-width:0;padding:.5rem .7rem;white-space:nowrap}
+  .world-selector.is-overview .world-stage{gap:.65rem;padding:.65rem}
+}
+@media(max-width:540px){
+  .world-selector.is-overview .world-card-link,
+  .hero.hero-wow .world-selector.is-overview .world-card-link{
+    grid-template-columns:minmax(0,1fr);grid-template-rows:9.4rem auto;
+  }
+  .world-selector.is-overview .world-art,
+  .hero.hero-wow .world-selector.is-overview .world-art{min-height:9.4rem}
+  .world-selector.is-overview .world-card-copy{border-left:0;border-top:1px solid var(--line)}
+  .world-selector.is-overview .world-card h2{font-size:1.45rem}
+  .world-selector.is-overview .world-enter{margin-top:.5rem}
+}
+@media(max-width:365px){
+  .world-selector-head{flex-wrap:wrap;align-items:start}
+  .world-carousel-controls{width:100%;justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){
+  .world-selector.is-overview .world-card,.world-overview-toggle{transition:none}
+}
