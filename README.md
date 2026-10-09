@@ -24,6 +24,12 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ---
 
+## Final presentation polish · 2026 CV identity
+
+The 3-world switch now behaves like a quiet editorial control, not a fixed-width carousel arrow or a solid gold tile. Its label never wraps, even on small phones; pressed and hover states keep the subtle CV-inspired surface, and keyboard users retain a visible focus ring. Compact-view cards remain separate worlds with their own styles. The OG PNG (1200×630) has been regenerated from the signed-off SVG palette, and social image URLs are cache-busted.
+
+**Release scope:** This repo only. Yoga Instructor, Professional Deck and Systems Lab remain untouched by this final pass.
+
 ## V20 · Choose how to explore
 
 The home page has an **optional "Ver los 3 / View all 3" control** next to the universe selector. The original carousel remains the default for new visitors, and a reader can switch between one-world and three-world overview without loading another page. The last choice is saved locally (no server, analytics, or tracking), and every world is navigable by keyboard and touch. At mobile widths, overview cards stack vertically; no new fourth universe is introduced.
