@@ -24,6 +24,19 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ---
 
+## Public ecosystem health · all six portfolios
+
+In addition to the three intentional hub worlds, a separate, read-only
+[ecosystem audit](https://github.com/GracianB/GracianB/actions/workflows/ecosystem-health.yml)
+checks six public sites: GracianB, Professional Deck, Systems Lab, RevOps Studio,
+Cabin Crew and Yoga Instructor. It validates each HTTP page, canonical URL,
+page title, description, own-domain social metadata and the real 1200×630 PNG.
+Runs on release changes, manually and weekly. Does not access private
+repositories, submit forms or add website tracking.
+
+The three main universe cards remain unchanged; the additional specialist
+portfolios are not turned into new universes.
+
 ## Final presentation polish · 2026 CV identity
 
 The 3-world switch now behaves like a quiet editorial control, not a fixed-width carousel arrow or a solid gold tile. Its label never wraps, even on small phones; pressed and hover states keep the subtle CV-inspired surface, and keyboard users retain a visible focus ring. Compact-view cards remain separate worlds with their own styles. The OG PNG (1200×630) has been regenerated from the signed-off SVG palette, and social image URLs are cache-busted.
