@@ -2,6 +2,11 @@ name: Portfolio Ecosystem Health
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/ecosystem-health.mjs
+      - .github/workflows/ecosystem-health.yml
   push:
     branches: [main]
     paths:
