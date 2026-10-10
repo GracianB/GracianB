@@ -1,0 +1,43 @@
+name: Portfolio Ecosystem Health
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/ecosystem-health.mjs
+      - .github/workflows/ecosystem-health.yml
+  schedule:
+    - cron: '17 6 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-ecosystem-health
+  cancel-in-progress: false
+
+jobs:
+  public-audit:
+    name: Six live portfolios and their social previews
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Syntax and three-world contract
+        run: |
+          node --check scripts/ecosystem-health.mjs
+          node scripts/ecosystem-health.mjs --static
+      - name: Live six-portfolio audit
+        run: node scripts/ecosystem-health.mjs
+      - name: Save evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecosystem-health
+          path: artifacts/ecosystem-health.json
+          if-no-files-found: warn
+          retention-days: 14
