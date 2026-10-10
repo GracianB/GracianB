@@ -20,7 +20,7 @@ const portfolios = [
 const hub = readFileSync("index.html", "utf8");
 assert.equal(portfolios.length, 6, "Ecosystem must cover exactly six public sites");
 assert.equal(new Set(portfolios.map(({slug}) => slug)).size, 6, "Duplicate portfolio slug");
-assert.equal((hub.match(/data-world-slide(?=\\s|>)/g) || []).length, 3,
+assert.equal((hub.match(/data-world-slide(?=\s|>)/g) || []).length, 3,
   "Hub must keep exactly three first-class worlds");
 for (const slug of ["professional-deck", "yoga-instructor", "systems-lab"]) {
   assert.ok(hub.includes('href="' + host + '/' + slug + '/"'),
@@ -36,12 +36,12 @@ function attr(tag, key) {
   return pattern.exec(tag)?.[1] ?? null;
 }
 function meta(html, key) {
-  const tags = [...html.matchAll(/<meta\\b[^>]*>/gi)].map(match => match[0]);
+  const tags = [...html.matchAll(/<meta\b[^>]*>/gi)].map(match => match[0]);
   const item = tags.find(tag => attr(tag, "property") === key || attr(tag, "name") === key);
   return item ? attr(item, "content") : null;
 }
 function canonical(html) {
-  const tags = [...html.matchAll(/<link\\b[^>]*>/gi)].map(match => match[0]);
+  const tags = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => match[0]);
   const item = tags.find(tag => attr(tag, "rel") === "canonical");
   return item ? attr(item, "href") : null;
 }
@@ -69,7 +69,7 @@ async function inspect(site) {
   const url = host + "/" + site.slug + "/";
   const response = await request(url);
   const html = await response.text();
-  const pageTitle = /<title>([^<]+)<\\/title>/i.exec(html)?.[1] ?? "";
+  const pageTitle = /<title>([^<]+)<\/title>/i.exec(html)?.[1] ?? "";
   assert.match(pageTitle, site.title, site.name + ": incorrect document title");
   assert.equal(canonical(html), url, site.name + ": incorrect canonical");
   assert.equal(meta(html, "og:url"), url, site.name + ": incorrect Open Graph URL");
@@ -88,7 +88,7 @@ async function inspect(site) {
     site.name + ": Twitter and Open Graph images must match");
 
   const imageResponse = await request(image.href);
-  assert.match(imageResponse.headers.get("content-type") ?? "", /^image\\/png/i,
+  assert.match(imageResponse.headers.get("content-type") ?? "", /^image\/png/i,
     site.name + ": social asset must be a PNG");
   const bytes = Buffer.from(await imageResponse.arrayBuffer());
   assert.ok(bytes.byteLength > 32, site.name + ": social PNG is empty");
@@ -115,11 +115,11 @@ const summary = { checkedAt: new Date().toISOString(), results: records,
   passed: records.filter(x => x.status === "PASS").length,
   total: portfolios.length };
 mkdirSync("artifacts", { recursive: true });
-writeFileSync("artifacts/ecosystem-health.json", JSON.stringify(summary, null, 2) + "\\n");
+writeFileSync("artifacts/ecosystem-health.json", JSON.stringify(summary, null, 2) + "\n");
 if (process.env.GITHUB_STEP_SUMMARY) {
   appendFileSync(process.env.GITHUB_STEP_SUMMARY,
-    "## Portfolio ecosystem health\\n" +
-    records.map(r => "- " + r.status + " " + r.portfolio + (r.error ? " · " + r.error : "")).join("\\n") + "\\n");
+    "## Portfolio ecosystem health\n" +
+    records.map(r => "- " + r.status + " " + r.portfolio + (r.error ? " · " + r.error : "")).join("\n") + "\n");
 }
 if (summary.passed !== summary.total) process.exitCode = 1;
 else console.log("ECOSYSTEM LIVE PASS: 6 / 6 public sites and 1200x630 PNG previews");
