@@ -32,10 +32,13 @@ jobs:
           node --check scripts/browser-smoke.mjs
           node --check scripts/live-contract.mjs
           node --check scripts/portfolio-links.mjs
+          node --check scripts/ecosystem-health.mjs
       - name: Professional hub contract
         run: node scripts/static-contract.mjs
       - name: Portfolio destinations static contract
         run: node scripts/portfolio-links.mjs --static
+      - name: Ecosystem six-site static contract
+        run: node scripts/ecosystem-health.mjs --static
 
   browser:
     name: Browser E2E
