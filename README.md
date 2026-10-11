@@ -24,13 +24,16 @@ I did not start with code. I started with customers, teams and day-to-day operat
 
 ---
 
-## Public ecosystem health · all six portfolios
+## Public ecosystem health · approved public portfolios
 
 In addition to the three intentional hub worlds, a separate, read-only
 [ecosystem audit](https://github.com/GracianB/GracianB/actions/workflows/ecosystem-health.yml)
-checks six public sites: GracianB, Professional Deck, Systems Lab, RevOps Studio,
-Cabin Crew and Yoga Instructor. It validates each HTTP page, canonical URL,
+checks five approved public sites: GracianB, Professional Deck, Systems Lab,
+Cabin Crew and Yoga Instructor. RevOps Studio and Aigoritmo are not promoted
+as publicly accessible products. It validates each HTTP page, canonical URL,
 page title, description, own-domain social metadata and the real 1200×630 PNG.
+It also rejects links to unpublished code and checks that promoted GitHub
+repositories are anonymously accessible.
 Runs on release changes, manually and weekly. Does not access private
 repositories, submit forms or add website tracking.
 
@@ -134,7 +137,7 @@ My default sequence is:
 | **RevOps Studio** | Data quality, scoring, forecasting and human approval | **En construcción · acceso público pendiente** |
 | **Project OHANA** | Stateful software, fixed simulation, behavioural systems, regression, browser E2E, CI | [Play](https://gracianb.github.io/project-ohana/) · [Source](https://github.com/GracianB/project-ohana) |
 | **VØRTICE** | TypeScript, WebGL, real-time interaction, adaptive rendering, accessibility, performance contracts | [Experience](https://vortex-gilt-xi.vercel.app/) · [Source](https://github.com/GracianB/vortex) |
-| **AiGoritmo** | Python, FastAPI, local models, voice and modular AI application architecture | [Source](https://github.com/GracianB/aigoritmo) |
+| **AiGoritmo** | Python, FastAPI, local models, voice and modular AI application architecture | **Desarrollo local · no public demo or source access** |
 
 ### Bodytone Support OS
 

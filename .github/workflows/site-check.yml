@@ -37,7 +37,7 @@ jobs:
         run: node scripts/static-contract.mjs
       - name: Portfolio destinations static contract
         run: node scripts/portfolio-links.mjs --static
-      - name: Ecosystem six-site static contract
+      - name: Ecosystem approved-public-site static contract
         run: node scripts/ecosystem-health.mjs --static
 
   browser:

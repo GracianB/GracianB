@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Public portfolio release gate. The hub remains three-world by design.
- * This independent audit checks the six actual published surfaces, including
+ * This independent audit checks the five approved public portfolios, including
  * their distinct Open Graph artwork. No credentials, tracking or private files.
  */
 import assert from "node:assert/strict";
@@ -12,22 +12,23 @@ const portfolios = [
   { slug: "GracianB", name: "GracianB hub", title: /Gracián Baena/i, image: "og-cover.png" },
   { slug: "professional-deck", name: "Professional Deck", title: /Professional Deck/i, image: "og-cover.png" },
   { slug: "systems-lab", name: "Systems Lab", title: /PLAY|Systems Lab/i, image: "og-cover.png" },
-  { slug: "revops-studio", name: "RevOps Studio", title: /RevOps Studio/i, image: "assets/og.png" },
   { slug: "cabin-crew-site", name: "Cabin Crew", title: /Cabin Crew/i, image: "og-cover.png" },
   { slug: "yoga-instructor", name: "Yoga Instructor", title: /Instructor de Yoga/i, image: "og-cover.png" },
 ];
 
 const hub = readFileSync("index.html", "utf8");
-assert.equal(portfolios.length, 6, "Ecosystem must cover exactly six public sites");
-assert.equal(new Set(portfolios.map(({slug}) => slug)).size, 6, "Duplicate portfolio slug");
+assert.equal(portfolios.length, 5, "Ecosystem must cover exactly five approved public sites");
+assert.equal(new Set(portfolios.map(({slug}) => slug)).size, 5, "Duplicate portfolio slug");
 assert.equal((hub.match(/data-world-slide(?=\s|>)/g) || []).length, 3,
   "Hub must keep exactly three first-class worlds");
 for (const slug of ["professional-deck", "yoga-instructor", "systems-lab"]) {
   assert.ok(hub.includes('href="' + host + '/' + slug + '/"'),
     "Hub is missing its public world link: " + slug);
 }
+assert.equal(githubRepoLinks(hub).some(name => ["aigoritmo", "revops-studio"].includes(name)), false, "Hub must not link to unpublished source repositories");
+assert.doesNotMatch(hub, /<a\b[^>]*href=["']https:\/\/gracianb\.github\.io\/revops-studio\//i, "RevOps must not be linked as a live product");
 if (process.argv.includes("--static")) {
-  console.log("ECOSYSTEM STATIC PASS: 6 portfolios · 3 hub worlds");
+  console.log("ECOSYSTEM STATIC PASS: 5 approved public portfolios · 3 hub worlds");
   process.exit(0);
 }
 
@@ -45,6 +46,47 @@ function canonical(html) {
   const item = tags.find(tag => attr(tag, "rel") === "canonical");
   return item ? attr(item, "href") : null;
 }
+
+/** RevOps and Aigoritmo are not approved public entry points.
+ * A linked source repository must also be visible to anonymous visitors.
+ * These checks inspect only public pages and public GitHub metadata.
+ */
+const unpublished = new Set(["aigoritmo", "revops-studio"]);
+function githubRepoLinks(html) {
+  const tags = [...html.matchAll(/<a\b[^>]*>/gi)].map(m => m[0]);
+  return [...new Set(tags.flatMap(tag => {
+    const href = attr(tag, "href");
+    if (!href) return [];
+    let url;
+    try { url = new URL(href, host); } catch { return []; }
+    if (url.hostname !== "github.com") return [];
+    const parts = url.pathname.split("/").filter(Boolean);
+    return parts.length >= 2 && parts[0].toLowerCase() === "gracianb" ? [parts[1].toLowerCase()] : [];
+  }))];
+}
+const repoChecks = new Map();
+async function verifyPublicRepository(repoName) {
+  if (!repoChecks.has(repoName)) {
+    repoChecks.set(repoName, (async () => {
+      const res = await fetch("https://api.github.com/repos/GracianB/" + encodeURIComponent(repoName), {
+        headers: { "accept": "application/vnd.github+json", "user-agent": "GracianB-Public-Portfolio-Audit/1" },
+        signal: AbortSignal.timeout(15000),
+      });
+      assert.equal(res.status, 200, "Linked GitHub repository is not accessible publicly: " + repoName + " (" + res.status + ")");
+      const repo = await res.json();
+      assert.equal(repo.private, false, "Portfolio links to a private GitHub repository: " + repoName);
+    })());
+  }
+  return repoChecks.get(repoName);
+}
+async function inspectSourceLinks(html, label) {
+  const links = githubRepoLinks(html);
+  for (const linkedRepo of links) {
+    assert.equal(unpublished.has(linkedRepo), false, label + " exposes an unpublished repository: " + linkedRepo);
+  }
+  await Promise.all(links.map(verifyPublicRepository));
+}
+
 async function request(url) {
   let error;
   for (let attempt = 1; attempt <= 3; attempt++) {
@@ -69,6 +111,7 @@ async function inspect(site) {
   const url = host + "/" + site.slug + "/";
   const response = await request(url);
   const html = await response.text();
+  await inspectSourceLinks(site.slug === "GracianB" ? hub : html, site.name);
   const pageTitle = /<title>([^<]+)<\/title>/i.exec(html)?.[1] ?? "";
   assert.match(pageTitle, site.title, site.name + ": incorrect document title");
   assert.equal(canonical(html), url, site.name + ": incorrect canonical");
@@ -122,4 +165,4 @@ if (process.env.GITHUB_STEP_SUMMARY) {
     records.map(r => "- " + r.status + " " + r.portfolio + (r.error ? " · " + r.error : "")).join("\n") + "\n");
 }
 if (summary.passed !== summary.total) process.exitCode = 1;
-else console.log("ECOSYSTEM LIVE PASS: 6 / 6 public sites and 1200x630 PNG previews");
+else console.log("ECOSYSTEM LIVE PASS: 5 / 5 approved public sites and 1200x630 PNG previews");
