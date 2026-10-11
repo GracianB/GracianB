@@ -18,7 +18,7 @@ const portfolios = [
 
 const hub = readFileSync("index.html", "utf8");
 assert.equal(portfolios.length, 5, "Ecosystem must cover exactly five approved public sites");
-assert.equal(new Set(portfolios.map(({slug}) => slug)).size, 6, "Duplicate portfolio slug");
+assert.equal(new Set(portfolios.map(({slug}) => slug)).size, 5, "Duplicate portfolio slug");
 assert.equal((hub.match(/data-world-slide(?=\s|>)/g) || []).length, 3,
   "Hub must keep exactly three first-class worlds");
 for (const slug of ["professional-deck", "yoga-instructor", "systems-lab"]) {
@@ -26,7 +26,7 @@ for (const slug of ["professional-deck", "yoga-instructor", "systems-lab"]) {
     "Hub is missing its public world link: " + slug);
 }
 assert.equal(githubRepoLinks(hub).some(name => ["aigoritmo", "revops-studio"].includes(name)), false, "Hub must not link to unpublished source repositories");
-assert.doesNotMatch(hub, /<a\\b[^>]*href=["']https:\\/\\/gracianb\\.github\\.io\\/revops-studio\\//i, "RevOps must not be linked as a live product");
+assert.doesNotMatch(hub, /<a\b[^>]*href=["']https:\/\/gracianb\.github\.io\/revops-studio\//i, "RevOps must not be linked as a live product");
 if (process.argv.includes("--static")) {
   console.log("ECOSYSTEM STATIC PASS: 5 approved public portfolios · 3 hub worlds");
   process.exit(0);
@@ -53,7 +53,7 @@ function canonical(html) {
  */
 const unpublished = new Set(["aigoritmo", "revops-studio"]);
 function githubRepoLinks(html) {
-  const tags = [...html.matchAll(/<a\\b[^>]*>/gi)].map(m => m[0]);
+  const tags = [...html.matchAll(/<a\b[^>]*>/gi)].map(m => m[0]);
   return [...new Set(tags.flatMap(tag => {
     const href = attr(tag, "href");
     if (!href) return [];
