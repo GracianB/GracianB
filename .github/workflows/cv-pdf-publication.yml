@@ -1,0 +1,61 @@
+name: CV B1 Generate and Verify PDFs
+
+on:
+  push:
+    branches:
+      - 'fix/cv-publish-*'
+    paths:
+      - '.github/workflows/cv-pdf-publication.yml'
+      - 'scripts/generate-cabin-pdfs.mjs'
+      - 'scripts/fix-public-cv-links.py'
+      - 'scripts/check-cv-publication.py'
+      - 'cabin-cv-es.html'
+      - 'cabin-cv-en.html'
+      - 'cabin-letter-es.html'
+      - 'cabin-letter-en.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-to-branch:
+    if: startsWith(github.ref, 'refs/heads/fix/cv-publish-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - name: Set up Node 24
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install PDF tooling and Chromium
+        run: |
+          python -m pip install --disable-pip-version-check 'PyMuPDF>=1.24,<2'
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Generate missing public Cabin Crew PDFs
+        run: node scripts/generate-cabin-pdfs.mjs
+      - name: Repair professional CV links to private source
+        run: python scripts/fix-public-cv-links.py
+      - name: Verify six real PDF files and public links
+        run: python scripts/check-cv-publication.py
+      - name: Commit generated PDFs to candidate branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- Gracian_Baena_CV_TCP_ES.pdf Gracian_Baena_CV_TCP_EN.pdf Gracian_Baena_Carta_TCP_ES.pdf Gracian_Baena_Cover_Letter_TCP_EN.pdf Gracian_Baena_CV_2026_ES.pdf Gracian_Baena_CV_2026_EN.pdf
+          if git diff --cached --quiet; then
+            echo 'All six PDFs already match the source branch.'
+          else
+            git commit -m 'assets(cv): publish four printable cabin PDFs and correct professional CV references'
+            git push origin HEAD:"$GITHUB_REF_NAME"
+          fi
