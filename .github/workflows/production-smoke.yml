@@ -24,6 +24,8 @@ jobs:
         run: node scripts/live-contract.mjs
       - name: Live portfolio destination links
         run: node scripts/portfolio-links.mjs
+      - name: Live four-PDF byte integrity
+        run: node scripts/live-cv-pdfs.mjs
       - name: Install pinned browser runner
         run: npm install --no-save playwright@1.56.1
       - name: Install Chromium
