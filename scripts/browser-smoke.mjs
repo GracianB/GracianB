@@ -230,7 +230,14 @@ async function cabinCrew(browser){
     assert.match(await page.locator("[data-language='en'] h1").innerText(),/Some journeys/);
     await page.locator("[data-cabin-lang='es']").click();
     assert.equal(await page.locator("html").getAttribute("lang"),"es");
-    assert.equal(await page.locator(".document-grid .document").count(),2);
+    assert.equal(await page.locator(".document-grid .document").count(),4,"two cover letters and two printable CVs");
+    for (const path of ["cabin-cv-es.html","cabin-cv-en.html"]) {
+      const href="./"+path;
+      assert.equal(await page.locator('.document-grid a[href="'+href+'"]').count(),1,"printable CV must be linked");
+      const response=await page.request.get(URL+path);
+      assert.equal(response.status(),200,"printable CV must resolve");
+      assert.match(await response.text(),/window\.print\(\)/,"print action must exist");
+    }
     assert.equal(await page.locator(".cabin-chapters article").count(),4,"four story chapters");
     assert.equal(await page.locator("[data-credential-kind]").count(),7,"all seven documented learning milestones");
     assert.equal(await page.locator(".tile").count(),3,"three transferable strengths");

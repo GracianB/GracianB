@@ -29,10 +29,33 @@
     <p class="code">404 / ROUTE NOT FOUND</p>
     <h1>Esta ruta no existe.</h1>
     <p>El hub, la evidencia profesional y los documentos siguen en su sitio. A veces perder una URL es más fácil que perder el hilo del sistema.</p>
+    <section id="document-recovery" hidden aria-live="polite">
+      <p>El PDF que has solicitado todavía no está publicado. Puedes consultar el documento en una versión web accesible, imprimirla o guardarla como PDF desde el navegador.</p>
+      <nav aria-label="Alternativas al PDF"><a id="document-alternative" href="./cabin-crew.html">Abrir versión disponible →</a></nav>
+    </section>
     <nav aria-label="Volver">
       <a href="./">Volver al hub →</a>
       <a href="./#documents">Documentos</a>
     </nav>
   </main>
+  <script>
+    (() => {
+      // Only four known historical public PDF URLs have replacements; never redirect unrelated 404s.
+      const names = {
+        "Gracian_Baena_CV_TCP_ES.pdf": ["cabin-cv-es.html", "Abrir CV en español →"],
+        "Gracian_Baena_CV_TCP_EN.pdf": ["cabin-cv-en.html", "Open English CV →"],
+        "Gracian_Baena_Carta_TCP_ES.pdf": ["cabin-letter-es.html", "Abrir carta en español →"],
+        "Gracian_Baena_Cover_Letter_TCP_EN.pdf": ["cabin-letter-en.html", "Open English cover letter →"]
+      };
+      const requested = decodeURIComponent(location.pathname.split("/").pop() || "");
+      const match = Object.hasOwn(names, requested) ? names[requested] : null;
+      if (!match) return;
+      document.querySelector("h1").textContent = "Documento aún no publicado.";
+      document.querySelector("#document-recovery").hidden = false;
+      const alternative = document.querySelector("#document-alternative");
+      alternative.href = "./" + match[0];
+      alternative.textContent = match[1];
+    })();
+  </script>
 </body>
 </html>
