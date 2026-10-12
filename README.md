@@ -137,7 +137,7 @@ My default sequence is:
 | **RevOps Studio** | Data quality, scoring, forecasting and human approval | **En construcción · acceso público pendiente** |
 | **Project OHANA** | Stateful software, fixed simulation, behavioural systems, regression, browser E2E, CI | [Play](https://gracianb.github.io/project-ohana/) · [Source](https://github.com/GracianB/project-ohana) |
 | **VØRTICE** | TypeScript, WebGL, real-time interaction, adaptive rendering, accessibility, performance contracts | [Experience](https://vortex-gilt-xi.vercel.app/) · [Source](https://github.com/GracianB/vortex) |
-| **AiGoritmo** | Python, FastAPI, local models, voice and modular AI application architecture | **Desarrollo local · no public demo or source access** |
+| **Aigoritmo** | Four characters, local models, video, voice and conversation history | **Local app · [Systems Lab case](https://gracianb.github.io/systems-lab/#aigoritmo), no hosted chat** |
 
 ### Bodytone Support OS
 
@@ -193,11 +193,13 @@ A generative audiovisual WebGL experience.
 
 The project has evolved from a visual experiment into an interactive instrument with curated movements, audio-reactive behaviour, adaptive rendering, mobile contracts, reduced-motion support, performance budgets and real browser E2E.
 
-### AiGoritmo
+### Aigoritmo
 
-An AI application laboratory focused on architecture rather than a single chat screen.
+Four peers share a local conversation space: **Llama** and **Qwen** for exploring ideas, **Arcana** and **Arcano** for symbolic readings. Each has its own video presence; the application combines voice and persistent conversation history.
 
-Python, FastAPI, local LLM experimentation, voice, launcher flows and modular components are used to explore how model capabilities become usable software.
+The local configuration uses `llama3.2:3b` and `qwen2.5-coder:3b`, with Python and FastAPI serving the web UI. These are existing models, not models developed by this project.
+
+[View the Systems Lab case](https://gracianb.github.io/systems-lab/#aigoritmo). This public showcase documents a local application; it does not provide a hosted chat or a public source entry point.
 
 ---
 
