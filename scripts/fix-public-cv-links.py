@@ -30,7 +30,7 @@ for filename, (old_label, new_label) in DOCS.items():
             uri = link.get("uri", "")
             if uri == GOOD:
                 continue
-            if uri != BAD:
+            if not ("github.com" in uri.lower() and "/gracianb/aigoritmo" in uri.lower()):
                 continue
             area = fitz.Rect(link["from"])
             matches = [r for r in page.search_for(old_label) if (r & area).get_area() > 0]
@@ -57,8 +57,9 @@ for filename, (old_label, new_label) in DOCS.items():
             )
             count += 1
     if count == 0:
-        # Older files may already have the public target. Avoid rewriting them.
-        print(f"NO PRIVATE LINK {filename}")
+        # Do not invent links. Files may contain different editorial destinations.
+        existing = [link.get("uri", "") for pg in doc for link in pg.get_links() if "aigoritmo" in link.get("uri", "").lower()]
+        print(f"NO PRIVATE LINK {filename}; existing Aigoritmo destinations: {existing}")
         doc.close()
         continue
     if count != 1:
