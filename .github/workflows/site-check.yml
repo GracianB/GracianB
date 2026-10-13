@@ -37,6 +37,7 @@ jobs:
           node --check scripts/live-cv-pdfs.mjs
           node --check apply.js
           node --check scripts/applications-b6.mjs
+          node --check scripts/sitemap-b6.mjs
       - name: Professional hub contract
         run: node scripts/static-contract.mjs
       - name: Portfolio destinations static contract
@@ -47,6 +48,8 @@ jobs:
         run: node scripts/cabin-documents-check.mjs
       - name: Application desk twelve-PDF static contract
         run: node scripts/applications-b6.mjs --static
+      - name: Application discovery sitemap contract
+        run: node scripts/sitemap-b6.mjs
 
   browser:
     name: Browser E2E
