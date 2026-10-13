@@ -35,6 +35,8 @@ jobs:
           node --check scripts/ecosystem-health.mjs
           node --check scripts/cabin-documents-check.mjs
           node --check scripts/live-cv-pdfs.mjs
+          node --check apply.js
+          node --check scripts/applications-b6.mjs
       - name: Professional hub contract
         run: node scripts/static-contract.mjs
       - name: Portfolio destinations static contract
@@ -43,6 +45,8 @@ jobs:
         run: node scripts/ecosystem-health.mjs --static
       - name: Public cabin crew documents and PDF recovery
         run: node scripts/cabin-documents-check.mjs
+      - name: Application desk twelve-PDF static contract
+        run: node scripts/applications-b6.mjs --static
 
   browser:
     name: Browser E2E
@@ -60,6 +64,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Desktop + mobile + reduced motion
         run: node scripts/browser-smoke.mjs
+      - name: Recruiter application paths ES/EN and responsive interactions
+        run: node scripts/applications-b6.mjs
       - name: Upload final hub evidence
         if: always()
         uses: actions/upload-artifact@v4
