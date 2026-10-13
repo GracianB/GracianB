@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import {existsSync,readFileSync,mkdirSync} from "node:fs";
 import {spawn} from "node:child_process";
-import {chromium} from "playwright";
+
 
 const html=readFileSync("apply.html","utf8"), hub=readFileSync("index.html","utf8");
 const tracks=["professional","yoga","aviation"],langs=["es","en"];
@@ -28,6 +28,7 @@ for(const resource of ["professional-deck/","yoga-instructor/","cabin-crew.html"
 console.log("B6 APPLICATION STATIC PASS: 12 linked PDFs, 3 tracks, ES/EN and safe local evidence");
 
 if(process.argv.includes("--static"))process.exit(0);
+const {chromium}=await import("playwright");
 
 const external=process.env.GB_E2E_URL;
 const ROOT=external||"http://127.0.0.1:4183/";
