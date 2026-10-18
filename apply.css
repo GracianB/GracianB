@@ -247,3 +247,131 @@ html[data-b6-enhanced="true"] .candidate-brief-print{display:inline-flex}
   .candidate-brief-print-url{display:block;margin:14pt 0 0;font-size:8pt;color:#4f5a61}
   a{color:#193f51!important;print-color-adjust:exact}
 }
+
+
+/* P3 / Dark theme completion · silver & graphite professional palette.
+   The light editorial styles above remain unchanged. */
+.app-theme-toggle{
+  display:none;align-items:center;justify-content:center;gap:.45rem;
+  min-height:44px;padding:8px 12px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;color:var(--ink);font-size:12px;font-weight:800;
+}
+html[data-b6-enhanced="true"] .app-theme-toggle{display:inline-flex}
+.app-theme-toggle:hover{background:rgba(148,154,165,.14)}
+.app-theme-toggle [data-b6-theme-icon]{font-size:19px;line-height:1}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#ecf1f5;--muted:#bdc8d2;--paper:#191f26;
+  --white:#242d37;--line:#40505d;--accent:#c5d1dc
+}
+html[data-theme="light"]{color-scheme:light}
+html[data-theme="dark"] body{background:#10151b;color:#ecf1f5}
+html[data-theme="dark"] .canvas{background:var(--paper);box-shadow:0 10px 75px rgba(0,0,0,.36)}
+html[data-theme="dark"] .skip{background:#27343f;color:#f4f7f9}
+html[data-theme="dark"] button:focus-visible,
+html[data-theme="dark"] a:focus-visible{outline-color:#c9d8e6}
+html[data-theme="dark"] .lang button{color:#d5e0e8}
+html[data-theme="dark"] .lang button[aria-pressed=true]{background:#c9d4df;color:#16212a}
+html[data-theme="dark"] .hero{
+  background:radial-gradient(ellipse at 94% 0%,rgba(180,198,216,.14),transparent 57%)
+}
+html[data-theme="dark"] .kicker{color:#c7d5df}
+html[data-theme="dark"] .hero h1 em{color:#c6d6e4}
+html[data-theme="dark"] .lead{color:#becbd7}
+html[data-theme="dark"] .hero-meta{border-color:#455460}
+html[data-theme="dark"] .hero-meta a{color:#d6e2ec}
+html[data-theme="dark"] .selector button{border-color:#566673;color:#ecf1f5}
+html[data-theme="dark"] .selector button:hover{background:#34414c}
+html[data-theme="dark"] .selector button[aria-pressed=true]{
+  background:#c5d2de;border-color:#c5d2de;color:#17242e
+}
+html[data-theme="dark"] .panel{background:#222b34;box-shadow:0 15px 30px rgba(0,0,0,.15)}
+html[data-theme="dark"] .panel.ink{--track:#d4dee7;--track-bg:#303b47}
+html[data-theme="dark"] .panel.forest{--track:#a1d7b8;--track-bg:#263d36}
+html[data-theme="dark"] .panel.navy{--track:#b0cee8;--track-bg:#2c3b4c}
+html[data-theme="dark"] .resource-columns a{border-bottom-color:#42505b}
+html[data-theme="dark"] .resource-columns a:hover{color:#e5f0fa}
+html[data-theme="dark"] .evidence-note{color:#d4e0e8}
+html[data-theme="dark"] .direct-links a{border-color:#758797;color:#eef3f6}
+html[data-theme="dark"] .direct-links .solid{
+  background:#c5d2de;color:#14212b;border-color:#c5d2de
+}
+html[data-theme="dark"] .foot{background:#101820;color:#e9f0f5}
+html[data-theme="dark"] .foot span{color:#d0dce4}
+html[data-theme="dark"] .b6-application-handoff a{
+  background:#293641;border-color:#697b8a;color:#e4edf4
+}
+html[data-theme="dark"] .share-application{
+  background:#242f39;border-color:#566674;color:#d0dce5
+}
+html[data-theme="dark"] .share-application button{
+  border-color:#9cacba;color:#ecf3f7;background:#2d3a45
+}
+html[data-theme="dark"] .share-application button:hover{background:#3a4855}
+html[data-theme="dark"] .copy-feedback{color:#a7dbc0}
+html[data-theme="dark"] .role-focus{
+  border-color:#536472;background:linear-gradient(150deg,#27343e,#202933 80%)
+}
+html[data-theme="dark"] .role-focus h4,
+html[data-theme="dark"] .role-proof h5{color:#eaf1f6}
+html[data-theme="dark"] .role-focus-header p{color:#bfccd6}
+html[data-theme="dark"] .role-focus-options button{
+  color:#edf2f5;background:#273540;border-color:#677887
+}
+html[data-theme="dark"] .role-focus-options button:hover{
+  background:#344450;border-color:#a8bac8
+}
+html[data-theme="dark"] .role-focus-options button[aria-pressed=true]{
+  background:#c5d2de;color:#17242e;border-color:#c5d2de
+}
+html[data-theme="dark"] .role-proof{background:#1e2932;border-color:#4b5965}
+html[data-theme="dark"] .role-proof p{color:#c7d5de}
+html[data-theme="dark"] .role-proof-links a{
+  color:#edf3f7;background:#2b3944;border-color:#728592
+}
+html[data-theme="dark"] .role-proof-links a:hover{background:#394955}
+html[data-theme="dark"] .candidate-brief{
+  background:#202a34;border-color:#60717e;
+  color:#ecf1f5;box-shadow:0 15px 38px rgba(0,0,0,.14)
+}
+html[data-theme="dark"] .candidate-brief-kicker{color:#cbd8e2}
+html[data-theme="dark"] .candidate-brief-intro{color:#c2ced7}
+html[data-theme="dark"] .candidate-brief-print{
+  background:#303f4b;color:#edf2f6;border-color:#7d909e
+}
+html[data-theme="dark"] .candidate-brief-print:hover{background:#435361}
+html[data-theme="dark"] .candidate-brief-identity{
+  border-top-color:#586875;border-bottom-color:#586875
+}
+html[data-theme="dark"] .candidate-brief-identity span{color:#c4d1d9}
+html[data-theme="dark"] .candidate-brief-story li::before{background:#c7d5df}
+html[data-theme="dark"] .candidate-brief-actions a{
+  background:#293641;color:#edf3f7;border-color:#6d808f
+}
+html[data-theme="dark"] .candidate-brief-actions a:hover{background:#364752}
+html[data-theme="dark"] .candidate-brief-actions b{color:#ccdae5}
+html[data-theme="dark"] .candidate-brief-footer{
+  color:#c2cdd6;border-top-color:#536674
+}
+html[data-theme="dark"] .candidate-brief-footer a{color:#dbe8f3}
+/* Keep the browser's print sheet white in every theme. */
+@media print{
+  html[data-theme="dark"],html[data-theme="light"]{color-scheme:light!important}
+  html[data-theme="dark"] body,
+  html[data-theme="dark"] .canvas,
+  html[data-theme="dark"] .candidate-brief{
+    background:#fff!important;color:#162731!important;box-shadow:none!important
+  }
+  html[data-theme="dark"] .candidate-brief-intro,
+  html[data-theme="dark"] .candidate-brief-identity span,
+  html[data-theme="dark"] .candidate-brief-footer{color:#4c5760!important}
+  html[data-theme="dark"] .candidate-brief-kicker{color:#536574!important}
+  html[data-theme="dark"] .candidate-brief-identity{border-color:#c7c2b7!important}
+  html[data-theme="dark"] .candidate-brief-story li::before{background:#687c8d!important}
+  html[data-theme="dark"] .candidate-brief-actions a{
+    background:#fff!important;color:#193f51!important;border-color:#9c9c98!important
+  }
+  html[data-theme="dark"] .candidate-brief-actions b,
+  html[data-theme="dark"] .candidate-brief-footer a{color:#193f51!important}
+  html[data-theme="dark"] .candidate-brief-footer{border-top-color:#c7c2b7!important}
+}
