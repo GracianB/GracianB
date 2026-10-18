@@ -193,7 +193,7 @@ assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointer
   "Global pointer tracking for deleted artwork must not return");
 assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
   "Do not preload the same blocking stylesheet redundantly");
-assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=28" defer><\/script>/,
+assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=29" defer><\/script>/,
   "Dictionary must execute before the app, with both scripts deferred");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
