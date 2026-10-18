@@ -19,6 +19,12 @@ Following the seven closed P1 stages, P2 is a **three-part recruiter experience 
 
 ---
 
+## P3 · One-minute role briefing
+
+The [P3 acceptance record](./P3_ONE_MINUTE_BRIEF.md) defines a five-route bilingual 60-second candidate summary in the application desk. It dynamically selects the original CV, cover letter and public evidence, and offers a deliberately printable A4 summary while leaving all twelve PDF assets and external project repositories unchanged. It is not a replacement resume or a claimed improvement in hiring results.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.
