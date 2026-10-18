@@ -100,6 +100,14 @@
     root.dataset.theme = theme;
     const color = theme === "light" ? "#f7f5ef" : "#14140f";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
+    // The application desk uses the same theme, even without localStorage.
+    // Keep default-dark URLs as they were for existing shared links.
+    document.querySelectorAll("[data-application-link]").forEach((link) => {
+      const parts = [];
+      if (lang === "en") parts.push("lang=en");
+      if (theme === "light") parts.push("theme=light");
+      link.href = "./apply.html" + (parts.length ? "?" + parts.join("&") : "");
+    });
     document.querySelector("[data-theme-toggle]")?.setAttribute(
       "aria-label",
       lang === "en"
