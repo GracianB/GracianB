@@ -86,14 +86,14 @@ The three core portfolio universes remain unchanged: Professional Deck, Systems 
 - [Generic Spanish aviation cover letter (printable)](https://gracianb.github.io/GracianB/cabin-letter-es.html)
 - [Generic English cabin crew cover letter (printable)](https://gracianb.github.io/GracianB/cabin-letter-en.html)
 
-This application profile draws on verified personal experience: Tourism diploma (Murcia), Erasmus in Bergamo, international customer-facing roles in Spain/Italy/Portugal, native Spanish, advanced English and Italian, and previously completed TCP training at ESATUR with aircraft simulator practice. The page does not claim current crew employment, an active attestation or endorsement by an airline. The two documents are adaptable templates for applications. No airline logo or branding is used.
+This application profile draws on verified personal experience: three-year Tourism diploma (Murcia) and a fourth-year Erasmus Bologna top-up to a Tourism bachelor's degree in Bergamo, international customer-facing roles in Spain/Italy/Portugal, native Spanish, advanced English and Italian, and previously completed TCP training at ESATUR with aircraft simulator practice. The page does not claim current crew employment, an active attestation or endorsement by an airline. The two documents are adaptable templates for applications. No airline logo or branding is used.
 
 ### Cabin Crew editorial V2 · Story, learning and atlas
 
 The TCP path is now a complete, bilingual, structured personal account rather than a list of duties or a duplicate of the professional deck. It includes:
 
 - **Four narrative chapters**: Tourism/Erasmus, retail and initial cabin training, international service and client operations, and the intentional return to aviation after building technical skills.
-- **Seven dated learning milestones** preserved from Professional Deck: Murcia Tourism diploma (2011), Bergamo Tourism Erasmus (2012, an academic exchange not a second degree), completed ESATUR Cabin Crew training (2015, simulator Mallorca, *not represented as an active attestation*), Madrid Yoga instructor certification (2019), Data Science/Coursera (2022), IT Automation/Google (2023), and AI Visualization/Columbia (2025). The latter three are described as complementary study, without claiming independently verified official certificates.
+- **Seven dated learning milestones** preserved from Professional Deck: Murcia Tourism diploma (2011), Bergamo Tourism degree top-up (2012, fourth year through Erasmus / Bologna adaptation of the Spanish three-year Diplomatura), completed ESATUR Cabin Crew training (2015, simulator Mallorca, *not represented as an active attestation*), Madrid Yoga instructor certification (2019), Data Science/Coursera (2022), IT Automation/Google (2023), and AI Visualization/Columbia (2025). The latter three are described as complementary study, without claiming independently verified official certificates.
 - **Interactive six-stop editorial atlas** aligned to the original Professional Deck: Murcia, Gran Canaria, Madrid, Lisbon, Bergamo and Warsaw. The two last-named connection-only stops are clearly distinguished from verified workplaces or schools. Coordinates and lines are conceptual, **not actual flight routes**.
 - **Five-language board**: Spanish native, English and Italian C1 as previously stated in the CV, and basic Portuguese and French. The distinction between self-reported levels and official test certificates is explicit.
 - **Accessible ES/EN controls**: language switching, keyboard-reachable city stops, prev/next navigation, credential category filters, descriptive labels and reduced-motion styling.
@@ -297,6 +297,8 @@ Yoga instruction and practice as a complementary professional track.
 
 ## Documents
 
+The twelve canonical PDF documents are hosted at the central hub, with a separate [application selector (ES/EN)](https://gracianb.github.io/GracianB/apply.html). The source portfolio and Yoga Instructor sites are separate repositories and are not modified by this P1 release.
+
 ### Professional
 - [CV 2026 · Español](./Gracian_Baena_CV_2026_ES.pdf)
 - [CV 2026 · English](./Gracian_Baena_CV_2026_EN.pdf)
@@ -308,6 +310,17 @@ Yoga instruction and practice as a complementary professional track.
 - [CV Yoga · English](./Gracian_Baena_CV_Yoga_EN.pdf)
 - [Carta Yoga · Español](./Gracian_Baena_Carta_Yoga_ES.pdf)
 - [Cover Yoga · English](./Gracian_Baena_Cover_Letter_Yoga_EN.pdf)
+
+### Cabin Crew / TCP
+- [CV TCP · Español](./Gracian_Baena_CV_TCP_ES.pdf)
+- [Cabin Crew CV · English](./Gracian_Baena_CV_TCP_EN.pdf)
+- [Carta TCP · Español](./Gracian_Baena_Carta_TCP_ES.pdf)
+- [Cabin Crew cover letter · English](./Gracian_Baena_Cover_Letter_TCP_EN.pdf)
+- [Dedicated aviation portfolio](https://gracianb.github.io/cabin-crew-site/)
+
+**Academic clarification:** The Tourism qualification consists of the original three-year Diplomatura in Spain followed by a fourth Erasmus year in Bergamo, completed as an adaptation to the Grado under the Bologna Process. These are consecutive stages of one academic progression, not two unrelated degrees.
+
+**Public PDF integrity:** After replacing the canonical PDFs, run `python scripts/check-cv-publication.py` and review `scripts/live-cv-pdfs.mjs` for the live TCP files. Test all public PDF destinations before distributing application links. Avoid promoting the private Aigoritmo code repository: its [public case](https://gracianb.github.io/systems-lab/#aigoritmo) is the correct destination.
 
 ---
 
