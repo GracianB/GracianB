@@ -1,15 +1,30 @@
 <!doctype html>
-<html lang="es" data-b6-lang="es">
+<html lang="es" data-b6-lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#14191f">
+<meta name="color-scheme" content="dark light">
+<script>
+/* Match the main portfolio's preference before first paint. No network or tracking. */
+(() => {
+  const requested = new URLSearchParams(location.search).get("theme");
+  let saved = null;
+  try { saved = localStorage.getItem("gb-hub-theme"); } catch { /* optional */ }
+  const theme = ["dark", "light"].includes(requested) ? requested :
+    (["dark", "light"].includes(saved) ? saved : "dark");
+  document.documentElement.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]').content =
+    theme === "dark" ? "#14191f" : "#f7f5f0";
+})();
+</script>
 <meta name="description" content="Gracián Baena: elige una candidatura en Customer Success, Yoga o Cabin Crew. CV, cartas y portfolio ES/EN, enlaces públicos y contacto.">
 <meta name="robots" content="index,follow">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://gracianb.github.io/GracianB/apply.html">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="./apply.css?v=p3-1">
-<script src="./apply.js?v=p3-1" defer></script>
+<link rel="stylesheet" href="./apply.css?v=p3-dark-1">
+<script src="./apply.js?v=p3-dark-1" defer></script>
 <title>Gracián Baena | Candidaturas · Applications ES/EN</title>
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Gracián Baena · CV, letters and verified portfolio routes">
@@ -28,6 +43,10 @@
         <button type="button" data-b6-set-lang="es" aria-pressed="true" lang="es">ES</button>
         <button type="button" data-b6-set-lang="en" aria-pressed="false" lang="en">EN</button>
       </div>
+      <button type="button" class="app-theme-toggle" data-b6-theme-toggle aria-label="Cambiar a tema claro" aria-pressed="true">
+        <span aria-hidden="true" data-b6-theme-icon>☼</span>
+        <span data-b6-theme-label>Claro</span>
+      </button>
     </nav>
   </header>
 
