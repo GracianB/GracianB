@@ -112,11 +112,11 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=21/, "V20 CSS needs a cache-busted URL");
+assert.match(html, /styles\.css\?v=22/, "V20 CSS needs a cache-busted URL");
 assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=21/, "Final JS asset cache version missing");
-assert.match(html, /i18n\.js\?v=20/, "V20 translations must not be stale");
+assert.match(html, /main\.js\?v=22/, "Final JS asset cache version missing");
+assert.match(html, /i18n\.js\?v=22/, "V20 translations must not be stale");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
