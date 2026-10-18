@@ -2199,7 +2199,7 @@ html[data-theme="light"] .world-carousel-controls button:hover{background:rgba(2
 .evidence-card dd{font-size:clamp(.9rem,.84rem + .12vw,1rem);line-height:1.55}
 .card-actions a{font-size:var(--control-small);letter-spacing:.012em}
 .method-flow span,.method-flow small,.arc-grid article > span,.arc-years,.document-group-head span{
-  font-size:clamp(.66rem,.62rem + .12vw,.74rem);
+  font-size:clamp(.72rem,.68rem + .12vw,.82rem);
   letter-spacing:.04em;
 }
 .document-group > a{min-height:3.4rem;align-items:center;font-size:clamp(.85rem,.79rem + .14vw,.95rem);line-height:1.45}
