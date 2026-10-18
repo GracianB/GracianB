@@ -141,3 +141,12 @@ html[data-b6-lang="en"] .resource-columns section:not(.evidence) a[href$="_EN.pd
 @media(prefers-reduced-motion:reduce){
  .share-application button,.role-focus-options button,.role-proof-links a{transition:none}
 }
+
+
+/* Without JS, the default public proof remains accessible and inert controls disappear. */
+.share-application,.role-focus-options{display:none}
+html[data-b6-enhanced="true"] .share-application{display:flex}
+html[data-b6-enhanced="true"] .role-focus-options{display:flex}
+@media(max-width:610px){
+  html[data-b6-enhanced="true"] .role-focus-options{display:grid}
+}
