@@ -112,13 +112,13 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=25/, "P1.3 CSS must bypass old cached bytes");
+assert.match(html, /styles\.css\?v=26/, "P1.3 CSS must bypass old cached bytes");
 assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
 
 assert.match(css, /\/\* P1\.5 \/ Final legibility pass/, "P1.5 design pass missing");
 assert.match(css, /\.arc-years\{[\s\S]*?font-size:\.72rem/, "Career microcopy is too small");
 assert.match(css, /\.footer\{font-size:clamp\(\.72rem/, "Footer must retain readable type");
-assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p3-dark-1/, "Application stylesheet needs final cache version");
+assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p4-silver-1/, "Application stylesheet needs final cache version");
 const application = readFileSync("apply.html", "utf8");
 assert.equal((application.match(/data-b6-focus-panel="/g)||[]).length, 3,
   "P2 should expose exactly three professional proof briefs");
