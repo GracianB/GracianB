@@ -79,5 +79,6 @@
     focus = focuses.includes(p.get("focus")) ? p.get("focus") : "customer-success";
     updateDocument();
   });
+  document.documentElement.dataset.b6Enhanced = "true";
   updateDocument();
 })();
