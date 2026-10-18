@@ -45,7 +45,7 @@ for(const pdf of pdfs){
  assert.equal(readFileSync(pdf).subarray(0,5).toString("ascii"),"%PDF-","Invalid PDF: "+pdf);
 }
 assert.ok(hub.includes('href="./apply.html"'),"Main hub must expose application desk");
-assert.match(html, /apply\.css\?v=p3-dark-1/, "P2 application CSS must be refreshed");
+assert.match(html, /apply\.css\?v=p4-silver-1/, "P2 application CSS must be refreshed");
 for (const stale of ["Las versiones editoriales/ATS en revisión", "generated from printable HTML", "generadas desde páginas imprimibles"]) {
  assert.ok(!html.includes(stale), "Outdated PDF explanation remains: " + stale);
 }
