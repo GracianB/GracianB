@@ -30,8 +30,8 @@ async function ready() {
 }
 
 const cases = [
-  { route: "", label: "hub", maxSourceBytes: 240000 },
-  { route: "apply.html?lang=es&track=professional", label: "applications", maxSourceBytes: 90000 },
+  { route: "", label: "hub", maxSourceBytes: 180000 },
+  { route: "apply.html?lang=es&track=professional", label: "applications", maxSourceBytes: 75000 },
 ];
 const results = [];
 if (!external) await ready();
@@ -53,6 +53,9 @@ try {
     const response = await page.goto(new URL(c.route, ROOT).href, { waitUntil: "load", timeout: 30000 });
     assert.equal(response?.status(), 200, "P6 route must return HTTP 200");
     await page.locator(c.label === "hub" ? "#main" : ".candidate-brief").waitFor();
+    // Paint entries can arrive one frame after the load event in headless Chromium.
+    // The delay changes only when we sample, not the reported performance timestamps.
+    await page.waitForTimeout(120);
     const observed = await page.evaluate(() => {
       const nav = performance.getEntriesByType("navigation")[0];
       const resources = performance.getEntriesByType("resource")
