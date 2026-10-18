@@ -704,7 +704,7 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
   --accent:var(--gold);
   display:flex;
   flex-direction:column;
-  min-height:21rem;
+  min-height:16.5rem;
   padding:1.2rem;
   border:1px solid var(--line);
   border-radius:var(--radius);
@@ -722,11 +722,11 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
 .door > span{
   color:var(--accent);
   font-family:var(--mono);
-  font-size:.5rem;
-  letter-spacing:.1em;
+  font-size:.68rem;
+  letter-spacing:.07em;
 }
 .door h3{
-  margin:2.6rem 0 .7rem;
+  margin:1.5rem 0 .7rem;
   font-family:var(--serif);
   font-size:2rem;
   font-weight:500;
@@ -738,7 +738,7 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
 }
 .door b{
   margin-top:auto;
-  padding-top:2rem;
+  padding-top:1.15rem;
   color:var(--accent);
   font-family:var(--mono);
   font-size:.58rem;
@@ -1034,7 +1034,7 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
   .arc-years{margin-top:2rem}
   .doors-grid,
   .documents-grid{grid-template-columns:1fr}
-  .door{min-height:17rem}
+  .door{min-height:15.5rem}
   .contact-actions{display:grid}
   .footer{
     display:grid;

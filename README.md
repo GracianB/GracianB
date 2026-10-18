@@ -341,6 +341,16 @@ The main dictionary script now uses `defer` ahead of `main.js` to preserve dicti
 
 ---
 
+## P1.4 · Coherent universe paths and bilingual application handoff
+
+The hero and the closing world navigation follow the same numbered order: **01 Professional Deck → 02 Yoga Instructor → 03 Systems Lab**. The final cards act as a concise editorial recap after the evidence and career narrative, instead of repeating the hero descriptions and oversized card heights. Each destination remains the existing public portfolio. No additional universe has been introduced.
+
+Both main-hub entrances to the application desk preserve the active ES/EN language selection. The application desk, in turn, returns to the matching hub language through its brand, navigation and footer links. The base Spanish URLs remain readable without JavaScript. This is covered by static assertions and browser round-trips in desktop and mobile viewports.
+
+The 12 published PDFs and the linked Yoga Instructor, OHANA, Professional Deck and Systems Lab repositories are unchanged.
+
+---
+
 ## Release and presentation contract
 
 - The cover belongs to **GracianB**: deep black and restrained copper in dark mode, porcelain white and graphite in light mode.
