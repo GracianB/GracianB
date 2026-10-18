@@ -146,12 +146,18 @@ try{
      const surfaces=await page.evaluate(()=>({
        brief:getComputedStyle(document.querySelector(".candidate-brief")).backgroundColor,
        proof:getComputedStyle(document.querySelector(".role-proof:not([hidden])")).backgroundColor,
+       selectedFocus:getComputedStyle(document.querySelector('.role-focus-options button[aria-pressed="true"]')).backgroundColor,
        scroll:document.documentElement.scrollWidth>innerWidth+1,
      }));
      assert.equal(surfaces.scroll,false,"Theme must not introduce horizontal overflow");
      assert.notEqual(surfaces.brief,surfaces.proof,"Brief must be a distinct surface");
      if(chosenTheme==="dark")assert.equal(surfaces.brief,"rgb(32, 42, 52)");
-     else assert.equal(surfaces.brief,"rgb(251, 249, 244)");
+     else {
+       assert.equal(surfaces.brief,"rgb(243, 238, 229)",
+         "Light-mode candidate brief must match the Professional Deck ivory");
+       assert.equal(surfaces.selectedFocus,"rgb(38, 48, 57)",
+         "Selected professional focus must use graphite, not gold");
+     }
      // Even the dark site must print a light paper sheet.
      await page.emulateMedia({media:"print"});
      assert.equal(await page.locator(".candidate-brief").isVisible(),true);
