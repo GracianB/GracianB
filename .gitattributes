@@ -1,0 +1,3 @@
+# PDF documents are distributed as fixed binary artifacts, not mergeable text.
+# Suppress accidental line-level diffs caused by printable PDF object streams.
+*.pdf binary

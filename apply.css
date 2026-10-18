@@ -375,3 +375,46 @@ html[data-theme="dark"] .candidate-brief-footer a{color:#dbe8f3}
   html[data-theme="dark"] .candidate-brief-footer a{color:#193f51!important}
   html[data-theme="dark"] .candidate-brief-footer{border-top-color:#c7c2b7!important}
 }
+
+
+/* Professional silver / graphite alignment with the approved CV and Deck V24.
+   Scoped to light application chrome and Professional, not Yoga or Cabin Crew. */
+html[data-theme="light"] .share-application{
+  border-color:#b9c0c2;background:#f3eee5;color:#42505b;
+}
+html[data-theme="light"] .share-application button{
+  border-color:#687780;color:#26343d;background:#e8ebeb;
+}
+html[data-theme="light"] .share-application button:hover{background:#dce2e4}
+html[data-theme="light"] .role-focus{
+  border-color:#b4bdc2;
+  background:linear-gradient(145deg,#f3eee5,#e3e5e4 100%);
+}
+html[data-theme="light"] .role-focus-options button{
+  border-color:#8e999d;background:#fffdf7;color:#2a3942;
+}
+html[data-theme="light"] .role-focus-options button:hover{
+  background:#e1e7e8;border-color:#4d5d66
+}
+html[data-theme="light"] .role-focus-options button[aria-pressed=true]{
+  background:#263039;border-color:#263039;color:#f3eee5
+}
+html[data-theme="light"] .role-proof{background:#fffdf8;border-color:#b7c1c4}
+html[data-theme="light"] .role-proof-links a{
+  border-color:#7b8b94;background:#e8ecec;color:#26343d
+}
+html[data-theme="light"] .role-proof-links a:hover{background:#dbe3e5}
+html[data-theme="light"] .candidate-brief{
+  background:#f3eee5;border-color:#aab5bb;box-shadow:0 15px 38px rgba(21,28,34,.08)
+}
+html[data-theme="light"] .candidate-brief-kicker{color:#52636d}
+html[data-theme="light"] .candidate-brief-story li::before{background:#6c7c85}
+html[data-theme="light"] .candidate-brief-print{background:#e6e9e9;border-color:#85959d}
+html[data-theme="light"] .candidate-brief-actions a{
+  background:#fffdf7;border-color:#91a0a7
+}
+html[data-theme="light"] .candidate-brief-actions a:hover{background:#e1e6e7}
+html[data-theme="light"] .candidate-brief-actions b{color:#4d626d}
+@media print{
+  html[data-theme="light"] .candidate-brief{background:#fff!important;color:#162731!important;box-shadow:none!important}
+}

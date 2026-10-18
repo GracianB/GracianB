@@ -34,6 +34,28 @@ for (const file of requiredFiles) {
 
 const html = readFileSync("index.html", "utf8");
 const css = readFileSync("styles.css", "utf8");
+const binaryAttributes = readFileSync(".gitattributes", "utf8");
+assert.match(binaryAttributes, /^\*\.pdf binary\s*$/m,
+  "All CVs and cover letters must remain non-mergeable binary Git assets");
+// The professional dossier follows the approved silver / graphite Deck V24,
+// without recoloring Yoga's botanical green or Cabin Crew's aviation blue.
+for (const [label,token] of [
+  ["graphite","--pro-graphite:#151c22"],
+  ["graphite-soft","--pro-graphite-soft:#263039"],
+  ["silver","--pro-silver:#c8cccd"],
+  ["ivory","--pro-ivory:#f3eee5"],
+  ["light silver","--pro-silver-dark:#52636d"],
+]) {
+  assert.ok(css.includes(token), "Missing approved professional color token " + label);
+}
+assert.match(css, /\.document-group-professional\{--document-accent:var\(--pro-silver\)\}/,
+  "Professional documents must not revert to the legacy golden badge");
+assert.match(css, /\.document-group-yoga\{--document-accent:#ceaa78\}/,
+  "Yoga visual identity unexpectedly changed");
+assert.match(css, /\.document-group-cabin\{--document-accent:#d2a0ae\}/,
+  "Cabin visual identity unexpectedly changed");
+assert.match(readFileSync("apply.css","utf8"), /\.candidate-brief\{\s*background:#f3eee5/,
+  "Recruiter briefing must use approved silver/ivory in light mode");
 const js = readFileSync("i18n.js", "utf8");
 const readme = readFileSync("README.md", "utf8");
 const sitemap = readFileSync("sitemap.xml", "utf8");
@@ -112,13 +134,13 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=25/, "P1.3 CSS must bypass old cached bytes");
+assert.match(html, /styles\.css\?v=26/, "P1.3 CSS must bypass old cached bytes");
 assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
 
 assert.match(css, /\/\* P1\.5 \/ Final legibility pass/, "P1.5 design pass missing");
 assert.match(css, /\.arc-years\{[\s\S]*?font-size:\.72rem/, "Career microcopy is too small");
 assert.match(css, /\.footer\{font-size:clamp\(\.72rem/, "Footer must retain readable type");
-assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p3-dark-1/, "Application stylesheet needs final cache version");
+assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p4-silver-1/, "Application stylesheet needs final cache version");
 const application = readFileSync("apply.html", "utf8");
 assert.equal((application.match(/data-b6-focus-panel="/g)||[]).length, 3,
   "P2 should expose exactly three professional proof briefs");

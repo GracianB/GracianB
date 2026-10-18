@@ -45,7 +45,7 @@ for(const pdf of pdfs){
  assert.equal(readFileSync(pdf).subarray(0,5).toString("ascii"),"%PDF-","Invalid PDF: "+pdf);
 }
 assert.ok(hub.includes('href="./apply.html"'),"Main hub must expose application desk");
-assert.match(html, /apply\.css\?v=p3-dark-1/, "P2 application CSS must be refreshed");
+assert.match(html, /apply\.css\?v=p4-silver-1/, "P2 application CSS must be refreshed");
 for (const stale of ["Las versiones editoriales/ATS en revisión", "generated from printable HTML", "generadas desde páginas imprimibles"]) {
  assert.ok(!html.includes(stale), "Outdated PDF explanation remains: " + stale);
 }
@@ -146,12 +146,18 @@ try{
      const surfaces=await page.evaluate(()=>({
        brief:getComputedStyle(document.querySelector(".candidate-brief")).backgroundColor,
        proof:getComputedStyle(document.querySelector(".role-proof:not([hidden])")).backgroundColor,
+       selectedFocus:getComputedStyle(document.querySelector('.role-focus-options button[aria-pressed="true"]')).backgroundColor,
        scroll:document.documentElement.scrollWidth>innerWidth+1,
      }));
      assert.equal(surfaces.scroll,false,"Theme must not introduce horizontal overflow");
      assert.notEqual(surfaces.brief,surfaces.proof,"Brief must be a distinct surface");
      if(chosenTheme==="dark")assert.equal(surfaces.brief,"rgb(32, 42, 52)");
-     else assert.equal(surfaces.brief,"rgb(251, 249, 244)");
+     else {
+       assert.equal(surfaces.brief,"rgb(243, 238, 229)",
+         "Light-mode candidate brief must match the Professional Deck ivory");
+       assert.equal(surfaces.selectedFocus,"rgb(38, 48, 57)",
+         "Selected professional focus must use graphite, not gold");
+     }
      // Even the dark site must print a light paper sheet.
      await page.emulateMedia({media:"print"});
      assert.equal(await page.locator(".candidate-brief").isVisible(),true);

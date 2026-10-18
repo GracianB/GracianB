@@ -284,6 +284,26 @@ async function finalResponsiveAudit(browser) {
       assert.ok(typography.years >= 11.2, "Career dates must be readable");
       assert.ok(typography.cardTop >= 10.5, "Project evidence labels must remain legible");
       assert.equal(typography.visualStyles, 3, "Three document families must remain visually distinct");
+      // P4: Professional silver matches the approved CV + Deck V24.
+      // Yoga and Cabin Crew must keep their own visuals.
+      const identity = await page.evaluate(() => {
+        const professional = document.querySelector(".document-group-professional");
+        const yoga = document.querySelector(".document-group-yoga");
+        const cabin = document.querySelector(".document-group-cabin");
+        return {
+          page: getComputedStyle(professional.querySelector(".document-visual-page")).backgroundColor,
+          professional: getComputedStyle(professional.querySelector(".document-visual")).backgroundImage,
+          professionalLabel: getComputedStyle(professional.querySelector(".document-group-head span")).color,
+          yoga: getComputedStyle(yoga.querySelector(".document-visual")).backgroundImage,
+          cabin: getComputedStyle(cabin.querySelector(".document-visual")).backgroundImage,
+        };
+      });
+      assert.equal(identity.page, "rgb(243, 238, 229)", "Professional mini-document must match Deck ivory");
+      assert.match(identity.professional, /rgb\(38, 48, 57\).*rgb\(21, 28, 34\)/,
+        "Professional document art must use graphite and not old forest green");
+      assert.equal(identity.professionalLabel, mode === "light" ? "rgb(82, 99, 109)" : "rgb(200, 204, 205)");
+      assert.match(identity.yoga, /rgb\(32, 84, 62\)/, "Yoga green identity changed");
+      assert.match(identity.cabin, /rgb\(21, 33, 49\)/, "Cabin navy identity changed");
       if (mode === "light") {
         await page.screenshot({ path: `${artifacts}/p1-final-${width}-light.png`, fullPage: true });
       }

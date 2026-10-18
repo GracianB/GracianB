@@ -25,6 +25,14 @@ The [P3 acceptance record](./P3_ONE_MINUTE_BRIEF.md) defines a five-route biling
 
 ---
 
+## Professional identity · graphite and silver
+
+The professional **ES/EN resumes and cover letters** were published after P3. Their new graphite/silver/ivory editorial design matches the [Professional Deck](https://gracianb.github.io/professional-deck/). The hub's professional-document preview and the application desk's light-mode recruiter brief now follow the same palette (`#151c22`, `#263039`, `#c8cccd`, `#f3eee5`). Yoga green and Cabin Crew navy are independent visual identities and must not be recolored by professional updates.
+
+The 12 PDFs remain **unchanged** in this identity-only pass. Git's `.gitattributes` explicitly treats them as binary assets, preventing noisy line-level comparisons or automatic text merges. Desktop/mobile and theme-specific E2E checks guard the new preview without claiming a measured hiring conversion uplift.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.

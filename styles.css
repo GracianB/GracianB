@@ -2540,3 +2540,49 @@ html[data-theme="light"] .document-group>a:hover b{color:#8c6419}
   .hero-recruiter-route,.hero-proof-wow{font-size:.83rem}
   .section-head h2{overflow-wrap:break-word}
 }
+
+
+/* Professional document identity: graphite / silver / ivory.
+   Align with approved 2026 ES/EN CV PDFs and Professional Deck V24.
+   Yoga remains botanical; Cabin Crew remains aviation blue. */
+:root{
+  --pro-graphite:#151c22;
+  --pro-graphite-soft:#263039;
+  --pro-silver:#c8cccd;
+  --pro-ivory:#f3eee5;
+  --pro-silver-dark:#52636d;
+}
+.document-group-professional{--document-accent:var(--pro-silver)}
+.document-group-professional .document-visual{
+  background:linear-gradient(135deg,var(--pro-graphite-soft),var(--pro-graphite) 82%);
+  color:var(--pro-ivory);
+}
+.document-group-professional .document-visual-page{
+  background:var(--pro-ivory);
+  color:var(--pro-graphite);
+  border-top-color:var(--pro-silver);
+}
+.document-group-professional .document-visual>div>span,
+.document-group-professional .document-visual small{color:#d0d6d8}
+html[data-theme="light"] .document-group-professional{--document-accent:var(--pro-silver-dark)}
+html[data-theme="light"] .document-group-professional>a:hover b{color:var(--pro-silver-dark)}
+html[data-theme="light"] .document-group-professional .document-group-head span{color:var(--pro-silver-dark)}
+/* World one remains silver; the Yoga and Lab universes retain their distinct art. */
+.world-professional{--world-accent:var(--pro-silver)}
+html[data-theme="light"] .world-professional{--world-accent:var(--pro-silver-dark)}
+.door-gold{--accent:var(--pro-silver)}
+html[data-theme="light"] .door-gold{--accent:var(--pro-silver-dark)}
+.hero-recruiter-route a{border-bottom-color:var(--pro-silver)}
+.hero-recruiter-route a:hover,.hero-proof-link:hover{color:var(--pro-silver)}
+.hero-proof-link{text-decoration-color:var(--pro-silver)}
+html[data-theme="light"] .hero-recruiter-route a{border-bottom-color:var(--pro-silver-dark)}
+html[data-theme="light"] .hero-recruiter-route a:hover,
+html[data-theme="light"] .hero-proof-link:hover{color:var(--pro-silver-dark)}
+html[data-theme="light"] .hero-proof-link{text-decoration-color:var(--pro-silver-dark)}
+:where(.document-group-professional>a,.hero-recruiter-route a,.hero-proof-link):focus-visible{
+  outline:3px solid var(--pro-silver);outline-offset:4px
+}
+html[data-theme="light"]
+:where(.document-group-professional>a,.hero-recruiter-route a,.hero-proof-link):focus-visible{
+  outline-color:var(--pro-silver-dark)
+}
