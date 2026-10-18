@@ -51,6 +51,16 @@ The fixed scroll indicator now uses `scaleX()` on its own element, instead of up
 
 ---
 
+## P7 · A single dark visual system, based on Professional Deck V24
+
+The default dark mode now draws from the **published Professional Deck** graphite and silver system. Both the portfolio and its ES/EN application desk share `deck-dark.css` as their **single dark-only color layer**: `#151c22` graphite, `#1d272e` deep surface, `#263039` raised panels, `#c8cccd` silver and `#f3eee5` restrained ivory. Ochre, brown and golden glows no longer color dark-mode chrome, navigation, recruiter briefs or buttons.
+
+The tab/theme color, install manifest and favicon share the same graphite/silver identity. Existing thematic art for Yoga and Systems Lab stays recognizable. **Light mode and the print-only white A4 application brief stay unchanged.** New Chromium checks inspect effective CSS colors at 320/768/1440px on the hub and 390/1440px on applications, preserve browser screenshots and verify the white print mode. P6's resource budgets still apply: the shared stylesheet is deliberately under 12 KB, without external assets.
+
+The 12 published PDF CVs and letters are not edited. Neither are the Professional Deck, Yoga Instructor, OHANA, Systems Lab or any other independent repositories. This release does not claim a speed or conversion uplift.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.
