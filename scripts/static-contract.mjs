@@ -34,6 +34,17 @@ for (const file of requiredFiles) {
 
 const html = readFileSync("index.html", "utf8");
 const css = readFileSync("styles.css", "utf8");
+const performanceSource = readFileSync("scripts/performance-audit.mjs", "utf8");
+assert.match(performanceSource, /decodedBytes <= c\.maxSourceBytes/,
+  "P6 needs bounded decoded resource bytes");
+assert.match(performanceSource, /transferredBytes/,
+  "P6 must report browser-observed network transfer, not invented Lighthouse scores");
+assert.doesNotMatch(css, /--scroll-progress(?::|\))/,
+  "P6 must not update a global CSS custom property for the scroll indicator");
+assert.match(css, /\.scroll-progress i\{[\s\S]*?transform:scaleX\(0\)/,
+  "P6 scroll bar must use compositor-friendly transforms");
+assert.match(readFileSync("main.js", "utf8"), /progressFill\.style\.transform/,
+  "P6 must update only its indicator instead of invalidating the root element");
 const binaryAttributes = readFileSync(".gitattributes", "utf8");
 assert.match(binaryAttributes, /^\*\.pdf binary\s*$/m,
   "All CVs and cover letters must remain non-mergeable binary Git assets");
@@ -134,7 +145,7 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=26/, "P1.3 CSS must bypass old cached bytes");
+assert.match(html, /styles\.css\?v=27/, "P1.3 CSS must bypass old cached bytes");
 assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
 
 assert.match(css, /\/\* P1\.5 \/ Final legibility pass/, "P1.5 design pass missing");
@@ -163,7 +174,7 @@ assert.match(application, /RevOps Studio continúa en desarrollo/,
 
 
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=27/, "P1.3 JS must bypass old cached bytes");
+assert.match(html, /main\.js\?v=28/, "P1.3 JS must bypass old cached bytes");
 assert.match(html, /i18n\.js\?v=24" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
 // Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
@@ -173,7 +184,7 @@ assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointer
   "Global pointer tracking for deleted artwork must not return");
 assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
   "Do not preload the same blocking stylesheet redundantly");
-assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=27" defer><\/script>/,
+assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=28" defer><\/script>/,
   "Dictionary must execute before the app, with both scripts deferred");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
