@@ -381,7 +381,7 @@
     } else if (event.key === "Tab") {
       const focusables = [...command.querySelectorAll(
         'button, input, a[href], [tabindex]:not([tabindex="-1"])',
-      )].filter((node) => !node.hasAttribute("disabled") && node.offsetParent !== null);
+      )].filter((node) => node.tabIndex >= 0 && !node.hasAttribute("disabled") && node.offsetParent !== null);
 
       if (focusables.length) {
         const first = focusables[0];
