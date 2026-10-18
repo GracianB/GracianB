@@ -279,7 +279,8 @@ async function cabinCrew(browser){
   await page.goto(URL,{waitUntil:"domcontentloaded"});
   assert.equal(await page.locator("[data-world-slide]").count(),3,"fourth main universe must NOT be added");
   assert.equal(await page.locator(".document-group").count(),3);
-  assert.equal(await page.locator("a[href='./cabin-crew.html']").count(),2,"document and quick navigation");
+  assert.equal(await page.locator("a[href='./cabin-crew.html']").count(),1,"legacy TCP chapter remains in documents");
+  assert.equal(await page.locator("a[href='https://gracianb.github.io/cabin-crew-site/']").count(),2,"TCP standalone destination appears in documents and quick navigation");
   await page.locator("a[href='./cabin-letter-es.html']").first().click();
   await page.waitForURL(/cabin-letter-es\.html$/);
   assert.match(await page.locator("h1").innerText(),/El servicio empieza/);

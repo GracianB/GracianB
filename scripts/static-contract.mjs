@@ -149,6 +149,12 @@ assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
 assert.match(html, /href="\.\/cabin-crew\.html"/);
+// Evidence actions must open the actual documented case, not the Deck cover.
+assert.match(html, /href="https:\/\/gracianb\.github\.io\/professional-deck\/proyecto-bodytone\.html"[^>]*>\s*<span data-i18n="openCase">/,
+  "Bodytone case action must deep-link to its public case study");
+// Cabin Crew has its own safely published portfolio; the older hub page stays available.
+assert.match(html, /href="https:\/\/gracianb\.github\.io\/cabin-crew-site\/"[^>]*>\s*<span>Portfolio TCP · ES\/EN<\/span>/,
+  "TCP public standalone site must be reachable from hub documents");
 assert.match(html, /href="\.\/cabin-letter-es\.html"/);
 assert.match(html, /href="\.\/cabin-letter-en\.html"/);
 assert.match(readFileSync("cabin-crew.html","utf8"), /data-language="en"/);
