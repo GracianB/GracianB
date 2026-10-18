@@ -187,6 +187,13 @@ try{
    await page.waitForFunction(() => document.documentElement.dataset.theme === "light");
    assert.equal(await page.locator("html").getAttribute("data-theme"),"light",
      "Hub must preserve selected theme after navigation");
+   // The pre-paint theme arrives before deferred JS populates locale-aware links.
+   // Wait for link hydration, not merely documentElement.dataset.theme.
+   await page.waitForFunction(() =>
+     document.querySelector(".hero-recruiter-route [data-application-link]")?.getAttribute("href") ===
+     "./apply.html?lang=en&theme=light",
+     null, { timeout: 10000 });
+   assert.equal(await page.locator("html").getAttribute("lang"), "en");
    assert.equal(await page.locator(".hero-recruiter-route [data-application-link]").getAttribute("href"),
      "./apply.html?lang=en&theme=light","Returning to application must retain light theme");
    await page.locator(".hero-recruiter-route [data-application-link]").click();
