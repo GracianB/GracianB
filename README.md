@@ -61,6 +61,14 @@ The 12 published PDF CVs and letters are not edited. Neither are the Professiona
 
 ---
 
+## Deep petrol refinement · distinct from Professional Deck
+
+The public Professional Deck keeps its editorial graphite and silver palette. The main **GracianB hub and recruiter application desk** now use a darker petrol-blue-black variant in the existing shared `deck-dark.css`, so the two experiences feel related but not duplicated: base `#0f1a20`, inset `#132129`, card `#17262e`, raised `#1d2d36`, cool silver `#c7cdd0` and restrained petrol accent `#89a4af`. The original Deck repository remains unchanged.
+
+Both pages and the browser theme color / favicon / manifest follow the same deeper palette. Existing Yoga and Systems Lab artwork retains contextual identity inside the cool unified shell. Light mode and white A4 prints are preserved, with WCAG contrast assertions and the P6 decoded-resource budgets protecting regressions. The 12 PDF assets are unchanged.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.
