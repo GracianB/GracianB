@@ -234,6 +234,16 @@ async function applicationHandoff(browser) {
         "Language must survive hub-to-application navigation");
       assert.equal(await page.locator('[data-b6-panel="professional"]').isVisible(), true);
       assert.equal(await page.locator('[data-b6-set-lang="' + lang + '"]').getAttribute("aria-pressed"), "true");
+      const homeLinks = page.locator("[data-b6-home-link]");
+      assert.equal(await homeLinks.count(), 3, "Brand, nav and footer must lead back to the hub");
+      const expectedHome = lang === "en" ? "./?lang=en" : "./";
+      for (const href of await homeLinks.evaluateAll((nodes) => nodes.map((node) => node.getAttribute("href")))) {
+        assert.equal(href, expectedHome, "Return route must retain language");
+      }
+      await page.locator(".top nav [data-b6-home-link]").click();
+      await page.locator(".hero-name").waitFor();
+      assert.equal(await page.locator("html").getAttribute("lang"), lang,
+        "Return from application desk must preserve hub language");
     }
     await context.close();
   }
