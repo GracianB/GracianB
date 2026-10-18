@@ -131,8 +131,15 @@ async function desktop(browser) {
 
   await page.keyboard.press("Control+K");
   await page.locator("#command:not([hidden])").waitFor();
-  await page.locator("#command-input").fill("ohana");
+  assert.equal(await page.locator(".command-backdrop").getAttribute("tabindex"), "-1");
+  assert.equal(await page.locator(".command-backdrop").getAttribute("aria-hidden"), "true");
+    await page.locator("#command-input").fill("ohana");
   assert.equal(await page.locator("#command-list li:not([hidden])").count(), 1);
+  await page.locator('#command-list li:not([hidden]) a').last().focus();
+  await page.keyboard.press("Tab");
+  assert.equal(await page.locator(".command-head button[data-command-close]")
+    .evaluate((node) => document.activeElement === node), true,
+    "Quick navigation must wrap focus to its close button, never its visual backdrop");
   await page.keyboard.press("Escape");
   await page.waitForFunction(() => document.getElementById("command")?.hidden === true);
 
@@ -186,7 +193,16 @@ async function mobile(browser) {
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
   assert.equal(await page.locator("[data-menu-toggle]").getAttribute("aria-label"), "Cerrar menú");
-  await page.locator('#mobile-menu [data-set-lang="en"]').click();
+  const firstMenuLink = page.locator("#mobile-menu nav a").first();
+  const lastMenuButton = page.locator("#mobile-menu .mobile-lang-switch button").last();
+  await firstMenuLink.focus();
+  await page.keyboard.press("Shift+Tab");
+  assert.equal(await lastMenuButton.evaluate((node) => document.activeElement === node), true,
+    "Shift+Tab from the first mobile link must wrap to the last control");
+  await page.keyboard.press("Tab");
+  assert.equal(await firstMenuLink.evaluate((node) => document.activeElement === node), true,
+    "Tab from the final mobile menu button must wrap to its first link");
+    await page.locator('#mobile-menu [data-set-lang="en"]').click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
   assert.equal(await page.locator("[data-menu-toggle]").getAttribute("aria-label"), "Close menu");
   assert.equal(await page.locator("#mobile-menu nav").getAttribute("aria-label"), "Mobile navigation");
@@ -236,7 +252,7 @@ async function applicationHandoff(browser) {
       assert.equal(await page.locator('[data-b6-set-lang="' + lang + '"]').getAttribute("aria-pressed"), "true");
       const homeLinks = page.locator("[data-b6-home-link]");
       assert.equal(await homeLinks.count(), 3, "Brand, nav and footer must lead back to the hub");
-      const expectedHome = lang === "en" ? "./?lang=en" : "./";
+      const expectedHome = "./?lang=" + lang;
       for (const href of await homeLinks.evaluateAll((nodes) => nodes.map((node) => node.getAttribute("href")))) {
         assert.equal(href, expectedHome, "Return route must retain language");
       }
@@ -245,9 +261,23 @@ async function applicationHandoff(browser) {
       assert.equal(await page.locator("html").getAttribute("lang"), lang,
         "Return from application desk must preserve hub language");
     }
+    // Reproduce the stale-preference bug: saved English, then choose Spanish
+    // directly from a recruiter deep link. Both return navigation and reload
+    // must remain Spanish, regardless of the earlier cached hub language.
+    await page.goto(URL, { waitUntil: "domcontentloaded" });
+    await page.evaluate(() => localStorage.setItem("gb-hub-lang", "en"));
+    await page.goto(URL + "apply.html?track=professional&lang=es", { waitUntil: "domcontentloaded" });
+    assert.equal(await page.locator("html").getAttribute("lang"), "es");
+    assert.equal(await page.evaluate(() => localStorage.getItem("gb-hub-lang")), "es");
+    assert.equal(await page.locator(".top nav [data-b6-home-link]").getAttribute("href"), "./?lang=es");
+    await page.locator(".top nav [data-b6-home-link]").click();
+    assert.equal(await page.locator("html").getAttribute("lang"), "es");
+    await page.reload({ waitUntil: "domcontentloaded" });
+    assert.equal(await page.locator("html").getAttribute("lang"), "es",
+      "Spanish language must persist beyond the immediate return navigation");
     await context.close();
   }
-  console.log("APPLICATION HANDOFF E2E PASS: ES/EN × desktop/mobile");
+  console.log("APPLICATION HANDOFF E2E PASS: ES/EN × desktop/mobile + stale-language regression");
 }
 
 async function finalResponsiveAudit(browser) {
