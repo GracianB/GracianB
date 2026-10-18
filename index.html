@@ -4,6 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#14140f">
+  <script>
+    // Theme is resolved before CSS/deferred JS, including when returning from applications.
+    (() => {
+      const incoming = new URLSearchParams(location.search).get("theme");
+      let stored = null;
+      try { stored = localStorage.getItem("gb-hub-theme"); } catch { /* storage optional */ }
+      const theme = incoming === "light" || incoming === "dark" ? incoming :
+        (stored === "light" || stored === "dark" ? stored : "dark");
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content =
+        theme === "light" ? "#f7f5ef" : "#14140f";
+    })();
+  </script>
   <meta name="author" content="Gracián Baena">
   <meta name="description" content="Gracián Baena transforma problemas de Customer Success y operaciones en sistemas medibles con datos, automatización, IA y software.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
