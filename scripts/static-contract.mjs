@@ -149,6 +149,11 @@ assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
 assert.match(html, /href="\.\/cabin-crew\.html"/);
+assert.equal((html.match(/class="document-visual"/g) || []).length, 3, "Three document identities required");
+assert.equal((html.match(/class="document-summary"/g) || []).length, 3, "Each document track needs its summary");
+assert.match(css, /\.document-group-professional \.document-visual/);
+assert.match(css, /\.document-group-yoga \.document-visual/);
+assert.match(css, /\.document-group-cabin \.document-visual/);
 // Evidence actions must open the actual documented case, not the Deck cover.
 assert.match(html, /href="https:\/\/gracianb\.github\.io\/professional-deck\/proyecto-bodytone\.html"[^>]*>\s*<span data-i18n="openCase">/,
   "Bodytone case action must deep-link to its public case study");
@@ -170,7 +175,9 @@ assert.match(cabinPage,/2015.*?ESATUR/s);
 assert.match(cabinPage,/2019.*?Yoga/s);
 assert.match(cabinPage,/2023.*?Google/s);
 assert.match(cabinPage,/2025.*?Columbia/s);
-assert.match(cabinPage,/not a second degree/);
+assert.match(cabinPage,/Fourth-year Erasmus top-up/);
+assert.match(cabinPage,/Cuarto año Erasmus de adaptación/);
+assert.match(readme,/fourth Erasmus year/);
 assert.match(cabinPage,/no se presenta como una habilitación actualmente vigente/);
 assert.match(cabinScript,/const cities=/);
 assert.match(cabinScript,/data-training-filter/);
