@@ -334,6 +334,28 @@ async function finalResponsiveAudit(browser) {
       assert.equal(identity.professionalLabel, mode === "light" ? "rgb(82, 99, 109)" : "rgb(200, 204, 205)");
       assert.match(identity.yoga, /rgb\(32, 84, 62\)/, "Yoga green identity changed");
       assert.match(identity.cabin, /rgb\(21, 33, 49\)/, "Cabin navy identity changed");
+      if (mode === "dark") {
+        const unified = await page.evaluate(() => {
+          const css = (q) => getComputedStyle(document.querySelector(q));
+          return {
+            background: getComputedStyle(document.documentElement).getPropertyValue("--bg").trim(),
+            page: css("body").backgroundColor,
+            title: css(".hero-name-last").color,
+            button: css(".hero-actions .button-primary").backgroundColor,
+            brand: css(".brand-mark").borderTopColor,
+            panel: css(".document-group").backgroundColor,
+            browser: document.querySelector('meta[name="theme-color"]').content,
+          };
+        });
+        assert.equal(unified.background, "#151c22", "Deck dark base must replace brown hub");
+        assert.equal(unified.page, "rgb(21, 28, 34)");
+        assert.equal(unified.title, "rgb(200, 204, 205)", "Hero title must be silver");
+        assert.equal(unified.button, "rgb(200, 204, 205)", "Primary action must be silver");
+        assert.equal(unified.brand, "rgba(200, 204, 205, 0.52)");
+        assert.equal(unified.panel, "rgb(38, 48, 57)");
+        assert.equal(unified.browser, "#151c22");
+        await page.screenshot({ path: `${artifacts}/p7-deck-dark-${width}.png`, fullPage: true });
+      }
       if (mode === "light") {
         await page.screenshot({ path: `${artifacts}/p1-final-${width}-light.png`, fullPage: true });
       }
