@@ -33,7 +33,7 @@ assert.match(readFileSync("apply.js","utf8"), /navigator\.clipboard\?\.writeText
   "P2 share action must copy the actual URL on direct user interaction");
 assert.equal((html.match(/data-b6-home-link/g) || []).length, 3,
   "Application desk needs three language-aware return routes");
-assert.match(html, /apply\.js\?v=p3-dark-1/,
+assert.match(html, /apply\.js\?v=p5-1/,
   "Application JS cache key must reflect bilingual return navigation");
 assert.match(readFileSync("apply.js", "utf8"), /parameters\.push\("lang=" \+ lang\)/,
   "English recruiter must be able to return to the English hub");
