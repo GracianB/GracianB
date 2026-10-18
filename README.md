@@ -62,6 +62,13 @@ The three linked universes deliberately keep their existing colors **only inside
 
 ## Three worlds
 
+### P1 · First impression and recruiter route
+
+The first viewport keeps the intentional three-world selector. A compact ES/EN recruiter route links directly to the existing application desk, while the proof line opens the public **Bodytone Support OS case** rather than asserting unspecified results. The facts strip highlights the highest independently managed Minderest account portfolio (**up to 80 international B2B SaaS customers**, as documented in the professional CV), explicitly scoped to Minderest, and keeps the language and remote context.
+
+The universe selector now uses paired accessible `tab`/`tabpanel` relationships, a politely announced current-world counter and translated navigation labels. The mobile menu announces open/closed state in both languages. The linked Yoga Instructor, OHANA, Professional Deck and Systems Lab repositories remain unchanged by this GracianB-only pass.
+
+
 The public hub opens with a choice of three universes. Each has its own color, emblem and purpose, while the journey behind them follows one common principle: understand people, build something useful and demonstrate the result.
 
 | World | What is inside | Enter |
