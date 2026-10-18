@@ -118,13 +118,20 @@ assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobil
 assert.match(css, /\/\* P1\.5 \/ Final legibility pass/, "P1.5 design pass missing");
 assert.match(css, /\.arc-years\{[\s\S]*?font-size:\.72rem/, "Career microcopy is too small");
 assert.match(css, /\.footer\{font-size:clamp\(\.72rem/, "Footer must retain readable type");
-assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p3-1/, "Application stylesheet needs final cache version");
+assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p3-dark-1/, "Application stylesheet needs final cache version");
 const application = readFileSync("apply.html", "utf8");
 assert.equal((application.match(/data-b6-focus-panel="/g)||[]).length, 3,
   "P2 should expose exactly three professional proof briefs");
 assert.equal((application.match(/data-brief-track="/g)||[]).length, 5,
   "P3 must include three professional and two specialist briefs");
 assert.match(application, /data-brief-print/, "P3 printable brief entry missing");
+assert.match(application, /data-b6-theme-toggle/, "Application theme control missing");
+assert.match(application, /<meta name="theme-color" content="#14191f">/,
+  "First paint on application desk must be dark by default");
+assert.match(application, /apply\.js\?v=p3-dark-1/,
+  "Theme application JavaScript cache key missing");
+assert.match(readFileSync("apply.js", "utf8"), /gb-hub-theme/,
+  "Both pages must share the same saved theme preference");
 assert.match(application, /data-brief-proof/, "P3 linked evidence action missing");
 assert.match(readFileSync("apply.js","utf8"), /window\.print\(\)/,
   "P3 print action must be wired to an explicit visitor click");
@@ -134,7 +141,7 @@ assert.match(application, /RevOps Studio continúa en desarrollo/,
 
 
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=24/, "P1.3 JS must bypass old cached bytes");
+assert.match(html, /main\.js\?v=26/, "P1.3 JS must bypass old cached bytes");
 assert.match(html, /i18n\.js\?v=24" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
 // Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
@@ -144,7 +151,7 @@ assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointer
   "Global pointer tracking for deleted artwork must not return");
 assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
   "Do not preload the same blocking stylesheet redundantly");
-assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=24" defer><\/script>/,
+assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=26" defer><\/script>/,
   "Dictionary must execute before the app, with both scripts deferred");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
