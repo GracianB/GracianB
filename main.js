@@ -403,13 +403,6 @@
     document.querySelectorAll(".reveal").forEach((node) => node.classList.add("is-visible"));
   }
 
-  if (!reduceMotion && window.matchMedia?.("(hover:hover) and (pointer:fine)").matches) {
-    addEventListener("pointermove", (event) => {
-      root.style.setProperty("--pointer-x", `${event.clientX}px`);
-      root.style.setProperty("--pointer-y", `${event.clientY}px`);
-    }, { passive: true });
-  }
-
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 })();

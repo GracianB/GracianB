@@ -112,12 +112,21 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=22/, "V20 CSS needs a cache-busted URL");
+assert.match(html, /styles\.css\?v=23/, "P1.3 CSS must bypass old cached bytes");
 assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=22/, "Final JS asset cache version missing");
-assert.match(html, /i18n\.js\?v=22/, "V20 translations must not be stale");
+assert.match(html, /main\.js\?v=23/, "P1.3 JS must bypass old cached bytes");
+assert.match(html, /i18n\.js\?v=23" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
+// Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
+assert.doesNotMatch(css, /\.hero-system\b|\.hero-orbit\b|\.orbit-core\b|\.orbit-node\b|\.signal-chain\b|@keyframes gb-orbit-spin/,
+  "CSS still contains obsolete components removed before the three-world selector");
+assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointermove"/,
+  "Global pointer tracking for deleted artwork must not return");
+assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
+  "Do not preload the same blocking stylesheet redundantly");
+assert.match(html, /<script src="\.\/i18n\.js\?v=23" defer><\/script>\s*<script src="\.\/main\.js\?v=23" defer><\/script>/,
+  "Dictionary must execute before the app, with both scripts deferred");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
 assert.equal(socialPng.readUInt32BE(16), 1200, "OG must be 1200 px wide");

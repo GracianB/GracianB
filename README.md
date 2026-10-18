@@ -331,6 +331,16 @@ The twelve canonical PDF documents are hosted at the central hub, with a separat
 
 ---
 
+## P1.3 · Leaner storefront, unchanged universes
+
+The P1.3 audit identified 63 CSS rules exclusively targeting legacy artwork (`hero-system`, `hero-orbit`, orphaned signal/orbit subcomponents), none of which exists on this page or is created by its JavaScript. Those rules, an unused orbit keyframe and obsolete CSS pointer variables were removed, saving **7,233 characters (8.15%)** in the original stylesheet before transport compression. The corresponding global `pointermove` listener has also been removed because only deleted artwork consumed its CSS properties.
+
+The main dictionary script now uses `defer` ahead of `main.js` to preserve dictionary initialization order without parser-blocking JavaScript. The redundant CSS preload is removed, leaving a single high-priority render-blocking stylesheet. Assets are cache-busted as `v23` to prevent stale client combinations.
+
+**No content, style or interaction in the active three-world selector, Bodytone case, recruiter routes or published PDFs has been intentionally changed.** Static guards prohibit accidental reintroduction of dead components, and desktop/mobile/reduced-motion browser runs remain the quality gate. Savings refer to source characters, not a measured Lighthouse score or verified network byte improvement.
+
+---
+
 ## Release and presentation contract
 
 - The cover belongs to **GracianB**: deep black and restrained copper in dark mode, porcelain white and graphite in light mode.
