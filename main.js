@@ -155,7 +155,12 @@
     menuToggle.setAttribute("aria-label", open ? (t.menuCloseLabel || "Close menu") : (t.menuOpenLabel || "Open menu"));
     document.body.classList.toggle("menu-open", open);
     if (open) {
-      requestAnimationFrame(() => mobileMenu.querySelector("a")?.focus());
+      requestAnimationFrame(() => {
+        // Don't steal focus from a fast keyboard action between opening and paint.
+        if (!mobileMenu.hidden && !mobileMenu.contains(document.activeElement)) {
+          mobileMenu.querySelector("a")?.focus();
+        }
+      });
     } else if (mobileMenu.contains(document.activeElement)) {
       menuToggle.focus();
     }
