@@ -6,6 +6,7 @@ import {spawn} from "node:child_process";
 
 const html=readFileSync("apply.html","utf8"), hub=readFileSync("index.html","utf8");
 const tracks=["professional","yoga","aviation"],langs=["es","en"];
+const focuses=["customer-success","revops","data-automation"];
 const pdfs=[
 "Gracian_Baena_CV_2026_ES.pdf","Gracian_Baena_CV_2026_EN.pdf",
 "Gracian_Baena_Carta_Presentacion_ES.pdf","Gracian_Baena_Cover_Letter_EN.pdf",
@@ -14,9 +15,18 @@ const pdfs=[
 "Gracian_Baena_CV_TCP_ES.pdf","Gracian_Baena_CV_TCP_EN.pdf",
 "Gracian_Baena_Carta_TCP_ES.pdf","Gracian_Baena_Cover_Letter_TCP_EN.pdf"];
 assert.equal((html.match(/class="panel /g)||[]).length,3);
+assert.equal((html.match(/data-b6-focus="/g)||[]).length,3,"P2 must offer three professional role focuses");
+assert.equal((html.match(/data-b6-focus-panel="/g)||[]).length,3,"P2 must offer three grounded evidence panels");
+assert.ok(html.includes('data-b6-copy-link'),"Shareable application copy action missing");
+for(const focus of focuses) {
+ assert.ok(html.includes('data-b6-focus="' + focus + '"'),"Missing focus choice: " + focus);
+ assert.ok(html.includes('data-b6-focus-panel="' + focus + '"'),"Missing focus proof: " + focus);
+}
+assert.match(readFileSync("apply.js","utf8"), /navigator\.clipboard\?\.writeText/,
+  "P2 share action must copy the actual URL on direct user interaction");
 assert.equal((html.match(/data-b6-home-link/g) || []).length, 3,
   "Application desk needs three language-aware return routes");
-assert.match(html, /apply\.js\?v=b6-3/,
+assert.match(html, /apply\.js\?v=p2-1/,
   "Application JS cache key must reflect bilingual return navigation");
 assert.match(readFileSync("apply.js", "utf8"), /\.\/\?lang=en/,
   "English recruiter must be able to return to the English hub");
@@ -28,7 +38,7 @@ for(const pdf of pdfs){
  assert.equal(readFileSync(pdf).subarray(0,5).toString("ascii"),"%PDF-","Invalid PDF: "+pdf);
 }
 assert.ok(hub.includes('href="./apply.html"'),"Main hub must expose application desk");
-assert.match(html, /apply\.css\?v=b6-3/, "Application CSS must be refreshed");
+assert.match(html, /apply\.css\?v=p2-1/, "P2 application CSS must be refreshed");
 for (const stale of ["Las versiones editoriales/ATS en revisión", "generated from printable HTML", "generadas desde páginas imprimibles"]) {
  assert.ok(!html.includes(stale), "Outdated PDF explanation remains: " + stale);
 }
@@ -78,6 +88,47 @@ try{
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
     assert.equal(overflow,false,"Horizontal overflow "+width+"/"+lang+"/"+track);
    }
+   // P2 recruiter focus: three shareable deep-links in both languages, without changing PDFs.
+   for (const focusLang of langs) for (const focus of focuses) {
+     const target = ROOT + "apply.html?track=professional&lang=" + focusLang + "&focus=" + focus;
+     await page.goto(target, { waitUntil: "domcontentloaded" });
+     assert.equal(await page.locator("html").getAttribute("lang"), focusLang);
+     assert.equal(await page.locator('[data-b6-focus="' + focus + '"]').getAttribute("aria-pressed"), "true");
+     assert.equal(await page.locator('[data-b6-focus-panel]:visible').count(), 1,
+       "Only one role proof may be visible");
+     assert.equal(await page.locator('[data-b6-focus-panel="' + focus + '"]').isVisible(), true);
+     assert.equal(await page.locator('[data-b6-focus-panel="' + focus + '"] .role-proof-links a').count(), 2,
+       "Each proof needs two public and relevant routes");
+     assert.equal(await page.locator('[data-b6-panel="professional"] .resource-columns a[href$=".pdf"]').count(), 4,
+       "Selecting a role must not change any professional CV or letter");
+     const noOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+     assert.equal(noOverflow, true, "P2 role proof overflow " + width + "/" + focusLang + "/" + focus);
+     if (focus === "revops") {
+       assert.match(await page.locator('[data-b6-focus-panel="revops"]').innerText(),
+         focusLang === "es" ? /no se presenta como demo pública/ : /not a public demo/,
+         "RevOps public-demo caveat must be explicit");
+     }
+   }
+   await page.goto(ROOT+"apply.html?track=professional&lang=en&focus=revops", {waitUntil:"domcontentloaded"});
+   await page.locator('[data-b6-focus="data-automation"]').click();
+   assert.match(page.url(), /focus=data-automation/,"Role choices must update the sharable URL");
+   assert.equal(await page.locator('[data-b6-focus-panel="data-automation"]').isVisible(),true);
+   await page.locator('[data-b6-set-lang="es"]').click();
+   assert.equal(await page.locator('[data-b6-focus="data-automation"]').getAttribute("aria-pressed"),"true",
+     "Language change must retain role focus");
+   assert.match(page.url(),/focus=data-automation/,"Role focus must survive ES/EN switch");
+   // Simulate a successful browser clipboard so the copied value can be verified deterministically.
+   await page.evaluate(() => {
+     Object.defineProperty(navigator, "clipboard", {
+       configurable: true, value: {writeText: async (value) => {window.__lastCopiedApplication = value;}}
+     });
+   });
+   await page.locator("[data-b6-copy-link]").click();
+   assert.equal(await page.evaluate(() => window.__lastCopiedApplication), page.url());
+   assert.match(await page.locator("[data-b6-copy-status]").innerText(), /Enlace copiado/);
+   await page.goto(ROOT+"apply.html?track=professional&lang=en&focus=unknown", {waitUntil:"domcontentloaded"});
+   assert.equal(await page.locator('[data-b6-focus="customer-success"]').getAttribute("aria-pressed"),"true",
+     "Invalid deep-link focus should fall back safely to Customer Success");
    await page.locator('[data-b6-track="aviation"]').click();
    assert.match(page.url(),/track=aviation/,"Track should be shareable");
    await page.locator('[data-b6-set-lang="en"]').click();
@@ -92,6 +143,17 @@ try{
    }
    await context.close();
   }
+  const noJs = await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:820}});
+  const fallback = await noJs.newPage();
+  await fallback.goto(ROOT+"apply.html",{waitUntil:"domcontentloaded"});
+  assert.equal(await fallback.locator('[data-b6-focus-panel="customer-success"]').isVisible(),true,
+    "No-JS visitors must still see the default verified case");
+  assert.equal(await fallback.locator(".role-focus-options").isVisible(),false,
+    "No-JS visitors must not see inert focus buttons");
+  assert.equal(await fallback.locator(".share-application").isVisible(),false,
+    "No-JS visitors must not see an unusable copy action");
+  await noJs.close();
   console.log("B6 APPLICATION BROWSER PASS: 3 tracks × 2 languages × desktop/mobile + shareable states");
+  console.log("P2 ROLE PROOF PASS: 3 role focuses × 2 languages × desktop/mobile + clipboard + no-JS");
  }finally{await browser.close();}
 }finally{server?.kill();}
