@@ -158,6 +158,18 @@ assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
 assert.match(html, /href="\.\/cabin-crew\.html"/);
+// P1.4: the first and final entrances must use the same universe numbering/order.
+const doorOrder = [...html.matchAll(/<a class="door door-(gold|sage|cyan)"\b/g)].map((item) => item[1]);
+assert.deepEqual(doorOrder, ["gold", "sage", "cyan"],
+  "Lower universe choices must follow Professional → Yoga → Systems Lab");
+assert.match(html, /<span>02 \/ YOGA<\/span>/);
+assert.match(html, /<span>03 \/ SYSTEMS LAB<\/span>/);
+assert.equal((html.match(/data-application-link/g) || []).length, 2,
+  "Recruiter and document handoff links should preserve visitor language");
+assert.match(readFileSync("main.js", "utf8"), /\.\/apply\.html\?lang=en/,
+  "English visitors must retain their language at application handoff");
+assert.match(js, /doorHumanBody: "Mi experiencia docente/);
+assert.match(js, /doorBuildBody: "Proyectos de software/);
 // P1 recruiter conversion must be actionable without discovering a hidden document section.
 assert.match(html, /class="hero-recruiter-route"/);
 assert.match(html, /class="hero-recruiter-route"[^>]*>[\s\S]*?href="\.\/apply\.html"/);
