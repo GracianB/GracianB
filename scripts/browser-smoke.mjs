@@ -329,9 +329,11 @@ async function finalResponsiveAudit(browser) {
         };
       });
       assert.equal(identity.page, "rgb(243, 238, 229)", "Professional mini-document must match Deck ivory");
-      assert.match(identity.professional, /rgb\(38, 48, 57\).*rgb\(21, 28, 34\)/,
-        "Professional document art must use graphite and not old forest green");
-      assert.equal(identity.professionalLabel, mode === "light" ? "rgb(82, 99, 109)" : "rgb(200, 204, 205)");
+      assert.match(identity.professional,
+        mode === "dark" ? /rgb\(23, 38, 46\).*rgb\(15, 26, 32\)/
+                        : /rgb\(38, 48, 57\).*rgb\(21, 28, 34\)/,
+        "Professional document preview must match petrol dark / original light identity");
+      assert.equal(identity.professionalLabel, mode === "light" ? "rgb(82, 99, 109)" : "rgb(199, 205, 208)");
       assert.match(identity.yoga, /rgb\(32, 84, 62\)/, "Yoga green identity changed");
       assert.match(identity.cabin, /rgb\(21, 33, 49\)/, "Cabin navy identity changed");
       if (mode === "dark") {
@@ -347,13 +349,29 @@ async function finalResponsiveAudit(browser) {
             browser: document.querySelector('meta[name="theme-color"]').content,
           };
         });
-        assert.equal(unified.background, "#151c22", "Deck dark base must replace brown hub");
-        assert.equal(unified.page, "rgb(21, 28, 34)");
-        assert.equal(unified.title, "rgb(200, 204, 205)", "Hero title must be silver");
-        assert.equal(unified.button, "rgb(200, 204, 205)", "Primary action must be silver");
-        assert.equal(unified.brand, "rgba(200, 204, 205, 0.52)");
-        assert.equal(unified.panel, "rgb(38, 48, 57)");
-        assert.equal(unified.browser, "#151c22");
+        assert.equal(unified.background, "#0f1a20", "Deep petrol base must replace Deck graphite");
+        assert.equal(unified.page, "rgb(15, 26, 32)");
+        assert.equal(unified.title, "rgb(199, 205, 208)", "Hero title must be silver");
+        assert.equal(unified.button, "rgb(199, 205, 208)", "Primary action must be silver");
+        assert.equal(unified.brand, "rgba(199, 205, 208, 0.52)");
+        assert.equal(unified.panel, "rgb(23, 38, 46)");
+        assert.equal(unified.browser, "#0f1a20");
+        const contrast = await page.evaluate(() => {
+          const rgb = (s) => s.match(/[\d.]+/g).slice(0,3).map(Number);
+          const luminance = (c) => {
+            const channels = rgb(c).map((n) => {
+              const v = n / 255;
+              return v <= .04045 ? v / 12.92 : ((v+.055)/1.055)**2.4;
+            });
+            return .2126*channels[0]+.7152*channels[1]+.0722*channels[2];
+          };
+          const ratio = (a,b) => { const x=luminance(a), y=luminance(b); return (Math.max(x,y)+.05)/(Math.min(x,y)+.05); };
+          const button=getComputedStyle(document.querySelector(".hero-actions .button-primary"));
+          const body=getComputedStyle(document.body);
+          return {text:ratio(body.color,body.backgroundColor),cta:ratio(button.color,button.backgroundColor)};
+        });
+        assert.ok(contrast.text>=4.5 && contrast.cta>=4.5,
+          "Deep petrol body and silver primary action must meet WCAG AA text contrast");
         await page.screenshot({ path: `${artifacts}/p7-deck-dark-${width}.png`, fullPage: true });
       }
       if (mode === "light") {

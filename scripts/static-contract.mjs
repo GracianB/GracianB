@@ -130,13 +130,15 @@ assert.ok((css.match(/!important/g) || []).length <= 10, "Too many !important de
 const sharedDark = readFileSync("deck-dark.css","utf8");
 // P7 takes its colors from the public Professional Deck V24, not the old ochre CV.
 for (const [token, hex] of Object.entries({
-  "--deck-deep":"#0e151b",
-  "--deck-bg":"#151c22",
-  "--deck-low":"#1d272e",
-  "--deck-card":"#263039",
-  "--deck-raised":"#303b43",
-  "--deck-silver":"#c8cccd",
-  "--deck-ivory":"#f3eee5",
+  "--deck-deep":"#091218",
+  "--deck-bg":"#0f1a20",
+  "--deck-low":"#132129",
+  "--deck-card":"#17262e",
+  "--deck-raised":"#1d2d36",
+  "--deck-silver":"#c7cdd0",
+  "--deck-ivory":"#edf2f2",
+  "--deck-petrol":"#89a4af",
+  "--deck-petrol-soft":"#6f8892",
 })) assert.ok(sharedDark.includes(token+":"+hex), "Missing Deck V24 dark token " + token);
 assert.match(sharedDark, /@media screen\s*\{/,
   "Shared dark style must not override white A4 print or the light mode");
@@ -144,8 +146,10 @@ assert.ok(Buffer.byteLength(sharedDark,"utf8") < 12000,
   "Shared CSS must stay within the existing P6 performance byte budgets");
 assert.doesNotMatch(sharedDark, /#(?:daa428|d8ae64|edbb43|8b693f|795e35|7b673f|a98952)\b/i,
   "The shared theme must not reintroduce golden/brown legacy colors");
-assert.match(html, /deck-dark\.css\?v=1/);
-assert.match(readFileSync("apply.html","utf8"), /deck-dark\.css\?v=1/);
+assert.ok(!sharedDark.includes("#151c22") && !sharedDark.includes("#263039"),
+  "This dark variant must be noticeably deeper than the Professional Deck base");
+assert.match(html, /deck-dark\.css\?v=2/);
+assert.match(readFileSync("apply.html","utf8"), /deck-dark\.css\?v=2/);
 assert.match(css, /--bg:var\(--cv-paper\)/,
   "The existing light mode must remain available and unchanged");
 assert.match(css, /\.world-professional\s*\{--world-accent:#d6d5d0;--gold:#d6d5d0\}/,
@@ -168,7 +172,7 @@ assert.equal((application.match(/data-brief-track="/g)||[]).length, 5,
   "P3 must include three professional and two specialist briefs");
 assert.match(application, /data-brief-print/, "P3 printable brief entry missing");
 assert.match(application, /data-b6-theme-toggle/, "Application theme control missing");
-assert.match(application, /<meta name="theme-color" content="#151c22">/,
+assert.match(application, /<meta name="theme-color" content="#0f1a20">/,
   "First paint on application desk must be dark by default");
 assert.match(application, /apply\.js\?v=p7-1/,
   "Theme application JavaScript cache key missing");
@@ -215,9 +219,9 @@ assert.match(behavior, /gb-world-overview/, "Overview preference must persist");
 assert.match(behavior, /slide\.setAttribute\("aria-hidden", String\(!overview && !active\)\)/,
   "Overview must expose all three slides to assistive technology");
 const themeJs = readFileSync("main.js", "utf8");
-assert.match(themeJs, /"#f7f5ef" : "#151c22"/, "Browser theme color must reflect the CV");
-assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#151c22"/);
-assert.match(readFileSync("favicon.svg", "utf8"), /#c8cccd/);
+assert.match(themeJs, /"#f7f5ef" : "#0f1a20"/, "Browser theme color must reflect the CV");
+assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#0f1a20"/);
+assert.match(readFileSync("favicon.svg", "utf8"), /#c7cdd0/);
 
 
 assert.match(html, /People → Operations → Data → Systems → AI/);

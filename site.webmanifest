@@ -4,8 +4,8 @@
   "start_url": "/GracianB/",
   "scope": "/GracianB/",
   "display": "standalone",
-  "background_color": "#151c22",
-  "theme_color": "#151c22",
+  "background_color": "#0f1a20",
+  "theme_color": "#0f1a20",
   "description": "Professional evidence hub: Customer Success, Operations, Data, Systems and AI.",
   "lang": "es",
   "icons": [
