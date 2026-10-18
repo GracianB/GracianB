@@ -66,6 +66,9 @@
       const value = t[node.dataset.commandLabel];
       if (value != null) node.textContent = value;
     });
+    const openMenu = document.getElementById("mobile-menu")?.hidden === false;
+    document.querySelector("[data-menu-toggle]")?.setAttribute("aria-label",
+      openMenu ? (t.menuCloseLabel || "Close menu") : (t.menuOpenLabel || "Open menu"));
     document.querySelectorAll("[data-set-lang]").forEach((button) => {
       const active = button.dataset.setLang === lang;
       button.setAttribute("aria-pressed", String(active));
@@ -134,6 +137,8 @@
     mobileMenu.classList.toggle("is-open", open);
     menuToggle.classList.toggle("is-open", open);
     menuToggle.setAttribute("aria-expanded", String(open));
+    const t = dictionary();
+    menuToggle.setAttribute("aria-label", open ? (t.menuCloseLabel || "Close menu") : (t.menuOpenLabel || "Open menu"));
     document.body.classList.toggle("menu-open", open);
     if (open) {
       requestAnimationFrame(() => mobileMenu.querySelector("a")?.focus());
