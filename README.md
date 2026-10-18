@@ -43,6 +43,14 @@ This is a scoped accessibility and language-continuity fix: no PDF, project repo
 
 ---
 
+## P6 · Performance evidence, not invented speed claims
+
+P6 introduces a repeatable Chromium resource audit (`scripts/performance-audit.mjs`) on **both the homepage and the application desk**, at 390px mobile and 1440px desktop. It records initial HTTP resource requests, browser-reported decoded/encoded and transferred bytes, first-contentful paint, DOMContentLoaded and load timings as JSON artifacts. It runs in preview and again against GitHub Pages after deployment. The budgets guard against unexpectedly adding heavy assets or third-party resources; **environment-specific milliseconds are reported, not asserted as universal page-speed scores or Core Web Vitals**.
+
+The fixed scroll indicator now uses `scaleX()` on its own element, instead of updating a root CSS custom property on every scroll, reducing how widely style invalidation can propagate. The progress display is regression-tested in Chromium. The professional silver identity, Yoga/TCP colors, 12 approved PDF assets, and external project repositories are unchanged.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.
