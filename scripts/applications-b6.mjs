@@ -35,8 +35,12 @@ assert.equal((html.match(/data-b6-home-link/g) || []).length, 3,
   "Application desk needs three language-aware return routes");
 assert.match(html, /apply\.js\?v=p3-dark-1/,
   "Application JS cache key must reflect bilingual return navigation");
-assert.match(readFileSync("apply.js", "utf8"), /parameters\.push\("lang=en"\)/,
+assert.match(readFileSync("apply.js", "utf8"), /parameters\.push\("lang=" \+ lang\)/,
   "English recruiter must be able to return to the English hub");
+assert.match(readFileSync("apply.js", "utf8"), /gb-hub-lang/,
+  "The application desk must share the same saved ES/EN language as the main hub");
+assert.match(readFileSync("apply.js", "utf8"), /safeSaveLang\(lang\)/,
+  "Explicit application languages must be persisted for future navigation");
 for(const track of tracks)assert.ok(html.includes('data-b6-panel="'+track+'"'));
 for(const lang of langs)assert.ok(html.includes('data-b6-set-lang="'+lang+'"'));
 for(const pdf of pdfs){
