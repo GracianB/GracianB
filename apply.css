@@ -76,3 +76,77 @@ html[data-b6-lang="en"] .resource-columns section:not(.evidence) a[href$="_EN.pd
 .resource-columns a span{flex-shrink:0}
 .selector button{font-size:clamp(13px,1.05vw,15px)}
 @media(max-width:610px){.selector button{min-height:52px}.resource-columns a{padding-block:12px}}
+
+
+/* P2 · Recruiter-first evidence briefs: a compact decision path, not another universe. */
+.share-application{
+  display:flex;align-items:center;flex-wrap:wrap;gap:.5rem .8rem;
+  margin:0 0 22px;padding:12px 16px;border:1px solid #d0cfc6;
+  border-radius:12px;background:#fffcf6;color:#4b5760;font-size:13px;
+}
+.share-application > span:first-child,.share-application > span:nth-child(2){flex:1 1 280px}
+.share-application button{
+  border:1px solid #7b673f;border-radius:8px;padding:10px 15px;
+  min-height:44px;color:#27323a;background:transparent;font-size:13px;
+  font-weight:750;white-space:nowrap;
+}
+.share-application button:hover{background:#ede6d8}
+.copy-feedback{font-weight:700;color:#315e45;flex-basis:100%;font-size:12px}
+.copy-feedback:empty{display:none}
+.role-focus{
+  margin-top:24px;padding:clamp(17px,2.4vw,25px);
+  border:1px solid #cfc6b5;border-radius:13px;
+  background:linear-gradient(150deg,#f9f7f0,#f0ece2 75%);
+}
+.role-focus-header{display:grid;gap:5px}
+.role-focus h4{
+  margin:0;color:#243239;font:normal clamp(20px,2.2vw,27px)/1.2 var(--serif);
+  letter-spacing:-.025em;
+}
+.role-focus-header p{margin:0;color:#57616a;font-size:13px;line-height:1.6}
+.role-focus-options{display:flex;flex-wrap:wrap;gap:8px;margin:17px 0 14px}
+.role-focus-options button{
+  min-height:44px;padding:10px 15px;border:1px solid #bdb7a7;
+  border-radius:999px;background:#fffefa;color:#33404a;
+  font-size:13px;font-weight:700;letter-spacing:.01em;
+}
+.role-focus-options button:hover{border-color:#7a653b;background:#f6f0e2}
+.role-focus-options button[aria-pressed=true]{
+  background:#26333c;border-color:#26333c;color:#fff;
+}
+.role-proof{background:#fffefa;border-radius:10px;padding:clamp(15px,2vw,22px);border:1px solid #d7d2c5}
+.role-proof[hidden]{display:none!important}
+.role-proof h5{
+  margin:0 0 9px;font:normal clamp(20px,2vw,25px)/1.22 var(--serif);
+  letter-spacing:-.02em;color:#26333c;
+}
+.role-proof p{margin:0;color:#485560;font-size:14px;line-height:1.7;max-width:72ch}
+.role-proof-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
+.role-proof-links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  padding:9px 13px;border-radius:8px;border:1px solid #9d8963;
+  color:#27343a;background:#f9f6eb;text-decoration:none;
+  font-size:13px;font-weight:750;
+}
+.role-proof-links a:hover{background:#eee5d2;text-decoration:underline}
+@media(max-width:610px){
+  .share-application{padding:13px;align-items:stretch}
+  .share-application button{width:100%}
+  .role-focus{padding:15px;margin-top:18px}
+  .role-focus-options{display:grid;grid-template-columns:1fr;gap:7px}
+  .role-focus-options button{text-align:left}
+  .role-proof-links{display:grid;grid-template-columns:1fr}
+  .role-proof-links a{justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){
+ .share-application button,.role-focus-options button,.role-proof-links a{transition:none}
+}
+
+
+/* Without JS, the default public proof remains accessible and inert controls disappear. */
+.share-application,.role-focus-options{display:none}
+html[data-b6-enhanced="true"] .share-application{display:flex}
+html[data-b6-enhanced="true"] .role-focus-options{display:flex}
+@media(max-width:610px){
+  html[data-b6-enhanced="true"] .role-focus-options{display:grid}
+}
