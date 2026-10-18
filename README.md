@@ -7,6 +7,12 @@ Murcia, Spain · Remote · Spanish / English / Italian
 
 ---
 
+## P1 · final seven-phase release
+
+P1 consists of **seven phases, from P1.1 through P1.7, with a fixed end**. The [P1 release record](./RELEASE_P1_FINAL.md) documents the deliverables, evidence, untouched external repositories and final validation gates. The last phase corrects the application desk's outdated PDF statements, prioritizes ES/EN resumes/letters according to the visitor's language, and adds viewport/theme browser audits; it does not edit the approved PDF documents.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.

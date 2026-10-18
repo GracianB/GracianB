@@ -665,13 +665,13 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
 .arc-grid article > span{
   color:var(--gold);
   font-family:var(--mono);
-  font-size:.5rem;
+  font-size:.72rem;
 }
 .arc-years{
   margin:2.7rem 0 .55rem;
   color:var(--subtle);
   font-family:var(--mono);
-  font-size:.5rem;
+  font-size:.72rem;
   letter-spacing:.08em;
   text-transform:uppercase;
 }
@@ -2199,7 +2199,7 @@ html[data-theme="light"] .world-carousel-controls button:hover{background:rgba(2
 .evidence-card dd{font-size:clamp(.9rem,.84rem + .12vw,1rem);line-height:1.55}
 .card-actions a{font-size:var(--control-small);letter-spacing:.012em}
 .method-flow span,.method-flow small,.arc-grid article > span,.arc-years,.document-group-head span{
-  font-size:clamp(.66rem,.62rem + .12vw,.74rem);
+  font-size:clamp(.72rem,.68rem + .12vw,.82rem);
   letter-spacing:.04em;
 }
 .document-group > a{min-height:3.4rem;align-items:center;font-size:clamp(.85rem,.79rem + .14vw,.95rem);line-height:1.45}
@@ -2517,3 +2517,26 @@ html[data-theme="light"] .document-group>a:hover b{color:#8c6419}
   .hero-recruiter-route a,.hero-proof-link{color:var(--text);text-decoration:underline;text-decoration-thickness:2px}
 }
 @media(prefers-reduced-motion:reduce){.hero-recruiter-route a{transition:none}}
+
+
+/* P1.5 / Final legibility pass. Preserve the signed-off universe art. */
+.footer{font-size:clamp(.72rem,.68rem + .12vw,.82rem);line-height:1.55;letter-spacing:.015em}
+.footer > div{flex-wrap:wrap}
+.card-top{font-size:clamp(.68rem,.64rem + .13vw,.78rem);letter-spacing:.055em;line-height:1.45}
+.card-top b{font-size:inherit}
+.hero-edition{font-size:.7rem}
+.document-visual small{font-size:clamp(.65rem,.6rem + .12vw,.74rem)}
+:where(.hero-recruiter-route a,.hero-proof-link,.footer a,.document-group > a):focus-visible{
+  outline:3px solid var(--cv-ochre);outline-offset:4px;border-radius:3px
+}
+@media(max-width:760px){
+  .facts-strip > div{padding:1.05rem .8rem}
+  .arc-years{margin-top:1.4rem}
+  .footer{gap:1rem;padding-block:1.3rem 1.7rem}
+  .footer > div{gap:.7rem}
+  .contact-section{padding-block:clamp(3rem,9vw,5rem)}
+}
+@media(max-width:365px){
+  .hero-recruiter-route,.hero-proof-wow{font-size:.83rem}
+  .section-head h2{overflow-wrap:break-word}
+}

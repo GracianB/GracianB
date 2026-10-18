@@ -16,7 +16,7 @@ const pdfs=[
 assert.equal((html.match(/class="panel /g)||[]).length,3);
 assert.equal((html.match(/data-b6-home-link/g) || []).length, 3,
   "Application desk needs three language-aware return routes");
-assert.match(html, /apply\.js\?v=b6-2/,
+assert.match(html, /apply\.js\?v=b6-3/,
   "Application JS cache key must reflect bilingual return navigation");
 assert.match(readFileSync("apply.js", "utf8"), /\.\/\?lang=en/,
   "English recruiter must be able to return to the English hub");
@@ -28,6 +28,12 @@ for(const pdf of pdfs){
  assert.equal(readFileSync(pdf).subarray(0,5).toString("ascii"),"%PDF-","Invalid PDF: "+pdf);
 }
 assert.ok(hub.includes('href="./apply.html"'),"Main hub must expose application desk");
+assert.match(html, /apply\.css\?v=b6-3/, "Application CSS must be refreshed");
+for (const stale of ["Las versiones editoriales/ATS en revisión", "generated from printable HTML", "generadas desde páginas imprimibles"]) {
+ assert.ok(!html.includes(stale), "Outdated PDF explanation remains: " + stale);
+}
+assert.match(html, /versiones editoriales publicadas en octubre de 2026/, "Updated professional PDF provenance missing");
+assert.match(html, /nuevos CV y cartas editoriales/, "Updated Cabin Crew PDF provenance missing");
 for(const pdf of pdfs.slice(8))assert.ok(hub.includes('href="./'+pdf+'"'),"Main hub misses aviation document "+pdf);
 assert.ok(!/https:\/\/github\.com\/GracianB\/aigoritmo/.test(html),"Private source advertised");
 for(const resource of ["professional-deck/","yoga-instructor/","cabin-crew.html","systems-lab/#aigoritmo"])assert.ok(html.includes(resource),"Missing public evidence: "+resource);
@@ -57,6 +63,18 @@ try{
     assert.equal(await page.locator('[data-b6-panel="'+track+'"]').isVisible(),true);
     assert.equal(await page.locator('[data-b6-track="'+track+'"]').getAttribute("aria-pressed"),"true");
     assert.equal(await page.locator('[data-b6-set-lang="'+lang+'"]').getAttribute("aria-pressed"),"true");
+    // A selected language must determine the first shown CV and cover letter,
+    // while all twelve PDF links remain present for direct use.
+    const docFirst = await page.locator('[data-b6-panel="' + track + '"] .resource-columns section:not(.evidence)').evaluateAll(
+      sections => sections.map(section => {
+        const links = [...section.querySelectorAll('a[href$=".pdf"]')];
+        links.sort((a,b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+        return links[0]?.getAttribute("href") || "";
+      })
+    );
+    assert.equal(docFirst.length,2,"CV and letter columns required");
+    assert.ok(docFirst.every(href => href.endsWith("_" + lang.toUpperCase() + ".pdf")),
+      "CV and letter must prioritize visitor language: " + lang + "/" + track + ": " + docFirst);
     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
     assert.equal(overflow,false,"Horizontal overflow "+width+"/"+lang+"/"+track);
    }
