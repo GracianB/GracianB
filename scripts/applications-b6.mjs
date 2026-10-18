@@ -192,7 +192,8 @@ try{
    assert.equal(await page.locator(".selector").isVisible(),false,"Print output must exclude selectors");
    assert.equal(await page.locator(".candidate-brief").isVisible(),true,"Print brief must be visible");
    assert.equal(await page.locator("[data-brief-print]").isVisible(),false,"Print button must disappear");
-   assert.equal(await page.locator('[data-brief-focus="revops"]').isVisible(),false);
+   assert.equal(await page.locator('[data-b6-focus="revops"]').isVisible(),false,
+     "Print output must hide focus buttons, not the selected visible summary");
    assert.equal(await page.locator('[data-brief-track="professional"][data-brief-focus="revops"]').isVisible(),true);
    await page.emulateMedia({media:"screen"});
       await page.locator('[data-b6-track="aviation"]').click();
