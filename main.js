@@ -75,6 +75,12 @@
       button.classList.toggle("is-active", active);
     });
 
+    // Preserve the visitor’s chosen language when handing off to the application desk.
+    // Keep the Spanish/default URL unchanged for progressive HTML navigation.
+    document.querySelectorAll("[data-application-link]").forEach((link) => {
+      link.href = lang === "en" ? "./apply.html?lang=en" : "./apply.html";
+    });
+
     const cv = document.querySelector("[data-cv-link]");
     if (cv) {
       cv.href = lang === "en"
