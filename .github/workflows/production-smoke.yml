@@ -34,6 +34,10 @@ jobs:
         run: node scripts/browser-smoke.mjs
       - name: Live application desk ES EN and twelve document routes
         run: node scripts/applications-b6.mjs
+      - name: P6 production resource and paint audit
+        env:
+          GB_PERF_URL: https://gracianb.github.io/GracianB/
+        run: node scripts/performance-audit.mjs
       - name: Upload live evidence
         if: always()
         uses: actions/upload-artifact@v4

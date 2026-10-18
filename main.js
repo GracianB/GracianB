@@ -155,7 +155,12 @@
     menuToggle.setAttribute("aria-label", open ? (t.menuCloseLabel || "Close menu") : (t.menuOpenLabel || "Open menu"));
     document.body.classList.toggle("menu-open", open);
     if (open) {
-      requestAnimationFrame(() => mobileMenu.querySelector("a")?.focus());
+      requestAnimationFrame(() => {
+        // Don't steal focus from a fast keyboard action between opening and paint.
+        if (!mobileMenu.hidden && !mobileMenu.contains(document.activeElement)) {
+          mobileMenu.querySelector("a")?.focus();
+        }
+      });
     } else if (mobileMenu.contains(document.activeElement)) {
       menuToggle.focus();
     }
@@ -398,12 +403,13 @@
   });
 
   const topbar = document.querySelector("[data-topbar]");
+  const progressFill = document.querySelector(".scroll-progress i");
   let ticking = false;
 
   function updateScroll() {
     const height = document.documentElement.scrollHeight - innerHeight;
     const progress = height > 0 ? Math.min(1, Math.max(0, scrollY / height)) : 0;
-    root.style.setProperty("--scroll-progress", `${(progress * 100).toFixed(2)}%`);
+    if (progressFill) progressFill.style.transform = `scaleX(${progress.toFixed(4)})`;
     topbar?.classList.toggle("is-scrolled", scrollY > 12);
     ticking = false;
   }
