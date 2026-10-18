@@ -33,6 +33,16 @@ The 12 PDFs remain **unchanged** in this identity-only pass. Git's `.gitattribut
 
 ---
 
+## P5 · Language continuity and keyboard navigation
+
+The ES/EN application desk and main hub now share the `gb-hub-lang` preference. A deep-linked application in Spanish or English sets the visitor's language and always uses an explicit `?lang=es` or `?lang=en` return URL. This prevents the previous edge case where a saved English hub could override Spanish chosen in applications.
+
+The mobile navigation keeps Tab and Shift+Tab inside the open menu, while Escape still restores focus to the menu button. The quick navigation dialog excludes its decorative backdrop from keyboard and screen-reader focus. Existing keyboard, localized navigation and dark/light theme workflows retain browser E2E coverage.
+
+This is a scoped accessibility and language-continuity fix: no PDF, project repository, personal claim or portfolio design is altered.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.
