@@ -159,7 +159,7 @@ assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
 assert.match(html, /href="\.\/cabin-crew\.html"/);
 // P1.4: the first and final entrances must use the same universe numbering/order.
-const doorOrder = [...html.matchAll(/<a class="door door-(gold|sage|cyan)"\b/g)].map((item) => item[1]);
+const doorOrder = [...html.matchAll(/<a class="door door-(gold|sage|cyan)"(?=\s|>)/g)].map((item) => item[1]);
 assert.deepEqual(doorOrder, ["gold", "sage", "cyan"],
   "Lower universe choices must follow Professional → Yoga → Systems Lab");
 assert.match(html, /<span>02 \/ YOGA<\/span>/);
