@@ -136,7 +136,50 @@ try{
    await page.goto(ROOT+"apply.html?track=professional&lang=en&focus=unknown", {waitUntil:"domcontentloaded"});
    assert.equal(await page.locator('[data-b6-focus="customer-success"]').getAttribute("aria-pressed"),"true",
      "Invalid deep-link focus should fall back safely to Customer Success");
-   // P3: role and language must choose one truthful brief and the ORIGINAL PDFs.
+   // P3 dark-mode completion: both themes, role contexts, shared preference and A4 print.
+   for(const chosenTheme of ["dark","light"]) {
+     await page.goto(ROOT+"apply.html?track=professional&lang=en&focus=revops&theme="+chosenTheme,
+       {waitUntil:"domcontentloaded"});
+     assert.equal(await page.locator("html").getAttribute("data-theme"),chosenTheme);
+     assert.equal(await page.locator("[data-b6-theme-toggle]").getAttribute("aria-pressed"),
+       String(chosenTheme==="dark"));
+     const surfaces=await page.evaluate(()=>({
+       brief:getComputedStyle(document.querySelector(".candidate-brief")).backgroundColor,
+       proof:getComputedStyle(document.querySelector(".role-proof:not([hidden])")).backgroundColor,
+       scroll:document.documentElement.scrollWidth>innerWidth+1,
+     }));
+     assert.equal(surfaces.scroll,false,"Theme must not introduce horizontal overflow");
+     assert.notEqual(surfaces.brief,surfaces.proof,"Brief must be a distinct surface");
+     if(chosenTheme==="dark")assert.equal(surfaces.brief,"rgb(32, 42, 52)");
+     else assert.equal(surfaces.brief,"rgb(251, 249, 244)");
+     // Even the dark site must print a light paper sheet.
+     await page.emulateMedia({media:"print"});
+     assert.equal(await page.locator(".candidate-brief").isVisible(),true);
+     assert.equal(await page.locator(".app-theme-toggle").isVisible(),false);
+     assert.equal(await page.locator(".candidate-brief").evaluate(el=>getComputedStyle(el).backgroundColor),
+       "rgb(255, 255, 255)","A4 brief must print on white paper");
+     await page.emulateMedia({media:"screen"});
+   }
+   await page.goto(ROOT+"apply.html?track=professional&lang=en&focus=revops&theme=dark",
+     {waitUntil:"domcontentloaded"});
+   assert.equal(await page.locator("[data-b6-theme-toggle]").getAttribute("aria-label"),"Switch to light theme");
+   await page.locator("[data-b6-theme-toggle]").click();
+   assert.equal(await page.locator("html").getAttribute("data-theme"),"light");
+   assert.match(page.url(),/theme=light/);
+   assert.equal(await page.locator("[data-b6-theme-toggle]").getAttribute("aria-label"),"Switch to dark theme");
+   assert.equal(await page.evaluate(()=>localStorage.getItem("gb-hub-theme")),"light");
+   await page.locator('[data-b6-focus="data-automation"]').click();
+   assert.equal(await page.locator("html").getAttribute("data-theme"),"light",
+     "Changing role must not reset selected theme");
+   await page.locator('.top nav a[data-b6-home-link]').click();
+   assert.equal(await page.locator("html").getAttribute("data-theme"),"light",
+     "Hub must preserve selected theme");
+   assert.equal(await page.locator(".hero-recruiter-route [data-application-link]").getAttribute("href"),
+     "./apply.html?lang=en&theme=light","Returning to application must retain light theme");
+   await page.locator(".hero-recruiter-route [data-application-link]").click();
+   assert.equal(await page.locator("html").getAttribute("data-theme"),"light",
+     "Roundtrip hub ↔ application must retain theme");
+      // P3: role and language must choose one truthful brief and the ORIGINAL PDFs.
    const documentMatrix = {
      professional: {
        es: ["Gracian_Baena_CV_2026_ES.pdf","Gracian_Baena_Carta_Presentacion_ES.pdf"],
