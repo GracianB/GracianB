@@ -16,7 +16,6 @@
   --max:1240px;
   --radius:22px;
   --shadow:0 24px 80px rgba(0,0,0,.32);
-  --scroll-progress:0%;
   --serif:Georgia,"Times New Roman",serif;
   --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
@@ -121,8 +120,10 @@ img,svg{display:block;max-width:100%}
 }
 .scroll-progress i{
   display:block;
-  width:var(--scroll-progress);
+  width:100%;
   height:100%;
+  transform:scaleX(0);
+  transform-origin:left center;
   background:linear-gradient(90deg,var(--gold),var(--cyan));
   box-shadow:0 0 12px rgba(122,243,255,.4);
 }
