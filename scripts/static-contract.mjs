@@ -112,8 +112,14 @@ assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
   "Yoga artwork must keep its botanical green");
 assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
   "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=24/, "P1.3 CSS must bypass old cached bytes");
+assert.match(html, /styles\.css\?v=25/, "P1.3 CSS must bypass old cached bytes");
 assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
+
+assert.match(css, /\/\* P1\.5 \/ Final legibility pass/, "P1.5 design pass missing");
+assert.match(css, /\.arc-years\{[\s\S]*?font-size:\.72rem/, "Career microcopy is too small");
+assert.match(css, /\.footer\{font-size:clamp\(\.72rem/, "Footer must retain readable type");
+assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=b6-3/, "Application stylesheet needs final cache version");
+
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
 assert.match(html, /main\.js\?v=24/, "P1.3 JS must bypass old cached bytes");
 assert.match(html, /i18n\.js\?v=24" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
