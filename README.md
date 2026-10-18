@@ -13,6 +13,12 @@ P1 consists of **seven phases, from P1.1 through P1.7, with a fixed end**. The [
 
 ---
 
+## P2 · role-specific recruiter evidence
+
+Following the seven closed P1 stages, P2 is a **three-part recruiter experience upgrade**, not more PDF redesign. The [P2 release record](./P2_RECRUITER_RELEASE.md) specifies role-specific evidence for Customer Success, RevOps and Data & Automation, shareable ES/EN URLs, explicit nonpublic-project disclosure and automated regression requirements. The linked resumes, cover letters and independent project repositories are not modified.
+
+---
+
 ## The short version
 
 I turn **customer and operational problems into systems people can use, measure and improve**.
