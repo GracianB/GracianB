@@ -398,12 +398,13 @@
   });
 
   const topbar = document.querySelector("[data-topbar]");
+  const progressFill = document.querySelector(".scroll-progress i");
   let ticking = false;
 
   function updateScroll() {
     const height = document.documentElement.scrollHeight - innerHeight;
     const progress = height > 0 ? Math.min(1, Math.max(0, scrollY / height)) : 0;
-    root.style.setProperty("--scroll-progress", `${(progress * 100).toFixed(2)}%`);
+    if (progressFill) progressFill.style.transform = `scaleX(${progress.toFixed(4)})`;
     topbar?.classList.toggle("is-scrolled", scrollY > 12);
     ticking = false;
   }
