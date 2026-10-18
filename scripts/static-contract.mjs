@@ -34,6 +34,28 @@ for (const file of requiredFiles) {
 
 const html = readFileSync("index.html", "utf8");
 const css = readFileSync("styles.css", "utf8");
+const binaryAttributes = readFileSync(".gitattributes", "utf8");
+assert.match(binaryAttributes, /^\*\.pdf binary\s*$/m,
+  "All CVs and cover letters must remain non-mergeable binary Git assets");
+// The professional dossier follows the approved silver / graphite Deck V24,
+// without recoloring Yoga's botanical green or Cabin Crew's aviation blue.
+for (const [label,token] of [
+  ["graphite","--pro-graphite:#151c22"],
+  ["graphite-soft","--pro-graphite-soft:#263039"],
+  ["silver","--pro-silver:#c8cccd"],
+  ["ivory","--pro-ivory:#f3eee5"],
+  ["light silver","--pro-silver-dark:#52636d"],
+]) {
+  assert.ok(css.includes(token), "Missing approved professional color token " + label);
+}
+assert.match(css, /\.document-group-professional\{--document-accent:var\(--pro-silver\)\}/,
+  "Professional documents must not revert to the legacy golden badge");
+assert.match(css, /\.document-group-yoga\{--document-accent:#ceaa78\}/,
+  "Yoga visual identity unexpectedly changed");
+assert.match(css, /\.document-group-cabin\{--document-accent:#d2a0ae\}/,
+  "Cabin visual identity unexpectedly changed");
+assert.match(readFileSync("apply.css","utf8"), /\.candidate-brief\{\s*background:#f3eee5/,
+  "Recruiter briefing must use approved silver/ivory in light mode");
 const js = readFileSync("i18n.js", "utf8");
 const readme = readFileSync("README.md", "utf8");
 const sitemap = readFileSync("sitemap.xml", "utf8");
