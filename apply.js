@@ -30,6 +30,13 @@
     aviation: "https://gracianb.github.io/cabin-crew-site/",
   };
   const THEME_KEY = "gb-hub-theme";
+  const LANG_KEY = "gb-hub-lang";
+  const safeGetLang = () => {
+    try { return localStorage.getItem(LANG_KEY); } catch { return null; }
+  };
+  const safeSaveLang = (value) => {
+    try { localStorage.setItem(LANG_KEY, value); } catch { /* storage optional */ }
+  };
   const safeGetTheme = () => {
     try { return localStorage.getItem(THEME_KEY); } catch { return null; }
   };
@@ -41,7 +48,8 @@
   let theme = validTheme(params.get("theme")) ? params.get("theme")
     : (validTheme(safeGetTheme()) ? safeGetTheme() : "dark");
   let track = choices.includes(params.get("track")) ? params.get("track") : "professional";
-  let lang = languages.includes(params.get("lang")) ? params.get("lang") : "es";
+  let lang = languages.includes(params.get("lang")) ? params.get("lang")
+    : (languages.includes(safeGetLang()) ? safeGetLang() : "es");
   let focus = focuses.includes(params.get("focus")) ? params.get("focus") : "customer-success";
 
   function applyTheme({persist = false} = {}) {
@@ -70,18 +78,20 @@
   }
   // Explicit incoming theme overrides sync the preference back to the main hub.
   if (validTheme(params.get("theme"))) safeSaveTheme(theme);
+  // A shared deep link explicitly in ES or EN must also update the hub preference.
+  if (languages.includes(params.get("lang"))) safeSaveLang(lang);
 
   function updateDocument() {
     document.documentElement.lang = lang;
     document.documentElement.dataset.b6Lang = lang;
     document.title = (lang === "es" ? "Candidaturas" : "Applications") + " | Gracián Baena";
     const visible = document.querySelector('[data-b6-panel="' + track + '"]');
-    // An EN application should also return to an EN hub, including via shared URLs.
+    // Always pass ES or EN explicitly: an earlier saved hub language must never override this choice.
     const currentTheme = new URLSearchParams(location.search).get("theme");
     const themeSuffix = validTheme(currentTheme) ? "theme=" + theme : "";
     for (const link of document.querySelectorAll("[data-b6-home-link]")) {
       const parameters = [];
-      if (lang === "en") parameters.push("lang=en");
+      parameters.push("lang=" + lang);
       if (themeSuffix) parameters.push(themeSuffix);
       link.href = "./" + (parameters.length ? "?" + parameters.join("&") : "");
     }
@@ -125,6 +135,7 @@
     track = nextTrack;
     lang = nextLang;
     focus = nextFocus;
+    safeSaveLang(lang);
     const url = new URL(location.href);
     url.searchParams.set("track", track);
     url.searchParams.set("lang", lang);
@@ -163,7 +174,9 @@
   addEventListener("popstate", () => {
     const p = new URLSearchParams(location.search);
     track = choices.includes(p.get("track")) ? p.get("track") : "professional";
-    lang = languages.includes(p.get("lang")) ? p.get("lang") : "es";
+    lang = languages.includes(p.get("lang")) ? p.get("lang")
+      : (languages.includes(safeGetLang()) ? safeGetLang() : "es");
+    if (languages.includes(p.get("lang"))) safeSaveLang(lang);
     focus = focuses.includes(p.get("focus")) ? p.get("focus") : "customer-success";
     theme = validTheme(p.get("theme")) ? p.get("theme") :
       (validTheme(safeGetTheme()) ? safeGetTheme() : "dark");

@@ -150,7 +150,7 @@ assert.match(application, /data-brief-print/, "P3 printable brief entry missing"
 assert.match(application, /data-b6-theme-toggle/, "Application theme control missing");
 assert.match(application, /<meta name="theme-color" content="#14191f">/,
   "First paint on application desk must be dark by default");
-assert.match(application, /apply\.js\?v=p3-dark-1/,
+assert.match(application, /apply\.js\?v=p5-1/,
   "Theme application JavaScript cache key missing");
 assert.match(readFileSync("apply.js", "utf8"), /gb-hub-theme/,
   "Both pages must share the same saved theme preference");
@@ -163,7 +163,7 @@ assert.match(application, /RevOps Studio continúa en desarrollo/,
 
 
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=26/, "P1.3 JS must bypass old cached bytes");
+assert.match(html, /main\.js\?v=27/, "P1.3 JS must bypass old cached bytes");
 assert.match(html, /i18n\.js\?v=24" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
 // Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
@@ -173,7 +173,7 @@ assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointer
   "Global pointer tracking for deleted artwork must not return");
 assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
   "Do not preload the same blocking stylesheet redundantly");
-assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=26" defer><\/script>/,
+assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=27" defer><\/script>/,
   "Dictionary must execute before the app, with both scripts deferred");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");

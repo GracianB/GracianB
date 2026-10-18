@@ -165,6 +165,23 @@
   mobileMenu?.addEventListener("click", (event) => {
     if (event.target.closest("a")) setMenu(false);
   });
+  // The open mobile sheet blocks page scrolling; keep keyboard focus inside it.
+  // Escape closes it through the existing global handler and restores the menu button.
+  mobileMenu?.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab" || mobileMenu.hidden) return;
+    const focusables = [...mobileMenu.querySelectorAll('a[href], button:not([disabled])')]
+      .filter((node) => node.getClientRects().length > 0);
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
 
   const worldCarousel = document.querySelector("[data-world-carousel]");
   const worldSlides = [...document.querySelectorAll("[data-world-slide]")];
@@ -364,7 +381,7 @@
     } else if (event.key === "Tab") {
       const focusables = [...command.querySelectorAll(
         'button, input, a[href], [tabindex]:not([tabindex="-1"])',
-      )].filter((node) => !node.hasAttribute("disabled") && node.offsetParent !== null);
+      )].filter((node) => node.tabIndex >= 0 && !node.hasAttribute("disabled") && node.offsetParent !== null);
 
       if (focusables.length) {
         const first = focusables[0];
