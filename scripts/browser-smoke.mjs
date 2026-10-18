@@ -63,6 +63,13 @@ async function desktop(browser) {
   });
   assert.equal(heroFits, true, "Hero must fit the desktop viewport");
   assert.equal(await page.locator(".evidence-card").count(), 5);
+  assert.equal(await page.locator(".hero-recruiter-route a").getAttribute("href"), "./apply.html");
+  assert.match(await page.locator(".hero-recruiter-route").innerText(), /CV y carta/i);
+  assert.equal(await page.locator(".hero-proof-link").getAttribute("href"),
+    "https://gracianb.github.io/professional-deck/proyecto-bodytone.html");
+  assert.match(await page.locator(".facts-strip").innerText(), /hasta 80/);
+  assert.equal(await page.locator("#world-tab-professional").getAttribute("aria-controls"), "world-panel-professional");
+  assert.equal(await page.locator("#world-panel-professional").getAttribute("aria-labelledby"), "world-tab-professional");
   assert.equal(await page.locator(".method-flow li").count(), 7);
   assert.equal(await page.locator("[data-world-slide]").count(), 3);
   assert.equal(await page.locator('[data-world="professional"]').getAttribute("aria-hidden"), "false");
@@ -111,6 +118,10 @@ async function desktop(browser) {
 
   await page.getByRole("button", { name: "EN", exact: true }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
+  assert.match(await page.locator(".hero-recruiter-route").innerText(), /Choose resume and letter/);
+  assert.match(await page.locator(".facts-strip").innerText(), /up to 80/);
+  assert.equal(await page.locator("[data-command-open]").getAttribute("aria-label"), "Open quick navigation");
+  assert.equal(await page.locator(".desktop-nav").getAttribute("aria-label"), "Main navigation");
   assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /customer and operational problems/i);
   assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
 
@@ -174,8 +185,11 @@ async function mobile(browser) {
 
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
+  assert.equal(await page.locator("[data-menu-toggle]").getAttribute("aria-label"), "Cerrar menú");
   await page.locator('#mobile-menu [data-set-lang="en"]').click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
+  assert.equal(await page.locator("[data-menu-toggle]").getAttribute("aria-label"), "Close menu");
+  assert.equal(await page.locator("#mobile-menu nav").getAttribute("aria-label"), "Mobile navigation");
   assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
   assert.equal(await page.locator('#mobile-menu [data-set-lang="en"]').getAttribute("aria-pressed"), "true");
   await page.locator('#mobile-menu [data-set-lang="es"]').click();
