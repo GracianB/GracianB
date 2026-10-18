@@ -1,77 +1,78 @@
-/* GRACIANB P7 · Unified Professional Deck V24 dark language
-   Source palette: graphite #151c22, deep #0e151b, raised #263039,
-   silver #c8cccd, ivory #f3eee5. One layer shared by hub + applications.
-   Screen-only: light mode and the existing white A4 print remain unchanged. */
+/* GRACIANB · Deep petrol variant of the Professional Deck.
+   Dark teal-black #0f1a20, layered petroleum #132129 / #17262e / #1d2d36,
+   cool silver #c7cdd0. One shared hub + applications dark-only stylesheet.
+   The existing light mode and white A4 print remain unchanged. */
 @media screen {
   html[data-theme="dark"] {
-    --deck-deep:#0e151b;--deck-bg:#151c22;--deck-low:#1d272e;
-    --deck-card:#263039;--deck-raised:#303b43;
-    --deck-silver:#c8cccd;--deck-silver-soft:#abb4b7;
-    --deck-ivory:#f3eee5;--deck-text:#ecf0f0;
-    --deck-muted:#bec4c5;--deck-rule:rgba(200,204,205,.23);
-    --deck-rule-strong:rgba(200,204,205,.40);
+    --deck-deep:#091218;--deck-bg:#0f1a20;--deck-low:#132129;
+    --deck-card:#17262e;--deck-raised:#1d2d36;
+    --deck-silver:#c7cdd0;--deck-silver-soft:#a5b6bd;
+    --deck-petrol:#89a4af;--deck-petrol-soft:#6f8892;
+    --deck-ivory:#edf2f2;--deck-text:#edf2f2;
+    --deck-muted:#aeb9bc;--deck-rule:rgba(199,205,208,.22);
+    --deck-rule-strong:rgba(199,205,208,.38);
     color-scheme:dark;
   }
 
   /* HUB · suppress the obsolete ochre / brown palette at the source. */
   html[data-theme="dark"] {
     --bg:var(--deck-bg);--bg-soft:var(--deck-low);
-    --panel:rgba(38,48,57,.94);--panel-strong:var(--deck-card);
+    --panel:rgba(23,38,46,.95);--panel-strong:var(--deck-card);
     --text:var(--deck-text);--muted:var(--deck-muted);--subtle:var(--deck-silver-soft);
     --line:var(--deck-rule);--line-strong:var(--deck-rule-strong);
     --cv-ink:var(--deck-bg);--cv-paper:var(--deck-ivory);
     --cv-ochre:var(--deck-silver);--cv-forest:var(--deck-card);
-    --gold:var(--deck-silver);--cyan:#b9ccd3;--coral:#adb9c0;
+    --gold:var(--deck-silver);--cyan:var(--deck-petrol);--coral:#adb9c0;
     --violet:#bac2ce;--sage:#a9c4b7;
-    --shadow:0 24px 80px rgba(0,0,0,.30);
+    --shadow:0 24px 80px rgba(0,0,0,.38);
   }
   html[data-theme="dark"] body {
     background:
-      radial-gradient(ellipse at 8% 8%,rgba(200,204,205,.065),transparent 36rem),
-      radial-gradient(ellipse at 91% 26%,rgba(130,154,166,.055),transparent 35rem),
+      radial-gradient(ellipse at 8% 8%,rgba(137,164,175,.09),transparent 36rem),
+      radial-gradient(ellipse at 91% 26%,rgba(111,136,146,.07),transparent 35rem),
       var(--deck-bg);
     color:var(--deck-text);
   }
-  html[data-theme="dark"] ::selection{background:rgba(200,204,205,.28);color:#fff}
+  html[data-theme="dark"] ::selection{background:rgba(199,205,208,.28);color:#fff}
   html[data-theme="dark"] :focus-visible{outline-color:var(--deck-silver)}
-  html[data-theme="dark"] .ambient-orb-a{background:#9ba9b0}
-  html[data-theme="dark"] .ambient-orb-b{background:#617985}
+  html[data-theme="dark"] .ambient-orb-a{background:#7f98a4}
+  html[data-theme="dark"] .ambient-orb-b{background:#527580}
   html[data-theme="dark"] .scroll-progress i{
-    background:linear-gradient(90deg,#8d9ba3,var(--deck-silver));
-    box-shadow:0 0 9px rgba(200,204,205,.15);
+    background:linear-gradient(90deg,var(--deck-petrol-soft),var(--deck-silver));
+    box-shadow:0 0 9px rgba(199,205,208,.15);
   }
   html[data-theme="dark"] .topbar{
-    background:linear-gradient(180deg,rgba(14,21,27,.97),rgba(21,28,34,.84));
+    background:linear-gradient(180deg,rgba(9,18,24,.97),rgba(15,26,32,.86));
     border-bottom-color:var(--deck-rule);
   }
   html[data-theme="dark"] .brand-mark{
-    border-color:rgba(200,204,205,.52);
-    box-shadow:inset 0 0 0 4px rgba(200,204,205,.035);
+    border-color:rgba(199,205,208,.52);
+    box-shadow:inset 0 0 0 4px rgba(199,205,208,.035);
     color:var(--deck-silver);
   }
   html[data-theme="dark"] .theme-toggle,
   html[data-theme="dark"] .segment,
   html[data-theme="dark"] .menu-toggle{border-color:var(--deck-rule)}
   html[data-theme="dark"] .hero-name::before{
-    background:radial-gradient(circle,rgba(200,204,205,.095),transparent 68%);
+    background:radial-gradient(circle,rgba(199,205,208,.095),transparent 68%);
   }
   html[data-theme="dark"] .hero-name-last{
     color:var(--deck-silver);
-    text-shadow:0 18px 68px rgba(154,171,183,.13);
+    text-shadow:0 18px 68px rgba(137,164,175,.15);
   }
   html[data-theme="dark"] .hero-thesis em{color:var(--deck-silver)}
   html[data-theme="dark"] .hero-actions .button-primary{
     background:var(--deck-silver);border-color:var(--deck-silver);
-    color:var(--deck-bg);box-shadow:0 10px 26px rgba(13,20,26,.27);
+    color:var(--deck-bg);box-shadow:0 10px 26px rgba(9,18,24,.32);
   }
   html[data-theme="dark"] .hero-actions .button-primary:hover{
     background:#dee3e5;border-color:#dee3e5;color:var(--deck-bg)
   }
   html[data-theme="dark"] .button-secondary{
-    border-color:rgba(200,204,205,.42);
-    background:rgba(200,204,205,.065);color:var(--deck-text)
+    border-color:rgba(199,205,208,.42);
+    background:rgba(199,205,208,.065);color:var(--deck-text)
   }
-  html[data-theme="dark"] .button-secondary:hover{background:rgba(200,204,205,.13)}
+  html[data-theme="dark"] .button-secondary:hover{background:rgba(199,205,208,.13)}
   html[data-theme="dark"] .hero-recruiter-route a,
   html[data-theme="dark"] .hero-proof-link{border-color:var(--deck-silver);text-decoration-color:var(--deck-silver)}
   html[data-theme="dark"] .hero-recruiter-route a:hover,
@@ -79,11 +80,11 @@
   html[data-theme="dark"] .hero-role-wow::before{
     background:linear-gradient(90deg,var(--deck-silver),transparent)
   }
-  html[data-theme="dark"] .hero-proof-wow .live-dot{box-shadow:0 0 0 5px rgba(200,204,205,.1)}
+  html[data-theme="dark"] .hero-proof-wow .live-dot{box-shadow:0 0 0 5px rgba(199,205,208,.1)}
   html[data-theme="dark"] .world-selector{
     background:
-      radial-gradient(circle at 82% 6%,rgba(200,204,205,.085),transparent 20rem),
-      linear-gradient(180deg,rgba(48,59,67,.9),rgba(29,39,46,.93));
+      radial-gradient(circle at 82% 6%,rgba(137,164,175,.085),transparent 20rem),
+      linear-gradient(180deg,rgba(29,45,54,.94),rgba(19,33,41,.96));
     border-color:var(--deck-rule-strong)
   }
   html[data-theme="dark"] .world-selector-head,
@@ -106,7 +107,7 @@
   }
   html[data-theme="dark"] .contact-panel{
     background:
-      radial-gradient(circle at 80% 0%,rgba(200,204,205,.08),transparent 24rem),
+      radial-gradient(circle at 80% 0%,rgba(199,205,208,.08),transparent 24rem),
       var(--deck-card);
   }
   html[data-theme="dark"] .document-group-professional{--document-accent:var(--deck-silver)}
@@ -135,13 +136,13 @@
   html[data-theme="dark"] .top{border-bottom-color:var(--deck-rule)}
   html[data-theme="dark"] .brandmark{border-color:var(--deck-silver);color:var(--deck-silver)}
   html[data-theme="dark"] .app-theme-toggle{border-color:var(--deck-rule-strong)}
-  html[data-theme="dark"] .app-theme-toggle:hover{background:rgba(200,204,205,.11)}
+  html[data-theme="dark"] .app-theme-toggle:hover{background:rgba(199,205,208,.11)}
   html[data-theme="dark"] .lang button{color:var(--deck-text)}
   html[data-theme="dark"] .lang button[aria-pressed="true"]{
     color:var(--deck-bg);background:var(--deck-silver)
   }
   html[data-theme="dark"] .hero{
-    background:radial-gradient(ellipse at 100% 0%,rgba(200,204,205,.095),transparent 60%);
+    background:radial-gradient(ellipse at 100% 0%,rgba(199,205,208,.095),transparent 60%);
     border-bottom-color:var(--deck-rule)
   }
   html[data-theme="dark"] .kicker{color:var(--deck-silver)}
@@ -162,10 +163,10 @@
     --track:var(--deck-silver);--track-bg:var(--deck-raised)
   }
   html[data-theme="dark"] .panel.forest{
-    --track:#b5c7bd;--track-bg:#303c3b
+    --track:#b5c7bd;--track-bg:#203732
   }
   html[data-theme="dark"] .panel.navy{
-    --track:#b9c9d1;--track-bg:#303b43
+    --track:#b9c9d1;--track-bg:var(--deck-raised)
   }
   html[data-theme="dark"] .resource-columns a{border-bottom-color:var(--deck-rule)}
   html[data-theme="dark"] .resource-columns a:hover{color:#fff}
@@ -209,7 +210,7 @@
     background:var(--deck-raised);border-color:var(--deck-rule-strong);color:var(--deck-text)
   }
   html[data-theme="dark"] .role-proof-links a:hover,
-  html[data-theme="dark"] .candidate-brief-actions a:hover{background:#3b4750}
+  html[data-theme="dark"] .candidate-brief-actions a:hover{background:#29414d}
   html[data-theme="dark"] .candidate-brief-identity,
   html[data-theme="dark"] .candidate-brief-footer{border-color:var(--deck-rule)}
   html[data-theme="dark"] .candidate-brief-kicker,
