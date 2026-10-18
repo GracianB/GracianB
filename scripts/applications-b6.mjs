@@ -171,12 +171,16 @@ try{
    await page.locator('[data-b6-focus="data-automation"]').click();
    assert.equal(await page.locator("html").getAttribute("data-theme"),"light",
      "Changing role must not reset selected theme");
+   const homeLink = await page.locator('.top nav a[data-b6-home-link]').getAttribute("href");
+   assert.match(homeLink,/theme=light/,"Application return URL must preserve light mode");
    await page.locator('.top nav a[data-b6-home-link]').click();
+   await page.waitForFunction(() => document.documentElement.dataset.theme === "light");
    assert.equal(await page.locator("html").getAttribute("data-theme"),"light",
-     "Hub must preserve selected theme");
+     "Hub must preserve selected theme after navigation");
    assert.equal(await page.locator(".hero-recruiter-route [data-application-link]").getAttribute("href"),
      "./apply.html?lang=en&theme=light","Returning to application must retain light theme");
    await page.locator(".hero-recruiter-route [data-application-link]").click();
+   await page.waitForFunction(() => document.documentElement.dataset.theme === "light");
    assert.equal(await page.locator("html").getAttribute("data-theme"),"light",
      "Roundtrip hub ↔ application must retain theme");
       // P3: role and language must choose one truthful brief and the ORIGINAL PDFs.
