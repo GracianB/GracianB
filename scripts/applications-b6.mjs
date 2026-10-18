@@ -17,6 +17,13 @@ const pdfs=[
 assert.equal((html.match(/class="panel /g)||[]).length,3);
 assert.equal((html.match(/data-b6-focus="/g)||[]).length,3,"P2 must offer three professional role focuses");
 assert.equal((html.match(/data-b6-focus-panel="/g)||[]).length,3,"P2 must offer three grounded evidence panels");
+assert.equal((html.match(/data-brief-track="/g)||[]).length,5,
+  "P3 must render one candidate brief for each of five role routes");
+for(const symbol of ["data-brief-cv","data-brief-letter","data-brief-proof","data-brief-print","data-brief-url"]) {
+  assert.ok(html.includes(symbol),"P3 candidate brief output missing: "+symbol);
+}
+assert.ok(html.includes("RevOps Studio sigue en desarrollo y no dispone de demo pública"),
+  "P3 brief must explicitly disclose that RevOps lacks a public demo");
 assert.ok(html.includes('data-b6-copy-link'),"Shareable application copy action missing");
 for(const focus of focuses) {
  assert.ok(html.includes('data-b6-focus="' + focus + '"'),"Missing focus choice: " + focus);
@@ -26,7 +33,7 @@ assert.match(readFileSync("apply.js","utf8"), /navigator\.clipboard\?\.writeText
   "P2 share action must copy the actual URL on direct user interaction");
 assert.equal((html.match(/data-b6-home-link/g) || []).length, 3,
   "Application desk needs three language-aware return routes");
-assert.match(html, /apply\.js\?v=p2-1/,
+assert.match(html, /apply\.js\?v=p3-1/,
   "Application JS cache key must reflect bilingual return navigation");
 assert.match(readFileSync("apply.js", "utf8"), /\.\/\?lang=en/,
   "English recruiter must be able to return to the English hub");
@@ -38,7 +45,7 @@ for(const pdf of pdfs){
  assert.equal(readFileSync(pdf).subarray(0,5).toString("ascii"),"%PDF-","Invalid PDF: "+pdf);
 }
 assert.ok(hub.includes('href="./apply.html"'),"Main hub must expose application desk");
-assert.match(html, /apply\.css\?v=p2-1/, "P2 application CSS must be refreshed");
+assert.match(html, /apply\.css\?v=p3-1/, "P2 application CSS must be refreshed");
 for (const stale of ["Las versiones editoriales/ATS en revisión", "generated from printable HTML", "generadas desde páginas imprimibles"]) {
  assert.ok(!html.includes(stale), "Outdated PDF explanation remains: " + stale);
 }
@@ -129,7 +136,66 @@ try{
    await page.goto(ROOT+"apply.html?track=professional&lang=en&focus=unknown", {waitUntil:"domcontentloaded"});
    assert.equal(await page.locator('[data-b6-focus="customer-success"]').getAttribute("aria-pressed"),"true",
      "Invalid deep-link focus should fall back safely to Customer Success");
-   await page.locator('[data-b6-track="aviation"]').click();
+   // P3: role and language must choose one truthful brief and the ORIGINAL PDFs.
+   const documentMatrix = {
+     professional: {
+       es: ["Gracian_Baena_CV_2026_ES.pdf","Gracian_Baena_Carta_Presentacion_ES.pdf"],
+       en: ["Gracian_Baena_CV_2026_EN.pdf","Gracian_Baena_Cover_Letter_EN.pdf"],
+     },
+     yoga: {
+       es: ["Gracian_Baena_CV_Yoga_ES.pdf","Gracian_Baena_Carta_Yoga_ES.pdf"],
+       en: ["Gracian_Baena_CV_Yoga_EN.pdf","Gracian_Baena_Cover_Letter_Yoga_EN.pdf"],
+     },
+     aviation: {
+       es: ["Gracian_Baena_CV_TCP_ES.pdf","Gracian_Baena_Carta_TCP_ES.pdf"],
+       en: ["Gracian_Baena_CV_TCP_EN.pdf","Gracian_Baena_Cover_Letter_TCP_EN.pdf"],
+     },
+   };
+   const proofMatrix = {
+     professional: {
+       "customer-success": "professional-deck/proyecto-bodytone.html",
+       revops: "professional-deck/",
+       "data-automation": "systems-lab/",
+     },
+     yoga: "yoga-instructor/",
+     aviation: "cabin-crew-site/",
+   };
+   for(const selectedTrack of tracks) for(const selectedLang of langs) {
+     const candidates = selectedTrack === "professional" ? focuses : ["_"];
+     for(const selectedFocus of candidates) {
+       const suffix = selectedFocus === "_" ? "" : "&focus=" + selectedFocus;
+       await page.goto(ROOT + "apply.html?track=" + selectedTrack + "&lang=" + selectedLang + suffix,
+         {waitUntil:"domcontentloaded"});
+       const shown = page.locator("[data-brief-track]:visible");
+       assert.equal(await shown.count(),1,"Exactly one P3 brief should be visible");
+       assert.equal(await shown.getAttribute("data-brief-track"),selectedTrack);
+       if(selectedTrack==="professional") {
+         assert.equal(await shown.getAttribute("data-brief-focus"),selectedFocus);
+       }
+       const originals=documentMatrix[selectedTrack][selectedLang];
+       assert.ok((await page.locator("[data-brief-cv]").getAttribute("href")).endsWith(originals[0]));
+       assert.ok((await page.locator("[data-brief-letter]").getAttribute("href")).endsWith(originals[1]));
+       const expectedProof=selectedTrack==="professional" ? proofMatrix.professional[selectedFocus] : proofMatrix[selectedTrack];
+       assert.ok((await page.locator("[data-brief-proof]").getAttribute("href")).includes(expectedProof));
+       assert.equal(await page.locator("[data-brief-url]").textContent(),page.url(),
+         "Printed brief must include a working shareable link");
+       const clipped=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
+       assert.equal(clipped,false,"P3 brief horizontal clipping");
+     }
+   }
+   await page.goto(ROOT+"apply.html?track=professional&lang=en&focus=revops",{waitUntil:"domcontentloaded"});
+   await page.evaluate(()=>{window.print=()=>{window.__briefPrintCalled=true;}});
+   await page.locator("[data-brief-print]").click();
+   assert.equal(await page.evaluate(()=>window.__briefPrintCalled),true,"Print must work from click");
+   await page.emulateMedia({media:"print"});
+   assert.equal(await page.locator(".top").isVisible(),false,"Print output must exclude navigation");
+   assert.equal(await page.locator(".selector").isVisible(),false,"Print output must exclude selectors");
+   assert.equal(await page.locator(".candidate-brief").isVisible(),true,"Print brief must be visible");
+   assert.equal(await page.locator("[data-brief-print]").isVisible(),false,"Print button must disappear");
+   assert.equal(await page.locator('[data-brief-focus="revops"]').isVisible(),false);
+   assert.equal(await page.locator('[data-brief-track="professional"][data-brief-focus="revops"]').isVisible(),true);
+   await page.emulateMedia({media:"screen"});
+      await page.locator('[data-b6-track="aviation"]').click();
    assert.match(page.url(),/track=aviation/,"Track should be shareable");
    await page.locator('[data-b6-set-lang="en"]').click();
    assert.match(page.url(),/lang=en/);
@@ -152,7 +218,11 @@ try{
     "No-JS visitors must not see inert focus buttons");
   assert.equal(await fallback.locator(".share-application").isVisible(),false,
     "No-JS visitors must not see an unusable copy action");
-  await noJs.close();
+  assert.equal(await fallback.locator('[data-brief-track="professional"][data-brief-focus="customer-success"]').isVisible(),true,
+    "P3 must show a useful default brief without JavaScript");
+  assert.equal(await fallback.locator("[data-brief-print]").isVisible(),false,
+    "P3 must hide inert print button when scripting is disabled");
+    await noJs.close();
   console.log("B6 APPLICATION BROWSER PASS: 3 tracks × 2 languages × desktop/mobile + shareable states");
   console.log("P2 ROLE PROOF PASS: 3 role focuses × 2 languages × desktop/mobile + clipboard + no-JS");
  }finally{await browser.close();}
