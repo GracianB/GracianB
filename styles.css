@@ -2824,3 +2824,46 @@ html[data-theme="light"] .document-group>a:hover b{color:#8c6419}
   .document-group,.document-group>a::before{transition:none}
   .document-group:hover{transform:none}
 }
+
+
+/* P1.2 / First-impression polish: proof and recruiter path, without a fourth world. */
+.hero-recruiter-route{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.18rem .45rem;
+  margin:.85rem 0 0;color:var(--muted);
+  font-size:clamp(.82rem,.76rem + .18vw,.94rem);
+  line-height:1.6;text-wrap:pretty;
+}
+.hero-recruiter-route a{
+  color:var(--text);font-weight:650;line-height:1.4;
+  text-decoration:none;border-bottom:1px solid var(--cv-ochre);
+  padding-block:.12rem;transition:color .18s ease,border-color .18s ease;
+}
+.hero-recruiter-route a:hover{color:var(--cv-ochre);border-bottom-color:currentColor}
+.hero-proof-wow{
+  align-items:flex-start;
+  font-family:var(--sans);font-size:clamp(.76rem,.7rem + .13vw,.85rem);
+  letter-spacing:0;line-height:1.55;color:var(--muted);
+}
+.hero-proof-wow strong{letter-spacing:.055em;font-size:.74rem}
+.hero-proof-link{
+  color:var(--text);font-weight:650;white-space:normal;text-underline-offset:3px;
+  text-decoration-color:var(--cv-ochre);
+}
+.hero-proof-link:hover{color:var(--cv-ochre)}
+.hero-proof-wow .live-dot{margin-top:.42rem}
+.facts-strip strong{font-size:clamp(1.25rem,1.6vw,1.65rem);line-height:1.14;letter-spacing:-.025em}
+.facts-strip span{font-size:clamp(.68rem,.64rem + .15vw,.77rem);letter-spacing:.025em;line-height:1.55;text-transform:none}
+.desktop-nav{gap:clamp(.7rem,1.08vw,1.35rem)}
+.desktop-nav a{font-size:clamp(.68rem,.6rem + .14vw,.78rem);letter-spacing:.04em}
+.brand-copy small{font-size:.66rem;letter-spacing:.06em}
+@media(max-width:1080px){.hero-recruiter-route{margin-top:.85rem}}
+@media(max-width:760px){
+  .hero-recruiter-route{display:block;margin-top:1rem}
+  .hero-recruiter-route a{display:inline;line-height:1.8}
+  .hero-proof-wow{margin-top:1rem}
+  .facts-strip strong{font-size:clamp(1.15rem,5vw,1.4rem)}
+}
+@media(prefers-contrast:more){
+  .hero-recruiter-route a,.hero-proof-link{color:var(--text);text-decoration:underline;text-decoration-thickness:2px}
+}
+@media(prefers-reduced-motion:reduce){.hero-recruiter-route a{transition:none}}
