@@ -150,3 +150,100 @@ html[data-b6-enhanced="true"] .role-focus-options{display:flex}
 @media(max-width:610px){
   html[data-b6-enhanced="true"] .role-focus-options{display:grid}
 }
+
+
+/* P3 · One-minute candidate brief, clearly separate from the official PDFs. */
+.candidate-brief{
+  margin:24px 0 28px;
+  padding:clamp(19px,3.5vw,34px);
+  border:1px solid #c1b7a2;
+  border-radius:16px;
+  background:#fbf9f4;
+  box-shadow:0 15px 38px rgba(31,44,55,.06);
+  color:#27363e;
+}
+.candidate-brief-top{display:flex;justify-content:space-between;align-items:flex-start;gap:22px}
+.candidate-brief-kicker{
+  margin:0 0 10px;color:#795e35;font-size:11px;
+  font-weight:850;letter-spacing:.18em;
+}
+.candidate-brief h3{font:normal clamp(26px,3.4vw,38px)/1.12 var(--serif);margin:0;letter-spacing:-.035em}
+.candidate-brief-intro{max-width:61ch;color:#51616c;font-size:14px;line-height:1.6;margin:10px 0 0}
+.candidate-brief-print{
+  display:none;flex:0 0 auto;align-items:center;gap:8px;min-height:44px;
+  padding:9px 14px;border:1px solid #897148;border-radius:8px;
+  background:#f2ede2;color:#26343b;font-size:13px;font-weight:750
+}
+html[data-b6-enhanced="true"] .candidate-brief-print{display:inline-flex}
+.candidate-brief-print:hover{background:#e6dbc7}
+.candidate-brief-identity{
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:8px 20px;padding:17px 0;margin:20px 0 0;
+  border-top:1px solid #c7c2b7;border-bottom:1px solid #c7c2b7;
+}
+.candidate-brief-identity strong{font-size:17px;letter-spacing:.055em}
+.candidate-brief-identity span{font-size:12px;color:#56626a}
+.candidate-brief-story[hidden]{display:none!important}
+.candidate-brief-story{padding:21px 0 11px}
+.candidate-brief-story h4{font:normal clamp(22px,2.4vw,29px)/1.2 var(--serif);margin:0 0 14px;letter-spacing:-.025em}
+.candidate-brief-story ul{display:grid;gap:10px;padding:0;margin:0;list-style:none;max-width:77ch}
+.candidate-brief-story li{position:relative;padding-left:22px;font-size:14px;line-height:1.65}
+.candidate-brief-story li::before{
+  content:"";position:absolute;left:1px;top:.71em;width:8px;height:8px;
+  border-radius:50%;background:#b48b4b;
+}
+.candidate-brief-actions{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:13px 0 17px;
+}
+.candidate-brief-actions a{
+  min-width:0;min-height:48px;display:flex;align-items:center;
+  flex-wrap:wrap;justify-content:space-between;gap:7px;
+  padding:12px;border:1px solid #9e977f;border-radius:8px;
+  background:#fffdf8;color:#263a40;text-decoration:none;
+  font-size:13px;font-weight:750;overflow-wrap:anywhere;
+}
+.candidate-brief-actions a:hover{background:#efe9dc;border-color:#78613a}
+.candidate-brief-actions b{white-space:nowrap;color:#80633b;font-size:11px}
+.candidate-brief-footer{
+  display:flex;gap:16px;align-items:baseline;justify-content:space-between;
+  padding-top:14px;border-top:1px solid #d8d3c9;
+  color:#5b6770;font-size:12px;line-height:1.6;
+}
+.candidate-brief-footer a{flex:0 0 auto;color:#344c59;font-weight:750}
+.candidate-brief-print-url{display:none;overflow-wrap:anywhere}
+@media(max-width:680px){
+ .candidate-brief-top{display:block}
+ .candidate-brief-print{margin-top:14px}
+ .candidate-brief-actions{grid-template-columns:1fr}
+ .candidate-brief-actions a{padding:12px 15px}
+ .candidate-brief-footer{display:block}
+ .candidate-brief-footer a{display:inline-block;margin-top:8px}
+}
+@media print{
+  @page{size:A4 portrait;margin:13mm}
+  html,body,.canvas{background:#fff!important;color:#162731!important;box-shadow:none!important}
+  body{font-size:11pt}
+  .top,.hero,.section-heading,.selector,.share-application,.panel,.direct,.foot,.skip{
+    display:none!important
+  }
+  .canvas{max-width:none;min-height:0}
+  .routes{padding:0!important}
+  .candidate-brief{
+    display:block!important;margin:0!important;padding:0!important;
+    border:0!important;border-radius:0!important;box-shadow:none!important;
+    background:white!important;break-inside:avoid
+  }
+  .candidate-brief-print{display:none!important}
+  .candidate-brief h3{font-size:24pt}
+  .candidate-brief-intro{font-size:10pt}
+  .candidate-brief-identity strong{font-size:14pt}
+  .candidate-brief-story{padding-block:14pt 8pt}
+  .candidate-brief-story h4{font-size:18pt}
+  .candidate-brief-story li{font-size:10.5pt;line-height:1.48}
+  .candidate-brief-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:7pt;margin:11pt 0}
+  .candidate-brief-actions a{font-size:9pt;min-height:38pt;padding:8pt;break-inside:avoid}
+  .candidate-brief-actions b{font-size:8pt}
+  .candidate-brief-footer{font-size:9pt}
+  .candidate-brief-print-url{display:block;margin:14pt 0 0;font-size:8pt;color:#4f5a61}
+  a{color:#193f51!important;print-color-adjust:exact}
+}
