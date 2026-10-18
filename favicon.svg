@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gracián Baena">
-  <rect width="64" height="64" rx="11" fill="#14140f"/>
-  <rect x="7" y="7" width="50" height="50" rx="8" fill="none" stroke="#daa428" stroke-opacity=".75" stroke-width="1.8"/>
-  <path d="M13 16H51" stroke="#f7f5ef" stroke-opacity=".22"/>
-  <text x="32" y="41" text-anchor="middle" fill="#daa428" font-family="Georgia,Times New Roman,serif" font-size="20" font-weight="700" letter-spacing="-1">GB</text>
+  <rect width="64" height="64" rx="11" fill="#151c22"/>
+  <rect x="7" y="7" width="50" height="50" rx="8" fill="none" stroke="#c8cccd" stroke-opacity=".75" stroke-width="1.8"/>
+  <path d="M13 16H51" stroke="#f3eee5" stroke-opacity=".22"/>
+  <text x="32" y="41" text-anchor="middle" fill="#c8cccd" font-family="Georgia,Times New Roman,serif" font-size="20" font-weight="700" letter-spacing="-1">GB</text>
 </svg>
