@@ -149,6 +149,19 @@ assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
 assert.match(html, /href="\.\/cabin-crew\.html"/);
+// P1 recruiter conversion must be actionable without discovering a hidden document section.
+assert.match(html, /class="hero-recruiter-route"/);
+assert.match(html, /class="hero-recruiter-route"[^>]*>[\s\S]*?href="\.\/apply\.html"/);
+assert.match(html, /class="hero-proof-link" href="https:\/\/gracianb\.github\.io\/professional-deck\/proyecto-bodytone\.html"/);
+assert.match(html, /data-i18n="factAccountsNumber"/);
+assert.match(js, /factAccountsNumber: "hasta 80"/);
+assert.match(js, /factAccountsNumber: "up to 80"/);
+for (const [tab, panel] of [["professional", "professional"], ["yoga", "yoga"], ["lab", "lab"]]) {
+  assert.ok(html.includes(`id="world-tab-${tab}"`), `Missing ${tab} tab`);
+  assert.ok(html.includes(`aria-controls="world-panel-${panel}"`), `${tab} tab controls wrong panel`);
+  assert.ok(html.includes(`id="world-panel-${panel}" role="tabpanel"`), `Missing ${panel} tabpanel`);
+  assert.ok(html.includes(`aria-labelledby="world-tab-${tab}"`), `Missing ${tab} panel label`);
+}
 assert.equal((html.match(/class="document-visual"/g) || []).length, 3, "Three document identities required");
 assert.equal((html.match(/class="document-summary"/g) || []).length, 3, "Each document track needs its summary");
 assert.match(css, /\.document-group-professional \.document-visual/);
