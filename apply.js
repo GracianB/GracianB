@@ -13,6 +13,10 @@
     document.documentElement.dataset.b6Lang = lang;
     document.title = (lang === "es" ? "Candidaturas" : "Applications") + " | Gracián Baena";
     const visible = document.querySelector('[data-b6-panel="' + track + '"]');
+    // An EN application should also return to an EN hub, including via shared URLs.
+    for (const link of document.querySelectorAll("[data-b6-home-link]")) {
+      link.href = lang === "en" ? "./?lang=en" : "./";
+    }
     for (const button of document.querySelectorAll("[data-b6-track]")) {
       button.setAttribute("aria-pressed", String(button.dataset.b6Track === track));
       button.setAttribute("aria-controls", "profile-" + button.dataset.b6Track);
