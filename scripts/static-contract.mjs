@@ -118,7 +118,14 @@ assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobil
 assert.match(css, /\/\* P1\.5 \/ Final legibility pass/, "P1.5 design pass missing");
 assert.match(css, /\.arc-years\{[\s\S]*?font-size:\.72rem/, "Career microcopy is too small");
 assert.match(css, /\.footer\{font-size:clamp\(\.72rem/, "Footer must retain readable type");
-assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=b6-3/, "Application stylesheet needs final cache version");
+assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p2-1/, "Application stylesheet needs final cache version");
+const application = readFileSync("apply.html", "utf8");
+assert.equal((application.match(/data-b6-focus-panel="/g)||[]).length, 3,
+  "P2 should expose exactly three professional proof briefs");
+assert.match(application, /data-b6-copy-link/, "P2 copy-link action missing");
+assert.match(application, /RevOps Studio continúa en desarrollo/,
+  "P2 must preserve explicit no-public-demo disclosure");
+
 
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
 assert.match(html, /main\.js\?v=24/, "P1.3 JS must bypass old cached bytes");
