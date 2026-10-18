@@ -250,6 +250,49 @@ async function applicationHandoff(browser) {
   console.log("APPLICATION HANDOFF E2E PASS: ES/EN × desktop/mobile");
 }
 
+async function finalResponsiveAudit(browser) {
+  // P1.5 + P1.7: inspect intermediate breakpoints as well as the smallest
+  // phone and desktop. These are actual layout measurements, not Lighthouse.
+  for (const width of [320, 768, 1440]) {
+    for (const mode of ["dark", "light"]) {
+      const context = await browser.newContext({
+        viewport: { width, height: width === 320 ? 720 : 900 },
+        reducedMotion: "reduce",
+      });
+      const page = await context.newPage();
+      const state = watch(page);
+      await page.goto(URL + "?lang=en&theme=" + mode, { waitUntil: "domcontentloaded" });
+      await assertClean(page, state);
+      assert.equal(await page.locator("html").getAttribute("lang"), "en");
+      assert.equal(await page.locator("html").getAttribute("data-theme"), mode);
+      assert.equal(await page.locator(".document-group").count(), 3);
+      assert.equal(await page.locator("[data-world-slide]").count(), 3);
+      const typography = await page.evaluate(() => {
+        const pixels = (selector) => parseFloat(getComputedStyle(document.querySelector(selector)).fontSize);
+        const visuals = [...document.querySelectorAll(".document-visual")]
+          .map(node => getComputedStyle(node).backgroundImage);
+        return {
+          footer: pixels(".footer"),
+          years: pixels(".arc-years"),
+          cardTop: pixels(".card-top"),
+          visualStyles: new Set(visuals).size,
+          clipped: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
+        };
+      });
+      assert.equal(typography.clipped, false, "P1.5 horizontal clipping " + width + "/" + mode);
+      assert.ok(typography.footer >= 11.2, "Footer must be readable: " + width + "/" + mode);
+      assert.ok(typography.years >= 11.2, "Career dates must be readable");
+      assert.ok(typography.cardTop >= 10.5, "Project evidence labels must remain legible");
+      assert.equal(typography.visualStyles, 3, "Three document families must remain visually distinct");
+      if (mode === "light") {
+        await page.screenshot({ path: `${artifacts}/p1-final-${width}-light.png`, fullPage: true });
+      }
+      await context.close();
+    }
+  }
+  console.log("P1.5 VISUAL QA PASS · 320 / 768 / 1440 × dark / light");
+}
+
 async function reduced(browser) {
   const context = await browser.newContext({
     viewport: { width: 1280, height: 800 },
@@ -344,6 +387,7 @@ try {
   await desktop(browser);
   await mobile(browser);
   await applicationHandoff(browser);
+  await finalResponsiveAudit(browser);
   await reduced(browser);
   await cabinCrew(browser);
   console.log("GRACIANB BROWSER E2E PASS");
