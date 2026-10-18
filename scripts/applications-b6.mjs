@@ -33,7 +33,7 @@ assert.match(readFileSync("apply.js","utf8"), /navigator\.clipboard\?\.writeText
   "P2 share action must copy the actual URL on direct user interaction");
 assert.equal((html.match(/data-b6-home-link/g) || []).length, 3,
   "Application desk needs three language-aware return routes");
-assert.match(html, /apply\.js\?v=p3-1/,
+assert.match(html, /apply\.js\?v=p3-dark-1/,
   "Application JS cache key must reflect bilingual return navigation");
 assert.match(readFileSync("apply.js", "utf8"), /\.\/\?lang=en/,
   "English recruiter must be able to return to the English hub");
@@ -45,7 +45,7 @@ for(const pdf of pdfs){
  assert.equal(readFileSync(pdf).subarray(0,5).toString("ascii"),"%PDF-","Invalid PDF: "+pdf);
 }
 assert.ok(hub.includes('href="./apply.html"'),"Main hub must expose application desk");
-assert.match(html, /apply\.css\?v=p3-1/, "P2 application CSS must be refreshed");
+assert.match(html, /apply\.css\?v=p3-dark-1/, "P2 application CSS must be refreshed");
 for (const stale of ["Las versiones editoriales/ATS en revisión", "generated from printable HTML", "generadas desde páginas imprimibles"]) {
  assert.ok(!html.includes(stale), "Outdated PDF explanation remains: " + stale);
 }
