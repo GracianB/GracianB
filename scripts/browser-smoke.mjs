@@ -214,6 +214,32 @@ async function mobile(browser) {
   await context.close();
 }
 
+async function applicationHandoff(browser) {
+  // Opening the application desk must not silently change an English visitor back to Spanish.
+  for (const width of [1440, 390]) {
+    const context = await browser.newContext({ viewport: { width, height: 820 } });
+    const page = await context.newPage();
+    for (const lang of ["es", "en"]) {
+      await page.goto(URL + "?lang=" + lang, { waitUntil: "domcontentloaded" });
+      assert.equal(await page.locator("html").getAttribute("lang"), lang);
+      const expected = lang === "en" ? "./apply.html?lang=en" : "./apply.html";
+      const links = page.locator("[data-application-link]");
+      assert.equal(await links.count(), 2, "Hero and documents must both link to applications");
+      for (const href of await links.evaluateAll((elements) => elements.map((node) => node.getAttribute("href")))) {
+        assert.equal(href, expected, "Application link must preserve visitor language");
+      }
+      await page.locator(".hero-recruiter-route [data-application-link]").click();
+      await page.waitForURL(/apply\.html(?:\?|$)/);
+      assert.equal(await page.locator("html").getAttribute("lang"), lang,
+        "Language must survive hub-to-application navigation");
+      assert.equal(await page.locator('[data-b6-panel="professional"]').isVisible(), true);
+      assert.equal(await page.locator('[data-b6-set-lang="' + lang + '"]').getAttribute("aria-pressed"), "true");
+    }
+    await context.close();
+  }
+  console.log("APPLICATION HANDOFF E2E PASS: ES/EN × desktop/mobile");
+}
+
 async function reduced(browser) {
   const context = await browser.newContext({
     viewport: { width: 1280, height: 800 },
@@ -307,6 +333,7 @@ const browser = await chromium.launch({ headless: true, args: ["--no-sandbox"] }
 try {
   await desktop(browser);
   await mobile(browser);
+  await applicationHandoff(browser);
   await reduced(browser);
   await cabinCrew(browser);
   console.log("GRACIANB BROWSER E2E PASS");
