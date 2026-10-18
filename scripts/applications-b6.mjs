@@ -172,7 +172,7 @@ try{
        assert.equal(shared.footer,"rgb(14, 21, 27)");
        assert.equal(shared.meta,"#151c22");
        assert.match(shared.hero,/200, 204, 205/);
-       await page.screenshot({path:`${artifacts}/p7-applications-dark-${width}.png`,fullPage:true});
+       await page.screenshot({path:`artifacts/e2e/p7-applications-dark-${width}.png`,fullPage:true});
      }
      else {
        assert.equal(surfaces.brief,"rgb(243, 238, 229)",
