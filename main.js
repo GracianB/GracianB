@@ -438,6 +438,7 @@
       const x2=b.x-dx*endRadius/length,y2=b.y-dy*endRadius/length;
       const cx=(x1+x2)/2-dy*.035,cy=(y1+y2)/2+dx*.035;
       path.setAttribute("d",`M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`);
+      path.parentElement.classList.toggle("is-short-route",Math.hypot(x2-x1,y2-y1)<27);
     });
   }
   requestAnimationFrame(synchronizeConstellation);
