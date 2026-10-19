@@ -1,20 +1,20 @@
-/* GRACIANB P9 / 2026 · Final visual signature.
+/* GRACIANB P10 / 2026 · Abyss petrol refinement.
    The first world is professional silver; Yoga and Lab retain their own art.
    No Professional Deck files or PDF assets are touched. */
 @media screen {
 html[data-theme="dark"] {
- --hub-surface:#09161c;
- --hub-inset:#0b1a22;
+ --hub-surface:#050f15;
+ --hub-inset:#07151c;
  --hub-edge:rgba(199,205,208,.36);
  --hub-edge-hot:rgba(199,205,208,.64);
 }
 html[data-theme="dark"] body {
  background:radial-gradient(ellipse at 19% 1%,rgba(88,117,130,.035),transparent 40rem),
- linear-gradient(180deg,#060f14 0%,#040b10 52%,#03090d 100%),#060f14;
+ linear-gradient(180deg,#02070b 0%,#010508 52%,#010407 100%),#02070b;
 }
 html[data-theme="dark"] .world-selector {
  background:radial-gradient(circle at 80% 8%,rgba(136,164,176,.035),transparent 17rem),
- linear-gradient(155deg,#101e27,#071218 80%);
+ linear-gradient(155deg,#06141b,#040d13 80%);
  border-color:rgba(199,205,208,.48);
  box-shadow:0 30px 76px rgba(0,0,0,.43);
 }
@@ -23,7 +23,7 @@ html[data-theme="dark"] .world-professional {
 }
 html[data-theme="dark"] .world-professional .world-art {
  background:radial-gradient(circle at 50% 45%,rgba(199,205,208,.16),transparent 46%),
- linear-gradient(145deg,#202a30,#0b1319 85%);
+ linear-gradient(145deg,#111d24,#040c11 85%);
 }
 html[data-theme="dark"] .world-professional .world-professional-sigil {
  color:#d8dfe2;
@@ -37,7 +37,7 @@ html[data-theme="dark"] .world-professional :is(.customer-core,.customer-node) {
  background:rgba(11,23,30,.75);
 }
 html[data-theme="dark"] .world-professional .world-card-copy {
- background:linear-gradient(180deg,#121f26,#091319);color:#edf2f2;
+ background:linear-gradient(180deg,#0a171e,#040d13);color:#edf2f2;
 }
 html[data-theme="dark"] .world-professional :is(.world-code,.world-enter b) {color:#c7cdd0}
 html[data-theme="dark"] .world-professional .world-enter {
@@ -47,29 +47,29 @@ html[data-theme="dark"] .world-selector:has(.world-professional.is-active) {
  --active-world-color:#c7cdd0;
 }
 html[data-theme="dark"] .world-selector.is-overview .world-professional {
- background:#101b22;border-color:rgba(199,205,208,.43);
+ background:#08151d;border-color:rgba(199,205,208,.43);
 }
 html[data-theme="dark"] .world-selector.is-overview .world-card:not(.world-professional) {
- background:#0c1a22;
+ background:#06151d;
 }
 html[data-theme="dark"] .world-selector .world-card-copy{border-color:rgba(199,205,208,.28)}
 /* True dark panels throughout, not just the hero/header. */
 html[data-theme="dark"] :is(.method-section,.documents-section){
- background:linear-gradient(180deg,#071117,#050b10);
+ background:linear-gradient(180deg,#040b11,#02080d);
 }
 html[data-theme="dark"] :is(.facts-strip,.arc-grid,.document-group,.contact-panel,.command-panel) {
- background-color:#0b1a22;border-color:var(--hub-edge);
+ background-color:#07151c;border-color:var(--hub-edge);
 }
 html[data-theme="dark"] .evidence-card {
- background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 4%,#0b1921),#081319 89%);
+ background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 4%,#06141b),#040c12 89%);
  border-color:rgba(199,205,208,.3);
  box-shadow:0 14px 35px rgba(0,0,0,.26);
 }
 html[data-theme="dark"] .document-group-professional .document-visual {
- background:linear-gradient(135deg,#172831,#071217 87%);
+ background:linear-gradient(135deg,#0d2028,#040d12 87%);
 }
 html[data-theme="dark"] .contact-panel {
- background:radial-gradient(circle at 83% 5%,rgba(136,164,176,.06),transparent 23rem),#0b1921;
+ background:radial-gradient(circle at 83% 5%,rgba(136,164,176,.06),transparent 23rem),#06141b;
 }
 html[data-theme="dark"] .hero-wow .hero-lead-wow{color:#bbc9ce}
 html[data-theme="dark"] .world-carousel-controls .world-overview-toggle {
@@ -79,6 +79,21 @@ html[data-theme="dark"] .facts-strip>div,
 html[data-theme="dark"] .arc-grid>article{
  border-color:var(--hub-edge);
 }
+
+/* Underlying surfaces are darker; the world-specific art stays intact. */
+html[data-theme="dark"] :is(.door,.arc-grid,.document-group,.command-panel){
+  background-color:#07151c;
+}
+html[data-theme="dark"] .arc-future{
+  background:radial-gradient(circle at 90% 10%,rgba(136,164,176,.055),transparent 10rem),#091820;
+}
+html[data-theme="dark"] :is(.world-selector-head,.world-card-copy,.document-group-head){
+  border-color:rgba(199,205,208,.29);
+}
+html[data-theme="dark"] .world-selector.is-overview .world-card{
+  box-shadow:0 12px 28px rgba(0,0,0,.22);
+}
+
 /* Focus and hover work in all major components, without repainting the world's artwork. */
 @media(hover:hover) and (pointer:fine){
  html[data-theme="dark"] :is(.evidence-card,.document-group,.door,.contact-panel){
