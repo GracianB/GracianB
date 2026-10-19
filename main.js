@@ -393,6 +393,38 @@
     function paint(time) {
       const width=innerWidth,height=innerHeight;
       ctx.clearRect(0,0,width,height);
+
+      // Star-chart grammar: three small recognisable formations. Most stars remain unconnected.
+      // They remain in the same viewport positions while visitors explore the other chapters.
+      const clusters = [
+        {color:[196,209,219],points:[[.04,.21],[.12,.14],[.23,.25],[.20,.43],[.07,.47],[.145,.32]],
+          links:[[0,1],[1,2],[2,5],[5,3],[3,4],[4,0],[1,5]]},
+        {color:[135,213,173],points:[[.77,.11],[.87,.16],[.96,.26],[.90,.42],[.77,.36],[.84,.27]],
+          links:[[0,1],[1,2],[2,3],[3,4],[4,0],[1,5],[5,4]]},
+        {color:[125,209,241],points:[[.70,.72],[.78,.61],[.91,.65],[.95,.81],[.81,.91],[.74,.82]],
+          links:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[1,5]]}
+      ];
+      const movement = reduceMotion ? 0 : Math.sin(time * .00022) * .05;
+      for(const c of clusters){
+        const [red,green,blue] = c.color;
+        const w=Math.max(280,width), h=Math.max(250,height);
+        const pts=c.points.map(([x,y])=>[x*w, y*h]);
+        ctx.strokeStyle="rgba("+red+","+green+","+blue+","+(0.18+movement).toFixed(3)+")";
+        ctx.lineWidth=1;
+        for(const [start,end] of c.links){
+          ctx.beginPath();ctx.moveTo(...pts[start]);ctx.lineTo(...pts[end]);ctx.stroke();
+        }
+        pts.forEach(([x,y],i)=>{
+          if(i===5){
+            ctx.beginPath();ctx.arc(x,y,8,0,Math.PI*2);
+            ctx.strokeStyle="rgba("+red+","+green+","+blue+",0.14)";
+            ctx.stroke();
+          }
+          ctx.beginPath();ctx.arc(x,y,i===5?2.7:1.9,0,Math.PI*2);
+          ctx.fillStyle="rgba("+red+","+green+","+blue+","+(i===5?.85:.61)+")";
+          ctx.fill();
+        });
+      }
       for (const star of stars) {
         const x=star.x+mx*star.r*.009, y=star.y+my*star.r*.009;
         const opacity=star.a * (reduceMotion ? 1 : (.86+.14*Math.sin(time*.00045*star.twinkle+star.phase)));
