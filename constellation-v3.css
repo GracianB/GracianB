@@ -147,3 +147,11 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
  filter:drop-shadow(0 0 10px var(--route-stroke));
 }
 .constellation-hero .bridge-route.is-short-route{opacity:0!important}
+
+/* At narrow mobile widths the orbital halo must never expand the document. */
+@media(max-width:380px){
+ .constellation-hero{overflow:clip}
+ .constellation-hero .cosmic-atlas{overflow:clip!important}
+ .constellation-hero .cosmic-node{min-width:68px!important;font-size:.74rem!important}
+ .constellation-hero .cosmic-node .cosmic-node-star{--planet-radius:64px}
+}
