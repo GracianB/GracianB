@@ -79,6 +79,13 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   await page.locator('.atlas-pin[data-atlas-city="bergamo"]').click();
   assert.equal(await page.locator('.atlas-pin[data-atlas-city="bergamo"]').getAttribute("aria-pressed"),"true");
   assert.match(await page.locator("[data-atlas-readout]").innerText(),/BÉRGAMO · (ITALIA|ITALY)/);
+  const cityStory=page.locator("[data-atlas-story]");
+  assert.ok((await cityStory.innerText()).trim().length>28,"City selection must provide a meaningful description");
+  await page.locator('.atlas-pin[data-atlas-city="lisboa"]').click();
+  assert.equal(await page.locator('.atlas-pin[data-atlas-city="lisboa"]').getAttribute("aria-pressed"),"true");
+  assert.ok((await cityStory.innerText()).toLowerCase().includes("majorel"),"Lisbon should show its own professional chapter");
+  await page.locator('.atlas-pin[data-atlas-city="bergamo"]').click();
+
   // Verify the decorative star formations become visible only beyond the hero.
   if(theme==="dark"){
     await page.waitForFunction(()=>document.querySelector("[data-constellation-sky]")?.dataset.ambientClusters==="visible",null,{timeout:3000});
