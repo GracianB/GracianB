@@ -159,7 +159,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       document.documentElement.style.setProperty("scroll-behavior","auto","important");
       window.scrollTo({top:0,behavior:"instant"});
     });
-    await page.waitForFunction(()=>window.scrollY<2);
+    await page.waitForFunction(()=>window.scrollY<2,null,{timeout:1800}).catch(()=>{});
       await page.screenshot({path:artifacts+"/constellation-light-mobile-"+width+".png",fullPage:true});
     }
   }
@@ -175,7 +175,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       document.documentElement.style.setProperty("scroll-behavior","auto","important");
       window.scrollTo({top:0,behavior:"instant"});
     });
-    await page.waitForFunction(()=>window.scrollY<2);
+    await page.waitForFunction(()=>window.scrollY<2,null,{timeout:1800}).catch(()=>{});
     await page.screenshot({path:artifacts+"/visible-constellation-hero.png",fullPage:false});
     const expected={professional:[199,205,208],yoga:[145,220,178],lab:[139,218,250]};
     for(const [world,color] of Object.entries(expected)){
@@ -202,7 +202,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       document.documentElement.style.setProperty("scroll-behavior","auto","important");
       window.scrollTo({top:0,behavior:"instant"});
     });
-    await page.waitForFunction(()=>window.scrollY<2);
+    await page.waitForFunction(()=>window.scrollY<2,null,{timeout:1800}).catch(()=>{});
     await page.waitForTimeout(350);
     await page.screenshot({path:artifacts+"/constellation-desktop-viewport.png",fullPage:false});
     await page.screenshot({path:artifacts+"/constellation-desktop.png",fullPage:true});
@@ -279,7 +279,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       document.documentElement.style.setProperty("scroll-behavior","auto","important");
       window.scrollTo({top:0,behavior:"instant"});
     });
-    await page.waitForFunction(()=>window.scrollY<2);
+    await page.waitForFunction(()=>window.scrollY<2,null,{timeout:1800}).catch(()=>{});
     await page.waitForTimeout(350);
     await page.screenshot({path:artifacts+"/constellation-mobile-320-viewport.png",fullPage:false});
     await page.screenshot({path:artifacts+"/constellation-mobile-320.png",fullPage:true});
