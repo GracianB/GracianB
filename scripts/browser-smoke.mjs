@@ -83,6 +83,11 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   if(theme==="dark"){
     await page.waitForFunction(()=>document.querySelector("[data-constellation-sky]")?.dataset.ambientClusters==="visible",null,{timeout:3000});
     if(width>=1280){
+      await page.waitForFunction(()=>{
+        const section=document.querySelector(".about-atlas");
+        return section && section.classList.contains("is-visible")
+          && parseFloat(getComputedStyle(section).opacity)>.96;
+      },null,{timeout:4000});
       await page.screenshot({path:artifacts+"/ambient-constellations-about.png",fullPage:false});
     }
   }
