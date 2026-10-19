@@ -217,9 +217,9 @@ main,.footer{position:relative;z-index:1}
 .cosmic-atlas:has(.cosmic-yoga:hover) .bridge-route-yoga,
 .cosmic-atlas:has(.cosmic-lab:hover) .bridge-route-lab{opacity:1}
 }
-.cosmic-atlas:has(.cosmic-pro:focus-visible) .bridge-route-pro,
-.cosmic-atlas:has(.cosmic-yoga:focus-visible) .bridge-route-yoga,
-.cosmic-atlas:has(.cosmic-lab:focus-visible) .bridge-route-lab{opacity:1;stroke-width:4}
+.cosmic-atlas:has(.cosmic-pro:focus) .bridge-route-pro,
+.cosmic-atlas:has(.cosmic-yoga:focus) .bridge-route-yoga,
+.cosmic-atlas:has(.cosmic-lab:focus) .bridge-route-lab{opacity:1;stroke-width:4}
 html[data-theme=light] .bridge-satellite-grid path{stroke:rgba(63,110,131,.31)}
 html[data-theme=light] .bridge-route-pro{--route-stroke:#547689}
 html[data-theme=light] .bridge-route-yoga{--route-stroke:#2d8560}
