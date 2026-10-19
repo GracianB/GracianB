@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="./styles.css?v=28">
   <link rel="stylesheet" href="./deck-dark.css?v=5">
   <link rel="stylesheet" href="./hub-finish.css?v=3">
-  <link rel="stylesheet" href="./portal-v11.css?v=3">
+  <link rel="stylesheet" href="./portal-v11.css?v=4">
 
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Gracián Baena">
@@ -189,6 +189,34 @@
         </div>
       </div>
       <nav class="cosmic-atlas" aria-label="Navegación estelar por universos" data-i18n-aria-label="cosmicAtlasLabel">
+        <!-- The bridge: one origin, three destinations. Not scattered decorative stars. -->
+        <svg class="cosmic-bridge" viewBox="0 0 1000 920" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <radialGradient id="bridge-halo"><stop stop-color="#91b5ca" stop-opacity=".24"/><stop offset="1" stop-color="#91b5ca" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="510" cy="450" r="170" fill="url(#bridge-halo)" class="cosmic-bridge-halo"/>
+          <g class="bridge-satellite-grid">
+            <path d="M120 300Q205 100 460 130T835 176Q1005 320 790 620T470 800Q230 810 120 300Z"/>
+            <path d="M155 294Q490 78 854 170Q900 520 475 796Q160 608 155 294Z"/>
+          </g>
+          <g class="bridge-route bridge-route-pro" data-route-world="professional">
+            <path d="M510 450C372 410 300 334 155 285"/>
+            <circle cx="350" cy="378" r="3.5"/><circle cx="248" cy="329" r="2.2"/>
+          </g>
+          <g class="bridge-route bridge-route-yoga" data-route-world="yoga">
+            <path d="M510 450C560 255 699 216 850 178"/>
+            <circle cx="638" cy="302" r="3.5"/><circle cx="749" cy="207" r="2.2"/>
+          </g>
+          <g class="bridge-route bridge-route-lab" data-route-world="lab">
+            <path d="M510 450C446 563 454 678 485 790"/>
+            <circle cx="464" cy="620" r="3.5"/><circle cx="466" cy="695" r="2.2"/>
+          </g>
+          <g class="bridge-trace-stars">
+            <circle cx="214" cy="137" r="2.5"/><circle cx="745" cy="106" r="2"/><circle cx="940" cy="495" r="2.4"/>
+            <circle cx="725" cy="775" r="1.7"/><circle cx="245" cy="692" r="2.5"/><circle cx="545" cy="122" r="2"/>
+          </g>
+        </svg>
+        <span class="cosmic-origin" aria-hidden="true"><span class="cosmic-origin-star">✳</span><span>GB</span></span>
         <span class="cosmic-atlas-label" aria-hidden="true">GB / CONSTELLATION MAP</span>
         <span class="cosmic-atlas-haze" aria-hidden="true"></span>
         <a href="#portal-professional" class="cosmic-node cosmic-pro" data-cosmic-world="professional"><span class="cosmic-node-star" aria-hidden="true">✦</span><span data-i18n="portalProfessionalTitle">Profesional</span></a>
