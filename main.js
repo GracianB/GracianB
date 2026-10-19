@@ -132,7 +132,6 @@
       lang = langButton.dataset.setLang === "en" ? "en" : "es";
       applyLanguage({ persist: true });
       applyTheme();
-      refreshOverviewLabel();
       return;
     }
     const themeButton = event.target.closest("[data-theme-toggle]");
@@ -188,109 +187,8 @@
     }
   });
 
-  const worldCarousel = document.querySelector("[data-world-carousel]");
-  const worldSlides = [...document.querySelectorAll("[data-world-slide]")];
-  const worldDots = [...document.querySelectorAll("[data-world-dot]")];
-  const worldCounter = document.querySelector("[data-world-counter]");
-  const worldPrev = document.querySelector("[data-world-prev]");
-  const worldNext = document.querySelector("[data-world-next]");
-  const overviewToggle = document.querySelector("[data-world-overview]");
-  const overviewLabel = document.querySelector("[data-world-overview-label]");
-  const worldStage = document.getElementById("world-stage");
-  const OVERVIEW_KEY = "gb-world-overview";
-  let worldIndex = 0;
-  let swipeStartX = null;
-  let overview = safeGet(OVERVIEW_KEY) === "true";
-
-  function refreshOverviewLabel() {
-    if (!overviewToggle) return;
-    const t = dictionary();
-    const label = overview
-      ? (t.worldOverviewOff || "Ver uno")
-      : (t.worldOverviewOn || "Ver los 3");
-    if (overviewLabel) overviewLabel.textContent = label;
-    overviewToggle.setAttribute("aria-label", label);
-    overviewToggle.setAttribute("aria-pressed", String(overview));
-  }
-
-  function setOverview(open, { persist = true } = {}) {
-    overview = Boolean(open);
-    worldCarousel?.classList.toggle("is-overview", overview);
-    if (overview) worldStage?.removeAttribute("aria-roledescription");
-    else worldStage?.setAttribute("aria-roledescription", "carousel");
-    for (const button of [worldPrev, worldNext]) {
-      if (button) button.disabled = overview;
-    }
-    setWorld(worldIndex);
-    refreshOverviewLabel();
-    if (persist) safeSet(OVERVIEW_KEY, String(overview));
-  }
-
-  function setWorld(nextIndex, { focus = false } = {}) {
-    if (!worldSlides.length) return;
-    worldIndex = (nextIndex + worldSlides.length) % worldSlides.length;
-
-    worldSlides.forEach((slide, index) => {
-      const active = index === worldIndex;
-      slide.classList.toggle("is-active", active);
-      slide.setAttribute("aria-hidden", String(!overview && !active));
-      const link = slide.querySelector("a");
-      if (link) link.tabIndex = overview || active ? 0 : -1;
-    });
-
-    worldDots.forEach((dot, index) => {
-      const active = index === worldIndex;
-      dot.classList.toggle("is-active", active);
-      dot.setAttribute("aria-selected", String(active));
-      dot.tabIndex = active ? 0 : -1;
-    });
-
-    if (worldCounter) {
-      worldCounter.textContent = `0${worldIndex + 1} / 0${worldSlides.length}`;
-    }
-
-    if (focus) worldDots[worldIndex]?.focus();
-  }
-
-  overviewToggle?.addEventListener("click", () => setOverview(!overview));
-  worldPrev?.addEventListener("click", () => setWorld(worldIndex - 1));
-  worldNext?.addEventListener("click", () => setWorld(worldIndex + 1));
-  worldDots.forEach((dot, index) => {
-    dot.addEventListener("click", () => setWorld(index, { focus: true }));
-  });
-
-  worldCarousel?.addEventListener("keydown", (event) => {
-    if (overview) return;
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      setWorld(worldIndex - 1, { focus: true });
-    } else if (event.key === "ArrowRight") {
-      event.preventDefault();
-      setWorld(worldIndex + 1, { focus: true });
-    } else if (event.key === "Home") {
-      event.preventDefault();
-      setWorld(0, { focus: true });
-    } else if (event.key === "End") {
-      event.preventDefault();
-      setWorld(worldSlides.length - 1, { focus: true });
-    }
-  });
-
-  worldCarousel?.addEventListener("pointerdown", (event) => {
-    if (overview || event.pointerType !== "touch") return;
-    swipeStartX = event.clientX;
-  }, { passive: true });
-
-  worldCarousel?.addEventListener("pointerup", (event) => {
-    if (overview || event.pointerType !== "touch" || swipeStartX == null) return;
-    const delta = event.clientX - swipeStartX;
-    swipeStartX = null;
-    if (Math.abs(delta) < 44) return;
-    setWorld(delta < 0 ? worldIndex + 1 : worldIndex - 1);
-  }, { passive: true });
-
-  setWorld(0);
-  setOverview(overview, { persist: false });
+  // The three worlds are now ordinary, always-visible links.
+  // No carousel state, hidden slides, swipe handlers or preference required.
 
   const command = document.getElementById("command");
   const commandInput = document.getElementById("command-input");
