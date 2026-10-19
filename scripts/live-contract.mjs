@@ -18,6 +18,8 @@ assert.match(html,/id="hero-title"[^>]*data-i18n="heroStatement"/);
 assert.match(html,/atlas-systems-mark/);
 assert.match(html,/constellation-lotus/);
 assert.match(html,/circuit-chip/);
+assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache");
+assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
 assert.match(html,/portal-v11\.css\?v=2/);
 assert.match(html,/i18n\.js\?v=26/);
 assert.match(html,/main\.js\?v=p12-sky/);
