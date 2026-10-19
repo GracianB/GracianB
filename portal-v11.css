@@ -37,7 +37,7 @@ html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient
 .cosmic-node .cosmic-node-star{width:clamp(102px,10vw,144px)!important;height:clamp(102px,10vw,144px)!important;outline:1px solid color-mix(in srgb,var(--node-color) 24%,transparent);outline-offset:10px}
 .cosmic-node .world-orb-sigil{width:72%!important;height:72%!important;filter:drop-shadow(0 0 14px color-mix(in srgb,var(--node-color) 65%,transparent))!important}
 .cosmic-pro{left:3%;top:17%}.cosmic-yoga{right:0%;top:3%}.cosmic-lab{left:39%;bottom:0%}
-.cosmic-node:is(:hover,:focus-visible){transform:translateY(-5px) scale(1.04)!important}
+.cosmic-node:is(:hover,:focus-visible){filter:brightness(1.06)}
 .cosmic-node:focus-visible{outline:3px solid var(--node-color);outline-offset:8px;border-radius:18px}
 @media(max-width:1080px){.cosmic-node .cosmic-node-star{width:clamp(78px,10vw,108px)!important;height:clamp(78px,10vw,108px)!important}}
 @media(max-width:760px){.cosmic-node{min-width:75px;gap:.4rem!important;font-size:.74rem!important}.cosmic-node .cosmic-node-star{width:clamp(66px,15vw,89px)!important;height:clamp(66px,15vw,89px)!important;outline-offset:5px}.cosmic-pro{left:3%;top:18%}.cosmic-yoga{right:2%;top:11%}.cosmic-lab{left:40%;bottom:6%}}
