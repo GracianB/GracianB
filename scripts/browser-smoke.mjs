@@ -70,13 +70,22 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     const expected={professional:[199,205,208],yoga:[145,220,178],lab:[139,218,250]};
     for(const [world,color] of Object.entries(expected)){
       const portal=page.locator('.world-portal[data-portal="'+world+'"]');
-      await portal.hover();await page.waitForTimeout(500);
-      const diagnostics=await portal.evaluate(n=>({color:getComputedStyle(n).borderTopColor,hover:n.matches(":hover"),fine:matchMedia("(hover:hover) and (pointer:fine)").matches}));
-      console.log("P12 HOVER",world,JSON.stringify(diagnostics));
-      const actual=diagnostics.color;
-      const nums=actual.match(/[\d.]+/g).map(Number);
+      await portal.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(850); // reveal transition and smooth scroll settle first
+      await portal.hover();
+      await page.waitForTimeout(400);
+      if(!(await portal.evaluate(n=>n.matches(":hover"))))await portal.hover();
+      const state=await portal.evaluate(n=>({
+        color:getComputedStyle(n).borderTopColor,
+        hovered:n.matches(":hover"),
+        pointerFine:matchMedia("(hover:hover) and (pointer:fine)").matches,
+        accent:getComputedStyle(n).getPropertyValue("--portal-color")
+      }));
+      console.log("P12 HOVER",world,JSON.stringify(state));
+      const nums=state.color.match(/[\d.]+/g).map(Number);
       assert.deepEqual(nums.slice(0,3),color,world+" lacks its unique hover color");
-      assert.ok((nums[3]??1)>.74,world+" border must be readable: computed="+actual+" hover="+await portal.evaluate(n=>n.matches(":hover"))+" CSS="+await portal.evaluate(n=>getComputedStyle(n).getPropertyValue("--portal-color")));
+      assert.ok(state.hovered,world+" hover never stabilizes after scroll");
+      assert.ok((nums[3]??1)>.74,world+" border is too faint: "+JSON.stringify(state));
     }
     await page.mouse.move(0,0);
     await page.screenshot({path:artifacts+"/constellation-desktop.png",fullPage:true});
