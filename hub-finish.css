@@ -10,7 +10,7 @@ html[data-theme="dark"] {
 }
 html[data-theme="dark"] body {
  background:radial-gradient(ellipse at 19% 1%,rgba(88,117,130,.035),transparent 40rem),
- linear-gradient(180deg,#060f14 0%,#040b10 52%,#03090d 100%);
+ linear-gradient(180deg,#060f14 0%,#040b10 52%,#03090d 100%),#060f14;
 }
 html[data-theme="dark"] .world-selector {
  background:radial-gradient(circle at 80% 8%,rgba(136,164,176,.035),transparent 17rem),
