@@ -379,12 +379,33 @@
   }
 
 
+  const cityStories = {
+    es: {
+      murcia:"Mi base actual: aquí confluyen Customer Operations, analítica, automatización y desarrollo.",
+      "gran-canaria":"Una etapa de experiencia humana y de servicio, donde aprendí a adaptarme a distintos contextos.",
+      madrid:"Experiencia profesional y conexiones con equipos, clientes y operaciones.",
+      lisboa:"Experiencia internacional en Majorel, trabajando en entornos de contenidos y calidad.",
+      bergamo:"Etapa Erasmus en Italia: idiomas, autonomía y aprendizaje en otro entorno cultural.",
+      varsovia:"Un punto de mi recorrido internacional y de apertura a nuevos entornos."
+    },
+    en: {
+      murcia:"My current base: where Customer Operations, analytics, automation and software intersect.",
+      "gran-canaria":"A chapter of hands-on service experience and learning to adapt to different settings.",
+      madrid:"Professional experience and connections with teams, customers and operations.",
+      lisboa:"International work at Majorel across content and quality operations.",
+      bergamo:"My Erasmus chapter in Italy: languages, independence and cultural learning.",
+      varsovia:"A stop in my international journey and an opening to new environments."
+    }
+  };
   function updateAtlasReadout(pin) {
     const label = pin.dataset.atlasCity;
     const name = label === "varsovia" && lang === "en" ? "Warsaw" : cityNames[label] || pin.getAttribute("aria-label");
     const country = lang === "en" ? pin.dataset.countryEn : pin.dataset.countryEs;
     const output = document.querySelector("[data-atlas-readout]");
+    const story = document.querySelector("[data-atlas-story]");
     if (output) output.textContent = (name + " · " + country).toUpperCase();
+    if (story) story.textContent = cityStories[lang]?.[label] || "";
+    document.querySelector(".city-atlas")?.style.setProperty("--city-active-color",pin.dataset.atlasColor || "#8bdafa");
   }
   document.querySelectorAll(".atlas-pin").forEach(pin => pin.addEventListener("click", () => {
     document.querySelectorAll(".atlas-pin").forEach(node => {
@@ -393,6 +414,39 @@
     });
     updateAtlasReadout(pin);
   }));
+  // Actual endpoints are measured from rendered circles, not guessed SVG coordinates.
+  function synchronizeConstellation() {
+    const atlas = document.querySelector(".cosmic-atlas");
+    const svg = atlas?.querySelector(".cosmic-bridge");
+    const origin = atlas?.querySelector(".cosmic-origin");
+    if (!svg || !origin) return;
+    const bounds = svg.getBoundingClientRect();
+    if (!bounds.width || !bounds.height) return;
+    const midpoint = el => { const r=el.getBoundingClientRect(); return {x:r.left+r.width/2,y:r.top+r.height/2,radius:r.width/2}; };
+    const source=midpoint(origin);
+    const toSvg = p => ({x:(p.x-bounds.left)*1000/bounds.width,y:(p.y-bounds.top)*920/bounds.height});
+    const a=toSvg(source);
+    ["professional","yoga","lab"].forEach(world=>{
+      const node=atlas.querySelector('[data-cosmic-world="'+world+'"] .cosmic-node-star');
+      const path=svg.querySelector('[data-route-world="'+world+'"] path');
+      if (!node || !path) return;
+      const target=midpoint(node), b=toSvg(target);
+      const dx=b.x-a.x,dy=b.y-a.y,length=Math.hypot(dx,dy)||1;
+      const startRadius=source.radius*1000/bounds.width+15;
+      const endRadius=target.radius*1000/bounds.width+20;
+      const x1=a.x+dx*startRadius/length,y1=a.y+dy*startRadius/length;
+      const x2=b.x-dx*endRadius/length,y2=b.y-dy*endRadius/length;
+      const cx=(x1+x2)/2-dy*.035,cy=(y1+y2)/2+dx*.035;
+      path.setAttribute("d",`M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`);
+    });
+  }
+  requestAnimationFrame(synchronizeConstellation);
+  addEventListener("resize",()=>requestAnimationFrame(synchronizeConstellation),{passive:true});
+  document.fonts?.ready?.then(synchronizeConstellation);
+  document.querySelectorAll(".cosmic-node").forEach(node=>{
+    node.addEventListener("pointerenter",synchronizeConstellation);
+    node.addEventListener("focus",synchronizeConstellation);
+  });
 
   function constellationSky() {
     const canvas = document.querySelector("[data-constellation-sky]");
