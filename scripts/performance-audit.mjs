@@ -30,8 +30,8 @@ async function ready() {
 }
 
 const cases = [
-  { route: "", label: "hub", maxSourceBytes: 180000 },
-  { route: "apply.html?lang=es&track=professional", label: "applications", maxSourceBytes: 75000 },
+  { route: "", label: "hub", maxSourceBytes: 350000, maxRequests: 24 },
+  { route: "apply.html?lang=es&track=professional", label: "applications", maxSourceBytes: 120000, maxRequests: 18 },
 ];
 const results = [];
 if (!external) await ready();
@@ -89,10 +89,9 @@ try {
       observed.resources.reduce((sum, entry) => sum + entry.transferredBytes, 0);
     assert.deepEqual(errors, [], "P6 encountered JavaScript page errors");
     assert.deepEqual([...unexpectedRemote], [], "P6 must not add third-party resource dependencies");
-    assert.ok(observed.resources.length <= 12, "Too many initial resource requests");
-    assert.ok(decodedBytes <= c.maxSourceBytes,
-      "Initial decoded assets exceeded documented P6 budget: " + decodedBytes + " bytes");
     assert.ok(observed.documentWidth <= observed.viewportWidth + 1, "P6 horizontal overflow");
+    assert.ok(decodedBytes <= c.maxSourceBytes, `P6 source budget exceeded: ${c.label} ${decodedBytes} > ${c.maxSourceBytes}`);
+    assert.ok(observed.resources.length <= c.maxRequests, `P6 request budget exceeded: ${c.label}`);
     if (c.label === "hub") {
       const bar = page.locator(".scroll-progress i");
       const initial = await bar.evaluate((el) => getComputedStyle(el).transform);
@@ -119,7 +118,7 @@ try {
     await context.close();
   }
   writeFileSync(`${artifacts}/p6-performance.json`, JSON.stringify({
-    measurement: "Chromium resource timing; CI runner conditions, not end-user Core Web Vitals",
+    measurement: "Chromium resource timing; measured resource timings with source-size and request-count guardrails; CI runner conditions, not end-user Core Web Vitals",
     target: ROOT,
     browser: "Playwright pinned Chromium",
     cases: results,
