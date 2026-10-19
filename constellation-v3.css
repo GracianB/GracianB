@@ -334,3 +334,30 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
 .constellation-hero .cosmic-node>span:last-child{font-size:.61rem!important}
 }
 @media(prefers-reduced-motion:reduce){.constellation-hero .cosmic-node{animation:none!important;transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(0deg - var(--orbit-phase)))!important}}
+
+/* V3.5 GEOMETRY LOCK: one center and three rings sharing the SVG coordinate system. */
+.constellation-hero .cosmic-atlas{width:min(100%,500px)!important;max-width:500px!important;aspect-ratio:1000/920!important;container-type:inline-size;overflow:visible!important;transform:none!important;margin-inline:auto!important}
+.constellation-hero .cosmic-origin{left:51%!important;top:48.913043%!important}
+.constellation-hero .cosmic-node{
+ left:51%!important;top:48.913043%!important;
+ --orbit-radius:calc(var(--ring-radius) * 1cqw)!important;
+ transform-origin:center center!important;animation:gb-world-orbit var(--orbit-period) linear infinite!important;
+}
+.constellation-hero .cosmic-pro{--ring-radius:16;--orbit-phase:198deg;--orbit-period:118s}
+.constellation-hero .cosmic-lab{--ring-radius:29;--orbit-phase:89deg;--orbit-period:171s}
+.constellation-hero .cosmic-yoga{--ring-radius:43;--orbit-phase:333deg;--orbit-period:226s}
+.constellation-hero .gb-solar-rings{stroke-dasharray:2 9!important;opacity:.7!important}
+.constellation-hero .gb-orbit-guide,.constellation-hero .gb-orbit-guide--reverse{opacity:0!important}
+.constellation-hero .cosmic-node{min-width:64px!important}
+.constellation-hero .cosmic-node .cosmic-node-star{width:43px!important;height:43px!important}
+.constellation-hero .cosmic-node>span:last-child{font-size:.66rem!important}
+@media(max-width:1080px){.constellation-hero .cosmic-atlas{width:min(100%,390px)!important;max-width:390px!important}}
+@media(max-width:760px){
+.constellation-hero .cosmic-atlas{width:min(100%,300px)!important;max-width:300px!important}
+.constellation-hero .cosmic-node{min-width:54px!important;gap:.18rem!important}
+.constellation-hero .cosmic-node .cosmic-node-star{width:34px!important;height:34px!important}
+.constellation-hero .cosmic-node>span:last-child{font-size:.55rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+.constellation-hero .cosmic-node{animation:none!important;transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(0deg - var(--orbit-phase)))!important}
+}
