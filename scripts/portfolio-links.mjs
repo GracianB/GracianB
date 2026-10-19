@@ -9,7 +9,7 @@ const worlds = [
   { name: "Systems Lab", url: "https://gracianb.github.io/systems-lab/", title: /<title>[^<]*(Systems Lab|PLAY)/i },
 ];
 
-assert.equal((hub.match(/data-world-slide(?=\s|>)/g) || []).length, 3,
+assert.equal((hub.match(/data-portal="(?:professional|yoga|lab)"/g) || []).length, 3,
   "Exactly three first-class worlds must remain present");
 for (const world of worlds) {
   assert.ok(hub.includes('href="' + world.url + '"'),

@@ -130,11 +130,11 @@ assert.ok((css.match(/!important/g) || []).length <= 10, "Too many !important de
 const sharedDark = readFileSync("deck-dark.css","utf8");
 // The final dark variant is intentionally deeper than the approved Professional Deck CV.
 for (const [token, hex] of Object.entries({
-  "--deck-deep":"#03090d",
-  "--deck-bg":"#060f14",
-  "--deck-low":"#0b171e",
-  "--deck-card":"#102129",
-  "--deck-raised":"#172d36",
+  "--deck-deep":"#010407",
+  "--deck-bg":"#02070b",
+  "--deck-low":"#050e14",
+  "--deck-card":"#09171e",
+  "--deck-raised":"#10242d",
   "--deck-silver":"#c7cdd0",
   "--deck-ivory":"#edf2f2",
   "--deck-petrol":"#88a4b0",
@@ -149,13 +149,15 @@ assert.doesNotMatch(sharedDark, /#(?:daa428|d8ae64|edbb43|8b693f|795e35|7b673f|a
 assert.ok(!sharedDark.includes("#151c22") && !sharedDark.includes("#263039"),
   "This dark variant must be noticeably deeper than the Professional Deck base");
 const hubFinal = readFileSync("hub-finish.css","utf8");
-assert.match(html, /hub-finish\.css\?v=1/, "Final hub stylesheet must load");
+assert.match(html, /hub-finish\.css\?v=2/, "Final hub stylesheet must load");
 assert.match(hubFinal, /\.world-professional \.world-art/, "Professional card must use silver / neutral art");
 assert.match(hubFinal, /\.world-professional :is\(\.world-code,\.world-enter b\)/, "Professional labels must not be brown");
 assert.match(hubFinal, /\.evidence-card/, "Whole site, not just header, must be restyled");
+assert.match(hubFinal, /#040b11/, "Methods and documents must use the new abyss-petrol section shade");
+assert.match(hubFinal, /#07151c/, "Cards must be darker without flattening Yoga and Lab");
 assert.match(readme, /docs\/three-worlds\.svg/, "README needs visual worlds");
-assert.match(html, /deck-dark\.css\?v=4/);
-assert.match(readFileSync("apply.html","utf8"), /deck-dark\.css\?v=4/);
+assert.match(html, /deck-dark\.css\?v=5/);
+assert.match(readFileSync("apply.html","utf8"), /deck-dark\.css\?v=5/);
 assert.match(css, /--bg:var\(--cv-paper\)/,
   "The existing light mode must remain available and unchanged");
 assert.match(css, /\.world-professional\s*\{--world-accent:#d6d5d0;--gold:#d6d5d0\}/,
@@ -178,9 +180,9 @@ assert.equal((application.match(/data-brief-track="/g)||[]).length, 5,
   "P3 must include three professional and two specialist briefs");
 assert.match(application, /data-brief-print/, "P3 printable brief entry missing");
 assert.match(application, /data-b6-theme-toggle/, "Application theme control missing");
-assert.match(application, /<meta name="theme-color" content="#060f14">/,
+assert.match(application, /<meta name="theme-color" content="#02070b">/,
   "First paint on application desk must be dark by default");
-assert.match(application, /apply\.js\?v=p8-final/,
+assert.match(application, /apply\.js\?v=p10-dark/,
   "Theme application JavaScript cache key missing");
 assert.match(readFileSync("apply.js", "utf8"), /gb-hub-theme/,
   "Both pages must share the same saved theme preference");
@@ -193,8 +195,8 @@ assert.match(application, /RevOps Studio continúa en desarrollo/,
 
 
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=p8-final/, "P1.3 JS must bypass old cached bytes");
-assert.match(html, /i18n\.js\?v=24" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
+assert.match(html, /main\.js\?v=p11-portals/, "P1.3 JS must bypass old cached bytes");
+assert.match(html, /i18n\.js\?v=25" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
 // Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
 assert.doesNotMatch(css, /\.hero-system\b|\.hero-orbit\b|\.orbit-core\b|\.orbit-node\b|\.signal-chain\b|@keyframes gb-orbit-spin/,
@@ -203,35 +205,34 @@ assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointer
   "Global pointer tracking for deleted artwork must not return");
 assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
   "Do not preload the same blocking stylesheet redundantly");
-assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=p8-final" defer><\/script>/,
+assert.match(html, /<script src="\.\/i18n\.js\?v=25" defer><\/script>\s*<script src="\.\/main\.js\?v=p11-portals" defer><\/script>/,
   "Dictionary must execute before the app, with both scripts deferred");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
 assert.equal(socialPng.readUInt32BE(16), 1200, "OG must be 1200 px wide");
 assert.equal(socialPng.readUInt32BE(20), 630, "OG must be 630 px tall");
-assert.equal((html.match(/data-world-overview/g) || []).length >= 1, true,
-  "Overview control must be available");
-assert.match(html, /id="world-stage"/);
-assert.match(js, /worldOverviewOn: "Ver los 3"/);
-assert.match(js, /worldOverviewOn: "View all 3"/);
-assert.match(css, /\/\* V20 · Two ways to explore the same three worlds/, "V20 overview layout missing");
-assert.match(css, /\.world-carousel-controls \.world-overview-toggle\{/, "Final selector rules missing");
-assert.match(css, /width:auto;max-width:none/, "World switch must override fixed 44px arrow dimensions");
-assert.doesNotMatch(css, /world-overview-toggle\[aria-pressed="true"\]\{background:var\(--cv-ochre\)/, 
-  "The overview must not use a solid yellow active tile");
-assert.match(html, /class="world-view-icon"/, "Restrained CSS view icon missing");
-const behavior = readFileSync("main.js", "utf8");
-assert.match(behavior, /gb-world-overview/, "Overview preference must persist");
-assert.match(behavior, /slide\.setAttribute\("aria-hidden", String\(!overview && !active\)\)/,
-  "Overview must expose all three slides to assistive technology");
+const portalCss = readFileSync("portal-v11.css","utf8");
+assert.match(html,/portal-v11\.css\?v=1/,"Immersive portals CSS must load last");
+assert.equal((html.match(/data-portal="/g)||[]).length,3,"Exactly three universes are required");
+assert.doesNotMatch(html,/data-world-overview|data-world-prev|data-world-next|data-world-slide/,
+  "No carousel, hidden slides or microscopic expand control may remain");
+assert.doesNotMatch(readFileSync("main.js","utf8"),/gb-world-overview|swipeStartX|setOverview\(/,
+  "Old carousel state must be removed, not hidden in CSS");
+assert.match(html,/id="universe-title"/,"Immersive gallery must have a heading");
+assert.match(html,/id="hero-title"[^>]+data-i18n="heroStatement"/,"Cover needs exactly one sentence");
+assert.doesNotMatch(html,/class="hero-lead|class="hero-role/,"Verbose hero copy has returned");
+assert.match(portalCss,/\.world-portal\.world-yoga/,"Yoga-specific hover contract missing");
+assert.match(portalCss,/\.world-portal\.world-lab/,"Lab-specific hover contract missing");
+assert.match(portalCss,/--portal-color:#c7cdd0/,"Professional silver contract missing");
+
 const themeJs = readFileSync("main.js", "utf8");
-assert.match(themeJs, /"#f7f5ef" : "#060f14"/, "Browser theme color must reflect the CV");
-assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#060f14"/);
+assert.match(themeJs, /"#f7f5ef" : "#02070b"/, "Browser theme color must reflect the CV");
+assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#02070b"/);
 assert.match(readFileSync("favicon.svg", "utf8"), /#c7cdd0/);
 
 
 assert.match(html, /People → Operations → Data → Systems → AI/);
-assert.equal((html.match(/data-world-slide/g) || []).length, 3, "Exactly three world slides are required");
+assert.equal((html.match(/class="world-portal world-/g)||[]).length,3, "Exactly three direct world links are required");
 assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
@@ -255,12 +256,11 @@ assert.match(html, /class="hero-proof-link" href="https:\/\/gracianb\.github\.io
 assert.match(html, /data-i18n="factAccountsNumber"/);
 assert.match(js, /factAccountsNumber: "hasta 80"/);
 assert.match(js, /factAccountsNumber: "up to 80"/);
-for (const [tab, panel] of [["professional", "professional"], ["yoga", "yoga"], ["lab", "lab"]]) {
-  assert.ok(html.includes(`id="world-tab-${tab}"`), `Missing ${tab} tab`);
-  assert.ok(html.includes(`aria-controls="world-panel-${panel}"`), `${tab} tab controls wrong panel`);
-  assert.ok(html.includes(`id="world-panel-${panel}" role="tabpanel"`), `Missing ${panel} tabpanel`);
-  assert.ok(html.includes(`aria-labelledby="world-tab-${tab}"`), `Missing ${tab} panel label`);
+for (const world of ["professional","yoga","lab"]) {
+  assert.ok(html.includes(`data-portal="${world}"`),`Missing visible ${world} portal`);
 }
+assert.doesNotMatch(html, /role="tabpanel"|role="tab"|data-world-dot/,
+  "Tabpanel-based worlds must not return");
 assert.equal((html.match(/class="document-visual"/g) || []).length, 3, "Three document identities required");
 assert.equal((html.match(/class="document-summary"/g) || []).length, 3, "Each document track needs its summary");
 assert.match(css, /\.document-group-professional \.document-visual/);
@@ -294,15 +294,15 @@ assert.match(cabinPage,/no se presenta como una habilitación actualmente vigent
 assert.match(cabinScript,/const cities=/);
 assert.match(cabinScript,/data-training-filter/);
 
-assert.match(html, /data-world-prev/);
-assert.match(html, /data-world-next/);
-assert.match(html, /world-noscript/);
+assert.match(html, /data-portal="professional"/);
+assert.match(html, /data-portal="yoga"/);
+assert.match(html, /data-portal="lab"/);
 assert.match(html, /GRACIÁN[\s\S]*BAENA/);
 assert.doesNotMatch(html, /Listos para revisar o enviar|Ready to review or send/i);
 assert.match(readme, /Proof before promise|Proof before claims/i);
 assert.match(readme, /docs\/portfolio-banner\.svg/, "README needs its new brand banner");
 assert.match(sharedDark, /\.hero-kicker-row \.eyebrow/, "Hero kicker should be in silver");
-assert.match(sharedDark, /\.world-carousel-controls \.world-overview-toggle/, "World control must be legible");
+assert.match(portalCss, /\.portal-grid\{/, "New portal layout must be present");
 assert.match(sitemap, /https:\/\/gracianb\.github\.io\/GracianB\//);
 
 console.log(`STATIC CONTRACT PASS · ${ids.length} ids · ${htmlKeys.size} i18n keys`);

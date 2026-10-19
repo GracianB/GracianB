@@ -68,54 +68,34 @@ async function desktop(browser) {
   assert.equal(await page.locator(".hero-proof-link").getAttribute("href"),
     "https://gracianb.github.io/professional-deck/proyecto-bodytone.html");
   assert.match(await page.locator(".facts-strip").innerText(), /hasta 80/);
-  assert.equal(await page.locator("#world-tab-professional").getAttribute("aria-controls"), "world-panel-professional");
-  assert.equal(await page.locator("#world-panel-professional").getAttribute("aria-labelledby"), "world-tab-professional");
   assert.equal(await page.locator(".method-flow li").count(), 7);
-  assert.equal(await page.locator("[data-world-slide]").count(), 3);
-  assert.equal(await page.locator('[data-world="professional"]').getAttribute("aria-hidden"), "false");
-
-  await page.locator("[data-world-next]").click();
-  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
-  await page.locator("[data-world-next]").click();
-  assert.equal(await page.locator('[data-world="lab"]').getAttribute("aria-hidden"), "false");
-  assert.match(
-    await page.locator('[data-world="lab"] .world-card-link').getAttribute("href"),
-    /systems-lab\/$/,
-  );
-
-  await page.locator("[data-world-prev]").focus();
-  await page.keyboard.press("ArrowLeft");
-  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
-  await page.locator("[data-world-overview]").click();
-  assert.equal(await page.locator("[data-world-overview]").getAttribute("aria-pressed"), "true");
-  const overviewLabelHeight = await page.locator("[data-world-overview-label]").evaluate((node) => node.getBoundingClientRect().height);
-  assert.ok(overviewLabelHeight < 25, "Desktop overview label must remain one line");
-  const overviewAppearance = await page.locator("[data-world-overview]").evaluate((button) => {
-    const buttonRect = button.getBoundingClientRect();
-    const labelRect = button.querySelector("[data-world-overview-label]").getBoundingClientRect();
-    const background = getComputedStyle(button).backgroundColor;
-    return { buttonWidth: buttonRect.width, labelWidth: labelRect.width, background, fontSize: parseFloat(getComputedStyle(button).fontSize) };
-  });
-  assert.ok(overviewAppearance.fontSize >= 13, "Worlds button label is too small");
-   assert.ok(overviewAppearance.buttonWidth >= overviewAppearance.labelWidth + 38,
-    "Overview label and icon must have comfortable horizontal spacing");
-  assert.ok(!/rgb\(218,\s*164,\s*40\)/.test(overviewAppearance.background),
-    "Overview must never become a solid yellow tile");
-  const beforeHoverWidth = overviewAppearance.buttonWidth;
-  await page.locator("[data-world-overview]").hover();
-  const afterHoverWidth = await page.locator("[data-world-overview]").evaluate((button) => button.getBoundingClientRect().width);
-  assert.ok(Math.abs(afterHoverWidth - beforeHoverWidth) < 1, "Hover must not jump or resize the control");
-  await page.mouse.move(1, 1);
-  await page.screenshot({ path: `${artifacts}/world-overview-v21.png`, fullPage: false });
-  assert.equal(await page.locator('[data-world-carousel]').getAttribute("class").then((v) => v.includes("is-overview")), true);
-  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
-  assert.equal(await page.locator('[data-world-slide] .world-card-link[tabindex="0"]').count(), 3);
-  assert.equal(await page.locator("[data-world-prev]").isVisible(), false);
-  await page.reload({ waitUntil: "domcontentloaded" });
-  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3, "overview preference persists");
-  await page.locator("[data-world-overview]").click();
-  assert.equal(await page.locator("[data-world-overview]").getAttribute("aria-pressed"), "false");
-  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 1);
+  assert.equal(await page.locator(".world-portal").count(),3);
+  assert.equal(await page.locator(".world-portal:visible").count(),3);
+  assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0,
+    "The tiny expand switch and carousel must be gone");
+  assert.match(await page.locator("#hero-title").innerText(),/De problemas reales a sistemas que funcionan/);
+  assert.equal(await page.locator("#hero-title").locator("p,span,em").count(),0,
+    "The headline is a single clean sentence");
+  for(const [key,site] of [
+    ["professional","professional-deck/"],["yoga","yoga-instructor/"],["lab","systems-lab/"]
+  ]) {
+    const portal=page.locator('.world-portal[data-portal="'+key+'"]');
+    assert.equal(await portal.isVisible(),true);
+    assert.match(await portal.getAttribute("href"),new RegExp(site.replace("/","\\/")+"$"));
+  }
+  const hoverExpected={professional:"rgb(199, 205, 208)",yoga:"rgb(145, 220, 178)",lab:"rgb(139, 218, 250)"};
+  for(const [key,color] of Object.entries(hoverExpected)){
+    const portal=page.locator('.world-portal[data-portal="'+key+'"]');
+    await portal.hover();await page.waitForTimeout(550);
+    const actual=await portal.evaluate(node=>getComputedStyle(node).borderTopColor);
+    const components=actual.match(/[\d.]+/g).map(Number);
+    const expected=color.match(/[\d.]+/g).map(Number);
+    assert.deepEqual(components.slice(0,3),expected,
+      key+" hover must use its own universe color");
+    assert.ok((components[3] ?? 1) >= .8, key+" hover border must be clearly visible");
+  }
+  await page.mouse.move(0,0);
+  await page.screenshot({path:`${artifacts}/three-portals-desktop.png`,fullPage:false});
 
   await page.getByRole("button", { name: "EN", exact: true }).click();
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
@@ -123,8 +103,8 @@ async function desktop(browser) {
   assert.match(await page.locator(".facts-strip").innerText(), /up to 80/);
   assert.equal(await page.locator("[data-command-open]").getAttribute("aria-label"), "Open quick navigation");
   assert.equal(await page.locator(".desktop-nav").getAttribute("aria-label"), "Main navigation");
-  assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /customer and operational problems/i);
-  assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
+  assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /from real-world problems to systems that work/i);
+  assert.equal(await page.locator(".hero-actions a[href='#universes']").count(),1);
 
   await page.locator("[data-theme-toggle]").click();
   assert.equal(await page.locator("html").getAttribute("data-theme"), "light");
@@ -166,31 +146,16 @@ async function mobile(browser) {
   });
   assert.equal(nameClipped, false, "Hero name must not clip at 320px");
 
-  const worldClipped = await page.locator("[data-world-carousel]").evaluate((node) => {
-    const rect = node.getBoundingClientRect();
-    return rect.left < -1 || rect.right > innerWidth + 1;
-  });
-  assert.equal(worldClipped, false, "Three-world selector must fit at 320px");
-  await page.locator("[data-world-overview]").click();
-  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 3);
-  const mobileOverviewLabelHeight = await page.locator("[data-world-overview-label]").evaluate((node) => node.getBoundingClientRect().height);
-  assert.ok(mobileOverviewLabelHeight < 25, "320px overview label must remain one line");
-  const mobileOverviewWidths = await page.locator("[data-world-overview]").evaluate((button) => ({
-    button: button.getBoundingClientRect().width,
-    label: button.querySelector("[data-world-overview-label]").getBoundingClientRect().width,
-  }));
-  assert.ok(mobileOverviewWidths.button >= mobileOverviewWidths.label + 38,
-    "320px view switch needs room for readable label and icon");
-  const overviewFits = await page.locator("[data-world-carousel]").evaluate((node) => {
-    const rect = node.getBoundingClientRect();
-    return rect.left >= -1 && rect.right <= innerWidth + 1;
-  });
-  assert.equal(overviewFits, true, "Overview must fit 320px");
-  await page.locator("[data-world-overview]").click();
-  assert.equal(await page.locator('[data-world-slide][aria-hidden="false"]').count(), 1);
-  await page.locator("[data-world-next]").click();
-  assert.equal(await page.locator('[data-world="yoga"]').getAttribute("aria-hidden"), "false");
-
+  assert.equal(await page.locator(".world-portal").count(),3);
+  assert.equal(await page.locator(".world-portal:visible").count(),3);
+  for(const portal of await page.locator(".world-portal").all()){
+    const fits=await portal.evaluate(node=>{
+      const r=node.getBoundingClientRect();
+      return r.left >= -1 && r.right <= innerWidth+1;
+    });
+    assert.equal(fits,true,"Each world portal must fit at 320px");
+  }
+  assert.equal(await page.locator("[data-world-overview]").count(),0);
   await page.locator("[data-menu-toggle]").click();
   await page.locator("#mobile-menu:not([hidden])").waitFor();
   assert.equal(await page.locator("[data-menu-toggle]").getAttribute("aria-label"), "Cerrar menú");
@@ -207,7 +172,7 @@ async function mobile(browser) {
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
   assert.equal(await page.locator("[data-menu-toggle]").getAttribute("aria-label"), "Close menu");
   assert.equal(await page.locator("#mobile-menu nav").getAttribute("aria-label"), "Mobile navigation");
-  assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
+  assert.match(await page.locator(".portal-after [data-application-link]").getAttribute("href"), /apply\.html\?lang=en$/, "English applications route must be direct");
   assert.equal(await page.locator('#mobile-menu [data-set-lang="en"]').getAttribute("aria-pressed"), "true");
   await page.locator('#mobile-menu [data-set-lang="es"]').click();
   assert.equal(await page.locator("html").getAttribute("lang"), "es");
@@ -297,7 +262,7 @@ async function finalResponsiveAudit(browser) {
       assert.equal(await page.locator("html").getAttribute("lang"), "en");
       assert.equal(await page.locator("html").getAttribute("data-theme"), mode);
       assert.equal(await page.locator(".document-group").count(), 3);
-      assert.equal(await page.locator("[data-world-slide]").count(), 3);
+      assert.equal(await page.locator(".world-portal").count(), 3);
       const typography = await page.evaluate(() => {
         const pixels = (selector) => parseFloat(getComputedStyle(document.querySelector(selector)).fontSize);
         const visuals = [...document.querySelectorAll(".document-visual")]
@@ -331,7 +296,7 @@ async function finalResponsiveAudit(browser) {
       });
       assert.equal(identity.page, "rgb(243, 238, 229)", "Professional mini-document must match Deck ivory");
       assert.match(identity.professional,
-        mode === "dark" ? /rgb\(23, 40, 49\).*rgb\(7, 18, 23\)/
+        mode === "dark" ? /rgb\(13, 32, 40\).*rgb\(4, 13, 18\)/
                         : /rgb\(38, 48, 57\).*rgb\(21, 28, 34\)/,
         "Professional document preview must match petrol dark / original light identity");
       assert.equal(identity.professionalLabel, mode === "light" ? "rgb(82, 99, 109)" : "rgb(199, 205, 208)");
@@ -348,31 +313,31 @@ async function finalResponsiveAudit(browser) {
             button: css(".hero-actions .button-primary").backgroundColor,
             brand: css(".brand-mark").borderTopColor,
             panel: css(".document-group").backgroundColor,
-            professionalCode: css(".world-professional .world-code").color,
+            professionalCode: css(".world-professional .portal-category").color,
             professionalSigil: css(".world-professional .world-professional-sigil").color,
-            professionalArtwork: css(".world-professional .world-art").backgroundImage,
-            professionalCopy: css(".world-professional .world-card-copy").backgroundImage,
+            professionalArtwork: css(".world-professional .portal-art").backgroundColor,
+            professionalCopy: css(".world-professional .portal-copy").backgroundImage,
             methodSurface: css(".method-section").backgroundImage,
             documentsSurface: css(".documents-section").backgroundImage,
             evidenceSurface: css(".evidence-card").backgroundImage,
             browser: document.querySelector('meta[name="theme-color"]').content,
           };
         });
-        assert.equal(unified.background, "#060f14", "Deep petrol base must replace Deck graphite");
-        assert.equal(unified.page, "rgb(6, 15, 20)");
+        assert.equal(unified.background, "#02070b", "Deep petrol base must replace Deck graphite");
+        assert.equal(unified.page, "rgb(2, 7, 11)");
         assert.equal(unified.title, "rgb(199, 205, 208)", "Hero title must be silver");
          assert.equal(unified.kicker, "rgb(199, 205, 208)", "Customer Success kicker must be silver");
         assert.equal(unified.button, "rgb(199, 205, 208)", "Primary action must be silver");
         assert.equal(unified.brand, "rgba(199, 205, 208, 0.52)");
-        assert.equal(unified.panel, "rgb(11, 26, 34)");
+        assert.equal(unified.panel, "rgb(7, 21, 28)");
         assert.equal(unified.professionalCode,"rgb(199, 205, 208)","First world label must be silver");
         assert.equal(unified.professionalSigil,"rgb(216, 223, 226)","Professional emblem must be cool silver");
-        assert.match(unified.professionalArtwork,/rgb\(32, 42, 48\).*rgb\(11, 19, 25\)/,"Professional art must not be brown");
-        assert.match(unified.professionalCopy,/rgb\(18, 31, 38\).*rgb\(9, 19, 25\)/,"First card text panel must be petrol");
-        assert.match(unified.methodSurface,/rgb\(7, 17, 23\).*rgb\(5, 11, 16\)/,"Method section must be dark");
-        assert.match(unified.documentsSurface,/rgb\(7, 17, 23\).*rgb\(5, 11, 16\)/,"Documents section must be dark");
-        assert.match(unified.evidenceSurface,/linear-gradient\(155deg, color\(srgb .*rgb\(8, 19, 25\) 89%\)/,"Evidence cards must be dark");
-        assert.equal(unified.browser, "#060f14");
+        assert.equal(unified.professionalArtwork,"rgb(11, 22, 28)","Professional art must be deep neutral ink, not brown");
+        assert.match(unified.professionalCopy,/rgb\(11, 23, 29\).*rgb\(4, 12, 17\)/,"First card text panel must be petrol");
+        assert.match(unified.methodSurface,/rgb\(4, 11, 17\).*rgb\(2, 8, 13\)/,"Method section must be dark");
+        assert.match(unified.documentsSurface,/rgb\(4, 11, 17\).*rgb\(2, 8, 13\)/,"Documents section must be dark");
+        assert.match(unified.evidenceSurface,/linear-gradient\(155deg, color\(srgb .*rgb\(4, 12, 18\) 89%\)/,"Evidence cards must be dark");
+        assert.equal(unified.browser, "#02070b");
         const contrast = await page.evaluate(() => {
           const rgb = (s) => s.match(/[\d.]+/g).slice(0,3).map(Number);
           const luminance = (c) => {
@@ -477,7 +442,7 @@ async function cabinCrew(browser){
   const context=await browser.newContext({viewport:{width:1440,height:900}});
   const page=await context.newPage();
   await page.goto(URL,{waitUntil:"domcontentloaded"});
-  assert.equal(await page.locator("[data-world-slide]").count(),3,"fourth main universe must NOT be added");
+  assert.equal(await page.locator(".world-portal").count(),3,"fourth main universe must NOT be added");
   assert.equal(await page.locator(".document-group").count(),3);
   assert.equal(await page.locator("a[href='./cabin-crew.html']").count(),1,"legacy TCP chapter remains in documents");
   assert.equal(await page.locator("a[href='https://gracianb.github.io/cabin-crew-site/']").count(),2,"TCP standalone destination appears in documents and quick navigation");
