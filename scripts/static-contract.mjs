@@ -87,7 +87,7 @@ assert.match(js,/commandList\.scrollTop/,"Only the quick-result list should scro
 assert.match(read("styles.css"),/\.command-backdrop\{[^}]*background:rgba/);
 assert.doesNotMatch(read("styles.css"),/\.command-backdrop\{[^}]*backdrop-filter/,"A blurred modal background causes flickering");
 assert.match(css,/\.observatory-details[^}]*evidence-grid|\.evidence-grid[^}]*repeat\(2,minmax\(0,1fr\)\)/,"Project cards need stable columns");
-assert.match(html,/main\.js\?v=(?:p124-quicknav|v1-orbs-20261019)" defer/);
+assert.match(html,/main\.js\?v=(?:p124-quicknav|v1-atlas-20261019)" defer/);
 for(const pattern of [/\.constellation-hero/,/\.cosmic-node/,/\.atlas-pin/,/prefers-reduced-motion/])
   assert.match(css,pattern);
 assert.match(dark,/--deck-bg:#02070b/,"Abyss petrol should remain");
