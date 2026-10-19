@@ -155,3 +155,10 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
  .constellation-hero .cosmic-node{min-width:68px!important;font-size:.74rem!important}
  .constellation-hero .cosmic-node .cosmic-node-star{--planet-radius:64px}
 }
+
+/* Mobile orbit containment: never let decorative rings widen the page. */
+@media(max-width:760px){
+  .constellation-hero{overflow-x:clip!important}
+  .constellation-hero .cosmic-atlas{overflow:clip!important;max-width:100%!important}
+  .constellation-hero .cosmic-bridge{overflow:hidden!important}
+}
