@@ -55,7 +55,7 @@
   function applyTheme({persist = false} = {}) {
     document.documentElement.dataset.theme = theme;
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content",
-      theme === "dark" ? "#0b1419" : "#f7f5f0");
+      theme === "dark" ? "#060f14" : "#f7f5f0");
     const toggle = document.querySelector("[data-b6-theme-toggle]");
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(theme === "dark"));
