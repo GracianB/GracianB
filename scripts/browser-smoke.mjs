@@ -86,6 +86,16 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   }
   assert.equal(new Set(geometry.worlds.map(x=>x.stroke)).size,3,"The three orbital tracks must have different colors");
 
+  const calibration=await page.locator(".gb-observatory-beacons circle").evaluateAll(nodes=>nodes.map(el=>{
+    const cx=Number(el.getAttribute("cx")),cy=Number(el.getAttribute("cy"));
+    return {radius:Math.hypot(cx-510,cy-450),color:getComputedStyle(el).fill};
+  }));
+  assert.equal(calibration.length,3,"Observatory must keep precisely three orbital beacons");
+  for(let i=0;i<calibration.length;i++){
+    assert.ok(Math.abs(calibration[i].radius-[150,260,360][i])<.1,"Beacon must lie exactly on its ring: "+JSON.stringify(calibration[i]));
+  }
+  assert.equal(new Set(calibration.map(x=>x.color)).size,3,"Calibration beacons need unique world colors");
+
   // Premium observatory: three non-interactive enamel accents on the same paths.
   const accents=await page.locator(".gb-orbit-etchings circle").evaluateAll(nodes=>nodes.map(el=>({
     radius:Number(el.getAttribute("r")),
@@ -119,6 +129,16 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       color:getComputedStyle(el).stroke
     }));
     assert.ok(Number(focusArc.opacity)>.9,"Focused ring enamel highlight should be bright");
+
+    // The contextual observatory caption must follow keyboard focus and language.
+    const selected=await page.locator(".gb-orbit-readout").evaluate(node=>({
+      opacity:getComputedStyle(node).opacity,
+      label:node.querySelector(".gb-orbit-readout-pro").textContent.trim()
+    }));
+    assert.ok(Number(selected.opacity)>.85,"Focused orbit should reveal the information caption");
+    assert.match(selected.label,lang==="es"?/PERSONAS|OPERACIONES/:/PEOPLE|OPERATIONS/,"Caption must be localized");
+    const auraOpacity=await page.locator(".gb-orbit-aura").evaluate(el=>Number(getComputedStyle(el).opacity));
+    assert.ok(auraOpacity>.9,"Selecting an orbit should reveal its colored light field");
     await page.locator(".constellation-signature").click();
   }
   assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0);
