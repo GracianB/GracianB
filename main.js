@@ -409,7 +409,7 @@
         const [red,green,blue] = c.color;
         const w=Math.max(280,width), h=Math.max(250,height);
         const pts=c.points.map(([x,y])=>[x*w, y*h]);
-        ctx.strokeStyle="rgba("+red+","+green+","+blue+","+(0.18+movement).toFixed(3)+")";
+        ctx.strokeStyle="rgba("+red+","+green+","+blue+","+((width<600?.20:.28)+movement).toFixed(3)+")";
         ctx.lineWidth=1;
         for(const [start,end] of c.links){
           ctx.beginPath();ctx.moveTo(...pts[start]);ctx.lineTo(...pts[end]);ctx.stroke();
@@ -417,11 +417,11 @@
         pts.forEach(([x,y],i)=>{
           if(i===5){
             ctx.beginPath();ctx.arc(x,y,8,0,Math.PI*2);
-            ctx.strokeStyle="rgba("+red+","+green+","+blue+",0.14)";
+            ctx.strokeStyle="rgba("+red+","+green+","+blue+",0.23)";
             ctx.stroke();
           }
           ctx.beginPath();ctx.arc(x,y,i===5?2.7:1.9,0,Math.PI*2);
-          ctx.fillStyle="rgba("+red+","+green+","+blue+","+(i===5?.85:.61)+")";
+          ctx.fillStyle="rgba("+red+","+green+","+blue+","+(i===5?.95:.77)+")";
           ctx.fill();
         });
       }
