@@ -190,112 +190,147 @@
   });
 
 
+  // P12.4 · Command atlas: never scroll the underlying document on selection.
   const command = document.getElementById("command");
+  const commandPanel = command?.querySelector(".command-panel");
   const commandInput = document.getElementById("command-input");
   const commandList = document.getElementById("command-list");
-  let commandIndex = 0;
+  const commandCount = document.getElementById("command-count");
+  const commandEmpty = document.getElementById("command-empty");
+  const commandFilters = [...document.querySelectorAll("[data-command-filter]")];
+  let commandCategory = "all", commandIndex = 0, commandTrigger = null;
+  const commandItems = [...(commandList?.querySelectorAll("li") || [])];
 
+  function normalizeCommand(value) {
+    return value.toLocaleLowerCase(lang).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  }
   function visibleCommands() {
-    return [...(commandList?.querySelectorAll("li") || [])].filter((item) => !item.hidden);
+    return commandItems.filter(item => !item.hidden);
   }
-
-  function paintCommand() {
-    const items = visibleCommands();
-    if (commandIndex >= items.length) commandIndex = Math.max(0, items.length - 1);
-    items.forEach((item, index) => {
-      item.classList.toggle("is-active", index === commandIndex);
+  function commandSelection({scroll=false}={}) {
+    const items=visibleCommands();
+    if(!items.length)commandIndex=-1;
+    else commandIndex=Math.max(0,Math.min(commandIndex,items.length-1));
+    commandItems.forEach(item=>{
+      const link=item.querySelector("a");
+      const active=items.indexOf(item)===commandIndex&&commandIndex>=0;
+      item.classList.toggle("is-active",active);
+      if(link) {
+        if(active) link.setAttribute("aria-current","true");
+        else link.removeAttribute("aria-current");
+      }
     });
-    items[commandIndex]?.scrollIntoView({ block: "nearest" });
+    const selected=items[commandIndex];
+    if(selected && scroll && commandList) {
+      // Only move the result list; scrollIntoView() also scrolls the page behind it.
+      const above=selected.offsetTop-commandList.offsetTop;
+      const bottom=above+selected.offsetHeight;
+      if(above<commandList.scrollTop)commandList.scrollTop=above;
+      else if(bottom>commandList.scrollTop+commandList.clientHeight)
+        commandList.scrollTop=bottom-commandList.clientHeight;
+    }
   }
-
-  function filterCommand(query) {
-    const needle = query.trim().toLocaleLowerCase(lang);
-    commandList?.querySelectorAll("li").forEach((item) => {
-      const text = (item.textContent || "").toLocaleLowerCase(lang);
-      item.hidden = needle ? !text.includes(needle) : false;
+  function updateCommandResults() {
+    const query=normalizeCommand(commandInput?.value||"");
+    commandItems.forEach(item=>{
+      const haystack=normalizeCommand((item.textContent||"")+" "+(item.dataset.search||""));
+      item.hidden=!(commandCategory==="all"||item.dataset.commandCategory===commandCategory)
+        || !!(query&&!haystack.includes(query));
     });
-    commandIndex = 0;
-    paintCommand();
+    commandIndex=0;
+    if(commandList)commandList.scrollTop=0;
+    const count=visibleCommands().length;
+    if(commandEmpty)commandEmpty.hidden=count!==0;
+    if(commandCount)commandCount.textContent=lang==="en"?
+      (count+" "+(count===1?"destination":"destinations")):
+      (count+" "+(count===1?"destino":"destinos"));
+    commandSelection();
   }
-
+  function setCommandCategory(category) {
+    commandCategory=category;
+    commandFilters.forEach(button=>{
+      const selected=button.dataset.commandFilter===category;
+      button.classList.toggle("is-active",selected);
+      button.setAttribute("aria-pressed",String(selected));
+    });
+    updateCommandResults();
+  }
   function openCommand() {
-    if (!command) return;
+    if(!command || !command.hidden)return;
     setMenu(false);
-    lastFocus = document.activeElement;
-    command.hidden = false;
-    command.setAttribute("aria-hidden", "false");
+    commandTrigger=document.activeElement;
+    command.hidden=false;
+    command.setAttribute("aria-hidden","false");
     document.body.classList.add("command-open");
-    if (commandInput) commandInput.value = "";
-    filterCommand("");
-    requestAnimationFrame(() => commandInput?.focus());
+    if(commandInput)commandInput.value="";
+    setCommandCategory("all");
+    requestAnimationFrame(()=>{if(!command.hidden)commandInput?.focus({preventScroll:true});});
   }
-
-  function closeCommand() {
-    if (!command || command.hidden) return;
-    command.hidden = true;
-    command.setAttribute("aria-hidden", "true");
+  function closeCommand({restoreFocus=true}={}) {
+    if(!command||command.hidden)return;
+    command.hidden=true;
+    command.setAttribute("aria-hidden","true");
     document.body.classList.remove("command-open");
-    if (lastFocus instanceof HTMLElement) lastFocus.focus();
+    if(restoreFocus&&commandTrigger instanceof HTMLElement&&commandTrigger.isConnected)
+      commandTrigger.focus({preventScroll:true});
   }
-
   function activateCommand() {
-    const link = visibleCommands()[commandIndex]?.querySelector("a");
-    if (!link) return;
-    closeCommand();
-    link.click();
+    const item=visibleCommands()[commandIndex];
+    const link=item?.querySelector("a");
+    if(link)link.click();
   }
-
-  document.querySelectorAll("[data-command-open]").forEach((button) => {
-    button.addEventListener("click", openCommand);
+  document.querySelectorAll("[data-command-open]").forEach(button=>button.addEventListener("click",openCommand));
+  document.querySelectorAll("[data-command-close]").forEach(button=>
+    button.addEventListener("click",()=>closeCommand()));
+  commandInput?.addEventListener("input",updateCommandResults);
+  commandFilters.forEach(button=>button.addEventListener("click",()=>{
+    setCommandCategory(button.dataset.commandFilter);
+    commandInput?.focus({preventScroll:true});
+  }));
+  commandList?.addEventListener("pointermove",event=>{
+    const item=event.target.closest("li[data-command-category]");
+    const index=visibleCommands().indexOf(item);
+    if(index>=0&&commandIndex!==index){commandIndex=index;commandSelection();}
+  },{passive:true});
+  commandList?.addEventListener("click",event=>{
+    const link=event.target.closest("a");
+    if(!link)return;
+    // Local sections are revealed before native fragment navigation.
+    if(link.dataset.commandReveal==="documents"){
+      const documents=document.querySelector(".cv-library-details");
+      if(documents)documents.open=true;
+    }
+    closeCommand({restoreFocus:false});
   });
-  document.querySelectorAll("[data-command-close]").forEach((button) => {
-    button.addEventListener("click", closeCommand);
-  });
-  commandInput?.addEventListener("input", () => filterCommand(commandInput.value));
-
-  document.addEventListener("keydown", (event) => {
-    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+  document.addEventListener("keydown",event=>{
+    if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){
       event.preventDefault();
-      command?.hidden === false ? closeCommand() : openCommand();
+      command?.hidden===false?closeCommand():openCommand();
       return;
     }
-
-    if (event.key === "Escape") {
-      closeCommand();
-      setMenu(false);
+    if(event.key==="Escape"){
+      if(command?.hidden===false){event.preventDefault();closeCommand();}
+      else setMenu(false);
       return;
     }
-
-    if (!command || command.hidden) return;
-
-    if (event.key === "ArrowDown") {
+    if(!command||command.hidden)return;
+    if(event.key==="ArrowDown"||event.key==="ArrowUp"){
       event.preventDefault();
-      const count = visibleCommands().length;
-      commandIndex = count ? (commandIndex + 1) % count : 0;
-      paintCommand();
-    } else if (event.key === "ArrowUp") {
-      event.preventDefault();
-      const count = visibleCommands().length;
-      commandIndex = count ? (commandIndex - 1 + count) % count : 0;
-      paintCommand();
-    } else if (event.key === "Enter") {
+      const count=visibleCommands().length;
+      if(count){
+        commandIndex=(commandIndex+(event.key==="ArrowDown"?1:-1)+count)%count;
+        commandSelection({scroll:true});
+      }
+    }else if(event.key==="Enter"&&(document.activeElement===commandInput)){
       event.preventDefault();
       activateCommand();
-    } else if (event.key === "Tab") {
-      const focusables = [...command.querySelectorAll(
-        'button, input, a[href], [tabindex]:not([tabindex="-1"])',
-      )].filter((node) => node.tabIndex >= 0 && !node.hasAttribute("disabled") && node.offsetParent !== null);
-
-      if (focusables.length) {
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first.focus();
-        }
+    }else if(event.key==="Tab"){
+      const focusables=[...commandPanel.querySelectorAll('button:not([disabled]),input:not([disabled]),a[href]')]
+        .filter(node=>node.tabIndex>=0&&!node.closest("[hidden]")&&node.getClientRects().length);
+      if(focusables.length){
+        const first=focusables[0],last=focusables[focusables.length-1];
+        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus({preventScroll:true});}
+        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus({preventScroll:true});}
       }
     }
   });
