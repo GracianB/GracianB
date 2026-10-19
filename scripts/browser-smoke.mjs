@@ -71,7 +71,9 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     for(const [world,color] of Object.entries(expected)){
       const portal=page.locator('.world-portal[data-portal="'+world+'"]');
       await portal.hover();await page.waitForTimeout(500);
-      const actual=await portal.evaluate(n=>getComputedStyle(n).borderTopColor);
+      const diagnostics=await portal.evaluate(n=>({color:getComputedStyle(n).borderTopColor,hover:n.matches(":hover"),fine:matchMedia("(hover:hover) and (pointer:fine)").matches}));
+      console.log("P12 HOVER",world,JSON.stringify(diagnostics));
+      const actual=diagnostics.color;
       const nums=actual.match(/[\d.]+/g).map(Number);
       assert.deepEqual(nums.slice(0,3),color,world+" lacks its unique hover color");
       assert.ok((nums[3]??1)>.74,world+" border must be readable");
