@@ -151,7 +151,10 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       document.documentElement.style.setProperty("scroll-behavior","auto","important");
       window.scrollTo({top:0,behavior:"instant"});
     });
-    await page.waitForFunction(()=>window.scrollY<2);
+    // Scroll anchoring may keep a few pixels while the large orbit settles.
+    // The hero capture does not require an exact subpixel scroll position.
+    await page.waitForTimeout(120);
+    await page.evaluate(() => window.scrollTo({top:0,left:0,behavior:"instant"}));
       await page.screenshot({path:artifacts+"/constellation-light-desktop.png",fullPage:true});
     }
     if(width<=420){
