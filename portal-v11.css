@@ -7,3 +7,27 @@ html[data-theme="light"] .cv-library-details > summary {
   color: rgb(27, 57, 70);
   border-color: #aec5d0;
 }
+
+/* V1.1 / Three distinctive living universes. Same interactive links, richer identities. */
+.cosmic-node{isolation:isolate;transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .35s ease!important}
+.cosmic-node .cosmic-node-star{
+  position:relative;display:grid;place-items:center;
+  width:clamp(78px,8.6vw,112px)!important;height:clamp(78px,8.6vw,112px)!important;
+  border-radius:50%;color:var(--node-color);
+  background:radial-gradient(circle at 32% 26%,color-mix(in srgb,var(--node-color) 22%,#112331),#07131c 69%,#03090e)!important;
+  border:1px solid color-mix(in srgb,var(--node-color) 65%,transparent)!important;
+  box-shadow:inset 0 1px 15px color-mix(in srgb,var(--node-color) 13%,transparent),0 0 0 9px color-mix(in srgb,var(--node-color) 6%,transparent),0 14px 55px rgba(0,0,0,.42),0 0 35px color-mix(in srgb,var(--node-color) 14%,transparent)!important;
+  animation:gb-orb-breathe 6s ease-in-out infinite!important;
+}
+.cosmic-node .cosmic-node-star:before,.cosmic-node .cosmic-node-star:after{content:"";position:absolute;pointer-events:none;border-radius:50%;inset:-12px;border:1px solid color-mix(in srgb,var(--node-color) 29%,transparent);transform:rotate(-26deg) scaleX(.93)}
+.cosmic-node .cosmic-node-star:after{inset:-22px;border-style:dashed;border-color:color-mix(in srgb,var(--node-color) 13%,transparent);transform:rotate(24deg) scaleX(.84)}
+.cosmic-node .world-orb-sigil{width:67%;height:67%;overflow:visible;filter:drop-shadow(0 0 9px currentColor);transition:transform .5s ease,filter .4s ease}
+.cosmic-node:is(:hover,:focus-visible) .world-orb-sigil{transform:scale(1.1) rotate(5deg);filter:drop-shadow(0 0 16px currentColor)}
+.cosmic-node:is(:hover,:focus-visible) .cosmic-node-star{box-shadow:0 0 0 13px color-mix(in srgb,var(--node-color) 10%,transparent),0 0 65px color-mix(in srgb,var(--node-color) 34%,transparent)!important}
+.cosmic-pro .cosmic-node-star{animation-delay:0s!important}
+.cosmic-yoga .cosmic-node-star{animation-delay:-2s!important}
+.cosmic-lab .cosmic-node-star{animation-delay:-4s!important}
+@keyframes gb-orb-breathe{0%,100%{filter:brightness(.92)}50%{filter:brightness(1.17)}}
+html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient(circle at 30% 25%,#fff,#d8e7ed 76%)!important;box-shadow:inset 0 0 16px rgba(255,255,255,.85),0 0 0 9px color-mix(in srgb,var(--node-color) 8%,transparent),0 14px 40px rgba(34,75,96,.19)!important}
+@media(max-width:760px){.cosmic-node .cosmic-node-star{width:clamp(58px,14vw,86px)!important;height:clamp(58px,14vw,86px)!important}.cosmic-node .cosmic-node-star:after{inset:-14px}}
+@media(prefers-reduced-motion:reduce){.cosmic-node .cosmic-node-star{animation:none!important}.cosmic-node,.cosmic-node .world-orb-sigil{transition:none!important}}
