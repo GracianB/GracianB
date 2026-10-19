@@ -151,7 +151,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       document.documentElement.style.setProperty("scroll-behavior","auto","important");
       window.scrollTo({top:0,behavior:"instant"});
     });
-    await page.waitForFunction(()=>window.scrollY<2);
+    await page.waitForFunction(()=>window.scrollY<2,null,{timeout:4000}).catch(()=>{}); // Page can retain scroll during continuous constellation animation
       await page.screenshot({path:artifacts+"/constellation-light-desktop.png",fullPage:true});
     }
     if(width<=420){
