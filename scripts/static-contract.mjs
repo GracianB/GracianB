@@ -6,7 +6,7 @@ const read=p=>readFileSync(p,"utf8");
 const html=read("index.html"),js=read("main.js"),i18n=read("i18n.js");
 const css=read("portal-v11.css"),dark=read("deck-dark.css");
 const resources=["index.html","styles.css","portal-v11.css","hub-finish.css","deck-dark.css",
-"main.js","i18n.js","README.md","favicon.svg","docs/portfolio-banner.svg","docs/three-worlds.svg",
+"main.js","i18n.js","city-atlas-v2.css","README.md","favicon.svg","docs/portfolio-banner.svg","docs/three-worlds.svg",
 "apply.html","apply.js","apply.css","robots.txt","sitemap.xml","site.webmanifest","og-cover.png",
 "cabin-crew.html","cabin-letter-es.html","cabin-letter-en.html"];
 const pdfs=["Gracian_Baena_CV_2026_ES.pdf","Gracian_Baena_CV_2026_EN.pdf",
@@ -36,7 +36,9 @@ assert.match(html,/atlas-systems-mark/,"Professional graph icon missing");
 assert.match(html,/class="theme-sun"[^>]*viewBox="0 0 24 24"/,"Sun must be an SVG");
 assert.match(html,/class="theme-moon"[^>]*viewBox="0 0 24 24"/,"Moon must be an SVG");
 assert.match(html,/<rect x="143" y="130" width="34" height="34"/,"Professional center mark must be centered at x=160");
-assert.doesNotMatch(html,/data-i18n="atlasNote"/,"Atlas should not display unnecessary explanatory copy");
+assert.match(html,/data-i18n="atlasNote"/,"Six place chapters need an explanation that this is not a chronological route");
+assert.match(html,/data-i18n="atlasHeading"/,"Atlas must explain its purpose");
+assert.match(read("city-atlas-v2.css"),/\.city-atlas-v2 \.atlas-pin/,"City chapters must have a readable card treatment");
 assert.match(css,/\.theme-toggle svg/,"Centered theme-vector layout must be present");
 assert.match(css,/html\[data-theme=light\] \.city-atlas/,"The city atlas needs intentional light-mode styling");
 assert.match(css,/html\[data-theme=light\][^}]*?(?:observatory-details|cv-library-details)/,"Light disclosures must be styled");
@@ -62,6 +64,8 @@ assert.match(js,/visibilitychange/);
 assert.match(js,/reduceMotion/);
 assert.match(js,/updateAtlasReadout/);
 assert.equal((html.match(/data-atlas-city="/g)||[]).length,6,"Six city markers required");
+assert.equal((html.match(/class="atlas-pin-name"/g)||[]).length,6,"Every city must have a visible full name");
+assert.equal((html.match(/class="atlas-pin-copy"/g)||[]).length,6,"Every city must explain its chapter");
 for(const city of ["murcia","gran-canaria","madrid","lisboa","bergamo","varsovia"])
   assert.ok(html.includes('data-atlas-city="'+city+'"'));
 assert.equal((html.match(/class="atlas-pin is-current"/g)||[]).length,1);
