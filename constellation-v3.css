@@ -297,3 +297,40 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
  .constellation-hero .cosmic-node{animation:none!important;transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(0deg - var(--orbit-phase)))!important;will-change:auto}
  .constellation-hero .cosmic-node .cosmic-node-star{animation:none!important}
 }
+
+/* SOLAR V3.4: three genuine concentric radii, independent slow revolutions. */
+.constellation-hero .cosmic-atlas{width:min(100%,450px)!important;max-width:450px!important;margin-inline:auto 0!important;overflow:visible!important;transform:translateX(12px)!important}
+.constellation-hero .cosmic-atlas::before{opacity:.2!important}
+.constellation-hero .cosmic-atlas::after{opacity:.15!important}
+.constellation-hero .cosmic-origin{width:48px!important;height:48px!important}
+.constellation-hero .cosmic-node{--orbit-radius:100px;--orbit-period:120s;--planet-radius:48px!important;left:51%!important;top:48.9%!important;right:auto!important;bottom:auto!important;min-width:74px!important;gap:.32rem!important;animation:gb-world-orbit var(--orbit-period) linear infinite!important;transition:filter .2s ease!important}
+.constellation-hero .cosmic-pro{--orbit-phase:210deg;--orbit-radius:96px;--orbit-period:112s;--node-color:#d0e3f1}
+.constellation-hero .cosmic-lab{--orbit-phase:89deg;--orbit-radius:135px;--orbit-period:154s;--node-color:#6bcbf6}
+.constellation-hero .cosmic-yoga{--orbit-phase:325deg;--orbit-radius:174px;--orbit-period:194s;--node-color:#89e3bd}
+.constellation-hero .cosmic-node .cosmic-node-star{width:48px!important;height:48px!important;animation:none!important;transition:box-shadow .25s ease,background .25s ease!important;box-shadow:inset -3px -6px 11px #0007,0 0 0 3px color-mix(in srgb,var(--node-color) 7%,transparent),0 0 13px color-mix(in srgb,var(--node-color) 13%,transparent)!important}
+.constellation-hero .cosmic-node .world-orb-sigil{width:59%!important;height:59%!important;transition:filter .25s ease!important}
+.constellation-hero .cosmic-node>span:last-child{font-size:.72rem!important;letter-spacing:.01em!important}
+.constellation-hero .cosmic-node:is(:hover,:focus-visible){animation-play-state:paused!important;filter:brightness(1.2)!important}
+.constellation-hero .cosmic-node:is(:hover,:focus-visible) .cosmic-node-star{transform:none!important;box-shadow:inset -3px -6px 11px #0007,0 0 0 4px color-mix(in srgb,var(--node-color) 14%,transparent),0 0 24px color-mix(in srgb,var(--node-color) 30%,transparent)!important}
+.constellation-hero .cosmic-node:is(:hover,:focus-visible) .world-orb-sigil{transform:none!important;filter:drop-shadow(0 0 9px var(--node-color))!important}
+.constellation-hero .bridge-route{opacity:.05!important}
+.constellation-hero .gb-orbit-guide{opacity:.17!important}
+.constellation-hero .gb-solar-rings{fill:none;stroke:rgba(139,198,230,.22);stroke-width:1;stroke-dasharray:3 7}
+.constellation-hero .gb-solar-rings circle:nth-child(2){stroke:rgba(104,204,248,.20)}
+.constellation-hero .gb-solar-rings circle:nth-child(3){stroke:rgba(141,230,190,.19)}
+@media(max-width:1080px){
+.constellation-hero .cosmic-atlas{width:min(100%,370px)!important;max-width:370px!important;transform:none!important}
+.constellation-hero .cosmic-pro{--orbit-radius:81px}
+.constellation-hero .cosmic-lab{--orbit-radius:113px}
+.constellation-hero .cosmic-yoga{--orbit-radius:145px}
+.constellation-hero .cosmic-node .cosmic-node-star{width:43px!important;height:43px!important}
+}
+@media(max-width:760px){
+.constellation-hero .cosmic-atlas{width:min(100%,300px)!important;max-width:300px!important;margin-inline:auto!important}
+.constellation-hero .cosmic-pro{--orbit-radius:66px}
+.constellation-hero .cosmic-lab{--orbit-radius:96px}
+.constellation-hero .cosmic-yoga{--orbit-radius:120px}
+.constellation-hero .cosmic-node .cosmic-node-star{width:37px!important;height:37px!important}
+.constellation-hero .cosmic-node>span:last-child{font-size:.61rem!important}
+}
+@media(prefers-reduced-motion:reduce){.constellation-hero .cosmic-node{animation:none!important;transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(0deg - var(--orbit-phase)))!important}}
