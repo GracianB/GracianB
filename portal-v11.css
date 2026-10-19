@@ -142,6 +142,29 @@
     color:var(--deck-silver);font-weight:650;text-underline-offset:4px
   }
 
+
+  /* Universe-specific interactions continue below the portal gallery. */
+  html[data-theme="dark"] :is(.door-gold,.document-group-professional,.evidence-gold,.evidence-cyan){--universe-hover:#c7cdd0}
+  html[data-theme="dark"] :is(.door-sage,.document-group-yoga){--universe-hover:#91dcb2}
+  html[data-theme="dark"] :is(.door-cyan,.evidence-coral,.evidence-violet,.evidence-sage){--universe-hover:#8bdafa}
+  html[data-theme="dark"] .document-group-cabin{--universe-hover:#90badd}
+  html[data-theme="dark"] :is(.door-gold,.document-group-professional,.evidence-gold,.evidence-cyan){--accent:var(--universe-hover)}
+  html[data-theme="dark"] :is(.door-sage,.document-group-yoga){--accent:var(--universe-hover)}
+  html[data-theme="dark"] :is(.door-cyan,.evidence-coral,.evidence-violet,.evidence-sage){--accent:var(--universe-hover)}
+  html[data-theme="dark"] :is(.document-group-professional,.document-group-yoga,.document-group-cabin){--document-accent:var(--universe-hover)}
+  @media(hover:hover) and (pointer:fine){
+    html[data-theme="dark"] :is(.door,.document-group,.evidence-card):hover{
+      border-color:var(--universe-hover,#c7cdd0);
+      box-shadow:0 20px 42px rgba(0,0,0,.43),
+        0 0 27px color-mix(in srgb,var(--universe-hover,#c7cdd0) 10%,transparent);
+    }
+    html[data-theme="dark"] :is(.door,.document-group,.evidence-card):hover :is(.card-actions a,.document-group>a,.door b){
+      color:var(--universe-hover,#c7cdd0);
+    }
+  }
+  html[data-theme="dark"] :is(.door,.document-group,.evidence-card):focus-within{
+    border-color:var(--universe-hover,#c7cdd0);
+  }
   /* The existing light mode remains usable; artwork keeps each world's identity. */
   html[data-theme="light"] .hero.hero-wow .hero-thesis{color:#273a42}
   html[data-theme="light"] .hero.hero-wow .hero-kicker-row{border-color:rgba(35,55,65,.22)}
