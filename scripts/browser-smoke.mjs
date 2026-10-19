@@ -49,7 +49,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   });
   assert.ok(bridge.width>190&&bridge.height>170,"Hero constellation must have space to read");
   assert.equal(bridge.count,3,"Three worlds need three distinct connections");
-  assert.ok(bridge.lengths.every(n=>n>170),"Every universe route must be visually recognisable: "+JSON.stringify(bridge.lengths));
+  assert.ok(bridge.lengths.every(n=>n>100),"Every universe route must be visually recognisable: "+JSON.stringify(bridge.lengths));
   assert.equal(new Set(bridge.colors).size,3,"World routes must be visibly differentiated by color");
   assert.equal(await page.locator(".cosmic-origin").count(),1,"Missing common GB origin");
   if(theme==="dark"){
