@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="./hub-finish.css?v=3">
   <link rel="stylesheet" href="./portal-v11.css?v=v31-hover-20261019">
   <link rel="stylesheet" href="./constellation-v3.css?v=observatory-signature-v38">
+  <link rel="stylesheet" href="./city-atlas-v2.css?v=atlas-chapters-v2">
 
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Gracián Baena">
@@ -53,8 +54,8 @@
   <meta name="twitter:description" content="Tres universos conectados por la curiosidad: personas, práctica y tecnología.">
   <meta name="twitter:image" content="https://gracianb.github.io/GracianB/og-cover.png?v=12">
 
-  <script src="./i18n.js?v=27" defer></script>
-  <script src="./main.js?v=v1-atlas-20261019" defer></script>
+  <script src="./i18n.js?v=atlas-chapters-v2" defer></script>
+  <script src="./main.js?v=atlas-chapters-v2" defer></script>
 
   <script type="application/ld+json">
   {
@@ -339,19 +340,57 @@
           <a href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer" data-i18n="aboutDeck">Mi trayectoria completa ↗</a>
         </div>
       </div>
-      <div class="city-atlas" aria-labelledby="city-atlas-title">
-        <div class="city-atlas-top"><span id="city-atlas-title" data-i18n="atlasLabel">SEIS LUGARES EN EL CAMINO</span></div>
-        <div class="city-atlas-chart" role="group" aria-label="Atlas personal con seis ciudades" data-i18n-aria-label="atlasAria">
-          <span class="atlas-latitude atlas-latitude-one" aria-hidden="true"></span>
-          <span class="atlas-latitude atlas-latitude-two" aria-hidden="true"></span>
-          <button type="button" class="atlas-pin is-current" data-atlas-city="murcia" data-country-es="España" data-country-en="Spain" style="--city-x:41.56%;--city-y:60.03%" aria-pressed="true" aria-label="Murcia"><span>MUR</span></button>
-          <button type="button" class="atlas-pin" data-atlas-city="gran-canaria" data-country-es="España" data-country-en="Spain" style="--city-x:8.29%;--city-y:92.92%" aria-pressed="false" aria-label="Gran Canaria"><span>LPA</span></button>
-          <button type="button" class="atlas-pin" data-atlas-city="madrid" data-country-es="España" data-country-en="Spain" style="--city-x:35.57%;--city-y:51.94%" aria-pressed="false" aria-label="Madrid"><span>MAD</span></button>
-          <button type="button" class="atlas-pin" data-atlas-city="lisboa" data-country-es="Portugal" data-country-en="Portugal" style="--city-x:22.93%;--city-y:57.59%" aria-pressed="false" aria-label="Lisboa"><span>LIS</span></button>
-          <button type="button" class="atlas-pin" data-atlas-city="bergamo" data-country-es="Italia" data-country-en="Italy" style="--city-x:66.69%;--city-y:34.34%" aria-pressed="false" aria-label="Bérgamo"><span>BGY</span></button>
-          <button type="button" class="atlas-pin" data-atlas-city="varsovia" data-country-es="Polonia" data-country-en="Poland" style="--city-x:93.05%;--city-y:12.57%" aria-pressed="false" aria-label="Varsovia"><span>WAW</span></button>
+      <div class="city-atlas city-atlas-v2" aria-labelledby="city-atlas-title">
+        <div class="city-atlas-top">
+          <div class="atlas-heading">
+            <span class="atlas-heading-kicker" data-i18n="atlasLabel">MI RECORRIDO · 6 LUGARES</span>
+            <h3 id="city-atlas-title" data-i18n="atlasHeading">Seis lugares, seis aprendizajes.</h3>
+            <p data-i18n="atlasIntro">Elige una ciudad para descubrir qué aportó a mi recorrido.</p>
+          </div>
+          <span class="atlas-heading-mark" aria-hidden="true">06 <span>↗</span></span>
         </div>
-        <div class="city-atlas-footer"><span class="atlas-city-current" data-atlas-readout aria-live="polite">MURCIA · ESPAÑA</span><p class="atlas-city-story" data-atlas-story aria-live="polite"></p></div>
+        <div class="city-atlas-chart" role="group" aria-label="Explorar seis lugares de mi trayectoria" data-i18n-aria-label="atlasAria">
+          <button type="button" class="atlas-pin is-current" data-atlas-city="murcia" data-country-es="España" data-country-en="Spain" data-atlas-order="1" aria-pressed="true" aria-controls="city-atlas-detail" aria-label="Murcia">
+            <span class="atlas-pin-index" aria-hidden="true">01</span>
+            <span class="atlas-pin-copy"><strong class="atlas-pin-name" data-i18n="atlasCityMurcia">Murcia</strong><small data-i18n="atlasRoleMurcia">Base actual</small></span>
+            <span class="atlas-pin-chevron" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="atlas-pin" data-atlas-city="gran-canaria" data-country-es="España" data-country-en="Spain" data-atlas-order="2" aria-pressed="false" aria-controls="city-atlas-detail" aria-label="Gran Canaria">
+            <span class="atlas-pin-index" aria-hidden="true">02</span>
+            <span class="atlas-pin-copy"><strong class="atlas-pin-name" data-i18n="atlasCityGranCanaria">Gran Canaria</strong><small data-i18n="atlasRoleGranCanaria">Servicio y adaptación</small></span>
+            <span class="atlas-pin-chevron" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="atlas-pin" data-atlas-city="madrid" data-country-es="España" data-country-en="Spain" data-atlas-order="3" aria-pressed="false" aria-controls="city-atlas-detail" aria-label="Madrid">
+            <span class="atlas-pin-index" aria-hidden="true">03</span>
+            <span class="atlas-pin-copy"><strong class="atlas-pin-name" data-i18n="atlasCityMadrid">Madrid</strong><small data-i18n="atlasRoleMadrid">Equipos y operaciones</small></span>
+            <span class="atlas-pin-chevron" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="atlas-pin" data-atlas-city="lisboa" data-country-es="Portugal" data-country-en="Portugal" data-atlas-order="4" aria-pressed="false" aria-controls="city-atlas-detail" aria-label="Lisboa">
+            <span class="atlas-pin-index" aria-hidden="true">04</span>
+            <span class="atlas-pin-copy"><strong class="atlas-pin-name" data-i18n="atlasCityLisboa">Lisboa</strong><small data-i18n="atlasRoleLisboa">Experiencia internacional</small></span>
+            <span class="atlas-pin-chevron" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="atlas-pin" data-atlas-city="bergamo" data-country-es="Italia" data-country-en="Italy" data-atlas-order="5" aria-pressed="false" aria-controls="city-atlas-detail" aria-label="Bérgamo">
+            <span class="atlas-pin-index" aria-hidden="true">05</span>
+            <span class="atlas-pin-copy"><strong class="atlas-pin-name" data-i18n="atlasCityBergamo">Bérgamo</strong><small data-i18n="atlasRoleBergamo">Erasmus e idiomas</small></span>
+            <span class="atlas-pin-chevron" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="atlas-pin" data-atlas-city="varsovia" data-country-es="Polonia" data-country-en="Poland" data-atlas-order="6" aria-pressed="false" aria-controls="city-atlas-detail" aria-label="Varsovia">
+            <span class="atlas-pin-index" aria-hidden="true">06</span>
+            <span class="atlas-pin-copy"><strong class="atlas-pin-name" data-i18n="atlasCityVarsovia">Varsovia</strong><small data-i18n="atlasRoleVarsovia">Horizontes internacionales</small></span>
+            <span class="atlas-pin-chevron" aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <section class="city-atlas-footer" id="city-atlas-detail" aria-labelledby="city-atlas-detail-title">
+          <div class="atlas-detail-top">
+            <span class="atlas-detail-eyebrow" data-i18n="atlasDetailLabel">EN FOCO</span>
+            <span class="atlas-detail-index" data-atlas-index aria-hidden="true">01 / 06</span>
+          </div>
+          <h4 id="city-atlas-detail-title" class="atlas-city-current" data-atlas-readout>MURCIA · ESPAÑA</h4>
+          <strong class="atlas-detail-focus" data-atlas-focus>Base actual y creación</strong>
+          <p class="atlas-city-story" data-atlas-story aria-live="polite">Mi base actual: aquí confluyen Customer Operations, analítica, automatización y desarrollo.</p>
+          <p class="atlas-detail-note" data-i18n="atlasNote">Son capítulos de mi recorrido, no un itinerario ni una cronología.</p>
+        </section>
       </div>
     </section>
 
