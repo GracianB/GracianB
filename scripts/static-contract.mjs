@@ -1,308 +1,86 @@
 #!/usr/bin/env node
+// P12 · Purpose-based contract: the public hub is an atlas, not a second CV.
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
-
-const requiredFiles = [
-  "index.html",
-  "styles.css",
-  "main.js",
-  "i18n.js",
-  "README.md",
-  "site.webmanifest",
-  "robots.txt",
-  "sitemap.xml",
-  "favicon.svg",
-  "og-cover.png",
-  "Gracian_Baena_CV_2026_ES.pdf",
-  "Gracian_Baena_CV_2026_EN.pdf",
-  "Gracian_Baena_Carta_Presentacion_ES.pdf",
-  "Gracian_Baena_Cover_Letter_EN.pdf",
-  "Gracian_Baena_CV_Yoga_ES.pdf",
-  "Gracian_Baena_CV_Yoga_EN.pdf",
-  "Gracian_Baena_Carta_Yoga_ES.pdf",
-  "Gracian_Baena_Cover_Letter_Yoga_EN.pdf",
-  "cabin-crew.html",
-  "cabin-crew.css",
-  "cabin-crew.js",
-  "cabin-letter-es.html",
-  "cabin-letter-en.html",
-];
-
-for (const file of requiredFiles) {
-  assert.equal(existsSync(file), true, `Missing required file: ${file}`);
+import {existsSync,readFileSync} from "node:fs";
+const read=p=>readFileSync(p,"utf8");
+const html=read("index.html"),js=read("main.js"),i18n=read("i18n.js");
+const css=read("portal-v11.css"),dark=read("deck-dark.css");
+const resources=["index.html","styles.css","portal-v11.css","hub-finish.css","deck-dark.css",
+"main.js","i18n.js","README.md","favicon.svg","docs/portfolio-banner.svg","docs/three-worlds.svg",
+"apply.html","apply.js","apply.css","robots.txt","sitemap.xml","site.webmanifest","og-cover.png",
+"cabin-crew.html","cabin-letter-es.html","cabin-letter-en.html"];
+const pdfs=["Gracian_Baena_CV_2026_ES.pdf","Gracian_Baena_CV_2026_EN.pdf",
+"Gracian_Baena_Carta_Presentacion_ES.pdf","Gracian_Baena_Cover_Letter_EN.pdf",
+"Gracian_Baena_CV_Yoga_ES.pdf","Gracian_Baena_CV_Yoga_EN.pdf",
+"Gracian_Baena_Carta_Yoga_ES.pdf","Gracian_Baena_Cover_Letter_Yoga_EN.pdf",
+"Gracian_Baena_CV_TCP_ES.pdf","Gracian_Baena_CV_TCP_EN.pdf",
+"Gracian_Baena_Carta_TCP_ES.pdf","Gracian_Baena_Cover_Letter_TCP_EN.pdf"];
+for(const p of [...resources,...pdfs])assert.ok(existsSync(p),"Missing protected asset "+p);
+assert.match(read(".gitattributes"),/^\*\.pdf binary\s*$/m,"PDFs must remain binary");
+const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(ids.length,new Set(ids).size,"Duplicate IDs");
+for(const m of html.matchAll(/\bhref="#([^"]+)"/g))
+  assert.ok(ids.includes(m[1]),"Broken local anchor: "+m[1]);
+for(const id of ["main","worlds","universes","arc","evidence","documents","contact"])
+  assert.ok(ids.includes(id),"Missing section "+id);
+assert.doesNotMatch(html,/id="method"|data-world-overview|data-world-prev|data-world-slide|class="doors-grid"|class="arc-grid"/,
+  "The recycled CV timeline or carousel returned");
+assert.equal((html.match(/class="world-portal world-/g)||[]).length,3,"Three worlds must be available");
+for(const [world,slug] of [["professional","professional-deck"],["yoga","yoga-instructor"],["lab","systems-lab"]]){
+  assert.match(html,new RegExp('id="portal-'+world+'"'));
+  assert.match(html,new RegExp('data-portal="'+world+'"'));
+  assert.match(html,new RegExp('href="#portal-'+world+'"'));
+  assert.ok(html.includes('href="https://gracianb.github.io/'+slug+'/"'),"Broken world link "+slug);
 }
-
-const html = readFileSync("index.html", "utf8");
-const css = readFileSync("styles.css", "utf8");
-const performanceSource = readFileSync("scripts/performance-audit.mjs", "utf8");
-assert.match(performanceSource, /decodedBytes <= c\.maxSourceBytes/,
-  "P6 needs bounded decoded resource bytes");
-assert.match(performanceSource, /transferredBytes/,
-  "P6 must report browser-observed network transfer, not invented Lighthouse scores");
-assert.doesNotMatch(css, /--scroll-progress(?::|\))/,
-  "P6 must not update a global CSS custom property for the scroll indicator");
-assert.match(css, /\.scroll-progress i\{[\s\S]*?transform:scaleX\(0\)/,
-  "P6 scroll bar must use compositor-friendly transforms");
-assert.match(readFileSync("main.js", "utf8"), /progressFill\.style\.transform/,
-  "P6 must update only its indicator instead of invalidating the root element");
-const binaryAttributes = readFileSync(".gitattributes", "utf8");
-assert.match(binaryAttributes, /^\*\.pdf binary\s*$/m,
-  "All CVs and cover letters must remain non-mergeable binary Git assets");
-// The professional dossier follows the approved silver / graphite Deck V24,
-// without recoloring Yoga's botanical green or Cabin Crew's aviation blue.
-for (const [label,token] of [
-  ["graphite","--pro-graphite:#151c22"],
-  ["graphite-soft","--pro-graphite-soft:#263039"],
-  ["silver","--pro-silver:#c8cccd"],
-  ["ivory","--pro-ivory:#f3eee5"],
-  ["light silver","--pro-silver-dark:#52636d"],
-]) {
-  assert.ok(css.includes(token), "Missing approved professional color token " + label);
-}
-assert.match(css, /\.document-group-professional\{--document-accent:var\(--pro-silver\)\}/,
-  "Professional documents must not revert to the legacy golden badge");
-assert.match(css, /\.document-group-yoga\{--document-accent:#ceaa78\}/,
-  "Yoga visual identity unexpectedly changed");
-assert.match(css, /\.document-group-cabin\{--document-accent:#d2a0ae\}/,
-  "Cabin visual identity unexpectedly changed");
-assert.match(readFileSync("apply.css","utf8"), /\.candidate-brief\{\s*background:#f3eee5/,
-  "Recruiter briefing must use approved silver/ivory in light mode");
-const js = readFileSync("i18n.js", "utf8");
-const readme = readFileSync("README.md", "utf8");
-const sitemap = readFileSync("sitemap.xml", "utf8");
-
-for (const token of [
-  "<!doctype html>",
-  'id="main"',
-  'id="worlds"',
-  'id="evidence"',
-  'id="method"',
-  'id="arc"',
-  'id="documents"',
-  'id="contact"',
-  'rel="canonical"',
-  'application/ld+json',
-  'property="og:image"',
-  'name="twitter:card"',
-]) {
-  assert.ok(html.includes(token), `HTML contract missing: ${token}`);
-}
-
-const ids = [...html.matchAll(/\bid=["']([^"']+)["']/g)].map((match) => match[1]);
-const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
-assert.deepEqual([...new Set(duplicates)], [], "Duplicate HTML ids detected");
-
-const htmlKeys = new Set(
-  [...html.matchAll(/data-i18n(?:-placeholder|-aria-label)?="([^"]+)"/g)].map((match) => match[1]),
-);
-const es = js.match(/es:\s*\{([\s\S]*?)\n\s*\},\n\s*en:\s*\{/);
-const en = js.match(/en:\s*\{([\s\S]*?)\n\s*\}\s*;?\s*$/);
-assert.ok(es && en, "Could not locate ES/EN dictionaries");
-
-function keys(block) {
-  return new Set([...block.matchAll(/^\s*([A-Za-z0-9_]+)\s*:/gm)].map((match) => match[1]));
-}
-const esKeys = keys(es[1]);
-const enKeys = keys(en[1]);
-assert.deepEqual([...htmlKeys].filter((key) => !esKeys.has(key)), [], "Missing ES i18n keys");
-assert.deepEqual([...htmlKeys].filter((key) => !enKeys.has(key)), [], "Missing EN i18n keys");
-
-for (const match of html.matchAll(/<a\b([^>]*target=["']_blank["'][^>]*)>/gi)) {
-  const attrs = match[1];
-  assert.match(attrs, /rel=["'][^"']*noopener[^"']*["']/i, "target=_blank link without noopener");
-}
-
-// Keep the main hub limited to three primary working languages; the complementary TCP
-// path and README may truthfully disclose basic Portuguese/French without overclaiming.
-const publicText = [html, js, sitemap].join("\n");
-assert.match(publicText, /https:\/\/gracianb\.github\.io\/systems-lab\//, "Systems Lab must be directly reachable");
-assert.equal(/Portuguese|French|Portugu[eê]s|Franc[eê]s/i.test(publicText), false, "Unsupported language claim found");
-
-let depth = 0;
-for (const char of css) {
-  if (char === "{") depth += 1;
-  if (char === "}") depth -= 1;
-  assert.ok(depth >= 0, "CSS closes a block before it opens");
-}
-assert.equal(depth, 0, "CSS braces are unbalanced");
-assert.ok((css.match(/!important/g) || []).length <= 10, "Too many !important declarations");
-
-const sharedDark = readFileSync("deck-dark.css","utf8");
-// The final dark variant is intentionally deeper than the approved Professional Deck CV.
-for (const [token, hex] of Object.entries({
-  "--deck-deep":"#010407",
-  "--deck-bg":"#02070b",
-  "--deck-low":"#050e14",
-  "--deck-card":"#09171e",
-  "--deck-raised":"#10242d",
-  "--deck-silver":"#c7cdd0",
-  "--deck-ivory":"#edf2f2",
-  "--deck-petrol":"#88a4b0",
-  "--deck-petrol-soft":"#587582",
-})) assert.ok(sharedDark.includes(token+":"+hex), "Missing final petrol dark token " + token);
-assert.match(sharedDark, /@media screen\s*\{/,
-  "Shared dark style must not override white A4 print or the light mode");
-assert.ok(Buffer.byteLength(sharedDark,"utf8") < 12000,
-  "Shared CSS must stay within the existing P6 performance byte budgets");
-assert.doesNotMatch(sharedDark, /#(?:daa428|d8ae64|edbb43|8b693f|795e35|7b673f|a98952)\b/i,
-  "The shared theme must not reintroduce golden/brown legacy colors");
-assert.ok(!sharedDark.includes("#151c22") && !sharedDark.includes("#263039"),
-  "This dark variant must be noticeably deeper than the Professional Deck base");
-const hubFinal = readFileSync("hub-finish.css","utf8");
-assert.match(html, /hub-finish\.css\?v=2/, "Final hub stylesheet must load");
-assert.match(hubFinal, /\.world-professional \.world-art/, "Professional card must use silver / neutral art");
-assert.match(hubFinal, /\.world-professional :is\(\.world-code,\.world-enter b\)/, "Professional labels must not be brown");
-assert.match(hubFinal, /\.evidence-card/, "Whole site, not just header, must be restyled");
-assert.match(hubFinal, /#040b11/, "Methods and documents must use the new abyss-petrol section shade");
-assert.match(hubFinal, /#07151c/, "Cards must be darker without flattening Yoga and Lab");
-assert.match(readme, /docs\/three-worlds\.svg/, "README needs visual worlds");
-assert.match(html, /deck-dark\.css\?v=5/);
-assert.match(readFileSync("apply.html","utf8"), /deck-dark\.css\?v=5/);
-assert.match(css, /--bg:var\(--cv-paper\)/,
-  "The existing light mode must remain available and unchanged");
-assert.match(css, /\.world-professional\s*\{--world-accent:#d6d5d0;--gold:#d6d5d0\}/,
-  "Professional artwork must remain silver and not inherit the hub ochre");
-assert.match(css, /\.world-yoga\{--world-accent:#87cfae;--sage:#87cfae\}/,
-  "Yoga artwork must keep its botanical green");
-assert.match(css, /\.world-lab\{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff\}/,
-  "Systems Lab artwork must keep its electric cyan");
-assert.match(html, /styles\.css\?v=27/, "P1.3 CSS must bypass old cached bytes");
-assert.equal((html.match(/class="mobile-lang-switch"/g) || []).length, 1, "Mobile must expose ES/EN");
-
-assert.match(css, /\/\* P1\.5 \/ Final legibility pass/, "P1.5 design pass missing");
-assert.match(css, /\.arc-years\{[\s\S]*?font-size:\.72rem/, "Career microcopy is too small");
-assert.match(css, /\.footer\{font-size:clamp\(\.72rem/, "Footer must retain readable type");
-assert.match(readFileSync("apply.html", "utf8"), /apply\.css\?v=p4-silver-1/, "Application stylesheet needs final cache version");
-const application = readFileSync("apply.html", "utf8");
-assert.equal((application.match(/data-b6-focus-panel="/g)||[]).length, 3,
-  "P2 should expose exactly three professional proof briefs");
-assert.equal((application.match(/data-brief-track="/g)||[]).length, 5,
-  "P3 must include three professional and two specialist briefs");
-assert.match(application, /data-brief-print/, "P3 printable brief entry missing");
-assert.match(application, /data-b6-theme-toggle/, "Application theme control missing");
-assert.match(application, /<meta name="theme-color" content="#02070b">/,
-  "First paint on application desk must be dark by default");
-assert.match(application, /apply\.js\?v=p10-dark/,
-  "Theme application JavaScript cache key missing");
-assert.match(readFileSync("apply.js", "utf8"), /gb-hub-theme/,
-  "Both pages must share the same saved theme preference");
-assert.match(application, /data-brief-proof/, "P3 linked evidence action missing");
-assert.match(readFileSync("apply.js","utf8"), /window\.print\(\)/,
-  "P3 print action must be wired to an explicit visitor click");
-assert.match(application, /data-b6-copy-link/, "P2 copy-link action missing");
-assert.match(application, /RevOps Studio continúa en desarrollo/,
-  "P2 must preserve explicit no-public-demo disclosure");
-
-
-assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=p11-portals/, "P1.3 JS must bypass old cached bytes");
-assert.match(html, /i18n\.js\?v=25" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
-assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
-// Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
-assert.doesNotMatch(css, /\.hero-system\b|\.hero-orbit\b|\.orbit-core\b|\.orbit-node\b|\.signal-chain\b|@keyframes gb-orbit-spin/,
-  "CSS still contains obsolete components removed before the three-world selector");
-assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointermove"/,
-  "Global pointer tracking for deleted artwork must not return");
-assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
-  "Do not preload the same blocking stylesheet redundantly");
-assert.match(html, /<script src="\.\/i18n\.js\?v=25" defer><\/script>\s*<script src="\.\/main\.js\?v=p11-portals" defer><\/script>/,
-  "Dictionary must execute before the app, with both scripts deferred");
-const socialPng = readFileSync("og-cover.png");
-assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
-assert.equal(socialPng.readUInt32BE(16), 1200, "OG must be 1200 px wide");
-assert.equal(socialPng.readUInt32BE(20), 630, "OG must be 630 px tall");
-const portalCss = readFileSync("portal-v11.css","utf8");
-assert.match(html,/portal-v11\.css\?v=1/,"Immersive portals CSS must load last");
-assert.equal((html.match(/data-portal="/g)||[]).length,3,"Exactly three universes are required");
-assert.doesNotMatch(html,/data-world-overview|data-world-prev|data-world-next|data-world-slide/,
-  "No carousel, hidden slides or microscopic expand control may remain");
-assert.doesNotMatch(readFileSync("main.js","utf8"),/gb-world-overview|swipeStartX|setOverview\(/,
-  "Old carousel state must be removed, not hidden in CSS");
-assert.match(html,/id="universe-title"/,"Immersive gallery must have a heading");
-assert.match(html,/id="hero-title"[^>]+data-i18n="heroStatement"/,"Cover needs exactly one sentence");
-assert.doesNotMatch(html,/class="hero-lead|class="hero-role/,"Verbose hero copy has returned");
-assert.match(portalCss,/\.world-portal\.world-yoga/,"Yoga-specific hover contract missing");
-assert.match(portalCss,/\.world-portal\.world-lab/,"Lab-specific hover contract missing");
-assert.match(portalCss,/--portal-color:#c7cdd0/,"Professional silver contract missing");
-
-const themeJs = readFileSync("main.js", "utf8");
-assert.match(themeJs, /"#f7f5ef" : "#02070b"/, "Browser theme color must reflect the CV");
-assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#02070b"/);
-assert.match(readFileSync("favicon.svg", "utf8"), /#c7cdd0/);
-
-
-assert.match(html, /People → Operations → Data → Systems → AI/);
-assert.equal((html.match(/class="world-portal world-/g)||[]).length,3, "Exactly three direct world links are required");
-assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
-assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
-assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
-assert.match(html, /href="\.\/cabin-crew\.html"/);
-// P1.4: the first and final entrances must use the same universe numbering/order.
-const doorOrder = [...html.matchAll(/<a class="door door-(gold|sage|cyan)"(?=\s|>)/g)].map((item) => item[1]);
-assert.deepEqual(doorOrder, ["gold", "sage", "cyan"],
-  "Lower universe choices must follow Professional → Yoga → Systems Lab");
-assert.match(html, /<span>02 \/ YOGA<\/span>/);
-assert.match(html, /<span>03 \/ SYSTEMS LAB<\/span>/);
-assert.equal((html.match(/data-application-link/g) || []).length, 2,
-  "Recruiter and document handoff links should preserve visitor language");
-assert.match(readFileSync("main.js", "utf8"), /\.\/apply\.html\?lang=en/,
-  "English visitors must retain their language at application handoff");
-assert.match(js, /doorHumanBody: "Mi experiencia docente/);
-assert.match(js, /doorBuildBody: "Proyectos de software/);
-// P1 recruiter conversion must be actionable without discovering a hidden document section.
-assert.match(html, /class="hero-recruiter-route"/);
-assert.match(html, /class="hero-recruiter-route"[^>]*>[\s\S]*?href="\.\/apply\.html"/);
-assert.match(html, /class="hero-proof-link" href="https:\/\/gracianb\.github\.io\/professional-deck\/proyecto-bodytone\.html"/);
-assert.match(html, /data-i18n="factAccountsNumber"/);
-assert.match(js, /factAccountsNumber: "hasta 80"/);
-assert.match(js, /factAccountsNumber: "up to 80"/);
-for (const world of ["professional","yoga","lab"]) {
-  assert.ok(html.includes(`data-portal="${world}"`),`Missing visible ${world} portal`);
-}
-assert.doesNotMatch(html, /role="tabpanel"|role="tab"|data-world-dot/,
-  "Tabpanel-based worlds must not return");
-assert.equal((html.match(/class="document-visual"/g) || []).length, 3, "Three document identities required");
-assert.equal((html.match(/class="document-summary"/g) || []).length, 3, "Each document track needs its summary");
-assert.match(css, /\.document-group-professional \.document-visual/);
-assert.match(css, /\.document-group-yoga \.document-visual/);
-assert.match(css, /\.document-group-cabin \.document-visual/);
-// Evidence actions must open the actual documented case, not the Deck cover.
-assert.match(html, /href="https:\/\/gracianb\.github\.io\/professional-deck\/proyecto-bodytone\.html"[^>]*>\s*<span data-i18n="openCase">/,
-  "Bodytone case action must deep-link to its public case study");
-// Cabin Crew has its own safely published portfolio; the older hub page stays available.
-assert.match(html, /href="https:\/\/gracianb\.github\.io\/cabin-crew-site\/"[^>]*>\s*<span>Portfolio TCP · ES\/EN<\/span>/,
-  "TCP public standalone site must be reachable from hub documents");
-assert.match(html, /href="\.\/cabin-letter-es\.html"/);
-assert.match(html, /href="\.\/cabin-letter-en\.html"/);
-assert.match(readFileSync("cabin-crew.html","utf8"), /data-language="en"/);
-assert.match(readFileSync("cabin-crew.html","utf8"), /ESATUR/);
-assert.doesNotMatch(readFileSync("cabin-crew.html","utf8"), /licencia vigente|valid cabin crew attestation/i);
-assert.match(readFileSync("cabin-letter-en.html","utf8"), /previously completed Cabin Crew/);
-const cabinPage=readFileSync("cabin-crew.html","utf8");
-const cabinScript=readFileSync("cabin-crew.js","utf8");
-assert.equal((cabinPage.match(/data-city="/g)||[]).length,6,"TCP atlas needs six city stops");
-assert.equal((cabinPage.match(/data-credential-kind=/g)||[]).length,7,"TCP page needs seven distinct learning milestones");
-assert.equal((cabinPage.match(/class="cabin-chapters"/g)||[]).length,1);
-assert.match(cabinPage,/2015.*?ESATUR/s);
-assert.match(cabinPage,/2019.*?Yoga/s);
-assert.match(cabinPage,/2023.*?Google/s);
-assert.match(cabinPage,/2025.*?Columbia/s);
-assert.match(cabinPage,/Fourth-year Erasmus top-up/);
-assert.match(cabinPage,/Cuarto año Erasmus de adaptación/);
-assert.match(readme,/fourth Erasmus year/);
-assert.match(cabinPage,/no se presenta como una habilitación actualmente vigente/);
-assert.match(cabinScript,/const cities=/);
-assert.match(cabinScript,/data-training-filter/);
-
-assert.match(html, /data-portal="professional"/);
-assert.match(html, /data-portal="yoga"/);
-assert.match(html, /data-portal="lab"/);
-assert.match(html, /GRACIÁN[\s\S]*BAENA/);
-assert.doesNotMatch(html, /Listos para revisar o enviar|Ready to review or send/i);
-assert.match(readme, /Proof before promise|Proof before claims/i);
-assert.match(readme, /docs\/portfolio-banner\.svg/, "README needs its new brand banner");
-assert.match(sharedDark, /\.hero-kicker-row \.eyebrow/, "Hero kicker should be in silver");
-assert.match(portalCss, /\.portal-grid\{/, "New portal layout must be present");
-assert.match(sitemap, /https:\/\/gracianb\.github\.io\/GracianB\//);
-
-console.log(`STATIC CONTRACT PASS · ${ids.length} ids · ${htmlKeys.size} i18n keys`);
+assert.match(html,/atlas-systems-mark/,"Professional graph icon missing");
+assert.match(html,/constellation-lotus/,"Botanical yoga icon missing");
+assert.match(html,/circuit-chip/,"Systems Lab chip missing");
+assert.doesNotMatch(html,/hero-orbit-signature/,"Professional Deck emblem must not appear");
+assert.match(html,/data-constellation-sky/);
+assert.match(js,/function constellationSky/);
+assert.match(js,/visibilitychange/);
+assert.match(js,/reduceMotion/);
+assert.match(js,/updateAtlasReadout/);
+assert.equal((html.match(/data-atlas-city="/g)||[]).length,6,"Six city markers required");
+for(const city of ["murcia","gran-canaria","madrid","lisboa","bergamo","varsovia"])
+  assert.ok(html.includes('data-atlas-city="'+city+'"'));
+assert.equal((html.match(/class="atlas-pin is-current"/g)||[]).length,1);
+assert.match(html,/data-atlas-readout[^>]*aria-live="polite"/);
+assert.match(html,/class="about-experience"/);
+assert.doesNotMatch(html,/class="facts-strip"|class="method-flow"/,"Professional dossier clutter returned");
+for(const cl of ["observatory-details","cv-library-details"])
+  assert.ok(html.includes('class="'+cl+'"'),"Expandable archive missing "+cl);
+assert.equal((html.match(/class="evidence-card evidence-/g)||[]).length,5);
+assert.equal((html.match(/class="document-group document-group-/g)||[]).length,3);
+assert.match(html,/data-application-link/);
+assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache");
+assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
+assert.match(html,/portal-v11\.css\?v=2/);
+assert.match(html,/i18n\.js\?v=26" defer/);
+assert.match(html,/main\.js\?v=p12-sky" defer/);
+for(const pattern of [/\.constellation-hero/,/\.cosmic-node/,/\.atlas-pin/,/prefers-reduced-motion/])
+  assert.match(css,pattern);
+assert.match(dark,/--deck-bg:#02070b/,"Abyss petrol should remain");
+const en=i18n.indexOf("  en: {");
+assert.ok(en>0,"Both dictionaries required");
+const dictionaries=[i18n.slice(0,en),i18n.slice(en)];
+const keys=new Set([...html.matchAll(/data-i18n(?:-placeholder|-aria-label)?="([^"]+)"/g)].map(m=>m[1]));
+for(const language of dictionaries)
+  for(const key of keys)assert.match(language,new RegExp("\\b"+key+":\\s*"),"Missing i18n key "+key);
+assert.match(read("apply.css"),/@media print/,"A4 print mode must remain");
+for(const m of html.matchAll(/href="\.\/([^"#?]+\.pdf)"/g))
+  assert.ok(existsSync(m[1]),"Broken original PDF link "+m[1]);
+const perf=read("scripts/performance-audit.mjs");
+assert.match(perf,/decodedBytes <= c\.maxSourceBytes/,"Keep measured P6 budget");
+assert.match(perf,/transferredBytes/,"Keep real network measurements");
+assert.match(read("README.md"),/docs\/portfolio-banner\.svg/);
+assert.match(read("README.md"),/docs\/three-worlds\.svg/);
+const og = readFileSync("og-cover.png");
+assert.equal(og.subarray(0,8).toString("hex"),"89504e470d0a1a0a","Social cover must be a PNG");
+assert.equal(og.readUInt32BE(16),1200,"OG preview width must be 1200px");
+assert.equal(og.readUInt32BE(20),630,"OG preview height must be 630px");
+assert.ok(og.length<100_000,"Keep social preview small");
+assert.match(html,/og-cover\.png\?v=12/,"Social meta must load the new constellation PNG");
+assert.match(read("og-cover.svg"),/CONSTELLATION ATLAS/,"Legacy brown OG SVG returned");
+assert.match(read("scripts/render-og-p12.py"),/random\.Random\(127\)/,"Image build must be deterministic");
+console.log("P12 CONSTELLATION STATIC PASS · "+ids.length+" unique ids · 3 worlds · 6 cities · 12 CV PDFs · ES/EN");

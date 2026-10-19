@@ -10,6 +10,12 @@
   let lang = "es";
   let theme = "dark";
   let lastFocus = null;
+  let skyController = null;
+  const cityNames = {
+    murcia:"Murcia", "gran-canaria":"Gran Canaria", madrid:"Madrid",
+    lisboa:"Lisboa", bergamo:"Bérgamo", varsovia:lang==="en"?"Warsaw":"Varsovia"
+  };
+
 
   const safeGet = (key) => {
     try { return localStorage.getItem(key); } catch { return null; }
@@ -88,6 +94,8 @@
         : "./Gracian_Baena_CV_2026_ES.pdf";
     }
 
+    const selectedAtlas = document.querySelector('.atlas-pin[aria-pressed="true"]');
+    if (selectedAtlas) updateAtlasReadout(selectedAtlas);
     if (persist) {
       safeSet(LANG_KEY, lang);
       const url = new URL(location.href);
@@ -98,6 +106,7 @@
 
   function applyTheme({ persist = false } = {}) {
     root.dataset.theme = theme;
+    skyController?.sync();
     const color = theme === "light" ? "#f7f5ef" : "#02070b";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
     // The application desk uses the same theme, even without localStorage.
@@ -329,7 +338,7 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
 
     document.querySelectorAll(
-      ".evidence-card, .method-flow li, .arc-grid article, .door, .document-group, .contact-panel, .world-selector",
+      ".evidence-card, .about-atlas, .world-portal, .document-group, .contact-panel",
     ).forEach((node) => {
       node.classList.add("reveal");
       observer.observe(node);
@@ -337,6 +346,79 @@
   } else {
     document.querySelectorAll(".reveal").forEach((node) => node.classList.add("is-visible"));
   }
+
+
+  // P12 · Six authentic locations from the Professional Deck atlas; no claimed travel route.
+  function updateAtlasReadout(pin) {
+    const label = pin.dataset.atlasCity;
+    const name = label === "varsovia" && lang === "en" ? "Warsaw" : cityNames[label] || pin.getAttribute("aria-label");
+    const country = lang === "en" ? pin.dataset.countryEn : pin.dataset.countryEs;
+    const output = document.querySelector("[data-atlas-readout]");
+    if (output) output.textContent = (name + " · " + country).toUpperCase();
+  }
+  document.querySelectorAll(".atlas-pin").forEach(pin => pin.addEventListener("click", () => {
+    document.querySelectorAll(".atlas-pin").forEach(node => {
+      node.setAttribute("aria-pressed", String(node === pin));
+      node.classList.toggle("is-current", node === pin);
+    });
+    updateAtlasReadout(pin);
+  }));
+
+  // P12 · Tiny deterministic star canvas, no library, no particles linked by lines.
+  // Suspends animation when hidden, in light mode or when reduced motion is requested.
+  function constellationSky() {
+    const canvas = document.querySelector("[data-constellation-sky]");
+    const ctx = canvas?.getContext?.("2d", {alpha:true});
+    if (!ctx) return { sync() {} };
+    let stars = [], raf = 0, last = 0, running = false, mx = 0, my = 0;
+    const seedRand = (() => {
+      let n = 18429;
+      return () => ((n = (1664525 * n + 1013904223) >>> 0) / 4294967296);
+    })();
+    function reset() {
+      const width = innerWidth, height = innerHeight;
+      const dpr = Math.min(devicePixelRatio || 1, 1.5);
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      const count = Math.min(155, Math.max(46, Math.floor(width * height / 8400)));
+      stars = Array.from({length:count}, () => ({
+        x:seedRand() * width, y:seedRand() * height,
+        r:.35 + seedRand() * 1.35, a:.18 + seedRand()*.48,
+        phase:seedRand() * 6.283, twinkle:.25 + seedRand()*.55,
+        type:seedRand()
+      }));
+      paint(0);
+    }
+    function paint(time) {
+      const width=innerWidth,height=innerHeight;
+      ctx.clearRect(0,0,width,height);
+      for (const star of stars) {
+        const x=star.x+mx*star.r*.009, y=star.y+my*star.r*.009;
+        const opacity=star.a * (reduceMotion ? 1 : (.86+.14*Math.sin(time*.00045*star.twinkle+star.phase)));
+        ctx.beginPath();ctx.arc(x,y,star.r,0,Math.PI*2);
+        const tint=star.type>.92?"150,214,211":star.type>.84?"146,185,229":"217,227,235";
+        ctx.fillStyle="rgba("+tint+","+opacity.toFixed(3)+")";
+        ctx.fill();
+      }
+    }
+    function frame(time) {
+      if (!running) return;
+      if(time-last>=42){last=time;paint(time);}
+      raf=requestAnimationFrame(frame);
+    }
+    function sync() {
+      const should=theme==="dark" && !reduceMotion && document.visibilityState==="visible";
+      if(should && !running){running=true;raf=requestAnimationFrame(frame);}
+      if(!should && running){running=false;cancelAnimationFrame(raf);paint(0);}
+    }
+    addEventListener("resize",reset,{passive:true});
+    addEventListener("pointermove",e=>{mx=e.clientX-innerWidth/2;my=e.clientY-innerHeight/2;},{passive:true});
+    document.addEventListener("visibilitychange",sync);
+    reset();sync();
+    return {sync};
+  }
+  skyController = constellationSky();
 
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());

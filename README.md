@@ -1,73 +1,61 @@
 <div align="center">
 
-<img src="./docs/portfolio-banner.svg" alt="Gracián Baena · From customer friction to working systems" width="100%" />
+<img src="./docs/portfolio-banner.svg" alt="Gracián Baena · Constelación de tres universos" width="100%" />
 
-### I turn complicated operations into systems people can actually use.
+### Una misma curiosidad. Muchos mundos.
+*One curiosity. Many worlds.*
 
-**Customer Success × RevOps × Data × Automation × AI × Software**
-
-Murcia, Spain · Remote worldwide · ES · EN · IT
-
-[**EXPLORE THE LIVE PORTFOLIO ↗**](https://gracianb.github.io/GracianB/) &nbsp;·&nbsp;
-[**PROFESSIONAL DECK ↗**](https://gracianb.github.io/professional-deck/) &nbsp;·&nbsp;
-[**CV & APPLICATIONS ↗**](https://gracianb.github.io/GracianB/apply.html) &nbsp;·&nbsp;
-[**LINKEDIN ↗**](https://www.linkedin.com/in/gracianbaena)
+**[EXPLORAR CONSTELACIÓN ↗](https://gracianb.github.io/GracianB/)** &nbsp; · &nbsp; [**CONOCERME ↗**](https://gracianb.github.io/GracianB/#arc) &nbsp; · &nbsp; [**CV / APPLICATIONS ↗**](https://gracianb.github.io/GracianB/apply.html)
 
 </div>
 
 ---
 
-## People first. Code came later.
+## No era otro currículum.
 
-I'm **Gracián Baena**. I've spent **16+ years** working with customers, teams, SaaS accounts and operations. Somewhere along the way, I stopped being satisfied with *“we should improve this”* and started building the improvement myself.
+Soy **Gracián Baena**. He trabajado con personas, equipos, clientes, SaaS, operaciones y movimiento. Empecé resolviendo problemas en el mundo real; acabé aprendiendo a crear herramientas, software y experiencias para hacerlo de otra manera.
 
-I work where **customer reality meets data, processes, automation and software**. I don't need every problem to become an AI project. I need the solution to make sense, work and survive contact with real people.
+El hilo conductor no es un cargo, una tecnología ni un título rimbombante. Es la **curiosidad**, y ese defecto maravilloso de querer entender cómo funcionan las cosas.
 
-**A little allergic to corporate theatre. Very interested in evidence.**
+*No todo necesita inteligencia artificial. Algunas cosas necesitan que alguien se siente, piense y las haga funcionar.*
 
-## One mind. Three worlds.
+## Tres universos. Una constelación.
 
-[<img src="./docs/three-worlds.svg" alt="Professional in silver, Yoga in botanical green and Systems Lab in electric blue" width="100%" />](https://gracianb.github.io/GracianB/)
+[<img src="./docs/three-worlds.svg" alt="Professional: plata y sistemas. Yoga: presencia y loto. Systems Lab: chip, código y experimentación." width="100%" />](https://gracianb.github.io/GracianB/#universes)
 
-| World | What you will find | Go |
-| :--- | :--- | :--- |
-| **01 / Professional** | My career, customer operations, leadership, case studies and measurable systems | [Explore ↗](https://gracianb.github.io/professional-deck/) |
-| **02 / Yoga Instructor** | Teaching, movement, presence and a digital approach to practice | [Experience ↗](https://gracianb.github.io/yoga-instructor/) |
-| **03 / Systems Lab** | Code, products, agents, games and experiments. The things I couldn't resist building | [Enter the lab ↗](https://gracianb.github.io/systems-lab/) |
+**[01 / PROFESSIONAL ↗](https://gracianb.github.io/professional-deck/)** · Personas, Customer Success, operaciones, datos y experiencias que me enseñaron a construir con criterio.
 
-## Less promise. More proof.
+**[02 / YOGA ↗](https://gracianb.github.io/yoga-instructor/)** · Movimiento, respiración y enseñanza. Otro tipo de sistema: el humano.
 
-| Work | What it demonstrates |
-| :--- | :--- |
-| **[Bodytone Support OS ↗](https://gracianb.github.io/professional-deck/proyecto-bodytone.html)** | Customer support, workflows, knowledge and automation. **~1,000 monthly tickets handled by a 3–4-agent team**, across marketplaces and B2B/B2C customers. [Help Center ↗](https://bodytonehelp.zendesk.com/hc/es) |
-| **[RevOps Studio ↗](https://github.com/GracianB/revops-studio)** | An inspectable, code-first approach to pipeline quality, forecasting, scoring and decisions. Source available; not marketed as a public SaaS demo |
-| **[Project OHANA ↗](https://gracianb.github.io/project-ohana/)** | A playable browser game with evolving characters, interactions, behavior systems and continuous tests. [Source ↗](https://github.com/GracianB/project-ohana) |
-| **[Yoga Instructor ↗](https://gracianb.github.io/yoga-instructor/)** | Movement, instructional design and an evolving interactive yoga application |
-| **[Systems Lab ↗](https://gracianb.github.io/systems-lab/)** | The wider experiment space, including creative code and AI projects. Local-only work is identified as such |
+**[03 / SYSTEMS LAB ↗](https://gracianb.github.io/systems-lab/)** · Código, IA, juegos, automatizaciones y experimentos. Las ideas que no se quedan en ideas.
+
+> **Murcia · Gran Canaria · Madrid · Lisboa · Bérgamo · Varsovia**
+>
+> Seis puntos de un camino nada lineal. Ahora también en el pequeño atlas interactivo de [GracianB](https://gracianb.github.io/GracianB/#arc).
+
+## Un observatorio, no un catálogo infinito.
+
+[**Bodytone Support OS**](https://gracianb.github.io/professional-deck/proyecto-bodytone.html) · Operaciones y soporte reales. &nbsp; [**RevOps Studio**](https://github.com/GracianB/revops-studio) · Decisiones explicables. &nbsp; [**Project OHANA**](https://gracianb.github.io/project-ohana/) · Sistemas convertidos en juego. &nbsp; [**VØRTICE**](https://vortex-gilt-xi.vercel.app/) · Experimentos visuales.
+
+Los proyectos públicos se pueden abrir; los locales están identificados como tales. Nada de inventarse demos para impresionar.
 
 <details>
-<summary><b>The experience behind the projects</b></summary>
+<summary><b>English / The short version</b></summary>
 
-At **Minderest**, I worked in international B2B SaaS Customer Success with portfolios of up to **80 customer accounts**. At **Bodytone**, I combined customer operations, support tooling, documentation and automation. Earlier roles in retail leadership and international customer service taught me to understand messy human workflows before trying to digitize them.
+I'm Gracián, based in Murcia, Spain. My story runs through customer-facing work, team leadership, B2B SaaS, yoga teaching and building software.
 
-My path also includes **yoga instruction**, Tourism studies in Murcia and a fourth Erasmus year in Bergamo. Different settings, same habit: understand the person, simplify the problem and make the result usable.
+This is not a second professional résumé. It is the place where those different worlds meet: **people, practice and technology**, connected by the same curiosity.
+
+For experience and outcomes, visit the [Professional Deck](https://gracianb.github.io/professional-deck/). For movement, explore [Yoga](https://gracianb.github.io/yoga-instructor/). For creative engineering, enter [Systems Lab](https://gracianb.github.io/systems-lab/).
 
 </details>
-
-## Looking for the right person, not another buzzword collection?
-
-The [**application desk**](https://gracianb.github.io/GracianB/apply.html) lets you choose the relevant profile, language and evidence, with direct access to the original ES/EN CVs and letters. Customer Success, RevOps, Data & Automation and complementary career paths are kept distinct.
-
-This hub is intentionally lightweight: **HTML, CSS, JavaScript and GitHub Pages**. The code, [changes](https://github.com/GracianB/GracianB/pulls) and public projects are there to inspect. The dark petroleum identity belongs to **GracianB**; the separate Professional Deck keeps its own graphite-and-silver aesthetic.
 
 ---
 
 <div align="center">
 
-**PROOF BEFORE PROMISE. REAL SYSTEMS.**
+**Menos humo. Más mundos que merecen explorarse.**
 
-*Menos humo. Más cosas que funcionan.*
-
-[Portfolio](https://gracianb.github.io/GracianB/) · [GitHub](https://github.com/GracianB) · [LinkedIn](https://www.linkedin.com/in/gracianbaena)
+[**Portfolio**](https://gracianb.github.io/GracianB/) · [**GitHub**](https://github.com/GracianB) · [**LinkedIn**](https://www.linkedin.com/in/gracianbaena)
 
 </div>

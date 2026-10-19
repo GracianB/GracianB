@@ -12,47 +12,7 @@ html[data-theme="dark"] body {
  background:radial-gradient(ellipse at 19% 1%,rgba(88,117,130,.035),transparent 40rem),
  linear-gradient(180deg,#02070b 0%,#010508 52%,#010407 100%),#02070b;
 }
-html[data-theme="dark"] .world-selector {
- background:radial-gradient(circle at 80% 8%,rgba(136,164,176,.035),transparent 17rem),
- linear-gradient(155deg,#06141b,#040d13 80%);
- border-color:rgba(199,205,208,.48);
- box-shadow:0 30px 76px rgba(0,0,0,.43);
-}
-html[data-theme="dark"] .world-professional {
- --world-accent:#c7cdd0;--gold:#c7cdd0;
-}
-html[data-theme="dark"] .world-professional .world-art {
- background:radial-gradient(circle at 50% 45%,rgba(199,205,208,.16),transparent 46%),
- linear-gradient(145deg,#111d24,#040c11 85%);
-}
-html[data-theme="dark"] .world-professional .world-professional-sigil {
- color:#d8dfe2;
- filter:drop-shadow(0 0 12px rgba(199,205,208,.34)) drop-shadow(0 0 31px rgba(136,164,176,.16));
-}
-html[data-theme="dark"] .world-professional .customer-ring {
- border-color:rgba(199,205,208,.37);
-}
-html[data-theme="dark"] .world-professional :is(.customer-core,.customer-node) {
- color:#d8e0e3;border-color:rgba(199,205,208,.47);
- background:rgba(11,23,30,.75);
-}
-html[data-theme="dark"] .world-professional .world-card-copy {
- background:linear-gradient(180deg,#0a171e,#040d13);color:#edf2f2;
-}
-html[data-theme="dark"] .world-professional :is(.world-code,.world-enter b) {color:#c7cdd0}
-html[data-theme="dark"] .world-professional .world-enter {
- background:rgba(199,205,208,.07);border-color:rgba(199,205,208,.58);color:#edf2f2;
-}
-html[data-theme="dark"] .world-selector:has(.world-professional.is-active) {
- --active-world-color:#c7cdd0;
-}
-html[data-theme="dark"] .world-selector.is-overview .world-professional {
- background:#08151d;border-color:rgba(199,205,208,.43);
-}
-html[data-theme="dark"] .world-selector.is-overview .world-card:not(.world-professional) {
- background:#06151d;
-}
-html[data-theme="dark"] .world-selector .world-card-copy{border-color:rgba(199,205,208,.28)}
+/* P12: retired duplicated world-carousel artwork and professional orbit. */
 /* True dark panels throughout, not just the hero/header. */
 html[data-theme="dark"] :is(.method-section,.documents-section){
  background:linear-gradient(180deg,#040b11,#02080d);
