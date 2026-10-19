@@ -19,7 +19,7 @@ const portfolios = [
 const hub = readFileSync("index.html", "utf8");
 assert.equal(portfolios.length, 5, "Ecosystem must cover exactly five approved public sites");
 assert.equal(new Set(portfolios.map(({slug}) => slug)).size, 5, "Duplicate portfolio slug");
-assert.equal((hub.match(/data-world-slide(?=\s|>)/g) || []).length, 3,
+assert.equal((hub.match(/data-portal="(?:professional|yoga|lab)"/g) || []).length, 3,
   "Hub must keep exactly three first-class worlds");
 for (const slug of ["professional-deck", "yoga-instructor", "systems-lab"]) {
   assert.ok(hub.includes('href="' + host + '/' + slug + '/"'),
