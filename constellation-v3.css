@@ -346,13 +346,13 @@ html[data-theme="light"] .constellation-hero .gb-orbit--yoga {stroke:rgba(36,153
   .constellation-hero .cosmic-atlas {width:min(100%,390px)!important;max-width:390px!important}
   .constellation-hero .cosmic-node {--planet-size:38px}
   .constellation-hero .cosmic-node > span:last-child {font-size:.63rem!important}
-  .constellation-hero .cosmic-origin {width:44px!important;height:44px!important}
+  .constellation-hero .cosmic-origin {width:46px!important;height:46px!important}
 }
 @media(max-width:760px) {
   .constellation-hero .cosmic-atlas {width:min(100%,300px)!important;max-width:300px!important}
   .constellation-hero .cosmic-node {--planet-size:33px;min-width:54px!important;gap:3px!important}
   .constellation-hero .cosmic-node > span:last-child {font-size:.56rem!important}
-  .constellation-hero .cosmic-origin {width:39px!important;height:39px!important}
+  .constellation-hero .cosmic-origin {width:46px!important;height:46px!important}
   .constellation-hero .cosmic-atlas-label,.constellation-hero .cosmic-atlas-coordinate {font-size:.44rem!important}
 }
 @media(prefers-reduced-motion:reduce) {
