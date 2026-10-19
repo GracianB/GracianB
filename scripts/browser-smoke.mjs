@@ -99,7 +99,7 @@ async function desktop(browser) {
   assert.match(await page.locator(".facts-strip").innerText(), /up to 80/);
   assert.equal(await page.locator("[data-command-open]").getAttribute("aria-label"), "Open quick navigation");
   assert.equal(await page.locator(".desktop-nav").getAttribute("aria-label"), "Main navigation");
-  assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /customer and operational problems/i);
+  assert.match(await page.getByRole("heading", { level: 1 }).innerText(), /from real-world problems to systems that work/i);
   assert.equal(await page.locator(".hero-actions a[href='#universes']").count(),1);
 
   await page.locator("[data-theme-toggle]").click();
