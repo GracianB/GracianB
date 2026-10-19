@@ -50,7 +50,7 @@ I work where **customer reality meets data, processes, automation and software**
 
 At **Minderest**, I worked in international B2B SaaS Customer Success with portfolios of up to **80 customer accounts**. At **Bodytone**, I combined customer operations, support tooling, documentation and automation. Earlier roles in retail leadership and international customer service taught me to understand messy human workflows before trying to digitize them.
 
-My path also includes **yoga instruction**, Tourism studies in Murcia and an additional Erasmus year in Bergamo. Different settings, same habit: understand the person, simplify the problem and make the result usable.
+My path also includes **yoga instruction**, Tourism studies in Murcia and a fourth Erasmus year in Bergamo. Different settings, same habit: understand the person, simplify the problem and make the result usable.
 
 </details>
 
@@ -64,7 +64,7 @@ This hub is intentionally lightweight: **HTML, CSS, JavaScript and GitHub Pages*
 
 <div align="center">
 
-**NO SMOKE. REAL SYSTEMS.**
+**PROOF BEFORE PROMISE. REAL SYSTEMS.**
 
 *Menos humo. Más cosas que funcionan.*
 
