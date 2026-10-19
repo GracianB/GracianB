@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="./deck-dark.css?v=5">
   <link rel="stylesheet" href="./hub-finish.css?v=3">
   <link rel="stylesheet" href="./portal-v11.css?v=v31-hover-20261019">
-  <link rel="stylesheet" href="./constellation-v3.css?v=solar-aligned-v35">
+  <link rel="stylesheet" href="./constellation-v3.css?v=solar-canonical-v36">
 
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Gracián Baena">
@@ -192,34 +192,26 @@
       <nav class="cosmic-atlas" aria-label="Navegación estelar por universos" data-i18n-aria-label="cosmicAtlasLabel">
         <!-- The bridge: one origin, three destinations. Not scattered decorative stars. -->
         <svg class="cosmic-bridge" viewBox="0 0 1000 920" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <radialGradient id="bridge-halo"><stop stop-color="#91b5ca" stop-opacity=".24"/><stop offset="1" stop-color="#91b5ca" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle cx="510" cy="450" r="170" fill="url(#bridge-halo)" class="cosmic-bridge-halo"/>
-          <g class="bridge-satellite-grid">
-            <path d="M120 300Q205 100 460 130T835 176Q1005 320 790 620T470 800Q230 810 120 300Z"/>
-            <path d="M155 294Q490 78 854 170Q900 520 475 796Q160 608 155 294Z"/>
+          <!-- All paths and planets use this exact 1000 × 920 coordinate grid. -->
+          <g class="gb-solar-rings">
+            <circle class="gb-orbit--pro" cx="510" cy="450" r="150"/>
+            <circle class="gb-orbit--lab" cx="510" cy="450" r="260"/>
+            <circle class="gb-orbit--yoga" cx="510" cy="450" r="360"/>
           </g>
-          <g class="gb-solar-rings"><circle cx="510" cy="450" r="160"/><circle cx="510" cy="450" r="290"/><circle cx="510" cy="450" r="430"/></g>
-          <g class="gb-orbit-guide"><circle cx="510" cy="450" r="235"/><ellipse cx="510" cy="450" rx="390" ry="326"/></g>
-          <g class="gb-orbit-guide gb-orbit-guide--reverse"><ellipse cx="510" cy="450" rx="305" ry="405"/><circle cx="510" cy="450" r="120"/></g>
-          <g class="gb-orbit-ticks"><path d="M510 44V90M510 810V864M82 450H134M868 450H918"/><circle cx="510" cy="450" r="90"/><circle cx="510" cy="450" r="115"/></g>
-          <g class="gb-space-spark"><circle cx="137" cy="186" r="3"/><circle cx="815" cy="96" r="3"/><circle cx="883" cy="560" r="2"/><circle cx="320" cy="762" r="2.5"/></g>
+          <g class="gb-space-spark">
+            <circle cx="58" cy="210" r="1.4"/><circle cx="914" cy="148" r="1.6"/>
+            <circle cx="950" cy="660" r="1.2"/><circle cx="111" cy="751" r="1.1"/>
+            <circle cx="680" cy="29" r="1.4"/><circle cx="331" cy="871" r="1.5"/>
+          </g>
+          <!-- Kept as hidden route anchors for the existing accessibility/JS contract. -->
           <g class="bridge-route bridge-route-pro" data-route-world="professional">
-            <path d="M510 450C373 405 303 340 175 313"/>
-            <circle cx="350" cy="378" r="3.5"/><circle cx="248" cy="329" r="2.2"/>
-          </g>
-          <g class="bridge-route bridge-route-yoga" data-route-world="yoga">
-            <path d="M510 450C560 255 699 216 850 178"/>
-            <circle cx="638" cy="302" r="3.5"/><circle cx="749" cy="207" r="2.2"/>
+            <path d="M510 450L360 450"/>
           </g>
           <g class="bridge-route bridge-route-lab" data-route-world="lab">
-            <path d="M510 450C478 570 505 662 535 755"/>
-            <circle cx="464" cy="620" r="3.5"/><circle cx="466" cy="695" r="2.2"/>
+            <path d="M510 450L510 710"/>
           </g>
-          <g class="bridge-trace-stars">
-            <circle cx="214" cy="137" r="2.5"/><circle cx="745" cy="106" r="2"/><circle cx="940" cy="495" r="2.4"/>
-            <circle cx="725" cy="775" r="1.7"/><circle cx="245" cy="692" r="2.5"/><circle cx="545" cy="122" r="2"/>
+          <g class="bridge-route bridge-route-yoga" data-route-world="yoga">
+            <path d="M510 450L870 450"/>
           </g>
         </svg>
         <span class="cosmic-origin" aria-hidden="true"><span class="cosmic-origin-star">✳</span><span>GB</span></span>
