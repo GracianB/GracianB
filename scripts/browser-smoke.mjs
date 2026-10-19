@@ -159,6 +159,13 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     await page.waitForURL(/apply\.html/);
     assert.match(await page.title(),/Gracián/i);
   }
+  // The real toggle must switch both ways, not merely look centered.
+  if(width>=1280){
+    await page.locator("[data-theme-toggle]").click();
+    assert.equal(await page.locator("html").getAttribute("data-theme"),theme==="light"?"dark":"light");
+    await page.locator("[data-theme-toggle]").click();
+    assert.equal(await page.locator("html").getAttribute("data-theme"),theme);
+  }
   assert.deepEqual(errors,[],"Runtime errors at "+width+"px, "+theme+", "+lang);
   await ctx.close();
   console.log("P12 BROWSER PASS "+width+"px / "+lang+" / "+theme+" / "+motion);
