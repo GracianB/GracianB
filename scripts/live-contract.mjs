@@ -28,13 +28,14 @@ assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache")
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
 assert.match(html,/portal-v11\.css\?v=4/);
 assert.match(html,/i18n\.js\?v=26/);
-assert.match(html,/main\.js\?v=p12-constellation/);
+assert.match(html,/main\.js\?v=p123-ambience/);
 assert.doesNotMatch(html,/hero-orbit-signature|data-world-overview|data-world-prev|data-world-next/,
   "Old Professional Deck emblem or carousel must not return");
-for(const path of ["portal-v11.css?v=4","main.js?v=p12-constellation","i18n.js?v=26"]){
+for(const path of ["portal-v11.css?v=4","main.js?v=p123-ambience","i18n.js?v=26"]){
  const {body}=await load(new URL("./"+path,url).href);
  assert.ok(body.length>2000,"Public P12 resource unexpectedly empty: "+path);
  if(path.includes("main.js"))assert.match(body,/function constellationSky/);
+ if(path.includes("main.js"))assert.match(body,/canvas\.dataset\.ambientClusters/);
  if(path.includes("portal-v11.css"))assert.match(body,/\.cosmic-atlas/);
 }
 for(const site of ["professional-deck","yoga-instructor","systems-lab"])
