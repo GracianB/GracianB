@@ -200,6 +200,8 @@
   const commandFilters = [...document.querySelectorAll("[data-command-filter]")];
   let commandCategory = "all", commandIndex = 0, commandTrigger = null;
   const commandItems = [...(commandList?.querySelectorAll("li") || [])];
+  commandItems.forEach((item,index)=>{ item.id = item.id || "command-option-"+index; item.setAttribute("role","option"); });
+  commandList?.setAttribute("role","listbox");
 
   function normalizeCommand(value) {
     return value.toLocaleLowerCase(lang).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
@@ -215,12 +217,15 @@
       const link=item.querySelector("a");
       const active=items.indexOf(item)===commandIndex&&commandIndex>=0;
       item.classList.toggle("is-active",active);
+      item.setAttribute("aria-selected",String(active));
       if(link) {
         if(active) link.setAttribute("aria-current","true");
         else link.removeAttribute("aria-current");
       }
     });
     const selected=items[commandIndex];
+    if(selected) commandInput?.setAttribute("aria-activedescendant",selected.id);
+    else commandInput?.removeAttribute("aria-activedescendant");
     if(selected && scroll && commandList) {
       // Only move the result list; scrollIntoView() also scrolls the page behind it.
       const above=selected.offsetTop-commandList.offsetTop;
