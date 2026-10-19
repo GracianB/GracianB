@@ -14,6 +14,9 @@ for(const section of ["worlds","universes","arc","evidence","documents","contact
 assert.equal((html.match(/data-portal="(?:professional|yoga|lab)"/g)||[]).length,3);
 assert.equal((html.match(/data-atlas-city="/g)||[]).length,6);
 assert.match(html,/data-constellation-sky/);
+assert.match(html,/class="cosmic-bridge"/);
+assert.match(html,/class="cosmic-origin"/);
+assert.equal((html.match(/data-route-world="/g)||[]).length,3);
 assert.match(html,/id="hero-title"[^>]*data-i18n="heroStatement"/);
 assert.match(html,/atlas-systems-mark/); 
 assert.match(html,/class="theme-sun"[^>]*viewBox="0 0 24 24"/);
@@ -23,12 +26,12 @@ assert.match(html,/constellation-lotus/);
 assert.match(html,/circuit-chip/);
 assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache");
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
-assert.match(html,/portal-v11\.css\?v=3/);
+assert.match(html,/portal-v11\.css\?v=4/);
 assert.match(html,/i18n\.js\?v=26/);
-assert.match(html,/main\.js\?v=p12-sky/);
+assert.match(html,/main\.js\?v=p12-constellation/);
 assert.doesNotMatch(html,/hero-orbit-signature|data-world-overview|data-world-prev|data-world-next/,
   "Old Professional Deck emblem or carousel must not return");
-for(const path of ["portal-v11.css?v=3","main.js?v=p12-sky","i18n.js?v=26"]){
+for(const path of ["portal-v11.css?v=4","main.js?v=p12-constellation","i18n.js?v=26"]){
  const {body}=await load(new URL("./"+path,url).href);
  assert.ok(body.length>2000,"Public P12 resource unexpectedly empty: "+path);
  if(path.includes("main.js"))assert.match(body,/function constellationSky/);
