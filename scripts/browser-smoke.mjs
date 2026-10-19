@@ -88,8 +88,8 @@ async function desktop(browser) {
     const portal=page.locator('.world-portal[data-portal="'+key+'"]');
     await portal.hover();await page.waitForTimeout(550);
     const actual=await portal.evaluate(node=>getComputedStyle(node).borderTopColor);
-    const components=actual.match(/[\\d.]+/g).map(Number);
-    const expected=color.match(/[\\d.]+/g).map(Number);
+    const components=actual.match(/[\d.]+/g).map(Number);
+    const expected=color.match(/[\d.]+/g).map(Number);
     assert.deepEqual(components.slice(0,3),expected,
       key+" hover must use its own universe color");
     assert.ok((components[3] ?? 1) >= .8, key+" hover border must be clearly visible");
