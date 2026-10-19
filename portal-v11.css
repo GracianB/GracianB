@@ -442,3 +442,6 @@ html[data-theme="light"] .observatory-details .evidence-card:hover{background:li
 .atlas-pin.is-current{background:#173644!important;color:#f5fbff!important;border-color:#b6e9ff!important;box-shadow:0 0 0 4px rgba(139,218,250,.17),0 0 26px rgba(139,218,250,.18)!important;transform:translate(-50%,-50%) scale(1.12)}
 html[data-theme=light] .atlas-pin.is-current{background:#d5edf8!important;color:#143849!important;border-color:#296d89!important}
 @media(prefers-reduced-motion:reduce){.bridge-route,.cosmic-node .cosmic-node-star{animation:none!important}.atlas-pin{transition:none}}
+
+/* On narrow layouts a very short segment becomes visual noise. */
+.bridge-route.is-short-route{opacity:0!important}
