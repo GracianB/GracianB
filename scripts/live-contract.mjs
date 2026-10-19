@@ -20,7 +20,9 @@ assert.equal((html.match(/data-route-world="/g)||[]).length,3);
 assert.match(html,/id="hero-title"[^>]*data-i18n="heroStatement"/);
 assert.match(html,/atlas-systems-mark/); 
 assert.match(html,/class="theme-sun"[^>]*viewBox="0 0 24 24"/);
-assert.doesNotMatch(html,/data-i18n="atlasNote"/);
+assert.match(html,/data-i18n="atlasNote"/);
+assert.match(html,/data-i18n="atlasHeading"/);
+assert.match(html,/city-atlas-v2\\.css\\?v=atlas-chapters-v2/);
 
 assert.match(html,/constellation-lotus/);
 assert.match(html,/circuit-chip/);
@@ -34,7 +36,7 @@ assert.match(html,/id="command-empty"/);
 assert.match(html,/main\.js\?v=v1-atlas-20261019/);
 assert.doesNotMatch(html,/hero-orbit-signature|data-world-overview|data-world-prev|data-world-next/,
   "Old Professional Deck emblem or carousel must not return");
-for(const path of ["portal-v11.css?v=v31-hover-20261019","main.js?v=v1-atlas-20261019","i18n.js?v=27"]){
+for(const path of ["portal-v11.css?v=v31-hover-20261019","main.js?v=atlas-chapters-v2","i18n.js?v=atlas-chapters-v2","city-atlas-v2.css?v=atlas-chapters-v2"]){
  const {body}=await load(new URL("./"+path,url).href);
  assert.ok(body.length>2000,"Public P12 resource unexpectedly empty: "+path);
  if(path.includes("main.js"))assert.match(body,/function constellationSky/);
