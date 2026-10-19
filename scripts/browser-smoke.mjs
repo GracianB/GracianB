@@ -76,7 +76,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       const body=atlas.querySelector(node+" .cosmic-node-star").getBoundingClientRect();
       const circle=atlas.querySelector(ring);
       const cx=body.left+body.width/2,cy=body.top+body.height/2;
-      return {node,actual:Math.hypot(cx-origin[0],cy-origin[1]),expected:bounds.width*scale
+      return {node,actual:Math.hypot(cx-origin[0],cy-origin[1]),expected:bounds.width*scale,
         svgRadius:Number(circle.getAttribute("r")),stroke:getComputedStyle(circle).stroke};
     })};
   });
