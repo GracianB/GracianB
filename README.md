@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="./docs/portfolio-banner.svg" alt="Gracián Baena · From customer friction to working systems" width="100%" />
+<img src="./docs/portfolio-banner.svg" alt="Gracián Baena · A constellation of three worlds" width="100%" />
 
-### I turn complicated operations into systems people can actually use.
+### One curiosity. Many worlds.
 
-**Customer Success × RevOps × Data × Automation × AI × Software**
+**People × Practice × Technology**
 
 Murcia, Spain · Remote worldwide · ES · EN · IT
 
@@ -17,7 +17,7 @@ Murcia, Spain · Remote worldwide · ES · EN · IT
 
 ---
 
-## People first. Code came later.
+## A little less biography. A little more universe.
 
 I'm **Gracián Baena**. I've spent **16+ years** working with customers, teams, SaaS accounts and operations. Somewhere along the way, I stopped being satisfied with *“we should improve this”* and started building the improvement myself.
 
@@ -25,7 +25,7 @@ I work where **customer reality meets data, processes, automation and software**
 
 **A little allergic to corporate theatre. Very interested in evidence.**
 
-## One mind. Three worlds.
+## Three universes, one starting point.
 
 [<img src="./docs/three-worlds.svg" alt="Professional in silver, Yoga in botanical green and Systems Lab in electric blue" width="100%" />](https://gracianb.github.io/GracianB/)
 
@@ -35,7 +35,9 @@ I work where **customer reality meets data, processes, automation and software**
 | **02 / Yoga Instructor** | Teaching, movement, presence and a digital approach to practice | [Experience ↗](https://gracianb.github.io/yoga-instructor/) |
 | **03 / Systems Lab** | Code, products, agents, games and experiments. The things I couldn't resist building | [Enter the lab ↗](https://gracianb.github.io/systems-lab/) |
 
-## Less promise. More proof.
+**A small personal atlas:** Murcia · Gran Canaria · Madrid · Lisboa · Bérgamo · Varsovia. Six points from the Professional Deck journey, shown here as a separate interactive map, not an invented travel route.
+
+## Open the observatory.
 
 | Work | What it demonstrates |
 | :--- | :--- |
