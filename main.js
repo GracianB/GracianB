@@ -261,7 +261,7 @@
     commandTrigger=document.activeElement;
     command.hidden=false;
     command.setAttribute("aria-hidden","false");
-    document.body.classList.add("command-open");
+    document.body.classList.add("command-active");
     if(commandInput)commandInput.value="";
     setCommandCategory("all");
     requestAnimationFrame(()=>{if(!command.hidden)commandInput?.focus({preventScroll:true});});
@@ -270,7 +270,7 @@
     if(!command||command.hidden)return;
     command.hidden=true;
     command.setAttribute("aria-hidden","true");
-    document.body.classList.remove("command-open");
+    document.body.classList.remove("command-active");
     if(restoreFocus&&commandTrigger instanceof HTMLElement&&commandTrigger.isConnected)
       commandTrigger.focus({preventScroll:true});
   }
