@@ -327,7 +327,7 @@ async function finalResponsiveAudit(browser) {
         assert.equal(unified.brand, "rgba(199, 205, 208, 0.52)");
         assert.equal(unified.panel, "rgb(7, 21, 28)");
         assert.equal(unified.professionalCode,"rgb(199, 205, 208)","First world label must be silver");
-        assert.equal(unified.professionalSigil,"rgb(206, 216, 220)","Professional emblem must be cool silver");
+        assert.equal(unified.professionalSigil,"rgb(216, 223, 226)","Professional emblem must be cool silver");
         assert.equal(unified.professionalArtwork,"rgb(11, 22, 28)","Professional art must be deep neutral ink, not brown");
         assert.match(unified.professionalCopy,/rgb\(11, 23, 29\).*rgb\(4, 12, 17\)/,"First card text panel must be petrol");
         assert.match(unified.methodSurface,/rgb\(4, 11, 17\).*rgb\(2, 8, 13\)/,"Method section must be dark");
