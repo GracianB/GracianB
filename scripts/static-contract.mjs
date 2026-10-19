@@ -187,7 +187,7 @@ assert.match(application, /RevOps Studio continúa en desarrollo/,
 
 
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=29/, "P1.3 JS must bypass old cached bytes");
+assert.match(html, /main\.js\?v=p8-final/, "P1.3 JS must bypass old cached bytes");
 assert.match(html, /i18n\.js\?v=24" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
 // Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
