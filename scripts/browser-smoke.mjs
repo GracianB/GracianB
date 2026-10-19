@@ -76,7 +76,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       const actual=diagnostics.color;
       const nums=actual.match(/[\d.]+/g).map(Number);
       assert.deepEqual(nums.slice(0,3),color,world+" lacks its unique hover color");
-      assert.ok((nums[3]??1)>.74,world+" border must be readable");
+      assert.ok((nums[3]??1)>.74,world+" border must be readable: computed="+actual+" hover="+await portal.evaluate(n=>n.matches(":hover"))+" CSS="+await portal.evaluate(n=>getComputedStyle(n).getPropertyValue("--portal-color")));
     }
     await page.mouse.move(0,0);
     await page.screenshot({path:artifacts+"/constellation-desktop.png",fullPage:true});
