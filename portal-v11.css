@@ -197,6 +197,41 @@ main,.footer{position:relative;z-index:1}
 .cosmic-node{--node-color:#c7cdd0;position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.7rem;color:var(--node-color);text-decoration:none;font:700 clamp(.73rem,.85vw,.92rem)/1.2 var(--sans);text-shadow:0 3px 15px #010407;white-space:nowrap;transition:transform .3s ease,filter .3s ease}
 .cosmic-node .cosmic-node-star{display:grid;place-items:center;width:62px;height:62px;border:1px solid color-mix(in srgb,var(--node-color) 47%,transparent);border-radius:50%;font-size:1.8rem;background:radial-gradient(circle, color-mix(in srgb,var(--node-color) 14%,transparent),transparent 74%);box-shadow:0 0 42px color-mix(in srgb,var(--node-color) 12%,transparent),0 8px 26px #010407}
 .cosmic-pro{left:9%;top:28%}.cosmic-yoga{right:5%;top:12%;--node-color:#91dcb2}.cosmic-lab{left:43%;bottom:9%;--node-color:#8bdafa}
+
+/* P12.2: a recognizable stellar architecture (parent GB -> 3 distinct universes). */
+.cosmic-bridge{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
+.bridge-satellite-grid path{fill:none;stroke:rgba(170,202,215,.19);stroke-width:1.15;stroke-dasharray:2 10}
+.bridge-route{--route-stroke:#c7cdd0;stroke:var(--route-stroke);stroke-width:2.1;fill:none;opacity:.7;filter:drop-shadow(0 0 4px color-mix(in srgb,var(--route-stroke) 40%,transparent));transition:opacity .3s ease,stroke-width .3s ease}
+.bridge-route circle{fill:var(--route-stroke);stroke:none}
+.bridge-route-yoga{--route-stroke:#91dcb2}
+.bridge-route-lab{--route-stroke:#8bdafa}
+.bridge-trace-stars circle{fill:#afc8d3;opacity:.65}
+.cosmic-origin{position:absolute;left:51%;top:48.9%;z-index:2;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;width:74px;height:74px;border-radius:50%;border:1px solid rgba(191,220,230,.59);background:radial-gradient(circle,#1a3544,#06121b 78%);box-shadow:0 0 0 10px rgba(139,188,211,.055),0 0 52px rgba(142,184,210,.25);color:#e2edf2;font:700 .65rem/1 var(--mono);letter-spacing:.12em;pointer-events:none}
+.cosmic-origin-star{font:400 1.35rem/1 var(--sans);color:#c6e1ed;text-shadow:0 0 17px rgba(201,226,240,.48)}
+@media(hover:hover) and (pointer:fine){
+.cosmic-atlas:has(.cosmic-pro:hover) .bridge-route-pro,
+.cosmic-atlas:has(.cosmic-yoga:hover) .bridge-route-yoga,
+.cosmic-atlas:has(.cosmic-lab:hover) .bridge-route-lab{stroke-width:3.8;opacity:1}
+.cosmic-atlas:has(.cosmic-node:hover) .bridge-route:not(:has(.irrelevant)){opacity:.4}
+.cosmic-atlas:has(.cosmic-pro:hover) .bridge-route-pro,
+.cosmic-atlas:has(.cosmic-yoga:hover) .bridge-route-yoga,
+.cosmic-atlas:has(.cosmic-lab:hover) .bridge-route-lab{opacity:1}
+}
+.cosmic-atlas:has(.cosmic-pro:focus-visible) .bridge-route-pro,
+.cosmic-atlas:has(.cosmic-yoga:focus-visible) .bridge-route-yoga,
+.cosmic-atlas:has(.cosmic-lab:focus-visible) .bridge-route-lab{opacity:1;stroke-width:4}
+html[data-theme=light] .bridge-satellite-grid path{stroke:rgba(63,110,131,.31)}
+html[data-theme=light] .bridge-route-pro{--route-stroke:#547689}
+html[data-theme=light] .bridge-route-yoga{--route-stroke:#2d8560}
+html[data-theme=light] .bridge-route-lab{--route-stroke:#217fa6}
+html[data-theme=light] .bridge-route{opacity:.82;filter:none}
+html[data-theme=light] .cosmic-origin{background:radial-gradient(circle,#fff,#dcecf3 84%);border-color:#7b9faf;color:#234c60;box-shadow:0 0 0 8px rgba(83,135,158,.08),0 10px 30px rgba(46,105,133,.16)}
+html[data-theme=light] .cosmic-origin-star{color:#36677c;text-shadow:none}
+html[data-theme=light] .bridge-trace-stars circle{fill:#638ca0}
+@media(max-width:720px){.cosmic-origin{width:54px;height:54px;font-size:.55rem}.cosmic-origin-star{font-size:1rem}.bridge-satellite-grid path{stroke-width:1}.bridge-route{stroke-width:2.5}}
+@media(max-width:420px){.cosmic-origin{width:48px;height:48px}.cosmic-origin-star{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){.bridge-route{transition:none}}
+
 .cosmic-node:focus-visible{outline:3px solid var(--node-color);outline-offset:8px;border-radius:8px}
 @media(hover:hover) and (pointer:fine){.cosmic-node:hover{transform:translateY(-6px);filter:brightness(1.24)}.cosmic-node:hover .cosmic-node-star{box-shadow:0 0 55px color-mix(in srgb,var(--node-color) 32%,transparent)}}
 .worlds-reimagined{padding-top:clamp(2rem,4vw,4rem)!important}
