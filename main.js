@@ -98,7 +98,7 @@
 
   function applyTheme({ persist = false } = {}) {
     root.dataset.theme = theme;
-    const color = theme === "light" ? "#f7f5ef" : "#060f14";
+    const color = theme === "light" ? "#f7f5ef" : "#02070b";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
     // The application desk uses the same theme, even without localStorage.
     // Keep default-dark URLs as they were for existing shared links.
