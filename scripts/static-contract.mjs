@@ -53,6 +53,8 @@ for(const cl of ["observatory-details","cv-library-details"])
 assert.equal((html.match(/class="evidence-card evidence-/g)||[]).length,5);
 assert.equal((html.match(/class="document-group document-group-/g)||[]).length,3);
 assert.match(html,/data-application-link/);
+assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache");
+assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
 assert.match(html,/portal-v11\.css\?v=2/);
 assert.match(html,/i18n\.js\?v=26" defer/);
 assert.match(html,/main\.js\?v=p12-sky" defer/);
