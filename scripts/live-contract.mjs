@@ -31,7 +31,7 @@ assert.match(html,/i18n\.js\?v=27/);
 assert.equal((html.match(/data-command-category="/g)||[]).length,10);
 assert.match(html,/data-command-filter="projects"/);
 assert.match(html,/id="command-empty"/);
-assert.match(html,/main\.js\?v=p124-quicknav/);
+assert.match(html,/main\.js\?v=v1-official-20261019/);
 assert.doesNotMatch(html,/hero-orbit-signature|data-world-overview|data-world-prev|data-world-next/,
   "Old Professional Deck emblem or carousel must not return");
 for(const path of ["portal-v11.css?v=v1-official-20261019","main.js?v=v1-official-20261019","i18n.js?v=27"]){
