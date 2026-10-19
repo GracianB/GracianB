@@ -1312,103 +1312,7 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
    Identity first, then an unmistakable choice: Professional · Yoga · Systems Lab.
    ========================================================================== */
 
-/* V11: former carousel stage, hidden slides and arrows removed; see portal-v11.css. */
-.world-art{
-  position:relative;
-  min-height:0;
-  overflow:hidden;
-}
-
-.world-art::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:18rem;
-  aspect-ratio:1;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:radial-gradient(circle,color-mix(in srgb,var(--world-accent) 10%,transparent),transparent 68%);
-  filter:blur(4px);
-}
-
-.world-card-copy{
-  position:relative;
-  z-index:4;
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:.45rem 1rem;
-  align-items:end;
-  padding:1rem 1.1rem 1.15rem;
-  border-top:1px solid var(--line);
-  background:linear-gradient(180deg,rgba(7,8,9,.36),rgba(7,8,9,.78));
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-}
-
-html[data-theme="light"] .world-card-copy{
-  background:linear-gradient(180deg,rgba(244,241,233,.46),rgba(244,241,233,.9));
-}
-
-.world-code{
-  grid-column:1/-1;
-  color:var(--world-accent);
-  font-family:var(--mono);
-  font-size:.46rem;
-  font-weight:700;
-  letter-spacing:.14em;
-}
-
-.world-card h2{
-  grid-column:1/-1;
-  margin:.15rem 0 0;
-  max-width:14ch;
-  font-family:var(--serif);
-  font-size:clamp(1.85rem,3vw,2.75rem);
-  font-weight:500;
-  line-height:.96;
-  letter-spacing:-.035em;
-}
-
-.world-card p{
-  margin:.25rem 0 0;
-  max-width:34rem;
-  color:var(--muted);
-  font-size:.86rem;
-  line-height:1.55;
-}
-
-.world-enter{
-  display:inline-flex;
-  align-items:center;
-  justify-content:space-between;
-  align-self:end;
-  gap:.85rem;
-  min-width:10.5rem;
-  min-height:2.7rem;
-  border:1px solid color-mix(in srgb,var(--world-accent) 55%,transparent);
-  border-radius:999px;
-  padding:.62rem .8rem;
-  background:color-mix(in srgb,var(--world-accent) 12%,transparent);
-  color:var(--text);
-  font-family:var(--mono);
-  font-size:.5rem;
-  font-weight:700;
-  letter-spacing:.045em;
-  transition:transform .2s ease,background-color .2s ease,border-color .2s ease;
-}
-
-.world-card-link:hover .world-enter{
-  transform:translateX(3px);
-  background:color-mix(in srgb,var(--world-accent) 20%,transparent);
-  border-color:var(--world-accent);
-}
-
-.world-enter b{
-  color:var(--world-accent);
-  font-size:.8rem;
-}
-
+/* P12: retired legacy carousel structure and slide CSS. */
 /* Professional world: customer signals becoming action. */
 .customer-ring{
   position:absolute;
@@ -1808,36 +1712,10 @@ html[data-theme="light"] .button-primary{background:var(--cv-forest);border-colo
 .live-dot{background:#a0b0a0;box-shadow:0 0 0 5px rgba(160,176,160,.10)}
 .world-selector{border-color:var(--line-strong);box-shadow:var(--shadow);background:radial-gradient(circle at 80% 10%,rgba(218,164,40,.05),transparent 18rem),var(--panel)}
 .world-selector-head{border-bottom-color:var(--line-strong)}
-/* Local identity belongs to each world, not to the parent hub. */
-.world-professional{--world-accent:#d7cbb8}
-html[data-theme="light"] .world-professional{--world-accent:#786d62}
+/* P12: only world identity tokens remain; portal symbols own their appearance. */
+.world-professional{--world-accent:#d6d5d0;--gold:#d6d5d0}
 .world-yoga{--world-accent:#87cfae;--sage:#87cfae}
-html[data-theme="light"] .world-yoga{--world-accent:#286953}
 .world-lab{--world-accent:#7af3ff;--cyan:#7af3ff;--violet:#bd9cff}
-html[data-theme="light"] .world-lab{--world-accent:#176b92}
-.world-professional .world-art{background:radial-gradient(circle at 52% 45%,rgba(221,213,198,.13),transparent 46%),linear-gradient(145deg,#353b3d,#1d272d)}
-html[data-theme="light"] .world-professional .world-art{background:radial-gradient(circle at 52% 45%,rgba(193,175,151,.2),transparent 46%),linear-gradient(145deg,#fffaf3,#ded6c9)}
-.world-professional .customer-ring{border-color:rgba(221,207,186,.4)}
-.world-professional .customer-core{border-color:rgba(221,207,186,.6);background:rgba(208,199,185,.09);color:#e7daca}
-html[data-theme="light"] .world-professional .customer-core{color:#655547}
-.world-professional .customer-node{border-color:rgba(221,207,186,.42);color:#eee2d1;background:rgba(31,39,42,.88)}
-html[data-theme="light"] .world-professional .customer-node{color:#344249;background:rgba(252,248,241,.89)}
-.world-professional .world-enter{border-color:var(--world-accent)}
-.world-yoga .world-art{background:radial-gradient(circle at 50% 53%,rgba(79,164,120,.16),transparent 48%),linear-gradient(145deg,#15392e,#112821)}
-html[data-theme="light"] .world-yoga .world-art{background:radial-gradient(circle at 50% 53%,rgba(115,180,141,.2),transparent 48%),linear-gradient(145deg,#e7f3e9,#cfe5d6)}
-.world-lab .world-art{background:radial-gradient(circle at 65% 34%,rgba(122,243,255,.18),transparent 40%),linear-gradient(145deg,#102b49,#171b3a)}
-html[data-theme="light"] .world-lab .world-art{background:radial-gradient(circle at 65% 34%,rgba(70,161,217,.14),transparent 42%),linear-gradient(145deg,#e7f3fb,#dce5fc)}
-/* The active carousel dot follows the selected universe using CSS :has. */
-.world-selector:has(.world-professional.is-active){--active-world-color:#d7cbb8}
-.world-selector:has(.world-yoga.is-active){--active-world-color:#87cfae}
-.world-selector:has(.world-lab.is-active){--active-world-color:#7af3ff}
-.world-dots button.is-active{background:color-mix(in srgb,var(--active-world-color,var(--gold)) 11%,transparent)}
-.world-dots button.is-active>span{background:var(--active-world-color,var(--gold));box-shadow:0 0 10px color-mix(in srgb,var(--active-world-color,var(--gold)) 45%,transparent)}
-.world-noscript a:hover{border-color:var(--gold)}
-@media(max-width:760px){.topbar{gap:.45rem}.topbar-actions{gap:.3rem}.hero{padding-block:clamp(2.5rem,7vw,4rem)}}
-@media(prefers-reduced-motion:reduce){.ambient-orb{filter:none;opacity:.025}}
-
-
 /* HUB V10 · Readable interactive controls and responsive motion contract */
 :root{--control-font:clamp(.82rem,.68rem + .22vw,.96rem);--control-small:clamp(.72rem,.67rem + .13vw,.82rem);--control-touch:44px;--control-ease:cubic-bezier(.22,1,.36,1)}
 .button,.card-actions a,.world-enter,.world-dots button,.world-carousel-controls button,.world-noscript a,.door,.segment button,.command-open,.menu-toggle,.theme-toggle{
@@ -1914,21 +1792,8 @@ html[data-theme="light"] .world-enter{color:var(--cv-forest)}
 }
 
 
-/* V12 shared design grammar: each world owns its visual language. */
-.world-professional .world-professional-sigil,.world-lab .world-lab-sigil{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:min(64%,285px);height:min(86%,320px);pointer-events:none;filter:drop-shadow(0 0 16px color-mix(in srgb,currentColor 22%,transparent))}
-.world-professional .world-professional-sigil{color:#d9cbb8;opacity:.84}
-.world-lab .world-lab-sigil{color:#7af3ff;opacity:.88;width:min(50%,210px)}
-.world-professional .customer-ring,.world-professional .customer-node,.world-professional .customer-core{opacity:.23}
-.world-lab .lab-orbit,.world-lab .magic-wand,.world-lab .spark{opacity:.18}
-.world-yoga .lotus{filter:drop-shadow(0 0 15px rgba(135,207,174,.16))}
-html[data-theme="light"] .world-professional .world-professional-sigil{color:#786a58}
-html[data-theme="light"] .world-lab .world-lab-sigil{color:#176b92}
-@media(max-width:760px){.world-professional .world-professional-sigil{width:min(64%,220px)}.world-lab .world-lab-sigil{width:min(45%,180px)}}
-@media(prefers-reduced-motion:reduce){.world-professional-sigil,.world-lab-sigil{animation:none}}
-
-/* RevOps is a roadmap item, never a live entry point. */
+/* P12: symbols are unique to each portal. */
 .revops-soon{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1rem;border:1px dashed var(--line-strong);border-radius:12px;color:var(--muted);font-size:var(--control-font);font-weight:700;cursor:not-allowed;text-align:center}
-
 /* V13 · CV parchment light mode and ink signature. World-specific colors remain scoped. */
 html[data-theme="light"] body{background:radial-gradient(circle at 70% 8%,rgba(218,164,40,.045),transparent 38rem),var(--cv-paper);color:var(--cv-forest)}
 html[data-theme="light"] .topbar{background:rgba(247,245,239,.96)}
@@ -1939,75 +1804,8 @@ html[data-theme="light"] .world-dots button.is-active{background:color-mix(in sr
 html[data-theme="light"] .world-enter{color:var(--text)}
 
 
-/* V14 · Strict independent identity per world; silver and beige only in Professional. */
-.world-professional {--world-accent:#d6d5d0;--gold:#d6d5d0}
-.world-professional .world-art{background:radial-gradient(circle at 51% 47%,rgba(220,219,214,.21),transparent 45%),linear-gradient(135deg,#373a3d,#171a1d 80%)}
-.world-professional .world-professional-sigil{color:#e2ded4;opacity:1;filter:drop-shadow(0 0 12px rgba(235,232,225,.48)) drop-shadow(0 0 32px rgba(214,203,184,.3))}
-.world-professional .customer-node,.world-professional .customer-core{color:#ede2d2;border-color:rgba(219,216,209,.3)}
-.world-professional .world-card-copy{background:linear-gradient(180deg,rgba(30,32,34,.93),#1c1e20);color:#f4f0ea}
-.world-professional .world-code,.world-professional .world-enter b{color:#e5d4bc}
-.world-professional .world-enter{background:rgba(214,209,200,.1);border-color:#bfc0bc;color:#f4f0ea}
-html[data-theme="light"] .world-professional{--world-accent:#807565}
-html[data-theme="light"] .world-professional .world-art{background:radial-gradient(circle at center,rgba(211,201,182,.36),transparent 48%),linear-gradient(145deg,#fdfaf5,#e5ded3)}
-html[data-theme="light"] .world-professional .world-professional-sigil{color:#827362;filter:drop-shadow(0 0 10px rgba(173,156,132,.25))}
-html[data-theme="light"] .world-professional .world-card-copy{background:linear-gradient(180deg,#f8f4ed,#e9e2d7);color:#293136}
-html[data-theme="light"] .world-professional .world-code,html[data-theme="light"] .world-professional .world-enter b{color:#75624d}
-html[data-theme="light"] .world-professional .world-enter{color:#293136;border-color:#938674;background:rgba(139,121,99,.08)}
-.world-yoga .lotus{filter:drop-shadow(0 0 13px rgba(135,207,174,.37)) drop-shadow(0 0 34px rgba(82,155,117,.17))}
-.world-lab .world-lab-sigil{opacity:1;filter:drop-shadow(0 0 10px rgba(122,243,255,.6)) drop-shadow(0 0 34px rgba(32,169,229,.26))}
-.world-selector:has(.world-professional.is-active){--active-world-color:#d6d5d0}
-html[data-theme="light"] .world-selector:has(.world-professional.is-active){--active-world-color:#807565}
-@media(prefers-reduced-motion:reduce){.world-professional .world-professional-sigil,.world-yoga .lotus,.world-lab .world-lab-sigil{animation:none}}
-
-
-/* V16 · Full-canvas editorial hub cover: one identity, three distinct universes. */
-@media(min-width:1081px){
-.hero.hero-wow{width:min(100% - 2.5rem,1440px);max-width:1440px;min-height:calc(100svh - 88px);padding-block:clamp(1.3rem,3vh,2.8rem);grid-template-columns:minmax(0,1.03fr) minmax(380px,.97fr);gap:clamp(2rem,3.4vw,4.5rem);align-items:stretch}
-.hero.hero-wow .hero-identity{display:flex;flex-direction:column;justify-content:center;min-width:0;padding-block:clamp(.5rem,2vh,1.8rem)}
-.hero.hero-wow .hero-kicker-row{margin-bottom:clamp(1rem,2vh,1.5rem)}
-.hero.hero-wow .hero-name{line-height:.78;width:100%}
-.hero.hero-wow .hero-name-first{font-size:clamp(3.65rem,5.65vw,6.3rem)}
-.hero.hero-wow .hero-name-last{font-size:clamp(4rem,6.1vw,7rem);margin-top:.04em}
-.hero.hero-wow .hero-role-wow{margin:clamp(1.1rem,2.5vh,1.8rem) 0 .65rem}
-.hero.hero-wow .hero-thesis{font-size:clamp(1.9rem,2.75vw,3.05rem);line-height:1.07;max-width:29ch}
-.hero.hero-wow .hero-lead-wow{max-width:57ch;margin-top:clamp(.7rem,1.6vh,1.15rem);line-height:1.57}
-.hero.hero-wow .hero-actions{margin-top:clamp(1.2rem,2.2vh,1.9rem)}
-.hero.hero-wow .hero-proof-wow{margin-top:clamp(1rem,2.2vh,1.8rem)}
-.hero.hero-wow .world-selector{display:flex;flex-direction:column;min-height:0;height:100%;align-self:stretch}
-.hero.hero-wow .world-stage{flex:1;min-height:0;height:auto}
-.hero.hero-wow .world-card{height:100%}
-.hero.hero-wow .world-card-link{height:100%;grid-template-rows:minmax(0,1fr) auto}
-.hero.hero-wow .world-art{min-height:0}
-}
-@media(min-width:1081px) and (max-height:790px){
-.hero.hero-wow{min-height:calc(100svh - 80px);padding-block:1.2rem}
-.hero.hero-wow .hero-name-first{font-size:clamp(3.3rem,4.75vw,4.95rem)}
-.hero.hero-wow .hero-name-last{font-size:clamp(3.7rem,5.15vw,5.65rem)}
-.hero.hero-wow .hero-role-wow{margin-top:1rem}
-.hero.hero-wow .hero-thesis{font-size:clamp(1.7rem,2.4vw,2.55rem)}
-.hero.hero-wow .hero-lead-wow{font-size:.95rem;line-height:1.45}
-.hero.hero-wow .hero-actions{margin-top:1rem}
-.hero.hero-wow .hero-proof-wow{margin-top:.8rem}
-}
-@media(max-width:1080px){
-.hero.hero-wow{padding-block:clamp(1.5rem,4vw,3rem) clamp(2.3rem,5vw,4rem);gap:clamp(1.4rem,3vw,2.5rem)}
-.hero.hero-wow .hero-identity{min-width:0}
-.hero.hero-wow .hero-name-first{font-size:clamp(3.45rem,9vw,5.85rem)}
-.hero.hero-wow .hero-name-last{font-size:clamp(3.75rem,10.4vw,6.6rem)}
-.hero.hero-wow .world-selector{width:min(100%,760px);justify-self:center}
-}
-@media(max-width:600px){
-.hero.hero-wow{padding-block:1.4rem 3rem;gap:1.4rem}
-.hero.hero-wow .hero-kicker-row{margin-bottom:1rem}
-.hero.hero-wow .hero-name-first{font-size:clamp(2.8rem,12.8vw,4.4rem)}
-.hero.hero-wow .hero-name-last{font-size:clamp(3.05rem,14.75vw,4.85rem)}
-.hero.hero-wow .hero-role-wow{margin-top:1.1rem}
-.hero.hero-wow .hero-thesis{font-size:clamp(1.7rem,7.8vw,2.55rem)}
-.hero.hero-wow .hero-lead-wow{line-height:1.55}
-.hero.hero-wow .world-stage{min-height:28rem}
-}
-@media(prefers-reduced-motion:reduce){.hero.hero-wow .world-card,.hero.hero-wow .world-card-link{transition:none}}
-
+/* P12: removed the recycled Professional Deck orbit styling. */
+/* P12: previous full-screen career-style hero retired. */
 /* Complementary TCP documents belong to the CV area, not the three-world hero. */
 @media (min-width:761px) and (max-width:1100px){
   .documents-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -2017,19 +1815,19 @@ html[data-theme="light"] .world-selector:has(.world-professional.is-active){--ac
 
 /* CV 2026 finishing details: eliminate legacy blue / pink accents in the hub.
    Do not apply this treatment to .world-*-scoped artwork. */
-.hero-name::before{background:radial-gradient(circle,rgba(218,164,40,.10),transparent 68%)}
-.hero-name-last{text-shadow:0 18px 68px rgba(218,164,40,.12)}
-.hero-role-wow::before{background:linear-gradient(90deg,var(--cv-ochre),transparent)}
+
+
+
 .hero-actions .button-primary{box-shadow:0 10px 26px rgba(218,164,40,.13)}
 .arc-future{background:radial-gradient(circle at 90% 10%,rgba(113,132,109,.11),transparent 10rem),rgba(113,132,109,.035)}
 .document-group > a:hover{background:rgba(218,164,40,.045)}
 .contact-panel{background:radial-gradient(circle at 80% 0%,rgba(218,164,40,.07),transparent 22rem),var(--panel)}
 #command-list li.is-active{background:rgba(218,164,40,.085)}
-.world-carousel-controls button:hover{border-color:rgba(218,164,40,.46);background:rgba(218,164,40,.065)}
-.world-dots button.is-active{background:rgba(218,164,40,.042)}
-.world-selector:has(.world-professional.is-active) .world-dots button.is-active{background:rgba(214,213,208,.07)}
-.world-selector:has(.world-yoga.is-active) .world-dots button.is-active{background:rgba(135,207,174,.07)}
-.world-selector:has(.world-lab.is-active) .world-dots button.is-active{background:rgba(122,243,255,.07)}
+
+
+
+
+
 html[data-theme="light"] .world-dots button.is-active{background:color-mix(in srgb,var(--active-world-color,var(--cv-ochre)) 10%,var(--cv-paper))}
 html[data-theme="light"] .world-selector{background:radial-gradient(circle at 80% 10%,rgba(218,164,40,.045),transparent 18rem),var(--panel)}
 html[data-theme="light"] .hero-actions .button-primary{box-shadow:0 10px 26px rgba(38,51,47,.11)}
