@@ -26,7 +26,7 @@ assert.match(html,/constellation-lotus/);
 assert.match(html,/circuit-chip/);
 assert.match(html,/styles\.css\?v=29/,"Latest shared CSS must bypass old cache");
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
-assert.match(html,/portal-v11\\.css\\?v=v1-official-20261019/);
+assert.match(html,/portal-v11\.css\?v=v1-official-20261019/);
 assert.match(html,/i18n\.js\?v=27/);
 assert.equal((html.match(/data-command-category="/g)||[]).length,10);
 assert.match(html,/data-command-filter="projects"/);
