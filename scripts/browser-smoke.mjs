@@ -76,10 +76,11 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       const body=atlas.querySelector(node+" .cosmic-node-star").getBoundingClientRect();
       const circle=atlas.querySelector(ring);
       const cx=body.left+body.width/2,cy=body.top+body.height/2;
-      return {node,actual:Math.hypot(cx-origin[0],cy-origin[1]),expected:bounds.width*scale,
+      return {node,actual:Math.hypot(cx-origin[0],cy-origin[1]),expected:bounds.width*scale,dx:cx-origin[0],dy:cy-origin[1],cssTransform:getComputedStyle(atlas.querySelector(node)).transform,anim:getComputedStyle(atlas.querySelector(node)).animationName,computedRadius:getComputedStyle(atlas.querySelector(node)).getPropertyValue("--orbit-radius"),
         svgRadius:Number(circle.getAttribute("r")),stroke:getComputedStyle(circle).stroke};
     })};
   });
+  console.log("SOLAR_GEOMETRY",JSON.stringify(geometry));
   for(const world of geometry.worlds){
     assert.ok(Math.abs(world.actual-world.expected)<5,"Planet not on its own ring: "+JSON.stringify({width,world}));
     assert.ok(Math.abs(world.svgRadius/1000*geometry.width-world.expected)<1,"SVG track and orbit radius differ: "+JSON.stringify(world));
