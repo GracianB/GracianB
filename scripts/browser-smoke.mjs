@@ -66,16 +66,36 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   }
   const core=await page.locator(".cosmic-origin").boundingBox();
   assert.ok(core.width>=45,"Central GracianB origin must be legible");
+  // Solar geometry: every physical planet center must sit on its colored SVG ring.
+  const geometry=await page.locator(".cosmic-atlas").evaluate(atlas=>{
+    const bounds=atlas.getBoundingClientRect();
+    const center=atlas.querySelector(".cosmic-origin").getBoundingClientRect();
+    const origin=[center.left+center.width/2,center.top+center.height/2];
+    const worlds=[[".cosmic-pro",".gb-orbit--pro",.15],[".cosmic-lab",".gb-orbit--lab",.26],[".cosmic-yoga",".gb-orbit--yoga",.36]];
+    return {width:bounds.width,worlds:worlds.map(([node,ring,scale])=>{
+      const body=atlas.querySelector(node+" .cosmic-node-star").getBoundingClientRect();
+      const circle=atlas.querySelector(ring);
+      const cx=body.left+body.width/2,cy=body.top+body.height/2;
+      return {node,actual:Math.hypot(cx-origin[0],cy-origin[1]),expected:bounds.width*scale,
+        svgRadius:Number(circle.getAttribute("r")),stroke:getComputedStyle(circle).stroke};
+    })};
+  });
+  for(const world of geometry.worlds){
+    assert.ok(Math.abs(world.actual-world.expected)<5,"Planet not on its own ring: "+JSON.stringify({width,world}));
+    assert.ok(Math.abs(world.svgRadius/1000*geometry.width-world.expected)<1,"SVG track and orbit radius differ: "+JSON.stringify(world));
+  }
+  assert.equal(new Set(geometry.worlds.map(x=>x.stroke)).size,3,"The three orbital tracks must have different colors");
   if(width>=1280){
     const pro=page.locator(".cosmic-pro");
     await pro.focus();
-    // CSS uses a short stroke-width transition: measure its settled state, not the first frame.
+    // Focus highlights the matching orbital ring, without scaling the planet.
     await page.waitForFunction(() => {
-      const route=document.querySelector(".bridge-route-pro");
-      return document.querySelector(".cosmic-pro")?.matches(":focus") && parseFloat(getComputedStyle(route).strokeWidth)>=2.5;
+      const ring=document.querySelector(".gb-orbit--pro");
+      return document.querySelector(".cosmic-pro")?.matches(":focus") &&
+        parseFloat(getComputedStyle(ring).strokeWidth)>=2.2;
     },null,{timeout:2500});
-    const stroke=await page.locator(".bridge-route-pro").evaluate(n=>getComputedStyle(n).strokeWidth);
-    assert.ok(parseFloat(stroke)>=2.5,"Focused Professional branch must be visibly illuminated");
+    const stroke=await page.locator(".gb-orbit--pro").evaluate(n=>getComputedStyle(n).strokeWidth);
+    assert.ok(parseFloat(stroke)>=2.2,"Focused Professional orbit must glow");
     await page.locator(".constellation-signature").click();
   }
   assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0);
