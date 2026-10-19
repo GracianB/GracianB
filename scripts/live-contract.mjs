@@ -15,13 +15,18 @@ assert.match(html, /People → Operations → Data → Systems → AI/);
 assert.match(html, /id="worlds"/);
 assert.match(html, /id="evidence"/);
 assert.match(html, /id="documents"/);
-assert.equal((html.match(/data-world-slide/g) || []).length, 3);
+assert.equal((html.match(/data-portal="(?:professional|yoga|lab)"/g)||[]).length,3,
+  "The live site must expose three direct linked portals, not carousel slides");
+assert.doesNotMatch(html,/data-world-overview|data-world-prev|data-world-next/,
+  "The tiny expand/reduce control must not return in production");
+assert.match(html,/id="hero-title"[^>]*data-i18n="heroStatement"/,
+  "The live cover must keep the single-sentence statement");
 assert.match(html, /https:\/\/gracianb\.github\.io\/professional-deck\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/yoga-instructor\//);
 assert.match(html, /https:\/\/gracianb\.github\.io\/systems-lab\//);
 assert.doesNotMatch(html, /Listos para revisar o enviar|Ready to review or send/i);
 
-console.log("GRACIANB V8 LIVE CONTRACT PASS");
+console.log("GRACIANB P11 LIVE CONTRACT PASS");
 console.log(`URL: ${response.url}`);
 console.log(`HTTP: ${response.status}`);
 console.log("Worlds: Professional / Yoga / Systems Lab PASS");
