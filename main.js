@@ -379,7 +379,7 @@
   }
 
 
-  const cityStories = {
+  function cityStories() { return {
     es: {
       murcia:"Mi base actual: aquí confluyen Customer Operations, analítica, automatización y desarrollo.",
       "gran-canaria":"Una etapa de experiencia humana y de servicio, donde aprendí a adaptarme a distintos contextos.",
@@ -396,7 +396,7 @@
       bergamo:"My Erasmus chapter in Italy: languages, independence and cultural learning.",
       varsovia:"A stop in my international journey and an opening to new environments."
     }
-  };
+  }; }
   function updateAtlasReadout(pin) {
     const label = pin.dataset.atlasCity;
     const name = label === "varsovia" && lang === "en" ? "Warsaw" : cityNames[label] || pin.getAttribute("aria-label");
@@ -404,7 +404,7 @@
     const output = document.querySelector("[data-atlas-readout]");
     const story = document.querySelector("[data-atlas-story]");
     if (output) output.textContent = (name + " · " + country).toUpperCase();
-    if (story) story.textContent = cityStories[lang]?.[label] || "";
+    if (story) story.textContent = cityStories()[lang]?.[label] || "";
     document.querySelector(".city-atlas")?.style.setProperty("--city-active-color",pin.dataset.atlasColor || "#8bdafa");
   }
   document.querySelectorAll(".atlas-pin").forEach(pin => pin.addEventListener("click", () => {
