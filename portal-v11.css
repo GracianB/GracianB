@@ -82,7 +82,7 @@
     content:"";position:absolute;inset:auto 8% 0;height:1px;
     background:linear-gradient(90deg,transparent,var(--portal-color),transparent);opacity:.25
   }
-  .world-portal.world-professional .portal-art{
+  html[data-theme="dark"] .world-portal.world-professional .portal-art{
     background:radial-gradient(circle at 50% 54%,rgba(199,205,208,.085),transparent 53%),#0b161c
   }
   .world-portal.world-yoga .portal-art{
