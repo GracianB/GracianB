@@ -1,13 +1,10 @@
-/* GRACIANB · Deep petrol variant of the Professional Deck.
- Dark teal-black #0b1419, layered petroleum #101c22 / #132129 / #182830,
- cool silver #c7cdd0. One shared hub + applications dark-only stylesheet.
- The existing light mode and white A4 print remain unchanged. */
+/* GracianB P9 · near-black petrol / cool silver for hub and applications. */
 @media screen {
 html[data-theme="dark"] {
-  --deck-deep:#070e13;--deck-bg:#0b1419;--deck-low:#101c22;
-  --deck-card:#132129;--deck-raised:#182830;
+  --deck-deep:#03090d;--deck-bg:#060f14;--deck-low:#0b171e;
+  --deck-card:#102129;--deck-raised:#172d36;
   --deck-silver:#c7cdd0;--deck-silver-soft:#aebbc0;
-  --deck-petrol:#7f98a4;--deck-petrol-soft:#5f7882;
+  --deck-petrol:#88a4b0;--deck-petrol-soft:#587582;
   --deck-ivory:#edf2f2;--deck-text:#edf2f2;
   --deck-muted:#b5c2c7;--deck-rule:rgba(199,205,208,.26);
   --deck-rule-strong:rgba(199,205,208,.42);
@@ -17,7 +14,7 @@ html[data-theme="dark"] {
 /* HUB · suppress the obsolete ochre / brown palette at the source. */
 html[data-theme="dark"] {
   --bg:var(--deck-bg);--bg-soft:var(--deck-low);
-  --panel:rgba(19,33,41,.96);--panel-strong:var(--deck-card);
+  --panel:rgba(11,23,30,.97);--panel-strong:var(--deck-card);
   --text:var(--deck-text);--muted:var(--deck-muted);--subtle:var(--deck-silver-soft);
   --line:var(--deck-rule);--line-strong:var(--deck-rule-strong);
   --cv-ink:var(--deck-bg);--cv-paper:var(--deck-ivory);
@@ -35,14 +32,14 @@ html[data-theme="dark"] body {
 }
 html[data-theme="dark"] ::selection{background:rgba(199,205,208,.28);color:#fff}
 html[data-theme="dark"] :focus-visible{outline-color:var(--deck-silver)}
-html[data-theme="dark"] .ambient-orb-a{background:#7f98a4}
+html[data-theme="dark"] .ambient-orb-a{background:#88a4b0}
 html[data-theme="dark"] .ambient-orb-b{background:#527580}
 html[data-theme="dark"] .scroll-progress i{
   background:linear-gradient(90deg,var(--deck-petrol-soft),var(--deck-silver));
   box-shadow:0 0 9px rgba(199,205,208,.15);
 }
 html[data-theme="dark"] .topbar{
-  background:linear-gradient(180deg,rgba(7,14,19,.97),rgba(11,20,25,.89));
+  background:linear-gradient(180deg,rgba(3,9,13,.98),rgba(6,15,20,.95));
   border-bottom-color:var(--deck-rule);
 }
 html[data-theme="dark"] .brand-mark{
@@ -83,8 +80,8 @@ html[data-theme="dark"] .hero-role-wow::before{
 html[data-theme="dark"] .hero-proof-wow .live-dot{box-shadow:0 0 0 5px rgba(199,205,208,.1)}
 html[data-theme="dark"] .world-selector{
   background:
-    radial-gradient(circle at 82% 6%,rgba(137,164,175,.085),transparent 20rem),
-    linear-gradient(180deg,rgba(29,45,54,.94),rgba(19,33,41,.96));
+    radial-gradient(circle at 82% 6%,rgba(136,164,176,.055),transparent 20rem),
+    linear-gradient(180deg,rgba(13,27,35,.96),rgba(11,23,30,.97));
   border-color:var(--deck-rule-strong)
 }
 html[data-theme="dark"] .world-selector-head,
