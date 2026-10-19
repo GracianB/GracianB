@@ -85,8 +85,23 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.ok(Math.abs(world.svgRadius/1000*geometry.width-world.expected)<1,"SVG track and orbit radius differ: "+JSON.stringify(world));
   }
   assert.equal(new Set(geometry.worlds.map(x=>x.stroke)).size,3,"The three orbital tracks must have different colors");
+
+  // Premium observatory: three non-interactive enamel accents on the same paths.
+  const accents=await page.locator(".gb-orbit-etchings circle").evaluateAll(nodes=>nodes.map(el=>({
+    radius:Number(el.getAttribute("r")),
+    stroke:getComputedStyle(el).stroke,
+    pointerEvents:getComputedStyle(el).pointerEvents
+  })));
+  assert.deepEqual(accents.map(x=>x.radius),[150,260,360],"Engraved accents must align with the three real rings");
+  assert.equal(new Set(accents.map(x=>x.stroke)).size,3,"Every orbit accent must have an individual color");
+  assert.ok(accents.every(x=>x.pointerEvents==="none"),"Decorative accents cannot block planet navigation");
+  if(motion==="reduce"){
+    assert.equal(await page.locator(".cosmic-pro").evaluate(el=>getComputedStyle(el).animationName),"none","Reduced motion must stop orbital motion");
+    assert.equal(await page.locator(".cosmic-origin").evaluate(el=>getComputedStyle(el,"::before").animationName),"none","Reduced motion must stop the GB halo");
+  }
   if(width>=1280){
     const pro=page.locator(".cosmic-pro");
+    const planetDiameter=await pro.locator(".cosmic-node-star").evaluate(el=>el.getBoundingClientRect().width);
     await pro.focus();
     // Focus highlights the matching orbital ring, without scaling the planet.
     await page.waitForFunction(() => {
@@ -96,6 +111,14 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     },null,{timeout:2500});
     const stroke=await page.locator(".gb-orbit--pro").evaluate(n=>getComputedStyle(n).strokeWidth);
     assert.ok(parseFloat(stroke)>=2.2,"Focused Professional orbit must glow");
+    const diameterOnFocus=await pro.locator(".cosmic-node-star").evaluate(el=>el.getBoundingClientRect().width);
+    assert.ok(Math.abs(diameterOnFocus-planetDiameter)<.1,"Premium hover/focus must not zoom the planet");
+    await page.waitForFunction(()=>parseFloat(getComputedStyle(document.querySelector(".gb-etch--pro")).strokeWidth)>=2.7,null,{timeout:2500});
+    const focusArc=await page.locator(".gb-etch--pro").evaluate(el=>({
+      opacity:getComputedStyle(el).opacity,
+      color:getComputedStyle(el).stroke
+    }));
+    assert.ok(Number(focusArc.opacity)>.9,"Focused ring enamel highlight should be bright");
     await page.locator(".constellation-signature").click();
   }
   assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0);
