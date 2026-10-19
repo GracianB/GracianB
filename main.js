@@ -372,7 +372,10 @@ const output = document.querySelector("[data-atlas-readout]");
 const story = document.querySelector("[data-atlas-story]");
 if (output) output.textContent = (name + " · " + country).toUpperCase();
 if (story) story.textContent = cityStories()[lang]?.[label] || "";
-document.querySelector(".city-atlas")?.style.setProperty("--city-active-color",pin.dataset.atlasColor || "#8bdafa");
+const cityColors = {murcia:"#8bdafa","gran-canaria":"#91dcb2",madrid:"#c7cdd0",lisboa:"#b7a8f0",bergamo:"#87d4cb",varsovia:"#a4c7fa"};
+    const color = cityColors[label] || "#8bdafa";
+    document.querySelector(".city-atlas")?.style.setProperty("--city-active-color",color);
+    document.querySelectorAll(".atlas-pin").forEach(node=>node.style.setProperty("--pin-active-color",cityColors[node.dataset.atlasCity] || "#8bdafa"));
 }
 document.querySelectorAll(".atlas-pin").forEach(pin => pin.addEventListener("click", () => {
 document.querySelectorAll(".atlas-pin").forEach(node => {
