@@ -371,7 +371,7 @@ async function finalResponsiveAudit(browser) {
         assert.match(unified.professionalCopy,/rgb\(18, 31, 38\).*rgb\(9, 19, 25\)/,"First card text panel must be petrol");
         assert.match(unified.methodSurface,/rgb\(7, 17, 23\).*rgb\(5, 11, 16\)/,"Method section must be dark");
         assert.match(unified.documentsSurface,/rgb\(7, 17, 23\).*rgb\(5, 11, 16\)/,"Documents section must be dark");
-        assert.match(unified.evidenceSurface,/rgb\(11, 25, 33\).*rgb\(8, 19, 25\)/,"Evidence cards must be dark");
+        assert.match(unified.evidenceSurface,/linear-gradient\(155deg, color\(srgb .*rgb\(8, 19, 25\) 89%\)/,"Evidence cards must be dark");
         assert.equal(unified.browser, "#060f14");
         const contrast = await page.evaluate(() => {
           const rgb = (s) => s.match(/[\d.]+/g).slice(0,3).map(Number);
