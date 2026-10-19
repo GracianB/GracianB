@@ -275,8 +275,8 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
 .constellation-hero .gb-orbit-guide{opacity:.3!important}
 .constellation-hero .cosmic-atlas-label,.constellation-hero .cosmic-atlas-coordinate{opacity:.52!important}
 @keyframes gb-world-orbit{
- from{transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--orbit-phase)))}
- to{transform:translate(-50%,-50%) rotate(calc(var(--orbit-phase) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-1 * (var(--orbit-phase) + 360deg)))}
+ from{transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(0deg - var(--orbit-phase)))}
+ to{transform:translate(-50%,-50%) rotate(calc(var(--orbit-phase) + 360deg)) translateX(var(--orbit-radius)) rotate(calc(-360deg - var(--orbit-phase)))}
 }
 @media(min-width:1200px){.constellation-hero .cosmic-atlas{transform:translateX(18px)!important}}
 @media(max-width:1080px){
@@ -294,6 +294,6 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
  .constellation-hero .cosmic-origin{width:40px!important;height:40px!important}
 }
 @media(prefers-reduced-motion:reduce){
- .constellation-hero .cosmic-node{animation:none!important;transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--orbit-phase)))!important;will-change:auto}
+ .constellation-hero .cosmic-node{animation:none!important;transform:translate(-50%,-50%) rotate(var(--orbit-phase)) translateX(var(--orbit-radius)) rotate(calc(0deg - var(--orbit-phase)))!important;will-change:auto}
  .constellation-hero .cosmic-node .cosmic-node-star{animation:none!important}
 }
