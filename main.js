@@ -81,8 +81,6 @@
       button.classList.toggle("is-active", active);
     });
 
-    // Preserve the visitor’s chosen language when handing off to the application desk.
-    // Keep the Spanish/default URL unchanged for progressive HTML navigation.
     document.querySelectorAll("[data-application-link]").forEach((link) => {
       link.href = lang === "en" ? "./apply.html?lang=en" : "./apply.html";
     });
@@ -109,8 +107,6 @@
     skyController?.sync();
     const color = theme === "light" ? "#f7f5ef" : "#02070b";
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
-    // The application desk uses the same theme, even without localStorage.
-    // Keep default-dark URLs as they were for existing shared links.
     document.querySelectorAll("[data-application-link]").forEach((link) => {
       const parts = [];
       if (lang === "en") parts.push("lang=en");
@@ -164,7 +160,6 @@
     document.body.classList.toggle("menu-open", open);
     if (open) {
       requestAnimationFrame(() => {
-        // Don't steal focus from a fast keyboard action between opening and paint.
         if (!mobileMenu.hidden && !mobileMenu.contains(document.activeElement)) {
           mobileMenu.querySelector("a")?.focus();
         }
@@ -178,8 +173,6 @@
   mobileMenu?.addEventListener("click", (event) => {
     if (event.target.closest("a")) setMenu(false);
   });
-  // The open mobile sheet blocks page scrolling; keep keyboard focus inside it.
-  // Escape closes it through the existing global handler and restores the menu button.
   mobileMenu?.addEventListener("keydown", (event) => {
     if (event.key !== "Tab" || mobileMenu.hidden) return;
     const focusables = [...mobileMenu.querySelectorAll('a[href], button:not([disabled])')]
@@ -196,8 +189,6 @@
     }
   });
 
-  // The three worlds are now ordinary, always-visible links.
-  // No carousel state, hidden slides, swipe handlers or preference required.
 
   const command = document.getElementById("command");
   const commandInput = document.getElementById("command-input");
@@ -348,7 +339,6 @@
   }
 
 
-  // P12 · Six authentic locations from the Professional Deck atlas; no claimed travel route.
   function updateAtlasReadout(pin) {
     const label = pin.dataset.atlasCity;
     const name = label === "varsovia" && lang === "en" ? "Warsaw" : cityNames[label] || pin.getAttribute("aria-label");
@@ -364,8 +354,6 @@
     updateAtlasReadout(pin);
   }));
 
-  // P12 · Tiny deterministic star canvas, no library, no particles linked by lines.
-  // Suspends animation when hidden, in light mode or when reduced motion is requested.
   function constellationSky() {
     const canvas = document.querySelector("[data-constellation-sky]");
     const ctx = canvas?.getContext?.("2d", {alpha:true});
@@ -394,18 +382,24 @@
       const width=innerWidth,height=innerHeight;
       ctx.clearRect(0,0,width,height);
 
-      // Star-chart grammar: three small recognisable formations. Most stars remain unconnected.
-      // They remain in the same viewport positions while visitors explore the other chapters.
+      // Three atmospheric formations; the hero has its own navigable star map.
       const clusters = [
-        {color:[196,209,219],points:[[.04,.21],[.12,.14],[.23,.25],[.20,.43],[.07,.47],[.145,.32]],
+        {color:[196,209,219],points:[[.04,.10],[.12,.04],[.23,.13],[.20,.28],[.07,.31],[.145,.18]],
           links:[[0,1],[1,2],[2,5],[5,3],[3,4],[4,0],[1,5]]},
         {color:[135,213,173],points:[[.77,.11],[.87,.16],[.96,.26],[.90,.42],[.77,.36],[.84,.27]],
           links:[[0,1],[1,2],[2,3],[3,4],[4,0],[1,5],[5,4]]},
         {color:[125,209,241],points:[[.70,.72],[.78,.61],[.91,.65],[.95,.81],[.81,.91],[.74,.82]],
           links:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[1,5]]}
       ];
+      // Fade ambient geometry in after the hero to preserve headline legibility.
+      const scrollTop=Math.max(0,scrollY || 0);
+      const fadeStart=height*.52,fadeEnd=height*1.18;
+      const reveal=Math.max(0,Math.min(1,(scrollTop-fadeStart)/(fadeEnd-fadeStart)));
+      canvas.dataset.ambientClusters=reveal>.25?"visible":"subdued";
       const movement = reduceMotion ? 0 : Math.sin(time * .00022) * .05;
-      for(const c of clusters){
+      ctx.save();
+      ctx.globalAlpha=reveal*(width<600?.45:.68);
+      if(reveal>.01) for(const c of clusters){
         const [red,green,blue] = c.color;
         const w=Math.max(280,width), h=Math.max(250,height);
         const pts=c.points.map(([x,y])=>[x*w, y*h]);
@@ -425,6 +419,7 @@
           ctx.fill();
         });
       }
+      ctx.restore();
       for (const star of stars) {
         const x=star.x+mx*star.r*.009, y=star.y+my*star.r*.009;
         const opacity=star.a * (reduceMotion ? 1 : (.86+.14*Math.sin(time*.00045*star.twinkle+star.phase)));
@@ -445,6 +440,8 @@
       if(!should && running){running=false;cancelAnimationFrame(raf);paint(0);}
     }
     addEventListener("resize",reset,{passive:true});
+    // Static redraw on scroll when reduced motion disables animation.
+    addEventListener("scroll",()=>{if(!running && theme==="dark")paint(0);},{passive:true});
     addEventListener("pointermove",e=>{mx=e.clientX-innerWidth/2;my=e.clientY-innerHeight/2;},{passive:true});
     document.addEventListener("visibilitychange",sync);
     reset();sync();

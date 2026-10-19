@@ -52,6 +52,13 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.ok(bridge.lengths.every(n=>n>170),"Every universe route must be visually recognisable: "+JSON.stringify(bridge.lengths));
   assert.equal(new Set(bridge.colors).size,3,"World routes must be visibly differentiated by color");
   assert.equal(await page.locator(".cosmic-origin").count(),1,"Missing common GB origin");
+  if(theme==="dark"){
+    const heroCluster=await page.locator("[data-constellation-sky]").getAttribute("data-ambient-clusters");
+    assert.equal(heroCluster,"subdued","Background lines should not cross the hero text");
+    if(width>=1280){
+      await page.screenshot({path:artifacts+"/actual-constellation-hero-dark.png",fullPage:false});
+    }
+  }
   const core=await page.locator(".cosmic-origin").boundingBox();
   assert.ok(core.width>=45,"Central GracianB origin must be legible");
   if(width>=1280){
@@ -72,6 +79,18 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   await page.locator('.atlas-pin[data-atlas-city="bergamo"]').click();
   assert.equal(await page.locator('.atlas-pin[data-atlas-city="bergamo"]').getAttribute("aria-pressed"),"true");
   assert.match(await page.locator("[data-atlas-readout]").innerText(),/BÉRGAMO · (ITALIA|ITALY)/);
+  // Verify the decorative star formations become visible only beyond the hero.
+  if(theme==="dark"){
+    await page.waitForFunction(()=>document.querySelector("[data-constellation-sky]")?.dataset.ambientClusters==="visible",null,{timeout:3000});
+    if(width>=1280){
+      await page.waitForFunction(()=>{
+        const section=document.querySelector(".about-atlas");
+        return section && section.classList.contains("is-visible")
+          && parseFloat(getComputedStyle(section).opacity)>.96;
+      },null,{timeout:4000});
+      await page.screenshot({path:artifacts+"/ambient-constellations-about.png",fullPage:false});
+    }
+  }
   await page.locator('.atlas-pin[data-atlas-city="varsovia"]').click();
   assert.match(await page.locator("[data-atlas-readout]").innerText(),lang==="es"?/VARSOVIA · POLONIA/:/WARSAW · POLAND/);
   assert.equal(await page.locator(".observatory-details").getAttribute("open"),null);
@@ -116,11 +135,19 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       assert.equal(summary.color,"rgb(27, 57, 70)","Light disclosure text needs deliberate contrast");
     }
     if(width>=1280){
-      await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+      await page.evaluate(()=>{
+      document.documentElement.style.setProperty("scroll-behavior","auto","important");
+      window.scrollTo({top:0,behavior:"instant"});
+    });
+    await page.waitForFunction(()=>window.scrollY<2);
       await page.screenshot({path:artifacts+"/constellation-light-desktop.png",fullPage:true});
     }
     if(width<=420){
-      await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+      await page.evaluate(()=>{
+      document.documentElement.style.setProperty("scroll-behavior","auto","important");
+      window.scrollTo({top:0,behavior:"instant"});
+    });
+    await page.waitForFunction(()=>window.scrollY<2);
       await page.screenshot({path:artifacts+"/constellation-light-mobile-"+width+".png",fullPage:true});
     }
   }
@@ -132,7 +159,11 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.ok(rect.x>=-1 && rect.x+rect.width<=width+1,"Portal "+world+" clipped at "+width);
   }
   if(width>=1280 && theme==="dark"){
-    await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+    await page.evaluate(()=>{
+      document.documentElement.style.setProperty("scroll-behavior","auto","important");
+      window.scrollTo({top:0,behavior:"instant"});
+    });
+    await page.waitForFunction(()=>window.scrollY<2);
     await page.screenshot({path:artifacts+"/visible-constellation-hero.png",fullPage:false});
     const expected={professional:[199,205,208],yoga:[145,220,178],lab:[139,218,250]};
     for(const [world,color] of Object.entries(expected)){
@@ -155,7 +186,11 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       assert.ok((nums[3]??1)>.74,world+" border is too faint: "+JSON.stringify(state));
     }
     await page.mouse.move(0,0);
-    await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+    await page.evaluate(()=>{
+      document.documentElement.style.setProperty("scroll-behavior","auto","important");
+      window.scrollTo({top:0,behavior:"instant"});
+    });
+    await page.waitForFunction(()=>window.scrollY<2);
     await page.waitForTimeout(350);
     await page.screenshot({path:artifacts+"/constellation-desktop-viewport.png",fullPage:false});
     await page.screenshot({path:artifacts+"/constellation-desktop.png",fullPage:true});
@@ -166,7 +201,11 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.equal(await page.locator('.cv-library-details a[href$=".pdf"]').count(),12);
   }
   if(width===320 && theme==="dark"){
-    await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+    await page.evaluate(()=>{
+      document.documentElement.style.setProperty("scroll-behavior","auto","important");
+      window.scrollTo({top:0,behavior:"instant"});
+    });
+    await page.waitForFunction(()=>window.scrollY<2);
     await page.waitForTimeout(350);
     await page.screenshot({path:artifacts+"/constellation-mobile-320-viewport.png",fullPage:false});
     await page.screenshot({path:artifacts+"/constellation-mobile-320.png",fullPage:true});

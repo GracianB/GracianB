@@ -48,12 +48,14 @@ assert.match(html,/data-constellation-sky/);
 assert.match(html,/class="cosmic-bridge"/,"Visible star paths should unite the three universes");
 assert.match(html,/class="cosmic-origin"/,"There must be a central GracianB origin");
 assert.equal((html.match(/data-route-world="/g)||[]).length,3,"Exactly three visible routes to three worlds");
-assert.match(js,/Star-chart grammar/,"Background stars must form identifiable constellations too");
+assert.match(js,/const clusters = \[/,"Background stars must form identifiable constellations too");
 assert.match(js,/links:\[\[/,"Constellation groups need paths between a limited number of stars");
 assert.match(css,/\.bridge-route-pro/,"Professional requires its own visible route");
 assert.match(css,/\.bridge-route-yoga/,"Yoga requires its own visible route");
 assert.match(css,/\.bridge-route-lab/,"Systems Lab requires its own visible route");
 assert.match(js,/function constellationSky/);
+assert.match(js,/canvas\.dataset\.ambientClusters/,"Star formations must be scoped to post-hero chapters");
+assert.match(js,/scrollTop-fadeStart/,"Star connections should fade in after the hero");
 assert.match(js,/visibilitychange/);
 assert.match(js,/reduceMotion/);
 assert.match(js,/updateAtlasReadout/);
@@ -73,7 +75,7 @@ assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache")
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
 assert.match(html,/portal-v11\.css\?v=4/);
 assert.match(html,/i18n\.js\?v=26" defer/);
-assert.match(html,/main\.js\?v=p12-constellation" defer/);
+assert.match(html,/main\.js\?v=p123-ambience" defer/);
 for(const pattern of [/\.constellation-hero/,/\.cosmic-node/,/\.atlas-pin/,/prefers-reduced-motion/])
   assert.match(css,pattern);
 assert.match(dark,/--deck-bg:#02070b/,"Abyss petrol should remain");
