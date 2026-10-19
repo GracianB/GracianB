@@ -191,7 +191,7 @@ main,.footer{position:relative;z-index:1}
 .cosmic-atlas{position:relative;display:block;min-width:0;aspect-ratio:1.09;min-height:350px;border-radius:50%;isolation:isolate;outline:0}
 .cosmic-atlas::before{content:"";position:absolute;inset:8%;background:radial-gradient(ellipse at 50% 50%,rgba(91,132,151,.14),rgba(52,86,99,.055) 32%,transparent 66%);border-radius:50%;filter:blur(8px)}
 .cosmic-atlas::after{content:"";position:absolute;inset:12%;border:1px solid rgba(173,203,214,.105);border-radius:50%;transform:rotate(-12deg) scaleX(1.12)}
-.cosmic-atlas-haze{position:absolute;inset:0;background:radial-gradient(circle at 28% 29%,rgba(205,218,225,.18) 0 1px,transparent 3px),radial-gradient(circle at 76% 18%,rgba(167,201,225,.25) 0 1px,transparent 4px),radial-gradient(circle at 62% 62%,rgba(157,205,194,.17) 0 1px,transparent 4px),radial-gradient(circle at 33% 78%,rgba(167,201,225,.24) 0 1px,transparent 3px);opacity:.85}
+
 .cosmic-atlas-label,.cosmic-atlas-coordinate{position:absolute;z-index:2;font:700 .6rem/1.2 var(--mono);letter-spacing:.16em;color:#8fa9b7;opacity:.9}
 .cosmic-atlas-label{top:6%;left:7%}.cosmic-atlas-coordinate{bottom:9%;right:4%}
 .cosmic-node{--node-color:#c7cdd0;position:absolute;z-index:3;display:flex;flex-direction:column;align-items:center;gap:.7rem;color:var(--node-color);text-decoration:none;font:700 clamp(.73rem,.85vw,.92rem)/1.2 var(--sans);text-shadow:0 3px 15px #010407;white-space:nowrap;transition:transform .3s ease,filter .3s ease}
