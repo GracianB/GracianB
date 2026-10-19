@@ -41,6 +41,11 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.equal(await page.locator(".world-portal").count(),3);
   assert.equal(await page.locator(".world-portal:visible").count(),3);
   assert.equal(await page.locator(".cosmic-node").count(),3);
+  assert.equal(await page.locator(".cosmic-node .world-orb-sigil").count(),3,"Each universe needs its own visible illustrated icon");
+  for(const selector of [".cosmic-pro",".cosmic-yoga",".cosmic-lab"]){
+    const icon = page.locator(selector+" .world-orb-sigil");
+    assert.equal(await icon.isVisible(),true,"Universe identity must be visible: "+selector);
+  }
   const bridge=await page.locator(".cosmic-bridge").evaluate(svg=>{
     const paths=[...svg.querySelectorAll(".bridge-route path")];
     return {width:svg.getBoundingClientRect().width,height:svg.getBoundingClientRect().height,
