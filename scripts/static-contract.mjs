@@ -6,7 +6,7 @@ const read=p=>readFileSync(p,"utf8");
 const html=read("index.html"),js=read("main.js"),i18n=read("i18n.js");
 const css=read("portal-v11.css"),dark=read("deck-dark.css");
 const resources=["index.html","styles.css","portal-v11.css","hub-finish.css","deck-dark.css",
-"main.js","i18n.js","README.md","favicon.svg","docs/portfolio-banner.svg","docs/three-worlds.svg",
+"main.js","i18n.js","city-atlas-v2.css","README.md","favicon.svg","docs/portfolio-banner.svg","docs/three-worlds.svg",
 "apply.html","apply.js","apply.css","robots.txt","sitemap.xml","site.webmanifest","og-cover.png",
 "cabin-crew.html","cabin-letter-es.html","cabin-letter-en.html"];
 const pdfs=["Gracian_Baena_CV_2026_ES.pdf","Gracian_Baena_CV_2026_EN.pdf",
@@ -36,7 +36,9 @@ assert.match(html,/atlas-systems-mark/,"Professional graph icon missing");
 assert.match(html,/class="theme-sun"[^>]*viewBox="0 0 24 24"/,"Sun must be an SVG");
 assert.match(html,/class="theme-moon"[^>]*viewBox="0 0 24 24"/,"Moon must be an SVG");
 assert.match(html,/<rect x="143" y="130" width="34" height="34"/,"Professional center mark must be centered at x=160");
-assert.doesNotMatch(html,/data-i18n="atlasNote"/,"Atlas should not display unnecessary explanatory copy");
+assert.match(html,/data-i18n="atlasNote"/,"Six place chapters need an explanation that this is not a chronological route");
+assert.match(html,/data-i18n="atlasHeading"/,"Atlas must explain its purpose");
+assert.match(read("city-atlas-v2.css"),/\.city-atlas-v2 \.atlas-pin/,"City chapters must have a readable card treatment");
 assert.match(css,/\.theme-toggle svg/,"Centered theme-vector layout must be present");
 assert.match(css,/html\[data-theme=light\] \.city-atlas/,"The city atlas needs intentional light-mode styling");
 assert.match(css,/html\[data-theme=light\][^}]*?(?:observatory-details|cv-library-details)/,"Light disclosures must be styled");
@@ -62,6 +64,8 @@ assert.match(js,/visibilitychange/);
 assert.match(js,/reduceMotion/);
 assert.match(js,/updateAtlasReadout/);
 assert.equal((html.match(/data-atlas-city="/g)||[]).length,6,"Six city markers required");
+assert.equal((html.match(/class="atlas-pin-name"/g)||[]).length,6,"Every city must have a visible full name");
+assert.equal((html.match(/class="atlas-pin-copy"/g)||[]).length,6,"Every city must explain its chapter");
 for(const city of ["murcia","gran-canaria","madrid","lisboa","bergamo","varsovia"])
   assert.ok(html.includes('data-atlas-city="'+city+'"'));
 assert.equal((html.match(/class="atlas-pin is-current"/g)||[]).length,1);
@@ -76,7 +80,7 @@ assert.match(html,/data-application-link/);
 assert.match(html,/styles\.css\?v=29/,"Latest shared CSS must bypass old cache");
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
 assert.match(html,/portal-v11\.css\?v=(?:5|v31-hover-20261019)/);
-assert.match(html,/i18n\.js\?v=27" defer/);
+assert.match(html,/i18n\.js\?v=atlas-chapters-v2" defer/);
 assert.equal((html.match(/data-command-category="/g)||[]).length,10,"Quick atlas has ten actionable destinations");
 assert.equal((html.match(/data-command-filter="/g)||[]).length,4,"Quick atlas filters are required");
 assert.match(html,/role="combobox"/);
@@ -87,7 +91,7 @@ assert.match(js,/commandList\.scrollTop/,"Only the quick-result list should scro
 assert.match(read("styles.css"),/\.command-backdrop\{[^}]*background:rgba/);
 assert.doesNotMatch(read("styles.css"),/\.command-backdrop\{[^}]*backdrop-filter/,"A blurred modal background causes flickering");
 assert.match(css,/\.observatory-details[^}]*evidence-grid|\.evidence-grid[^}]*repeat\(2,minmax\(0,1fr\)\)/,"Project cards need stable columns");
-assert.match(html,/main\.js\?v=(?:p124-quicknav|v1-atlas-20261019)" defer/);
+assert.match(html,/main\.js\?v=atlas-chapters-v2" defer/);
 for(const pattern of [/\.constellation-hero/,/\.cosmic-node/,/\.atlas-pin/,/prefers-reduced-motion/])
   assert.match(css,pattern);
 assert.match(dark,/--deck-bg:#02070b/,"Abyss petrol should remain");
