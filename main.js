@@ -13,6 +13,15 @@ const cityNames = {
 murcia:"Murcia", "gran-canaria":"Gran Canaria", madrid:"Madrid",
 lisboa:"Lisboa", bergamo:"Bérgamo", varsovia:lang==="en"?"Warsaw":"Varsovia"
 };
+const atlasFocusKeys = {
+murcia:"atlasFocusMurcia",
+"gran-canaria":"atlasFocusGranCanaria",
+madrid:"atlasFocusMadrid",
+lisboa:"atlasFocusLisboa",
+bergamo:"atlasFocusBergamo",
+varsovia:"atlasFocusVarsovia"
+};
+const cityColors = {murcia:"#8bdafa","gran-canaria":"#91dcb2",madrid:"#c7cdd0",lisboa:"#b7a8f0",bergamo:"#87d4cb",varsovia:"#a4c7fa"};
 const safeGet = (key) => {
 try { return localStorage.getItem(key); } catch { return null; }
 };
@@ -364,15 +373,6 @@ bergamo:"My Erasmus chapter in Italy: languages, independence and cultural learn
 varsovia:"A stop in my international journey and an opening to new environments."
 }
 }; }
-const atlasFocusKeys = {
-murcia:"atlasFocusMurcia",
-"gran-canaria":"atlasFocusGranCanaria",
-madrid:"atlasFocusMadrid",
-lisboa:"atlasFocusLisboa",
-bergamo:"atlasFocusBergamo",
-varsovia:"atlasFocusVarsovia"
-};
-const cityColors = {murcia:"#8bdafa","gran-canaria":"#91dcb2",madrid:"#c7cdd0",lisboa:"#b7a8f0",bergamo:"#87d4cb",varsovia:"#a4c7fa"};
 function updateAtlasReadout(pin) {
   const label=pin.dataset.atlasCity;
   const t=dictionary();
