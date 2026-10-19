@@ -29,7 +29,7 @@ assert.equal((html.match(/class="world-portal world-/g)||[]).length,3,"Three wor
 for(const [world,slug] of [["professional","professional-deck"],["yoga","yoga-instructor"],["lab","systems-lab"]]){
   assert.match(html,new RegExp('id="portal-'+world+'"'));
   assert.match(html,new RegExp('data-portal="'+world+'"'));
-  assert.match(html,new RegExp('href="#portal-'+world+'"'));
+  assert.match(html,new RegExp('href="https://gracianb.github.io/'+slug+'/" class="cosmic-node'),"Constellation should navigate directly to the selected universe");
   assert.ok(html.includes('href="https://gracianb.github.io/'+slug+'/"'),"Broken world link "+slug);
 }
 assert.match(html,/atlas-systems-mark/,"Professional graph icon missing");
