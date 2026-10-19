@@ -11,6 +11,11 @@
   let theme = "dark";
   let lastFocus = null;
   let skyController = null;
+  const cityNames = {
+    murcia:"Murcia", "gran-canaria":"Gran Canaria", madrid:"Madrid",
+    lisboa:"Lisboa", bergamo:"Bérgamo", varsovia:lang==="en"?"Warsaw":"Varsovia"
+  };
+
 
   const safeGet = (key) => {
     try { return localStorage.getItem(key); } catch { return null; }
@@ -344,10 +349,6 @@
 
 
   // P12 · Six authentic locations from the Professional Deck atlas; no claimed travel route.
-  const cityNames = {
-    murcia:"Murcia", "gran-canaria":"Gran Canaria", madrid:"Madrid",
-    lisboa:"Lisboa", bergamo:"Bérgamo", varsovia:lang==="en"?"Warsaw":"Varsovia"
-  };
   function updateAtlasReadout(pin) {
     const label = pin.dataset.atlasCity;
     const name = label === "varsovia" && lang === "en" ? "Warsaw" : cityNames[label] || pin.getAttribute("aria-label");
