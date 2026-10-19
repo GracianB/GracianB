@@ -331,7 +331,7 @@ async function finalResponsiveAudit(browser) {
       });
       assert.equal(identity.page, "rgb(243, 238, 229)", "Professional mini-document must match Deck ivory");
       assert.match(identity.professional,
-        mode === "dark" ? /rgb\(19, 33, 41\).*rgb\(11, 20, 25\)/
+        mode === "dark" ? /rgb\(23, 40, 49\).*rgb\(7, 18, 23\)/
                         : /rgb\(38, 48, 57\).*rgb\(21, 28, 34\)/,
         "Professional document preview must match petrol dark / original light identity");
       assert.equal(identity.professionalLabel, mode === "light" ? "rgb(82, 99, 109)" : "rgb(199, 205, 208)");
@@ -348,17 +348,31 @@ async function finalResponsiveAudit(browser) {
             button: css(".hero-actions .button-primary").backgroundColor,
             brand: css(".brand-mark").borderTopColor,
             panel: css(".document-group").backgroundColor,
+            professionalCode: css(".world-professional .world-code").color,
+            professionalSigil: css(".world-professional .world-professional-sigil").color,
+            professionalArtwork: css(".world-professional .world-art").backgroundImage,
+            professionalCopy: css(".world-professional .world-card-copy").backgroundImage,
+            methodSurface: css(".method-section").backgroundImage,
+            documentsSurface: css(".documents-section").backgroundImage,
+            evidenceSurface: css(".evidence-card").backgroundImage,
             browser: document.querySelector('meta[name="theme-color"]').content,
           };
         });
-        assert.equal(unified.background, "#0b1419", "Deep petrol base must replace Deck graphite");
-        assert.equal(unified.page, "rgb(11, 20, 25)");
+        assert.equal(unified.background, "#060f14", "Deep petrol base must replace Deck graphite");
+        assert.equal(unified.page, "rgb(6, 15, 20)");
         assert.equal(unified.title, "rgb(199, 205, 208)", "Hero title must be silver");
          assert.equal(unified.kicker, "rgb(199, 205, 208)", "Customer Success kicker must be silver");
         assert.equal(unified.button, "rgb(199, 205, 208)", "Primary action must be silver");
         assert.equal(unified.brand, "rgba(199, 205, 208, 0.52)");
-        assert.equal(unified.panel, "rgb(19, 33, 41)");
-        assert.equal(unified.browser, "#0b1419");
+        assert.equal(unified.panel, "rgb(11, 26, 34)");
+        assert.equal(unified.professionalCode,"rgb(199, 205, 208)","First world label must be silver");
+        assert.equal(unified.professionalSigil,"rgb(216, 223, 226)","Professional emblem must be cool silver");
+        assert.match(unified.professionalArtwork,/rgb\(32, 42, 48\).*rgb\(11, 19, 25\)/,"Professional art must not be brown");
+        assert.match(unified.professionalCopy,/rgb\(18, 31, 38\).*rgb\(9, 19, 25\)/,"First card text panel must be petrol");
+        assert.match(unified.methodSurface,/rgb\(7, 17, 23\).*rgb\(5, 11, 16\)/,"Method section must be dark");
+        assert.match(unified.documentsSurface,/rgb\(7, 17, 23\).*rgb\(5, 11, 16\)/,"Documents section must be dark");
+        assert.match(unified.evidenceSurface,/linear-gradient\(155deg, color\(srgb .*rgb\(8, 19, 25\) 89%\)/,"Evidence cards must be dark");
+        assert.equal(unified.browser, "#060f14");
         const contrast = await page.evaluate(() => {
           const rgb = (s) => s.match(/[\d.]+/g).slice(0,3).map(Number);
           const luminance = (c) => {

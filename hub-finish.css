@@ -1,0 +1,115 @@
+/* GRACIANB P9 / 2026 · Final visual signature.
+   The first world is professional silver; Yoga and Lab retain their own art.
+   No Professional Deck files or PDF assets are touched. */
+@media screen {
+html[data-theme="dark"] {
+ --hub-surface:#09161c;
+ --hub-inset:#0b1a22;
+ --hub-edge:rgba(199,205,208,.36);
+ --hub-edge-hot:rgba(199,205,208,.64);
+}
+html[data-theme="dark"] body {
+ background:radial-gradient(ellipse at 19% 1%,rgba(88,117,130,.035),transparent 40rem),
+ linear-gradient(180deg,#060f14 0%,#040b10 52%,#03090d 100%),#060f14;
+}
+html[data-theme="dark"] .world-selector {
+ background:radial-gradient(circle at 80% 8%,rgba(136,164,176,.035),transparent 17rem),
+ linear-gradient(155deg,#101e27,#071218 80%);
+ border-color:rgba(199,205,208,.48);
+ box-shadow:0 30px 76px rgba(0,0,0,.43);
+}
+html[data-theme="dark"] .world-professional {
+ --world-accent:#c7cdd0;--gold:#c7cdd0;
+}
+html[data-theme="dark"] .world-professional .world-art {
+ background:radial-gradient(circle at 50% 45%,rgba(199,205,208,.16),transparent 46%),
+ linear-gradient(145deg,#202a30,#0b1319 85%);
+}
+html[data-theme="dark"] .world-professional .world-professional-sigil {
+ color:#d8dfe2;
+ filter:drop-shadow(0 0 12px rgba(199,205,208,.34)) drop-shadow(0 0 31px rgba(136,164,176,.16));
+}
+html[data-theme="dark"] .world-professional .customer-ring {
+ border-color:rgba(199,205,208,.37);
+}
+html[data-theme="dark"] .world-professional :is(.customer-core,.customer-node) {
+ color:#d8e0e3;border-color:rgba(199,205,208,.47);
+ background:rgba(11,23,30,.75);
+}
+html[data-theme="dark"] .world-professional .world-card-copy {
+ background:linear-gradient(180deg,#121f26,#091319);color:#edf2f2;
+}
+html[data-theme="dark"] .world-professional :is(.world-code,.world-enter b) {color:#c7cdd0}
+html[data-theme="dark"] .world-professional .world-enter {
+ background:rgba(199,205,208,.07);border-color:rgba(199,205,208,.58);color:#edf2f2;
+}
+html[data-theme="dark"] .world-selector:has(.world-professional.is-active) {
+ --active-world-color:#c7cdd0;
+}
+html[data-theme="dark"] .world-selector.is-overview .world-professional {
+ background:#101b22;border-color:rgba(199,205,208,.43);
+}
+html[data-theme="dark"] .world-selector.is-overview .world-card:not(.world-professional) {
+ background:#0c1a22;
+}
+html[data-theme="dark"] .world-selector .world-card-copy{border-color:rgba(199,205,208,.28)}
+/* True dark panels throughout, not just the hero/header. */
+html[data-theme="dark"] :is(.method-section,.documents-section){
+ background:linear-gradient(180deg,#071117,#050b10);
+}
+html[data-theme="dark"] :is(.facts-strip,.arc-grid,.document-group,.contact-panel,.command-panel) {
+ background-color:#0b1a22;border-color:var(--hub-edge);
+}
+html[data-theme="dark"] .evidence-card {
+ background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 4%,#0b1921),#081319 89%);
+ border-color:rgba(199,205,208,.3);
+ box-shadow:0 14px 35px rgba(0,0,0,.26);
+}
+html[data-theme="dark"] .document-group-professional .document-visual {
+ background:linear-gradient(135deg,#172831,#071217 87%);
+}
+html[data-theme="dark"] .contact-panel {
+ background:radial-gradient(circle at 83% 5%,rgba(136,164,176,.06),transparent 23rem),#0b1921;
+}
+html[data-theme="dark"] .hero-wow .hero-lead-wow{color:#bbc9ce}
+html[data-theme="dark"] .world-carousel-controls .world-overview-toggle {
+ min-height:44px;font-size:.84rem;letter-spacing:.015em;
+}
+html[data-theme="dark"] .facts-strip>div,
+html[data-theme="dark"] .arc-grid>article{
+ border-color:var(--hub-edge);
+}
+/* Focus and hover work in all major components, without repainting the world's artwork. */
+@media(hover:hover) and (pointer:fine){
+ html[data-theme="dark"] :is(.evidence-card,.document-group,.door,.contact-panel){
+ transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease;
+ }
+ html[data-theme="dark"] :is(.evidence-card,.document-group,.door,.contact-panel):hover {
+ border-color:var(--hub-edge-hot);box-shadow:0 23px 49px rgba(0,0,0,.4);
+ transform:translateY(-2px);
+ }
+ html[data-theme="dark"] :is(.card-actions a,.document-group>a,.door,.world-card-link,.hero-actions a):hover{
+ filter:brightness(1.1);
+ }
+ html[data-theme="dark"] .world-professional .world-card-link:hover .world-enter{
+ background:rgba(199,205,208,.17);border-color:#c7cdd0;
+ }
+ html[data-theme="dark"] .world-selector.is-overview .world-professional:hover{
+ border-color:#c7cdd0;box-shadow:0 16px 32px rgba(0,0,0,.39);
+ }
+ html[data-theme="dark"] .world-overview-toggle:hover{
+ border-color:#c7cdd0;
+ }
+}
+html[data-theme="dark"] :is(.evidence-card a,.door,.document-group>a,.world-card-link):focus-visible{
+ outline:3px solid #c7cdd0;outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce){
+ html[data-theme="dark"] :is(.evidence-card,.document-group,.door,.contact-panel){
+ transition:none;
+ }
+ html[data-theme="dark"] :is(.evidence-card,.document-group,.door,.contact-panel):hover{
+ transform:none;
+ }
+}
+}

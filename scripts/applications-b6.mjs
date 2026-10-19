@@ -156,9 +156,9 @@ try{
      assert.equal(surfaces.scroll,false,"Theme must not introduce horizontal overflow");
      assert.notEqual(surfaces.brief,surfaces.proof,"Brief must be a distinct surface");
      if(chosenTheme==="dark") {
-       assert.equal(surfaces.brief,"rgb(16, 28, 34)",
+       assert.equal(surfaces.brief,"rgb(11, 23, 30)",
          "Recruiter brief must use the deeper petrol low surface");
-       assert.equal(surfaces.proof,"rgb(19, 33, 41)",
+       assert.equal(surfaces.proof,"rgb(16, 33, 41)",
          "Evidence card should match the deeper petrol card surface");
        assert.equal(surfaces.selectedFocus,"rgb(199, 205, 208)",
          "Selected focus must use cool silver, not legacy beige");
@@ -168,9 +168,9 @@ try{
          footer: getComputedStyle(document.querySelector(".foot")).backgroundColor,
          meta: document.querySelector('meta[name="theme-color"]').content,
        }));
-       assert.equal(shared.canvas,"rgb(11, 20, 25)");
-       assert.equal(shared.footer,"rgb(7, 14, 19)");
-       assert.equal(shared.meta,"#0b1419");
+       assert.equal(shared.canvas,"rgb(6, 15, 20)");
+       assert.equal(shared.footer,"rgb(3, 9, 13)");
+       assert.equal(shared.meta,"#060f14");
        assert.match(shared.hero,/199, 205, 208/);
        await page.screenshot({path:`artifacts/e2e/p7-applications-dark-${width}.png`,fullPage:true});
      }
