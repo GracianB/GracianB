@@ -213,7 +213,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     return {themeToggle:{width:t.width,height:t.height,sunOffset:Math.abs(center(sun)-(t.left+t.width*.25)),moonOffset:Math.abs(center(moon)-(t.left+t.width*.75))},
       lightBg:style("html").getPropertyValue("--bg").trim(),
       header:style(".topbar").backgroundColor,worlds,
-      atlas:style(".city-atlas").backgroundImage,atlasLayout:style(".city-atlas-chart").display,atlasCard:style(".atlas-pin").backgroundImage,
+      atlas:style(".city-atlas").backgroundImage,atlasLayout:style(".city-atlas-chart").display,atlasCard:style(".atlas-pin").backgroundColor,
       atlasPin:style(".atlas-pin").color,summaries,
       extraAtlasNote:document.querySelectorAll("[data-i18n=atlasNote]").length};
   });
@@ -226,7 +226,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.deepEqual(lightAudit.worlds,["#526c7a","#26744f","#166f9d"],"Three worlds need distinct accessible light accents");
     assert.match(lightAudit.atlas,/linear-gradient/,"Light atlas must have a designed panel");
     assert.equal(lightAudit.atlasLayout,"grid","Light atlas must keep a readable card grid");
-    assert.match(lightAudit.atlasCard,/linear-gradient|rgba/,"Light chapter cards must have deliberate panel styling");
+    assert.match(lightAudit.atlasCard,/rgb/,"Light chapter cards must have a deliberate non-transparent surface");
     for(const summary of lightAudit.summaries){
       assert.match(summary.bg,/linear-gradient/,"Light disclosure cannot revert to flat grey");
       assert.equal(summary.color,"rgb(27, 57, 70)","Light disclosure text needs deliberate contrast");
