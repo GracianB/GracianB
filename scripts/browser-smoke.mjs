@@ -81,7 +81,10 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.match(await page.locator("[data-atlas-readout]").innerText(),/BÉRGAMO · (ITALIA|ITALY)/);
   // Verify the decorative star formations become visible only beyond the hero.
   if(theme==="dark"){
-    await page.waitForFunction(()=>document.querySelector("[data-constellation-sky]")?.dataset.ambientClusters==="visible",{timeout:3000});
+    await page.waitForFunction(()=>document.querySelector("[data-constellation-sky]")?.dataset.ambientClusters==="visible",null,{timeout:3000});
+    if(width>=1280){
+      await page.screenshot({path:artifacts+"/ambient-constellations-about.png",fullPage:false});
+    }
   }
   await page.locator('.atlas-pin[data-atlas-city="varsovia"]').click();
   assert.match(await page.locator("[data-atlas-readout]").innerText(),lang==="es"?/VARSOVIA · POLONIA/:/WARSAW · POLAND/);
