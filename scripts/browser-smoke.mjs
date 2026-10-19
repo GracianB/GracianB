@@ -309,10 +309,10 @@ async function finalResponsiveAudit(browser) {
             button: css(".hero-actions .button-primary").backgroundColor,
             brand: css(".brand-mark").borderTopColor,
             panel: css(".document-group").backgroundColor,
-            professionalCode: css(".world-professional .world-code").color,
+            professionalCode: css(".world-professional .portal-category").color,
             professionalSigil: css(".world-professional .world-professional-sigil").color,
-            professionalArtwork: css(".world-professional .world-art").backgroundImage,
-            professionalCopy: css(".world-professional .world-card-copy").backgroundImage,
+            professionalArtwork: css(".world-professional .portal-art").backgroundColor,
+            professionalCopy: css(".world-professional .portal-copy").backgroundImage,
             methodSurface: css(".method-section").backgroundImage,
             documentsSurface: css(".documents-section").backgroundImage,
             evidenceSurface: css(".evidence-card").backgroundImage,
@@ -327,9 +327,9 @@ async function finalResponsiveAudit(browser) {
         assert.equal(unified.brand, "rgba(199, 205, 208, 0.52)");
         assert.equal(unified.panel, "rgb(7, 21, 28)");
         assert.equal(unified.professionalCode,"rgb(199, 205, 208)","First world label must be silver");
-        assert.equal(unified.professionalSigil,"rgb(216, 223, 226)","Professional emblem must be cool silver");
-        assert.match(unified.professionalArtwork,/rgb\(17, 29, 36\).*rgb\(4, 12, 17\)/,"Professional art must not be brown");
-        assert.match(unified.professionalCopy,/rgb\(10, 23, 30\).*rgb\(4, 13, 19\)/,"First card text panel must be petrol");
+        assert.equal(unified.professionalSigil,"rgb(206, 216, 220)","Professional emblem must be cool silver");
+        assert.equal(unified.professionalArtwork,"rgb(11, 22, 28)","Professional art must be deep neutral ink, not brown");
+        assert.match(unified.professionalCopy,/rgb\(11, 23, 29\).*rgb\(4, 12, 17\)/,"First card text panel must be petrol");
         assert.match(unified.methodSurface,/rgb\(4, 11, 17\).*rgb\(2, 8, 13\)/,"Method section must be dark");
         assert.match(unified.documentsSurface,/rgb\(4, 11, 17\).*rgb\(2, 8, 13\)/,"Documents section must be dark");
         assert.match(unified.evidenceSurface,/linear-gradient\(155deg, color\(srgb .*rgb\(4, 12, 18\) 89%\)/,"Evidence cards must be dark");
