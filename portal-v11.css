@@ -66,8 +66,8 @@ html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient
 @media(prefers-reduced-motion:reduce){.cosmic-node .cosmic-node-star::before,.cosmic-node .cosmic-node-star::after{animation:none!important}}
 
 /* V3.1 · controlled hover: no jump, bloom overload or spinning outlines */
-.cosmic-node{transition:filter .25s ease!important;transform:none!important}
-.cosmic-node:is(:hover,:focus-visible){transform:none!important;filter:none!important}
+.cosmic-node{transition:filter .25s ease!important}
+.cosmic-node:is(:hover,:focus-visible){filter:none!important}
 .cosmic-node .cosmic-node-star{transition:box-shadow .3s ease,border-color .3s ease,background .3s ease!important}
 .cosmic-node:is(:hover,:focus-visible) .cosmic-node-star{
  filter:none!important;
