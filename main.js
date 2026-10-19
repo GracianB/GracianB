@@ -364,26 +364,57 @@ bergamo:"My Erasmus chapter in Italy: languages, independence and cultural learn
 varsovia:"A stop in my international journey and an opening to new environments."
 }
 }; }
-function updateAtlasReadout(pin) {
-const label = pin.dataset.atlasCity;
-const name = label === "varsovia" && lang === "en" ? "Warsaw" : cityNames[label] || pin.getAttribute("aria-label");
-const country = lang === "en" ? pin.dataset.countryEn : pin.dataset.countryEs;
-const output = document.querySelector("[data-atlas-readout]");
-const story = document.querySelector("[data-atlas-story]");
-if (output) output.textContent = (name + " · " + country).toUpperCase();
-if (story) story.textContent = cityStories()[lang]?.[label] || "";
+const atlasFocusKeys = {
+murcia:"atlasFocusMurcia",
+"gran-canaria":"atlasFocusGranCanaria",
+madrid:"atlasFocusMadrid",
+lisboa:"atlasFocusLisboa",
+bergamo:"atlasFocusBergamo",
+varsovia:"atlasFocusVarsovia"
+};
 const cityColors = {murcia:"#8bdafa","gran-canaria":"#91dcb2",madrid:"#c7cdd0",lisboa:"#b7a8f0",bergamo:"#87d4cb",varsovia:"#a4c7fa"};
-    const color = cityColors[label] || "#8bdafa";
-    document.querySelector(".city-atlas")?.style.setProperty("--city-active-color",color);
-    document.querySelectorAll(".atlas-pin").forEach(node=>node.style.setProperty("--pin-active-color",cityColors[node.dataset.atlasCity] || "#8bdafa"));
+function updateAtlasReadout(pin) {
+  const label=pin.dataset.atlasCity;
+  const t=dictionary();
+  const name=t["atlasCity"+({murcia:"Murcia","gran-canaria":"GranCanaria",madrid:"Madrid",lisboa:"Lisboa",bergamo:"Bergamo",varsovia:"Varsovia"}[label])] || cityNames[label] || pin.getAttribute("aria-label");
+  const country=lang==="en"?pin.dataset.countryEn:pin.dataset.countryEs;
+  const output=document.querySelector("[data-atlas-readout]");
+  const story=document.querySelector("[data-atlas-story]");
+  const focus=document.querySelector("[data-atlas-focus]");
+  const index=document.querySelector("[data-atlas-index]");
+  if(output)output.textContent=(name+" · "+country).toUpperCase();
+  if(story)story.textContent=cityStories()[lang]?.[label] || "";
+  if(focus)focus.textContent=t[atlasFocusKeys[label]] || "";
+  if(index)index.textContent=String(pin.dataset.atlasOrder||"1").padStart(2,"0")+" / 06";
+  const atlas=document.querySelector(".city-atlas");
+  atlas?.style.setProperty("--city-active-color",cityColors[label]||"#8bdafa");
+  document.querySelectorAll(".atlas-pin").forEach(node=>{
+    node.style.setProperty("--pin-active-color",cityColors[node.dataset.atlasCity]||"#8bdafa");
+    const key={murcia:"atlasCityMurcia","gran-canaria":"atlasCityGranCanaria",madrid:"atlasCityMadrid",lisboa:"atlasCityLisboa",bergamo:"atlasCityBergamo",varsovia:"atlasCityVarsovia"}[node.dataset.atlasCity];
+    node.setAttribute("aria-label",t[key]||node.getAttribute("aria-label")||"");
+  });
 }
-document.querySelectorAll(".atlas-pin").forEach(pin => pin.addEventListener("click", () => {
-document.querySelectorAll(".atlas-pin").forEach(node => {
-node.setAttribute("aria-pressed", String(node === pin));
-node.classList.toggle("is-current", node === pin);
+const atlasPins=Array.from(document.querySelectorAll(".atlas-pin"));
+function selectAtlasCity(pin) {
+  atlasPins.forEach(node=>{
+    const active=node===pin;
+    node.setAttribute("aria-pressed",String(active));
+    node.classList.toggle("is-current",active);
+  });
+  updateAtlasReadout(pin);
+}
+atlasPins.forEach(pin=>pin.addEventListener("click",()=>selectAtlasCity(pin)));
+document.querySelector(".city-atlas-chart")?.addEventListener("keydown",event=>{
+  if(!["ArrowRight","ArrowLeft","ArrowDown","ArrowUp","Home","End"].includes(event.key))return;
+  const current=atlasPins.indexOf(document.activeElement);
+  if(current<0)return;
+  event.preventDefault();
+  const columnCount=matchMedia("(max-width: 530px)").matches?1:2;
+  const delta={ArrowRight:1,ArrowLeft:-1,ArrowDown:columnCount,ArrowUp:-columnCount}[event.key];
+  const next=event.key==="Home"?0:event.key==="End"?atlasPins.length-1:Math.max(0,Math.min(atlasPins.length-1,current+delta));
+  atlasPins[next].focus();
+  selectAtlasCity(atlasPins[next]);
 });
-updateAtlasReadout(pin);
-}));
 function synchronizeConstellation() {
 const atlas = document.querySelector(".cosmic-atlas");
 const svg = atlas?.querySelector(".cosmic-bridge");
