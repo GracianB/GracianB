@@ -125,24 +125,7 @@
   html[data-theme="dark"] :is(.door,.document-group,.evidence-card):focus-within{
     border-color:var(--universe-hover,#c7cdd0);
   }
-  /* The existing light mode remains usable; artwork keeps each world's identity. */
-  html[data-theme="light"] .hero.hero-wow .hero-thesis{color:#273a42}
-  html[data-theme="light"] .hero.hero-wow .hero-kicker-row{border-color:rgba(35,55,65,.22)}
-  html[data-theme="light"] .hero.hero-wow .hero-kicker-row .eyebrow{color:#52636d}
-  html[data-theme="light"] .hero-orbit-signature{color:#52636d;opacity:.55}
-  html[data-theme="light"] .worlds-intro{border-color:rgba(35,55,65,.24)}
-  html[data-theme="light"] .worlds-intro .eyebrow{color:#52636d}
-  html[data-theme="light"] .world-portal{background:#fbf9f4;color:#24343c;box-shadow:0 15px 40px rgba(20,32,38,.1)}
-  html[data-theme="light"] .world-portal.world-professional{--portal-color:#52636d;--portal-line:rgba(82,99,109,.4)}
-  html[data-theme="light"] .world-portal.world-yoga{--portal-color:#286953;--portal-line:rgba(40,105,83,.4)}
-  html[data-theme="light"] .world-portal.world-lab{--portal-color:#176b92;--portal-line:rgba(23,107,146,.4)}
-  html[data-theme="light"] .world-portal .portal-copy{background:#fbf9f4}
-  html[data-theme="light"] .world-portal.world-yoga .portal-copy{background:#f2f8f2}
-  html[data-theme="light"] .world-portal.world-lab .portal-copy{background:#f1f6fa}
-  html[data-theme="light"] .world-portal .portal-copy h3{color:#24343c}
-  html[data-theme="light"] .world-portal .portal-copy p{color:#4d626d}
-  html[data-theme="light"] .portal-after .hero-recruiter-route a,
-  html[data-theme="light"] .portal-after .hero-proof-link{color:#52636d}
+  /* P12.1 light system: consolidated below. */
   @media(max-width:1080px){
     .hero.hero-wow{grid-template-columns:minmax(0,1fr) minmax(175px,.4fr);min-height:0;padding-block:clamp(3.5rem,6vw,5rem)}
     .worlds-intro{align-items:start;flex-direction:column;gap:.55rem}
@@ -282,5 +265,91 @@ html[data-theme="light"] .observatory-details>summary,html[data-theme="light"] .
 .world-portal:is(:hover,:focus-visible){border-color:var(--portal-color)!important;box-shadow:0 20px 52px rgba(0,0,0,.42),0 0 37px color-mix(in srgb,var(--portal-color) 13%,transparent)!important}
 @media(prefers-reduced-motion:reduce){.cosmic-node,.atlas-pin{transition:none}.cosmic-node:hover{transform:none}}
 
+
+/* P12.1: opal, slate and silver. No recycled ochre CV styles. */
+html[data-theme=light]{--bg:#eff4f5;--bg-soft:#e6eef1;--panel:#fff;--panel-strong:#fff;--text:#1c3440;--muted:#48616e;--subtle:#607681;--line:rgba(34,75,94,.19);--line-strong:rgba(34,75,94,.32);--gold:#64899a;--cyan:#197da1;--shadow:0 18px 43px rgba(21,56,75,.10)}
+html[data-theme=light] body{background:radial-gradient(ellipse at 12% 10%,#fff,transparent 38%),radial-gradient(ellipse at 82% 46%,rgba(162,206,222,.28),transparent 41%),linear-gradient(145deg,#f8fbfc,#ecf4f6 60%,#e4eef2);color:var(--text)}
+html[data-theme=light] .ambient-grid{opacity:.065}
+html[data-theme=light] .ambient-orb-a{background:#82aabb;opacity:.08}
+html[data-theme=light] .ambient-orb-b{background:#91cabb;opacity:.08}
+html[data-theme=light] .topbar{background:rgba(250,252,253,.94);border-bottom:1px solid #bfd0d8}
+html[data-theme=light] .brand-mark{color:#375a6a;border-color:#aabec9;box-shadow:none}
+html[data-theme=light] .desktop-nav a{color:#4b6470}
+html[data-theme=light] .desktop-nav a::after{background:#3d819e}
+html[data-theme=light] :is(.segment,.command-open){background:#fff;border-color:#aac0ca;color:#27424f}
+html[data-theme=light] .segment button.is-active{background:#23414e;color:#fff}
+html[data-theme=light] .hero-actions .button-primary{background:#1c3b49;border-color:#1c3b49;color:#fff}
+html[data-theme=light] .hero-actions .button-secondary{background:#fff;border-color:#9bb7c3;color:#244856}
+html[data-theme=light] .hero-actions .button-secondary:hover{background:#e6f3f7;border-color:#4b859e}
+html[data-theme=light] .constellation-hero .hero-thesis{color:#1c3440!important}
+html[data-theme=light] .constellation-hero .hero-origin{color:#3d7082}
+html[data-theme=light] .constellation-hero .hero-name :is(.hero-name-first,.hero-name-last){color:#29434f!important}
+html[data-theme=light] :is(.worlds-intro,.about-atlas){border-color:#b9ccd5}
+html[data-theme=light] :is(.worlds-intro,.about-story) .eyebrow{color:#3e7085}
+html[data-theme=light] .world-portal{background:#fff;box-shadow:0 15px 34px rgba(29,69,87,.10)}
+html[data-theme=light] .world-professional{--portal-color:#526c7a;--portal-line:rgba(82,108,122,.45)}
+html[data-theme=light] .world-yoga{--portal-color:#26744f;--portal-line:rgba(38,116,79,.4)}
+html[data-theme=light] .world-lab{--portal-color:#166f9d;--portal-line:rgba(22,111,157,.4)}
+html[data-theme=light] .world-portal .portal-copy{background:linear-gradient(160deg,#fff,#eff4f6)}
+html[data-theme=light] .world-yoga .portal-copy{background:linear-gradient(160deg,#fff,#eaf5ee)}
+html[data-theme=light] .world-lab .portal-copy{background:linear-gradient(160deg,#fff,#e9f3f8)}
+html[data-theme=light] .world-portal .portal-copy h3{color:#1e3541}
+html[data-theme=light] .world-portal .portal-copy p{color:#4a6470}
+html[data-theme=light] .portal-after a{color:#265569}
+html[data-theme=light] .about-story>p:not(.eyebrow),html[data-theme=light] .about-experience{color:#465f6b}
+html[data-theme=light] .about-story h2,html[data-theme=light] .about-experience strong{color:#1a3441}
+html[data-theme=light] .about-details{border-color:#b4c9d3}
+html[data-theme=light] .about-details a{color:#235a73;border-color:#6a9bae;font-weight:650}
+.about-experience{flex:1 1 260px;max-width:380px}
+.about-experience>span{max-width:32ch}
+.about-details>a{flex:0 0 auto}
+/* The interactive star-map still looks like a map on a bright surface. */
+html[data-theme=light] .cosmic-atlas{filter:none;opacity:1}
+html[data-theme=light] .cosmic-atlas::before{background:radial-gradient(ellipse,rgba(113,167,190,.22),rgba(189,220,231,.14) 45%,transparent 71%)}
+html[data-theme=light] .cosmic-atlas::after{border-color:rgba(63,109,128,.25)}
+html[data-theme=light] :is(.cosmic-atlas-label,.cosmic-atlas-coordinate){color:#496a79}
+html[data-theme=light] .cosmic-node{text-shadow:none}
+html[data-theme=light] .cosmic-pro{--node-color:#445f6c}
+html[data-theme=light] .cosmic-yoga{--node-color:#277451}
+html[data-theme=light] .cosmic-lab{--node-color:#126f9e}
+html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient(circle,#fff,rgba(227,240,245,.64));border-color:var(--node-color);box-shadow:0 9px 27px rgba(22,63,84,.13)}
+/* Atlas: two themes, identical information hierarchy, no commentary. */
+.city-atlas-top,.city-atlas-footer{min-height:45px}
+html[data-theme=light] .city-atlas{background:linear-gradient(150deg,#fff,#e7f1f5);border:1px solid #abc0cb;box-shadow:0 18px 41px rgba(24,67,86,.13)}
+html[data-theme=light] :is(.city-atlas-top,.city-atlas-footer){background:rgba(255,255,255,.67);border-color:#c0d2da;color:#496b7b}
+html[data-theme=light] .city-atlas-chart{border-radius:9px;background:linear-gradient(rgba(56,111,137,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(56,111,137,.11) 1px,transparent 1px),radial-gradient(ellipse,rgba(125,181,206,.22),transparent 70%),#e9f2f6;background-size:20% 20%,20% 20%,auto,auto}
+html[data-theme=light] .atlas-latitude{border-color:rgba(71,115,139,.22)}
+html[data-theme=light] .atlas-pin{background:#234656;border-color:#678da1;color:#fff;box-shadow:0 5px 12px rgba(16,48,66,.19)}
+html[data-theme=light] .atlas-pin::after{border-color:rgba(37,89,112,.3)}
+html[data-theme=light] .atlas-pin:is(:hover,[aria-pressed=true]){background:#fff;color:#164052;border-color:#52839b;box-shadow:0 0 0 5px rgba(83,146,177,.17),0 5px 17px rgba(22,61,79,.18)}
+html[data-theme=light] .city-atlas-footer [data-atlas-readout]{color:#204354}
+html[data-theme=dark] .atlas-pin[aria-pressed=true]{box-shadow:0 0 0 5px rgba(169,212,232,.12),0 0 24px rgba(174,209,228,.21)}
+/* Disclosures are real editorial surfaces with a centered expand control. */
+:is(.observatory-details,.cv-library-details)>summary{display:grid;grid-template-columns:minmax(0,1fr) auto 35px;align-items:center;gap:1rem;min-height:80px;padding:1rem 1.3rem;border-radius:16px;letter-spacing:.015em}
+:is(.observatory-details,.cv-library-details)>summary::after{content:"+";width:34px;height:34px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%;font:400 1.3rem/1 var(--sans)}
+:is(.observatory-details,.cv-library-details)[open]>summary::after{content:"−"}
+:is(.observatory-details,.cv-library-details)>summary span:last-child{color:inherit;opacity:.67}
+html[data-theme=light] :is(.observatory-details,.cv-library-details)>summary{background:linear-gradient(108deg,#fff,#eef7fa);border:1px solid #a9c1cc;color:#1b3946;box-shadow:0 9px 26px rgba(27,67,87,.095)}
+html[data-theme=light] :is(.observatory-details,.cv-library-details)>summary:hover{border-color:#45829a;background:linear-gradient(108deg,#fff,#e5f3f8);box-shadow:0 13px 29px rgba(24,83,113,.14)}
+html[data-theme=dark] :is(.observatory-details,.cv-library-details)>summary{background:linear-gradient(110deg,#102734,#06151e);border-color:#688797;color:#edf5f8}
+html[data-theme=dark] :is(.observatory-details,.cv-library-details)>summary:hover{border-color:#bad0dd}
+:is(.observatory-details,.cv-library-details)>summary:focus-visible{outline:3px solid #4f91ad;outline-offset:3px}
+.about-atlas,.evidence-section,.documents-section{padding-block:clamp(2.6rem,4.4vw,4.8rem)!important}
+.evidence-section .section-head,.documents-section .section-head{margin-bottom:1.4rem}
+html[data-theme=light] .documents-section{background:linear-gradient(180deg,rgba(169,202,216,.14),rgba(255,255,255,.4))}
+html[data-theme=light] .contact-panel{background:linear-gradient(135deg,#fff,#edf6f8);border-color:#bdd0d9}
+html[data-theme=light] .evidence-card,html[data-theme=light] .document-group{background:#fff;border-color:#b6cbd6;box-shadow:0 10px 25px rgba(20,65,83,.08)}
+html[data-theme=light] .section-head>p{color:#4d6571}
+/* Sun and moon are genuine centered vector icons, not font glyphs. */
+.theme-toggle{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));justify-items:center;align-items:center;width:76px!important;height:44px!important;min-height:44px!important;gap:0;padding:4px!important;border-radius:13px!important;box-shadow:none!important}
+.theme-toggle svg{width:32px;height:32px!important;min-width:0;min-height:0;display:block;padding:7px;justify-self:center;align-self:center;border-radius:9px;background:transparent;stroke:currentColor;color:var(--muted)}
+html[data-theme=light] .theme-toggle{background:#fff;border-color:#aac1cb}
+html[data-theme=dark] .theme-toggle{background:#07151c;border-color:#667f8d}
+html[data-theme=light] .theme-toggle .theme-sun{background:#203d4b;color:#fff}
+html[data-theme=light] .theme-toggle .theme-moon{color:#5f7d8d}
+html[data-theme=dark] .theme-toggle .theme-moon{background:#d3dfe5;color:#0b2632}
+.theme-toggle:hover{border-color:#6495a9!important}
+.theme-toggle:focus-visible{outline:3px solid #518fa9!important;outline-offset:3px!important;box-shadow:0 0 0 5px rgba(81,143,169,.12)!important}
+@media(max-width:640px){.observatory-details>summary,.cv-library-details>summary{padding:.9rem 1rem}.city-atlas-footer{justify-content:flex-start}}
 
 }
