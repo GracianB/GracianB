@@ -33,6 +33,14 @@ for(const [world,slug] of [["professional","professional-deck"],["yoga","yoga-in
   assert.ok(html.includes('href="https://gracianb.github.io/'+slug+'/"'),"Broken world link "+slug);
 }
 assert.match(html,/atlas-systems-mark/,"Professional graph icon missing");
+assert.match(html,/class="theme-sun"[^>]*viewBox="0 0 24 24"/,"Sun must be an SVG");
+assert.match(html,/class="theme-moon"[^>]*viewBox="0 0 24 24"/,"Moon must be an SVG");
+assert.match(html,/<rect x="143" y="130" width="34" height="34"/,"Professional center mark must be centered at x=160");
+assert.doesNotMatch(html,/data-i18n="atlasNote"/,"Atlas should not display unnecessary explanatory copy");
+assert.match(css,/\.theme-toggle svg/,"Centered theme-vector layout must be present");
+assert.match(css,/html\[data-theme=light\] \.city-atlas/,"The city atlas needs intentional light-mode styling");
+assert.match(css,/html\[data-theme=light\] :is\(\.observatory-details,\.cv-library-details\)>summary/,"Light disclosures must not be generic grey");
+
 assert.match(html,/constellation-lotus/,"Botanical yoga icon missing");
 assert.match(html,/circuit-chip/,"Systems Lab chip missing");
 assert.doesNotMatch(html,/hero-orbit-signature/,"Professional Deck emblem must not appear");
@@ -55,7 +63,7 @@ assert.equal((html.match(/class="document-group document-group-/g)||[]).length,3
 assert.match(html,/data-application-link/);
 assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache");
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
-assert.match(html,/portal-v11\.css\?v=2/);
+assert.match(html,/portal-v11\.css\?v=3/);
 assert.match(html,/i18n\.js\?v=26" defer/);
 assert.match(html,/main\.js\?v=p12-sky" defer/);
 for(const pattern of [/\.constellation-hero/,/\.cosmic-node/,/\.atlas-pin/,/prefers-reduced-motion/])
