@@ -168,7 +168,7 @@ async function mobile(browser) {
   assert.equal(await page.locator("html").getAttribute("lang"), "en");
   assert.equal(await page.locator("[data-menu-toggle]").getAttribute("aria-label"), "Close menu");
   assert.equal(await page.locator("#mobile-menu nav").getAttribute("aria-label"), "Mobile navigation");
-  assert.match(await page.locator("[data-cv-link]").getAttribute("href"), /_EN\.pdf$/);
+  assert.match(await page.locator(".portal-after [data-application-link]").getAttribute("href"), /apply\.html\?lang=en$/, "English applications route must be direct");
   assert.equal(await page.locator('#mobile-menu [data-set-lang="en"]').getAttribute("aria-pressed"), "true");
   await page.locator('#mobile-menu [data-set-lang="es"]').click();
   assert.equal(await page.locator("html").getAttribute("lang"), "es");
