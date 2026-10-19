@@ -404,8 +404,17 @@
         {color:[125,209,241],points:[[.70,.72],[.78,.61],[.91,.65],[.95,.81],[.81,.91],[.74,.82]],
           links:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[1,5]]}
       ];
+      // The hero already has a navigable constellation. Keep atmospheric line
+      // drawings out of the heading and reveal them gradually in later chapters.
+      // Most stars remain independent at every scroll position.
+      const scrollTop=Math.max(0,scrollY || 0);
+      const fadeStart=height*.52,fadeEnd=height*1.18;
+      const reveal=Math.max(0,Math.min(1,(scrollTop-fadeStart)/(fadeEnd-fadeStart)));
+      canvas.dataset.ambientClusters=reveal>.25?"visible":"subdued";
       const movement = reduceMotion ? 0 : Math.sin(time * .00022) * .05;
-      for(const c of clusters){
+      ctx.save();
+      ctx.globalAlpha=reveal*(width<600?.45:.68);
+      if(reveal>.01) for(const c of clusters){
         const [red,green,blue] = c.color;
         const w=Math.max(280,width), h=Math.max(250,height);
         const pts=c.points.map(([x,y])=>[x*w, y*h]);
@@ -425,6 +434,7 @@
           ctx.fill();
         });
       }
+      ctx.restore();
       for (const star of stars) {
         const x=star.x+mx*star.r*.009, y=star.y+my*star.r*.009;
         const opacity=star.a * (reduceMotion ? 1 : (.86+.14*Math.sin(time*.00045*star.twinkle+star.phase)));
@@ -445,6 +455,9 @@
       if(!should && running){running=false;cancelAnimationFrame(raf);paint(0);}
     }
     addEventListener("resize",reset,{passive:true});
+    // With reduced motion animation is disabled, but the ambient map still
+    // follows chapter changes without requiring an animation loop.
+    addEventListener("scroll",()=>{if(!running)paint(0);},{passive:true});
     addEventListener("pointermove",e=>{mx=e.clientX-innerWidth/2;my=e.clientY-innerHeight/2;},{passive:true});
     document.addEventListener("visibilitychange",sync);
     reset();sync();
