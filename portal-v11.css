@@ -141,6 +141,25 @@
   .portal-after .hero-recruiter-route a,.portal-after .hero-proof-link{
     color:var(--deck-silver);font-weight:650;text-underline-offset:4px
   }
+
+  /* The existing light mode remains usable; artwork keeps each world's identity. */
+  html[data-theme="light"] .hero.hero-wow .hero-thesis{color:#273a42}
+  html[data-theme="light"] .hero.hero-wow .hero-kicker-row{border-color:rgba(35,55,65,.22)}
+  html[data-theme="light"] .hero.hero-wow .hero-kicker-row .eyebrow{color:#52636d}
+  html[data-theme="light"] .hero-orbit-signature{color:#52636d;opacity:.55}
+  html[data-theme="light"] .worlds-intro{border-color:rgba(35,55,65,.24)}
+  html[data-theme="light"] .worlds-intro .eyebrow{color:#52636d}
+  html[data-theme="light"] .world-portal{background:#fbf9f4;color:#24343c;box-shadow:0 15px 40px rgba(20,32,38,.1)}
+  html[data-theme="light"] .world-portal.world-professional{--portal-color:#52636d;--portal-line:rgba(82,99,109,.4)}
+  html[data-theme="light"] .world-portal.world-yoga{--portal-color:#286953;--portal-line:rgba(40,105,83,.4)}
+  html[data-theme="light"] .world-portal.world-lab{--portal-color:#176b92;--portal-line:rgba(23,107,146,.4)}
+  html[data-theme="light"] .world-portal .portal-copy{background:#fbf9f4}
+  html[data-theme="light"] .world-portal.world-yoga .portal-copy{background:#f2f8f2}
+  html[data-theme="light"] .world-portal.world-lab .portal-copy{background:#f1f6fa}
+  html[data-theme="light"] .world-portal .portal-copy h3{color:#24343c}
+  html[data-theme="light"] .world-portal .portal-copy p{color:#4d626d}
+  html[data-theme="light"] .portal-after .hero-recruiter-route a,
+  html[data-theme="light"] .portal-after .hero-proof-link{color:#52636d}
   @media(max-width:1080px){
     .hero.hero-wow{grid-template-columns:minmax(0,1fr) minmax(175px,.4fr);min-height:0;padding-block:clamp(3.5rem,6vw,5rem)}
     .worlds-intro{align-items:start;flex-direction:column;gap:.55rem}
