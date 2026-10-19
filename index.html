@@ -30,7 +30,7 @@
   <link rel="alternate" hreflang="x-default" href="https://gracianb.github.io/GracianB/">
   <link rel="icon" href="./favicon.svg?v=p12" type="image/svg+xml">
   <link rel="manifest" href="./site.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=28">
+  <link rel="stylesheet" href="./styles.css?v=29">
   <link rel="stylesheet" href="./deck-dark.css?v=5">
   <link rel="stylesheet" href="./hub-finish.css?v=3">
   <link rel="stylesheet" href="./portal-v11.css?v=4">
@@ -53,7 +53,7 @@
   <meta name="twitter:image" content="https://gracianb.github.io/GracianB/og-cover.png?v=12">
 
   <script src="./i18n.js?v=26" defer></script>
-  <script src="./main.js?v=p123-ambience" defer></script>
+  <script src="./main.js?v=p124-quicknav" defer></script>
 
   <script type="application/ld+json">
   {
@@ -516,29 +516,67 @@
     </div>
   </footer>
 
+
+  <!-- P12.4: the atlas quick navigation is a lightweight, non-scrolling command finder. -->
   <div class="command" id="command" hidden aria-hidden="true">
     <button class="command-backdrop" type="button" data-command-close tabindex="-1" aria-hidden="true" aria-label="Cerrar"></button>
-    <section class="command-panel" role="dialog" aria-modal="true" aria-labelledby="command-title">
-      <div class="command-head">
-        <div>
-          <span>GB / QUICK NAV</span>
-          <h2 id="command-title" data-i18n="commandTitle">Ir a una prueba</h2>
-        </div>
-        <button type="button" data-command-close aria-label="Cerrar">ESC</button>
+    <section class="command-panel" role="dialog" aria-modal="true" aria-labelledby="command-title" aria-describedby="command-subtitle">
+      <header class="command-head">
+        <div><span>GB / ATLAS</span><h2 id="command-title" data-i18n="commandTitle">Explorar la constelación</h2>
+          <p id="command-subtitle" data-i18n="commandSubtitle">Ve directamente a un universo, proyecto o documento.</p></div>
+        <button type="button" class="command-close" data-command-close aria-label="Cerrar" data-i18n-aria-label="commandCloseLabel"><span aria-hidden="true">×</span><small>ESC</small></button>
+      </header>
+      <div class="command-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.6"/><path d="m16 16 4.4 4.4"/></svg>
+        <input id="command-input" type="search" autocomplete="off" spellcheck="false"
+          role="combobox" aria-autocomplete="list" aria-controls="command-list" aria-expanded="true"
+          data-i18n-aria-label="commandPlaceholder" data-i18n-placeholder="commandPlaceholder" placeholder="Buscar universo, proyecto o documento…">
+        <kbd aria-hidden="true">⌘ K</kbd>
       </div>
-      <input id="command-input" type="search" autocomplete="off" data-i18n-aria-label="commandPlaceholder" data-i18n-placeholder="commandPlaceholder" placeholder="Buscar proyecto o documento…">
-      <ul id="command-list">
-        <li><a href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer" data-command-label="commandExperience">Professional Deck</a></li>
-        <li><a href="https://gracianb.github.io/systems-lab/" target="_blank" rel="noopener noreferrer">Systems Lab</a></li>
-        <li><span aria-disabled="true" data-i18n="revopsCommand">RevOps Studio · EN CONSTRUCCIÓN</span></li>
-        <li><a href="https://gracianb.github.io/project-ohana/" target="_blank" rel="noopener noreferrer">Project OHANA</a></li>
-        <li><a href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener noreferrer">VØRTICE</a></li>
-        <li><a href="https://gracianb.github.io/systems-lab/#aigoritmo" data-i18n="aigoritmoCommand">Aigoritmo · CASO / APP LOCAL</a></li>
-        <li><a href="#documents" data-command-label="commandDocs">Documentos</a></li>
-        <li><a href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer">Yoga</a></li>
-        <li><a href="https://gracianb.github.io/cabin-crew-site/" target="_blank" rel="noopener noreferrer" data-command-label="commandCabin">Cabin Crew / TCP</a></li>
-        <li><a href="https://calendar.app.google/n99psBFktwYyoAWi9" target="_blank" rel="noopener noreferrer" data-command-label="commandBook">Agenda 30 min</a></li>
-      </ul>
+      <div class="command-filters" role="group" aria-label="Filtrar destinos" data-i18n-aria-label="commandFilterLabel">
+        <button type="button" class="is-active" data-command-filter="all" aria-pressed="true" data-i18n="commandAll">Todo</button>
+        <button type="button" data-command-filter="worlds" aria-pressed="false" data-i18n="commandWorlds">Universos</button>
+        <button type="button" data-command-filter="projects" aria-pressed="false" data-i18n="commandProjects">Proyectos</button>
+        <button type="button" data-command-filter="documents" aria-pressed="false" data-i18n="commandDocuments">Documentos</button>
+      </div>
+      <div class="command-results">
+        <ul id="command-list" aria-label="Destinos disponibles" data-i18n-aria-label="commandResultsLabel">
+          <li data-command-category="worlds" data-search="profesional professional trabajo customer operations cv">
+            <a href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol pro-symbol">✦</span><span class="command-item-text"><strong data-command-label="commandExperience">Professional Deck</strong><small data-i18n="commandWorldPro">Trayectoria, operaciones y experiencia</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="worlds" data-search="yoga instructor presencia práctica movimiento enseñanza">
+            <a href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol yoga-symbol">✧</span><span class="command-item-text"><strong>Yoga Instructor</strong><small data-i18n="commandWorldYoga">Movimiento, enseñanza y presencia</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="worlds" data-search="systems lab laboratorio software codigo código inteligencia artificial">
+            <a href="https://gracianb.github.io/systems-lab/" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol lab-symbol">⌘</span><span class="command-item-text"><strong>Systems Lab</strong><small data-i18n="commandWorldLab">Software, IA y experimentos</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="projects" data-search="bodytone support os zendesk atención operaciones cliente caso soporte">
+            <a href="https://gracianb.github.io/professional-deck/proyecto-bodytone.html" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol pro-symbol">◈</span><span class="command-item-text"><strong>Bodytone Support OS</strong><small data-i18n="commandBodytone">Caso real de Customer Operations</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="projects" data-search="ohana project juego personajes indie game">
+            <a href="https://gracianb.github.io/project-ohana/" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol lab-symbol">✳</span><span class="command-item-text"><strong>Project OHANA</strong><small data-i18n="commandOhana">Juego y sistemas interactivos</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="projects" data-search="vortice vørtice vortex webgl particles audio música">
+            <a href="https://vortex-gilt-xi.vercel.app/" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol lab-symbol">◇</span><span class="command-item-text"><strong>VØRTICE</strong><small data-i18n="commandVortex">Experiencia audiovisual WebGL</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="projects" data-search="aigoritmo arcana app local inteligencia artificial">
+            <a href="https://gracianb.github.io/systems-lab/#aigoritmo" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol lab-symbol">◈</span><span class="command-item-text"><strong>Aigoritmo</strong><small data-i18n="commandAigoritmo">Caso del laboratorio, no demo pública</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="documents" data-search="cv curriculum cartas pdf candidaturas documents aplicaciones">
+            <a href="#documents" data-command-reveal="documents"><span class="command-item-symbol pro-symbol">▤</span><span class="command-item-text"><strong data-command-label="commandDocs">Documentos</strong><small data-i18n="commandCV">CV y cartas de presentación ES/EN</small></span><span class="command-arrow">↓</span></a>
+          </li>
+          <li data-command-category="documents" data-search="cabin crew tcp tripulante avión aviacion vuelo">
+            <a href="https://gracianb.github.io/cabin-crew-site/" target="_blank" rel="noopener noreferrer"><span class="command-item-symbol pro-symbol">✈</span><span class="command-item-text"><strong data-command-label="commandCabin">Cabin Crew / TCP</strong><small data-i18n="commandCabinNote">Portfolio y candidatura de aviación</small></span><span class="command-arrow">↗</span></a>
+          </li>
+          <li data-command-category="documents" data-search="contacto agenda reunión meeting calendar 30 min">
+            <a href="#contact"><span class="command-item-symbol pro-symbol">✉</span><span class="command-item-text"><strong data-i18n="commandContact">Contacto</strong><small data-i18n="commandContactNote">Escríbeme o iniciemos una conversación</small></span><span class="command-arrow">↓</span></a>
+          </li>
+        </ul>
+        <p id="command-empty" hidden data-i18n="commandEmpty">No hay destinos con ese nombre. Prueba otra búsqueda.</p>
+      </div>
+      <footer class="command-footer"><span id="command-count" role="status" aria-live="polite">10 destinos</span>
+        <span class="command-help" data-i18n="commandHelp">↑↓ elegir · ↵ abrir · ESC cerrar</span>
+      </footer>
     </section>
   </div>
 
