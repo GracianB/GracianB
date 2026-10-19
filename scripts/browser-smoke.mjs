@@ -214,6 +214,18 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     const previousWidth=await page.evaluate(()=>document.documentElement.clientWidth);
     await page.keyboard.press("Control+k");
     assert.equal(await page.locator("#command").getAttribute("aria-hidden"),"false");
+    const pageLayout=await page.evaluate(()=>({
+      bodyDisplay:getComputedStyle(document.body).display,
+      bodyHeight:document.body.getBoundingClientRect().height,
+      bodyWidth:document.body.getBoundingClientRect().width,
+      lock:document.body.classList.contains("command-active"),
+      buttonClassCollision:document.body.classList.contains("command-open")
+    }));
+    assert.equal(pageLayout.bodyDisplay,"block","Opening Ctrl+K must not turn the body into the flex-styled command button");
+    assert.ok(pageLayout.bodyHeight>900,"Opening the palette must not collapse the document");
+    assert.ok(pageLayout.bodyWidth>=width-22,"Opening the palette must not compress the page");
+    assert.ok(pageLayout.lock&&!pageLayout.buttonClassCollision,"Palette state class must not collide with the trigger class");
+
     await page.locator("#command-input").waitFor({state:"visible"});
     assert.ok(await page.locator("#command-panel").count()===0 || await page.locator(".command-panel").isVisible());
     const jump=await page.evaluate(()=>Math.abs(scrollY));
