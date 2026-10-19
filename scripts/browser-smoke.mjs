@@ -60,6 +60,46 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.ok(sky.w>0 && sky.h>0,"The star canvas is not sized");
   if(theme==="light")assert.equal(sky.visible,false,"Light mode must not have a dark star overlay");
   if(theme==="dark")assert.equal(sky.visible,true,"Dark mode needs constellation stars");
+  // P12.1: inspect the actual CSS resolved by Chromium, not only author tokens.
+  const lightAudit = await page.evaluate(()=>{
+    const el=s=>document.querySelector(s),style=s=>getComputedStyle(el(s));
+    const t=el(".theme-toggle").getBoundingClientRect(),
+      sun=el(".theme-sun").getBoundingClientRect(),moon=el(".theme-moon").getBoundingClientRect();
+    const center=r=>r.left+r.width/2;
+    const summaries=[".observatory-details>summary",".cv-library-details>summary"].map(q=>({
+      bg:style(q).backgroundImage,color:style(q).color,border:style(q).borderTopColor
+    }));
+    const worlds=["professional","yoga","lab"].map(w=>style(".world-portal.world-"+w).getPropertyValue("--portal-color").trim());
+    return {themeToggle:{width:t.width,height:t.height,sunOffset:Math.abs(center(sun)-(t.left+t.width*.25)),moonOffset:Math.abs(center(moon)-(t.left+t.width*.75))},
+      lightBg:style("html").getPropertyValue("--bg").trim(),
+      header:style(".topbar").backgroundColor,worlds,
+      atlas:style(".city-atlas").backgroundImage,atlasGrid:style(".city-atlas-chart").backgroundImage,
+      atlasPin:style(".atlas-pin").color,summaries,
+      extraAtlasNote:document.querySelectorAll("[data-i18n=atlasNote]").length};
+  });
+  assert.equal(lightAudit.extraAtlasNote,0,"Atlas copy should not pollute the map");
+  assert.ok(lightAudit.themeToggle.sunOffset<=3.5 && lightAudit.themeToggle.moonOffset<=3.5,
+    "Theme toggle vector icons must be geometrically centered: "+JSON.stringify(lightAudit.themeToggle));
+  assert.ok(lightAudit.themeToggle.height>=44,"Theme control must be touch accessible");
+  if(theme==="light"){
+    assert.equal(lightAudit.lightBg,"#eff4f5","Light mode must use mineral silver, not beige CV paper");
+    assert.deepEqual(lightAudit.worlds,["#526c7a","#26744f","#166f9d"],"Three worlds need distinct accessible light accents");
+    assert.match(lightAudit.atlas,/linear-gradient/,"Light atlas must have a designed panel");
+    assert.match(lightAudit.atlasGrid,/linear-gradient/,"Light map must have a legible grid");
+    for(const summary of lightAudit.summaries){
+      assert.match(summary.bg,/linear-gradient/,"Light disclosure cannot revert to flat grey");
+      assert.equal(summary.color,"rgb(27, 57, 70)","Light disclosure text needs deliberate contrast");
+    }
+    if(width>=1280){
+      await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+      await page.screenshot({path:artifacts+"/constellation-light-desktop.png",fullPage:true});
+    }
+    if(width<=420){
+      await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+      await page.screenshot({path:artifacts+"/constellation-light-mobile-"+width+".png",fullPage:true});
+    }
+  }
+
   for(const world of ["professional","yoga","lab"]){
     const portal=page.locator('.world-portal[data-portal="'+world+'"]');
     const rect=await portal.boundingBox();
