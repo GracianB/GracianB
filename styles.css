@@ -35,7 +35,7 @@ html[data-theme="light"]{
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg);color:var(--text)}
+html{scroll-behavior:smooth;scrollbar-gutter:stable;background:var(--bg);color:var(--text)}
 body{
   margin:0;
   min-width:280px;
@@ -673,87 +673,56 @@ html[data-theme="light"] .mobile-menu{background:rgba(244,241,233,.97)}
 .footer a{text-decoration:none}
 .footer a:hover{color:var(--cyan)}
 
-.command{
-  position:fixed;
-  z-index:100;
-  inset:0;
-  display:grid;
-  place-items:start center;
-  padding:12vh 1rem 1rem;
-}
-.command[hidden]{display:none}
-.command-backdrop{
-  position:absolute;
-  inset:0;
-  border:0;
-  background:rgba(0,0,0,.62);
-  backdrop-filter:blur(9px);
-}
-.command-panel{
-  position:relative;
-  z-index:1;
-  width:min(100%,42rem);
-  overflow:hidden;
-  border:1px solid var(--line-strong);
-  border-radius:1.2rem;
-  background:var(--panel-strong);
-  box-shadow:0 40px 120px rgba(0,0,0,.48);
-}
-.command-head{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:1rem;
-  padding:1rem 1rem .8rem;
-  border-bottom:1px solid var(--line);
-}
-.command-head span{
-  color:var(--cyan);
-  font-family:var(--mono);
-  font-size:.46rem;
-  letter-spacing:.12em;
-}
-.command-head h2{
-  margin:.2rem 0 0;
-  font-family:var(--serif);
-  font-size:1.35rem;
-  font-weight:500;
-}
-.command-head button{
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:.35rem .55rem;
-  background:transparent;
-  color:var(--muted);
-  font-family:var(--mono);
-  font-size:.48rem;
-  cursor:pointer;
-}
-#command-input{
-  width:calc(100% - 2rem);
-  margin:1rem;
-  border:1px solid var(--line);
-  border-radius:.75rem;
-  padding:.8rem .9rem;
-  background:rgba(255,255,255,.02);
-  color:var(--text);
-}
-#command-list{
-  max-height:48vh;
-  overflow:auto;
-  list-style:none;
-  margin:0;
-  padding:0 1rem 1rem;
-}
-#command-list li{border-top:1px solid var(--line)}
-#command-list li:first-child{border-top:0}
-#command-list li.is-active{background:rgba(122,243,255,.045)}
-#command-list a{
-  display:block;
-  padding:.82rem .65rem;
-  text-decoration:none;
-}
-#command-list li.is-active a{color:var(--cyan)}
+/* P12.4 · Atlas quick navigation: no heavy backdrop blur, layout shift or scroll jump. */
+.command{position:fixed;z-index:200;inset:0;display:grid;justify-items:center;align-items:start;padding:clamp(1rem,9svh,5rem) 1rem 1rem;isolation:isolate}
+.command[hidden],.command [hidden]{display:none!important}
+.command-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:0;background:rgba(1,8,14,.77);cursor:default}
+html[data-theme="light"] .command-backdrop{background:rgba(14,35,46,.55)}
+.command-panel{position:relative;z-index:1;display:flex;flex-direction:column;width:min(100%,37rem);max-height:min(82svh,710px);min-height:0;overflow:hidden;border:1px solid var(--line-strong);border-radius:20px;background:var(--panel-strong);color:var(--text);box-shadow:0 25px 85px rgba(0,0,0,.28)}
+.command-head{display:flex;align-items:start;justify-content:space-between;gap:1rem;padding:1.2rem 1.3rem .8rem}
+.command-head span{color:var(--cyan);font-family:var(--mono);font-size:.64rem;letter-spacing:.12em}
+.command-head h2{margin:.18rem 0 0;font:500 clamp(1.24rem,2.1vw,1.55rem)/1.15 var(--serif);letter-spacing:-.025em}
+.command-head p{margin:.35rem 0 0;color:var(--muted);font-size:.8rem}
+.command-close{display:flex;align-items:center;gap:.36rem;flex:0 0 auto;padding:.32rem .48rem;min-height:35px;border:1px solid var(--line-strong);border-radius:10px;background:transparent;color:var(--muted);cursor:pointer}
+.command-close span{font-size:1.2rem;line-height:1;color:inherit}.command-close small{font:700 .63rem var(--mono)}
+.command-close:hover{color:var(--text);border-color:var(--cyan)}
+.command-search{display:flex;align-items:center;gap:.7rem;flex:0 0 auto;margin:.4rem 1.15rem .65rem;padding:0 .85rem;border:1px solid var(--line-strong);border-radius:12px;background:color-mix(in srgb,var(--panel-strong) 89%,var(--bg));transition:border-color .2s}
+.command-search:focus-within{border-color:#7da9bb;box-shadow:0 0 0 3px rgba(123,178,198,.14)}
+.command-search svg{width:19px;height:19px;flex:0 0 auto;color:var(--muted)}
+#command-input{width:100%;min-width:0;height:46px;margin:0;padding:0;border:0;outline:0;border-radius:0;background:transparent;color:var(--text);font-size:.9rem;box-shadow:none}
+#command-input:focus{outline:0}
+.command-search kbd{font:700 .65rem var(--mono);color:var(--subtle);white-space:nowrap}
+.command-filters{display:flex;gap:.35rem;padding:.1rem 1.15rem .8rem;overflow-x:auto;scrollbar-width:none;flex:0 0 auto}
+.command-filters::-webkit-scrollbar{display:none}
+.command-filters button{min-height:35px;white-space:nowrap;padding:.42rem .75rem;border:1px solid transparent;border-radius:9px;background:transparent;color:var(--muted);font:650 .75rem var(--sans);cursor:pointer}
+.command-filters button:hover,.command-filters button:focus-visible{border-color:var(--line-strong);color:var(--text)}
+.command-filters button.is-active{border-color:rgba(120,170,190,.38);background:rgba(100,163,188,.13);color:var(--text)}
+.command-results{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;border-top:1px solid var(--line);scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+#command-list{position:relative;display:block;max-height:none;overflow:visible;list-style:none;margin:0;padding:.4rem .65rem}
+#command-list li{margin:2px 0;border:0;border-radius:11px}
+#command-list li.is-active{background:rgba(112,173,194,.12)}
+#command-list a{display:grid;grid-template-columns:38px minmax(0,1fr) 22px;align-items:center;gap:.78rem;min-height:59px;padding:.46rem .65rem;border-radius:10px;text-decoration:none;color:var(--text)}
+#command-list a:focus-visible{outline:2px solid var(--cyan);outline-offset:-2px}
+#command-list li.is-active a{color:var(--text)}
+.command-item-symbol{display:grid;place-items:center;width:36px;height:36px;border:1px solid currentColor;border-radius:11px;font-size:1.2rem;background:color-mix(in srgb,currentColor 8%,transparent)}
+.command-item-symbol.pro-symbol{color:#b3c5cf}.command-item-symbol.yoga-symbol{color:#8bccaa}.command-item-symbol.lab-symbol{color:#83ccef}
+.command-item-text{display:grid;gap:1px;min-width:0}.command-item-text strong{font-size:.87rem;font-weight:670;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.command-item-text small{color:var(--muted);font-size:.73rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.command-arrow{font-size:1.04rem;justify-self:end;color:var(--subtle)}
+#command-list li.is-active .command-arrow{color:var(--cyan)}
+#command-empty{margin:0;padding:2rem 1.2rem;text-align:center;font-size:.87rem;color:var(--muted)}
+.command-footer{display:flex;justify-content:space-between;align-items:center;gap:.7rem 1rem;min-height:42px;flex-wrap:wrap;padding:.6rem 1.25rem;border-top:1px solid var(--line);color:var(--muted);font:.7rem/1.35 var(--mono)}
+.command-help{font-size:.65rem}
+html[data-theme="light"] .command-panel{background:#fcfeff;border-color:#a9bfcb;box-shadow:0 26px 75px rgba(12,42,59,.25)}
+html[data-theme="light"] .command-head span{color:#35748e}
+html[data-theme="light"] .command-search{background:#fff}
+html[data-theme="light"] .command-filters button.is-active{background:#e4f1f7;color:#1b4558;border-color:#98bbce}
+html[data-theme="light"] #command-list li.is-active{background:#e6f2f8}
+html[data-theme="light"] .command-item-symbol.pro-symbol{color:#587385}
+html[data-theme="light"] .command-item-symbol.yoga-symbol{color:#277758}
+html[data-theme="light"] .command-item-symbol.lab-symbol{color:#1e779e}
+@media(max-width:640px){.command{padding:1rem .55rem}.command-panel{max-height:calc(100dvh - 2rem);border-radius:15px}.command-head{padding:1rem .95rem .6rem}.command-head p{font-size:.75rem}.command-search{margin:.35rem .85rem .6rem}.command-filters{padding:.1rem .85rem .65rem}#command-list{padding:.3rem .45rem}.command-help{display:none}.command-footer{padding:.65rem 1rem}}
+@media(prefers-reduced-motion:reduce){.command-search{transition:none}}
 .noscript{
   position:fixed;
   left:1rem;
@@ -1131,7 +1100,7 @@ html[data-theme="light"] .world-enter{color:var(--cv-forest)}
 .arc-future{background:radial-gradient(circle at 90% 10%,rgba(113,132,109,.11),transparent 10rem),rgba(113,132,109,.035)}
 .document-group > a:hover{background:rgba(218,164,40,.045)}
 .contact-panel{background:radial-gradient(circle at 80% 0%,rgba(218,164,40,.07),transparent 22rem),var(--panel)}
-#command-list li.is-active{background:rgba(218,164,40,.085)}
+/* Active command colors are owned by the command atlas above. */
 
 
 
