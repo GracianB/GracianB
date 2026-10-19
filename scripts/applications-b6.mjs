@@ -33,7 +33,7 @@ assert.match(readFileSync("apply.js","utf8"), /navigator\.clipboard\?\.writeText
   "P2 share action must copy the actual URL on direct user interaction");
 assert.equal((html.match(/data-b6-home-link/g) || []).length, 3,
   "Application desk needs three language-aware return routes");
-assert.match(html, /apply\.js\?v=p7-1/,
+assert.match(html, /apply\.js\?v=p8-final/,
   "Application JS cache key must reflect bilingual return navigation");
 assert.match(readFileSync("apply.js", "utf8"), /parameters\.push\("lang=" \+ lang\)/,
   "English recruiter must be able to return to the English hub");
@@ -156,9 +156,9 @@ try{
      assert.equal(surfaces.scroll,false,"Theme must not introduce horizontal overflow");
      assert.notEqual(surfaces.brief,surfaces.proof,"Brief must be a distinct surface");
      if(chosenTheme==="dark") {
-       assert.equal(surfaces.brief,"rgb(19, 33, 41)",
+       assert.equal(surfaces.brief,"rgb(16, 28, 34)",
          "Recruiter brief must use the deeper petrol low surface");
-       assert.equal(surfaces.proof,"rgb(23, 38, 46)",
+       assert.equal(surfaces.proof,"rgb(19, 33, 41)",
          "Evidence card should match the deeper petrol card surface");
        assert.equal(surfaces.selectedFocus,"rgb(199, 205, 208)",
          "Selected focus must use cool silver, not legacy beige");
@@ -168,9 +168,9 @@ try{
          footer: getComputedStyle(document.querySelector(".foot")).backgroundColor,
          meta: document.querySelector('meta[name="theme-color"]').content,
        }));
-       assert.equal(shared.canvas,"rgb(15, 26, 32)");
-       assert.equal(shared.footer,"rgb(9, 18, 24)");
-       assert.equal(shared.meta,"#0f1a20");
+       assert.equal(shared.canvas,"rgb(11, 20, 25)");
+       assert.equal(shared.footer,"rgb(7, 14, 19)");
+       assert.equal(shared.meta,"#0b1419");
        assert.match(shared.hero,/199, 205, 208/);
        await page.screenshot({path:`artifacts/e2e/p7-applications-dark-${width}.png`,fullPage:true});
      }

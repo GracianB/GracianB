@@ -94,9 +94,10 @@ async function desktop(browser) {
     const buttonRect = button.getBoundingClientRect();
     const labelRect = button.querySelector("[data-world-overview-label]").getBoundingClientRect();
     const background = getComputedStyle(button).backgroundColor;
-    return { buttonWidth: buttonRect.width, labelWidth: labelRect.width, background };
+    return { buttonWidth: buttonRect.width, labelWidth: labelRect.width, background, fontSize: parseFloat(getComputedStyle(button).fontSize) };
   });
-  assert.ok(overviewAppearance.buttonWidth >= overviewAppearance.labelWidth + 38,
+  assert.ok(overviewAppearance.fontSize >= 13, "Worlds button label is too small");
+   assert.ok(overviewAppearance.buttonWidth >= overviewAppearance.labelWidth + 38,
     "Overview label and icon must have comfortable horizontal spacing");
   assert.ok(!/rgb\(218,\s*164,\s*40\)/.test(overviewAppearance.background),
     "Overview must never become a solid yellow tile");
@@ -330,7 +331,7 @@ async function finalResponsiveAudit(browser) {
       });
       assert.equal(identity.page, "rgb(243, 238, 229)", "Professional mini-document must match Deck ivory");
       assert.match(identity.professional,
-        mode === "dark" ? /rgb\(23, 38, 46\).*rgb\(15, 26, 32\)/
+        mode === "dark" ? /rgb\(19, 33, 41\).*rgb\(11, 20, 25\)/
                         : /rgb\(38, 48, 57\).*rgb\(21, 28, 34\)/,
         "Professional document preview must match petrol dark / original light identity");
       assert.equal(identity.professionalLabel, mode === "light" ? "rgb(82, 99, 109)" : "rgb(199, 205, 208)");
@@ -341,6 +342,7 @@ async function finalResponsiveAudit(browser) {
           const css = (q) => getComputedStyle(document.querySelector(q));
           return {
             background: getComputedStyle(document.documentElement).getPropertyValue("--bg").trim(),
+             kicker: css(".hero-kicker-row .eyebrow").color,
             page: css("body").backgroundColor,
             title: css(".hero-name-last").color,
             button: css(".hero-actions .button-primary").backgroundColor,
@@ -349,13 +351,14 @@ async function finalResponsiveAudit(browser) {
             browser: document.querySelector('meta[name="theme-color"]').content,
           };
         });
-        assert.equal(unified.background, "#0f1a20", "Deep petrol base must replace Deck graphite");
-        assert.equal(unified.page, "rgb(15, 26, 32)");
+        assert.equal(unified.background, "#0b1419", "Deep petrol base must replace Deck graphite");
+        assert.equal(unified.page, "rgb(11, 20, 25)");
         assert.equal(unified.title, "rgb(199, 205, 208)", "Hero title must be silver");
+         assert.equal(unified.kicker, "rgb(199, 205, 208)", "Customer Success kicker must be silver");
         assert.equal(unified.button, "rgb(199, 205, 208)", "Primary action must be silver");
         assert.equal(unified.brand, "rgba(199, 205, 208, 0.52)");
-        assert.equal(unified.panel, "rgb(23, 38, 46)");
-        assert.equal(unified.browser, "#0f1a20");
+        assert.equal(unified.panel, "rgb(19, 33, 41)");
+        assert.equal(unified.browser, "#0b1419");
         const contrast = await page.evaluate(() => {
           const rgb = (s) => s.match(/[\d.]+/g).slice(0,3).map(Number);
           const luminance = (c) => {
