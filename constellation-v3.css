@@ -503,3 +503,135 @@ html[data-theme="light"] .constellation-hero .cosmic-node > span:last-child {
   .constellation-hero .cosmic-origin::before {animation:none!important;opacity:.45!important}
   .constellation-hero .gb-orbit-etchings circle {transition:none!important}
 }
+
+/* V3.8 | Observatory Signature
+   Interactions and material finish. No edits to the V3.6 orbit mathematics. */
+.constellation-hero .cosmic-atlas {
+  --active-orbit:var(--solar-pro);
+}
+/* Soft chromatic light field, visible only for the current world. */
+.constellation-hero .gb-orbit-aura {
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  left:51%;
+  top:48.913043%;
+  width:82%;
+  aspect-ratio:1;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,color-mix(in srgb,var(--active-orbit) 13%,transparent),transparent 68%);
+  opacity:0;
+  transition:opacity .34s ease;
+}
+.constellation-hero .cosmic-atlas:has(.cosmic-pro:is(:hover,:focus-visible)) {--active-orbit:var(--solar-pro)}
+.constellation-hero .cosmic-atlas:has(.cosmic-lab:is(:hover,:focus-visible)) {--active-orbit:var(--solar-lab)}
+.constellation-hero .cosmic-atlas:has(.cosmic-yoga:is(:hover,:focus-visible)) {--active-orbit:var(--solar-yoga)}
+.constellation-hero .cosmic-atlas:has(.cosmic-node:is(:hover,:focus-visible)) .gb-orbit-aura {opacity:1}
+/* Precision beacons are part of the SVG coordinate system, never floating CSS objects. */
+.constellation-hero .gb-observatory-beacons {pointer-events:none}
+.constellation-hero .gb-observatory-beacons circle {
+  stroke-width:1;
+  transition:opacity .28s ease,fill .28s ease,filter .28s ease;
+}
+.constellation-hero .gb-beacon--pro {
+  fill:rgba(222,241,252,.9);
+  stroke:rgba(222,241,252,.35);
+  filter:drop-shadow(0 0 3px rgba(218,238,250,.48));
+  opacity:.72;
+}
+.constellation-hero .gb-beacon--lab {
+  fill:rgba(103,211,255,.92);
+  stroke:rgba(103,211,255,.38);
+  filter:drop-shadow(0 0 3px rgba(103,211,255,.48));
+  opacity:.69;
+}
+.constellation-hero .gb-beacon--yoga {
+  fill:rgba(135,231,188,.91);
+  stroke:rgba(135,231,188,.38);
+  filter:drop-shadow(0 0 3px rgba(135,231,188,.48));
+  opacity:.69;
+}
+.constellation-hero .cosmic-atlas:has(.cosmic-node:is(:hover,:focus-visible)) .gb-observatory-beacons circle {opacity:.24}
+.constellation-hero .cosmic-atlas:has(.cosmic-pro:is(:hover,:focus-visible)) .gb-beacon--pro,
+.constellation-hero .cosmic-atlas:has(.cosmic-lab:is(:hover,:focus-visible)) .gb-beacon--lab,
+.constellation-hero .cosmic-atlas:has(.cosmic-yoga:is(:hover,:focus-visible)) .gb-beacon--yoga {
+  opacity:1!important;
+  filter:drop-shadow(0 0 7px currentColor);
+}
+.constellation-hero .gb-beacon--pro {color:var(--solar-pro)}
+.constellation-hero .gb-beacon--lab {color:var(--solar-lab)}
+.constellation-hero .gb-beacon--yoga {color:var(--solar-yoga)}
+/* Focus readout: a quiet, tiny observatory caption; no new visible controls. */
+.constellation-hero .gb-orbit-readout {
+  position:absolute;
+  z-index:7;
+  left:51%;
+  bottom:-10%;
+  display:grid;
+  place-items:center;
+  pointer-events:none;
+  width:max-content;
+  max-width:90%;
+  min-height:31px;
+  padding:8px 15px;
+  border:1px solid rgba(126,187,213,.2);
+  border-radius:7px;
+  background:linear-gradient(145deg,rgba(5,18,29,.95),rgba(9,31,45,.89));
+  box-shadow:0 10px 28px rgba(0,0,0,.14),inset 0 1px 0 rgba(192,231,250,.035);
+  color:var(--active-orbit);
+  font:600 .56rem/1.25 var(--mono,monospace);
+  letter-spacing:.095em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  opacity:0;
+  transform:translate(-50%,5px);
+  transition:opacity .24s ease,transform .24s ease,color .24s ease;
+}
+.constellation-hero .gb-orbit-readout > span {display:none}
+.constellation-hero .cosmic-atlas:has(.cosmic-node:is(:hover,:focus-visible)) .gb-orbit-readout {
+  opacity:1;
+  transform:translate(-50%,0);
+}
+.constellation-hero .cosmic-atlas:has(.cosmic-pro:is(:hover,:focus-visible)) .gb-orbit-readout-pro,
+.constellation-hero .cosmic-atlas:has(.cosmic-lab:is(:hover,:focus-visible)) .gb-orbit-readout-lab,
+.constellation-hero .cosmic-atlas:has(.cosmic-yoga:is(:hover,:focus-visible)) .gb-orbit-readout-yoga {display:block}
+/* Depth without scaling: the lighting grows, the orbital geometry does not. */
+.constellation-hero .cosmic-node:is(:hover,:focus-visible) .cosmic-node-star {
+  border-color:color-mix(in srgb,var(--node-color) 85%,white)!important;
+  box-shadow:
+    inset 0 1px 6px rgba(235,249,255,.14),
+    inset -4px -9px 13px rgba(0,0,0,.46),
+    0 0 0 4px color-mix(in srgb,var(--node-color) 14%,transparent),
+    0 0 18px color-mix(in srgb,var(--node-color) 29%,transparent),
+    0 0 36px color-mix(in srgb,var(--node-color) 12%,transparent)!important;
+}
+.constellation-hero .cosmic-node:is(:hover,:focus-visible) > span:last-child {
+  text-shadow:0 0 9px color-mix(in srgb,var(--node-color) 42%,transparent)!important;
+}
+html[data-theme="light"] .constellation-hero .cosmic-atlas {
+  --solar-pro:#567587;
+  --solar-lab:#207fa9;
+  --solar-yoga:#34896c;
+}
+html[data-theme="light"] .constellation-hero .gb-orbit-readout {
+  border-color:rgba(55,116,145,.24);
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(239,249,252,.96));
+  box-shadow:0 8px 23px rgba(45,92,118,.095),inset 0 1px 0 #fff;
+}
+html[data-theme="light"] .constellation-hero .gb-orbit-aura {
+  background:radial-gradient(circle,color-mix(in srgb,var(--active-orbit) 10%,transparent),transparent 68%);
+}
+html[data-theme="light"] .constellation-hero .gb-beacon--pro {fill:#53798d}
+html[data-theme="light"] .constellation-hero .gb-beacon--lab {fill:#2e92bf}
+html[data-theme="light"] .constellation-hero .gb-beacon--yoga {fill:#2c9e78}
+@media(max-width:760px) {
+  .constellation-hero .gb-orbit-readout {display:none!important}
+  .constellation-hero .gb-observatory-beacons circle {opacity:.5}
+  .constellation-hero .gb-orbit-aura {width:76%}
+}
+@media(prefers-reduced-motion:reduce) {
+  .constellation-hero .gb-orbit-readout,
+  .constellation-hero .gb-orbit-aura,
+  .constellation-hero .gb-observatory-beacons circle {transition:none!important}
+}
