@@ -75,4 +75,12 @@ assert.match(perf,/decodedBytes <= c\.maxSourceBytes/,"Keep measured P6 budget")
 assert.match(perf,/transferredBytes/,"Keep real network measurements");
 assert.match(read("README.md"),/docs\/portfolio-banner\.svg/);
 assert.match(read("README.md"),/docs\/three-worlds\.svg/);
+const og = readFileSync("og-cover.png");
+assert.equal(og.subarray(0,8).toString("hex"),"89504e470d0a1a0a","Social cover must be a PNG");
+assert.equal(og.readUInt32BE(16),1200,"OG preview width must be 1200px");
+assert.equal(og.readUInt32BE(20),630,"OG preview height must be 630px");
+assert.ok(og.length<100_000,"Keep social preview small");
+assert.match(html,/og-cover\.png\?v=12/,"Social meta must load the new constellation PNG");
+assert.match(read("og-cover.svg"),/CONSTELLATION ATLAS/,"Legacy brown OG SVG returned");
+assert.match(read("scripts/render-og-p12.py"),/random\.Random\(127\)/,"Image build must be deterministic");
 console.log("P12 CONSTELLATION STATIC PASS · "+ids.length+" unique ids · 3 worlds · 6 cities · 12 CV PDFs · ES/EN");
