@@ -22,7 +22,7 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="dark light">
-  <title>Gracián Baena | Customer Success · Operations · Data · AI</title>
+  <title>Gracián Baena | Constelación de universos</title>
 
   <link rel="canonical" href="https://gracianb.github.io/GracianB/">
   <link rel="alternate" hreflang="es" href="https://gracianb.github.io/GracianB/?lang=es">
@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="./styles.css?v=27">
   <link rel="stylesheet" href="./deck-dark.css?v=5">
   <link rel="stylesheet" href="./hub-finish.css?v=2">
-  <link rel="stylesheet" href="./portal-v11.css?v=1">
+  <link rel="stylesheet" href="./portal-v11.css?v=2">
 
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Gracián Baena">
@@ -52,8 +52,8 @@
   <meta name="twitter:description" content="Customer Success, Operations, Data, Automation and AI connected through usable systems.">
   <meta name="twitter:image" content="https://gracianb.github.io/GracianB/og-cover.png?v=21">
 
-  <script src="./i18n.js?v=25" defer></script>
-  <script src="./main.js?v=p11-portals" defer></script>
+  <script src="./i18n.js?v=26" defer></script>
+  <script src="./main.js?v=p12-sky" defer></script>
 
   <script type="application/ld+json">
   {
@@ -109,6 +109,7 @@
   <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
 
   <div class="ambient" aria-hidden="true">
+    <canvas class="ambient-stars" data-constellation-sky></canvas>
     <div class="ambient-grid"></div>
     <div class="ambient-orb ambient-orb-a"></div>
     <div class="ambient-orb ambient-orb-b"></div>
@@ -126,10 +127,10 @@
     </a>
 
     <nav class="desktop-nav" aria-label="Navegación principal" data-i18n-aria-label="navMainLabel">
-      <a href="#universes" data-i18n="navWorlds">Mundos</a>
+      <a href="#universes" data-i18n="navWorlds">Universos</a>
       <a href="#evidence" data-i18n="navEvidence">Evidencia</a>
       
-      <a href="#arc" data-i18n="navArc">Trayectoria</a>
+      <a href="#arc" data-i18n="navArc">Quién soy</a>
       <a href="#documents" data-i18n="navDocs">Documentos</a>
       <a href="#contact" data-i18n="navContact">Contacto</a>
     </nav>
@@ -155,10 +156,10 @@
 
   <div class="mobile-menu" id="mobile-menu" hidden>
     <nav aria-label="Navegación móvil" data-i18n-aria-label="navMobileLabel">
-      <a href="#universes" data-i18n="navWorlds">Mundos</a>
+      <a href="#universes" data-i18n="navWorlds">Universos</a>
       <a href="#evidence" data-i18n="navEvidence">Evidencia</a>
       
-      <a href="#arc" data-i18n="navArc">Trayectoria</a>
+      <a href="#arc" data-i18n="navArc">Quién soy</a>
       <a href="#documents" data-i18n="navDocs">Documentos</a>
       <a href="#contact" data-i18n="navContact">Contacto</a>
     </nav>
@@ -314,11 +315,13 @@
       <header class="section-head">
         <div>
           <p class="eyebrow" data-i18n="evidenceEyebrow">EVIDENCIA SELECCIONADA</p>
-          <h2 id="evidence-title" data-i18n="evidenceTitle">No una lista de tecnologías. Cinco sistemas, cinco tipos de prueba.</h2>
+          <h2 id="evidence-title" data-i18n="evidenceTitle">Cosas que han cobrado vida.</h2>
         </div>
-        <p data-i18n="evidenceIntro">Cada proyecto responde a una pregunta distinta: ¿puedo mejorar una operación real, modelar decisiones, construir software complejo, trabajar en tiempo real y diseñar productos con IA?</p>
+        <p data-i18n="evidenceIntro">Un pequeño observatorio de proyectos reales, prototipos y experimentos. Ábrelo si te apetece mirar dentro.</p>
       </header>
 
+      <details class="observatory-details">
+        <summary><span data-i18n="projectReveal">Explorar proyectos</span><span aria-hidden="true">05 / ↗</span></summary>
       <div class="evidence-grid">
         <article class="evidence-card evidence-gold">
           <div class="card-top"><span>01 / OPERATIONS</span><b data-i18n="statusProduction">PRODUCCIÓN</b></div>
@@ -390,6 +393,7 @@
           </div>
         </article>
       </div>
+      </details>
     </section>
 
     <section class="documents-section" id="documents" aria-labelledby="documents-title">
@@ -397,9 +401,9 @@
         <header class="section-head">
           <div>
             <p class="eyebrow" data-i18n="docsEyebrow">DOCUMENTOS</p>
-            <h2 id="documents-title" data-i18n="docsTitle">Documentación profesional.</h2>
+            <h2 id="documents-title" data-i18n="docsTitle">CV y otros caminos.</h2>
           </div>
-          <p data-i18n="docsIntro">CV y cartas de presentación en español e inglés: perfil profesional, Yoga y candidatura a Tripulante de Cabina.</p>
+          <p data-i18n="docsIntro">Todo lo necesario para una candidatura, sin convertir este atlas en otro currículum.</p>
         </header>
 
         <p class="b6-application-handoff">
@@ -408,6 +412,8 @@
             <b aria-hidden="true">↗</b>
           </a>
         </p>
+        <details class="cv-library-details">
+          <summary><span data-i18n="documentsReveal">Ver documentos y PDF</span><span aria-hidden="true">12 / ↗</span></summary>
         <div class="documents-grid">
           <article class="document-group document-group-professional">
             <div class="document-visual" aria-hidden="true"><div><span>01 / CUSTOMER SYSTEMS</span><strong>PEOPLE<br>→ SYSTEMS</strong><small>CS · DATA · AUTOMATION</small></div><span class="document-visual-page">CV<span>ES / EN</span></span></div>
@@ -450,6 +456,7 @@
             <a href="./cabin-letter-en.html"><span data-i18n="tcpLetterEn">Cover TCP · EN</span><b>WEB ↗</b></a>
           </article>
         </div>
+        </details>
       </div>
     </section>
 
@@ -457,8 +464,8 @@
       <div class="contact-panel">
         <div>
           <p class="eyebrow" data-i18n="contactEyebrow">CONTACTO</p>
-          <h2 id="contact-title" data-i18n="contactTitle">Si el problema mezcla clientes, operaciones, datos y sistemas, probablemente tengamos conversación.</h2>
-          <p data-i18n="contactBody">Murcia, España. Disponible para roles y proyectos donde el trabajo consista en entender una operación y mejorar cómo decide, sirve y escala.</p>
+          <h2 id="contact-title" data-i18n="contactTitle">Las buenas conversaciones abren mundos nuevos.</h2>
+          <p data-i18n="contactBody">Desde Murcia, abierto a colaborar, compartir ideas o construir algo que merezca existir.</p>
         </div>
         <div class="contact-actions">
           <a class="button button-primary" href="https://calendar.app.google/n99psBFktwYyoAWi9" target="_blank" rel="noopener noreferrer"><span data-i18n="book">Agenda 30 min</span><b>↗</b></a>
@@ -472,7 +479,7 @@
   <footer class="footer section-shell">
     <div>
       <strong>GRACIÁN BAENA</strong>
-      <span data-i18n="footerLine">People → Operations → Data → Systems → AI</span>
+      <span data-i18n="footerLine">Una misma curiosidad. Muchos mundos.</span>
     </div>
     <div>
       <a href="https://github.com/GracianB" target="_blank" rel="noopener noreferrer">GitHub</a>
