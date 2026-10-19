@@ -212,7 +212,7 @@ main,.footer{position:relative;z-index:1}
 .cosmic-atlas:has(.cosmic-pro:hover) .bridge-route-pro,
 .cosmic-atlas:has(.cosmic-yoga:hover) .bridge-route-yoga,
 .cosmic-atlas:has(.cosmic-lab:hover) .bridge-route-lab{stroke-width:3.8;opacity:1}
-.cosmic-atlas:has(.cosmic-node:hover) .bridge-route:not(:has(.irrelevant)){opacity:.4}
+.cosmic-atlas:has(.cosmic-node:hover) .bridge-route{opacity:.4}
 .cosmic-atlas:has(.cosmic-pro:hover) .bridge-route-pro,
 .cosmic-atlas:has(.cosmic-yoga:hover) .bridge-route-yoga,
 .cosmic-atlas:has(.cosmic-lab:hover) .bridge-route-lab{opacity:1}
