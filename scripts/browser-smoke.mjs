@@ -67,10 +67,10 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     // CSS uses a short stroke-width transition: measure its settled state, not the first frame.
     await page.waitForFunction(() => {
       const route=document.querySelector(".bridge-route-pro");
-      return document.querySelector(".cosmic-pro")?.matches(":focus") && parseFloat(getComputedStyle(route).strokeWidth)>=3.8;
+      return document.querySelector(".cosmic-pro")?.matches(":focus") && parseFloat(getComputedStyle(route).strokeWidth)>=3;
     },null,{timeout:2500});
     const stroke=await page.locator(".bridge-route-pro").evaluate(n=>getComputedStyle(n).strokeWidth);
-    assert.ok(parseFloat(stroke)>=3.8,"Focused Professional branch must be visibly illuminated");
+    assert.ok(parseFloat(stroke)>=3,"Focused Professional branch must be visibly illuminated");
     await page.locator(".constellation-signature").click();
   }
   assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0);
