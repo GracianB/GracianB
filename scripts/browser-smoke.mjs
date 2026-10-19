@@ -57,8 +57,13 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   if(width>=1280){
     const pro=page.locator(".cosmic-pro");
     await pro.focus();
+    // CSS uses a short stroke-width transition: measure its settled state, not the first frame.
+    await page.waitForFunction(() => {
+      const route=document.querySelector(".bridge-route-pro");
+      return document.querySelector(".cosmic-pro")?.matches(":focus") && parseFloat(getComputedStyle(route).strokeWidth)>=3.8;
+    },null,{timeout:2500});
     const stroke=await page.locator(".bridge-route-pro").evaluate(n=>getComputedStyle(n).strokeWidth);
-    assert.ok(parseFloat(stroke)>=3.8,"Keyboard focus must illuminate the Professional constellation route");
+    assert.ok(parseFloat(stroke)>=3.8,"Focused Professional branch must be visibly illuminated");
     await page.locator(".constellation-signature").click();
   }
   assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0);
