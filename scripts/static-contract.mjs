@@ -75,7 +75,7 @@ assert.equal((html.match(/class="document-group document-group-/g)||[]).length,3
 assert.match(html,/data-application-link/);
 assert.match(html,/styles\.css\?v=29/,"Latest shared CSS must bypass old cache");
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
-assert.match(html,/portal-v11\.css\?v=(?:5|v2-direct-20261019)/);
+assert.match(html,/portal-v11\.css\?v=(?:5|v31-hover-20261019)/);
 assert.match(html,/i18n\.js\?v=27" defer/);
 assert.equal((html.match(/data-command-category="/g)||[]).length,10,"Quick atlas has ten actionable destinations");
 assert.equal((html.match(/data-command-filter="/g)||[]).length,4,"Quick atlas filters are required");
