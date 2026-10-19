@@ -48,6 +48,8 @@ assert.match(html,/data-constellation-sky/);
 assert.match(html,/class="cosmic-bridge"/,"Visible star paths should unite the three universes");
 assert.match(html,/class="cosmic-origin"/,"There must be a central GracianB origin");
 assert.equal((html.match(/data-route-world="/g)||[]).length,3,"Exactly three visible routes to three worlds");
+assert.equal((html.match(/class="world-orb-sigil"/g)||[]).length,3,"Three universe identities must have distinct SVG sigils");
+for(const icon of ["cosmic-pro","cosmic-yoga","cosmic-lab"])assert.match(html,new RegExp('class="cosmic-node '+icon+'"[^>]*>[\\s\\S]*?<svg class="world-orb-sigil"'),"Missing visible universe symbol: "+icon);
 assert.match(js,/const clusters = \[/,"Background stars must form identifiable constellations too");
 assert.match(js,/links:\[\[/,"Constellation groups need paths between a limited number of stars");
 assert.match(css,/\.bridge-route-pro/,"Professional requires its own visible route");
