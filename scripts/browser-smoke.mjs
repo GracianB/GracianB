@@ -41,6 +41,26 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.equal(await page.locator(".world-portal").count(),3);
   assert.equal(await page.locator(".world-portal:visible").count(),3);
   assert.equal(await page.locator(".cosmic-node").count(),3);
+  const bridge=await page.locator(".cosmic-bridge").evaluate(svg=>{
+    const paths=[...svg.querySelectorAll(".bridge-route path")];
+    return {width:svg.getBoundingClientRect().width,height:svg.getBoundingClientRect().height,
+      count:paths.length,lengths:paths.map(p=>p.getTotalLength()),
+      colors:paths.map(p=>getComputedStyle(p).stroke)};
+  });
+  assert.ok(bridge.width>190&&bridge.height>170,"Hero constellation must have space to read");
+  assert.equal(bridge.count,3,"Three worlds need three distinct connections");
+  assert.ok(bridge.lengths.every(n=>n>170),"Every universe route must be visually recognisable: "+JSON.stringify(bridge.lengths));
+  assert.equal(new Set(bridge.colors).size,3,"World routes must be visibly differentiated by color");
+  assert.equal(await page.locator(".cosmic-origin").count(),1,"Missing common GB origin");
+  const core=await page.locator(".cosmic-origin").boundingBox();
+  assert.ok(core.width>=45,"Central GracianB origin must be legible");
+  if(width>=1280){
+    const pro=page.locator(".cosmic-pro");
+    await pro.focus();
+    const stroke=await page.locator(".bridge-route-pro").evaluate(n=>getComputedStyle(n).strokeWidth);
+    assert.ok(parseFloat(stroke)>=3.8,"Keyboard focus must illuminate the Professional constellation route");
+    await page.locator(".constellation-signature").click();
+  }
   assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0);
   assert.equal(await page.locator(".atlas-pin").count(),6);
   assert.equal(await page.locator(".atlas-pin[aria-pressed=true]").count(),1);
@@ -107,6 +127,8 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.ok(rect.x>=-1 && rect.x+rect.width<=width+1,"Portal "+world+" clipped at "+width);
   }
   if(width>=1280 && theme==="dark"){
+    await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+    await page.screenshot({path:artifacts+"/visible-constellation-hero.png",fullPage:false});
     const expected={professional:[199,205,208],yoga:[145,220,178],lab:[139,218,250]};
     for(const [world,color] of Object.entries(expected)){
       const portal=page.locator('.world-portal[data-portal="'+world+'"]');
