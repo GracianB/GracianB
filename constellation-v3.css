@@ -138,3 +138,12 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
  .constellation-hero .cosmic-node,.constellation-hero .cosmic-node .world-orb-sigil{transition:none!important}
  .constellation-hero .cosmic-node:is(:hover,:focus-visible){transform:none!important}
 }
+
+/* Focus connects each selected world without painting over its planet. */
+.constellation-hero .cosmic-atlas:has(.cosmic-pro:is(:hover,:focus-visible)) .bridge-route-pro,
+.constellation-hero .cosmic-atlas:has(.cosmic-yoga:is(:hover,:focus-visible)) .bridge-route-yoga,
+.constellation-hero .cosmic-atlas:has(.cosmic-lab:is(:hover,:focus-visible)) .bridge-route-lab{
+ stroke-width:3.2!important;opacity:1!important;
+ filter:drop-shadow(0 0 10px var(--route-stroke));
+}
+.constellation-hero .bridge-route.is-short-route{opacity:0!important}
