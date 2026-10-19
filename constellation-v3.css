@@ -162,3 +162,10 @@ html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gr
   .constellation-hero .cosmic-atlas{overflow:clip!important;max-width:100%!important}
   .constellation-hero .cosmic-bridge{overflow:hidden!important}
 }
+
+/* Tablet containment: orbital overlays must never affect document width. */
+@media(max-width:1080px){
+ .constellation-hero{overflow-x:clip!important}
+ .constellation-hero .cosmic-atlas{overflow:clip!important;max-width:100%!important}
+ .constellation-hero .cosmic-bridge{overflow:hidden!important}
+}
