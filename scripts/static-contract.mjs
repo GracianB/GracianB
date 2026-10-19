@@ -130,11 +130,11 @@ assert.ok((css.match(/!important/g) || []).length <= 10, "Too many !important de
 const sharedDark = readFileSync("deck-dark.css","utf8");
 // The final dark variant is intentionally deeper than the approved Professional Deck CV.
 for (const [token, hex] of Object.entries({
-  "--deck-deep":"#03090d",
-  "--deck-bg":"#060f14",
-  "--deck-low":"#0b171e",
-  "--deck-card":"#102129",
-  "--deck-raised":"#172d36",
+  "--deck-deep":"#010407",
+  "--deck-bg":"#02070b",
+  "--deck-low":"#050e14",
+  "--deck-card":"#09171e",
+  "--deck-raised":"#10242d",
   "--deck-silver":"#c7cdd0",
   "--deck-ivory":"#edf2f2",
   "--deck-petrol":"#88a4b0",
@@ -149,13 +149,15 @@ assert.doesNotMatch(sharedDark, /#(?:daa428|d8ae64|edbb43|8b693f|795e35|7b673f|a
 assert.ok(!sharedDark.includes("#151c22") && !sharedDark.includes("#263039"),
   "This dark variant must be noticeably deeper than the Professional Deck base");
 const hubFinal = readFileSync("hub-finish.css","utf8");
-assert.match(html, /hub-finish\.css\?v=1/, "Final hub stylesheet must load");
+assert.match(html, /hub-finish\.css\?v=2/, "Final hub stylesheet must load");
 assert.match(hubFinal, /\.world-professional \.world-art/, "Professional card must use silver / neutral art");
 assert.match(hubFinal, /\.world-professional :is\(\.world-code,\.world-enter b\)/, "Professional labels must not be brown");
 assert.match(hubFinal, /\.evidence-card/, "Whole site, not just header, must be restyled");
+assert.match(hubFinal, /#040b11/, "Methods and documents must use the new abyss-petrol section shade");
+assert.match(hubFinal, /#07151c/, "Cards must be darker without flattening Yoga and Lab");
 assert.match(readme, /docs\/three-worlds\.svg/, "README needs visual worlds");
-assert.match(html, /deck-dark\.css\?v=4/);
-assert.match(readFileSync("apply.html","utf8"), /deck-dark\.css\?v=4/);
+assert.match(html, /deck-dark\.css\?v=5/);
+assert.match(readFileSync("apply.html","utf8"), /deck-dark\.css\?v=5/);
 assert.match(css, /--bg:var\(--cv-paper\)/,
   "The existing light mode must remain available and unchanged");
 assert.match(css, /\.world-professional\s*\{--world-accent:#d6d5d0;--gold:#d6d5d0\}/,
@@ -178,9 +180,9 @@ assert.equal((application.match(/data-brief-track="/g)||[]).length, 5,
   "P3 must include three professional and two specialist briefs");
 assert.match(application, /data-brief-print/, "P3 printable brief entry missing");
 assert.match(application, /data-b6-theme-toggle/, "Application theme control missing");
-assert.match(application, /<meta name="theme-color" content="#060f14">/,
+assert.match(application, /<meta name="theme-color" content="#02070b">/,
   "First paint on application desk must be dark by default");
-assert.match(application, /apply\.js\?v=p8-final/,
+assert.match(application, /apply\.js\?v=p10-dark/,
   "Theme application JavaScript cache key missing");
 assert.match(readFileSync("apply.js", "utf8"), /gb-hub-theme/,
   "Both pages must share the same saved theme preference");
@@ -193,7 +195,7 @@ assert.match(application, /RevOps Studio continúa en desarrollo/,
 
 
 assert.match(css, /\/\* V19 · CV-inspired editorial finish/, "V19 typography polish is missing");
-assert.match(html, /main\.js\?v=p8-final/, "P1.3 JS must bypass old cached bytes");
+assert.match(html, /main\.js\?v=p10-dark/, "P1.3 JS must bypass old cached bytes");
 assert.match(html, /i18n\.js\?v=24" defer/, "P1.3 i18n dictionary must be deferred, preserving script order");
 assert.match(html, /og-cover\.png\?v=21/, "OG card URL must bypass the obsolete cached PNG");
 // Replaced CSS artwork is gone from the actual hub: never restore inert orbit components.
@@ -203,7 +205,7 @@ assert.doesNotMatch(readFileSync("main.js", "utf8"), /addEventListener\("pointer
   "Global pointer tracking for deleted artwork must not return");
 assert.doesNotMatch(html, /rel="preload" href="\.\/styles\.css/,
   "Do not preload the same blocking stylesheet redundantly");
-assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=p8-final" defer><\/script>/,
+assert.match(html, /<script src="\.\/i18n\.js\?v=24" defer><\/script>\s*<script src="\.\/main\.js\?v=p10-dark" defer><\/script>/,
   "Dictionary must execute before the app, with both scripts deferred");
 const socialPng = readFileSync("og-cover.png");
 assert.equal(socialPng.toString("hex", 0, 8), "89504e470d0a1a0a", "OG must remain an actual PNG");
@@ -225,8 +227,8 @@ assert.match(behavior, /gb-world-overview/, "Overview preference must persist");
 assert.match(behavior, /slide\.setAttribute\("aria-hidden", String\(!overview && !active\)\)/,
   "Overview must expose all three slides to assistive technology");
 const themeJs = readFileSync("main.js", "utf8");
-assert.match(themeJs, /"#f7f5ef" : "#060f14"/, "Browser theme color must reflect the CV");
-assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#060f14"/);
+assert.match(themeJs, /"#f7f5ef" : "#02070b"/, "Browser theme color must reflect the CV");
+assert.match(readFileSync("site.webmanifest", "utf8"), /"theme_color": "#02070b"/);
 assert.match(readFileSync("favicon.svg", "utf8"), /#c7cdd0/);
 
 
