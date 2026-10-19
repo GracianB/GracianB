@@ -145,14 +145,34 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.equal(await page.locator("[data-world-overview],[data-world-prev],[data-world-next]").count(),0);
   assert.equal(await page.locator(".atlas-pin").count(),6);
   assert.equal(await page.locator(".atlas-pin[aria-pressed=true]").count(),1);
+  assert.equal(await page.locator(".atlas-pin-name").count(),6,"Each place needs a readable full name");
+  assert.equal(await page.locator(".atlas-pin-copy small").count(),6,"Every place needs an immediately visible learning label");
+  assert.equal(await page.locator("[data-atlas-focus]").count(),1,"Selected chapter needs a distinct focus headline");
+  assert.equal(await page.locator("[data-i18n=atlasNote]").isVisible(),true,"Visitors must understand that this is not a map or chronological route");
+  const chapterLayout=await page.locator(".city-atlas-chart").evaluate(el=>{
+    const buttons=[...el.querySelectorAll(".atlas-pin")].map(node=>node.getBoundingClientRect());
+    return {display:getComputedStyle(el).display,
+      minimumHeight:Math.min(...buttons.map(b=>b.height)),
+      allInViewport:buttons.every(b=>b.left>=-1&&b.right<=innerWidth+1),
+      uniquePositions:new Set(buttons.map(b=>Math.round(b.x)+":"+Math.round(b.y))).size};
+  });
+  assert.equal(chapterLayout.display,"grid","Six-city guide should be a clear responsive chapter grid");
+  assert.ok(chapterLayout.minimumHeight>=44,"Place cards need accessible touch targets");
+  assert.ok(chapterLayout.allInViewport,"Place cards must never overflow viewport");
+  assert.equal(chapterLayout.uniquePositions,6,"Six place choices must not overlap");
   await page.locator('.atlas-pin[data-atlas-city="bergamo"]').click();
   assert.equal(await page.locator('.atlas-pin[data-atlas-city="bergamo"]').getAttribute("aria-pressed"),"true");
-  assert.match(await page.locator("[data-atlas-readout]").innerText(),/BÉRGAMO · (ITALIA|ITALY)/);
+  assert.match(await page.locator("[data-atlas-readout]").innerText(),lang==="es"?/BÉRGAMO · ITALIA/:/BERGAMO · ITALY/);
   const cityStory=page.locator("[data-atlas-story]");
   assert.ok((await cityStory.innerText()).trim().length>28,"City selection must provide a meaningful description");
+  assert.ok((await page.locator("[data-atlas-focus]").innerText()).length>12,"Selected place must have a clear learning headline");
   await page.locator('.atlas-pin[data-atlas-city="lisboa"]').click();
   assert.equal(await page.locator('.atlas-pin[data-atlas-city="lisboa"]').getAttribute("aria-pressed"),"true");
   assert.ok((await cityStory.innerText()).toLowerCase().includes("majorel"),"Lisbon should show its own professional chapter");
+  // Navigation supports both pointer clicks and keyboard arrows.
+  await page.locator('.atlas-pin[data-atlas-city="madrid"]').focus();
+  await page.keyboard.press(width<=530?"ArrowDown":"ArrowRight");
+  assert.equal(await page.locator(".atlas-pin[aria-pressed=true]").getAttribute("data-atlas-city"),"lisboa");
   await page.locator('.atlas-pin[data-atlas-city="bergamo"]').click();
 
   // Verify the decorative star formations become visible only beyond the hero.
@@ -193,11 +213,11 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     return {themeToggle:{width:t.width,height:t.height,sunOffset:Math.abs(center(sun)-(t.left+t.width*.25)),moonOffset:Math.abs(center(moon)-(t.left+t.width*.75))},
       lightBg:style("html").getPropertyValue("--bg").trim(),
       header:style(".topbar").backgroundColor,worlds,
-      atlas:style(".city-atlas").backgroundImage,atlasGrid:style(".city-atlas-chart").backgroundImage,
+      atlas:style(".city-atlas").backgroundImage,atlasLayout:style(".city-atlas-chart").display,atlasCard:style(".atlas-pin").backgroundImage,
       atlasPin:style(".atlas-pin").color,summaries,
       extraAtlasNote:document.querySelectorAll("[data-i18n=atlasNote]").length};
   });
-  assert.equal(lightAudit.extraAtlasNote,0,"Atlas copy should not pollute the map");
+  assert.equal(lightAudit.extraAtlasNote,1,"Atlas must clarify that places are personal chapters, not a geographic route");
   assert.ok(lightAudit.themeToggle.sunOffset<=3.5 && lightAudit.themeToggle.moonOffset<=3.5,
     "Theme toggle vector icons must be geometrically centered: "+JSON.stringify(lightAudit.themeToggle));
   assert.ok(lightAudit.themeToggle.height>=44,"Theme control must be touch accessible");
@@ -205,7 +225,8 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.equal(lightAudit.lightBg,"#eff4f5","Light mode must use mineral silver, not beige CV paper");
     assert.deepEqual(lightAudit.worlds,["#526c7a","#26744f","#166f9d"],"Three worlds need distinct accessible light accents");
     assert.match(lightAudit.atlas,/linear-gradient/,"Light atlas must have a designed panel");
-    assert.match(lightAudit.atlasGrid,/linear-gradient/,"Light map must have a legible grid");
+    assert.equal(lightAudit.atlasLayout,"grid","Light atlas must keep a readable card grid");
+    assert.match(lightAudit.atlasCard,/linear-gradient|rgba/,"Light chapter cards must have deliberate panel styling");
     for(const summary of lightAudit.summaries){
       assert.match(summary.bg,/linear-gradient/,"Light disclosure cannot revert to flat grey");
       assert.equal(summary.color,"rgb(27, 57, 70)","Light disclosure text needs deliberate contrast");
