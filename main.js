@@ -457,7 +457,7 @@
     addEventListener("resize",reset,{passive:true});
     // With reduced motion animation is disabled, but the ambient map still
     // follows chapter changes without requiring an animation loop.
-    addEventListener("scroll",()=>{if(!running)paint(0);},{passive:true});
+    addEventListener("scroll",()=>{if(!running && theme==="dark")paint(0);},{passive:true});
     addEventListener("pointermove",e=>{mx=e.clientX-innerWidth/2;my=e.clientY-innerHeight/2;},{passive:true});
     document.addEventListener("visibilitychange",sync);
     reset();sync();
