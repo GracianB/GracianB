@@ -1,0 +1,157 @@
+/* GB / COSMOS V3 — cinematic interactive universe atlas.
+   All art is native SVG/CSS. No bitmap, tracking, or external dependency. */
+.constellation-hero .cosmic-atlas{
+ --space-silver:#d7e4eb;--space-mint:#8becc0;--space-cyan:#77d9ff;
+ position:relative;isolation:isolate;overflow:visible;
+ filter:none!important;
+ background:
+ radial-gradient(ellipse at 54% 48%,rgba(62,132,169,.13) 0%,transparent 37%),
+ radial-gradient(ellipse at 91% 11%,rgba(73,168,129,.12) 0%,transparent 32%),
+ radial-gradient(ellipse at 35% 83%,rgba(54,144,211,.15) 0%,transparent 33%);
+}
+.constellation-hero .cosmic-atlas::before{
+ content:"";position:absolute;inset:3%;z-index:0;pointer-events:none;
+ border:1px solid rgba(127,181,209,.13);border-radius:50%;
+ background:
+ repeating-radial-gradient(circle at 51% 48%,transparent 0 63px,rgba(136,191,221,.045) 64px 65px,transparent 66px 92px),
+ radial-gradient(circle at 51% 48%,rgba(43,120,168,.15),transparent 55%);
+ box-shadow:inset 0 0 75px rgba(54,155,199,.045),0 0 85px rgba(19,96,126,.06);
+}
+.constellation-hero .cosmic-atlas::after{
+ content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border:0;
+ background-image:
+ radial-gradient(circle,rgba(228,250,255,.8) .75px,transparent 1.5px),
+ radial-gradient(circle,rgba(128,215,248,.6) .8px,transparent 1.6px);
+ background-size:83px 117px,149px 131px;background-position:18px 43px,75px 24px;
+ opacity:.44;
+ mask-image:radial-gradient(ellipse,#000 15%,transparent 83%);
+}
+.constellation-hero .cosmic-bridge{z-index:1!important;overflow:visible!important}
+.constellation-hero .cosmic-bridge .cosmic-bridge-halo{opacity:.65}
+.constellation-hero .bridge-satellite-grid{display:block!important;opacity:.17;stroke:rgba(134,191,226,.55);fill:none;stroke-width:1}
+.constellation-hero .bridge-trace-stars{opacity:.8!important;fill:#b9eaff}
+.constellation-hero .bridge-route{stroke-width:2!important;stroke-dasharray:none!important;opacity:.78!important;filter:drop-shadow(0 0 5px currentColor);animation:none!important}
+.constellation-hero .bridge-route path{stroke-linecap:round}
+.constellation-hero .bridge-route-pro{color:#dbe6ee;--route-stroke:#dbe6ee}
+.constellation-hero .bridge-route-yoga{color:#8becc0;--route-stroke:#8becc0}
+.constellation-hero .bridge-route-lab{color:#7ad9ff;--route-stroke:#7ad9ff}
+.constellation-hero .bridge-route circle{display:block!important;fill:var(--route-stroke);stroke:none;filter:drop-shadow(0 0 6px var(--route-stroke))}
+.constellation-hero .gb-orbit-guide{stroke:rgba(133,197,230,.22);stroke-width:1;stroke-dasharray:2 9;fill:none;transform-origin:510px 450px;animation:gb-orbit-spin 100s linear infinite}
+.constellation-hero .gb-orbit-guide--reverse{animation-direction:reverse;animation-duration:135s}
+.constellation-hero .gb-orbit-ticks{stroke:rgba(128,199,233,.3);stroke-width:1;fill:none}
+.constellation-hero .gb-space-spark{fill:#d3f4ff;filter:drop-shadow(0 0 5px #7edaff);transform-box:fill-box;transform-origin:center;animation:gb-star-pulse 4s ease-in-out infinite}
+.constellation-hero .gb-space-spark:nth-child(2n){animation-delay:-1.75s}
+.constellation-hero .cosmic-origin{
+ width:clamp(82px,9vw,122px)!important;height:clamp(82px,9vw,122px)!important;
+ border:1px solid rgba(166,227,255,.75)!important;
+ background:radial-gradient(circle at 38% 29%,#143b52,#071b2b 62%,#02090e)!important;
+ box-shadow:0 0 0 8px rgba(89,184,230,.07),0 0 0 19px rgba(117,197,236,.045),0 0 48px rgba(92,193,255,.35),inset 0 0 22px rgba(124,209,245,.24)!important;
+ z-index:5!important;position:absolute;isolation:isolate;
+}
+.constellation-hero .cosmic-origin::before{
+ content:"";position:absolute;inset:-22px;border:1px dashed rgba(152,222,255,.38);
+ border-radius:50%;pointer-events:none;animation:gb-orbit-spin 42s linear infinite;
+}
+.constellation-hero .cosmic-origin::after{
+ content:"";position:absolute;inset:-33px;border:1px solid rgba(152,222,255,.13);
+ border-radius:50%;pointer-events:none;
+}
+.constellation-hero .cosmic-origin-star{color:#b5eaff!important;filter:drop-shadow(0 0 11px #74cfff)}
+.constellation-hero .cosmic-node{
+ --planet-radius:clamp(108px,12vw,160px);min-width:142px!important;
+ gap:1.2rem!important;z-index:6!important;font-family:var(--serif,Georgia,serif)!important;
+ font-size:clamp(1.05rem,1.45vw,1.45rem)!important;font-weight:500!important;
+ color:var(--node-color)!important;letter-spacing:-.02em;text-align:center;
+ transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .5s ease!important;
+}
+.constellation-hero .cosmic-pro{left:3%!important;top:11%!important}
+.constellation-hero .cosmic-yoga{right:0%!important;top:2%!important}
+.constellation-hero .cosmic-lab{left:39%!important;bottom:-1%!important}
+.constellation-hero .cosmic-node .cosmic-node-star{
+ position:relative;display:grid;place-items:center;
+ width:var(--planet-radius)!important;height:var(--planet-radius)!important;
+ border:1px solid color-mix(in srgb,var(--node-color) 80%,transparent)!important;border-radius:50%;
+ background:
+ radial-gradient(circle at 30% 20%,rgba(255,255,255,.26),transparent 31%),
+ radial-gradient(circle at 60% 75%,color-mix(in srgb,var(--node-color) 27%,#061523),#05101b 65%,#02070c)!important;
+ outline:none!important;
+ box-shadow:
+ inset -12px -15px 25px rgba(0,0,0,.67),inset 4px 6px 22px color-mix(in srgb,var(--node-color) 20%,transparent),
+ 0 0 0 8px color-mix(in srgb,var(--node-color) 8%,transparent),
+ 0 0 0 23px color-mix(in srgb,var(--node-color) 3%,transparent),
+ 0 0 47px color-mix(in srgb,var(--node-color) 24%,transparent)!important;
+ animation:gb-planet-float 7s ease-in-out infinite!important;
+}
+.constellation-hero .cosmic-node .cosmic-node-star::before{
+ content:"";inset:-16px;position:absolute;border-radius:50%;
+ border:1px solid color-mix(in srgb,var(--node-color) 48%,transparent);
+ transform:rotate(-22deg) scaleY(.88);pointer-events:none;
+}
+.constellation-hero .cosmic-node .cosmic-node-star::after{
+ content:"";inset:-26px;position:absolute;border-radius:50%;
+ border:1px dotted color-mix(in srgb,var(--node-color) 28%,transparent);
+ transform:rotate(24deg) scaleX(.92);pointer-events:none;
+}
+.constellation-hero .cosmic-node .world-orb-sigil{
+ width:68%!important;height:68%!important;
+ color:var(--node-color)!important;
+ filter:drop-shadow(0 0 13px color-mix(in srgb,var(--node-color) 70%,transparent))!important;
+ transition:transform .6s ease,filter .6s ease!important;
+}
+.constellation-hero .cosmic-node:is(:hover,:focus-visible){transform:translateY(-8px) scale(1.06)!important;filter:brightness(1.2)}
+.constellation-hero .cosmic-node:is(:hover,:focus-visible) .world-orb-sigil{transform:rotate(7deg) scale(1.07)}
+.constellation-hero .cosmic-node:focus-visible{outline:3px solid var(--node-color);outline-offset:13px}
+.constellation-hero .cosmic-node>span:last-child{
+ background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--node-color)!important;
+ text-shadow:0 0 20px color-mix(in srgb,var(--node-color) 24%,transparent);
+}
+.constellation-hero .cosmic-node>span:last-child::after{
+ content:"";display:block;width:68%;height:1px;margin:.75rem auto 0;
+ background:linear-gradient(90deg,transparent,var(--node-color),transparent);opacity:.5;
+}
+@keyframes gb-orbit-spin{to{transform:rotate(360deg)}}
+@keyframes gb-star-pulse{50%{opacity:.3;transform:scale(.65)}}
+@keyframes gb-planet-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media(max-width:1080px){
+ .constellation-hero .cosmic-node{--planet-radius:clamp(80px,10vw,112px);min-width:100px!important;font-size:clamp(.85rem,1.5vw,1.05rem)!important}
+ .constellation-hero .cosmic-origin{width:85px!important;height:85px!important}
+}
+@media(max-width:760px){
+ .constellation-hero .cosmic-node{--planet-radius:clamp(68px,16vw,94px);min-width:77px!important;font-size:.83rem!important;gap:.65rem!important}
+ .constellation-hero .cosmic-pro{left:1%!important;top:15%!important}
+ .constellation-hero .cosmic-yoga{right:0!important;top:10%!important}
+ .constellation-hero .cosmic-lab{left:40%!important;bottom:4%!important}
+ .constellation-hero .cosmic-origin{width:69px!important;height:69px!important}
+ .constellation-hero .cosmic-node .cosmic-node-star::after{inset:-12px}
+ .constellation-hero .cosmic-node .cosmic-node-star::before{inset:-7px}
+ .constellation-hero .cosmic-node>span:last-child::after{margin:.4rem auto 0}
+}
+html[data-theme="light"] .constellation-hero .cosmic-node .cosmic-node-star{
+ background:radial-gradient(circle at 30% 23%,#fff,#d5e7ee 72%,#acc5d0)!important;
+ box-shadow:inset 0 0 20px #fff,0 0 0 8px color-mix(in srgb,var(--node-color) 6%,transparent),0 12px 34px rgba(21,70,94,.2)!important;
+}
+html[data-theme="light"] .constellation-hero .cosmic-atlas::before{border-color:rgba(63,119,147,.2)}
+html[data-theme="light"] .constellation-hero .cosmic-origin{background:radial-gradient(circle,#daeefa,#37657d)!important;color:#fff!important}
+@media(prefers-reduced-motion:reduce){
+ .constellation-hero .gb-orbit-guide,.constellation-hero .gb-space-spark,
+ .constellation-hero .cosmic-origin::before,.constellation-hero .cosmic-node .cosmic-node-star{animation:none!important}
+ .constellation-hero .cosmic-node,.constellation-hero .cosmic-node .world-orb-sigil{transition:none!important}
+ .constellation-hero .cosmic-node:is(:hover,:focus-visible){transform:none!important}
+}
+
+/* Focus connects each selected world without painting over its planet. */
+.constellation-hero .cosmic-atlas:has(.cosmic-pro:is(:hover,:focus-visible)) .bridge-route-pro,
+.constellation-hero .cosmic-atlas:has(.cosmic-yoga:is(:hover,:focus-visible)) .bridge-route-yoga,
+.constellation-hero .cosmic-atlas:has(.cosmic-lab:is(:hover,:focus-visible)) .bridge-route-lab{
+ stroke-width:3.2!important;opacity:1!important;
+ filter:drop-shadow(0 0 10px var(--route-stroke));
+}
+.constellation-hero .bridge-route.is-short-route{opacity:0!important}
+
+/* At narrow mobile widths the orbital halo must never expand the document. */
+@media(max-width:380px){
+ .constellation-hero{overflow:clip}
+ .constellation-hero .cosmic-atlas{overflow:clip!important}
+ .constellation-hero .cosmic-node{min-width:68px!important;font-size:.74rem!important}
+ .constellation-hero .cosmic-node .cosmic-node-star{--planet-radius:64px}
+}
