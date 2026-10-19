@@ -1,61 +1,50 @@
 <div align="center">
+<img src="./docs/portfolio-banner.svg" alt="GracianB · Atlas de tres universos" width="100%">
 
-<img src="./docs/portfolio-banner.svg" alt="Gracián Baena · Constelación de tres universos" width="100%" />
+# GracianB · V1 Official
+**Una misma curiosidad. Tres universos.**
 
-### Una misma curiosidad. Muchos mundos.
-*One curiosity. Many worlds.*
-
-**[EXPLORAR CONSTELACIÓN ↗](https://gracianb.github.io/GracianB/)** &nbsp; · &nbsp; [**CONOCERME ↗**](https://gracianb.github.io/GracianB/#arc) &nbsp; · &nbsp; [**CV / APPLICATIONS ↗**](https://gracianb.github.io/GracianB/apply.html)
-
+[Explorar el atlas](https://gracianb.github.io/GracianB/) · [Professional](https://gracianb.github.io/professional-deck/) · [Yoga](https://gracianb.github.io/yoga-instructor/) · [Systems Lab](https://gracianb.github.io/systems-lab/)
 </div>
 
----
+## Sobre el proyecto
+Sitio personal estático, bilingüe (ES/EN), que organiza trayectoria profesional, yoga y experimentación técnica sin confundirlos con un único CV. Diseñado para funcionar en GitHub Pages, sin backend ni credenciales en el navegador.
 
-## No era otro currículum.
+## Explorar
+| Universo | Contenido |
+| --- | --- |
+| [Professional Deck](https://gracianb.github.io/professional-deck/) | Customer Success, operaciones, sistemas, datos y resultados. |
+| [Yoga Instructor](https://gracianb.github.io/yoga-instructor/) | Práctica, docencia, movimiento y presencia. |
+| [Systems Lab](https://gracianb.github.io/systems-lab/) | Software, IA, juegos y prototipos con sus propios repositorios. |
 
-Soy **Gracián Baena**. He trabajado con personas, equipos, clientes, SaaS, operaciones y movimiento. Empecé resolviendo problemas en el mundo real; acabé aprendiendo a crear herramientas, software y experiencias para hacerlo de otra manera.
+[<img src="./docs/three-worlds.svg" alt="Los tres universos: Professional, Yoga y Systems Lab" width="100%">](https://gracianb.github.io/GracianB/#universes)
 
-El hilo conductor no es un cargo, una tecnología ni un título rimbombante. Es la **curiosidad**, y ese defecto maravilloso de querer entender cómo funcionan las cosas.
+**Acceso rápido:** Ctrl+K (o Cmd+K), búsqueda por texto, filtros, flechas, Enter y Escape. Los tres nodos de la portada llevan a los universos.
 
-*No todo necesita inteligencia artificial. Algunas cosas necesitan que alguien se siente, piense y las haga funcionar.*
+## Estructura
+- `index.html`, `styles.css`, `portal-v11.css`, `hub-finish.css`, `deck-dark.css`: portada y estilos.
+- `main.js`, `i18n.js`: navegación, atlas interactivo, accesibilidad, preferencias y traducciones.
+- `apply.html`, `apply.js`, `apply.css`: acceso a documentos de candidatura.
+- `cabin-*.html/css/js`: contenido específico de aviación.
+- `Gracian_Baena_*.pdf`: doce documentos públicos en español e inglés (CV y cartas).
+- `docs/`: recursos SVG y documentación de presentación.
+- `scripts/`: contratos, regresión visual, mediciones y verificaciones públicas.
+- `.github/workflows/`: calidad, publicación PDF, smoke y salud de enlaces.
 
-## Tres universos. Una constelación.
+## Desarrollo y validación
+No hay instalación de una aplicación ni build obligatorio para publicar el HTML. Para reproducir controles locales se requiere Node.js y las dependencias de Playwright usadas por las pruebas del repositorio.
 
-[<img src="./docs/three-worlds.svg" alt="Professional: plata y sistemas. Yoga: presencia y loto. Systems Lab: chip, código y experimentación." width="100%" />](https://gracianb.github.io/GracianB/#universes)
+Ejecutar un servidor HTTP local desde la raíz, por ejemplo `python -m http.server 8000`, y abrir `http://localhost:8000/GracianB/` solo si se sirve bajo esa ruta; para una raíz local ordinaria usar `http://localhost:8000/`.
 
-**[01 / PROFESSIONAL ↗](https://gracianb.github.io/professional-deck/)** · Personas, Customer Success, operaciones, datos y experiencias que me enseñaron a construir con criterio.
+La V1 se valida con contratos estáticos, pruebas en Chromium (escritorio/móvil, ES/EN, claro/oscuro), comprobaciones de enlaces/PDF, presupuesto de rendimiento y despliegue de GitHub Pages. Un check verde no sustituye la revisión visual de la versión publicada.
 
-**[02 / YOGA ↗](https://gracianb.github.io/yoga-instructor/)** · Movimiento, respiración y enseñanza. Otro tipo de sistema: el humano.
+## Documentos
+Los doce PDF están versionados públicamente porque se ofrecen en el sitio de candidaturas. **No añadir** identificaciones, teléfonos personales, direcciones privadas, secretos, tokens ni documentos internos por accidente. La actualización del 19-10-2026 reemplazó exactamente esos doce PDF en el commit `53f054e`.
 
-**[03 / SYSTEMS LAB ↗](https://gracianb.github.io/systems-lab/)** · Código, IA, juegos, automatizaciones y experimentos. Las ideas que no se quedan en ideas.
+## Seguridad y mantenimiento
+Consulta [SECURITY.md](SECURITY.md). No se necesitan secretos ni permisos de escritura para visitar la web. Las propuestas de cambio deben pasar por PR y pruebas; mantener `main` protegida desde los ajustes de GitHub cuando el plan lo permita.
 
-> **Murcia · Gran Canaria · Madrid · Lisboa · Bérgamo · Varsovia**
->
-> Seis puntos de un camino nada lineal. Ahora también en el pequeño atlas interactivo de [GracianB](https://gracianb.github.io/GracianB/#arc).
+## Licencias y alcance
+El contenido autobiográfico, los documentos, marcas y recursos de terceros mantienen sus derechos respectivos. Este repositorio no concede una licencia general de reutilización. Los proyectos externos tienen su propio historial y condiciones.
 
-## Un observatorio, no un catálogo infinito.
-
-[**Bodytone Support OS**](https://gracianb.github.io/professional-deck/proyecto-bodytone.html) · Operaciones y soporte reales. &nbsp; [**RevOps Studio**](https://github.com/GracianB/revops-studio) · Decisiones explicables. &nbsp; [**Project OHANA**](https://gracianb.github.io/project-ohana/) · Sistemas convertidos en juego. &nbsp; [**VØRTICE**](https://vortex-gilt-xi.vercel.app/) · Experimentos visuales.
-
-Los proyectos públicos se pueden abrir; los locales están identificados como tales. Nada de inventarse demos para impresionar.
-
-<details>
-<summary><b>English / The short version</b></summary>
-
-I'm Gracián, based in Murcia, Spain. My story runs through customer-facing work, team leadership, B2B SaaS, yoga teaching and building software.
-
-This is not a second professional résumé. It is the place where those different worlds meet: **people, practice and technology**, connected by the same curiosity.
-
-For experience and outcomes, visit the [Professional Deck](https://gracianb.github.io/professional-deck/). For movement, explore [Yoga](https://gracianb.github.io/yoga-instructor/). For creative engineering, enter [Systems Lab](https://gracianb.github.io/systems-lab/).
-
-</details>
-
----
-
-<div align="center">
-
-**Menos humo. Más mundos que merecen explorarse.**
-
-[**Portfolio**](https://gracianb.github.io/GracianB/) · [**GitHub**](https://github.com/GracianB) · [**LinkedIn**](https://www.linkedin.com/in/gracianbaena)
-
-</div>
+**V1 Official · 19 de octubre de 2026.** Se congela el diseño salvo correcciones de seguridad, accesibilidad o enlaces rotos.
