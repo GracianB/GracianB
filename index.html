@@ -172,49 +172,38 @@
   </div>
 
   <main id="main">
-    <!-- V11: one statement, three open portals. No carousel, dots or size switch. -->
-    <section class="hero hero-wow section-shell" id="worlds" aria-labelledby="hero-title">
+    <!-- P12 · GracianB is a sky connecting worlds, not another professional deck. -->
+    <section class="hero hero-wow section-shell constellation-hero" id="worlds" aria-labelledby="hero-title">
       <div class="hero-identity">
-        <div class="hero-kicker-row">
-          <p class="eyebrow" data-i18n="heroEyebrow">CUSTOMER SUCCESS · OPERATIONS · DATA · AI</p>
-          <span class="hero-edition">GB / 2026</span>
+        <div class="constellation-signature">
+          <span class="identity-spark" aria-hidden="true">✳</span>
+          <span class="hero-name" aria-label="Gracián Baena"><span class="hero-name-first">GRACIÁN</span><span class="hero-name-last">BAENA</span></span>
+          <span class="hero-edition">GB / ATLAS 2026</span>
         </div>
-        <div class="hero-name" aria-label="Gracián Baena">
-          <span class="hero-name-first">GRACIÁN</span>
-          <span class="hero-name-last">BAENA</span>
-        </div>
-        <h1 id="hero-title" class="hero-thesis" data-i18n="heroStatement">De problemas reales a sistemas que funcionan.</h1>
+        <p class="hero-origin" data-i18n="heroOrigin">EL PUNTO DE PARTIDA</p>
+        <h1 id="hero-title" class="hero-thesis" data-i18n="heroStatement">Un universo de ideas, experiencias y mundos por explorar.</h1>
         <div class="hero-actions">
-          <a class="button button-primary" href="#universes">
-            <span data-i18n="heroExploreWorlds">Explorar mis universos</span><b aria-hidden="true">↘</b>
-          </a>
-          <a class="button button-secondary" href="#evidence">
-            <span data-i18n="heroCtaEvidence">Ver mis proyectos</span><b aria-hidden="true">↓</b>
-          </a>
+          <a class="button button-primary" href="#universes"><span data-i18n="heroExploreWorlds">Descubrir los universos</span><b aria-hidden="true">↘</b></a>
+          <a class="button button-secondary" href="#arc"><span data-i18n="heroMeet">Quién soy</span><b aria-hidden="true">↓</b></a>
         </div>
       </div>
-      <div class="hero-orbit-signature" aria-hidden="true">
-        <svg viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="220" cy="220" r="176" stroke="currentColor" stroke-opacity=".18"/>
-          <circle cx="220" cy="220" r="130" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="3 11"/>
-          <ellipse cx="220" cy="220" rx="194" ry="77" transform="rotate(-32 220 220)" stroke="currentColor" stroke-opacity=".47"/>
-          <ellipse cx="220" cy="220" rx="194" ry="77" transform="rotate(32 220 220)" stroke="currentColor" stroke-opacity=".47"/>
-          <path d="M220 143C239 196 244 201 297 220C244 239 239 244 220 297C201 244 196 239 143 220C196 201 201 196 220 143Z" fill="currentColor"/>
-          <circle cx="220" cy="220" r="13" fill="#02070b"/>
-          <g fill="#07161e" stroke="currentColor" stroke-width="2">
-            <circle cx="220" cy="44" r="14"/><circle cx="43" cy="220" r="14"/><circle cx="397" cy="220" r="14"/><circle cx="220" cy="396" r="14"/>
-          </g>
-        </svg>
-      </div>
+      <nav class="cosmic-atlas" aria-label="Navegación estelar por universos" data-i18n-aria-label="cosmicAtlasLabel">
+        <span class="cosmic-atlas-label" aria-hidden="true">GB / CONSTELLATION MAP</span>
+        <span class="cosmic-atlas-haze" aria-hidden="true"></span>
+        <a href="#portal-professional" class="cosmic-node cosmic-pro" data-cosmic-world="professional"><span class="cosmic-node-star" aria-hidden="true">✦</span><span data-i18n="portalProfessionalTitle">Profesional</span></a>
+        <a href="#portal-yoga" class="cosmic-node cosmic-yoga" data-cosmic-world="yoga"><span class="cosmic-node-star" aria-hidden="true">✧</span><span data-i18n="portalYogaTitle">Yoga Instructor</span></a>
+        <a href="#portal-lab" class="cosmic-node cosmic-lab" data-cosmic-world="lab"><span class="cosmic-node-star" aria-hidden="true">✳</span><span data-i18n="portalLabTitle">Systems Lab</span></a>
+        <span class="cosmic-atlas-coordinate" aria-hidden="true">37°59′ N / 01°07′ W</span>
+      </nav>
     </section>
 
     <section class="worlds-reimagined section-shell" id="universes" aria-labelledby="universe-title">
       <header class="worlds-intro">
         <p class="eyebrow" data-i18n="worldSelectorEyebrow">TRES UNIVERSOS / UNA IDENTIDAD</p>
-        <h2 id="universe-title" data-i18n="worldSelectorTitle">Tres maneras de entrar en mi mundo.</h2>
+        <h2 id="universe-title" data-i18n="worldSelectorTitle">Tres mundos, una misma curiosidad.</h2>
       </header>
       <nav class="portal-grid" aria-label="Tres universos" data-i18n-aria-label="worldStageLabel">
-        <a class="world-portal world-professional" href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer" data-portal="professional">
+        <a id="portal-professional" class="world-portal world-professional" href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer" data-portal="professional">
           <span class="portal-top"><span>01 / PROFESSIONAL</span><span aria-hidden="true">↗</span></span>
           <div class="portal-art world-art" aria-hidden="true">
             <svg class="world-professional-sigil" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -230,7 +219,7 @@
             <span class="portal-action"><span data-i18n="portalEnter">Explorar universo</span><b aria-hidden="true">↗</b></span>
           </div>
         </a>
-        <a class="world-portal world-yoga" href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer" data-portal="yoga">
+        <a id="portal-yoga" class="world-portal world-yoga" href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer" data-portal="yoga">
           <span class="portal-top"><span>02 / YOGA</span><span aria-hidden="true">↗</span></span>
           <div class="portal-art world-art" aria-hidden="true">
             <div class="lotus">
@@ -247,7 +236,7 @@
             <span class="portal-action"><span data-i18n="portalEnter">Explorar universo</span><b aria-hidden="true">↗</b></span>
           </div>
         </a>
-        <a class="world-portal world-lab" href="https://gracianb.github.io/systems-lab/" target="_blank" rel="noopener noreferrer" data-portal="lab">
+        <a id="portal-lab" class="world-portal world-lab" href="https://gracianb.github.io/systems-lab/" target="_blank" rel="noopener noreferrer" data-portal="lab">
           <span class="portal-top"><span>03 / SYSTEMS LAB</span><span aria-hidden="true">↗</span></span>
           <div class="portal-art world-art" aria-hidden="true">
             <svg class="world-lab-sigil" viewBox="0 0 240 340" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.8">
