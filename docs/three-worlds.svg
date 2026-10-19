@@ -1,36 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="290" viewBox="0 0 1200 290" role="img" aria-labelledby="title desc">
-<title id="title">Three worlds · Professional, Yoga, Systems Lab</title><desc id="desc">Three dark panels: silver orbital customer systems, botanical green lotus, and electric-blue code constellation.</desc>
-<defs><linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e7ebee"/><stop offset="1" stop-color="#809ca8"/></linearGradient><linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173f32"/><stop offset="1" stop-color="#0b201c"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#122e46"/><stop offset="1" stop-color="#0c162e"/></linearGradient></defs>
-<rect width="1200" height="290" rx="18" fill="#03090d"/>
-<g>
-<rect x="4" y="4" width="388" height="282" rx="14" fill="#0d1b23" stroke="#c7cdd0" stroke-opacity=".42"/>
-<text x="28" y="36" fill="#c7cdd0" font-family="monospace" font-size="13" letter-spacing="2">01 / PROFESSIONAL</text>
-<g transform="translate(195 135)" fill="none" stroke="url(#metal)" stroke-width="1.6" stroke-opacity=".78"><circle r="67"/><ellipse rx="98" ry="31" transform="rotate(-28)"/><ellipse rx="98" ry="31" transform="rotate(28)"/></g>
-<path d="M195 86Q205 125 244 135Q205 145 195 184Q185 145 146 135Q185 125 195 86Z" fill="url(#metal)" opacity=".83"/>
-<text x="28" y="248" fill="#edf2f2" font-family="Georgia,serif" font-size="29">People → Systems</text>
-<text x="28" y="273" fill="#aebfc5" font-family="Arial,sans-serif" font-size="13">Customer Success · Operations · Data</text>
-</g>
-<g>
-<rect x="406" y="4" width="388" height="282" rx="14" fill="url(#green)" stroke="#70bd99" stroke-opacity=".45"/>
-<text x="430" y="36" fill="#9cdec0" font-family="monospace" font-size="13" letter-spacing="2">02 / YOGA INSTRUCTOR</text>
-<g transform="translate(600 148)" fill="none" stroke="#89d4aa" stroke-width="2" stroke-opacity=".72">
-<path d="M0 38Q-65 -9 0 -77Q65 -9 0 38Z"/>
-<path d="M0 38Q-89 0 -54 -67Q13 -26 0 38Z"/><path d="M0 38Q89 0 54 -67Q-13 -26 0 38Z"/>
-<path d="M0 38Q-107 24 -92 -37Q-42 -26 0 38Z"/><path d="M0 38Q107 24 92 -37Q42 -26 0 38Z"/>
-<path d="M-100 45Q0 77 100 45"/>
-</g>
-<text x="430" y="248" fill="#e0f4ea" font-family="Georgia,serif" font-size="29">Presence → Practice</text>
-<text x="430" y="273" fill="#b2d3c1" font-family="Arial,sans-serif" font-size="13">Teaching · Movement · Human connection</text>
-</g>
-<g>
-<rect x="808" y="4" width="388" height="282" rx="14" fill="url(#blue)" stroke="#66c6ed" stroke-opacity=".49"/>
-<text x="832" y="36" fill="#91def5" font-family="monospace" font-size="13" letter-spacing="2">03 / SYSTEMS LAB</text>
-<g transform="translate(1002 138)" fill="none" stroke="#87ddfb" stroke-width="1.7" stroke-opacity=".78">
-<path d="M0 -78L64 -32L50 44L0 73L-65 25L-48 -42Z"/>
-<path d="M0 -78L0 73M-65 25L64 -32M-48 -42L50 44"/>
-<circle cy="-78" r="6" fill="#90ddf5"/><circle cx="64" cy="-32" r="5" fill="#90ddf5"/><circle cx="-65" cy="25" r="5" fill="#90ddf5"/><circle cx="50" cy="44" r="5" fill="#90ddf5"/>
-</g>
-<text x="832" y="248" fill="#e5f5ff" font-family="Georgia,serif" font-size="29">Build → Test → Repeat</text>
-<text x="832" y="273" fill="#a7c7de" font-family="Arial,sans-serif" font-size="13">Automation · Games · AI · Experiments</text>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 290" role="img" aria-labelledby="t d">
+<title id="t">Three worlds, one curiosity</title><desc id="d">Silver structured system nodes, a green botanical lotus, and a blue silicon chip.</desc>
+<rect width="1200" height="290" rx="18" fill="#02070b"/>
+<g transform="translate(7 7)"><rect width="382" height="276" rx="16" fill="#0a171f" stroke="#819ba7" stroke-opacity=".5"/>
+<text x="24" y="39" fill="#b8cbd3" font-family="monospace" font-size="14">01 / PROFESSIONAL</text>
+<g stroke="#c7cdd0" stroke-width="2" fill="none"><path d="M116 122L191 82L269 127L239 195L151 201Z M116 122L222 149L191 82M222 149L239 195M151 201L222 149" opacity=".63"/>
+<g fill="#1c2a33"><rect x="104" y="109" width="24" height="24" rx="5"/><rect x="179" y="70" width="24" height="24" rx="5"/><rect x="257" y="115" width="24" height="24" rx="5"/><rect x="227" y="183" width="24" height="24" rx="5"/><rect x="139" y="189" width="24" height="24" rx="5"/></g></g><rect x="209" y="136" width="27" height="27" rx="6" fill="#c7cdd0"/>
+<text x="24" y="252" fill="#edf2f2" font-family="Georgia,serif" font-size="26">People · Operations</text></g>
+<g transform="translate(409 7)"><rect width="382" height="276" rx="16" fill="#0b2018" stroke="#91dcb2" stroke-opacity=".5"/><text x="24" y="39" fill="#91dcb2" font-family="monospace" font-size="14">02 / YOGA</text>
+<g transform="translate(191 169)" stroke="#91dcb2" stroke-width="2" fill="#91dcb2" fill-opacity=".07"><path d="M0 43C-40 -13 -36 -56 0 -99C36 -56 40 -13 0 43Z"/><path d="M0 43C-72 9 -73 -45 -43 -72C2 -50 26 -8 0 43Z"/><path d="M0 43C72 9 73 -45 43 -72C-2 -50 -26 -8 0 43Z"/><path d="M0 43C-87 45 -103 1 -91 -32C-41 -38 -12 -1 0 43Z"/><path d="M0 43C87 45 103 1 91 -32C41 -38 12 -1 0 43Z"/></g>
+<text x="24" y="252" fill="#ecfff4" font-family="Georgia,serif" font-size="26">Movement · Presence</text></g>
+<g transform="translate(811 7)"><rect width="382" height="276" rx="16" fill="#081d2b" stroke="#8bdafa" stroke-opacity=".5"/><text x="24" y="39" fill="#8bdafa" font-family="monospace" font-size="14">03 / SYSTEMS LAB</text>
+<g stroke="#8bdafa" stroke-width="2" fill="none"><rect x="126" y="78" width="125" height="125" rx="19"/><rect x="153" y="105" width="71" height="71" rx="12"/><path d="M156 57V78M190 54V78M224 57V78M156 203V227M190 203V234M224 203V227M102 104H126M96 140H126M102 176H126M251 104H274M251 140H280M251 176H274"/></g><path d="M190 112L199 134L221 140L199 148L190 170L181 148L160 140L181 134Z" fill="#8bdafa" opacity=".7"/>
+<text x="24" y="252" fill="#e6f9ff" font-family="Georgia,serif" font-size="26">Code · Experiments</text></g></svg>
