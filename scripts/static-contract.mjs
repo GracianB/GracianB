@@ -174,7 +174,7 @@ assert.match(application, /data-brief-print/, "P3 printable brief entry missing"
 assert.match(application, /data-b6-theme-toggle/, "Application theme control missing");
 assert.match(application, /<meta name="theme-color" content="#0b1419">/,
   "First paint on application desk must be dark by default");
-assert.match(application, /apply\.js\?v=p7-1/,
+assert.match(application, /apply\.js\?v=p8-final/,
   "Theme application JavaScript cache key missing");
 assert.match(readFileSync("apply.js", "utf8"), /gb-hub-theme/,
   "Both pages must share the same saved theme preference");
