@@ -126,9 +126,9 @@
     </a>
 
     <nav class="desktop-nav" aria-label="Navegación principal" data-i18n-aria-label="navMainLabel">
-      <a href="#worlds" data-i18n="navWorlds">Mundos</a>
+      <a href="#universes" data-i18n="navWorlds">Mundos</a>
       <a href="#evidence" data-i18n="navEvidence">Evidencia</a>
-      <a href="#method" data-i18n="navMethod">Método</a>
+      
       <a href="#arc" data-i18n="navArc">Trayectoria</a>
       <a href="#documents" data-i18n="navDocs">Documentos</a>
       <a href="#contact" data-i18n="navContact">Contacto</a>
@@ -155,9 +155,9 @@
 
   <div class="mobile-menu" id="mobile-menu" hidden>
     <nav aria-label="Navegación móvil" data-i18n-aria-label="navMobileLabel">
-      <a href="#worlds" data-i18n="navWorlds">Mundos</a>
+      <a href="#universes" data-i18n="navWorlds">Mundos</a>
       <a href="#evidence" data-i18n="navEvidence">Evidencia</a>
-      <a href="#method" data-i18n="navMethod">Método</a>
+      
       <a href="#arc" data-i18n="navArc">Trayectoria</a>
       <a href="#documents" data-i18n="navDocs">Documentos</a>
       <a href="#contact" data-i18n="navContact">Contacto</a>
@@ -284,11 +284,30 @@
       </div>
     </section>
 
-    <section class="facts-strip" aria-label="Resumen profesional" data-i18n-aria-label="factsLabel">
-      <div><strong>16+</strong><span data-i18n="factYears">años de experiencia</span></div>
-      <div><strong data-i18n="factAccountsNumber">hasta 80</strong><span data-i18n="factAccounts">cuentas B2B SaaS gestionadas en Minderest</span></div>
-      <div><strong>ES · EN · IT</strong><span data-i18n="factLanguages">idiomas de trabajo</span></div>
-      <div><strong>Murcia</strong><span data-i18n="factRemote">España · remoto</span></div>
+    <section class="about-atlas section-shell" id="arc" aria-labelledby="arc-title">
+      <div class="about-story">
+        <p class="eyebrow" data-i18n="aboutEyebrow">QUIÉN HAY DETRÁS DE LOS MUNDOS</p>
+        <h2 id="arc-title" data-i18n="aboutTitle">El camino nunca ha sido una línea recta.</h2>
+        <p data-i18n="aboutStory">Soy Gracián. He pasado por la atención al cliente, la dirección de equipos, el SaaS, el yoga y el software. Cada etapa me enseñó otra manera de mirar y construir.</p>
+        <div class="about-details">
+          <span class="about-experience"><strong>16+</strong> <span data-i18n="aboutExperience">años entre personas, operaciones e ideas que toman forma</span></span>
+          <a href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer" data-i18n="aboutDeck">Mi trayectoria completa ↗</a>
+        </div>
+      </div>
+      <div class="city-atlas" aria-labelledby="city-atlas-title">
+        <div class="city-atlas-top"><span id="city-atlas-title" data-i18n="atlasLabel">SEIS LUGARES EN EL CAMINO</span><span>ES · PT · IT · PL</span></div>
+        <div class="city-atlas-chart" role="group" aria-label="Atlas personal con seis ciudades" data-i18n-aria-label="atlasAria">
+          <span class="atlas-latitude atlas-latitude-one" aria-hidden="true"></span>
+          <span class="atlas-latitude atlas-latitude-two" aria-hidden="true"></span>
+          <button type="button" class="atlas-pin is-current" data-atlas-city="murcia" data-country-es="España" data-country-en="Spain" style="--city-x:41.56%;--city-y:60.03%" aria-pressed="true" aria-label="Murcia"><span>MUR</span></button>
+          <button type="button" class="atlas-pin" data-atlas-city="gran-canaria" data-country-es="España" data-country-en="Spain" style="--city-x:8.29%;--city-y:92.92%" aria-pressed="false" aria-label="Gran Canaria"><span>LPA</span></button>
+          <button type="button" class="atlas-pin" data-atlas-city="madrid" data-country-es="España" data-country-en="Spain" style="--city-x:35.57%;--city-y:51.94%" aria-pressed="false" aria-label="Madrid"><span>MAD</span></button>
+          <button type="button" class="atlas-pin" data-atlas-city="lisboa" data-country-es="Portugal" data-country-en="Portugal" style="--city-x:22.93%;--city-y:57.59%" aria-pressed="false" aria-label="Lisboa"><span>LIS</span></button>
+          <button type="button" class="atlas-pin" data-atlas-city="bergamo" data-country-es="Italia" data-country-en="Italy" style="--city-x:66.69%;--city-y:34.34%" aria-pressed="false" aria-label="Bérgamo"><span>BGY</span></button>
+          <button type="button" class="atlas-pin" data-atlas-city="varsovia" data-country-es="Polonia" data-country-en="Poland" style="--city-x:93.05%;--city-y:12.57%" aria-pressed="false" aria-label="Varsovia"><span>WAW</span></button>
+        </div>
+        <div class="city-atlas-footer"><span class="atlas-city-current" data-atlas-readout aria-live="polite">MURCIA · ESPAÑA</span><span data-i18n="atlasNote">Puntos geográficos · sin rutas inventadas</span></div>
+      </div>
     </section>
 
     <section class="section-shell evidence-section" id="evidence" aria-labelledby="evidence-title">
@@ -370,102 +389,6 @@
             <span class="revops-soon" aria-disabled="true" data-i18n="aigoritmoPrivate">DESARROLLO LOCAL · SIN DEMO PÚBLICA</span>
           </div>
         </article>
-      </div>
-    </section>
-
-    <section class="method-section" id="method" aria-labelledby="method-title">
-      <div class="section-shell">
-        <header class="section-head method-head">
-          <div>
-            <p class="eyebrow" data-i18n="methodEyebrow">MÉTODO OPERATIVO</p>
-            <h2 id="method-title" data-i18n="methodTitle">La tecnología cambia. El método no.</h2>
-          </div>
-          <p data-i18n="methodIntro">Antes de automatizar, entiendo la operación. Antes de recomendar, valido los datos. Antes de escalar, compruebo que alguien puede usar el sistema sin mí.</p>
-        </header>
-
-        <ol class="method-flow">
-          <li><span>01</span><strong data-i18n="method1">Entender</strong><small data-i18n="method1Sub">cliente · objetivo · fricción</small></li>
-          <li><span>02</span><strong data-i18n="method2">Modelar</strong><small data-i18n="method2Sub">reglas · excepciones · señales</small></li>
-          <li><span>03</span><strong data-i18n="method3">Construir</strong><small data-i18n="method3Sub">flujo · sistema · interfaz</small></li>
-          <li><span>04</span><strong data-i18n="method4">Validar</strong><small data-i18n="method4Sub">usuarios · SME · casos reales</small></li>
-          <li><span>05</span><strong data-i18n="method5">Activar</strong><small data-i18n="method5Sub">adopción · formación · handoff</small></li>
-          <li><span>06</span><strong data-i18n="method6">Medir</strong><small data-i18n="method6Sub">calidad · uso · resultado</small></li>
-          <li><span>07</span><strong data-i18n="method7">Iterar</strong><small data-i18n="method7Sub">evidencia · mejora · escala</small></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section-shell arc-section" id="arc" aria-labelledby="arc-title">
-      <header class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="arcEyebrow">TRAYECTORIA</p>
-          <h2 id="arc-title" data-i18n="arcTitle">La progresión explica el perfil.</h2>
-        </div>
-        <p data-i18n="arcIntro">No empecé por el código. Empecé por personas, operaciones y clientes. La capa técnica llegó para resolver mejor esos problemas.</p>
-      </header>
-
-      <div class="arc-grid">
-        <article>
-          <span>01</span>
-          <p class="arc-years" data-i18n="arcFoundationYears">BASE</p>
-          <h3 data-i18n="arcFoundationTitle">Retail, servicio y operación</h3>
-          <p data-i18n="arcFoundationBody">Años trabajando cerca del cliente, el equipo y la ejecución diaria: donde los procesos dejan de ser diagramas y empiezan a fallar de verdad.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <p class="arc-years">Solaris · Majorel</p>
-          <h3 data-i18n="arcEnablementTitle">Training y entornos de escala</h3>
-          <p data-i18n="arcEnablementBody">Formación para marcas y experiencia en una operación internacional ligada a Google/YouTube. Aprendizaje, calidad y consistencia a escala.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <p class="arc-years">Minderest</p>
-          <h3 data-i18n="arcSaasTitle">Customer Success B2B SaaS</h3>
-          <p data-i18n="arcSaasBody">Adopción, engagement, soporte, pricing intelligence y diagnóstico de señales antes de intervenir.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <p class="arc-years">Bodytone</p>
-          <h3 data-i18n="arcSystemsTitle">Customer Operations → Data → Systems</h3>
-          <p data-i18n="arcSystemsBody">Customer Success, análisis y operaciones conectados con automatización, conocimiento, reporting y herramientas internas.</p>
-        </article>
-        <article class="arc-future">
-          <span>05</span>
-          <p class="arc-years">2024 →</p>
-          <h3 data-i18n="arcAiTitle">AI, software y sistemas</h3>
-          <p data-i18n="arcAiBody">Especialización deliberada para poder construir directamente: Python, JavaScript, BI, automatización, LLMs, testing y CI.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-shell doors-section" aria-labelledby="doors-title">
-      <header class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="doorsEyebrow">EL SIGUIENTE CAPÍTULO</p>
-          <h2 id="doors-title" data-i18n="doorsTitle">Ya conoces la historia. Elige dónde continuar.</h2>
-        </div>
-        <p data-i18n="doorsIntro">Elige cómo evaluar mi trabajo: operaciones reales, enseñanza y práctica, o software que puedes probar.</p>
-      </header>
-
-      <div class="doors-grid">
-        <a class="door door-gold" href="https://gracianb.github.io/professional-deck/" target="_blank" rel="noopener noreferrer">
-          <span>01 / PROFESSIONAL</span>
-          <h3 data-i18n="doorExperienceTitle">Mundo profesional</h3>
-          <p data-i18n="doorExperienceBody">Casos de Customer Success, operaciones, sistemas y resultados con evidencias.</p>
-          <b data-i18n="enter">Entrar ↗</b>
-        </a>
-        <a class="door door-sage" href="https://gracianb.github.io/yoga-instructor/" target="_blank" rel="noopener noreferrer">
-          <span>02 / YOGA</span>
-          <h3 data-i18n="doorHumanTitle">Mundo Yoga</h3>
-          <p data-i18n="doorHumanBody">Mi experiencia docente, el método de enseñanza y una app de práctica guiada.</p>
-          <b data-i18n="enter">Entrar ↗</b>
-        </a>
-        <a class="door door-cyan" href="https://gracianb.github.io/systems-lab/" target="_blank" rel="noopener noreferrer">
-          <span>03 / SYSTEMS LAB</span>
-          <h3 data-i18n="doorBuildTitle">Systems Lab</h3>
-          <p data-i18n="doorBuildBody">Proyectos de software y experiencias interactivas que puedes abrir y probar.</p>
-          <b data-i18n="enter">Entrar ↗</b>
-        </a>
       </div>
     </section>
 
