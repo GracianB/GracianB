@@ -419,3 +419,26 @@ html[data-theme="light"] .observatory-details .evidence-card:hover{background:li
 .command:not([hidden]) .command-panel{animation:gb-dialog .16s ease-out both}
 @keyframes gb-dialog{from{opacity:.87;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.command:not([hidden]) .command-panel{animation:none}}
+
+/* V1 close-out: SVG links end outside node circles and do not overlay hover layers. */
+.cosmic-bridge{z-index:0;overflow:hidden}
+.cosmic-origin{z-index:3}
+.cosmic-node{z-index:4}
+.bridge-route{filter:none;stroke-width:1.6;stroke-dasharray:5 8;stroke-linecap:round;animation:gb-bridge-flow 18s linear infinite}
+.bridge-route circle{display:none}
+@keyframes gb-bridge-flow{to{stroke-dashoffset:-156}}
+.cosmic-node .cosmic-node-star{animation:gb-stellar-breath 4.5s ease-in-out infinite}
+.cosmic-yoga .cosmic-node-star{animation-delay:-1.5s}
+.cosmic-lab .cosmic-node-star{animation-delay:-3s}
+@keyframes gb-stellar-breath{0%,100%{box-shadow:0 0 8px color-mix(in srgb,var(--node-color) 15%,transparent),0 8px 23px rgba(0,0,0,.26)}50%{box-shadow:0 0 24px color-mix(in srgb,var(--node-color) 45%,transparent),0 8px 23px rgba(0,0,0,.26)}}
+.cosmic-atlas:has(.cosmic-node:is(:hover,:focus-visible)) .bridge-route{opacity:.18}
+.cosmic-atlas:has(.cosmic-pro:is(:hover,:focus-visible)) .bridge-route-pro,
+.cosmic-atlas:has(.cosmic-yoga:is(:hover,:focus-visible)) .bridge-route-yoga,
+.cosmic-atlas:has(.cosmic-lab:is(:hover,:focus-visible)) .bridge-route-lab{opacity:1;stroke-width:2.7}
+.city-atlas{--city-active-color:#8bdafa}
+.city-atlas-footer{display:block}
+.city-atlas-footer .atlas-city-current{display:block;color:var(--city-active-color)!important;transition:color .23s ease}
+.atlas-city-story{margin:.55rem 0 .25rem;max-width:60ch;color:var(--deck-muted);font-size:.86rem;line-height:1.55;letter-spacing:0}
+.atlas-pin.is-current{background:#173644!important;color:#f5fbff!important;border-color:#b6e9ff!important;box-shadow:0 0 0 4px rgba(139,218,250,.17),0 0 26px rgba(139,218,250,.18)!important;transform:translate(-50%,-50%) scale(1.12)}
+html[data-theme=light] .atlas-pin.is-current{background:#d5edf8!important;color:#143849!important;border-color:#296d89!important}
+@media(prefers-reduced-motion:reduce){.bridge-route,.cosmic-node .cosmic-node-star{animation:none!important}.atlas-pin{transition:none}}
