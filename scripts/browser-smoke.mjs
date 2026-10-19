@@ -200,6 +200,68 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.equal(await page.locator(".document-group:visible").count(),3);
     assert.equal(await page.locator('.cv-library-details a[href$=".pdf"]').count(),12);
   }
+
+  // P12.4: the quick atlas must never move the background or deform the project grid.
+  if(width>=1280 || width===320 || (width===390 && theme==="light")){
+    if(width>=1280) {
+      const disclosure=page.locator(".observatory-details");
+      if(!(await disclosure.evaluate(n=>n.open)))await disclosure.locator("summary").click();
+      const cards=await page.locator(".evidence-card").evaluateAll(nodes=>nodes.map(n=>n.getBoundingClientRect().width));
+      assert.equal(cards.length,5);
+      assert.ok(cards.every(n=>n>350),"Project cards are too narrow: "+JSON.stringify(cards));
+    }
+    const previousY=await page.evaluate(()=>scrollY);
+    const previousWidth=await page.evaluate(()=>document.documentElement.clientWidth);
+    await page.keyboard.press("Control+k");
+    assert.equal(await page.locator("#command").getAttribute("aria-hidden"),"false");
+    const pageLayout=await page.evaluate(()=>({
+      bodyDisplay:getComputedStyle(document.body).display,
+      bodyHeight:document.body.getBoundingClientRect().height,
+      bodyWidth:document.body.getBoundingClientRect().width,
+      lock:document.body.classList.contains("command-active"),
+      buttonClassCollision:document.body.classList.contains("command-open")
+    }));
+    assert.equal(pageLayout.bodyDisplay,"block","Opening Ctrl+K must not turn the body into the flex-styled command button");
+    assert.ok(pageLayout.bodyHeight>900,"Opening the palette must not collapse the document");
+    assert.ok(pageLayout.bodyWidth>=width-22,"Opening the palette must not compress the page");
+    assert.ok(pageLayout.lock&&!pageLayout.buttonClassCollision,"Palette state class must not collide with the trigger class");
+
+    await page.locator("#command-input").waitFor({state:"visible"});
+    assert.ok(await page.locator("#command-panel").count()===0 || await page.locator(".command-panel").isVisible());
+    const jump=await page.evaluate(()=>Math.abs(scrollY));
+    assert.ok(Math.abs(jump-previousY)<3,"Ctrl+K scrolled the page from "+previousY+" to "+jump);
+    assert.equal(await page.evaluate(()=>document.documentElement.clientWidth),previousWidth,"Command open shifted the layout");
+    const dialog=await page.locator(".command-panel").boundingBox();
+    assert.ok(dialog.x>=0&&dialog.x+dialog.width<=width+1,"Command dialog clips the screen");
+    assert.ok(dialog.height<=900,"Quick navigation is oversized");
+    assert.equal(await page.locator("#command-list li:visible").count(),10);
+    if(width>=1280&&theme==="dark")
+      await page.screenshot({path:artifacts+"/quick-atlas-dark-desktop.png",fullPage:false});
+    if(width===390&&theme==="light")
+      await page.screenshot({path:artifacts+"/quick-atlas-light-mobile.png",fullPage:false});
+    await page.locator('[data-command-filter="projects"]').click();
+    assert.equal(await page.locator("#command-list li:visible").count(),4);
+    await page.locator("#command-input").fill("Vortice");
+    assert.equal(await page.locator("#command-list li:visible").count(),1,"Accent-insensitive search failed");
+    await page.locator("#command-input").fill("nonsense-search-000");
+    assert.equal(await page.locator("#command-list li:visible").count(),0);
+    assert.ok(await page.locator("#command-empty").isVisible(),"Missing useful zero-results state");
+    await page.keyboard.press("Escape");
+    assert.equal(await page.locator("#command").getAttribute("aria-hidden"),"true");
+    assert.ok(Math.abs(await page.evaluate(()=>scrollY)-previousY)<3,"Closing Ctrl+K scrolled the page");
+    await page.keyboard.press("Control+k");
+    await page.locator('[data-command-filter="documents"]').click();
+    await page.locator("#command-input").fill(lang==="es"?"Documentos":"Documents");
+    assert.equal(await page.locator("#command-list li:visible").count(),1);
+    await page.keyboard.press("Enter");
+    assert.equal(await page.locator("#command").getAttribute("aria-hidden"),"true");
+    assert.ok(await page.locator(".cv-library-details").evaluate(n=>n.open),"Document jump must reveal its contents");
+    assert.equal(await page.locator(".document-group:visible").count(),3);
+    if(width>=1280 && theme==="dark"){
+      const cards=await page.locator(".evidence-card").evaluateAll(nodes=>nodes.map(n=>n.getBoundingClientRect().width));
+      assert.ok(cards.every(n=>n>350),"Project cards collapsed after the palette: "+JSON.stringify(cards));
+    }
+  }
   if(width===320 && theme==="dark"){
     await page.evaluate(()=>{
       document.documentElement.style.setProperty("scroll-behavior","auto","important");

@@ -71,11 +71,21 @@ for(const cl of ["observatory-details","cv-library-details"])
 assert.equal((html.match(/class="evidence-card evidence-/g)||[]).length,5);
 assert.equal((html.match(/class="document-group document-group-/g)||[]).length,3);
 assert.match(html,/data-application-link/);
-assert.match(html,/styles\.css\?v=28/,"Latest shared CSS must bypass old cache");
+assert.match(html,/styles\.css\?v=29/,"Latest shared CSS must bypass old cache");
 assert.match(html,/hub-finish\.css\?v=3/,"Latest dark sections must bypass old cache");
-assert.match(html,/portal-v11\.css\?v=4/);
-assert.match(html,/i18n\.js\?v=26" defer/);
-assert.match(html,/main\.js\?v=p123-ambience" defer/);
+assert.match(html,/portal-v11\.css\?v=5/);
+assert.match(html,/i18n\.js\?v=27" defer/);
+assert.equal((html.match(/data-command-category="/g)||[]).length,10,"Quick atlas has ten actionable destinations");
+assert.equal((html.match(/data-command-filter="/g)||[]).length,4,"Quick atlas filters are required");
+assert.match(html,/role="combobox"/);
+assert.match(html,/id="command-empty"/);
+assert.match(js,/function normalizeCommand/,"Search must ignore accents");
+assert.doesNotMatch(js,/items\[commandIndex\]\?\.scrollIntoView/,"Quick navigation must not scroll the underlying page");
+assert.match(js,/commandList\.scrollTop/,"Only the quick-result list should scroll");
+assert.match(read("styles.css"),/\.command-backdrop\{[^}]*background:rgba/);
+assert.doesNotMatch(read("styles.css"),/\.command-backdrop\{[^}]*backdrop-filter/,"A blurred modal background causes flickering");
+assert.match(css,/\.observatory-details \.evidence-grid\{[^}]*repeat\(2,minmax\(0,1fr\)\)/,"Project cards need stable columns");
+assert.match(html,/main\.js\?v=p124-quicknav" defer/);
 for(const pattern of [/\.constellation-hero/,/\.cosmic-node/,/\.atlas-pin/,/prefers-reduced-motion/])
   assert.match(css,pattern);
 assert.match(dark,/--deck-bg:#02070b/,"Abyss petrol should remain");

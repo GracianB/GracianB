@@ -389,3 +389,16 @@ html[data-theme=dark] .theme-toggle .theme-moon{background:#d3dfe5;color:#0b2632
 @media(max-width:640px){.observatory-details>summary,.cv-library-details>summary{padding:.9rem 1rem}.city-atlas-footer{justify-content:flex-start}}
 
 }
+
+/* P12.4: expanding the observatory never creates unreadable micro-columns. */
+.observatory-details,.cv-library-details{display:block;width:100%;min-width:0;max-width:100%}
+.observatory-details .evidence-grid{width:100%;min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.85rem,1.5vw,1.25rem)}
+.observatory-details .evidence-card{grid-column:auto!important;min-width:0;min-height:0!important;overflow-wrap:break-word}
+.observatory-details .evidence-card:last-child{grid-column:1/-1!important}
+.observatory-details .evidence-card h3{font-size:clamp(1.45rem,2vw,2.25rem);margin:1.25rem 0 .6rem}
+.observatory-details .evidence-card p{line-height:1.55}
+.observatory-details .evidence-card dl{margin-block:1rem}
+.observatory-details .evidence-card :is(dd,dt){min-width:0;overflow-wrap:break-word}
+.observatory-details .evidence-card:hover{border-color:color-mix(in srgb,var(--accent) 62%,var(--line-strong));box-shadow:0 14px 37px color-mix(in srgb,var(--accent) 10%,transparent)}
+html[data-theme="light"] .observatory-details .evidence-card:hover{background:linear-gradient(145deg,#fff,color-mix(in srgb,var(--accent) 7%,#fff))}
+@media(max-width:830px){.observatory-details .evidence-grid{grid-template-columns:minmax(0,1fr)}.observatory-details .evidence-card:last-child{grid-column:auto!important}}
