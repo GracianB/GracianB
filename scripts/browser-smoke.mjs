@@ -88,6 +88,9 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
       assert.ok((nums[3]??1)>.74,world+" border is too faint: "+JSON.stringify(state));
     }
     await page.mouse.move(0,0);
+    await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+    await page.waitForTimeout(350);
+    await page.screenshot({path:artifacts+"/constellation-desktop-viewport.png",fullPage:false});
     await page.screenshot({path:artifacts+"/constellation-desktop.png",fullPage:true});
     await page.locator(".observatory-details summary").click();
     assert.equal(await page.locator(".evidence-card:visible").count(),5);
@@ -96,6 +99,9 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     assert.equal(await page.locator('.cv-library-details a[href$=".pdf"]').count(),12);
   }
   if(width===320 && theme==="dark"){
+    await page.evaluate(()=>{document.documentElement.style.scrollBehavior="auto";window.scrollTo(0,0);});
+    await page.waitForTimeout(350);
+    await page.screenshot({path:artifacts+"/constellation-mobile-320-viewport.png",fullPage:false});
     await page.screenshot({path:artifacts+"/constellation-mobile-320.png",fullPage:true});
   }
   if(width>=1280 && theme==="dark"){
