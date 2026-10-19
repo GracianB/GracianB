@@ -43,3 +43,24 @@ html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient
 @media(max-width:760px){.cosmic-node{min-width:75px;gap:.4rem!important;font-size:.74rem!important}.cosmic-node .cosmic-node-star{width:clamp(66px,15vw,89px)!important;height:clamp(66px,15vw,89px)!important;outline-offset:5px}.cosmic-pro{left:3%;top:18%}.cosmic-yoga{right:2%;top:11%}.cosmic-lab{left:40%;bottom:6%}}
 @media(max-width:380px){.cosmic-node .cosmic-node-star{width:60px!important;height:60px!important}}
 @media(prefers-reduced-motion:reduce){.cosmic-node:is(:hover,:focus-visible){transform:none!important}}
+
+/* CONSTELLATION V3 · editorial orbital stage, distinct planetary navigation */
+.cosmic-atlas{background:
+ radial-gradient(ellipse at 48% 49%,rgba(27,89,125,.18),transparent 48%),
+ radial-gradient(circle at 84% 18%,rgba(55,141,109,.085),transparent 31%),
+ radial-gradient(circle at 42% 85%,rgba(35,134,185,.09),transparent 30%);}
+.cosmic-atlas::before{opacity:.74!important;background:radial-gradient(ellipse at 50% 50%,rgba(69,135,169,.16),transparent 62%)!important}
+.cosmic-node .cosmic-node-star{isolation:isolate;overflow:visible;
+ background:radial-gradient(circle at 30% 24%,color-mix(in srgb,var(--node-color) 30%,#183343),#081621 50%,#01070c 87%)!important;
+ box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--node-color) 70%,transparent),inset 0 -24px 35px rgba(0,0,0,.5),0 0 0 9px color-mix(in srgb,var(--node-color) 8%,transparent),0 0 40px color-mix(in srgb,var(--node-color) 29%,transparent),0 17px 35px rgba(0,0,0,.4)!important}
+.cosmic-node .cosmic-node-star::before{inset:-13px;border:1px solid color-mix(in srgb,var(--node-color) 44%,transparent);border-left-color:transparent;border-bottom-color:transparent;animation:gb-orbit-ring 24s linear infinite}
+.cosmic-node .cosmic-node-star::after{inset:-23px;border:1px dashed color-mix(in srgb,var(--node-color) 27%,transparent);animation:gb-orbit-ring 38s linear infinite reverse}
+.cosmic-node .world-orb-sigil{position:relative;z-index:2;stroke-linecap:round;filter:drop-shadow(0 0 10px var(--node-color))!important}
+.cosmic-node>span:last-child{font-family:var(--serif);font-weight:500;font-size:clamp(1rem,1.32vw,1.4rem);letter-spacing:-.01em}
+.cosmic-origin{box-shadow:0 0 0 9px rgba(122,185,217,.09),0 0 0 24px rgba(122,185,217,.035),0 0 55px rgba(122,185,217,.3)!important}
+.bridge-route{stroke-linecap:round;stroke-dasharray:2 8;filter:drop-shadow(0 0 6px var(--route-stroke));animation:gb-bridge-flow 18s linear infinite}
+.cosmic-node:is(:hover,:focus-visible) .cosmic-node-star{filter:brightness(1.35);box-shadow:0 0 0 12px color-mix(in srgb,var(--node-color) 12%,transparent),0 0 75px color-mix(in srgb,var(--node-color) 48%,transparent)!important}
+@keyframes gb-orbit-ring{to{transform:rotate(360deg)}}
+html[data-theme=light] .cosmic-atlas{background:radial-gradient(circle at 50% 50%,rgba(82,148,177,.11),transparent 58%)}
+html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient(circle at 30% 25%,#fff,#d5e6ed 77%)!important}
+@media(prefers-reduced-motion:reduce){.cosmic-node .cosmic-node-star::before,.cosmic-node .cosmic-node-star::after{animation:none!important}}
