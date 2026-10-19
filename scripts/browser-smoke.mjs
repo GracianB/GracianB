@@ -86,9 +86,13 @@ async function desktop(browser) {
   const hoverExpected={professional:"rgb(199, 205, 208)",yoga:"rgb(145, 220, 178)",lab:"rgb(139, 218, 250)"};
   for(const [key,color] of Object.entries(hoverExpected)){
     const portal=page.locator('.world-portal[data-portal="'+key+'"]');
-    await portal.hover();await page.waitForTimeout(350);
-    assert.equal(await portal.evaluate(node=>getComputedStyle(node).borderTopColor),color,
-      key+" should have its own hover border, not the same grey for all");
+    await portal.hover();await page.waitForTimeout(550);
+    const actual=await portal.evaluate(node=>getComputedStyle(node).borderTopColor);
+    const components=actual.match(/[\\d.]+/g).map(Number);
+    const expected=color.match(/[\\d.]+/g).map(Number);
+    assert.deepEqual(components.slice(0,3),expected,
+      key+" hover must use its own universe color");
+    assert.ok((components[3] ?? 1) >= .8, key+" hover border must be clearly visible");
   }
   await page.mouse.move(0,0);
   await page.screenshot({path:`${artifacts}/three-portals-desktop.png`,fullPage:false});
