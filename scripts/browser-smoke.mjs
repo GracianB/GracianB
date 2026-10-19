@@ -137,6 +137,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
     }));
     assert.ok(Number(selected.opacity)>.85,"Focused orbit should reveal the information caption");
     assert.match(selected.label,lang==="es"?/PERSONAS|OPERACIONES/:/PEOPLE|OPERATIONS/,"Caption must be localized");
+    await page.waitForFunction(()=>Number(getComputedStyle(document.querySelector(".gb-orbit-aura")).opacity)>.95,null,{timeout:1800});
     const auraOpacity=await page.locator(".gb-orbit-aura").evaluate(el=>Number(getComputedStyle(el).opacity));
     assert.ok(auraOpacity>.9,"Selecting an orbit should reveal its colored light field");
     await page.locator(".constellation-signature").click();
