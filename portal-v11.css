@@ -404,26 +404,18 @@ html[data-theme="light"] .observatory-details .evidence-card:hover{background:li
 @media(max-width:830px){.observatory-details .evidence-grid{grid-template-columns:minmax(0,1fr)}.observatory-details .evidence-card:last-child{grid-column:auto!important}}
 
 
-/* V1 Official: calm three-way constellation, interactive without decorative noise. */
+
+/* V1 official: clean three-way atlas, accessible focus and restrained motion. */
 .bridge-satellite-grid,.cosmic-atlas-haze,.cosmic-atlas-coordinate{display:none!important}
-.cosmic-atlas::before{inset:17%;filter:none;background:radial-gradient(circle,rgba(93,155,181,.095),transparent 68%)}
-.cosmic-atlas::after{inset:21%;transform:none;opacity:.6}
-.cosmic-atlas-label{top:4%;left:50%;transform:translateX(-50%);white-space:nowrap;opacity:.65}
-.bridge-route{stroke-width:1.65;opacity:.69;filter:none}
-.bridge-trace-stars{opacity:.45}
-.cosmic-origin{width:68px;height:68px;box-shadow:0 0 0 7px rgba(139,188,211,.035),0 0 40px rgba(142,184,210,.18)}
-.cosmic-node{gap:.58rem;padding:.25rem;border-radius:14px;transition:transform .24s ease,filter .24s ease}
-.cosmic-node .cosmic-node-star{width:56px;height:56px;font-size:1.45rem;box-shadow:0 7px 24px rgba(0,0,0,.3)}
-.cosmic-pro{left:6%;top:28%}.cosmic-yoga{right:3%;top:14%}.cosmic-lab{left:44%;bottom:8%}
+.cosmic-atlas::before{filter:none;opacity:.42}
+.cosmic-atlas::after,.bridge-trace-stars{opacity:.32}
+.bridge-route{stroke-width:1.65;filter:none}
+.cosmic-node .cosmic-node-star{width:54px;height:54px;box-shadow:0 7px 24px rgba(0,0,0,.3)}
 .cosmic-atlas:has(.cosmic-node:is(:hover,:focus-visible)) .bridge-route{opacity:.2}
 .cosmic-atlas:has(.cosmic-pro:is(:hover,:focus-visible)) .bridge-route-pro,
 .cosmic-atlas:has(.cosmic-yoga:is(:hover,:focus-visible)) .bridge-route-yoga,
 .cosmic-atlas:has(.cosmic-lab:is(:hover,:focus-visible)) .bridge-route-lab{opacity:1;stroke-width:3}
-@media(hover:hover) and (pointer:fine){.cosmic-node:hover{transform:translateY(-3px)}}
-html[data-theme=light] .cosmic-atlas::before{background:radial-gradient(circle,rgba(93,155,181,.075),transparent 68%)}
-@media(max-width:720px){.cosmic-atlas{min-height:300px}.cosmic-origin{width:52px;height:52px}.cosmic-node .cosmic-node-star{width:46px;height:46px;font-size:1.15rem}}
-@media(max-width:420px){.cosmic-atlas{min-height:270px}.cosmic-origin{width:46px;height:46px}.cosmic-node .cosmic-node-star{width:42px;height:42px}}
 .command-panel{width:min(100%,35rem);max-height:min(78dvh,660px)}
-.command:not([hidden]) .command-panel{animation:gb-dialog .17s ease-out both}
-@keyframes gb-dialog{from{opacity:.85;transform:translateY(5px)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.command:not([hidden]) .command-panel{animation:none}.cosmic-node{transition:none}}
+.command:not([hidden]) .command-panel{animation:gb-dialog .16s ease-out both}
+@keyframes gb-dialog{from{opacity:.87;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.command:not([hidden]) .command-panel{animation:none}}
