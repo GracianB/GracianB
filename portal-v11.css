@@ -64,3 +64,21 @@ html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient
 html[data-theme=light] .cosmic-atlas{background:radial-gradient(circle at 50% 50%,rgba(82,148,177,.11),transparent 58%)}
 html[data-theme=light] .cosmic-node .cosmic-node-star{background:radial-gradient(circle at 30% 25%,#fff,#d5e6ed 77%)!important}
 @media(prefers-reduced-motion:reduce){.cosmic-node .cosmic-node-star::before,.cosmic-node .cosmic-node-star::after{animation:none!important}}
+
+/* V3.1 · controlled hover: no jump, bloom overload or spinning outlines */
+.cosmic-node{transition:filter .25s ease!important;transform:none!important}
+.cosmic-node:is(:hover,:focus-visible){transform:none!important;filter:none!important}
+.cosmic-node .cosmic-node-star{transition:box-shadow .3s ease,border-color .3s ease,background .3s ease!important}
+.cosmic-node:is(:hover,:focus-visible) .cosmic-node-star{
+ filter:none!important;
+ animation-play-state:paused!important;
+ box-shadow:inset 0 0 0 1px var(--node-color),inset 0 -15px 26px rgba(0,0,0,.35),0 0 0 5px color-mix(in srgb,var(--node-color) 11%,transparent),0 0 33px color-mix(in srgb,var(--node-color) 26%,transparent)!important
+}
+.cosmic-node:is(:hover,:focus-visible) .world-orb-sigil{transform:none!important;filter:drop-shadow(0 0 6px var(--node-color))!important}
+.cosmic-node:is(:hover,:focus-visible) .cosmic-node-star::before,
+.cosmic-node:is(:hover,:focus-visible) .cosmic-node-star::after{animation-play-state:paused;opacity:.6}
+.cosmic-node:focus-visible{outline:2px solid var(--node-color)!important;outline-offset:7px!important}
+html[data-theme=light] .cosmic-node:is(:hover,:focus-visible) .cosmic-node-star{
+ filter:none!important;box-shadow:inset 0 0 0 2px var(--node-color),0 0 0 5px color-mix(in srgb,var(--node-color) 13%,transparent),0 8px 26px rgba(30,72,98,.16)!important
+}
+@media(prefers-reduced-motion:reduce){.cosmic-node,.cosmic-node .cosmic-node-star{transition:none!important}}
