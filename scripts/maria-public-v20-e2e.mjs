@@ -1,19 +1,9 @@
 #!/usr/bin/env node
 import assert from 'node:assert/strict';
-import {spawn} from 'node:child_process';
 import {mkdirSync} from 'node:fs';
 import {chromium} from 'playwright';
-const HOST='127.0.0.1',PORT=4190;
-const base='http://'+HOST+':'+PORT+'/maria-romera-vista-previa/';
-const server=spawn('python3',['-m','http.server',String(PORT),'--bind',HOST],{stdio:['ignore','pipe','pipe']});
-async function wait(){
- for(let n=0;n<80;n++){
-  try{const r=await fetch(base);if(r.ok)return}catch{}
-  await new Promise(resolve=>setTimeout(resolve,220));
- }
- throw Error('Maria preview server unavailable');
-}
-await wait();
+// Reproduce the standalone HTML experience directly, without opening a local port.
+const base=new URL('../maria-romera-vista-previa/index.html',import.meta.url).href;
 mkdirSync('artifacts/e2e',{recursive:true});
 const b=await chromium.launch({headless:true,args:['--no-sandbox']});
 try{
@@ -24,7 +14,7 @@ try{
    page.on('pageerror',err=>errors.push(String(err)));
    page.on('console',msg=>{if(msg.type()==='error')errors.push(msg.text())});
    const url=base+(lang==='en'?'?lang=en':'');
-   assert.equal((await page.goto(url,{waitUntil:'load'})).status(),200);
+   await page.goto(url,{waitUntil:'load'});
    await page.locator('#mrCandidates .mr-candidate').first().waitFor();
    assert.equal(await page.locator('html').getAttribute('lang'),lang);
    assert.equal(await page.locator('.mr-case').count(),3);
@@ -59,4 +49,4 @@ try{
    await ctx.close();
   }
  }
-}finally{await b.close();server.kill('SIGTERM');}
+}finally{await b.close();}
