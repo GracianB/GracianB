@@ -2,13 +2,33 @@
 
 <img src="./docs/portfolio-banner.svg" alt="GracianB · Tres universos conectados" width="100%">
 
-# GracianB · Atlas personal
+# Gracián Baena | Customer Success · RevOps · Data & AI
 
-**Una misma curiosidad. Tres universos.**
+**De la operación real al sistema que el equipo utiliza.**
 
-[Explorar el atlas ↗](https://gracianb.github.io/GracianB/) · [Professional Deck ↗](https://gracianb.github.io/professional-deck/) · [Yoga Instructor ↗](https://gracianb.github.io/yoga-instructor/) · [Systems Lab ↗](https://gracianb.github.io/systems-lab/)
+16+ años en clientes, equipos y operaciones. En los últimos años he desarrollado soluciones con **Zendesk, Power BI, Python, Google Apps Script y automatización con IA**.
+
+**Murcia, España · Remoto / internacional · Español, inglés e italiano**
+
+[**Portfolio profesional ↗**](https://gracianb.github.io/professional-deck/) · [**CV English (PDF) ↗**](./Gracian_Baena_CV_2026_EN.pdf) · [**CV Español (PDF) ↗**](./Gracian_Baena_CV_2026_ES.pdf) · [**Conectar en LinkedIn ↗**](https://www.linkedin.com/in/gracianbaena/) · [**Explorar los tres universos ↗**](https://gracianb.github.io/GracianB/)
 
 </div>
+
+## Para quien evalúa mi perfil: evidencia antes que etiquetas
+
+| Si buscas... | Prueba que puedes revisar | Estado |
+| --- | --- | --- |
+| **Customer Success / Customer Operations** | [Bodytone Support Operating System](https://gracianb.github.io/professional-deck/proyecto-bodytone.html) y [Help Center público](https://bodytonehelp.zendesk.com/hc/es) | Caso profesional y servicio accesible |
+| **RevOps / Analytics / Decision Systems** | [RevOps Studio](https://gracianb.github.io/revops-studio/demo.html) · [Código](https://github.com/GracianB/revops-studio) | Demo con datos ficticios; no datos de clientes |
+| **Automatización / Software / IA** | [Systems Lab](https://gracianb.github.io/systems-lab/) · [Proyecto OHANA](https://gracianb.github.io/project-ohana/) · [Código OHANA](https://github.com/GracianB/project-ohana) | Demostraciones técnicas abiertas |
+
+**En 60 segundos:** operaciones de soporte → flujos y datos → automatización → adopción. [Ver mi narrativa y casos con contexto](https://gracianb.github.io/professional-deck/).
+
+**Stack aplicado:** JavaScript, Python, Apps Script, APIs, Power BI, Zendesk y automatización con LLM. Diferencio proyectos propios, demos públicas y herramientas privadas; una demo no equivale a uso en producción.
+
+**Contacto profesional:** [LinkedIn](https://www.linkedin.com/in/gracianbaena/) · [Reservar conversación](https://calendar.app.google/n99psBFktwYyoAWi9) · [Centro de candidaturas](https://gracianb.github.io/GracianB/apply.html).
+
+---
 
 ## Una puerta de entrada, tres destinos
 
@@ -70,4 +90,4 @@ No subir identificaciones, direcciones privadas, teléfonos personales, informac
 
 Los portfolios enlazados mantienen sus repositorios, ciclos de publicación y límites de acceso propios. Los trabajos privados de Aigoritmo y Cutter Studio no deben exponerse a través de esta web.
 
-**Atlas V4 · Documentación actualizada el 20 de octubre de 2026.**
+**Atlas V4 · Presentación profesional actualizada el 24 de octubre de 2026.**
