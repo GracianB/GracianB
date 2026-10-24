@@ -39,6 +39,8 @@ jobs:
           node --check apply.js
           node --check scripts/applications-b6.mjs
           node --check scripts/sitemap-b6.mjs
+      - name: Verify sanitized public Aga preview
+        run: node scripts/check-aga-public-preview.mjs
       - name: Professional hub contract
         run: node scripts/static-contract.mjs
       - name: Portfolio destinations static contract
@@ -66,6 +68,8 @@ jobs:
         run: npm install --no-save playwright@1.56.1
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
+      - name: Aga trilingual web-preview E2E without private CVs
+        run: node scripts/aga-public-preview-e2e.mjs
       - name: Desktop + mobile + reduced motion
         run: node scripts/browser-smoke.mjs
       - name: Recruiter application paths ES/EN and responsive interactions
