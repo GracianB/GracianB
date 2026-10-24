@@ -1,4 +1,4 @@
-// Maria V21 · hypothetical sourcing comparisons. No live pricing, scoring of actual suppliers or personal performance claims.
+// Maria V22 · hypothetical sourcing comparisons. No live pricing, scoring of actual suppliers or personal performance claims.
 (()=>{
 'use strict';
 const root=document.querySelector('#decision-lab');if(!root)return;
@@ -62,9 +62,13 @@ const refs={
 const inputs={cost:$('#mrWeightCost'),speed:$('#mrWeightSpeed'),risk:$('#mrWeightRisk')};
 const explainLocales={"es":{"insightEyebrow":"08 / POR QUÉ GANA ESTA ALTERNATIVA","insightTitle":"Entender <em>el criterio.</em>","insightDesc":"Puntuación ponderada de una simulación ficticia: sin datos de proveedores reales.","gap":"Ventaja sobre la segunda opción","tie":"Empate técnico. Ambas alternativas merecen revisión.","copySummary":"Copiar informe ↗","copyLink":"Copiar enlace ↗","copySuccess":"Copiado ✓","copyFail":"Portapapeles no disponible. Copia el enlace desde tu navegador.","briefTitle":"María Romera · Simulación de compras","fiction":"Ofertas y puntuaciones ficticias. No son operaciones ni resultados profesionales acreditados.","brief":"Selección simulada","weights":"Pesos elegidos","breakdown":"Desglose de criterio","checkpoints":"Antes de aprobar"},"en":{"insightEyebrow":"08 / WHY THIS OPTION RANKS FIRST","insightTitle":"Understand <em>the trade-off.</em>","insightDesc":"Weighted score from a fictional model, never actual supplier-performance data.","gap":"Lead over the second option","tie":"Technical tie. Both options require closer review.","copySummary":"Copy decision brief ↗","copyLink":"Copy scenario link ↗","copySuccess":"Copied ✓","copyFail":"Clipboard unavailable. Copy the URL from your browser.","briefTitle":"María Romera · Fictional procurement brief","fiction":"Fictional offers and scores. Not verified contracts or personal professional outcomes.","brief":"Illustrative selection","weights":"Chosen weights","breakdown":"Criterion breakdown","checkpoints":"Before approval"}};
 
+const guardCopy={"es":{"title":"FILTROS DE ADMISIBILIDAD · DEMOSTRACIÓN","desc":"Establece requisitos mínimos ficticios. Una opción que los incumple no debe recomendarse.","speed":"Plazo mínimo aceptable","risk":"Fiabilidad mínima","eligible":"alternativas admisibles","excluded":"No admisible","none":"Ninguna oferta supera los mínimos. Revisa las condiciones o busca otras alternativas.","noneTitle":"Sin opciones admisibles","noneReason":"Ninguna oferta debería recomendarse si incumple los requisitos establecidos.","limits":"Umbrales mínimos","noRank":"Sin recomendación"},"en":{"title":"QUALIFICATION THRESHOLDS · DEMONSTRATION","desc":"Set fictional minimum standards. Offers that fail them should not be recommended.","speed":"Minimum acceptable delivery","risk":"Minimum reliability","eligible":"eligible alternatives","excluded":"Not eligible","none":"No offer meets both thresholds. Review your criteria or seek alternatives.","noneTitle":"No eligible options","noneReason":"An offer should not be recommended while it fails the selected minimum standards.","limits":"Minimum thresholds","noRank":"No recommendation"}};
+const guard={speed:$('#mrMinSpeed'),risk:$('#mrMinRisk')};
 const query=new URLSearchParams(location.search);
 const safeInt=(x,min,max,fallback)=>/^\d+$/.test(x||'')&&Number(x)>=min&&Number(x)<=max?Number(x):fallback;
 selected=safeInt(query.get('scenario'),0,2,0);
+guard.speed.value=String(safeInt(query.get('gs'),1,5,1));
+guard.risk.value=String(safeInt(query.get('gr'),1,5,1));
 for(const [key,input] of Object.entries(inputs)){
  input.value=String(safeInt(query.get('w'+key[0]),1,5,3));
 }
@@ -78,6 +82,8 @@ function shareUrl(){
  next.searchParams.set('lang',getLang());
  next.searchParams.set('scenario',String(selected));
  for(const [key,input] of Object.entries(inputs))next.searchParams.set('w'+key[0],input.value);
+ next.searchParams.set('gs',guard.speed.value);
+ next.searchParams.set('gr',guard.risk.value);
  next.hash='decision-lab';
  return next;
 }
@@ -104,15 +110,19 @@ function explain(top,second,weights,data){
   row.append(title,value,bar,points);return row;
  }));
  const margin=Math.max(0,top.score-second.score);
- setText(insight.gap,margin<.01?dict.tie:dict.gap+': '+margin.toFixed(2)+'/5');
+ const copy=guardCopy[getLang()];
+ setText(insight.gap,!top.eligible?copy.none:
+  !second.eligible?copy.eligible+': 1 / 3 · '+dict.gap+': qualification overrides raw scores.':
+  margin<.01?dict.tie:dict.gap+': '+margin.toFixed(2)+'/5');
 }
 function buildBrief(){
  const lang=getLang(),d=locales[lang],labels=explainLocales[lang];
  const weights=Object.fromEntries(Object.entries(inputs).map(([key,input])=>[key,Number(input.value)]));
- const ranked=cases[selected].map((row,index)=>({index,score:score(row,weights)})).sort((a,b)=>b.score-a.score||a.index-b.index);
+ const ranked=rankOffers(weights);
  return [
  labels.briefTitle,
- d.cases[selected],labels.brief+': '+d.tags[ranked[0].index],
+ d.cases[selected],guardCopy[lang].limits+': '+guard.speed.value+'/5 · '+guard.risk.value+'/5',
+ labels.brief+': '+(ranked.some(x=>x.eligible)?d.tags[ranked[0].index]:guardCopy[lang].noRank),
  labels.weights+': '+d.cost+' '+weights.cost+'/5 · '+d.speed+' '+weights.speed+'/5 · '+d.risk+' '+weights.risk+'/5',
  labels.breakdown+': '+ranked.map(x=>d.tags[x.index]+' '+x.score.toFixed(2)+'/5').join(' | '),
  labels.checkpoints+':\n'+d.checks[selected].map((x,i)=>(i+1)+'. '+x).join('\n'),
@@ -134,12 +144,17 @@ function setText(node,value){if(node)node.textContent=value;}
 function score(offer,weights){const keys=['cost','speed','risk'];let total=0,max=0;
  keys.forEach((k,i)=>{total+=offer[i]*weights[k];max+=5*weights[k]});return Math.round(total/max*500)/100;
 }
+function rankOffers(weights){
+ const speed=Number(guard.speed.value),risk=Number(guard.risk.value);
+ return cases[selected].map((row,index)=>({index,score:score(row,weights),eligible:row[1]>=speed&&row[2]>=risk}))
+  .sort((a,b)=>Number(b.eligible)-Number(a.eligible)||b.score-a.score||a.index-b.index);
+}
 function candidate(data,item,place){
- const article=document.createElement('div');article.className='mr-candidate';article.setAttribute('role','listitem');
+ const article=document.createElement('div');article.className='mr-candidate'+(item.eligible?'':' is-ineligible');article.setAttribute('role','listitem');
  const rank=document.createElement('span');rank.className='mr-candidate-rank';rank.textContent=String(place+1).padStart(2,'0');
  const copy=document.createElement('div');copy.className='mr-candidate-copy';
  const name=document.createElement('strong');name.textContent=data.tags[item.index];
- const detail=document.createElement('small');detail.textContent=data.profiles[item.index]+' · '+item.score.toFixed(2)+'/5';
+ const detail=document.createElement('small');detail.textContent=data.profiles[item.index]+' · '+item.score.toFixed(2)+'/5'+(item.eligible?'':' · '+guardCopy[getLang()].excluded);
  const track=document.createElement('div');track.className='mr-bar-track';track.setAttribute('aria-hidden','true');
  const fill=document.createElement('span');fill.style.width=(item.score/5*100).toFixed(1)+'%';track.append(fill);
  copy.append(name,detail,track);
@@ -166,12 +181,19 @@ function render(){
  $$('.mr-case').forEach((el,i)=>{el.classList.toggle('is-selected',selected===i);el.setAttribute('aria-pressed',String(selected===i))});
  setText(refs.counter,String(selected+1).padStart(2,'0')+' / 03');setText(refs.resultTitle,d.titles[selected]);
  setText(refs.resultDesc,d.descs[selected]);
- const ranked=cases[selected].map((row,index)=>({index,score:score(row,w)}))
-   .sort((a,b)=>b.score-a.score||a.index-b.index);
+ const ranked=rankOffers(w);
+ const eligibleCount=ranked.filter(x=>x.eligible).length,words=guardCopy[lang];
+ setText($('#mrGuardTitle'),words.title);setText($('#mrGuardDescription'),words.desc);
+ setText($('#mrMinSpeedLabel'),words.speed);setText($('#mrMinRiskLabel'),words.risk);
+ setText($('#mrMinSpeedValue'),guard.speed.value+'/5');setText($('#mrMinRiskValue'),guard.risk.value+'/5');
+ setText($('#mrEligibility'),eligibleCount?eligibleCount+' / 3 '+words.eligible:words.none);
+ $('#mrEligibility').dataset.empty=String(eligibleCount===0);
  explain(ranked[0],ranked[1],w,d);
  refs.list.replaceChildren(...ranked.map((item,i)=>candidate(d,item,i)));
- setText(refs.verdictName,d.tags[ranked[0].index]);
- setText(refs.reason,d.reason);
+ setText(refs.verdict,eligibleCount?d.verdict:words.noneTitle);
+ setText(refs.verdictName,eligibleCount?d.tags[ranked[0].index]:words.noRank);
+ setText(refs.reason,eligibleCount?d.reason:words.noneReason);
+ if(!eligibleCount)setText(insight.gap,words.none);
  refs.checks.replaceChildren(...d.checks[selected].map(s=>{const li=document.createElement('li');li.textContent=s;return li}));
 }
 $$('.mr-case').forEach((el,i)=>{
@@ -184,7 +206,8 @@ $$('.mr-case').forEach((el,i)=>{
  });
 });
 Object.values(inputs).forEach(el=>el.addEventListener('input',()=>{render();keepUrl()}));
-$('#mrLabReset')?.addEventListener('click',()=>{selected=0;Object.values(inputs).forEach(el=>el.value='3');render();keepUrl()});
+Object.values(guard).forEach(el=>el.addEventListener('input',()=>{render();keepUrl()}));
+$('#mrLabReset')?.addEventListener('click',()=>{selected=0;Object.values(inputs).forEach(el=>el.value='3');Object.values(guard).forEach(el=>el.value='1');render();keepUrl()});
 new MutationObserver(()=>{if(locale!==getLang()){render();keepUrl()}}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 render();
 })();

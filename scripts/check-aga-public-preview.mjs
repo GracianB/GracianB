@@ -15,8 +15,10 @@ for(const [lang,file] of locales){
  assert.match(page,/id="focus-json"/,'Decision matrix not present');
  assert.match(page,/id="leadership"/,'V4 design narrative missing');
  assert.match(page,/id="review"/,'Evidence caveats absent');
- assert.match(page, /data-aga-version="21"/, 'V20 version contract missing');
+ assert.match(page, /data-aga-version="22"/, 'V20 version contract missing');
  assert.match(page, /id="control-tower"/, 'Control tower section missing');
+ for(const id of ['towerCompareHeading','towerSave','towerClear','towerComparisonEmpty','towerComparisonResults','towerBaselineScore','towerCurrentScore','towerDifference','towerComparisonNote','tower-compare-copy'])assert.ok(page.includes('id="'+id+'"'),path+' missing compare '+id);
+ assert.match(page, /Save reference|Guardar referencia|Zapisz odniesienie/, 'Locale comparison not translated');
  assert.equal((page.match(/data-tower-case="[012]"/g)||[]).length,3, 'Expected 3 V20 scenario switches');
  assert.equal((page.match(/data-tower-control="(?:urgency|buffer|paper)"/g)||[]).length,3, 'Expected three independent levers');
  for(const id of ['towerIndex','towerAuditTitle','towerCopyBrief','towerCopyLink','towerCopyStatus','towerFactor0','towerFactor1','towerFactor2']){
@@ -31,8 +33,8 @@ for(const [lang,file] of locales){
  for(const group of v20.actions){assert.equal(group.length,3);assert.ok(group.every(s=>s.length>45));}
  for(const group of v20.steps){assert.equal(group.length,4);assert.ok(group.every(s=>s.length>10));}
  const assetPrefix=lang==='en'?'':'../';
- assert.ok(page.includes('href="'+assetPrefix+'v20.css?v=21"'),'V20 CSS path broken');
- assert.ok(page.includes('src="'+assetPrefix+'v20.js?v=21"'),'V20 JS path broken');
+ assert.ok(page.includes('href="'+assetPrefix+'v20.css?v=22"'),'V20 CSS path broken');
+ assert.ok(page.includes('src="'+assetPrefix+'v20.js?v=22"'),'V20 JS path broken');
 
  assert.equal((page.match(/data-scenario="[012]"/g)||[]).length,3);
  assert.equal((page.match(/data-focus="[012]"/g)||[]).length,3);
@@ -60,4 +62,4 @@ for(const file of ['v20.css','v20.js']){
  assert.ok(text.length>1000, path+' unexpectedly empty');
  assert.doesNotMatch(text,/Agnieszka_Piazzese_CV_|\.pdf\b|JVBERi0/i,'Private content in V20 source');
 }
-console.log('AGA V21 STATIC PASS | 3 locales, 3 independent levers, 9 public scenario responses per language');
+console.log('AGA V22 STATIC PASS | 3 locales, 3 independent levers, 9 public scenario responses per language');

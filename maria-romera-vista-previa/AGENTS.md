@@ -12,3 +12,6 @@
 
 - V21 adds a weighted-criteria explanation and deep-linkable fictional scenarios. Keep both ES/EN messages, predictable sorting/tie handling and all browser tests.
 - Never make the simulated score look like a validated procurement KPI or individual achievement.
+
+
+- V22 procurement qualification thresholds are illustrative; never let a disqualified offer become the recommended supplier. No-options must be explicitly handled in ES/EN. Preserve URL state and E2E tests.

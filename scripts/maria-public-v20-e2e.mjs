@@ -22,6 +22,9 @@ try{
    assert.equal(await page.locator('.mr-case').count(),3);
    assert.equal(await page.locator('.mr-candidate').count(),3);
    assert.equal(await page.locator('.mr-insight-factor').count(),3);
+   assert.equal(await page.locator('#mrMinSpeed').inputValue(),'1');
+   assert.equal(await page.locator('#mrMinRisk').inputValue(),'1');
+   assert.match(await page.locator('#mrEligibility').innerText(),/3/);
    await page.locator('#mrCopySummary').click();
    assert.match(await page.evaluate(()=>window.__lastCopy),/5/);
    await page.locator('#mrCopyLink').click();
@@ -52,9 +55,25 @@ try{
    assert.equal(await page.locator('#mrWeightSpeed').inputValue(),'5');
    assert.equal(await page.locator('#mrWeightRisk').inputValue(),'5');
 
+   await page.locator('.mr-case[data-mr-case="2"]').click();
+   await setValue('#mrMinSpeed',5);
+   await setValue('#mrMinRisk',5);
+   assert.equal(await page.locator('#mrEligibility').getAttribute('data-empty'),'true');
+   assert.equal(await page.locator('.mr-candidate.is-ineligible').count(),3);
+   await page.locator('#mrCopyLink').click();
+   const constrainedLink=await page.evaluate(()=>window.__lastCopy);
+   assert.equal(new URL(constrainedLink).searchParams.get('gs'),'5');
+   assert.equal(new URL(constrainedLink).searchParams.get('gr'),'5');
+   await page.goto(constrainedLink,{waitUntil:'load'});
+   assert.equal(await page.locator('#mrMinSpeed').inputValue(),'5');
+   assert.equal(await page.locator('#mrEligibility').getAttribute('data-empty'),'true');
+   await page.locator('.mr-case[data-mr-case="0"]').click();
+   assert.equal(await page.locator('.mr-candidate:not(.is-ineligible)').count(),1);
    assert.equal(await page.locator('#mrChecks li').count(),3);
    await page.locator('#mrLabReset').click();
    assert.equal(await page.locator('#mrWeightCost').inputValue(),'3');
+   assert.equal(await page.locator('#mrMinSpeed').inputValue(),'1');
+   assert.equal(await page.locator('#mrMinRisk').inputValue(),'1');
    await page.locator('#lang').click();
    assert.equal(await page.locator('html').getAttribute('lang'),lang==='es'?'en':'es');
    assert.equal(await page.locator('.mr-candidate').count(),3);
@@ -67,7 +86,7 @@ try{
     await page.locator('#decision-lab').scrollIntoViewIfNeeded();
     await page.screenshot({path:'artifacts/e2e/maria-v20-'+lang+'-'+width+'.png',fullPage:true});
    }
-   console.log('MARIA V21 BROWSER PASS',lang,width);
+   console.log('MARIA V22 BROWSER PASS',lang,width);
    await ctx.close();
   }
  }

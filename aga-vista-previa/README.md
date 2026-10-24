@@ -48,3 +48,13 @@ Only after validation succeeds should the changes be merged to the public `main`
 - Scores are *not* measured risk indices, real KPIs, customer data, evidence of past decisions or a predictive model.
 - New browser QA checks restore-on-reload, clipboard content and transparent factor breakdowns across all 3 locales × 4 widths.
 - The private repository and all three unapproved CV PDFs remain untouched. Noindex is not privacy protection.
+
+
+
+## V22 · Operational Scenario Comparison
+
+- Save a **reference snapshot in memory** of the fictional current scenario and its normalized pressure index. Adjust any scenario or slider to compare reference/current/difference live.
+- Cross-scenario comparisons are explicitly described as illustrative, never as evidence of real business improvement. Saved reference is not stored remotely or embedded in share links.
+- Screen-reader status, disabled Clear button, responsive comparison tiles and keyboard-operable controls.
+- All EN, PL and ES routes preserve V21 deep links, priorities, fictional evidence disclosures and private-document exclusions.
+- Browser QA checks save, difference, clear, reset, and the existing scenario + clipboard suite.

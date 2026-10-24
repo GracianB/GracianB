@@ -39,6 +39,12 @@ try{
    assert.notEqual(await page.locator('#towerResponse').innerText(),baseline);
    assert.equal(await page.locator('.tower-audit-factor').count(),3);
    assert.ok(Number(await page.locator('#towerIndex').innerText())>=0);
+   assert.equal(await page.locator('#towerComparisonResults').isHidden(),true);
+   await page.locator('#towerSave').click();
+   assert.equal(await page.locator('#towerComparisonResults').isVisible(),true);
+   assert.equal(await page.locator('#towerClear').isEnabled(),true);
+   const referenceScore=await page.locator('#towerBaselineScore').innerText();
+   assert.equal(referenceScore,await page.locator('#towerCurrentScore').innerText());
    await page.locator('#towerCopyBrief').click();
    assert.match(await page.evaluate(()=>window.__lastCopy),/\/20/);
    await page.locator('#towerCopyLink').click();
@@ -50,6 +56,10 @@ try{
    await move('#tower-urgency',4);await move('#tower-buffer',0);await move('#tower-paper',0);
    assert.equal(await page.locator('#towerStatus').getAttribute('data-level'),'2');
    assert.ok(Number(await page.locator('#towerIndex').innerText())>=15);
+   assert.equal(await page.locator('#towerBaselineScore').innerText(),referenceScore);
+   assert.notEqual(await page.locator('#towerDifference').innerText(),'0');
+   await page.locator('#towerClear').click();
+   assert.equal(await page.locator('#towerComparisonResults').isHidden(),true);
    const factors=await page.locator('.tower-audit-factor strong').allInnerTexts();
    assert.equal(factors.length,3);
    assert.ok(factors.every(v=>v.includes('/')),'Explainable factors missing');
@@ -83,7 +93,7 @@ try{
     await page.locator('#control-tower').scrollIntoViewIfNeeded();
     await page.screenshot({path:'artifacts/e2e/aga-v20-'+lang+'-'+width+'.png',fullPage:true});
    }
-   console.log('AGA V21 PUBLIC E2E PASS',lang,width);
+   console.log('AGA V22 PUBLIC E2E PASS',lang,width);
    await context.close();
   }
  }

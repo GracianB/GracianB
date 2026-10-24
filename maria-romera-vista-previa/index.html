@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-mr-version="21" lang="es" data-theme="dark">
+<html data-mr-version="22" lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -180,9 +180,9 @@ html[data-theme="light"] .footer{background:#eef1eb}
 </style>
 <script>try{const t=localStorage.getItem('mr-theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(_){}</script>
 
-<link rel="stylesheet" href="./mr-v20.css?v=21"></head>
+<link rel="stylesheet" href="./mr-v20.css?v=22"></head>
 <body data-preview-standalone="true">
-<div class="preview-banner" role="note"><strong>MARÍA ROMERA · V21</strong> · Vista editorial pública de cortesía, pendiente de aprobación personal; CV privados no publicados.</div>
+<div class="preview-banner" role="note"><strong>MARÍA ROMERA · V22</strong> · Vista editorial pública de cortesía, pendiente de aprobación personal; CV privados no publicados.</div>
 <a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
 <div class="scroll-progress" aria-hidden="true"><span id="progress"></span></div>
 <header class="header" id="inicio">
@@ -278,7 +278,7 @@ html[data-theme="light"] .footer{background:#eef1eb}
  </div>
 </section>
 <section id="decision-lab" class="mr-lab container" aria-labelledby="mrLabTitle">
-<div class="mr-lab-top"><span class="mr-lab-id">MR / 21 · PROCUREMENT INTELLIGENCE</span><span class="mr-lab-tag">INTERACTIVE EDITORIAL DEMO</span></div>
+<div class="mr-lab-top"><span class="mr-lab-id">MR / 22 · PROCUREMENT INTELLIGENCE</span><span class="mr-lab-tag">INTERACTIVE EDITORIAL DEMO</span></div>
 <div class="mr-lab-heading"><div><p class="overline" id="mrLabKicker">07 / LABORATORIO DE DECISIONES</p><h2 id="mrLabTitle">El mejor precio <em>no siempre es la mejor compra.</em></h2></div>
 <p id="mrLabIntro">Tres casos de abastecimiento ficticios. Ajusta las prioridades, compara alternativas y observa cómo cambia una recomendación. No son operaciones reales de María.</p></div>
 <div class="mr-lab-frame">
@@ -293,12 +293,15 @@ html[data-theme="light"] .footer{background:#eef1eb}
   <div class="mr-slider"><label for="mrWeightCost" id="mrCostLabel">Coste total</label><input type="range" id="mrWeightCost" data-mr-weight="cost" min="1" max="5" value="3" step="1"><output for="mrWeightCost" id="mrCostValue">3/5</output></div>
   <div class="mr-slider"><label for="mrWeightSpeed" id="mrSpeedLabel">Plazo / continuidad</label><input type="range" id="mrWeightSpeed" data-mr-weight="speed" min="1" max="5" value="3" step="1"><output for="mrWeightSpeed" id="mrSpeedValue">3/5</output></div>
   <div class="mr-slider"><label for="mrWeightRisk" id="mrRiskLabel">Fiabilidad / documentación</label><input type="range" id="mrWeightRisk" data-mr-weight="risk" min="1" max="5" value="3" step="1"><output for="mrWeightRisk" id="mrRiskValue">3/5</output></div>
-  <button type="button" class="mr-lab-reset" id="mrLabReset">↺ <span id="mrResetText">Restablecer simulación</span></button>
+  <fieldset class="mr-guardrails"><legend id="mrGuardTitle">FILTROS DE ADMISIBILIDAD · DEMOSTRACIÓN</legend><p id="mrGuardDescription">Define mínimos ficticios. Una oferta que no los alcanza no debe recomendarse, por alta que sea su puntuación ponderada.</p>
+<div class="mr-guard"><label for="mrMinSpeed" id="mrMinSpeedLabel">Plazo mínimo aceptable</label><input id="mrMinSpeed" type="range" min="1" max="5" step="1" value="1" aria-describedby="mrMinSpeedValue"><output id="mrMinSpeedValue" for="mrMinSpeed">1/5</output></div>
+<div class="mr-guard"><label for="mrMinRisk" id="mrMinRiskLabel">Fiabilidad mínima</label><input id="mrMinRisk" type="range" min="1" max="5" step="1" value="1" aria-describedby="mrMinRiskValue"><output id="mrMinRiskValue" for="mrMinRisk">1/5</output></div></fieldset><button type="button" class="mr-lab-reset" id="mrLabReset">↺ <span id="mrResetText">Restablecer simulación</span></button>
  </div>
  <div class="mr-lab-results">
   <div class="mr-results-overline"><span id="mrRankingLabel">COMPARATIVA · ALTERNATIVAS FICTICIAS</span><span id="mrCaseCounter">01 / 03</span></div>
   <h3 id="mrResultTitle">Cada decisión mueve la cadena.</h3>
   <p id="mrResultDesc">El coste, la disponibilidad y la seguridad documental cambian la recomendación.</p>
+  <div class="mr-eligibility" id="mrEligibility" role="status" aria-live="polite">3 de 3 alternativas admisibles.</div>
   <div class="mr-candidates" id="mrCandidates" role="list" aria-label="Comparación de alternativas"></div>
   <div class="mr-verdict" role="status" aria-live="polite" aria-atomic="true">
    <span id="mrVerdictLabel">PRIMERA ALTERNATIVA SEGÚN EL MODELO</span>
@@ -310,7 +313,7 @@ html[data-theme="light"] .footer{background:#eef1eb}
 </div>
 <div class="mr-insight" aria-labelledby="mrInsightTitle">
 <div class="mr-insight-heading"><div><span id="mrInsightEyebrow" class="micro-label">08 / POR QUÉ GANA ESTA ALTERNATIVA</span><h3 id="mrInsightTitle">Entender <em>el criterio.</em></h3><p id="mrInsightDesc">La puntuación ponderada es ficticia. El resultado cambia con las prioridades.</p></div>
-<strong class="mr-insight-index">MR / 21</strong></div>
+<strong class="mr-insight-index">MR / 22</strong></div>
 <div class="mr-insight-grid" id="mrInsightFactors" role="list" aria-label="Desglose ponderado"></div>
 <p class="mr-insight-diff" id="mrInsightGap"></p>
 <div class="mr-brief-controls"><button type="button" id="mrCopySummary">Copiar informe ↗</button><button type="button" id="mrCopyLink">Copiar enlace ↗</button><span role="status" aria-live="polite" id="mrCopyStatus"></span></div>
@@ -497,4 +500,4 @@ html[data-theme="light"] .footer{background:#eef1eb}
 })();
 
 </script>
-<script src="./mr-v20.js?v=21"></script></body></html>
+<script src="./mr-v20.js?v=22"></script></body></html>

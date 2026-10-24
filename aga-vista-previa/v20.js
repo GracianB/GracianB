@@ -1,4 +1,4 @@
-// AGA V21. Public editorial simulation, not operational decision software.
+// AGA V22. Public editorial simulation, not operational decision software.
 (()=>{
 'use strict';
 const root=document.querySelector('#control-tower');
@@ -32,6 +32,37 @@ function computePressure(){
  const level=total<=6?0:total<=13?1:2;
  return {level,points,maximum,weights,normalized:Math.round(total/maximum*20)};
 }
+// V22: optional in-memory comparison of two illustrative states. Never stored on a server.
+const comparisonCopy=JSON.parse(root.querySelector('#tower-compare-copy').textContent);
+let reference=null;
+const compareResults=root.querySelector('#towerComparisonResults');
+const compareEmpty=root.querySelector('#towerComparisonEmpty');
+function renderComparison(){
+ if(!reference){
+  compareEmpty.hidden=false;compareResults.hidden=true;
+  root.querySelector('#towerClear').disabled=true;
+  return;
+ }
+ const now=computePressure().normalized;
+ const delta=now-reference.score;
+ compareEmpty.hidden=true;compareResults.hidden=false;
+ root.querySelector('#towerClear').disabled=false;
+ root.querySelector('#towerBaselineScore').textContent=String(reference.score);
+ root.querySelector('#towerCurrentScore').textContent=String(now);
+ root.querySelector('#towerDifference').textContent=(delta>0?'+':'')+delta;
+ const message=reference.scenario!==scenario?comparisonCopy.different:
+  delta===0?comparisonCopy.same:
+  (delta>0?comparisonCopy.higher:comparisonCopy.lower)+': '+Math.abs(delta)+' '+comparisonCopy.unit+'.';
+ root.querySelector('#towerComparisonNote').textContent=message;
+}
+root.querySelector('#towerSave')?.addEventListener('click',()=>{
+ reference={score:computePressure().normalized,scenario};
+ renderComparison();
+});
+root.querySelector('#towerClear')?.addEventListener('click',()=>{
+ reference=null;renderComparison();
+});
+
 function update(){
  if(!cases.length||!sliders.length)return;
  const pressure=computePressure(),level=pressure.level;
@@ -39,6 +70,7 @@ function update(){
   const selected=i===scenario;button.classList.toggle('is-on',selected);
   button.setAttribute('aria-pressed',String(selected));
  });
+ renderComparison();
  const number=root.querySelector('.tower-number');
  if(number)number.textContent=String(scenario+1).padStart(2,'0')+' / 03';
  levels.textContent=model.labels[level];levels.dataset.level=String(level);

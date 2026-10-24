@@ -76,3 +76,20 @@
 @media(max-width:430px){.mr-insight{padding:19px}.mr-insight-heading h3{font-size:30px}.mr-brief-controls button{flex:1 1 100%}}
 @media(prefers-reduced-motion:reduce){.mr-insight-track i{transition:none}}
 @media print{.mr-brief-controls{display:none}.mr-insight-factor{break-inside:avoid}}
+
+
+/* V22: explicit fictional eligibility gates and transparent exclusions */
+.mr-guardrails{min-width:0;margin:8px 0 21px;padding:23px 18px 6px;border:1px solid var(--gold);border-radius:8px;background:var(--chip)}
+.mr-guardrails legend{padding:0 7px;color:var(--accent);font-size:10px;font-weight:800;letter-spacing:.10em}
+.mr-guardrails>p{font-size:11px;color:var(--muted);line-height:1.65;margin:0 0 18px}
+.mr-guard{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px 10px;margin-bottom:22px}
+.mr-guard label{font-size:12px;font-weight:700;color:var(--text)}
+.mr-guard input{grid-column:1/-1;width:100%;accent-color:var(--accent);cursor:pointer;min-height:23px}
+.mr-guard output{font:italic 16px var(--serif);color:var(--accent)}
+.mr-eligibility{padding:12px 14px;margin:16px 0;border:1px solid var(--line);background:var(--chip);color:var(--accent);font-weight:700;font-size:12px;line-height:1.5}
+.mr-eligibility[data-empty="true"]{border-color:var(--gold);color:var(--text)}
+.mr-candidate.is-ineligible{opacity:.55;border-style:dashed;filter:grayscale(.35)}
+.mr-candidate.is-ineligible:first-child{border-color:var(--line)}
+.mr-candidate.is-ineligible .mr-candidate-copy small{font-weight:700}
+@media(max-width:750px){.mr-guardrails{padding:17px 15px 1px}.mr-eligibility{margin:14px 0}}
+@media print{.mr-guardrails input{display:none}.mr-candidate.is-ineligible{opacity:.7}}
