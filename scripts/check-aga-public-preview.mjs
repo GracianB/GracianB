@@ -8,7 +8,7 @@ for(const [lang,file] of locales){
  const path=prefix+file;
  assert.ok(fs.existsSync(path),path+' missing');
  const page=fs.readFileSync(path,'utf8');
- assert.match(page,new RegExp('<html lang="'+lang+'"'),'Wrong document language');
+ assert.match(page,new RegExp('<html\\b[^>]*\\blang="'+lang+'"'),'Wrong document language');
  assert.match(page,/noindex,nofollow/,'Preview must opt out of indexing');
  assert.match(page,/PUBLIC EDITORIAL PREVIEW|PUBLICZNA WERSJA POGLĄDOWA|VISTA EDITORIAL PÚBLICA/,'Public status notice missing');
  assert.match(page,/id="decision-json"/,'Decision scenarios not present');
