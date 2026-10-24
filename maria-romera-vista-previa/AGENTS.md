@@ -9,3 +9,6 @@
 - Update browser/static contracts when changing UI: `scripts/check-maria-public-v20.mjs` and `scripts/maria-public-v20-e2e.mjs`.
 - No changes to Aga's preview, hub constellation, private repositories or unrelated project files.
 - Never merge before full CI passes and check GitHub Pages deployment after merge.
+
+- V21 adds a weighted-criteria explanation and deep-linkable fictional scenarios. Keep both ES/EN messages, predictable sorting/tie handling and all browser tests.
+- Never make the simulated score look like a validated procurement KPI or individual achievement.

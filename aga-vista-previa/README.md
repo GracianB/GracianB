@@ -37,3 +37,14 @@ This V20 milestone combines a set of improvements without claiming that intermed
 - GitHub Actions: `GracianB Final Quality` + `Deploy GracianB to GitHub Pages`
 
 Only after validation succeeds should the changes be merged to the public `main` branch.
+
+
+## V21 · Transparent Decision Brief (24 October 2026)
+
+- All three language pages (EN/PL/ES) now expose a **transparent simulated pressure index** normalised to a 0–20 fictional display, with per-factor contributions (urgency, stock exposure, document uncertainty).
+- Native range controls, live priority updates and the existing V20 scenario workflow are preserved.
+- A **shareable scenario URL** contains only bounded fictional settings (`case`, `u`, `b`, `p`). Cross-language links preserve the example context. No business identifiers or personal data are stored.
+- Two optional actions allow visitors to copy the scenario link or a text-only operations brief. Clipboard errors are disclosed accessibly; the web itself requires no download.
+- Scores are *not* measured risk indices, real KPIs, customer data, evidence of past decisions or a predictive model.
+- New browser QA checks restore-on-reload, clipboard content and transparent factor breakdowns across all 3 locales × 4 widths.
+- The private repository and all three unapproved CV PDFs remain untouched. Noindex is not privacy protection.

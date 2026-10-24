@@ -27,3 +27,13 @@ En GitHub Actions se ejecutan conjuntamente con el QA del resto del hub. Publica
 
 ### Antes de difundir como portfolio oficial
 María debe revisar las fechas y funciones de su trayectoria, los cursos y títulos, los idiomas, la propuesta editorial de la portada y el consentimiento para publicación. Ver el fichero privado `docs/FACT_CHECK.md`, sin copiarlo ni sus CV al proyecto público.
+
+
+## V21 · Transparent Procurement Brief (24 October 2026)
+
+- The existing bilingual fictional procurement comparator now shows **why** an offer ranks first: component ratings, selected weights, weighted contributions and the score margin over the runner-up. Close results are described as a *technical tie*, not a decisive winner.
+- A text-only fictional procurement brief and scenario link can be copied from the browser without downloads or a backend.
+- The URL includes only the example scenario and three bounded weights (`scenario`, `wc`, `ws`, `wr`) plus `lang`. Browser reload and direct opening recover the settings; the ES/EN switch retains the values.
+- No scoring numbers represent actual suppliers, savings, customer contracts, personal work, or a procurement platform ready for decisions.
+- Browser QA checks criterion explanations, copy behaviour, permalinks and restoration in ES/EN × mobile/tablet/desktop.
+- No private CVs or altered employment/qualification claims have been published. María's consent gate remains in force.

@@ -9,3 +9,6 @@
 - Preserve the existing V11 Decision Compass and leadership sections, review gate, modes, and URLs. Avoid unsanctioned jobs, dates, capabilities or savings claims.
 - Run `node scripts/check-aga-public-preview.mjs` and `node scripts/aga-public-preview-e2e.mjs` and wait for green CI before publication.
 - Changes here should not touch Maria Romera's preview or the public hub's unrelated assets.
+
+- V21 changes require a clear simulated 0–20 index and transparent factor bars in EN/PL/ES, clipboard fallback messaging and URL state round-tripping. Do not call the index a real risk metric.
+- The accessible copy controls export fictional text only; no API calls or personal identifiers may be introduced.

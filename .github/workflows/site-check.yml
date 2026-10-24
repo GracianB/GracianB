@@ -39,8 +39,12 @@ jobs:
           node --check apply.js
           node --check scripts/applications-b6.mjs
           node --check scripts/sitemap-b6.mjs
-      - name: Verify sanitized public Aga preview
-        run: node scripts/check-aga-public-preview.mjs
+      - name: Verify sanitized public Aga V21 and JavaScript syntax
+        run: |
+          node --check aga-vista-previa/v20.js
+          node --check scripts/aga-public-preview-e2e.mjs
+          node --check scripts/maria-public-v20-e2e.mjs
+          node scripts/check-aga-public-preview.mjs
       - name: Verify public Maria V20 without private attachments
         run: |
           node --check maria-romera-vista-previa/mr-v20.js

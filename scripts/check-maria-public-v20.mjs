@@ -6,17 +6,17 @@ const root='maria-romera-vista-previa/';
 const html=fs.readFileSync(root+'index.html','utf8');
 const css=fs.readFileSync(root+'mr-v20.css','utf8');
 const js=fs.readFileSync(root+'mr-v20.js','utf8');
-assert.match(html,/<html\b[^>]*data-mr-version="20"[^>]*lang="es"/);
+assert.match(html,/<html\b[^>]*data-mr-version="21"[^>]*lang="es"/);
 assert.match(html,/noindex,nofollow/);
 assert.match(html,/id="decision-lab"/);
 assert.match(html,/id="mrLabNav"/);
-assert.match(html,/mr-v20\.css\?v=20/);
-assert.match(html,/mr-v20\.js\?v=20/);
+assert.match(html,/mr-v20\.css\?v=21/);
+assert.match(html,/mr-v20\.js\?v=21/);
 assert.equal((html.match(/data-mr-case="[012]"/g)||[]).length,3);
-for(const id of ['mrWeightCost','mrWeightSpeed','mrWeightRisk','mrCandidates','mrLabReset','mrVerdictName','mrChecks']){
+for(const id of ['mrWeightCost','mrWeightSpeed','mrWeightRisk','mrCandidates','mrLabReset','mrVerdictName','mrChecks','mrInsightFactors','mrInsightGap','mrCopySummary','mrCopyLink','mrCopyStatus']){
  assert.ok(html.includes('id="'+id+'"'),id+' is missing');
 }
-assert.match(html,/V20<\/strong>/);
+assert.match(html,/V21<\/strong>/);
 assert.match(html,/Vista editorial pública/);
 assert.match(js,/MutationObserver/);
 assert.match(js,/aria-pressed/);
@@ -32,4 +32,4 @@ for(const pdf of ['cv/María_Romera_CV_ES.pdf','cv/Maria_Romera_CV_EN.pdf']){
 const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
 assert.equal(ids.length,new Set(ids).size,'Duplicate element IDs');
 for(const m of html.matchAll(/href="#([^"]+)"/g))assert.ok(ids.includes(m[1]),'Broken anchor '+m[1]);
-console.log('MARIA V20 STATIC PASS · bilingual sourcing scenarios · no CVs · privacy boundary');
+console.log('MARIA V21 STATIC PASS · bilingual sourcing scenarios · no CVs · privacy boundary');
