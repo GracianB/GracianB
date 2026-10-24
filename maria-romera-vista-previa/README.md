@@ -37,3 +37,13 @@ María debe revisar las fechas y funciones de su trayectoria, los cursos y títu
 - No scoring numbers represent actual suppliers, savings, customer contracts, personal work, or a procurement platform ready for decisions.
 - Browser QA checks criterion explanations, copy behaviour, permalinks and restoration in ES/EN × mobile/tablet/desktop.
 - No private CVs or altered employment/qualification claims have been published. María's consent gate remains in force.
+
+
+
+## V22 · Procurement Qualification Gates
+
+- Add two fictional qualification thresholds: minimum speed/continuity and minimum reliability/documentation.
+- Offers that do not qualify stay visible for comparison but are flagged and cannot be recommended. Eligible offers always rank ahead of ineligible offers; when none qualifies, the verdict explicitly says **no recommendation**.
+- Preserve all weighted scores as independent fictional illustrative comparisons; a high score is never treated as an exception to compliance-related qualification.
+- ES/EN translations, keyboard-operable range controls, responsive appearance, deep-linkable threshold values (`gs`, `gr`) and one-click reset.
+- Browser QA includes an eligible-only case, no-options case, permalink restoration, language switch and all earlier procurement model checks.

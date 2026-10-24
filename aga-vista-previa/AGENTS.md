@@ -12,3 +12,6 @@
 
 - V21 changes require a clear simulated 0–20 index and transparent factor bars in EN/PL/ES, clipboard fallback messaging and URL state round-tripping. Do not call the index a real risk metric.
 - The accessible copy controls export fictional text only; no API calls or personal identifiers may be introduced.
+
+
+- V22 comparison snapshots are temporary fictional display state, not performance results. Preserve language-specific disclaimers, accessible controls and nonpersistent reference handling.

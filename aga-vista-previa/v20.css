@@ -92,3 +92,23 @@
 @media(max-width:430px){.tower-audit-heading{align-items:flex-start}.tower-audit-score strong{font-size:42px}.tower-audit{padding:17px}.tower-audit-heading h3{font-size:26px}.tower-brief-controls button{flex:1 1 100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.tower-audit-track span{transition:none}}
 @media print{.tower-brief-controls{display:none}.tower-audit-factor{break-inside:avoid}}
+
+
+/* V22: Snapshot comparison, grounded in fictional data only */
+.tower-compare{margin-top:24px;padding:25px 28px;border:1px solid var(--line);background:linear-gradient(135deg,var(--paper),var(--accentbg));border-radius:5px}
+.tower-compare h4{font:400 clamp(23px,2.7vw,32px)/1.1 Georgia,serif;margin:0 0 9px;color:var(--ink)}
+.tower-compare>p{font-size:13px;line-height:1.65;color:var(--sub);margin:0 0 18px;max-width:710px}
+.tower-compare-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.tower-compare-actions button{border:1px solid var(--accent);background:var(--accent);color:var(--paper);font-size:12px;font-weight:700;min-height:44px;padding:11px 16px;cursor:pointer}
+.tower-compare-actions button+button{background:transparent;color:var(--accent)}
+.tower-compare-actions button:disabled{opacity:.35;cursor:not-allowed}
+.tower-comparison-results[hidden],#towerComparisonResults[hidden]{display:none!important}
+.tower-compare-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.tower-compare-stats>div{min-width:0;padding:16px;background:var(--paper);border:1px solid var(--line)}
+.tower-compare-stats span{font-size:11px;display:block;color:var(--sub);margin-bottom:9px}
+.tower-compare-stats strong{font:italic clamp(28px,3.5vw,44px)/1 Georgia,serif;color:var(--accent);font-variant-numeric:tabular-nums}
+.tower-compare-stats small{font-size:10px;color:var(--sub);margin-left:4px}
+#towerComparisonEmpty,#towerComparisonNote{font-size:12px;color:var(--sub);line-height:1.65}
+#towerComparisonNote{margin:16px 0 0;font-weight:650;color:var(--ink)}
+@media(max-width:500px){.tower-compare{padding:19px 15px}.tower-compare-stats{gap:5px}.tower-compare-stats>div{padding:10px}.tower-compare-stats strong{font-size:27px}.tower-compare-actions button{flex:1 1 100%}}
+@media print{.tower-compare-actions{display:none}.tower-compare{break-inside:avoid}}
