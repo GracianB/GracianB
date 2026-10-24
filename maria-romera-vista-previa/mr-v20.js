@@ -180,7 +180,7 @@ $$('.mr-case').forEach((el,i)=>{
   if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
   e.preventDefault();
   selected=e.key==='Home'?0:e.key==='End'?2:(i+(e.key==='ArrowRight'?1:2))%3;
-  render();keepUrl();$('.mr-case')[selected].focus();
+  render();keepUrl();$$('.mr-case')[selected].focus();
  });
 });
 Object.values(inputs).forEach(el=>el.addEventListener('input',()=>{render();keepUrl()}));
