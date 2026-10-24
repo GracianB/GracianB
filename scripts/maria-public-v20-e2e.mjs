@@ -13,7 +13,7 @@ try{
    const page=await ctx.newPage(),errors=[];
    await page.addInitScript(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async value=>{window.__lastCopy=String(value)}}}));
 
-   page.on('pageerror',err=>errors.push(String(err)));
+   page.on('pageerror',err=>errors.push(String(err?.stack||err)));
    page.on('console',msg=>{if(msg.type()==='error')errors.push(msg.text())});
    const url=base+(lang==='en'?'?lang=en':'');
    await page.goto(url,{waitUntil:'load'});
