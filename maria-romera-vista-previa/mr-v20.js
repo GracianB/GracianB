@@ -1,4 +1,4 @@
-// Maria V20 · hypothetical sourcing comparisons. No live pricing, scoring of actual suppliers or personal performance claims.
+// Maria V21 · hypothetical sourcing comparisons. No live pricing, scoring of actual suppliers or personal performance claims.
 (()=>{
 'use strict';
 const root=document.querySelector('#decision-lab');if(!root)return;
@@ -60,6 +60,76 @@ const refs={
  checksTitle:$('#mrChecksTitle'),checks:$('#mrChecks'),disclaimer:$('#mrLabDisclaimer')
 };
 const inputs={cost:$('#mrWeightCost'),speed:$('#mrWeightSpeed'),risk:$('#mrWeightRisk')};
+const explainLocales={"es":{"insightEyebrow":"08 / POR QUÉ GANA ESTA ALTERNATIVA","insightTitle":"Entender <em>el criterio.</em>","insightDesc":"Puntuación ponderada de una simulación ficticia: sin datos de proveedores reales.","gap":"Ventaja sobre la segunda opción","tie":"Empate técnico. Ambas alternativas merecen revisión.","copySummary":"Copiar informe ↗","copyLink":"Copiar enlace ↗","copySuccess":"Copiado ✓","copyFail":"Portapapeles no disponible. Copia el enlace desde tu navegador.","briefTitle":"María Romera · Simulación de compras","fiction":"Ofertas y puntuaciones ficticias. No son operaciones ni resultados profesionales acreditados.","brief":"Selección simulada","weights":"Pesos elegidos","breakdown":"Desglose de criterio","checkpoints":"Antes de aprobar"},"en":{"insightEyebrow":"08 / WHY THIS OPTION RANKS FIRST","insightTitle":"Understand <em>the trade-off.</em>","insightDesc":"Weighted score from a fictional model, never actual supplier-performance data.","gap":"Lead over the second option","tie":"Technical tie. Both options require closer review.","copySummary":"Copy decision brief ↗","copyLink":"Copy scenario link ↗","copySuccess":"Copied ✓","copyFail":"Clipboard unavailable. Copy the URL from your browser.","briefTitle":"María Romera · Fictional procurement brief","fiction":"Fictional offers and scores. Not verified contracts or personal professional outcomes.","brief":"Illustrative selection","weights":"Chosen weights","breakdown":"Criterion breakdown","checkpoints":"Before approval"}};
+
+const query=new URLSearchParams(location.search);
+const safeInt=(x,min,max,fallback)=>/^\d+$/.test(x||'')&&Number(x)>=min&&Number(x)<=max?Number(x):fallback;
+selected=safeInt(query.get('scenario'),0,2,0);
+for(const [key,input] of Object.entries(inputs)){
+ input.value=String(safeInt(query.get('w'+key[0]),1,5,3));
+}
+const insight={
+ title:$('#mrInsightTitle'),eyebrow:$('#mrInsightEyebrow'),desc:$('#mrInsightDesc'),
+ factors:$('#mrInsightFactors'),gap:$('#mrInsightGap'),summary:$('#mrCopySummary'),
+ share:$('#mrCopyLink'),status:$('#mrCopyStatus')
+};
+function shareUrl(){
+ const next=new URL(location.href);
+ next.searchParams.set('lang',getLang());
+ next.searchParams.set('scenario',String(selected));
+ for(const [key,input] of Object.entries(inputs))next.searchParams.set('w'+key[0],input.value);
+ next.hash='decision-lab';
+ return next;
+}
+function keepUrl(){
+ const next=shareUrl();
+ try{history.replaceState(history.state,'',next.pathname+next.search+location.hash)}catch(_){}
+}
+function explain(top,second,weights,data){
+ const dict=explainLocales[getLang()];
+ setText(insight.eyebrow,dict.insightEyebrow);
+ insight.title.innerHTML=dict.insightTitle;
+ setText(insight.desc,dict.insightDesc);
+ setText(insight.summary,dict.copySummary);setText(insight.share,dict.copyLink);
+ const labels=[data.cost,data.speed,data.risk];
+ const keys=['cost','speed','risk'];const sum=keys.reduce((acc,k)=>acc+weights[k],0);
+ insight.factors.replaceChildren(...keys.map((key,i)=>{
+  const row=document.createElement('div');row.className='mr-insight-factor';row.setAttribute('role','listitem');
+  const title=document.createElement('strong');title.textContent=labels[i];
+  const value=document.createElement('span');value.textContent=cases[selected][top.index][i]+'/5 × '+weights[key];
+  const bar=document.createElement('div');bar.className='mr-insight-track';bar.setAttribute('aria-hidden','true');
+  const fill=document.createElement('i');fill.style.width=(cases[selected][top.index][i]/5*100)+'%';bar.append(fill);
+  const points=document.createElement('small');
+  points.textContent='+'+(cases[selected][top.index][i]*weights[key]/sum).toFixed(2)+'/5';
+  row.append(title,value,bar,points);return row;
+ }));
+ const margin=Math.max(0,top.score-second.score);
+ setText(insight.gap,margin<.01?dict.tie:dict.gap+': '+margin.toFixed(2)+'/5');
+}
+function buildBrief(){
+ const lang=getLang(),d=locales[lang],labels=explainLocales[lang];
+ const weights=Object.fromEntries(Object.entries(inputs).map(([key,input])=>[key,Number(input.value)]));
+ const ranked=cases[selected].map((row,index)=>({index,score:score(row,weights)})).sort((a,b)=>b.score-a.score||a.index-b.index);
+ return [
+ labels.briefTitle,
+ d.cases[selected],labels.brief+': '+d.tags[ranked[0].index],
+ labels.weights+': '+d.cost+' '+weights.cost+'/5 · '+d.speed+' '+weights.speed+'/5 · '+d.risk+' '+weights.risk+'/5',
+ labels.breakdown+': '+ranked.map(x=>d.tags[x.index]+' '+x.score.toFixed(2)+'/5').join(' | '),
+ labels.checkpoints+':\n'+d.checks[selected].map((x,i)=>(i+1)+'. '+x).join('\n'),
+ labels.fiction,shareUrl().href
+ ].join('\n\n');
+}
+async function copyBrief(textValue){
+ const d=explainLocales[getLang()];
+ try{
+  if(!navigator.clipboard?.writeText)throw Error('Clipboard');
+  await navigator.clipboard.writeText(textValue);
+  setText(insight.status,d.copySuccess);
+ }catch(_){setText(insight.status,d.copyFail)}
+}
+insight.summary?.addEventListener('click',()=>copyBrief(buildBrief()));
+insight.share?.addEventListener('click',()=>copyBrief(shareUrl().href));
+
 function setText(node,value){if(node)node.textContent=value;}
 function score(offer,weights){const keys=['cost','speed','risk'];let total=0,max=0;
  keys.forEach((k,i)=>{total+=offer[i]*weights[k];max+=5*weights[k]});return Math.round(total/max*500)/100;
@@ -98,22 +168,23 @@ function render(){
  setText(refs.resultDesc,d.descs[selected]);
  const ranked=cases[selected].map((row,index)=>({index,score:score(row,w)}))
    .sort((a,b)=>b.score-a.score||a.index-b.index);
+ explain(ranked[0],ranked[1],w,d);
  refs.list.replaceChildren(...ranked.map((item,i)=>candidate(d,item,i)));
  setText(refs.verdictName,d.tags[ranked[0].index]);
  setText(refs.reason,d.reason);
  refs.checks.replaceChildren(...d.checks[selected].map(s=>{const li=document.createElement('li');li.textContent=s;return li}));
 }
 $$('.mr-case').forEach((el,i)=>{
- el.addEventListener('click',()=>{selected=i;render()});
+ el.addEventListener('click',()=>{selected=i;render();keepUrl()});
  el.addEventListener('keydown',e=>{
   if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
   e.preventDefault();
   selected=e.key==='Home'?0:e.key==='End'?2:(i+(e.key==='ArrowRight'?1:2))%3;
-  render();$$('.mr-case')[selected].focus();
+  render();keepUrl();$('.mr-case')[selected].focus();
  });
 });
-Object.values(inputs).forEach(el=>el.addEventListener('input',render));
-$('#mrLabReset')?.addEventListener('click',()=>{selected=0;Object.values(inputs).forEach(el=>el.value='3');render()});
-new MutationObserver(()=>{if(locale!==getLang())render()}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+Object.values(inputs).forEach(el=>el.addEventListener('input',()=>{render();keepUrl()}));
+$('#mrLabReset')?.addEventListener('click',()=>{selected=0;Object.values(inputs).forEach(el=>el.value='3');render();keepUrl()});
+new MutationObserver(()=>{if(locale!==getLang()){render();keepUrl()}}).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 render();
 })();

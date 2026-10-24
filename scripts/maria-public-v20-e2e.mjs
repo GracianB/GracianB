@@ -11,6 +11,8 @@ try{
   for(const lang of ['es','en']){
    const ctx=await b.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
    const page=await ctx.newPage(),errors=[];
+   await page.addInitScript(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async value=>{window.__lastCopy=String(value)}}}));
+
    page.on('pageerror',err=>errors.push(String(err)));
    page.on('console',msg=>{if(msg.type()==='error')errors.push(msg.text())});
    const url=base+(lang==='en'?'?lang=en':'');
@@ -19,6 +21,14 @@ try{
    assert.equal(await page.locator('html').getAttribute('lang'),lang);
    assert.equal(await page.locator('.mr-case').count(),3);
    assert.equal(await page.locator('.mr-candidate').count(),3);
+   assert.equal(await page.locator('.mr-insight-factor').count(),3);
+   await page.locator('#mrCopySummary').click();
+   assert.match(await page.evaluate(()=>window.__lastCopy),/5/);
+   await page.locator('#mrCopyLink').click();
+   const generatedLink=await page.evaluate(()=>window.__lastCopy);
+   assert.match(generatedLink,/scenario=0/);
+   assert.match(generatedLink,/decision-lab/);
+
    await page.locator('.mr-case[data-mr-case="1"]').click();
    assert.equal(await page.locator('.mr-case[data-mr-case="1"]').getAttribute('aria-pressed'),'true');
    await page.locator('.mr-case[data-mr-case="2"]').focus();
@@ -30,6 +40,18 @@ try{
    assert.match(await page.locator('#mrVerdictName').innerText(),lang==='es'?/Opción A/:/Option A/);
    await setValue('#mrWeightCost',1);await setValue('#mrWeightSpeed',5);await setValue('#mrWeightRisk',5);
    assert.match(await page.locator('#mrVerdictName').innerText(),lang==='es'?/Opción C/:/Option C/);
+   assert.match(await page.locator('#mrInsightGap').innerText(),lang==='es'?/Ventaja|Empate/:/Lead|tie/i);
+   await page.locator('#mrCopyLink').click();
+   const persisted=await page.evaluate(()=>window.__lastCopy);
+   const url=new URL(persisted);
+   assert.equal(url.searchParams.get('wc'),'1');
+   assert.equal(url.searchParams.get('ws'),'5');
+   assert.equal(url.searchParams.get('wr'),'5');
+   await page.goto(persisted,{waitUntil:'load'});
+   assert.equal(await page.locator('#mrWeightCost').inputValue(),'1');
+   assert.equal(await page.locator('#mrWeightSpeed').inputValue(),'5');
+   assert.equal(await page.locator('#mrWeightRisk').inputValue(),'5');
+
    assert.equal(await page.locator('#mrChecks li').count(),3);
    await page.locator('#mrLabReset').click();
    assert.equal(await page.locator('#mrWeightCost').inputValue(),'3');
@@ -45,7 +67,7 @@ try{
     await page.locator('#decision-lab').scrollIntoViewIfNeeded();
     await page.screenshot({path:'artifacts/e2e/maria-v20-'+lang+'-'+width+'.png',fullPage:true});
    }
-   console.log('MARIA V20 BROWSER PASS',lang,width);
+   console.log('MARIA V21 BROWSER PASS',lang,width);
    await ctx.close();
   }
  }

@@ -19,6 +19,8 @@ try{
   for(const width of [320,390,768,1440]){
    const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
    const page=await context.newPage(),errors=[];
+   await page.addInitScript(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async value=>{window.__lastCopy=String(value)}}}));
+
    page.on('pageerror',e=>errors.push(String(e)));
    page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});
    const response=await page.goto(base+route,{waitUntil:'load'});
@@ -35,9 +37,27 @@ try{
    assert.equal(await page.locator('.tower-case[data-tower-case="2"]').getAttribute('aria-pressed'),'true');
    assert.equal(await page.locator('.decision-choice[data-scenario="2"]').getAttribute('aria-pressed'),'true');
    assert.notEqual(await page.locator('#towerResponse').innerText(),baseline);
+   assert.equal(await page.locator('.tower-audit-factor').count(),3);
+   assert.ok(Number(await page.locator('#towerIndex').innerText())>=0);
+   await page.locator('#towerCopyBrief').click();
+   assert.match(await page.evaluate(()=>window.__lastCopy),/\/20/);
+   await page.locator('#towerCopyLink').click();
+   const linked=await page.evaluate(()=>window.__lastCopy);
+   assert.match(linked,/case=2/);
+   assert.match(linked,/control-tower/);
+
    const move=async(selector,value)=>page.locator(selector).evaluate((el,v)=>{el.value=String(v);el.dispatchEvent(new Event('input',{bubbles:true}));},value);
    await move('#tower-urgency',4);await move('#tower-buffer',0);await move('#tower-paper',0);
    assert.equal(await page.locator('#towerStatus').getAttribute('data-level'),'2');
+   assert.ok(Number(await page.locator('#towerIndex').innerText())>=15);
+   const factors=await page.locator('.tower-audit-factor strong').allInnerTexts();
+   assert.equal(factors.length,3);
+   assert.ok(factors.every(v=>v.includes('/')),'Explainable factors missing');
+   await page.reload({waitUntil:'load'});
+   assert.equal(await page.locator('.tower-case[data-tower-case="2"]').getAttribute('aria-pressed'),'true');
+   assert.equal(await page.locator('#tower-urgency').inputValue(),'4');
+   assert.equal(await page.locator('#tower-buffer').inputValue(),'0');
+
    const severe=await page.locator('#towerResponse').innerText();
    await page.locator('#towerReset').click();
    assert.equal(await page.locator('.tower-case[data-tower-case="0"]').getAttribute('aria-pressed'),'true');
@@ -63,7 +83,7 @@ try{
     await page.locator('#control-tower').scrollIntoViewIfNeeded();
     await page.screenshot({path:'artifacts/e2e/aga-v20-'+lang+'-'+width+'.png',fullPage:true});
    }
-   console.log('AGA PUBLIC E2E PASS',lang,width);
+   console.log('AGA V21 PUBLIC E2E PASS',lang,width);
    await context.close();
   }
  }

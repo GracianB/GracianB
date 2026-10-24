@@ -65,3 +65,30 @@
 @media(max-width:390px){.tower{margin-top:30px}.tower-control{padding:20px 16px}.tower-display{padding:21px 16px}.tower-intro h2{font-size:40px}.tower-steps{grid-template-columns:minmax(0,1fr);gap:13px}.tower-index{font-size:9px}.tower-display-header{font-size:8px}#towerStatus{font-size:43px}.tower-scenarios strong{font-size:12px}}
 @media(prefers-reduced-motion:reduce){.tower-case,.tower-lever input,.tower-progress>span{transition:none!important}.tower-link{stroke-dasharray:none}}
 @media print{.tower-scenarios,.tower-levers,.tower-reset,.tower-next,.tower-network,.tower-progress{display:none!important}.tower-shell{display:block}.tower-display{background:#fff!important;color:#111!important}.tower-display *{color:#111!important}.tower-control{display:none}.tower-steps{grid-template-columns:repeat(2,1fr)}}
+
+
+/* V21 Signature audit: transparent fictional rationale, responsive and accessible. */
+.tower-audit{margin-top:22px;border:1px solid var(--line);background:var(--paper);padding:28px 31px;border-radius:6px}
+.tower-audit-heading{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:19px}
+.tower-audit-heading h3{font:400 clamp(25px,3vw,37px)/1.1 Georgia,serif;margin:9px 0;letter-spacing:-.04em;color:var(--ink)}
+.tower-audit-heading p{max-width:630px;font-size:12px;line-height:1.7;color:var(--sub);margin:0}
+.tower-audit-score{display:flex;align-items:baseline;gap:4px;flex:none;color:var(--accent)}
+.tower-audit-score strong{font:italic 64px/1 Georgia,serif;font-variant-numeric:tabular-nums}
+.tower-audit-score span{font-size:12px;color:var(--sub)}
+.tower-audit-axes{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tower-audit-axes>.micro{grid-column:1/-1;margin:0}
+.tower-audit-factor{min-width:0;padding:17px 17px 16px;border:1px solid var(--line);background:var(--bg)}
+.tower-audit-factor>div:first-child{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.tower-audit-factor>div:first-child span{font-size:12px;font-weight:600}
+.tower-audit-factor>div:first-child strong{font:italic 17px Georgia,serif;font-variant-numeric:tabular-nums;color:var(--accent)}
+.tower-audit-track{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.tower-audit-track span{display:block;width:0;height:100%;background:var(--accent);transition:width .19s ease}
+.tower-brief-controls{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin-top:20px}
+.tower-brief-controls button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:11px 16px;min-height:44px;cursor:pointer;font-size:12px;font-weight:700}
+.tower-brief-controls button:hover{background:var(--accentbg)}
+#towerCopyStatus{font-size:12px;color:var(--sub);min-height:16px}
+.tower-audit-note{font-size:11px;color:var(--sub);margin:15px 0 0}
+@media(max-width:770px){.tower-audit{padding:23px}.tower-audit-axes{grid-template-columns:1fr}.tower-audit-factor{padding:15px}.tower-audit-factor>div:first-child{margin-bottom:10px}}
+@media(max-width:430px){.tower-audit-heading{align-items:flex-start}.tower-audit-score strong{font-size:42px}.tower-audit{padding:17px}.tower-audit-heading h3{font-size:26px}.tower-brief-controls button{flex:1 1 100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.tower-audit-track span{transition:none}}
+@media print{.tower-brief-controls{display:none}.tower-audit-factor{break-inside:avoid}}
