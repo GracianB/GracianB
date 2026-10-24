@@ -41,6 +41,10 @@ jobs:
           node --check scripts/sitemap-b6.mjs
       - name: Verify sanitized public Aga preview
         run: node scripts/check-aga-public-preview.mjs
+      - name: Verify public Maria V20 without private attachments
+        run: |
+          node --check maria-romera-vista-previa/mr-v20.js
+          node scripts/check-maria-public-v20.mjs
       - name: Professional hub contract
         run: node scripts/static-contract.mjs
       - name: Portfolio destinations static contract
@@ -70,6 +74,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Aga trilingual web-preview E2E without private CVs
         run: node scripts/aga-public-preview-e2e.mjs
+      - name: Maria procurement decision lab E2E · desktop and mobile
+        run: node scripts/maria-public-v20-e2e.mjs
       - name: Desktop + mobile + reduced motion
         run: node scripts/browser-smoke.mjs
       - name: Recruiter application paths ES/EN and responsive interactions

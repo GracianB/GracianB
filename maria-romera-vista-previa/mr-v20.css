@@ -1,0 +1,53 @@
+/* MR V20 · A procurement editorial lab, not a copy of Aga's control tower. */
+.mr-lab{padding-top:102px;padding-bottom:102px;scroll-margin-top:105px}
+.mr-lab-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px;font-size:10px;font-weight:800;letter-spacing:.17em;color:var(--accent)}
+.mr-lab-tag{font-size:9px;color:var(--soft)}
+.mr-lab-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.65fr);gap:50px;align-items:end;margin:27px 0 34px}
+.mr-lab-heading .overline{margin-bottom:21px}
+.mr-lab-heading h2{font:400 clamp(37px,4.8vw,66px)/1.07 var(--serif);letter-spacing:-.053em;margin:0}
+.mr-lab-heading h2 em{color:var(--accent);font-weight:400}
+.mr-lab-heading>p{margin:0 0 4px;color:var(--muted);font-size:14px;line-height:1.8}
+.mr-lab-frame{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.mr-lab-inputs{padding:32px 29px 35px;border-right:1px solid var(--line)}
+.mr-lab-inputs>.micro-label{margin-bottom:15px;display:block}
+.mr-case-switch{display:grid;gap:10px}
+.mr-case{background:transparent;color:var(--text);border:1px solid var(--line);border-radius:7px;min-height:64px;padding:13px 16px;display:flex;align-items:center;gap:17px;text-align:left;transition:border-color .2s,background .2s}
+.mr-case span{font:italic 22px var(--serif);color:var(--accent);flex:none}
+.mr-case strong{font-size:13px;font-weight:700;line-height:1.4}
+.mr-case:hover,.mr-case.is-selected{background:var(--chip);border-color:var(--gold)}
+.mr-weight-intro{display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--line);margin:30px 0 19px;padding-top:24px}
+.mr-weight-intro .micro-label{margin:0}.mr-weight-intro>span:last-child{font-size:10px;color:var(--soft)}
+.mr-slider{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;margin:0 0 20px}
+.mr-slider label{font-size:13px;font-weight:650}
+.mr-slider output{font:italic 15px var(--serif);color:var(--accent)}
+.mr-slider input{grid-column:1/-1;width:100%;height:8px;cursor:pointer;accent-color:var(--accent);background:var(--chip)}
+.mr-lab-reset{margin-top:4px;min-height:45px;border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--text);font-size:12px;padding:9px 17px}
+.mr-lab-reset:hover{border-color:var(--accent)}
+.mr-lab-results{padding:31px 35px 34px;min-width:0}
+.mr-results-overline{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;color:var(--accent);font-size:10px;font-weight:750;letter-spacing:.12em}
+.mr-lab-results h3{font:400 clamp(27px,3.2vw,41px)/1.13 var(--serif);letter-spacing:-.038em;margin:25px 0 11px}
+#mrResultDesc{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:22px}
+.mr-candidates{display:grid;gap:9px}
+.mr-candidate{display:grid;grid-template-columns:40px minmax(0,1fr) 60px;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);background:var(--bg);border-radius:7px;min-width:0}
+.mr-candidate:first-child{border-color:var(--gold);background:var(--chip)}
+.mr-candidate-rank{font:italic 23px var(--serif);color:var(--accent)}
+.mr-candidate-copy strong{display:block;font-size:14px;font-weight:720}
+.mr-candidate-copy small{font-size:11px;color:var(--muted);display:block;margin-top:2px;line-height:1.4}
+.mr-candidate-score{display:block;font:italic 21px var(--serif);color:var(--accent);text-align:right}
+.mr-bar-track{height:3px;background:var(--line);margin-top:10px;border-radius:2px;overflow:hidden}
+.mr-bar-track span{display:block;height:100%;background:var(--accent);width:50%;transition:width .2s}
+.mr-verdict{margin-top:20px;background:var(--navy);color:#f6f1e7;border:1px solid #506473;border-radius:7px;padding:24px 25px}
+.mr-verdict>span{font-weight:750;font-size:9px;letter-spacing:.15em;color:#e8ca9d}
+.mr-verdict strong{font:italic 35px var(--serif);display:block;margin:10px 0;color:#f6e2c0}
+.mr-verdict p{margin:0;color:#e4e8e2;font-size:13px;line-height:1.7}
+.mr-checkpoints{margin-top:26px}
+.mr-checkpoints>span{font-size:10px;color:var(--accent);font-weight:750;letter-spacing:.13em}
+.mr-checkpoints ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:13px 0 0;counter-reset:check}
+.mr-checkpoints li{border-top:1px solid var(--line);padding-top:13px;font-size:11px;color:var(--muted);line-height:1.6}
+.mr-checkpoints li:before{counter-increment:check;content:"0" counter(check);display:block;color:var(--accent);font:italic 17px var(--serif);margin-bottom:6px}
+.mr-lab-disclaimer{color:var(--muted);font-size:11px;line-height:1.75;margin:17px 0 0;max-width:800px}
+@media(max-width:960px){.mr-lab-heading{grid-template-columns:1fr;gap:15px}.mr-lab-frame{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)}.mr-lab-inputs{padding:24px 21px}.mr-lab-results{padding:24px 22px}.mr-checkpoints ol{grid-template-columns:1fr}}
+@media(max-width:750px){.mr-lab{padding:70px 0}.mr-lab-frame{grid-template-columns:1fr}.mr-lab-inputs{border-right:0;border-bottom:1px solid var(--line)}.mr-case-switch{grid-template-columns:repeat(3,minmax(0,1fr))}.mr-case{flex-direction:column;align-items:flex-start;gap:5px;min-height:100px}.mr-checkpoints ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:480px){.mr-lab{padding:49px 0}.mr-lab-heading h2{font-size:38px}.mr-case-switch{grid-template-columns:1fr}.mr-case{flex-direction:row;min-height:55px;gap:14px}.mr-lab-inputs,.mr-lab-results{padding:22px 16px}.mr-checkpoints ol{grid-template-columns:1fr}.mr-candidate{grid-template-columns:28px minmax(0,1fr) 46px;gap:9px;padding:12px}.mr-candidate-score{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.mr-case,.mr-bar-track span{transition:none!important}}
+@media print{.mr-case-switch,.mr-slider input,.mr-lab-reset{display:none!important}.mr-lab-frame{display:block}.mr-lab-inputs{display:none}.mr-verdict{background:#eee!important;color:#111!important}.mr-verdict *{color:#111!important}}
