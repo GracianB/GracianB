@@ -71,7 +71,7 @@ jobs:
       - name: Install pinned browser runner
         run: npm install --no-save playwright@1.56.1
       - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install chromium
       - name: Aga trilingual web-preview E2E without private CVs
         run: node scripts/aga-public-preview-e2e.mjs
       - name: Maria procurement decision lab E2E · desktop and mobile
