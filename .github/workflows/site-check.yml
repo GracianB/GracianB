@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: gracianb-quality-${{ github.ref }}
+  group: gracianb-quality-v20-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
