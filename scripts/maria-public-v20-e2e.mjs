@@ -43,10 +43,10 @@ try{
    assert.match(await page.locator('#mrInsightGap').innerText(),lang==='es'?/Ventaja|Empate/:/Lead|tie/i);
    await page.locator('#mrCopyLink').click();
    const persisted=await page.evaluate(()=>window.__lastCopy);
-   const url=new URL(persisted);
-   assert.equal(url.searchParams.get('wc'),'1');
-   assert.equal(url.searchParams.get('ws'),'5');
-   assert.equal(url.searchParams.get('wr'),'5');
+   const persistedUrl=new URL(persisted);
+   assert.equal(persistedUrl.searchParams.get('wc'),'1');
+   assert.equal(persistedUrl.searchParams.get('ws'),'5');
+   assert.equal(persistedUrl.searchParams.get('wr'),'5');
    await page.goto(persisted,{waitUntil:'load'});
    assert.equal(await page.locator('#mrWeightCost').inputValue(),'1');
    assert.equal(await page.locator('#mrWeightSpeed').inputValue(),'5');
