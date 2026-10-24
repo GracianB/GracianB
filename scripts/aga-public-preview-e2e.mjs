@@ -27,6 +27,24 @@ try{
    assert.equal(await page.locator('.decision-choice').count(),3);
    assert.equal(await page.locator('.focus-choice').count(),3);
    assert.equal(await page.locator('#leadership').count(),1);
+   assert.equal(await page.locator('#control-tower').count(),1);
+   assert.equal(await page.locator('.tower-case').count(),3);
+   assert.equal(await page.locator('.tower-lever input').count(),3);
+   const baseline=await page.locator('#towerResponse').innerText();
+   await page.locator('.tower-case[data-tower-case="2"]').click();
+   assert.equal(await page.locator('.tower-case[data-tower-case="2"]').getAttribute('aria-pressed'),'true');
+   assert.equal(await page.locator('.decision-choice[data-scenario="2"]').getAttribute('aria-pressed'),'true');
+   assert.notEqual(await page.locator('#towerResponse').innerText(),baseline);
+   const move=async(selector,value)=>page.locator(selector).evaluate((el,v)=>{el.value=String(v);el.dispatchEvent(new Event('input',{bubbles:true}));},value);
+   await move('#tower-urgency',4);await move('#tower-buffer',0);await move('#tower-paper',0);
+   assert.equal(await page.locator('#towerStatus').getAttribute('data-level'),'2');
+   const severe=await page.locator('#towerResponse').innerText();
+   await page.locator('#towerReset').click();
+   assert.equal(await page.locator('.tower-case[data-tower-case="0"]').getAttribute('aria-pressed'),'true');
+   assert.notEqual(await page.locator('#towerResponse').innerText(),severe);
+   const accessible=await page.locator('.tower-case').first().evaluate(el=>({height:el.getBoundingClientRect().height,tabIndex:el.tabIndex}));
+   assert.ok(accessible.height>=44&&accessible.tabIndex>=0,'V20 button accessible hit area missing');
+
    assert.equal(await page.locator('a[href$=".pdf"]').count(),0);
    const before=await page.locator('#decisionTitle').innerText();
    await page.locator('.decision-choice[data-scenario="2"]').click();
@@ -39,6 +57,12 @@ try{
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
    assert.ok(overflow<=1,lang+' overflow at '+width+': '+overflow);
    assert.deepEqual(errors,[],lang+' JS errors '+width);
+   if(width===390||width===1440){
+    const {mkdirSync}=await import('node:fs');
+    mkdirSync('artifacts/e2e',{recursive:true});
+    await page.locator('#control-tower').scrollIntoViewIfNeeded();
+    await page.screenshot({path:'artifacts/e2e/aga-v20-'+lang+'-'+width+'.png',fullPage:true});
+   }
    console.log('AGA PUBLIC E2E PASS',lang,width);
    await context.close();
   }
