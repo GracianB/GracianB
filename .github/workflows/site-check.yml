@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: gracianb-quality-v20-${{ github.ref }}
+  group: gracianb-quality-editorial-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -39,16 +39,13 @@ jobs:
           node --check apply.js
           node --check scripts/applications-b6.mjs
           node --check scripts/sitemap-b6.mjs
-      - name: Verify sanitized public Aga V21 and JavaScript syntax
+      - name: Source-backed editorials and private CV exclusion
         run: |
-          node --check aga-vista-previa/v20.js
-          node --check scripts/aga-public-preview-e2e.mjs
-          node --check scripts/maria-public-v20-e2e.mjs
-          node scripts/check-aga-public-preview.mjs
-      - name: Verify public Maria V20 without private attachments
-        run: |
-          node --check maria-romera-vista-previa/mr-v20.js
-          node scripts/check-maria-public-v20.mjs
+          node --check aga-vista-previa/editorial.js
+          node --check maria-romera-vista-previa/editorial.js
+          node --check scripts/editorial-previews-static.mjs
+          node --check scripts/editorial-previews-e2e.mjs
+          node scripts/editorial-previews-static.mjs
       - name: Professional hub contract
         run: node scripts/static-contract.mjs
       - name: Portfolio destinations static contract
@@ -76,10 +73,8 @@ jobs:
         run: npm install --no-save playwright@1.56.1
       - name: Install Chromium
         run: npx playwright install chromium
-      - name: Aga trilingual web-preview E2E without private CVs
-        run: node scripts/aga-public-preview-e2e.mjs
-      - name: Maria procurement decision lab E2E · desktop and mobile
-        run: node scripts/maria-public-v20-e2e.mjs
+      - name: Editorial portfolios · Aga EN PL ES and Maria ES EN
+        run: node scripts/editorial-previews-e2e.mjs
       - name: Desktop + mobile + reduced motion
         run: node scripts/browser-smoke.mjs
       - name: Recruiter application paths ES/EN and responsive interactions

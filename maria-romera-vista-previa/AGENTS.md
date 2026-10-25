@@ -1,17 +1,10 @@
-# Maria public V20 preview instructions
+# Public María editorial preview: required safety conditions
 
-- This is a **public, independent courtesy preview**, not María's approved professional website.
-- Do not copy private Maria files, personal CV PDFs, contact details, or hidden materials from `GracianB/maria-romera` to this public folder.
-- Keep the existing V11 narrative, interactive atlas, accessibility and ES/EN toggle.
-- Add V20 Procurement Decision Lab changes through `mr-v20.css` and `mr-v20.js`, and keep it different from the Aga V20 Control Tower.
-- Model alternatives are fictional and must be prominently labeled as such. Do not frame numeric rankings as actual savings, procurement outcomes or projects.
-- Keep the current public URL, editor's note, noindex and private-CV safeguards; noindex does not make the page private.
-- Update browser/static contracts when changing UI: `scripts/check-maria-public-v20.mjs` and `scripts/maria-public-v20-e2e.mjs`.
-- No changes to Aga's preview, hub constellation, private repositories or unrelated project files.
-- Never merge before full CI passes and check GitHub Pages deployment after merge.
-
-- V21 adds a weighted-criteria explanation and deep-linkable fictional scenarios. Keep both ES/EN messages, predictable sorting/tie handling and all browser tests.
-- Never make the simulated score look like a validated procurement KPI or individual achievement.
-
-
-- V22 procurement qualification thresholds are illustrative; never let a disqualified offer become the recommended supplier. No-options must be explicitly handled in ES/EN. Preserve URL state and E2E tests.
+- Independent PUBLIC courtesy preview, NOT an approved professional biography.
+- Editorial release replaces the V20–V22 fictional procurement laboratory in live pages. Career history is central.
+- Two distinct routes, `index.html` Spanish and `en/index.html` English, must be consistent; keep responsive layout, theme and keyboard support.
+- Keep `noindex,nofollow`, disclose independent editorial status and pending personal review; these flags do not make a site private.
+- NEVER copy private PDFs, editable CVs, contact details or private files from `GracianB/maria-romera` to the public preview.
+- Working-draft roles, dates, education and language levels require María's sign-off; explicitly label the unverified provenance. Corporate facts must not be called personal outcomes. No invented achievements, savings, KPIs or client names.
+- Required public CI: `scripts/editorial-previews-static.mjs` and `scripts/editorial-previews-e2e.mjs`.
+- Do not touch Aga's separate profile or unrelated public hub assets.

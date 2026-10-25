@@ -1,60 +1,20 @@
-# Aga · Public editorial preview V20
+# Agnieszka Piazzese · Executive Editorial (October 2026)
 
-This folder powers the **direct browser URL**:
-- English: https://gracianb.github.io/GracianB/aga-vista-previa/
-- Polski: https://gracianb.github.io/GracianB/aga-vista-previa/pl/
-- Español: https://gracianb.github.io/GracianB/aga-vista-previa/es/
+**Direct URLs:** `/aga-vista-previa/` (English), `/pl/` (Polski), `/es/` (Español).
 
-## Public-content boundary
-This is **not** Agnieszka's approved professional website. It is a public, independent editorial illustration based on sources already publicly available, and it explicitly identifies fictional operations scenarios as fictional. The original private repository and all draft CV PDFs are excluded.
+## Editorial redesign
 
-Do not publish:
-- CV drafts, embedded PDF data, or any files from `GracianB/Agnieszka-Piazzese/cv/`
-- private contact details, credentials, employment dates, or quantified claims that Agnieszka has not verified
-- fictional simulations framed as individual achievements
-- an official endorsement or affiliation without consent
+The landing page now concentrates on professional positioning, a genuinely public-source career record, references to a 2025 CLO appointment announcement, and explicit limits of the available verification. No operational games, scorecards, fictional scenarios, or misleading KPIs.
 
-Noindex is merely an indexing preference: this directory is accessible to anyone who knows the URL.
+A visual identity in warm ivory, forest green and sage, with typographic storytelling, an editorial AP illustration, dark mode, keyboard navigation, responsive mobile menu, self-hosted lightweight CSS/JS, reduced motion and print support.
 
-## V20 capability release
-This V20 milestone combines a set of improvements without claiming that intermediate V12–V19 were separately released:
+**Consent gate:** this is a PUBLIC independent courtesy preview, not Agnieszka's own site. No CV PDFs, contact details, private employer documents, unconfirmed roles, inferred current occupation, new photographs, or educational credentials are published. `noindex` does not restrict access. Content remains pending personal approval. The private repository is unchanged.
 
-1. **V12 · Narrative clarity:** public information explicitly separated from unsupported private data.
-2. **V13 · Localization:** EN/PL/ES consistent and idiomatic, including Poland-first terminology.
-3. **V14 · Executive navigation:** access to the Operations Control Tower from the navigation.
-4. **V15 · Scenario console:** three fictional disruptions, each independently selectable.
-5. **V16 · Sensitivity model:** delivery urgency, buffer resilience and document confidence yield distinct recommended responses.
-6. **V17 · Access:** accessible slider labels, pressed states, 44px touch areas and keyboard controls.
-7. **V18 · Layout:** mobile, tablet and desktop layouts at 320, 390, 768 and 1440px.
-8. **V19 · Quality & trust:** automated privacy scans, mobile Chromium interactions, no PDF exposure.
-9. **V20 · Release:** visual control-tower experience, scenario timeline, scroll progress and scenario continuity when switching languages.
+Verification: `node scripts/editorial-previews-static.mjs` and `node scripts/editorial-previews-e2e.mjs` from the public repository root. QA covers EN/PL/ES, four widths, themes, mobile navigation, privacy markers and horizontal overflow.
 
-**Technical caveat:** the Control Tower is a deterministic, rule-based **fictional triage exercise**. It is neither real predictive analytics nor evidence of actual performance. Scores are not measured business KPIs.
+## Source-backed evidence
 
-## Testing
-- `node scripts/check-aga-public-preview.mjs`
-- `node scripts/aga-public-preview-e2e.mjs` (Playwright)
-- GitHub Actions: `GracianB Final Quality` + `Deploy GracianB to GitHub Pages`
+- [Public LinkedIn profile](https://es.linkedin.com/in/agnieszka-piazzese-012368177) (10+ years self-description and previous collaboration in recommendations).
+- [Bodytone 2025 public announcement](https://es.linkedin.com/posts/bodytone_bodytone-refuerza-su-equipo-con-nuevas-incorporaciones-activity-7283465888085778432-U93i) (appointment announcement, not current employment confirmation).
 
-Only after validation succeeds should the changes be merged to the public `main` branch.
-
-
-## V21 · Transparent Decision Brief (24 October 2026)
-
-- All three language pages (EN/PL/ES) now expose a **transparent simulated pressure index** normalised to a 0–20 fictional display, with per-factor contributions (urgency, stock exposure, document uncertainty).
-- Native range controls, live priority updates and the existing V20 scenario workflow are preserved.
-- A **shareable scenario URL** contains only bounded fictional settings (`case`, `u`, `b`, `p`). Cross-language links preserve the example context. No business identifiers or personal data are stored.
-- Two optional actions allow visitors to copy the scenario link or a text-only operations brief. Clipboard errors are disclosed accessibly; the web itself requires no download.
-- Scores are *not* measured risk indices, real KPIs, customer data, evidence of past decisions or a predictive model.
-- New browser QA checks restore-on-reload, clipboard content and transparent factor breakdowns across all 3 locales × 4 widths.
-- The private repository and all three unapproved CV PDFs remain untouched. Noindex is not privacy protection.
-
-
-
-## V22 · Operational Scenario Comparison
-
-- Save a **reference snapshot in memory** of the fictional current scenario and its normalized pressure index. Adjust any scenario or slider to compare reference/current/difference live.
-- Cross-scenario comparisons are explicitly described as illustrative, never as evidence of real business improvement. Saved reference is not stored remotely or embedded in share links.
-- Screen-reader status, disabled Clear button, responsive comparison tiles and keyboard-operable controls.
-- All EN, PL and ES routes preserve V21 deep links, priorities, fictional evidence disclosures and private-document exclusions.
-- Browser QA checks save, difference, clear, reset, and the existing scenario + clipboard suite.
+No publication or distribution of final CV materials without her review.
