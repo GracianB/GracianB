@@ -2,3 +2,13 @@
 @media(max-width:960px){.nav{display:none;position:absolute;top:82px;left:0;right:0;background:var(--paper);padding:23px 27px;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.nav.open{display:flex}.menu{display:block}.hero{grid-template-columns:1fr;min-height:0;padding:68px 0}.folio{min-height:380px}.strengths{grid-template-columns:1fr}.strengths article{min-height:180px}.strengths h3{margin:20px 0}.chapter-header{grid-template-columns:1fr;gap:16px}}
 @media(max-width:560px){.wrap{width:calc(100% - 34px)}.top-inner{min-height:70px;gap:11px}.brand b{font-size:11px}.brand small{display:none}.seal{height:40px;width:40px}.nav{top:70px}.tools{margin-left:auto}.tools a,.tools button{min-width:33px;min-height:34px;padding:6px}.hero{padding:44px 0}.hero h1{font-size:50px}.hero .lead{font-size:15px}.folio{min-height:310px}.folio h2{font-size:52px}.rail .wrap{grid-template-columns:1fr}.rail article,.rail article:first-child{padding:18px 0;border:0;border-bottom:1px solid var(--line)}.chapter{padding-top:70px}.chapter h2{font-size:42px}.career-item{grid-template-columns:1fr;gap:8px}.process,.training{grid-template-columns:1fr}.cta .wrap{flex-direction:column;align-items:flex-start}.cta{padding:55px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}@media print{.top,.tools,.folio,.cta{display:none!important}.hero{min-height:0;padding:20px 0}.chapter{padding-top:35px}.strengths article,.career-item{break-inside:avoid}}
+
+/* Compact-phone header: prevent horizontal overflow at 320px */
+@media (max-width:380px){
+ .head-inner,.top-inner{flex-wrap:wrap;row-gap:6px;padding:8px 0}
+ .tools{width:100%;justify-content:flex-end;margin-left:0}
+ .site-nav{top:120px}
+ .nav{top:120px}
+ .brand{min-width:0}
+ .brand b,.brand strong{overflow-wrap:anywhere}
+}
