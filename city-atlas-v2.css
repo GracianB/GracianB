@@ -225,3 +225,93 @@ html[data-theme="light"] .city-atlas-v2 .atlas-detail-note{color:#65818e;border-
   .city-atlas-v2 .city-atlas-footer,
   .city-atlas-v2 .atlas-pin-chevron{transition:none!important}
 }
+
+/* P13 · Editorial polish for the journey chapter.
+   The city atlas is a set of personal chapters, not a map or chronology. */
+@media screen and (min-width:761px){
+  .about-atlas.section-shell{
+    display:grid!important;
+    grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)!important;
+    align-items:center!important;
+    gap:clamp(2.5rem,5.4vw,6.25rem)!important;
+    padding-block:clamp(4.5rem,8vw,8rem)!important;
+  }
+  .about-atlas .about-story{max-width:38rem;align-self:center}
+  .about-atlas .city-atlas-v2{width:100%;max-width:760px;justify-self:end}
+}
+.about-atlas .about-story .eyebrow,
+.about-atlas .atlas-heading-kicker{letter-spacing:.18em}
+.about-atlas .about-story h2{max-width:13ch;text-wrap:balance}
+.about-atlas .about-story>p:not(.eyebrow){max-width:54ch;line-height:1.8}
+.about-atlas .about-experience{border-top:1px solid rgba(150,190,210,.2);padding-top:1.1rem}
+.about-atlas .about-experience strong{color:#d8eaf2;font-variant-numeric:tabular-nums}
+.city-atlas.city-atlas-v2{
+  --city-active-color:#91dcf4;
+  border-radius:8px!important;
+  border-color:rgba(150,194,214,.34)!important;
+  background:
+    linear-gradient(145deg,rgba(19,43,56,.98),rgba(5,17,25,.99) 72%)!important;
+  box-shadow:0 30px 90px rgba(0,0,0,.24),inset 0 1px rgba(234,247,252,.08)!important;
+}
+.city-atlas-v2 .city-atlas-top{padding:clamp(1.45rem,3vw,2.15rem)!important}
+.city-atlas-v2 .atlas-heading-kicker{font-size:.62rem!important;letter-spacing:.2em!important}
+.city-atlas-v2 .atlas-heading h3{font-size:clamp(1.55rem,2.5vw,2.15rem)!important;letter-spacing:-.04em!important}
+.city-atlas-v2 .atlas-heading p{max-width:42ch;font-size:.86rem!important;line-height:1.65!important}
+.city-atlas-v2 .city-atlas-chart{padding:clamp(1rem,2.4vw,1.6rem)!important;gap:.65rem!important}
+.city-atlas-v2 .atlas-pin{
+  min-height:72px!important;
+  border-radius:6px!important;
+  background:linear-gradient(120deg,rgba(24,49,62,.64),rgba(9,24,34,.5))!important;
+  border-color:rgba(151,189,207,.18)!important;
+}
+.city-atlas-v2 .atlas-pin:is(:hover,:focus-visible){background:rgba(35,75,94,.48)!important}
+.city-atlas-v2 .atlas-pin.is-current,
+.city-atlas-v2 .atlas-pin[aria-pressed="true"]{
+  background:linear-gradient(105deg,rgba(80,151,184,.22),rgba(10,30,42,.95))!important;
+  box-shadow:inset 2px 0 #91dcf4,0 8px 26px rgba(0,0,0,.16)!important;
+}
+.city-atlas-v2 .atlas-pin-index{font-size:.7rem!important;letter-spacing:.1em!important}
+.city-atlas-v2 .atlas-pin-name{font-size:.91rem!important;font-weight:650!important}
+.city-atlas-v2 .atlas-pin-copy small{font-size:.72rem!important;line-height:1.45!important}
+.city-atlas-v2 .city-atlas-footer{
+  padding:clamp(1.4rem,3vw,2rem)!important;
+  background:linear-gradient(130deg,rgba(19,49,65,.82),rgba(5,18,27,.88))!important;
+}
+.city-atlas-v2 .atlas-detail-eyebrow,.city-atlas-v2 .atlas-detail-index{font-size:.62rem!important}
+.city-atlas-v2 .atlas-city-current{font-size:clamp(1.35rem,2.2vw,1.8rem)!important;letter-spacing:-.035em!important}
+.city-atlas-v2 .atlas-detail-focus{font-size:.94rem!important}
+.city-atlas-v2 .atlas-city-story{font-size:.92rem!important;line-height:1.75!important}
+.city-atlas-v2 .atlas-detail-note{font-size:.75rem!important;line-height:1.6!important}
+html[data-theme="light"] .city-atlas.city-atlas-v2{
+  border-color:#a9c3cf!important;
+  background:linear-gradient(145deg,#fff,#edf4f7 76%)!important;
+  box-shadow:0 24px 60px rgba(31,67,84,.1)!important;
+}
+html[data-theme="light"] .city-atlas-v2 .atlas-pin{
+  border-radius:6px!important;
+  background:linear-gradient(120deg,#fff,#f2f7f9)!important;
+}
+html[data-theme="light"] .city-atlas-v2 .atlas-pin.is-current,
+html[data-theme="light"] .city-atlas-v2 .atlas-pin[aria-pressed="true"]{
+  background:linear-gradient(105deg,#e1f1f7,#f8fcfd)!important;
+  box-shadow:inset 2px 0 #347d9b,0 8px 22px rgba(36,83,104,.07)!important;
+}
+html[data-theme="light"] .city-atlas-v2 .city-atlas-footer{
+  background:linear-gradient(130deg,#f1f8fb,#e6f0f4)!important;
+}
+html[data-theme="light"] .about-atlas .about-experience strong{color:#245b73}
+@media(max-width:760px){
+  .about-atlas.section-shell{padding-block:3.75rem!important;gap:2rem!important}
+  .about-atlas .about-story h2{max-width:16ch}
+  .city-atlas-v2 .city-atlas-top{padding:1.25rem!important}
+  .city-atlas-v2 .city-atlas-chart{padding:1rem!important}
+  .city-atlas-v2 .atlas-pin{min-height:58px!important}
+}
+@media(max-width:530px){
+  .city-atlas-v2 .atlas-pin-copy{align-items:flex-start!important}
+  .city-atlas-v2 .atlas-pin-copy small{max-width:25ch}
+  .city-atlas-v2 .atlas-pin{padding:.68rem .78rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .about-atlas .city-atlas-v2,.city-atlas-v2 .atlas-pin{scroll-behavior:auto!important;transition:none!important}
+}
