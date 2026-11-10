@@ -38,7 +38,7 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.match(await brief.locator("h2").innerText(),lang==="es"?/operaciones/i:/operations/i,"Recruiter route must be translated");
   assert.equal(await brief.locator(".brief-proof").count(),3,"Evidence route must show three proof points");
   assert.equal(await brief.locator(".brief-proof a").count(),3);
-  const applicationUrl = new URL(await brief.locator(".brief-primary").getAttribute("href"),page.url());
+  const applicationUrl = new globalThis.URL(await brief.locator(".brief-primary").getAttribute("href"),page.url());
   assert.equal(applicationUrl.searchParams.get("track"),"professional","Professional application track must survive i18n and theme");
   assert.equal(applicationUrl.searchParams.get("focus"),"customer-success","Role-specific application focus must survive i18n and theme");
   assert.equal(applicationUrl.searchParams.get("lang"),lang==="en"?"en":null,"Application language must match the hub");
