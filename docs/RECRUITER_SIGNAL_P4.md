@@ -27,3 +27,7 @@ Public portfolio evidence is not measured business impact. The role route does n
 ## CI environment repair
 
 Playwright 1.56.1 does not support Chromium on GitHub's Ubuntu 26.04 runners. Browser-capable workflows are deliberately pinned to `ubuntu-24.04` until a tested Playwright/OS upgrade can replace them. Pure static checks may continue to use `ubuntu-latest`.
+
+## Bilingual deep-link regression
+
+The legacy `[data-application-link]` updater used to replace complete URLs when switching language or theme. It now preserves validated existing `track` and `focus` query values while updating `lang` and `theme`, and the Chromium test asserts these parameters on the recruiter route.
