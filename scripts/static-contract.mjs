@@ -111,7 +111,7 @@ assert.match(read("README.md"),/docs\/profile-showcase\.svg/,"README must refere
 const profileReadme=read("README.md");
 assert.match(profileReadme,/<h1 align="center">Gracián Baena<\/h1>/,"GitHub profile heading must render as HTML");
 assert.doesNotMatch(profileReadme,/<div align="center">/,"No Markdown inside unrendered HTML div containers");
-assert.match(profileReadme,/<p align="center"><a href="https:\/\/gracianb.github.io\/GracianB\//,"Showcase links must render as native HTML");
+assert.match(profileReadme,/<p align="center">\s*<a href="https:\/\/gracianb.github.io\/GracianB\//,"Showcase links must render as native HTML");
 assert.match(html,/id="recruiter-brief" aria-labelledby="recruiter-brief-title"/);
 assert.equal((html.match(/class="brief-proof"/g)||[]).length,3,"Three evidence-first cards required");
 assert.match(html,/recruiter-brief\.css\?v=p4-1/);
