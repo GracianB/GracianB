@@ -23,3 +23,7 @@ Keep the constellation and three universes intact, but make the primary professi
 ## Deliberate boundaries
 
 Public portfolio evidence is not measured business impact. The role route does not claim unpublished apps are live services, publish private CVs, or change the twelve canonical PDFs.
+
+## CI environment repair
+
+Playwright 1.56.1 does not support Chromium on GitHub's Ubuntu 26.04 runners. Browser-capable workflows are deliberately pinned to `ubuntu-24.04` until a tested Playwright/OS upgrade can replace them. Pure static checks may continue to use `ubuntu-latest`.
