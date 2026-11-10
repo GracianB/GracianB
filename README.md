@@ -1,20 +1,17 @@
-<div align="center">
+<p align="center">
+  <a href="https://gracianb.github.io/GracianB/"><img src="./docs/profile-showcase.svg" alt="Gracián Baena — people, operations, software and creative technology" width="100%"></a>
+</p>
 
-<a href="https://gracianb.github.io/GracianB/">
-  <img src="./docs/profile-showcase.svg" alt="Gracián Baena — people, operations, software and creative technology" width="100%">
-</a>
+<h1 align="center">Gracián Baena</h1>
 
-# Gracián Baena
+<h3 align="center">Customer Success · Customer Operations · Data · Automation · Creative Technology</h3>
 
-**Customer Success · Customer Operations · Data · Automation · Creative Technology**
+<p align="center"><strong>I connect human problems with useful systems, and I build things that people can actually explore.</strong></p>
 
-*I connect human problems with useful systems, and I build things that people can actually explore.*
+<p align="center"><em>Murcia, Spain · Remote &amp; international collaboration · Spanish / English / Italian</em></p>
 
-**Murcia, Spain** · Remote & international collaboration · **Spanish / English / Italian**
+<p align="center"><a href="https://gracianb.github.io/GracianB/"><strong>Enter my universe ↗</strong></a> &nbsp;·&nbsp; <a href="https://gracianb.github.io/professional-deck/"><strong>Explore professional work ↗</strong></a> &nbsp;·&nbsp; <a href="https://gracianb.github.io/GracianB/apply.html?track=professional&amp;focus=customer-success"><strong>View my résumé ↗</strong></a></p>
 
-[**Enter my universe ↗**](https://gracianb.github.io/GracianB/) &nbsp;·&nbsp; [**Explore professional work ↗**](https://gracianb.github.io/professional-deck/) &nbsp;·&nbsp; [**View my résumé ↗**](https://gracianb.github.io/GracianB/apply.html?track=professional&focus=customer-success)
-
-</div>
 
 ---
 
@@ -83,10 +80,7 @@ I'm open to conversations about **Customer Success, operations, process improvem
 
 ---
 
-<div align="center">
+<p align="center"><strong>People first. Curiosity always. Build what matters.</strong></p>
 
-**People first. Curiosity always. Build what matters.**
+<p align="center"><a href="https://gracianb.github.io/GracianB/"><strong>My hub</strong></a> &nbsp;·&nbsp; <a href="https://gracianb.github.io/professional-deck/"><strong>Professional Deck</strong></a> &nbsp;·&nbsp; <a href="https://gracianb.github.io/yoga-instructor/"><strong>Yoga Instructor</strong></a> &nbsp;·&nbsp; <a href="https://gracianb.github.io/systems-lab/"><strong>Systems Lab</strong></a></p>
 
-[My hub](https://gracianb.github.io/GracianB/) · [Professional Deck](https://gracianb.github.io/professional-deck/) · [Yoga Instructor](https://gracianb.github.io/yoga-instructor/) · [Systems Lab](https://gracianb.github.io/systems-lab/)
-
-</div>
