@@ -6,7 +6,7 @@ const read=p=>readFileSync(p,"utf8");
 const html=read("index.html"),js=read("main.js"),i18n=read("i18n.js");
 const css=read("portal-v11.css"),dark=read("deck-dark.css");
 const resources=["index.html","styles.css","portal-v11.css","hub-finish.css","deck-dark.css",
-"main.js","i18n.js","city-atlas-v2.css","README.md","favicon.svg","docs/portfolio-banner.svg","docs/three-worlds.svg",
+"main.js","i18n.js","city-atlas-v2.css","recruiter-brief.css","README.md","favicon.svg","docs/profile-showcase.svg","docs/three-worlds.svg",
 "apply.html","apply.js","apply.css","robots.txt","sitemap.xml","site.webmanifest","og-cover.png",
 "cabin-crew.html","cabin-letter-es.html","cabin-letter-en.html"];
 const pdfs=["Gracian_Baena_CV_2026_ES.pdf","Gracian_Baena_CV_2026_EN.pdf",
@@ -107,7 +107,13 @@ for(const m of html.matchAll(/href="\.\/([^"#?]+\.pdf)"/g))
 const perf=read("scripts/performance-audit.mjs");
 assert.match(perf,/decodedBytes\s*<=\s*c\.maxSourceBytes/,"Keep measured P6 budget");
 assert.match(perf,/transferredBytes/,"Keep real network measurements");
-assert.match(read("README.md"),/docs\/portfolio-banner\.svg/);
+assert.match(read("README.md"),/docs\/profile-showcase\.svg/,"README must reference the current cover art");
+assert.match(html,/id="recruiter-brief" aria-labelledby="recruiter-brief-title"/);
+assert.equal((html.match(/class="brief-proof"/g)||[]).length,3,"Three evidence-first cards required");
+assert.match(html,/recruiter-brief\.css\?v=p4-1/);
+assert.match(html,/href="#recruiter-brief"/);
+assert.match(read("recruiter-brief.css"),/prefers-reduced-motion/);
+assert.doesNotMatch(html,/recruiter-brief[\s\S]*?data-analytics/,"Evidence route must not track users");
 assert.match(read("README.md"),/docs\/three-worlds\.svg/);
 const og = readFileSync("og-cover.png");
 assert.equal(og.subarray(0,8).toString("hex"),"89504e470d0a1a0a","Social cover must be a PNG");

@@ -38,6 +38,21 @@ if (params.get("theme") === "dark" || params.get("theme") === "light") theme = p
 function dictionary() {
 return I18N[lang] || I18N.es || {};
 }
+// Preserve the recruiter's selected role while propagating language and theme.
+function updateApplicationLinks() {
+document.querySelectorAll("[data-application-link]").forEach((link) => {
+const current = new URL(link.getAttribute("href") || "./apply.html", location.href);
+const next = new URLSearchParams();
+for (const key of ["track", "focus"]) {
+const value = current.searchParams.get(key);
+if (value) next.set(key, value);
+}
+if (lang === "en") next.set("lang", "en");
+if (theme === "light") next.set("theme", "light");
+const query = next.toString();
+link.href = "./apply.html" + (query ? "?" + query : "");
+});
+}
 function applyLanguage({ persist = false } = {}) {
 const t = dictionary();
 root.lang = t.htmlLang || lang;
@@ -79,9 +94,7 @@ const active = button.dataset.setLang === lang;
 button.setAttribute("aria-pressed", String(active));
 button.classList.toggle("is-active", active);
 });
-document.querySelectorAll("[data-application-link]").forEach((link) => {
-link.href = lang === "en" ? "./apply.html?lang=en" : "./apply.html";
-});
+updateApplicationLinks();
 const cv = document.querySelector("[data-cv-link]");
 if (cv) {
 cv.href = lang === "en"
@@ -102,12 +115,7 @@ root.dataset.theme = theme;
 skyController?.sync();
 const color = theme === "light" ? "#f7f5ef" : "#02070b";
 document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
-document.querySelectorAll("[data-application-link]").forEach((link) => {
-const parts = [];
-if (lang === "en") parts.push("lang=en");
-if (theme === "light") parts.push("theme=light");
-link.href = "./apply.html" + (parts.length ? "?" + parts.join("&") : "");
-});
+updateApplicationLinks();
 document.querySelector("[data-theme-toggle]")?.setAttribute(
 "aria-label",
 lang === "en"

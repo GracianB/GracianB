@@ -1,0 +1,50 @@
+/* GB / P4 Recruiter Signal · calm, legible counterpart to the constellation.
+   Static by design: no new fonts, libraries, network calls or motion requirements. */
+.recruiter-brief{padding-block:clamp(2.8rem,6vw,5.8rem);position:relative;isolation:isolate}
+.recruiter-brief *{box-sizing:border-box}
+.brief-shell{--brief-fg:#f0f5f4;--brief-muted:#c4d4d4;--brief-edge:rgba(173,213,207,.26);--brief-glow:#a8e4d1;
+  color:var(--brief-fg);background:radial-gradient(ellipse at 94% 0%,rgba(92,150,147,.17),transparent 39%),linear-gradient(140deg,#10252b,#08151c 72%);
+  border:1px solid var(--brief-edge);border-radius:clamp(1.1rem,2.6vw,2.1rem);box-shadow:0 22px 75px rgba(0,0,0,.24);overflow:hidden}
+.brief-rail{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.12rem clamp(1.2rem,4vw,3rem);
+  color:var(--brief-muted);border-bottom:1px solid var(--brief-edge);font-size:.68rem;font-weight:700;letter-spacing:.14em}
+.brief-rail span:last-child{color:var(--brief-glow);text-align:right}
+.brief-lead{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(14.5rem,.8fr);align-items:start;gap:clamp(1.6rem,5vw,5rem);
+  padding:clamp(1.5rem,4.5vw,4rem) clamp(1.2rem,4vw,3rem) clamp(1.5rem,3vw,2.3rem)}
+.brief-overline{margin:0 0 .92rem;color:var(--brief-glow);font-weight:700;font-size:.75rem;letter-spacing:.15em}
+.brief-story h2{max-width:20ch;margin:0;font-size:clamp(1.8rem,3.6vw,3.6rem);line-height:1.12;font-weight:650;letter-spacing:-.034em;text-wrap:balance;color:var(--brief-fg)}
+.brief-story>p:last-child{max-width:61ch;margin:1.45rem 0 0;font-size:clamp(.95rem,1.15vw,1.12rem);line-height:1.75;color:var(--brief-muted)}
+.brief-snapshot{margin:0;display:grid;gap:0;border-top:1px solid var(--brief-edge)}
+.brief-snapshot>div{padding:1.06rem 0 1.15rem;border-bottom:1px solid var(--brief-edge)}
+.brief-snapshot dt{font-family:inherit;font-size:clamp(1.4rem,2.4vw,2.25rem);font-weight:750;letter-spacing:-.02em;line-height:1.2;color:var(--brief-fg)}
+.brief-snapshot dd{margin:.35rem 0 0;max-width:28ch;color:var(--brief-muted);font-size:.83rem;line-height:1.6}
+.brief-proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--brief-edge);border-bottom:1px solid var(--brief-edge)}
+.brief-proof{display:flex;flex-direction:column;min-width:0;padding:clamp(1.25rem,3vw,2.25rem) clamp(1.1rem,2.6vw,2rem)}
+.brief-proof+.brief-proof{border-left:1px solid var(--brief-edge)}
+.brief-proof-number{font-size:.71rem;font-weight:750;letter-spacing:.11em;color:var(--brief-glow)}
+.brief-proof h3{margin:1.15rem 0 .6rem;font-size:clamp(1.1rem,1.8vw,1.5rem);line-height:1.28;color:var(--brief-fg);font-weight:650}
+.brief-proof p{margin:0 0 1.7rem;line-height:1.72;font-size:.9rem;color:var(--brief-muted)}
+.brief-proof a{display:inline-flex;align-items:center;justify-content:space-between;gap:.85rem;align-self:stretch;margin-top:auto;
+  color:var(--brief-fg);font-size:.88rem;line-height:1.4;font-weight:700;padding:.76rem 0;border-top:1px solid var(--brief-edge);text-decoration:none}
+.brief-proof a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.24em;color:var(--brief-glow)}
+.brief-close{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;padding:1.3rem clamp(1.2rem,4vw,3rem)}
+.brief-close p{max-width:55ch;margin:0;font-size:.78rem;line-height:1.65;color:var(--brief-muted)}
+.brief-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:.9rem 1.15rem;min-height:48px;
+  border-radius:.75rem;background:#d3f5e7;color:#082122;font-size:.88rem;font-weight:800;line-height:1.35;text-decoration:none;white-space:normal}
+.brief-primary:hover{background:#fff;color:#06161d}
+.brief-shortcut{display:inline-flex;align-items:center;gap:.35rem;min-height:44px;color:inherit;font-size:.9rem;font-weight:700;text-underline-offset:.22em}
+.recruiter-brief :is(a):focus-visible,.brief-shortcut:focus-visible{outline:3px solid #a8e4d1;outline-offset:4px;border-radius:.4rem}
+html[data-theme="light"] .brief-shell{--brief-fg:#16292f;--brief-muted:#425862;--brief-edge:rgba(19,52,59,.19);--brief-glow:#176357;
+  background:radial-gradient(ellipse at 93% 0%,rgba(195,226,219,.38),transparent 40%),linear-gradient(142deg,#fffefa,#f0f6f4 78%);
+  box-shadow:0 15px 52px rgba(31,67,67,.10)}
+html[data-theme="light"] .brief-primary{background:#123e3d;color:#fff}
+html[data-theme="light"] .brief-primary:hover{background:#0a2d2b;color:#fff}
+html[data-theme="light"] .recruiter-brief a:focus-visible{outline-color:#176357}
+@media(max-width:850px){.brief-lead{grid-template-columns:minmax(0,1fr)}.brief-snapshot{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .brief-snapshot>div{padding-inline:1rem;border-right:1px solid var(--brief-edge)}.brief-snapshot>div:first-child{padding-left:0}
+  .brief-snapshot>div:last-child{border-right:0}.brief-proof-grid{grid-template-columns:minmax(0,1fr)}
+  .brief-proof+.brief-proof{border-left:0;border-top:1px solid var(--brief-edge)}
+  .brief-proof p{margin-bottom:1rem}.brief-close{flex-wrap:wrap}}
+@media(max-width:560px){.brief-rail{font-size:.62rem;letter-spacing:.06em}.brief-snapshot{grid-template-columns:1fr}
+  .brief-snapshot>div{border-right:0;padding-inline:0}.brief-close{align-items:stretch}
+  .brief-primary{width:100%}.brief-story h2{text-wrap:pretty}}
+@media(prefers-reduced-motion:reduce){.recruiter-brief *, .brief-shortcut{scroll-behavior:auto;transition:none!important;animation:none!important}}
