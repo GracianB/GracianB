@@ -33,6 +33,13 @@ async function inspect(browser,width,lang="es",theme="dark",motion="reduce"){
   assert.equal(await page.locator("html").getAttribute("data-theme"),theme);
   const heading=await page.locator("#hero-title").innerText();
   assert.match(heading,lang==="es"?/universo de ideas/i:/universe of ideas/i);
+  const brief=page.locator("#recruiter-brief");
+  assert.equal(await brief.count(),1,"Recruiter route must exist");
+  assert.match(await brief.locator("h2").innerText(),lang==="es"?/operaciones/i:/operations/i,"Recruiter route must be translated");
+  assert.equal(await brief.locator(".brief-proof").count(),3,"Evidence route must show three proof points");
+  assert.equal(await brief.locator(".brief-proof a").count(),3);
+  assert.ok((await brief.locator(".brief-primary").getAttribute("href")).includes("apply.html?track=professional"));
+  assert.ok(await page.locator(".brief-shortcut").isVisible(),"Quick recruiter shortcut must be available");
   const name=page.locator(".constellation-signature .hero-name");
   assert.ok(await name.isVisible(),"Small Gracián Baena signature must be visible");
   const fits=await name.evaluate(node=>node.getBoundingClientRect().right<=innerWidth+1);

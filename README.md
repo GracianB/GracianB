@@ -36,6 +36,12 @@ One personal hub. Three distinct worlds. Each has a clear purpose and its own po
 
 This repository is the **personal front door**, not a second CV and not a replacement for the specialist portfolios. The [live hub](https://gracianb.github.io/GracianB/) brings the worlds together with English/Spanish content, light/dark themes, responsive layouts and keyboard-accessible navigation.
 
+## A recruiter-ready 60-second route
+
+[**Open the recruiter quick read ↗**](https://gracianb.github.io/GracianB/#recruiter-brief) · [**Choose a role-specific application ↗**](https://gracianb.github.io/GracianB/apply.html?track=professional&focus=customer-success)
+
+The home page now offers a compact, fully bilingual evidence route: international Customer Success and operations background, the public Bodytone Support OS case, the professional portfolio and the Systems Lab. The 16+ years figure is already part of the published personal biography; no new commercial performance metrics, employment claims or certifications were introduced. This remains an atlas rather than a second CV.
+
 ## Begin with proof
 
 ### Customer Success & Customer Operations
@@ -97,6 +103,7 @@ Open [http://localhost:8000](http://localhost:8000). Static pages need no build 
 | Path | Purpose |
 | --- | --- |
 | `index.html`, `main.js`, `i18n.js` | Main hub, interactions and ES/EN content |
+| `recruiter-brief.css` | Lightweight, responsive 60-second evidence route |
 | `styles.css`, `*-v*.css` | Visual system and responsive presentation |
 | `apply.html`, `apply.js`, `apply.css` | Application desk and role-specific summaries |
 | `cabin-*.html`, `cabin-*.css`, `cabin-*.js` | Cabin-crew portfolio and application pages |
